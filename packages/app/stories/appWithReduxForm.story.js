@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+/* eslint-disable react/prop-types */
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Input, Button } from 'react-rainbow-components';
 import { Field, reduxForm } from 'redux-form';
@@ -9,6 +10,7 @@ const stories = storiesOf('RainbowFirebaseApp/ReduxForm', module);
 
 const Content = ({ handleSubmit }) => {
     const onSubmit = (values) => {
+        // eslint-disable-next-line no-alert
         alert(`submitting ${JSON.stringify(values)}`);
     };
     return (
@@ -16,8 +18,8 @@ const Content = ({ handleSubmit }) => {
             <Field component={Input} name="name" />
             <Button label="Submit" type="submit" />
         </form>
-    );    
-}
+    );
+};
 
 const validate = (values) => {
     const errors = {};
@@ -25,15 +27,13 @@ const validate = (values) => {
         errors.name = 'The name field is required.';
     }
     return errors;
-}
+};
 const Form = reduxForm({
     validate,
     form: 'appWithReduxForm',
 })(Content);
 
 stories.add('simple form validation', () => {
-    const [locale, setLocale] = useState('en');
-    
     return (
         <RainbowFirebaseApp app={app}>
             <Form />

@@ -1,0 +1,52 @@
+{
+    "extends": ["airbnb", "plugin:prettier/recommended"],
+    "plugins": [
+        "babel",
+        "react",
+        "jest",
+        "jsx-a11y",
+        "import",
+        "cypress",
+        "react-hooks",
+        "prettier"
+    ],
+    "rules": {
+        "prettier/prettier": "error",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "import/no-cycle": [0],
+        "indent": ["error", 4, { "SwitchCase": 1 }],
+        "react/jsx-indent": ["error", 4],
+        "react/jsx-indent-props": ["error", 4],
+        "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx"] }],
+        "react/jsx-first-prop-new-line": [0],
+        "react/jsx-closing-bracket-location": [0],
+        "react/forbid-prop-types": [0],
+        "jsx-a11y/href-no-hash": [0],
+        "import/no-extraneous-dependencies": [0],
+        "import/extensions": [0],
+        "no-mixed-operators": [0],
+        "linebreak-style": 0,
+        "no-shadow": [0],
+        "react/default-props-match-prop-types": ["error", { "allowRequiredDefaults": true }],
+        "jsx-a11y/label-has-for": [
+            2,
+            {
+                "components": ["Label"],
+                "required": {
+                    "every": ["nesting", "id"]
+                },
+                "allowChildren": true
+            }
+        ]
+    },
+    "env": {
+        "es6": true,
+        "node": true,
+        "jest/globals": true,
+        "browser": true
+    },
+    "globals": {
+        "browser": true
+    }
+}
