@@ -2,3 +2,4 @@ node_modules
 lib
 .jest-cache
 .jest-coverage
+*.log
