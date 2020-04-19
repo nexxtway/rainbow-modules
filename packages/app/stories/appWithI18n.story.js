@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Select } from 'react-rainbow-components';
+import { FormattedMessage } from 'react-intl';
 import RainbowFirebaseApp from '../src/components/App';
 import app from './firebase';
-import { FormattedMessage } from 'react-intl';
 
 const stories = storiesOf('RainbowFirebaseApp/I18n', module);
 const translations = {
@@ -24,17 +24,18 @@ stories.add('support for english/spanish translations', () => {
     const Content = () => {
         return (
             <div>
-                <Select 
+                <Select
                     options={languages}
                     value={locale}
-                    onChange={event => setLocale(event.target.value)} />
+                    onChange={(event) => setLocale(event.target.value)}
+                />
                 <FormattedMessage defaultMessage="Hello World!" id="hello" />
             </div>
-        );    
-    }
+        );
+    };
     return (
         <RainbowFirebaseApp app={app} translations={translations} locale={locale}>
-            <Content />    
+            <Content />
         </RainbowFirebaseApp>
     );
 });

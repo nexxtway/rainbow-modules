@@ -6,14 +6,7 @@ import ReduxContainer from '../ReduxContainer';
 import I18nContainer from '../I18nContainer';
 
 const RainbowFirebaseApp = (props) => {
-    const { 
-        app,
-        theme,
-        locale,
-        translations,
-        children,
-        reducers,
-    } = props;
+    const { app, theme, locale, translations, children, reducers } = props;
     const firebaseContext = useMemo(() => ({ app }), [app]);
     return (
         <Application theme={theme} locale={locale}>
@@ -26,17 +19,23 @@ const RainbowFirebaseApp = (props) => {
             </ReduxContainer>
         </Application>
     );
-}
+};
 
 RainbowFirebaseApp.propTypes = {
     app: PropTypes.object.isRequired,
+    theme: PropTypes.object,
+    locale: PropTypes.string,
     translations: PropTypes.object,
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
     reducers: PropTypes.object,
 };
 
 RainbowFirebaseApp.defaultProps = {
-    reducers: {},
+    theme: undefined,
+    locale: undefined,
     translations: {},
+    children: null,
+    reducers: {},
 };
 
 export default RainbowFirebaseApp;
