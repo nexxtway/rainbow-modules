@@ -1,0 +1,11 @@
+{
+  "name": "rainbow-app",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "module": "src/index.js",
+  "author": "Nexxtwary Team",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.13.1"
+  }
+}
