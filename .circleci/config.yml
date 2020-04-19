@@ -1,0 +1,47 @@
+version: 2.1
+
+defaults: &defaults
+    working_directory: ~/repo
+    docker:
+        - image: circleci/node:10.13.0-stretch-browsers
+
+jobs:
+    build_and_test:
+        <<: *defaults
+
+        steps:
+            - checkout
+            - restore_cache:
+                  keys:
+                      - v1-dependencies-{{ checksum "yarn.lock" }}
+                      - v1-dependencies-
+
+            - run: yarn bootstrap
+
+            - save_cache:
+                  paths:
+                      - node_modules
+                  key: v1-dependencies-{{ checksum "yarn.lock" }}
+
+            - run: yarn lint
+
+            - run:
+                  name: run test
+                  command: |
+                      if [ -n "$COVERALLS_REPO_TOKEN" ]; then
+                          yarn test --ci --coverage | ./node_modules/coveralls/bin/coveralls.js
+                      else
+                          yarn test --ci --coverage
+                      fi
+
+            - store_test_results:
+                  path: .jest-coverage
+
+            - store_artifacts:
+                  path: .jest-coverage
+
+workflows:
+    version: 2
+    build_and_test:
+        jobs:
+            - build_and_test
