@@ -1,4 +1,3 @@
-
 let AppActions = {};
 
 export const showAppSpinner = () => {
@@ -13,7 +12,5 @@ export const updateAppActions = (actions) => {
     AppActions = {
         ...AppActions,
         ...actions,
-    }
-}
-
-export default AppActions;
+    };
+};

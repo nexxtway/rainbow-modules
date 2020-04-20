@@ -1,9 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Button } from 'react-rainbow-components';
-import { RainbowFirebaseApp } from 'rainbow-app';
-import app from "rainbow-app/stories/firebase";
-import { showAppSpinner, hideAppSpinner } from 'rainbow-app';
+import { RainbowFirebaseApp, showAppSpinner, hideAppSpinner } from 'rainbow-app';
+import app from 'rainbow-app/stories/firebase';
 
 const stories = storiesOf('Authentication/Spinner', module);
 
@@ -13,8 +12,8 @@ const Content = () => {
         setTimeout(() => {
             hideAppSpinner();
         }, 1000);
-    }
-    return <Button label="Show App Spinner for 1s" onClick={show} />
+    };
+    return <Button label="Show App Spinner for 1s" onClick={show} />;
 };
 
 stories.add('show App Spinner', () => {

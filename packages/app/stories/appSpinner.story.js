@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { Button } from 'react-rainbow-components';
 import app from './firebase';
 import RainbowFirebaseApp from '../src/components/App';
-import { Button } from 'react-rainbow-components';
 import { showAppSpinner, hideAppSpinner } from '../src/actions';
 
 const Content = () => {
@@ -11,8 +11,8 @@ const Content = () => {
         setTimeout(() => {
             hideAppSpinner();
         }, 3000);
-    }
-    return <Button label="Show App Spinner for 3s" onClick={show} />
+    };
+    return <Button label="Show App Spinner for 3s" onClick={show} />;
 };
 
 const stories = storiesOf('RainbowFirebaseApp/App Spinner', module);

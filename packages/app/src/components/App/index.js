@@ -11,7 +11,7 @@ const RainbowFirebaseApp = (props) => {
     const { app, theme, locale, translations, children, reducers } = props;
     const firebaseContext = useMemo(() => ({ app }), [app]);
     const [isLoading, setLoading] = useState(false);
-    
+
     useEffect(() => {
         updateAppActions({
             setLoading,

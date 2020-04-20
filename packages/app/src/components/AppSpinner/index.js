@@ -23,14 +23,12 @@ const AppSpinner = (props) => {
     const { isLoading } = props;
     if (isLoading) {
         return createPortal(
-            (
-                <SpinnerContainer>
-                    <Spinner />
-                </SpinnerContainer>
-            ),
+            <SpinnerContainer>
+                <Spinner />
+            </SpinnerContainer>,
             document.body,
         );
-    }    
+    }
     return null;
 };
 
