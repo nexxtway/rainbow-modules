@@ -9,12 +9,13 @@ const I18nContainer = ({ locale, messages, children }) => (
 );
 
 I18nContainer.propTypes = {
-    locale: PropTypes.string.isRequired,
+    locale: PropTypes.string,
     messages: PropTypes.object,
     children: PropTypes.object.isRequired,
 };
 
 I18nContainer.defaultProps = {
+    locale: undefined,
     messages: {},
 };
 

@@ -5,16 +5,21 @@ import { FirebaseProvider } from 'rainbow-firebase-hooks';
 import ReduxContainer from '../ReduxContainer';
 import I18nContainer from '../I18nContainer';
 import AppSpinner from '../AppSpinner';
+import AppMessage from '../AppMessage';
 import { updateAppActions } from '../../actions';
 
 const RainbowFirebaseApp = (props) => {
     const { app, theme, locale, translations, children, reducers } = props;
     const firebaseContext = useMemo(() => ({ app }), [app]);
     const [isLoading, setLoading] = useState(false);
+    const [isMessageVisible, setIsMessageVisible] = useState(false);
+    const [messageParams, setMessageParams] = useState({});
 
     useEffect(() => {
         updateAppActions({
             setLoading,
+            setIsMessageVisible,
+            setMessageParams,
         });
     }, []);
 
@@ -25,6 +30,12 @@ const RainbowFirebaseApp = (props) => {
                     <Application theme={theme} locale={locale}>
                         {children}
                         <AppSpinner isLoading={isLoading} />
+                        <AppMessage
+                            isVisible={isMessageVisible}
+                            onHideMessage={() => setIsMessageVisible(false)}
+                            // eslint-disable-next-line react/jsx-props-no-spreading
+                            {...messageParams}
+                        />
                     </Application>
                 </I18nContainer>
             </FirebaseProvider>
