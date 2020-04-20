@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import RainbowButtonIcon from 'react-rainbow-components/components/ButtonIcon';
+/* eslint-disable-next-line import/no-unresolved */
 import { Error } from 'rainbow-icons';
 
 function getBackgroundColor(props) {

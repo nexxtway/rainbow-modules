@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
+/* eslint-disable-next-line import/no-unresolved */
 import { Close, Error, Done, Warning } from 'rainbow-icons';
 import { Container, MessageContainer, MessageIcon, MessageText, ButtonIcon } from './styled';
 
