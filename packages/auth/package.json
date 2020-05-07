@@ -2,7 +2,6 @@
     "name": "@rainbow-modules/auth",
     "version": "0.0.3",
     "main": "lib/index.js",
-    "module": "src/index.js",
     "author": "Nexxtway Team",
     "license": "MIT",
     "dependencies": {

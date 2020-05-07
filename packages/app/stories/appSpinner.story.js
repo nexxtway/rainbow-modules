@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Button } from 'react-rainbow-components';
-import app from './firebase';
+import app from '../../../firebase';
 import RainbowFirebaseApp from '../src/components/App';
 import { showAppSpinner, hideAppSpinner } from '../src/actions';
 

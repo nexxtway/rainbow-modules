@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { Button } from 'react-rainbow-components';
 /* eslint-disable-next-line import/no-unresolved */
 import { RainbowFirebaseApp, showAppSpinner, hideAppSpinner } from '@rainbow-modules/app';
-import app from '@rainbow-modules/app/stories/firebase';
+import app from '../../../firebase';
 
 const stories = storiesOf('Authentication/Spinner', module);
 

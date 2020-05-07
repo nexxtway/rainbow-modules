@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { Input, Button } from 'react-rainbow-components';
 import { Field, reduxForm } from 'redux-form';
 import RainbowFirebaseApp from '../src/components/App';
-import app from './firebase';
+import app from '../../../firebase';
 
 const stories = storiesOf('RainbowFirebaseApp/ReduxForm', module);
 
