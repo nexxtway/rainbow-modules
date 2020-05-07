@@ -1,7 +1,7 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Application from 'react-rainbow-components/components/Application';
-import { FirebaseProvider } from 'rainbow-firebase-hooks';
+import { FirebaseProvider } from '@rainbow-modules/firebase-hooks';
 import ReduxContainer from '../ReduxContainer';
 import I18nContainer from '../I18nContainer';
 import AppSpinner from '../AppSpinner';

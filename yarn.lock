@@ -11567,11 +11567,6 @@ quick-lru@^4.0.1:
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-4.0.1.tgz#5b8878f113a58217848c6482026c73e1ba57727f"
   integrity sha512-ARhCpm70fzdcvNQfPoy49IaanKkTlRWF2JMzqhcJbhSFRZv7nPTvZJdcY7301IPmvW+/p0RgIWnQDLJxifsQ7g==
 
-rainbow-firebase-hooks@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/rainbow-firebase-hooks/-/rainbow-firebase-hooks-0.1.0.tgz#690aa338862b6af6e68561fc0ccf3ad02b932ec3"
-  integrity sha512-opvDydd67GwLSS8M+M6+2l/lse6pwzJ2GRwWl6ZULFKevqILAxltxm7pyejD7F2YRy6DZN9ZX6rZNw9UU0gdrA==
-
 ramda@^0.21.0:
   version "0.21.0"
   resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.21.0.tgz#a001abedb3ff61077d4ff1d577d44de77e8d0a35"

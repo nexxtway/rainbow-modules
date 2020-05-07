@@ -21,6 +21,10 @@ module.exports = {
                 '@rainbow-modules/app': path.join(__dirname, '../packages/app/src/index.js'),
                 '@rainbow-modules/auth': path.join(__dirname, '../packages/auth/src/index.js'),
                 '@rainbow-modules/icons': path.join(__dirname, '../packages/icons/src/index.js'),
+                '@rainbow-modules/firebase-hooks': path.join(
+                    __dirname,
+                    '../packages/firebase-hooks/src/index.js',
+                ),
             },
         };
         return config;
