@@ -2,10 +2,10 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Button } from 'react-rainbow-components';
 import { useDispatch, useSelector } from 'react-redux';
-import app from '../../../firebase';
-import RainbowFirebaseApp from '../src/components/App';
+import app from '../../../../firebase';
+import RainbowFirebaseApp from '../../src/components/App';
 
-const stories = storiesOf('RainbowFirebaseApp/with Redux', module);
+const stories = storiesOf('App/Stories/Redux', module);
 
 stories.add('increase a counter', () => {
     const init = { count: 0 };

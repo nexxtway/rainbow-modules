@@ -45,7 +45,9 @@ const RainbowFirebaseApp = (props) => {
 };
 
 RainbowFirebaseApp.propTypes = {
+    /** The firebase app instance already initialized. */
     app: PropTypes.object.isRequired,
+    /** The react-rainbow-components theme object. */
     theme: PropTypes.object,
     locale: PropTypes.string,
     translations: PropTypes.object,
