@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Button, Input } from 'react-rainbow-components';
-import { Route } from 'react-router-dom';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
 import app from '../../../firebase';
 import WhenAuthenticated from '../src/components/WhenAuthenticated';
