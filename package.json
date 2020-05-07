@@ -1,6 +1,5 @@
 {
     "name": "root",
-    "private": true,
     "scripts": {
         "build": "lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.story.js,**/*.spec.js",
         "bootstrap": "npx lerna bootstrap --use-workspaces",
@@ -9,7 +8,8 @@
         "lint:js": "eslint . --ext .js --ignore-pattern lib --ignore-pattern node_modules",
         "lint:styles": "stylelint './packages/**/*.js'",
         "lint": "yarn lint:js && yarn lint:styles",
-        "test": "jest --passWithNoTests"
+        "test": "jest --passWithNoTests",
+        "publish-packages": "yarn build && npx lerna publish"
     },
     "devDependencies": {
         "@babel/cli": "^7.8.4",
