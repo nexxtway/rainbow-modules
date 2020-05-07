@@ -1,12 +1,12 @@
 {
-    "name": "@rainbow/firebase-app",
-    "version": "0.0.1",
+    "name": "@rainbow-modules/app",
+    "version": "0.0.0",
     "main": "lib/index.js",
     "module": "src/index.js",
     "author": "Nexxtwary Team",
     "license": "MIT",
     "dependencies": {
-        "@rainbow/icons": "^0.0.1",
+        "@rainbow-modules/icons": "^0.0.0",
         "react": "^16.13.1"
     },
     "publishConfig": {

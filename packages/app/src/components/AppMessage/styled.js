@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import RainbowButtonIcon from 'react-rainbow-components/components/ButtonIcon';
 /* eslint-disable-next-line import/no-unresolved */
-import { Error } from '@rainbow/icons';
+import { Error } from '@rainbow-modules/icons';
 
 function getBackgroundColor(props) {
     const { palette } = props.theme.rainbow;
