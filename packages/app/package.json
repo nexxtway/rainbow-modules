@@ -1,11 +1,11 @@
 {
     "name": "@rainbow-modules/app",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "main": "lib/index.js",
     "author": "Nexxtwary Team",
     "license": "MIT",
     "dependencies": {
-        "@rainbow-modules/icons": "^0.0.1",
+        "@rainbow-modules/icons": "^0.0.2",
         "rainbow-firebase-hooks": "^0.1.0",
         "react": "^16.13.1",
         "react-intl": "^4.4.0",
