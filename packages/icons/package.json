@@ -1,11 +1,14 @@
 {
-    "name": "rainbow-icons",
-    "version": "0.0.1",
+    "name": "@rainbow/icons",
+    "version": "0.0.0",
     "main": "lib/index.js",
     "module": "src/index.js",
     "author": "Nexxtwary Team",
     "license": "MIT",
     "dependencies": {
         "react": "^16.13.1"
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }

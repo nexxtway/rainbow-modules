@@ -3,3 +3,4 @@ lib
 .jest-cache
 .jest-coverage
 *.log
+storybook-static
