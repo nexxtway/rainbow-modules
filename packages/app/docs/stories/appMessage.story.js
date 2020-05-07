@@ -1,13 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Button } from 'react-rainbow-components';
-import app from '../../../firebase';
-import RainbowFirebaseApp from '../src/components/App';
-import { showAppMessage } from '../src/actions';
+import app from '../../../../firebase';
+import RainbowFirebaseApp from '../../src/components/App';
+import { showAppMessage } from '../../src/actions';
 
-const stories = storiesOf('RainbowFirebaseApp/App Message', module);
-
-stories.add('show app message', () => {
+export const showAppLevelMessage = () => {
     const showMessage = () => {
         showAppMessage({
             message: 'Error Message',
@@ -20,9 +17,9 @@ stories.add('show app message', () => {
             <Button label="Show App Message" onClick={showMessage} />
         </RainbowFirebaseApp>
     );
-});
+};
 
-stories.add('show app message for 3s', () => {
+export const showAppLevelMessageTimeout3s = () => {
     const showMessage = () => {
         showAppMessage({
             message: 'Success Message',
@@ -36,4 +33,9 @@ stories.add('show app message for 3s', () => {
             <Button label="Show App Message for 3s" onClick={showMessage} />
         </RainbowFirebaseApp>
     );
-});
+};
+
+export default {
+    title: 'App/Stories/Messages',
+    component: RainbowFirebaseApp,
+};

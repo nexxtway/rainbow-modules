@@ -1,10 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Switch, Route, Link } from 'react-router-dom';
-import app from '../../../firebase';
-import RainbowFirebaseApp from '../src/components/App';
+import app from '../../../../firebase';
+import RainbowFirebaseApp from '../../src/components/App';
 
-const stories = storiesOf('RainbowFirebaseApp/with Router', module);
+const stories = storiesOf('App/Stories/Router', module);
 
 stories.add('basic router', () => {
     return (

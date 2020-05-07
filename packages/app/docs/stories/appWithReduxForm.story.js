@@ -3,10 +3,10 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Input, Button } from 'react-rainbow-components';
 import { Field, reduxForm } from 'redux-form';
-import RainbowFirebaseApp from '../src/components/App';
-import app from '../../../firebase';
+import RainbowFirebaseApp from '../../src/components/App';
+import app from '../../../../firebase';
 
-const stories = storiesOf('RainbowFirebaseApp/ReduxForm', module);
+const stories = storiesOf('App/Stories/ReduxForm', module);
 
 const Content = ({ handleSubmit }) => {
     const onSubmit = (values) => {

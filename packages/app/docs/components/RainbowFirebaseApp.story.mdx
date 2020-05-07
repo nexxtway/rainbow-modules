@@ -1,0 +1,32 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Button } from 'react-rainbow-components';
+import RainbowFirebaseApp from '../../src/components/App';
+import * as stories from '../stories/appMessage.story.js';
+
+<Meta title="App/Components" component={RainbowFirebaseApp} />
+
+# Overview
+
+`RainbowFirebaseApp` component is what we call Application Container Component, those type of
+components are commonly wraping your entire React application providing a set of feature that
+could be group at the UI application level.
+
+Feature sopported:
+
+-   Application level messaging
+-   Application level Spinner
+-   I18n through `react-intl` package
+-   Redux
+-   ReduxForm
+-   Routing through `react-router-dom`
+-   Firebase Hooks
+
+The example bellow renders a UI where `Application level messaging` is being used.
+
+<Preview>
+    <Story name="RainbowFirebaseApp">{stories.showAppLevelMessageTimeout3s()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={RainbowFirebaseApp} />

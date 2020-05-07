@@ -1,12 +1,13 @@
 const path = require('path');
 
 module.exports = {
+    stories: ['../packages/**/*.story.(js|mdx)'],
     addons: [
         {
             name: '@storybook/addon-storysource',
             options: {
                 rule: {
-                    test: [/\.story\.js?$/],
+                    test: [/\.story\.(js)?$/],
                     include: [path.resolve(__dirname, '../packages')],
                 },
                 loaderOptions: {
@@ -14,6 +15,7 @@ module.exports = {
                 },
             },
         },
+        '@storybook/addon-docs',
     ],
     webpackFinal: async (config) => {
         config.resolve = {
