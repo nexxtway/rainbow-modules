@@ -1,12 +1,12 @@
 {
     "name": "@rainbow-modules/app",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "main": "lib/index.js",
     "module": "src/index.js",
     "author": "Nexxtwary Team",
     "license": "MIT",
     "dependencies": {
-        "@rainbow-modules/icons": "^0.0.0",
+        "@rainbow-modules/icons": "^0.0.1",
         "react": "^16.13.1"
     },
     "publishConfig": {
