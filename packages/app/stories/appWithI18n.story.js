@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { Select } from 'react-rainbow-components';
 import { FormattedMessage } from 'react-intl';
 import RainbowFirebaseApp from '../src/components/App';
-import app from './firebase';
+import app from '../../../firebase';
 
 const stories = storiesOf('RainbowFirebaseApp/I18n', module);
 const translations = {

@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import ReactJson from 'react-json-view';
 import { useCollectionOnce } from 'rainbow-firebase-hooks';
-import app from './firebase';
+import app from '../../../firebase';
 import RainbowFirebaseApp from '../src/components/App';
 
 const Books = () => {

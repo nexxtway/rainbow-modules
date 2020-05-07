@@ -1,10 +1,13 @@
 {
-  "name": "rainbow-auth",
-  "version": "0.0.1",
-  "main": "index.js",
-  "author": "Nexxtway Team",
-  "license": "MIT",
-  "dependencies": {
-    "rainbow-app": "0.0.1"
-  }
+    "name": "@rainbow-modules/auth",
+    "version": "0.0.5",
+    "main": "lib/index.js",
+    "author": "Nexxtway Team",
+    "license": "MIT",
+    "dependencies": {
+        "@rainbow-modules/app": "^0.0.5"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
 }
