@@ -1,5 +1,6 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { BrowserRouter } from 'react-router-dom';
 import Application from 'react-rainbow-components/components/Application';
 import { FirebaseProvider } from '@rainbow-modules/firebase-hooks';
 import ReduxContainer from '../ReduxContainer';
@@ -28,7 +29,7 @@ const RainbowFirebaseApp = (props) => {
             <FirebaseProvider value={firebaseContext}>
                 <I18nContainer locale={locale} messages={translations[locale]}>
                     <Application theme={theme} locale={locale}>
-                        {children}
+                        <BrowserRouter>{children}</BrowserRouter>
                         <AppSpinner isLoading={isLoading} />
                         <AppMessage
                             isVisible={isMessageVisible}
