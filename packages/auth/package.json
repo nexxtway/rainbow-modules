@@ -1,12 +1,12 @@
 {
     "name": "@rainbow/firebase-auth",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "main": "lib/index.js",
     "module": "src/index.js",
     "author": "Nexxtway Team",
     "license": "MIT",
     "dependencies": {
-        "@rainbow/firebase-app": "0.0.0"
+        "@rainbow/firebase-app": "^0.0.1"
     },
     "publishConfig": {
         "access": "public"
