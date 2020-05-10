@@ -47,12 +47,17 @@ const RainbowFirebaseApp = (props) => {
 RainbowFirebaseApp.propTypes = {
     /** The firebase app instance already initialized. */
     app: PropTypes.object.isRequired,
-    /** The react-rainbow-components theme object. */
+    /** The react-rainbow-components theme object. By default will use react-rainbow-components
+     * default theme */
     theme: PropTypes.object,
+    /** The application language tag or locale identifier */
     locale: PropTypes.string,
+    /** The translation object used by react-intl to resolve proper translations
+     * of FormmatedMessage components */
     translations: PropTypes.object,
-    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
+    /** Object with your application Redux reducers. */
     reducers: PropTypes.object,
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
 };
 
 RainbowFirebaseApp.defaultProps = {
