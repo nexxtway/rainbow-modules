@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Button, Input } from 'react-rainbow-components';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
-import app from '../../../firebase';
-import WhenAuthenticated from '../src/components/WhenAuthenticated';
-import WhenNoAuthenticated from '../src/components/WhenNoAuthenticated';
-
-const stories = storiesOf('Auth/routes', module);
+import app from '../../../../firebase';
+import WhenAuthenticated from '../../src/components/WhenAuthenticated';
+import WhenNoAuthenticated from '../../src/components/WhenNoAuthenticated';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -31,7 +28,7 @@ const Login = () => {
     );
 };
 
-stories.add('show App Spinner', () => {
+export const basicEmailPasswordAuthFlow = () => {
     return (
         <RainbowFirebaseApp app={app}>
             <WhenNoAuthenticated path="/" redirect="/app">
@@ -43,4 +40,8 @@ stories.add('show App Spinner', () => {
             </WhenAuthenticated>
         </RainbowFirebaseApp>
     );
-});
+};
+
+export default {
+    title: 'Auth/Stories',
+};
