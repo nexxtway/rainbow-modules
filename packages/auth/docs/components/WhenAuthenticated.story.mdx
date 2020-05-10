@@ -1,0 +1,25 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Button } from 'react-rainbow-components';
+import WhenAuthenticated from '../../src/components/WhenAuthenticated';
+import * as stories from '../stories/authRoutes.story.js';
+
+<Meta title="Auth/Components" component={WhenAuthenticated} />
+
+# Overview
+
+`WhenAutheticated` component act as a route, when the URL match the `path` value passed, the component will render
+the it's content(component prop or children) while the application is authenticated against Firebase. If a `redirect` value is passed
+and the application isn't authenticated the component will redirect the navigation to the redirect value passed.
+
+This component subscribes to any authenticated state change. Hence the render of it's content reacts depending
+on the latest authentication state.
+
+## This example is a basic `email` and `password` authentication flow.
+
+<Preview>
+    <Story name="WhenAuthenticated">{stories.basicEmailPasswordAuthFlow()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={WhenAuthenticated} />

@@ -46,14 +46,17 @@ const WhenAuthenticated = (props) => {
 };
 
 WhenAuthenticated.propTypes = {
-    path: PropTypes.string,
+    /** The route path the component will used to match against the browser URL. */
+    path: PropTypes.string.isRequired,
+    /** The component class or function that will be rendered if the application is
+     * authenticated. */
     component: PropTypes.func,
+    /** The route where the component should redirect if the application ins't authenticated. */
     redirect: PropTypes.string,
     children: PropTypes.node,
 };
 
 WhenAuthenticated.defaultProps = {
-    path: '',
     component: undefined,
     redirect: '',
     children: null,
