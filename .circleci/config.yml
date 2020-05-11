@@ -42,8 +42,42 @@ jobs:
             - store_artifacts:
                   path: .jest-coverage
 
+    deploy_firebase:
+        <<: *defaults
+
+        steps:
+            - checkout
+
+            # Download and cache dependencies
+            - restore_cache:
+                  keys:
+                      - v1-dependencies-{{ checksum "yarn.lock" }}
+                      # fallback to using the latest cache if no exact match is found
+                      - v1-dependencies-
+
+            - run:
+                  name: Create .env file
+                  command: |
+                      touch .env;
+                      echo STORYBOOK_API_KEY=$STORYBOOK_API_KEY >> .env;
+                      echo STORYBOOK_AUTH_DOMAIN=$STORYBOOK_AUTH_DOMAIN >> .env;
+                      echo STORYBOOK_DATABASE_URL=$STORYBOOK_DATABASE_URL >> .env;
+                      echo STORYBOOK_PROJECT_ID=$STORYBOOK_PROJECT_ID >> .env;
+                      echo STORYBOOK_STORAGE_BUCKET=$STORYBOOK_STORAGE_BUCKET >> .env;
+                      echo STORYBOOK_MESSAGING_SENDER_ID=$STORYBOOK_MESSAGING_SENDER_ID >> .env;
+                      echo STORYBOOK_APP_ID=$STORYBOOK_APP_ID >> .env;
+
+            - run: yarn install
+            - run: yarn deploy --token=$FIREBASE_TOKEN
+
 workflows:
     version: 2
     build_and_test:
         jobs:
             - build_and_test
+            - deploy_firebase:
+                  requires:
+                      - build_and_test
+                  filters:
+                      branches:
+                          only: master
