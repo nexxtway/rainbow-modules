@@ -1,14 +1,13 @@
 import * as firebase from 'firebase';
 
 const firebaseConfig = {
-    apiKey: 'AIzaSyCrLhX4CFDdrDVaRp00dhKy9W8w0vj96BI',
-    authDomain: 'fir-hooks-66a0b.firebaseapp.com',
-    databaseURL: 'https://fir-hooks-66a0b.firebaseio.com',
-    projectId: 'fir-hooks-66a0b',
-    storageBucket: 'fir-hooks-66a0b.appspot.com',
-    messagingSenderId: '872310474228',
-    appId: '1:872310474228:web:e4bdc4fd1dfd300d9ea5a1',
-    measurementId: 'G-4PXFXNHVJC',
+    apiKey: process.env.STORYBOOK_API_KEY,
+    authDomain: process.env.STORYBOOK_AUTH_DOMAIN,
+    databaseURL: process.env.STORYBOOK_DATABASE_URL,
+    projectId: process.env.STORYBOOK_PROJECT_ID,
+    storageBucket: process.env.STORYBOOK_STORAGE_BUCKET,
+    messagingSenderId: process.env.STORYBOOK_MESSAGING_SENDER_ID,
+    appId: process.env.STORYBOOK_APP_ID,
 };
 
 const instance = firebase.initializeApp(firebaseConfig);
