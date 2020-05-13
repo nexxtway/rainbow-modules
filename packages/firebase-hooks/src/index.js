@@ -1,4 +1,5 @@
 export { default as FirebaseProvider } from './firebase-provider';
+export { default as useFirebaseApp } from './useFirebaseApp';
 export { default as useCollectionOnce } from './firestore/useCollectionOnce';
 export { default as useCollection } from './firestore/useCollection';
 export { default as useCurrentUser } from './firestore/useCurrentUser';
