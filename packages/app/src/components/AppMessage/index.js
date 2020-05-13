@@ -21,7 +21,7 @@ const AppMessage = (props) => {
 };
 
 AppMessage.propTypes = {
-    isVisible: PropTypes.bool.isRequired,
+    isVisible: PropTypes.bool,
     message: PropTypes.node,
     variant: PropTypes.oneOf(['success', 'warning', 'error']),
     timeout: PropTypes.number,
@@ -29,6 +29,7 @@ AppMessage.propTypes = {
 };
 
 AppMessage.defaultProps = {
+    isVisible: false,
     message: undefined,
     variant: 'error',
     timeout: undefined,
