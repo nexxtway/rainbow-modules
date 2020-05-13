@@ -12,7 +12,7 @@ const Content = () => {
             hideAppSpinner();
         }, 3000);
     };
-    return <Button label="Show App Spinner for 3s" onClick={show} />;
+    return <Button label="Show App Spinner for 3s" id="spinner-button" onClick={show} />;
 };
 
 const stories = storiesOf('App/Stories/Spinner', module);

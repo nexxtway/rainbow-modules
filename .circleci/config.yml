@@ -24,9 +24,7 @@ jobs:
                   key: v1-dependencies-{{ checksum "yarn.lock" }}
 
             - run: yarn build
-
             - run: yarn lint
-
             - run:
                   name: run test
                   command: |
@@ -35,6 +33,12 @@ jobs:
                       else
                           yarn test --ci --coverage
                       fi
+
+            - run:
+                  command: yarn dev
+                  background: true
+            - run: yarn wait-on-local-server
+            - run: yarn cypress:run
 
             - store_test_results:
                   path: .jest-coverage

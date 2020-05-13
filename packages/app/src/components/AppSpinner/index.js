@@ -23,7 +23,7 @@ const AppSpinner = (props) => {
     const { isLoading } = props;
     if (isLoading) {
         return createPortal(
-            <SpinnerContainer>
+            <SpinnerContainer data-cy="app-spinner">
                 <Spinner />
             </SpinnerContainer>,
             document.body,
