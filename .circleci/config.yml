@@ -3,7 +3,7 @@ version: 2.1
 defaults: &defaults
     working_directory: ~/repo
     docker:
-        - image: circleci/node:10.13.0-stretch-browsers
+        - image: circleci/node:10.14.2-stretch-browsers
 
 jobs:
     build_and_test:
