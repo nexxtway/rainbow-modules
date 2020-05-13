@@ -31,7 +31,7 @@ jobs:
                   name: run test
                   command: |
                       if [ -n "$COVERALLS_REPO_TOKEN" ]; then
-                          yarn test --ci --coverage | ./node_modules/coveralls/bin/coveralls.js
+                          yarn test --ci --coverage && cat ./.jest-coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
                       else
                           yarn test --ci --coverage
                       fi
