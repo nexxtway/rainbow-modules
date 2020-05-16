@@ -11,6 +11,7 @@ describe('EmailPasswordSignInForm', () => {
         cy.server({
             delay: 1000,
         });
+
         cy.route(
             'POST',
             'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?*',
@@ -18,7 +19,7 @@ describe('EmailPasswordSignInForm', () => {
         ).as('firebaseSignIn');
     });
 
-    it('should request create user endpoint', () => {
+    it('should request verify password endpoint', () => {
         cy.get(EMAIL_INPUT).type('test@email.com');
         cy.get(PASSWORD_INPUT).type('TestPassword');
         cy.get(BUTTON).click();
