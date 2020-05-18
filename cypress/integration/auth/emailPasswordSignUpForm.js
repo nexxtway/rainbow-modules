@@ -19,19 +19,12 @@ describe('EmailPasswordSignUpForm', () => {
         ).as('firebaseSignUp');
     });
 
-    it('should request create user endpoint', () => {
-        cy.get(NAME_INPUT).type('Test');
-        cy.get(EMAIL_INPUT).type('test@email.com');
-        cy.get(PASSWORD_INPUT).type('TestPassword');
-        cy.get(BUTTON).click();
-        cy.wait('@firebaseSignUp');
-    });
-
-    it('should show spinner while loading', () => {
+    it('should request create user endpoint and show spinner while loading', () => {
         cy.get(NAME_INPUT).type('Test');
         cy.get(EMAIL_INPUT).type('test@email.com');
         cy.get(PASSWORD_INPUT).type('TestPassword');
         cy.get(BUTTON).click();
         cy.get(SPINNER_BACKDROP).should('exist');
+        cy.wait('@firebaseSignUp');
     });
 });

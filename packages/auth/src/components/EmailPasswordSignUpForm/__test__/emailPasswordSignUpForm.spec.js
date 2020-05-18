@@ -1,6 +1,6 @@
 import React from 'react';
 import EmailPasswordSignUpForm from '../index';
-import { mountWithIntl } from '../../../helpers/intl-enzyme-test-helper';
+import { mountWithIntl } from '../../../helpers/intlEnzyme';
 import * as actions from '../../../../../app/src/actions';
 
 const mockCreateUserWithEmailAndPassword = jest
@@ -38,13 +38,11 @@ describe('<EmailPasswordSignUpForm />', () => {
         expect(mockCreateUserWithEmailAndPassword).toHaveBeenCalledTimes(1);
     });
 
-    it('should show error message using app message', (done) => {
-        expect.assertions(1);
+    it('should show error message using app message', async () => {
+        const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
         const component = mountWithIntl(<EmailPasswordSignUpForm />);
         component.find('form').simulate('submit');
-        setTimeout(() => {
-            expect(actions.showAppMessage).toHaveBeenCalledTimes(1);
-            done();
-        }, 0);
+        await sleep(100);
+        expect(actions.showAppMessage).toHaveBeenCalledTimes(1);
     });
 });
