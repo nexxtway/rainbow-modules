@@ -1,9 +1,21 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Input } from 'react-rainbow-components';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { showAppMessage, showAppSpinner, hideAppSpinner } from '../../../../app/src/actions';
 import useFirebaseApp from '../../../../firebase-hooks/src/useFirebaseApp';
+import { nameIcon, emailIcon, passwordIcon } from './icons';
+import { StyledInput, StyledButton } from './styled';
+
+const nameLabel = <FormattedMessage id="EmailPasswordSignUpForm.name" defaultMessage="Name" />;
+const emailLabel = (
+    <FormattedMessage id="EmailPasswordSignUpForm.email" defaultMessage="Email Address" />
+);
+const passwordLabel = (
+    <FormattedMessage id="EmailPasswordSignUpForm.password" defaultMessage="Password" />
+);
+const buttonLabel = (
+    <FormattedMessage id="EmailPasswordSignUpForm.signup" defaultMessage="Create account" />
+);
 
 const EmailPasswordSignUpForm = (props) => {
     const intl = useIntl();
@@ -12,34 +24,7 @@ const EmailPasswordSignUpForm = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const app = useFirebaseApp();
-    const { nameIcon, emailIcon, passwordIcon } = props;
 
-    const onSubmit = async (event) => {
-        event.preventDefault();
-
-        try {
-            showAppSpinner();
-            await app.auth().createUserWithEmailAndPassword(email, password);
-            hideAppSpinner();
-        } catch (error) {
-            hideAppSpinner();
-            showAppMessage({
-                message: `${error}`,
-                variant: 'error',
-            });
-        }
-    };
-
-    const nameLabel = <FormattedMessage id="EmailPasswordSignUpForm.name" defaultMessage="Name" />;
-    const emailLabel = (
-        <FormattedMessage id="EmailPasswordSignUpForm.email" defaultMessage="Email Address" />
-    );
-    const passwordLabel = (
-        <FormattedMessage id="EmailPasswordSignUpForm.password" defaultMessage="Password" />
-    );
-    const buttonLabel = (
-        <FormattedMessage id="EmailPasswordSignUpForm.signup" defaultMessage="Create account" />
-    );
     const namePlaceholder = intl.formatMessage({
         id: 'EmailPasswordSignUpForm.namePlaceholder',
         defaultMessage: 'Enter your name',
@@ -53,45 +38,54 @@ const EmailPasswordSignUpForm = (props) => {
         defaultMessage: 'Enter your password',
     });
 
-    const buttonStyle = {
-        width: '100%',
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            showAppSpinner();
+            await app.auth().createUserWithEmailAndPassword(email, password);
+            const user = app.auth().currentUser;
+            await user.updateProfile({
+                displayName: name,
+            });
+            hideAppSpinner();
+        } catch (error) {
+            hideAppSpinner();
+            showAppMessage({
+                message: `${error}`,
+                variant: 'error',
+            });
+        }
     };
 
     return (
-        <form className={className} style={style} onSubmit={onSubmit}>
-            <Input
+        <form className={className} style={style} onSubmit={handleSubmit} noValidate>
+            <StyledInput
                 label={nameLabel}
                 icon={nameIcon}
                 placeholder={namePlaceholder}
                 name="name"
-                value={name}
                 onChange={(event) => setName(event.target.value)}
                 required
             />
-            <br />
-            <Input
+            <StyledInput
                 label={emailLabel}
                 icon={emailIcon}
                 placeholder={emailPlaceholder}
                 type="email"
                 name="email"
-                value={email}
                 onChange={(event) => setEmail(event.target.value)}
                 required
             />
-            <br />
-            <Input
+            <StyledInput
                 label={passwordLabel}
                 icon={passwordIcon}
                 placeholder={passwordPlaceholder}
                 type="password"
                 name="password"
-                value={password}
                 onChange={(event) => setPassword(event.target.value)}
                 required
             />
-            <br />
-            <Button style={buttonStyle} label={buttonLabel} variant="brand" type="submit" />
+            <StyledButton label={buttonLabel} variant="brand" type="submit" />
         </form>
     );
 };
@@ -101,20 +95,11 @@ EmailPasswordSignUpForm.propTypes = {
     className: PropTypes.string,
     /** An object with custom style applied to the outer element. */
     style: PropTypes.object,
-    /** The icon to how in the name input. It must be a svg icon or a font icon. */
-    nameIcon: PropTypes.node,
-    /** The icon to how in the email input. It must be a svg icon or a font icon. */
-    emailIcon: PropTypes.node,
-    /** The icon to how in the password input. It must be a svg icon or a font icon. */
-    passwordIcon: PropTypes.node,
 };
 
 EmailPasswordSignUpForm.defaultProps = {
     className: undefined,
     style: undefined,
-    nameIcon: undefined,
-    emailIcon: undefined,
-    passwordIcon: undefined,
 };
 
 export default EmailPasswordSignUpForm;
