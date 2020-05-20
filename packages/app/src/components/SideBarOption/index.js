@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { SidebarItem } from 'react-rainbow-components';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useRouteMatch } from 'react-router-dom';
 
 const SideBarOption = (props) => {
-    const { className, style, icon, selectedIcon, name, label, path, isSelected } = props;
+    const { className, style, icon, selectedIcon, name, label, path, exact } = props;
     const history = useHistory();
+    const match = useRouteMatch(path);
+    const isSelected = match && (!exact || match.isExact);
     const actualIcon = isSelected && selectedIcon ? selectedIcon : icon;
 
     const handleClick = (event) => {
@@ -40,11 +42,8 @@ SideBarOption.propTypes = {
     label: PropTypes.node,
     /** The path to navigate to when the item is clicked. */
     path: PropTypes.string,
-    /**
-     * Specifies that the item is selected.
-     * @ignore
-     */
-    isSelected: PropTypes.bool,
+    /** When true, will only match if the path matches the location.pathname exactly */
+    exact: PropTypes.bool,
 };
 
 SideBarOption.defaultProps = {
@@ -55,7 +54,7 @@ SideBarOption.defaultProps = {
     name: undefined,
     label: undefined,
     path: undefined,
-    isSelected: undefined,
+    exact: false,
 };
 
 export default SideBarOption;

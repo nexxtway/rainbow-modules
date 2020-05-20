@@ -7,26 +7,12 @@ import StyledContainer from './styled';
 const SideBarNavigation = (props) => {
     const { className, style, children } = props;
     const location = useLocation();
-    const routes = [];
-    const arrayChildren = React.Children.toArray(children);
-    arrayChildren.forEach((element, index) => {
-        if (element.props.path) {
-            routes.push({
-                path: element.props.path,
-                name: element.props.name,
-                exact: element.props.exact,
-            });
-
-            if (element.props.exact && element.props.path === location.pathname) {
-                arrayChildren[index] = React.cloneElement(element, {
-                    isSelected: true,
-                });
-            } else if (!element.props.exact && location.pathname.startsWith(element.props.path)) {
-                arrayChildren[index] = React.cloneElement(element, {
-                    isSelected: true,
-                });
-            }
-        }
+    const routes = React.Children.map(children, (element) => {
+        return {
+            path: element.props.path,
+            name: element.props.name,
+            exact: element.props.exact,
+        };
     });
     const currentRoute = routes.find((route) => {
         if (route.exact) {
@@ -38,7 +24,7 @@ const SideBarNavigation = (props) => {
 
     return (
         <StyledContainer className={className} style={style}>
-            <Sidebar selectedItem={selectedItem}>{arrayChildren}</Sidebar>
+            <Sidebar selectedItem={selectedItem}>{children}</Sidebar>
         </StyledContainer>
     );
 };
