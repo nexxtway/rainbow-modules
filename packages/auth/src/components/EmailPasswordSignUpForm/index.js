@@ -1,21 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage, useIntl } from 'react-intl';
+import { useIntl } from 'react-intl';
 import { showAppMessage, showAppSpinner, hideAppSpinner } from '../../../../app/src/actions';
 import useFirebaseApp from '../../../../firebase-hooks/src/useFirebaseApp';
 import { nameIcon, emailIcon, passwordIcon } from './icons';
 import { StyledInput, StyledButton } from './styled';
-
-const nameLabel = <FormattedMessage id="EmailPasswordSignUpForm.name" defaultMessage="Name" />;
-const emailLabel = (
-    <FormattedMessage id="EmailPasswordSignUpForm.email" defaultMessage="Email Address" />
-);
-const passwordLabel = (
-    <FormattedMessage id="EmailPasswordSignUpForm.password" defaultMessage="Password" />
-);
-const buttonLabel = (
-    <FormattedMessage id="EmailPasswordSignUpForm.signup" defaultMessage="Create account" />
-);
+import { nameLabel, emailLabel, passwordLabel, buttonLabel } from './labels';
 
 const EmailPasswordSignUpForm = (props) => {
     const intl = useIntl();
