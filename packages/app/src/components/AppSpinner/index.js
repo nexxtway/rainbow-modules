@@ -17,6 +17,7 @@ const SpinnerContainer = styled.div`
     height: 100%;
     opacity: 0.7;
     background-color: black;
+    z-index: 1000000;
 `;
 
 const AppSpinner = (props) => {
