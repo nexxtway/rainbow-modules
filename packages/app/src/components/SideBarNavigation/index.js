@@ -16,9 +16,7 @@ const SideBarNavigation = (props) => {
     });
     const currentRoute = routes.find((route) => {
         const match = matchPath(location.pathname, route);
-        if (match) {
-            return route;
-        }
+        return match;
     });
     const selectedItem = currentRoute ? currentRoute.name : '';
 
