@@ -6,6 +6,7 @@ import useFirebaseApp from '../../../../firebase-hooks/src/useFirebaseApp';
 import { nameIcon, emailIcon, passwordIcon } from './icons';
 import { StyledInput, StyledButton } from './styled';
 import { nameLabel, emailLabel, passwordLabel, buttonLabel } from './labels';
+import messages from './messages';
 
 const EmailPasswordSignUpForm = (props) => {
     const intl = useIntl();
@@ -15,18 +16,9 @@ const EmailPasswordSignUpForm = (props) => {
     const [password, setPassword] = useState('');
     const app = useFirebaseApp();
 
-    const namePlaceholder = intl.formatMessage({
-        id: 'EmailPasswordSignUpForm.namePlaceholder',
-        defaultMessage: 'Enter your name',
-    });
-    const emailPlaceholder = intl.formatMessage({
-        id: 'EmailPasswordSignUpForm.emailPlaceholder',
-        defaultMessage: 'Enter your email',
-    });
-    const passwordPlaceholder = intl.formatMessage({
-        id: 'EmailPasswordSignUpForm.passwordPlaceholder',
-        defaultMessage: 'Enter your password',
-    });
+    const namePlaceholder = intl.formatMessage(messages.namePlaceholder);
+    const emailPlaceholder = intl.formatMessage(messages.emailPlaceholder);
+    const passwordPlaceholder = intl.formatMessage(messages.passwordPlaceholder);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
