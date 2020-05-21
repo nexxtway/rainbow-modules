@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Sidebar } from 'react-rainbow-components';
-import { useLocation } from 'react-router-dom';
+import { useLocation, matchPath } from 'react-router-dom';
 import StyledContainer from './styled';
 
 const SideBarNavigation = (props) => {
@@ -15,10 +15,10 @@ const SideBarNavigation = (props) => {
         };
     });
     const currentRoute = routes.find((route) => {
-        if (route.exact) {
-            return route.path === location.pathname;
+        const match = matchPath(location.pathname, route);
+        if (match) {
+            return route;
         }
-        return location.pathname.startsWith(route.path);
     });
     const selectedItem = currentRoute ? currentRoute.name : '';
 
