@@ -16,6 +16,12 @@ actions.showAppSpinner = jest.fn();
 actions.hideAppSpinner = jest.fn();
 
 describe('<EmailPasswordSignUpForm />', () => {
+    beforeEach(() => {
+        actions.showAppMessage.mockClear();
+        actions.showAppSpinner.mockClear();
+        actions.hideAppSpinner.mockClear();
+    });
+
     it('should render a form with name, email and password fields', () => {
         const component = mountWithIntl(<EmailPasswordSignUpForm />);
         expect(component.find('form').exists()).toBe(true);
