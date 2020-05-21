@@ -1,0 +1,55 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import {
+    HomeBorder,
+    HomeFilled,
+    ExportBorder,
+    ExportFilled,
+    MoneyBorder,
+    MoneyFilled,
+} from '@rainbow-modules/icons';
+import RainbowFirebaseApp from '../../src/components/App';
+import SideBarNavigation from '../../src/components/SideBarNavigation';
+import SideBarOption from '../../src/components/SideBarOption';
+import * as stories from '../stories/sideBarNavigation.story.js';
+
+<Meta title="App/Components" component={SideBarNavigation} />
+
+# Overview
+
+`SideBarNavigation` component provides a sidebar for the application. It integrates with
+react-router to ease navigation.
+
+<Preview>
+    <Story name="SideBarNavigation">
+        <RainbowFirebaseApp>
+            <SideBarNavigation className="rainbow-p-top_small rainbow-p-bottom_medium">
+                <SideBarOption
+                    icon={<HomeBorder />}
+                    selectedIcon={<HomeFilled />}
+                    name="Home"
+                    label="Home"
+                    path="/"
+                    exact
+                />
+                <SideBarOption
+                    icon={<ExportBorder />}
+                    selectedIcon={<ExportFilled />}
+                    name="Export"
+                    label="Export"
+                    path="/export"
+                />
+                <SideBarOption
+                    icon={<MoneyBorder />}
+                    selectedIcon={<MoneyFilled />}
+                    name="Billing"
+                    label="Billing"
+                    path="/billing"
+                />
+            </SideBarNavigation>
+        </RainbowFirebaseApp>
+    </Story>
+</Preview>
+
+# Component props
+
+<Props of={SideBarNavigation} />
