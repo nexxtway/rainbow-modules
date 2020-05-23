@@ -19,6 +19,7 @@
     "devDependencies": {
         "@babel/cli": "^7.8.4",
         "@babel/core": "^7.9.0",
+        "@babel/plugin-transform-modules-commonjs": "^7.9.6",
         "@babel/plugin-transform-runtime": "^7.9.0",
         "@babel/preset-env": "^7.9.5",
         "@babel/preset-react": "^7.9.4",
@@ -72,7 +73,7 @@
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-intl": "^4.4.0",
-        "react-rainbow-components": "^1.14.1",
+        "react-rainbow-components": "1.15.0-canary.18a894f",
         "react-redux": "^7.2.0",
         "redux": "^4.0.5",
         "redux-form": "^8.3.5",
