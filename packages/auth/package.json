@@ -1,12 +1,12 @@
 {
     "name": "@rainbow-modules/auth",
-    "version": "0.0.9",
+    "version": "0.0.10",
     "main": "lib/index.js",
     "author": "Nexxtway Team",
     "license": "MIT",
     "dependencies": {
-        "@rainbow-modules/app": "^0.0.9",
-        "@rainbow-modules/firebase-hooks": "^0.0.4",
+        "@rainbow-modules/app": "^0.0.10",
+        "@rainbow-modules/firebase-hooks": "^0.0.5",
         "react-router-dom": "^5.1.2"
     },
     "publishConfig": {
