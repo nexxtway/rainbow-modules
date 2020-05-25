@@ -1,6 +1,6 @@
 {
     "name": "@rainbow-modules/icons",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "main": "lib/index.js",
     "author": "Nexxtway Team",
     "license": "MIT",
