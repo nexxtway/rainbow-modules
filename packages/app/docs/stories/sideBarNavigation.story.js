@@ -12,7 +12,7 @@ import {
 import RainbowFirebaseApp from '../../src/components/App';
 import SideBarNavigation from '../../src/components/SideBarNavigation';
 import SideBarOption from '../../src/components/SideBarOption';
-import RainbowLogo from './icons/rainbowLogo';
+import { RainbowLogo } from '../../../icons/src';
 
 export default {
     title: 'App/Stories/SideBarNavigation',
