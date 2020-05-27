@@ -18,18 +18,11 @@ describe('EmailPasswordSignInForm', () => {
             [],
         ).as('firebaseSignIn');
     });
-
-    it('should request verify password endpoint', () => {
-        cy.get(EMAIL_INPUT).type('test@email.com');
-        cy.get(PASSWORD_INPUT).type('TestPassword');
-        cy.get(BUTTON).click();
-        cy.wait('@firebaseSignIn');
-    });
-
-    it('should show spinner while loading', () => {
+    it('should request create user endpoint and show spinner while loading', () => {
         cy.get(EMAIL_INPUT).type('test@email.com');
         cy.get(PASSWORD_INPUT).type('TestPassword');
         cy.get(BUTTON).click();
         cy.get(SPINNER_BACKDROP).should('exist');
+        cy.wait('@firebaseSignIn');
     });
 });

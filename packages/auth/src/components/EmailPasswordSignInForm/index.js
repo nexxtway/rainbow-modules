@@ -1,34 +1,22 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage, useIntl } from 'react-intl';
-import { Input, Button } from 'react-rainbow-components';
+import { useIntl } from 'react-intl';
 import { showAppMessage, showAppSpinner, hideAppSpinner } from '@rainbow-modules/app';
 import { useFirebaseApp } from '@rainbow-modules/firebase-hooks';
-import StyledContainer from './styled/container';
+import { emailIcon, passwordIcon } from './icons';
+import { emailLabel, passwordLabel, buttonLabel } from './labels';
+import messages from './messages';
+import { StyledInput, StyledButton } from './styled';
 
 export default function EmailPasswordSignInForm(props) {
-    const { className, style, emailIcon, passwordIcon } = props;
+    const { className, style } = props;
     const intl = useIntl();
-    const app = useFirebaseApp();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const app = useFirebaseApp();
 
-    const emailLabel = (
-        <FormattedMessage defaultMessage="Email Address" id="EmailPasswordSignInForm.email" />
-    );
-
-    const passwordLabel = (
-        <FormattedMessage defaultMessage="Password" id="EmailPasswordSignInForm.password" />
-    );
-
-    const emailPlaceholder = intl.formatMessage({
-        id: 'EmailPasswordSignInForm.emailPlaceholder',
-        defaultMessage: 'Enter your email',
-    });
-    const passwordPlaceholder = intl.formatMessage({
-        id: 'EmailPasswordSignInForm.passwordPlaceholder',
-        defaultMessage: 'Enter your password',
-    });
+    const emailPlaceholder = intl.formatMessage(messages.emailPlaceholder);
+    const passwordPlaceholder = intl.formatMessage(messages.passwordPlaceholder);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -46,8 +34,8 @@ export default function EmailPasswordSignInForm(props) {
     };
 
     return (
-        <StyledContainer className={className} style={style} onSubmit={handleSubmit}>
-            <Input
+        <form className={className} style={style} onSubmit={handleSubmit} noValidate>
+            <StyledInput
                 required
                 label={emailLabel}
                 placeholder={emailPlaceholder}
@@ -57,7 +45,7 @@ export default function EmailPasswordSignInForm(props) {
                 value={email}
                 onChange={({ target: { value } }) => setEmail(value)}
             />
-            <Input
+            <StyledInput
                 required
                 label={passwordLabel}
                 placeholder={passwordPlaceholder}
@@ -67,14 +55,8 @@ export default function EmailPasswordSignInForm(props) {
                 value={password}
                 onChange={({ target: { value } }) => setPassword(value)}
             />
-            <Button
-                type="submit"
-                variant="brand"
-                label={
-                    <FormattedMessage defaultMessage="Login" id="EmailPasswordSignInForm.login" />
-                }
-            />
-        </StyledContainer>
+            <StyledButton type="submit" variant="brand" label={buttonLabel} />
+        </form>
     );
 }
 
@@ -83,15 +65,9 @@ EmailPasswordSignInForm.propTypes = {
     className: PropTypes.string,
     /** An object with custom style applied to the outer element. */
     style: PropTypes.object,
-    /** The icon to how in the email input. It must be a svg icon or a font icon. */
-    emailIcon: PropTypes.node,
-    /** The icon to how in the password input. It must be a svg icon or a font icon. */
-    passwordIcon: PropTypes.node,
 };
 
 EmailPasswordSignInForm.defaultProps = {
     className: undefined,
     style: undefined,
-    emailIcon: undefined,
-    passwordIcon: undefined,
 };
