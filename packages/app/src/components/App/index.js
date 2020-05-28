@@ -8,6 +8,7 @@ import I18nContainer from '../I18nContainer';
 import AppSpinner from '../AppSpinner';
 import AppMessage from '../AppMessage';
 import { updateAppActions } from '../../actions';
+import getBrowserLocale from '../../helpers/getBrowserLocale';
 
 const RainbowFirebaseApp = (props) => {
     const { app, theme, locale, translations, children, reducers } = props;
@@ -15,6 +16,7 @@ const RainbowFirebaseApp = (props) => {
     const [isLoading, setLoading] = useState(false);
     const [isMessageVisible, setIsMessageVisible] = useState(false);
     const [messageParams, setMessageParams] = useState({});
+    const applicationLocale = locale || getBrowserLocale();
 
     useEffect(() => {
         updateAppActions({
@@ -27,8 +29,11 @@ const RainbowFirebaseApp = (props) => {
     return (
         <ReduxContainer reducers={reducers}>
             <FirebaseProvider value={firebaseContext}>
-                <I18nContainer locale={locale} messages={translations[locale]}>
-                    <Application theme={theme} locale={locale}>
+                <I18nContainer
+                    locale={applicationLocale}
+                    messages={translations[applicationLocale]}
+                >
+                    <Application theme={theme} locale={applicationLocale}>
                         <BrowserRouter>{children}</BrowserRouter>
                         <AppSpinner isLoading={isLoading} />
                         <AppMessage
