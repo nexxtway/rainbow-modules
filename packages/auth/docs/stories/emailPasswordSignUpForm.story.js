@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import { Button, Card } from 'react-rainbow-components';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
 import app from '../../../../firebase';
@@ -7,28 +8,38 @@ import WhenNoAuthenticated from '../../src/components/WhenNoAuthenticated';
 import EmailPasswordSignUpForm from '../../src/components/EmailPasswordSignUpForm';
 import RainbowLogo from './icons/rainbowLogo';
 
-export default {
-    title: 'Auth/Stories',
-};
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    padding: 2rem;
+`;
+
+const Title = styled.h1.attrs((props) => props.theme.rainbow)`
+    font-family: Lato Light, sans-serif !important;
+    color: ${(props) => props.palette.text.title};
+    font-size: 1.5rem;
+    margin: 1rem auto;
+    font-weight: normal;
+`;
 
 const style = {
-    margin: 'auto',
-    maxWidth: '400px',
+    width: '400px',
 };
-const logoStyle = { textAlign: 'center' };
-const logoTextStyle = { fontSize: '1.8em' };
 
 export const basicEmailPasswordSignUpForm = () => {
     return (
         <RainbowFirebaseApp app={app}>
             <WhenNoAuthenticated path="/" redirect="/app">
-                <div className="rainbow-p-around_large" style={logoStyle}>
+                <Container>
                     <RainbowLogo />
-                    <h3 style={logoTextStyle}>rainbow-modules</h3>
-                </div>
-                <Card className="rainbow-p-around_large" style={style}>
-                    <EmailPasswordSignUpForm />
-                </Card>
+                    <Title>rainbow-modules</Title>
+                    <Card className="rainbow-p-around_large" style={style}>
+                        <EmailPasswordSignUpForm />
+                    </Card>
+                </Container>
             </WhenNoAuthenticated>
             <WhenAuthenticated path="/app" redirect="/">
                 <span>Authenticated!</span>
@@ -36,4 +47,8 @@ export const basicEmailPasswordSignUpForm = () => {
             </WhenAuthenticated>
         </RainbowFirebaseApp>
     );
+};
+
+export default {
+    title: 'Auth/Stories',
 };

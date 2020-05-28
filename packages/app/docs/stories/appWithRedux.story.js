@@ -1,13 +1,46 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { Button } from 'react-rainbow-components';
+import styled from 'styled-components';
+import { ButtonIcon } from 'react-rainbow-components';
 import { useDispatch, useSelector } from 'react-redux';
 import app from '../../../../firebase';
 import RainbowFirebaseApp from '../../src/components/App';
+import ArrowUp from './icons/arrowUp';
 
-const stories = storiesOf('App/Stories/Redux', module);
+const Container = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 72px;
+`;
 
-stories.add('increase a counter', () => {
+const CounterContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    width: 240px;
+    height: 240px;
+    box-shadow: 0 0 22px 0 rgba(170, 174, 178, 0.3);
+    margin: 16px;
+    border-radius: 4px;
+`;
+
+const Counter = styled.h1`
+    font-size: 106px;
+    color: #3e3e3c;
+    font-weight: 900;
+    margin-top: 20px;
+`;
+
+const Description = styled.h2`
+    font-size: 16px;
+    color: #576574;
+    margin-top: 12px;
+`;
+
+export const increaseCounter = () => {
     const init = { count: 0 };
     const counterReducer = (state = init, action) => {
         switch (action.type) {
@@ -24,13 +57,17 @@ stories.add('increase a counter', () => {
         const dispatch = useDispatch();
         const count = useSelector((state) => state.counterReducer.count);
         return (
-            <div>
-                <Button label="Increase counter!" onClick={() => dispatch({ type: 'INCREASE' })} />
-                <h1>
-                    Count:
-                    {count}
-                </h1>
-            </div>
+            <Container>
+                <CounterContainer>
+                    <Counter>{count}</Counter>
+                    <Description>Counter</Description>
+                </CounterContainer>
+                <ButtonIcon
+                    onClick={() => dispatch({ type: 'INCREASE' })}
+                    icon={<ArrowUp />}
+                    variant="neutral"
+                />
+            </Container>
         );
     };
 
@@ -39,4 +76,9 @@ stories.add('increase a counter', () => {
             <Content />
         </RainbowFirebaseApp>
     );
-});
+};
+
+export default {
+    title: 'App/Stories',
+    component: RainbowFirebaseApp,
+};
