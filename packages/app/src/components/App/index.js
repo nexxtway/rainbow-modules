@@ -8,7 +8,7 @@ import I18nContainer from '../I18nContainer';
 import AppSpinner from '../AppSpinner';
 import AppMessage from '../AppMessage';
 import { updateAppActions } from '../../actions';
-import { getBrowserLocale } from '../../helpers';
+import getBrowserLocale from '../../helpers/getBrowserLocale';
 
 const RainbowFirebaseApp = (props) => {
     const { app, theme, locale, translations, children, reducers } = props;
