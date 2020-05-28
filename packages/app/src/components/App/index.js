@@ -36,7 +36,7 @@ const RainbowFirebaseApp = (props) => {
             setIsInitializing(false);
         }
         initializeApp();
-    }, [initialize]);
+    }, []);
 
     return (
         <ReduxContainer reducers={reducers}>
@@ -73,7 +73,7 @@ RainbowFirebaseApp.propTypes = {
     translations: PropTypes.object,
     /** Object with your application Redux reducers. */
     reducers: PropTypes.object,
-    /** A funtion to initialize the app. AppSpiner will be visible while this function is running. */
+    /** An async function to initialize the app. AppSpiner will be visible while this function is running. */
     initialize: PropTypes.func,
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
 };
@@ -84,7 +84,7 @@ RainbowFirebaseApp.defaultProps = {
     translations: {},
     children: null,
     reducers: {},
-    initialize: () => {},
+    initialize: undefined,
 };
 
 export default RainbowFirebaseApp;
