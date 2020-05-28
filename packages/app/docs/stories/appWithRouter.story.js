@@ -1,37 +1,69 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import styled from 'styled-components';
 import { Switch, Route, Link } from 'react-router-dom';
 import app from '../../../../firebase';
 import RainbowFirebaseApp from '../../src/components/App';
+import RainbowLogo from './icons/rainbowLogo';
 
-const stories = storiesOf('App/Stories/Router', module);
+const Navigation = styled.nav`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 12px 32px;
+    box-shadow: 0 1px 0 0 #e3e5ed;
+`;
 
-stories.add('basic router', () => {
+const Logo = styled(RainbowLogo)`
+    width: 40px;
+    height: 40px;
+`;
+
+const Li = styled.li`
+    font-size: 16px;
+    margin: 0 12px;
+`;
+
+const Container = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    font-size: 20px;
+`;
+
+export const basicRouter = () => {
     return (
         <RainbowFirebaseApp app={app}>
-            <div>
-                <ul>
-                    <li>
+            <Navigation>
+                <Logo />
+                <ul className="rainbow-flex">
+                    <Li>
                         <Link to="/">Home</Link>
-                    </li>
-                    <li>
+                    </Li>
+                    <Li>
                         <Link to="/about">About</Link>
-                    </li>
-                    <li>
-                        <Link to="/dashboard">Dashboard</Link>
-                    </li>
+                    </Li>
+                    <Li>
+                        <Link to="/dashboard">Contact us</Link>
+                    </Li>
                 </ul>
+            </Navigation>
 
-                <hr />
-
-                <Switch>
+            <Switch>
+                <Container>
                     <Route exact path="/">
                         Home page
                     </Route>
                     <Route path="/about">About page</Route>
-                    <Route path="/dashboard">Dashboard</Route>
-                </Switch>
-            </div>
+                    <Route path="/dashboard">Contact us</Route>
+                </Container>
+            </Switch>
         </RainbowFirebaseApp>
     );
-});
+};
+
+export default {
+    title: 'App/Stories',
+    component: RainbowFirebaseApp,
+};

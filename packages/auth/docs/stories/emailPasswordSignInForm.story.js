@@ -1,19 +1,22 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Button, Card } from 'react-rainbow-components';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
+import styled from 'styled-components';
+import { Card, Button } from 'react-rainbow-components';
+import {
+    EmailPasswordSignInForm,
+    WhenAuthenticated,
+    WhenNoAuthenticated,
+} from '@rainbow-modules/auth';
 import app from '../../../../firebase';
-import WhenAuthenticated from '../../src/components/WhenAuthenticated';
-import WhenNoAuthenticated from '../../src/components/WhenNoAuthenticated';
-import EmailPasswordSignUpForm from '../../src/components/EmailPasswordSignUpForm';
 import RainbowLogo from './icons/rainbowLogo';
 
-const Container = styled.div`
+const Container = styled.div.attrs((props) => props.theme.rainbow)`
     display: flex;
     flex-direction: column;
     align-items: center;
     align-content: center;
     justify-content: center;
+    background: ${(props) => props.palette.background.secondary};
     padding: 2rem;
 `;
 
@@ -25,20 +28,21 @@ const Title = styled.h1.attrs((props) => props.theme.rainbow)`
     font-weight: normal;
 `;
 
-const style = {
-    width: '400px',
-};
+const StyledCard = styled(Card)`
+    padding: 1.5rem;
+    width: 400px;
+`;
 
-export const basicEmailPasswordSignUpForm = () => {
+export const basicEmailPasswordSignInForm = () => {
     return (
         <RainbowFirebaseApp app={app}>
             <WhenNoAuthenticated path="/" redirect="/app">
                 <Container>
                     <RainbowLogo />
                     <Title>rainbow-modules</Title>
-                    <Card className="rainbow-p-around_large" style={style}>
-                        <EmailPasswordSignUpForm />
-                    </Card>
+                    <StyledCard>
+                        <EmailPasswordSignInForm />
+                    </StyledCard>
                 </Container>
             </WhenNoAuthenticated>
             <WhenAuthenticated path="/app" redirect="/">
@@ -51,4 +55,5 @@ export const basicEmailPasswordSignUpForm = () => {
 
 export default {
     title: 'Auth/Stories',
+    component: 'EmailPasswordSignInForm',
 };
