@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Sidebar } from 'react-rainbow-components';
 import { useLocation, matchPath } from 'react-router-dom';
-import StyledContainer from './styled';
 
 const SideBarNavigation = (props) => {
     const { className, style, children } = props;
@@ -21,9 +20,9 @@ const SideBarNavigation = (props) => {
     const selectedItem = currentRoute ? currentRoute.name : '';
 
     return (
-        <StyledContainer className={className} style={style}>
-            <Sidebar selectedItem={selectedItem}>{children}</Sidebar>
-        </StyledContainer>
+        <Sidebar className={className} style={style} selectedItem={selectedItem}>
+            {children}
+        </Sidebar>
     );
 };
 

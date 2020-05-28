@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import ReactJson from 'react-json-view';
 import { useCollectionOnce } from '@rainbow-modules/firebase-hooks';
 import app from '../../../../firebase';
@@ -10,12 +9,15 @@ const Books = () => {
     return <ReactJson src={books} />;
 };
 
-const stories = storiesOf('App/Stories/Hooks', module);
-
-stories.add('useCollectionOnce', () => {
+export const appFirebaseHooks = () => {
     return (
         <RainbowFirebaseApp app={app}>
             <Books />
         </RainbowFirebaseApp>
     );
-});
+};
+
+export default {
+    title: 'App/Stories',
+    component: RainbowFirebaseApp,
+};
