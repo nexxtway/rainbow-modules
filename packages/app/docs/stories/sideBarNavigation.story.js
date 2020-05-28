@@ -14,14 +14,19 @@ import SideBarNavigation from '../../src/components/SideBarNavigation';
 import SideBarOption from '../../src/components/SideBarOption';
 import RainbowLogo from './icons/rainbowLogo';
 
-export default {
-    title: 'App/Stories/SideBarNavigation',
-    component: SideBarNavigation,
-};
-
 const AppContainer = styled.div`
     height: 100%;
     display: flex;
+    padding: 16px;
+`;
+
+const Bar = styled(SideBarNavigation)`
+    height: 100%;
+    width: 92px;
+    padding: 20px 0 80px 0;
+    background: white;
+    border-radius: 20px;
+    color: #01b6f5;
 `;
 
 const StyledIcon = styled.div`
@@ -30,11 +35,19 @@ const StyledIcon = styled.div`
     margin-bottom: 30px;
 `;
 
+const Content = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+`;
+
 export const sideBarNavigation = () => {
     return (
         <RainbowFirebaseApp>
             <AppContainer>
-                <SideBarNavigation className="rainbow-p-top_small rainbow-p-bottom_medium">
+                <Bar>
                     <StyledIcon>
                         <RainbowLogo />
                     </StyledIcon>
@@ -62,17 +75,24 @@ export const sideBarNavigation = () => {
                         label="Billing"
                         path="/billing"
                     />
-                </SideBarNavigation>
+                </Bar>
                 <Switch>
                     <Route exact path="/">
-                        Home page
+                        <Content>Home page</Content>
                     </Route>
-                    <Route path="/export">Export page</Route>
+                    <Route path="/export">
+                        <Content>Export page </Content>
+                    </Route>
                     <Route path="/billing" exact>
-                        Billing page
+                        <Content>Billing page</Content>
                     </Route>
                 </Switch>
             </AppContainer>
         </RainbowFirebaseApp>
     );
+};
+
+export default {
+    title: 'App/Stories',
+    component: SideBarNavigation,
 };
