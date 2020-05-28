@@ -1,4 +1,4 @@
-const SIDEBAR_NAVIGATION_URL = '/iframe.html?id=app-stories-sidebarnavigation--side-bar-navigation';
+const SIDEBAR_NAVIGATION_URL = '/iframe.html?id=app-stories--side-bar-navigation';
 const NAVIGATION_ITEM = '[data-id="sidebar-item-clickable-element"]';
 
 describe('SideBarNavigation', () => {

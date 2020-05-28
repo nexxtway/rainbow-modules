@@ -1,6 +1,6 @@
 const BUTTON = 'button[id="spinner-button"]';
 const SPINNER_BACKDROP = '[data-cy="app-spinner"]';
-const APP_SPINNER_URL = '/iframe.html?id=app-stories-spinner--show-spinner-for-3s';
+const APP_SPINNER_URL = '/iframe.html?id=app-stories--spinner';
 
 describe('App Spinner', () => {
     beforeEach(() => {
