@@ -89,7 +89,7 @@ export const showAppLevelMessageTimeout3s = () => {
                 <ContentCard>
                     <Title>Awesome!</Title>
                     <Description>
-                        Congratulations, you're ready to proceed using rainbow-modules.
+                        Congratulations, you are ready to proceed using rainbow-modules.
                     </Description>
                     <Button label="Done" onClick={showMessage} variant="success" />
                 </ContentCard>
