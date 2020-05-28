@@ -1,0 +1,1 @@
+export { default as getBrowserLocale } from './getBrowserLocale';
