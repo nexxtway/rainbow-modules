@@ -35,7 +35,7 @@ const Content = ({ handleSubmit }) => {
     return (
         <ContainerCard>
             <FormContainer onSubmit={handleSubmit(onSubmit)}>
-                <Title>We'd love to hear from you</Title>
+                <Title>We had love to hear from you</Title>
                 <Field
                     className="rainbow-m-bottom_medium"
                     component={Input}
