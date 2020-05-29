@@ -30,11 +30,16 @@ const Container = styled.div`
     margin: auto;
 `;
 
-const Title = styled.h1`
+const Logo = styled(RainbowLogo)`
+    width: 68px;
+    height: 68px;
+`;
+
+const Title = styled.h1.attrs((props) => props.theme.rainbow)`
     font-size: 24px;
     font-weight: 100;
     text-align: center;
-    color: #576574;
+    color: ${(props) => props.palette.text.title};
     margin: 16px 0;
 `;
 
@@ -44,7 +49,7 @@ export const Internationalizations = () => {
     return (
         <RainbowFirebaseApp app={app} translations={translations} locale={locale}>
             <Container>
-                <RainbowLogo />
+                <Logo />
                 <Title>
                     <FormattedMessage
                         defaultMessage="Internationalize your web apps"

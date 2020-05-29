@@ -27,16 +27,16 @@ const CounterContainer = styled.div`
     border-radius: 4px;
 `;
 
-const Counter = styled.h1`
+const Counter = styled.h1.attrs((props) => props.theme.rainbow)`
     font-size: 106px;
-    color: #3e3e3c;
+    color: ${(props) => props.palette.text.main};
     font-weight: 900;
     margin-top: 20px;
 `;
 
-const Description = styled.h2`
+const Description = styled.h2.attrs((props) => props.theme.rainbow)`
     font-size: 16px;
-    color: #576574;
+    color: ${(props) => props.palette.text.header};
     margin-top: 12px;
 `;
 

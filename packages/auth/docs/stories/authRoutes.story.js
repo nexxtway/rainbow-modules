@@ -18,7 +18,6 @@ const Container = styled.div.attrs((props) => props.theme.rainbow)`
 `;
 
 const Title = styled.h1.attrs((props) => props.theme.rainbow)`
-    font-family: Lato Light, sans-serif !important;
     color: ${(props) => props.palette.text.title};
     font-size: 1.5rem;
     margin: 1rem auto;

@@ -25,9 +25,10 @@ const Title = styled.h1.attrs((props) => props.theme.rainbow)`
     font-weight: normal;
 `;
 
-const style = {
-    width: '400px',
-};
+const StyledCard = styled(Card)`
+    width: 400px;
+    padding: 1.5rem;
+`;
 
 export const basicEmailPasswordSignUpForm = () => {
     return (
@@ -36,9 +37,9 @@ export const basicEmailPasswordSignUpForm = () => {
                 <Container>
                     <RainbowLogo />
                     <Title>rainbow-modules</Title>
-                    <Card className="rainbow-p-around_large" style={style}>
+                    <StyledCard>
                         <EmailPasswordSignUpForm />
-                    </Card>
+                    </StyledCard>
                 </Container>
             </WhenNoAuthenticated>
             <WhenAuthenticated path="/app" redirect="/">
