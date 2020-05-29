@@ -33,19 +33,19 @@ const ContentCard = styled(Card)`
     width: 400px;
 `;
 
-const Title = styled.h1`
+const Title = styled.h1.attrs((props) => props.theme.rainbow)`
     font-size: 32px;
     font-weight: 100;
     text-align: center;
-    color: #576574;
+    color: ${(props) => props.palette.text.title};
     margin: 8px 0;
 `;
 
-const Description = styled.p`
+const Description = styled.p.attrs((props) => props.theme.rainbow)`
     font-size: 18px;
     font-weight: 400;
     text-align: center;
-    color: #576574;
+    color: ${(props) => props.palette.text.title};
     margin-bottom: 20px;
 `;
 

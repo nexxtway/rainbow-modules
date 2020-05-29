@@ -14,17 +14,18 @@ const ContainerCard = styled(Card)`
     width: 40%;
 `;
 
-const Title = styled.h1`
+const Title = styled.h1.attrs((props) => props.theme.rainbow)`
     font-size: 24px;
-    margin: 8px 0 24px 0;
+    margin: 8px 0 16px 0;
     text-align: center;
+    color: ${(props) => props.palette.text.main};
 `;
 
 const FormContainer = styled.form`
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 32px 40px;
+    padding: 32px 40px 16px 40px;
 `;
 
 const Content = ({ handleSubmit }) => {
@@ -42,6 +43,7 @@ const Content = ({ handleSubmit }) => {
                     name="name"
                     label="Name"
                     required
+                    placeholder="Enter your name"
                 />
                 <Field
                     className="rainbow-m-bottom_medium"
@@ -49,6 +51,7 @@ const Content = ({ handleSubmit }) => {
                     name="email"
                     label="Email Address"
                     required
+                    placeholder="Enter your email address"
                 />
                 <Field
                     className="rainbow-m-bottom_medium"
@@ -56,6 +59,7 @@ const Content = ({ handleSubmit }) => {
                     name="message"
                     label="Message"
                     required
+                    placeholder="Type your message"
                 />
                 <Button
                     className="rainbow-m-bottom_medium rainbow-m-top_medium"
