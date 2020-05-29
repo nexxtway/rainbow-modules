@@ -1,12 +1,31 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { Input, Button } from 'react-rainbow-components';
+import styled from 'styled-components';
+import { Input, Button, Textarea, Card } from 'react-rainbow-components';
 import { Field, reduxForm } from 'redux-form';
 import RainbowFirebaseApp from '../../src/components/App';
 import app from '../../../../firebase';
 
-const stories = storiesOf('App/Stories/ReduxForm', module);
+const ContainerCard = styled(Card)`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 24px auto;
+    width: 40%;
+`;
+
+const Title = styled.h1`
+    font-size: 24px;
+    margin: 8px 0 24px 0;
+    text-align: center;
+`;
+
+const FormContainer = styled.form`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 40px;
+`;
 
 const Content = ({ handleSubmit }) => {
     const onSubmit = (values) => {
@@ -14,10 +33,38 @@ const Content = ({ handleSubmit }) => {
         alert(`submitting ${JSON.stringify(values)}`);
     };
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <Field component={Input} name="name" />
-            <Button label="Submit" type="submit" />
-        </form>
+        <ContainerCard>
+            <FormContainer onSubmit={handleSubmit(onSubmit)}>
+                <Title>We had love to hear from you</Title>
+                <Field
+                    className="rainbow-m-bottom_medium"
+                    component={Input}
+                    name="name"
+                    label="Name"
+                    required
+                />
+                <Field
+                    className="rainbow-m-bottom_medium"
+                    component={Input}
+                    name="email"
+                    label="Email Address"
+                    required
+                />
+                <Field
+                    className="rainbow-m-bottom_medium"
+                    component={Textarea}
+                    name="message"
+                    label="Message"
+                    required
+                />
+                <Button
+                    className="rainbow-m-bottom_medium rainbow-m-top_medium"
+                    label="Send"
+                    type="submit"
+                    variant="brand"
+                />
+            </FormContainer>
+        </ContainerCard>
     );
 };
 
@@ -33,10 +80,15 @@ const Form = reduxForm({
     form: 'appWithReduxForm',
 })(Content);
 
-stories.add('simple form validation', () => {
+export const simpleFormValidation = () => {
     return (
         <RainbowFirebaseApp app={app}>
             <Form />
         </RainbowFirebaseApp>
     );
-});
+};
+
+export default {
+    title: 'App/Stories',
+    component: RainbowFirebaseApp,
+};
