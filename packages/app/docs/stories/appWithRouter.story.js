@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Switch, Route, Link } from 'react-router-dom';
+import { RainbowLogo } from '@rainbow-modules/icons';
 import app from '../../../../firebase';
 import RainbowFirebaseApp from '../../src/components/App';
-import RainbowLogo from './icons/rainbowLogo';
 
 const Navigation = styled.nav`
     display: flex;

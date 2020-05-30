@@ -1,10 +1,10 @@
 import React from 'react';
 import { Button } from 'react-rainbow-components';
 import styled from 'styled-components';
+import { RainbowLogo } from '@rainbow-modules/icons';
 import app from '../../../../firebase';
 import RainbowFirebaseApp from '../../src/components/App';
 import { showAppSpinner, hideAppSpinner } from '../../src/actions';
-import RainbowLogo from './icons/rainbowLogo';
 
 const show = () => {
     showAppSpinner();

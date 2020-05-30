@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Select } from 'react-rainbow-components';
 import { FormattedMessage } from 'react-intl';
+import { RainbowLogo } from '@rainbow-modules/icons';
 import RainbowFirebaseApp from '../../src/components/App';
 import app from '../../../../firebase';
-import RainbowLogo from './icons/rainbowLogo';
 
 const translations = {
     en: {
