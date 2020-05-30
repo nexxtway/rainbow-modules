@@ -8,11 +8,11 @@ import {
     ExportFilled,
     MoneyBorder,
     MoneyFilled,
+    RainbowLogo,
 } from '@rainbow-modules/icons';
 import RainbowFirebaseApp from '../../src/components/App';
 import SideBarNavigation from '../../src/components/SideBarNavigation';
 import SideBarOption from '../../src/components/SideBarOption';
-import RainbowLogo from './icons/rainbowLogo';
 
 const AppContainer = styled.div`
     height: 100%;
