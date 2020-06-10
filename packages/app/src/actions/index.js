@@ -19,3 +19,20 @@ export const updateAppActions = (actions) => {
         ...actions,
     };
 };
+
+export const confirmModal = async (params) => {
+    return new Promise((resolve) => {
+        AppActions.setIsConfirmModalVisible(true);
+        AppActions.setConfirmModalParams({
+            ...params,
+            onConfirm: () => {
+                resolve(true);
+                AppActions.setIsConfirmModalVisible(false);
+            },
+            onCancel: () => {
+                resolve(false);
+                AppActions.setIsConfirmModalVisible(false);
+            },
+        });
+    });
+};
