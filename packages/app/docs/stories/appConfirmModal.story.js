@@ -36,6 +36,24 @@ export const showConfirmModalExample = () => {
     );
 };
 
+export const showYesNoModalExample = () => {
+    const handleClick = async () => {
+        const result = await confirmModal({
+            header: 'Do you want to continue?',
+            question: 'Your will loose all your data.',
+            okButtonLabel: 'Yes',
+            cancelButtonLabel: 'No',
+        });
+        // eslint-disable-next-line no-alert
+        if (result) alert('You clicked YES');
+    };
+    return (
+        <RainbowFirebaseApp>
+            <Button label="Continue" onClick={handleClick} />
+        </RainbowFirebaseApp>
+    );
+};
+
 export default {
     title: 'App/Stories/Modals',
     component: ConfirmModal,
