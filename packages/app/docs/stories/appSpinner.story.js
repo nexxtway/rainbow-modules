@@ -7,7 +7,10 @@ import RainbowFirebaseApp from '../../src/components/App';
 import { showAppSpinner, hideAppSpinner } from '../../src/actions';
 
 const show = () => {
-    showAppSpinner();
+    showAppSpinner({
+        size: 'large',
+        variant: 'brand',
+    });
     setTimeout(() => {
         hideAppSpinner();
     }, 3000);

@@ -1,7 +1,8 @@
 let AppActions = {};
 
-export const showAppSpinner = () => {
+export const showAppSpinner = (params) => {
     AppActions.setLoading(true);
+    AppActions.setSpinnerParams(params);
 };
 
 export const hideAppSpinner = () => {
