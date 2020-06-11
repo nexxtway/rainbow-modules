@@ -11,7 +11,6 @@ export const IconContainer = styled.div`
 `;
 
 export const Header = styled.div`
-    font-family: Lato;
     font-size: 22px;
     font-weight: 900;
     font-stretch: normal;
@@ -23,7 +22,6 @@ export const Header = styled.div`
 `;
 
 export const Question = styled.div`
-    font-family: Lato;
     font-size: 18px;
     font-weight: normal;
     font-stretch: normal;

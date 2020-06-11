@@ -46,11 +46,17 @@ const ConfirmModal = (props) => {
 ConfirmModal.propTypes = {
     /** @ignore */
     isOpen: PropTypes.bool,
+    /** The modal header. */
     header: PropTypes.string,
+    /** The modal prompt. */
     question: PropTypes.string,
+    /** The modal icon. */
     icon: PropTypes.node,
+    /** The label for OK button. */
     okButtonLabel: PropTypes.string,
+    /** The label for Cancel button. */
     cancelButtonLabel: PropTypes.string,
+    /** The modal variant. */
     variant: PropTypes.oneOf(['brand', 'success', 'warning', 'destructive']),
     /** @ignore */
     onCancel: PropTypes.func,

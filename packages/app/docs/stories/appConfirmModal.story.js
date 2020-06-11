@@ -1,7 +1,5 @@
 import React from 'react';
 import { Button } from 'react-rainbow-components';
-// import styled from 'styled-components';
-// import { RainbowLogo } from '@rainbow-modules/icons';
 import RainbowFirebaseApp from '../../src/components/App';
 import ConfirmModal from '../../src/components/ConfirmModal';
 import { confirmModal } from '../../src/actions';
@@ -23,10 +21,10 @@ export const showConfirmModalExample = () => {
     const handleClick = async () => {
         const result = await confirmModal({
             icon: <DeleteIcon />,
-            // variant: 'destructive',
+            variant: 'destructive',
             header: 'Are you sure you want delete this item?',
             question: "This item will be deleted immediately. You can't undo this action.",
-            // okButtonLabel: 'Delete',
+            okButtonLabel: 'Delete',
         });
         // eslint-disable-next-line no-alert
         if (result) alert('Item deleted.');
