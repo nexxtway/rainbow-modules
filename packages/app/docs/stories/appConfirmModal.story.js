@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from 'react-rainbow-components';
 import RainbowFirebaseApp from '../../src/components/App';
 import ConfirmModal from '../../src/components/ConfirmModal';
-import { confirmModal } from '../../src/actions';
+import { confirmModal, showAppMessage } from '../../src/actions';
 
 const DeleteIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
@@ -27,11 +27,15 @@ export const showConfirmModalExample = () => {
             okButtonLabel: 'Delete',
         });
         // eslint-disable-next-line no-alert
-        if (result) alert('Item deleted.');
+        if (result)
+            showAppMessage({
+                message: 'Item deleted successfully.',
+                variant: 'success',
+            });
     };
     return (
         <RainbowFirebaseApp>
-            <Button label="show confirm" onClick={handleClick} />
+            <Button label="Show confirm" onClick={handleClick} />
         </RainbowFirebaseApp>
     );
 };
@@ -45,7 +49,11 @@ export const showYesNoModalExample = () => {
             cancelButtonLabel: 'No',
         });
         // eslint-disable-next-line no-alert
-        if (result) alert('You clicked YES');
+        if (result)
+            showAppMessage({
+                message: 'You clicked YES.',
+                variant: 'success',
+            });
     };
     return (
         <RainbowFirebaseApp>
