@@ -9,18 +9,18 @@ describe('ConfirmModal', () => {
     });
 
     it('should open and close modal', () => {
-        cy.get(OPEN_MODAL_BUTTON).contains('Show confirm').click();
+        cy.get(OPEN_MODAL_BUTTON).contains('Show confirm modal').click();
         cy.get(MODAL).should('exist');
         cy.get(MODAL).find(MODAL_BUTTON).first().click();
         cy.get(MODAL).should('not.exist');
     });
     it('should render success message when confirmModal return true', () => {
-        cy.get(OPEN_MODAL_BUTTON).contains('Show confirm').click();
+        cy.get(OPEN_MODAL_BUTTON).contains('Show confirm modal').click();
         cy.get(MODAL).find(MODAL_BUTTON).last().click();
         cy.get('p').contains('Item deleted successfully.').should('exist');
     });
     it('should not render success message when confirmModal return true', () => {
-        cy.get(OPEN_MODAL_BUTTON).contains('Show confirm').click();
+        cy.get(OPEN_MODAL_BUTTON).contains('Show confirm modal').click();
         cy.get(MODAL).find(MODAL_BUTTON).first().click();
         cy.get('p').contains('Item deleted successfully.').should('not.exist');
     });

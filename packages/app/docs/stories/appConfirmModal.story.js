@@ -1,8 +1,15 @@
 import React from 'react';
+import styled from 'styled-components';
 import { Button } from 'react-rainbow-components';
 import RainbowFirebaseApp from '../../src/components/App';
 import ConfirmModal from '../../src/components/ConfirmModal';
 import { confirmModal, showAppMessage } from '../../src/actions';
+
+const Container = styled.div`
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+`;
 
 const DeleteIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
@@ -16,6 +23,27 @@ const DeleteIcon = () => (
         </g>
     </svg>
 );
+
+export const showConfirmModalBasicExample = () => {
+    const handleClick = async () => {
+        const result = await confirmModal({
+            question: 'Click OK to if you are sure.',
+        });
+        // eslint-disable-next-line no-alert
+        if (result)
+            showAppMessage({
+                message: 'You clicked OK.',
+                variant: 'success',
+            });
+    };
+    return (
+        <RainbowFirebaseApp>
+            <Container>
+                <Button label="Show confirm modal" onClick={handleClick} />
+            </Container>
+        </RainbowFirebaseApp>
+    );
+};
 
 export const showConfirmModalExample = () => {
     const handleClick = async () => {
@@ -35,7 +63,9 @@ export const showConfirmModalExample = () => {
     };
     return (
         <RainbowFirebaseApp>
-            <Button label="Show confirm" onClick={handleClick} />
+            <Container>
+                <Button label="Show confirm modal" onClick={handleClick} />
+            </Container>
         </RainbowFirebaseApp>
     );
 };
@@ -57,7 +87,9 @@ export const showYesNoModalExample = () => {
     };
     return (
         <RainbowFirebaseApp>
-            <Button label="Continue" onClick={handleClick} />
+            <Container>
+                <Button label="Show confirm modal" onClick={handleClick} />
+            </Container>
         </RainbowFirebaseApp>
     );
 };
