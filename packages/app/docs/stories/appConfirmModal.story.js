@@ -1,54 +1,79 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Button } from 'react-rainbow-components';
+import { Button, Card as RainbowCard, ButtonIcon } from 'react-rainbow-components';
+import { RainbowLogo, Trash, Share } from '@rainbow-modules/icons';
 import RainbowFirebaseApp from '../../src/components/App';
 import ConfirmModal from '../../src/components/ConfirmModal';
 import { confirmModal, showAppMessage } from '../../src/actions';
 
+const TrashIcon = styled(Trash)`
+    width: 100px;
+    height: 100px;
+    color: ${(props) => props.theme.rainbow.palette.error.main};
+`;
+
+const Card = styled(RainbowCard)`
+    width: 650px;
+    display: flex;
+    flex-direction: row;
+    padding: 1.25rem 1rem;
+`;
+
+const IconContainer = styled.div`
+    display: flex;
+    min-width: 78px;
+    min-height: 78px;
+    max-width: 78px;
+    max-height: 78px;
+    border-radius: 39px;
+    background: ${(props) => props.theme.rainbow.palette.background.secondary};
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+`;
+
+const Header = styled.header`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+const Title = styled.h3`
+    font-size: 1.25rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: ${(props) => props.theme.rainbow.palette.text.title};
+`;
+
+const Text = styled.p`
+    color: ${(props) => props.theme.rainbow.palette.text.label};
+    font-size: 0.9rem;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.57;
+    letter-spacing: normal;
+    padding-top: 1rem;
+`;
+
+const CardButtonIcon = styled(ButtonIcon)`
+    margin-left: 0.5rem;
+`;
+
 const Container = styled.div`
     display: flex;
     justify-content: center;
-    padding: 2rem;
+    padding: 5rem 2rem;
 `;
 
-const DeleteIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
-        <g fill="none" fillRule="evenodd">
-            <path d="M0 0H100V100H0z" />
-            <path
-                fill="#FE4849"
-                fillRule="nonzero"
-                d="M64.23 23.205v-2.82c0-3.116-2.525-5.641-5.64-5.641H44.487c-3.1.038-5.603 2.541-5.64 5.64v2.821H24.743v2.82h2.82l2.849 53.692c.243 3.096 2.804 5.496 5.909 5.54h30.433c3.105-.044 5.666-2.444 5.91-5.54l2.848-53.691h2.82v-2.82H64.231zm-5.64-5.64c1.557 0 2.82 1.262 2.82 2.82v2.82H41.667v-2.82c0-1.558 1.262-2.82 2.82-2.82H58.59zM69.858 79.53c-.15 1.614-1.482 2.862-3.103 2.905H36.322c-1.621-.043-2.954-1.29-3.103-2.905l-2.834-53.505h42.307L69.858 79.53zm-16.91-2.736V31.667h-2.82v45.128h2.82zm-8.46 0l-2.821-45.128h-2.82l2.82 45.128h2.82zm19.729-45.128H61.34l-2.75 45.128h2.82l2.807-45.128z"
-            />
-        </g>
-    </svg>
-);
-
-export const showConfirmModalBasicExample = () => {
-    const handleClick = async () => {
-        const result = await confirmModal({
-            question: 'Click OK to if you are sure.',
-        });
-        // eslint-disable-next-line no-alert
-        if (result)
-            showAppMessage({
-                message: 'You clicked OK.',
-                variant: 'success',
-            });
-    };
-    return (
-        <RainbowFirebaseApp>
-            <Container>
-                <Button label="Show confirm modal" onClick={handleClick} />
-            </Container>
-        </RainbowFirebaseApp>
-    );
-};
-
 export const showConfirmModalExample = () => {
-    const handleClick = async () => {
+    const handleDeleteClick = async () => {
         const result = await confirmModal({
-            icon: <DeleteIcon />,
+            icon: <TrashIcon />,
             variant: 'destructive',
             header: 'Are you sure you want delete this item?',
             question: "This item will be deleted immediately. You can't undo this action.",
@@ -61,10 +86,52 @@ export const showConfirmModalExample = () => {
                 variant: 'success',
             });
     };
+
+    const handleShareClick = async () => {
+        const result = await confirmModal({
+            question: 'Click OK to share this tweet with your friends.',
+        });
+        // eslint-disable-next-line no-alert
+        if (result)
+            showAppMessage({
+                message: 'Thank you for sharing our tweet!',
+                variant: 'success',
+            });
+    };
+
     return (
         <RainbowFirebaseApp>
             <Container>
-                <Button label="Show confirm modal" onClick={handleClick} />
+                <Card>
+                    <IconContainer>
+                        <RainbowLogo />
+                    </IconContainer>
+                    <div>
+                        <Header>
+                            <Title>rainbow-modules</Title>
+                            <div>
+                                <CardButtonIcon
+                                    size="small"
+                                    variant="border"
+                                    icon={<Share />}
+                                    onClick={handleShareClick}
+                                />
+                                <CardButtonIcon
+                                    size="small"
+                                    variant="border"
+                                    icon={<Trash />}
+                                    onClick={handleDeleteClick}
+                                />
+                            </div>
+                        </Header>
+                        <Text>
+                            React Rainbow is a collection of components that will reliably help you
+                            build your application in a snap. Give it a hack and let us know what
+                            you think.
+                        </Text>
+                    </div>
+                </Card>
+                {/* <Button label="Show confirm modal" onClick={handleClick} /> */}
             </Container>
         </RainbowFirebaseApp>
     );
@@ -74,21 +141,35 @@ export const showYesNoModalExample = () => {
     const handleClick = async () => {
         const result = await confirmModal({
             header: 'Do you want to continue?',
-            question: 'Your will loose all your data.',
             okButtonLabel: 'Yes',
             cancelButtonLabel: 'No',
         });
         // eslint-disable-next-line no-alert
         if (result)
             showAppMessage({
-                message: 'You clicked YES.',
+                message: 'Thanks for joining our community!',
                 variant: 'success',
             });
     };
     return (
         <RainbowFirebaseApp>
             <Container>
-                <Button label="Show confirm modal" onClick={handleClick} />
+                <Card>
+                    <IconContainer>
+                        <RainbowLogo />
+                    </IconContainer>
+                    <div>
+                        <Header>
+                            <Title>rainbow-modules</Title>
+                            <Button label="Join Us!" variant="border" onClick={handleClick} />
+                        </Header>
+                        <Text>
+                            React Rainbow is a collection of components that will reliably help you
+                            build your application in a snap. Give it a hack and let us know what
+                            you think.
+                        </Text>
+                    </div>
+                </Card>
             </Container>
         </RainbowFirebaseApp>
     );
