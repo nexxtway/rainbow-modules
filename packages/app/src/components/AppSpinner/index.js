@@ -23,7 +23,6 @@ const SpinnerContainer = styled.div`
 
 const AppSpinner = (props) => {
     const {
-        isLoading,
         className,
         style,
         assistiveText,
@@ -34,30 +33,26 @@ const AppSpinner = (props) => {
         label,
         children,
     } = props;
-    if (isLoading) {
-        return createPortal(
-            <SpinnerContainer data-cy="app-spinner">
-                <Spinner
-                    className={className}
-                    style={style}
-                    assistiveText={assistiveText}
-                    isVisible={isVisible}
-                    size={size}
-                    variant={variant}
-                    type={type}
-                >
-                    {children}
-                </Spinner>
-                <RenderIf isTrue={!!label}>{label}</RenderIf>
-            </SpinnerContainer>,
-            document.body,
-        );
-    }
-    return null;
+    return createPortal(
+        <SpinnerContainer data-cy="app-spinner">
+            <Spinner
+                className={className}
+                style={style}
+                assistiveText={assistiveText}
+                isVisible={isVisible}
+                size={size}
+                variant={variant}
+                type={type}
+            >
+                {children}
+            </Spinner>
+            <RenderIf isTrue={!!label}>{label}</RenderIf>
+        </SpinnerContainer>,
+        document.body,
+    );
 };
 
 AppSpinner.propTypes = {
-    isLoading: PropTypes.bool.isRequired,
     /** The variant changes the appearance of the spinner.
      * Accepted variants are base, brand, and inverse. This value defaults to base. */
     variant: PropTypes.oneOf(['base', 'brand', 'inverse', 'neutral']),

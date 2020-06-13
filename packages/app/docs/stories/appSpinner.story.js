@@ -4,7 +4,15 @@ import styled from 'styled-components';
 import { RainbowLogo } from '@rainbow-modules/icons';
 import app from '../../../../firebase';
 import RainbowFirebaseApp from '../../src/components/App';
+import AppSpinner from '../../src/components/AppSpinner';
 import { showAppSpinner, hideAppSpinner } from '../../src/actions';
+
+const show = () => {
+    showAppSpinner();
+    setTimeout(() => {
+        hideAppSpinner();
+    }, 3000);
+};
 
 const Container = styled.div`
     display: flex;
@@ -53,13 +61,6 @@ const Description = styled.p.attrs((props) => props.theme.rainbow)`
 `;
 
 export const circleSpinner = () => {
-    const show = () => {
-        showAppSpinner();
-        setTimeout(() => {
-            hideAppSpinner();
-        }, 3000);
-    };
-
     return (
         <RainbowFirebaseApp app={app}>
             <Container>
@@ -76,20 +77,19 @@ export const circleSpinner = () => {
 };
 
 export const arcSpinnerWithChild = () => {
-    const show = () => {
-        showAppSpinner({
-            size: 'x-large',
-            variant: 'brand',
-            type: 'arc',
-            label: <Label>loading react-rainbow</Label>,
-        });
-        setTimeout(() => {
-            hideAppSpinner();
-        }, 3000);
-    };
+    const customSpinner = (
+        <AppSpinner
+            type="arc"
+            size="x-large"
+            variant="brand"
+            label={<Label>loading react-rainbow</Label>}
+        >
+            <SpinnerLogo />
+        </AppSpinner>
+    );
 
     return (
-        <RainbowFirebaseApp app={app} spinnerChild={<SpinnerLogo />}>
+        <RainbowFirebaseApp app={app} spinner={customSpinner}>
             <Container>
                 <Logo />
                 <Title>rainbow-modules</Title>

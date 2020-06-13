@@ -12,29 +12,19 @@ import { updateAppActions } from '../../actions';
 import getBrowserLocale from '../../helpers/getBrowserLocale';
 
 const RainbowFirebaseApp = (props) => {
-    const {
-        app,
-        theme,
-        locale,
-        translations,
-        children,
-        reducers,
-        initialize,
-        spinnerChild,
-    } = props;
+    const { app, theme, locale, translations, children, reducers, initialize, spinner } = props;
     const firebaseContext = useMemo(() => ({ app }), [app]);
     const [isLoading, setLoading] = useState(false);
-    const [spinnerParams, setSpinnerParams] = useState({});
     const [isMessageVisible, setIsMessageVisible] = useState(false);
     const [messageParams, setMessageParams] = useState({});
     const [isInitializing, setIsInitializing] = useState(true);
     const applicationLocale = locale || getBrowserLocale();
+    const currentSpinner = spinner || <AppSpinner />;
 
     useEffect(() => {
         updateAppActions({
             setLoading,
             setIsMessageVisible,
-            setSpinnerParams,
             setMessageParams,
         });
     }, []);
@@ -62,13 +52,7 @@ const RainbowFirebaseApp = (props) => {
                         <RenderIf isTrue={!isInitializing}>
                             <BrowserRouter>{children}</BrowserRouter>
                         </RenderIf>
-                        <AppSpinner
-                            isLoading={isLoading}
-                            // eslint-disable-next-line react/jsx-props-no-spreading
-                            {...spinnerParams}
-                        >
-                            {spinnerChild}
-                        </AppSpinner>
+                        <RenderIf isTrue={!!isLoading}>{currentSpinner}</RenderIf>
                         <AppMessage
                             isVisible={isMessageVisible}
                             onHideMessage={() => setIsMessageVisible(false)}
@@ -98,7 +82,7 @@ RainbowFirebaseApp.propTypes = {
     /** An async function to initialize the app. AppSpiner will be visible while this function is running. */
     initialize: PropTypes.func,
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
-    spinnerChild: PropTypes.node,
+    spinner: PropTypes.node,
 };
 
 RainbowFirebaseApp.defaultProps = {
@@ -106,7 +90,7 @@ RainbowFirebaseApp.defaultProps = {
     locale: undefined,
     translations: {},
     children: null,
-    spinnerChild: null,
+    spinner: null,
     reducers: {},
     initialize: undefined,
 };
