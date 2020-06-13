@@ -131,7 +131,6 @@ export const showConfirmModalExample = () => {
                         </Text>
                     </div>
                 </Card>
-                {/* <Button label="Show confirm modal" onClick={handleClick} /> */}
             </Container>
         </RainbowFirebaseApp>
     );
