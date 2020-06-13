@@ -6,17 +6,6 @@ import app from '../../../../firebase';
 import RainbowFirebaseApp from '../../src/components/App';
 import { showAppSpinner, hideAppSpinner } from '../../src/actions';
 
-const show = () => {
-    showAppSpinner({
-        size: 'x-large',
-        variant: 'brand',
-        type: 'arc',
-    });
-    setTimeout(() => {
-        hideAppSpinner();
-    }, 3000);
-};
-
 const Container = styled.div`
     display: flex;
     flex-direction: column;
@@ -33,11 +22,25 @@ const Logo = styled(RainbowLogo)`
     height: 68px;
 `;
 
+const SpinnerLogo = styled(RainbowLogo)`
+    display: block;
+    width: 28px;
+    height: 28px;
+`;
+
 const Title = styled.h1.attrs((props) => props.theme.rainbow)`
     font-size: 24px;
     font-weight: 100;
     text-align: center;
     color: ${(props) => props.palette.text.title};
+    margin: 8px 0;
+`;
+
+const Label = styled.h3.attrs((props) => props.theme.rainbow)`
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+    color: ${(props) => props.palette.brand.main};
     margin: 8px 0;
 `;
 
@@ -49,7 +52,14 @@ const Description = styled.p.attrs((props) => props.theme.rainbow)`
     margin-bottom: 20px;
 `;
 
-export const spinner = () => {
+export const circleSpinner = () => {
+    const show = () => {
+        showAppSpinner();
+        setTimeout(() => {
+            hideAppSpinner();
+        }, 3000);
+    };
+
     return (
         <RainbowFirebaseApp app={app}>
             <Container>
@@ -65,7 +75,35 @@ export const spinner = () => {
     );
 };
 
+export const arcSpinnerWithChild = () => {
+    const show = () => {
+        showAppSpinner({
+            size: 'x-large',
+            variant: 'brand',
+            type: 'arc',
+            label: <Label>loading react-rainbow</Label>,
+        });
+        setTimeout(() => {
+            hideAppSpinner();
+        }, 3000);
+    };
+
+    return (
+        <RainbowFirebaseApp app={app} spinnerChild={<SpinnerLogo />}>
+            <Container>
+                <Logo />
+                <Title>rainbow-modules</Title>
+                <Description>
+                    React Rainbow is a collection of components that will reliably help you build
+                    your application in a snap. Give it a hack and let us know what you think.
+                </Description>
+                <Button variant="brand" label="Show Spinner" id="spinner-button" onClick={show} />
+            </Container>
+        </RainbowFirebaseApp>
+    );
+};
+
 export default {
-    title: 'App/Stories',
+    title: 'App/Stories/Spinners',
     component: RainbowFirebaseApp,
 };

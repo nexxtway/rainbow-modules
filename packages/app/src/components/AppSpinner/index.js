@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import RenderIf from 'react-rainbow-components/components/RenderIf';
 import { createPortal } from 'react-dom';
 import styled from 'styled-components';
 import Spinner from 'react-rainbow-components/components/Spinner';
 
 const SpinnerContainer = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -15,8 +17,7 @@ const SpinnerContainer = styled.div`
     right: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.7;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 1000000;
 `;
 
@@ -30,6 +31,7 @@ const AppSpinner = (props) => {
         size,
         variant,
         type,
+        label,
         children,
     } = props;
     if (isLoading) {
@@ -46,6 +48,7 @@ const AppSpinner = (props) => {
                 >
                     {children}
                 </Spinner>
+                <RenderIf isTrue={!!label}>{label}</RenderIf>
             </SpinnerContainer>,
             document.body,
         );
@@ -61,6 +64,8 @@ AppSpinner.propTypes = {
     /** The size of the spinner. Accepted sizes are xx-small, x-small, small, medium, large and x-large.
      * This value defaults to medium. */
     size: PropTypes.oneOf(['xx-small', 'x-small', 'small', 'medium', 'large', 'x-large']),
+    /** The label shown under the spinner. */
+    label: PropTypes.node,
     /** Show/Hide the spinner. */
     isVisible: PropTypes.bool,
     /** A description for assistive sreen readers. */
