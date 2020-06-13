@@ -7,8 +7,9 @@ import ConfirmModal from '../../src/components/ConfirmModal';
 import { confirmModal, showAppMessage } from '../../src/actions';
 
 const TrashIcon = styled(Trash)`
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
+    margin: 12px 12px 20px 0;
     color: ${(props) => props.theme.rainbow.palette.error.main};
 `;
 
@@ -26,7 +27,7 @@ const IconContainer = styled.div`
     max-width: 78px;
     max-height: 78px;
     border-radius: 39px;
-    background: ${(props) => props.theme.rainbow.palette.background.secondary};
+    background: ${(props) => props.theme.rainbow.palette.background.highlight};
     justify-content: center;
     align-items: center;
     margin-right: 1rem;
@@ -87,18 +88,6 @@ export const showConfirmModalExample = () => {
             });
     };
 
-    const handleShareClick = async () => {
-        const result = await confirmModal({
-            question: 'Click OK to share this tweet with your friends.',
-        });
-        // eslint-disable-next-line no-alert
-        if (result)
-            showAppMessage({
-                message: 'Thank you for sharing our tweet!',
-                variant: 'success',
-            });
-    };
-
     return (
         <RainbowFirebaseApp>
             <Container>
@@ -109,20 +98,11 @@ export const showConfirmModalExample = () => {
                     <div>
                         <Header>
                             <Title>rainbow-modules</Title>
-                            <div>
-                                <CardButtonIcon
-                                    size="small"
-                                    variant="border"
-                                    icon={<Share />}
-                                    onClick={handleShareClick}
-                                />
-                                <CardButtonIcon
-                                    size="small"
-                                    variant="border"
-                                    icon={<Trash />}
-                                    onClick={handleDeleteClick}
-                                />
-                            </div>
+                            <CardButtonIcon
+                                variant="destructive"
+                                icon={<Trash />}
+                                onClick={handleDeleteClick}
+                            />
                         </Header>
                         <Text>
                             React Rainbow is a collection of components that will reliably help you
@@ -160,7 +140,7 @@ export const showYesNoModalExample = () => {
                     <div>
                         <Header>
                             <Title>rainbow-modules</Title>
-                            <Button label="Join Us!" variant="border" onClick={handleClick} />
+                            <Button label="Join Us!" variant="brand" onClick={handleClick} />
                         </Header>
                         <Text>
                             React Rainbow is a collection of components that will reliably help you
