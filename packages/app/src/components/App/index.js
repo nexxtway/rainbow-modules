@@ -81,8 +81,9 @@ RainbowFirebaseApp.propTypes = {
     reducers: PropTypes.object,
     /** An async function to initialize the app. AppSpiner will be visible while this function is running. */
     initialize: PropTypes.func,
-    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
+    /** The spinner to show when the app is loading. */
     spinner: PropTypes.node,
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
 };
 
 RainbowFirebaseApp.defaultProps = {
