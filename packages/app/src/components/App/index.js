@@ -52,7 +52,7 @@ const RainbowFirebaseApp = (props) => {
                         <RenderIf isTrue={!isInitializing}>
                             <BrowserRouter>{children}</BrowserRouter>
                         </RenderIf>
-                        <RenderIf isTrue={!!isLoading}>{currentSpinner}</RenderIf>
+                        <RenderIf isTrue={isLoading}>{currentSpinner}</RenderIf>
                         <AppMessage
                             isVisible={isMessageVisible}
                             onHideMessage={() => setIsMessageVisible(false)}

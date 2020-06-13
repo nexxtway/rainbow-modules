@@ -76,18 +76,18 @@ export const circleSpinner = () => {
     );
 };
 
-export const arcSpinnerWithChild = () => {
-    const customSpinner = (
-        <AppSpinner
-            type="arc"
-            size="x-large"
-            variant="brand"
-            label={<Label>loading react-rainbow</Label>}
-        >
-            <SpinnerLogo />
-        </AppSpinner>
-    );
+const customSpinner = (
+    <AppSpinner
+        type="arc"
+        size="x-large"
+        variant="brand"
+        label={<Label>loading react-rainbow</Label>}
+    >
+        <SpinnerLogo />
+    </AppSpinner>
+);
 
+export const arcSpinnerWithChild = () => {
     return (
         <RainbowFirebaseApp app={app} spinner={customSpinner}>
             <Container>
