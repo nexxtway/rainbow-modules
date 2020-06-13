@@ -15211,10 +15211,10 @@ react-popper@^1.3.7:
     typed-styles "^0.0.7"
     warning "^4.0.2"
 
-react-rainbow-components@1.15.0-canary.18a894f:
-  version "1.15.0-canary.18a894f"
-  resolved "https://registry.yarnpkg.com/react-rainbow-components/-/react-rainbow-components-1.15.0-canary.18a894f.tgz#91cb088db0b3e38dc979e50bdcd14dfc028609dd"
-  integrity sha512-jEFvr+q2KKqskO6aaTW1mx1kUpReZdPlcur6K62Tov1+9rQUPFNAXM3bbhSan6at3WtZsim/TFuy9P07t2Pclw==
+react-rainbow-components@1.15.0-canary.1db2fda:
+  version "1.15.0-canary.1db2fda"
+  resolved "https://registry.yarnpkg.com/react-rainbow-components/-/react-rainbow-components-1.15.0-canary.1db2fda.tgz#3648e8e25a76a2ed58bb4afa20890c2addec00ac"
+  integrity sha512-0PWfkqDllYwbyud4C87vZe+6FfE5YY4njCIQV8I1M3jYREXO8BBndKP23QpTw80WLxNFN8Q5txrPrScE9LlTYw==
   dependencies:
     autosize "^4.0.2"
     chart.js "^2.7.3"

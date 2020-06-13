@@ -73,7 +73,7 @@
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-intl": "^4.4.0",
-        "react-rainbow-components": "1.15.0-canary.18a894f",
+        "react-rainbow-components": "1.15.0-canary.1db2fda",
         "react-redux": "^7.2.0",
         "redux": "^4.0.5",
         "redux-form": "^8.3.5",

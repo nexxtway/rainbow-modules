@@ -8,8 +8,9 @@ import { showAppSpinner, hideAppSpinner } from '../../src/actions';
 
 const show = () => {
     showAppSpinner({
-        size: 'large',
+        size: 'x-large',
         variant: 'brand',
+        type: 'arc',
     });
     setTimeout(() => {
         hideAppSpinner();
@@ -27,6 +28,7 @@ const Container = styled.div`
 `;
 
 const Logo = styled(RainbowLogo)`
+    display: block;
     width: 68px;
     height: 68px;
 `;
