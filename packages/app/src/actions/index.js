@@ -9,8 +9,8 @@ export const hideAppSpinner = () => {
 };
 
 export const showAppMessage = (params) => {
-    AppActions.setIsMessageVisible(true);
     AppActions.setMessageParams(params);
+    AppActions.setIsMessageVisible(true);
 };
 
 export const updateAppActions = (actions) => {
@@ -18,4 +18,21 @@ export const updateAppActions = (actions) => {
         ...AppActions,
         ...actions,
     };
+};
+
+export const confirmModal = async (params) => {
+    return new Promise((resolve) => {
+        AppActions.setConfirmModalParams({
+            ...params,
+            onConfirm: () => {
+                AppActions.setIsConfirmModalVisible(false);
+                return resolve(true);
+            },
+            onCancel: () => {
+                AppActions.setIsConfirmModalVisible(false);
+                return resolve(false);
+            },
+        });
+        AppActions.setIsConfirmModalVisible(true);
+    });
 };
