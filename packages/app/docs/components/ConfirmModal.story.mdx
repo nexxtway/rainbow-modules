@@ -1,0 +1,21 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Button } from 'react-rainbow-components';
+import ConfirmModal from '../../src/components/ConfirmModal';
+import * as stories from '../stories/appConfirmModal.story.js';
+
+<Meta title="App/Components" component={ConfirmModal} />
+
+# Overview
+
+`ConfirmModal` component is an action confirm dialog.
+Do not use this component directly, instead use `confirmModal` function.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="ConfirmModal">{stories.showConfirmModalExample()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={ConfirmModal} />

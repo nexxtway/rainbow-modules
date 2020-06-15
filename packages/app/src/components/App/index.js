@@ -8,6 +8,7 @@ import ReduxContainer from '../ReduxContainer';
 import I18nContainer from '../I18nContainer';
 import AppSpinner from '../AppSpinner';
 import AppMessage from '../AppMessage';
+import ConfirmModal from '../ConfirmModal';
 import { updateAppActions } from '../../actions';
 import getBrowserLocale from '../../helpers/getBrowserLocale';
 
@@ -16,7 +17,9 @@ const RainbowFirebaseApp = (props) => {
     const firebaseContext = useMemo(() => ({ app }), [app]);
     const [isLoading, setLoading] = useState(false);
     const [isMessageVisible, setIsMessageVisible] = useState(false);
+    const [isConfirmModalVisible, setIsConfirmModalVisible] = useState(false);
     const [messageParams, setMessageParams] = useState({});
+    const [confirmModalParams, setConfirmModalParams] = useState({});
     const [isInitializing, setIsInitializing] = useState(true);
     const applicationLocale = locale || getBrowserLocale();
 
@@ -25,6 +28,8 @@ const RainbowFirebaseApp = (props) => {
             setLoading,
             setIsMessageVisible,
             setMessageParams,
+            setIsConfirmModalVisible,
+            setConfirmModalParams,
         });
     }, []);
 
@@ -57,6 +62,11 @@ const RainbowFirebaseApp = (props) => {
                             onHideMessage={() => setIsMessageVisible(false)}
                             // eslint-disable-next-line react/jsx-props-no-spreading
                             {...messageParams}
+                        />
+                        <ConfirmModal
+                            isOpen={isConfirmModalVisible}
+                            // eslint-disable-next-line react/jsx-props-no-spreading
+                            {...confirmModalParams}
                         />
                     </Application>
                 </I18nContainer>

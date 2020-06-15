@@ -9,3 +9,5 @@ export { default as MoneyBorder } from './moneyBorder';
 export { default as MoneyFilled } from './moneyFilled';
 export { default as RainbowLogo } from './rainbowLogo';
 export { default as Warning } from './warning';
+export { default as Trash } from './trash';
+export { default as Share } from './share';
