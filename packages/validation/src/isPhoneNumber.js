@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import isEmpty from './isEmpty';
 
 const matchers = [
