@@ -17,6 +17,7 @@ describe('<SideBarOption />', () => {
             name: 'name',
             label: 'label',
             onClick: expect.any(Function),
+            selectedIcon: null,
             href: undefined,
         };
         const item = component.find('SidebarItem');
