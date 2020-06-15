@@ -8,7 +8,7 @@ describe('isDateInPast', () => {
         });
     });
     it('should return false', () => {
-        const values = [new Date(2021, 11, 23), new Date()];
+        const values = [new Date(2021, 11, 23), '2020-12-19'];
         values.forEach((value) => {
             expect(isDateInPast(value)).toBe(false);
         });
