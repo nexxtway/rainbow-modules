@@ -1,6 +1,4 @@
 /* eslint-disable no-useless-escape */
-import isEmpty from './isEmpty';
-
 const matchers = [
     /^\d{10}$/,
     /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/,
@@ -102,6 +100,5 @@ const matchers = [
 ];
 
 export default function isPhoneNumber(value) {
-    if (isEmpty(value)) return false;
-    return matchers.reduce((hasMatched, matcher) => hasMatched || matcher.test(value), false);
+    return matchers.some((matcher) => matcher.test(value));
 }
