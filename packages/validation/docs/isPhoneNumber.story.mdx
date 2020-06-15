@@ -1,0 +1,22 @@
+<Meta title="Validation/isPhoneNumber" />
+
+# Overview
+
+`isPhoneNumber` checks if the value is a valid international phone number
+
+```js
+isPhoneNumber('+254728530234');
+// returns true
+
+isPhoneNumber('123.456.7890');
+// returns true
+
+isPhoneNumber('(123) 456-7890');
+// returns true
+
+isPhoneNumber('123--7890');
+// returns false
+
+isPhoneNumber('+123');
+// returns false
+```

@@ -1,0 +1,22 @@
+<Meta title="Validation/isEmail" />
+
+# Overview
+
+`isEmail` checks if the value is a valid email address.
+
+```js
+isEmail('username@domain.com');
+// returns true
+
+isEmail('user.name@domain.com');
+// returns true
+
+isEmail('username@domain');
+// returns false
+
+isEmail('user.name@@domain.com');
+// returns false
+
+isEmail('user@');
+// returns false
+```
