@@ -5,3 +5,4 @@ lib
 *.log
 storybook-static
 .env*
+cypress/screenshots

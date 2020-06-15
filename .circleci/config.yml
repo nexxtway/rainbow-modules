@@ -1,9 +1,23 @@
 version: 2.1
 
-defaults: &defaults
-    working_directory: ~/repo
-    docker:
-        - image: circleci/node:10.14.2-stretch-browsers
+references:
+    defaults: &defaults
+        working_directory: ~/repo
+        docker:
+            - image: circleci/node:10.14.2-stretch-browsers
+
+    create_env_file: &create_env_file
+        run:
+            name: Create .env file
+            command: |
+                touch .env;
+                echo STORYBOOK_API_KEY=$STORYBOOK_API_KEY >> .env;
+                echo STORYBOOK_AUTH_DOMAIN=$STORYBOOK_AUTH_DOMAIN >> .env;
+                echo STORYBOOK_DATABASE_URL=$STORYBOOK_DATABASE_URL >> .env;
+                echo STORYBOOK_PROJECT_ID=$STORYBOOK_PROJECT_ID >> .env;
+                echo STORYBOOK_STORAGE_BUCKET=$STORYBOOK_STORAGE_BUCKET >> .env;
+                echo STORYBOOK_MESSAGING_SENDER_ID=$STORYBOOK_MESSAGING_SENDER_ID >> .env;
+                echo STORYBOOK_APP_ID=$STORYBOOK_APP_ID >> .env;
 
 jobs:
     build_and_test:
@@ -23,6 +37,7 @@ jobs:
                       - node_modules
                   key: v1-dependencies-{{ checksum "yarn.lock" }}
 
+            - *create_env_file
             - run: yarn build
             - run: yarn lint
             - run:
@@ -60,18 +75,7 @@ jobs:
                       # fallback to using the latest cache if no exact match is found
                       - v1-dependencies-
 
-            - run:
-                  name: Create .env file
-                  command: |
-                      touch .env;
-                      echo STORYBOOK_API_KEY=$STORYBOOK_API_KEY >> .env;
-                      echo STORYBOOK_AUTH_DOMAIN=$STORYBOOK_AUTH_DOMAIN >> .env;
-                      echo STORYBOOK_DATABASE_URL=$STORYBOOK_DATABASE_URL >> .env;
-                      echo STORYBOOK_PROJECT_ID=$STORYBOOK_PROJECT_ID >> .env;
-                      echo STORYBOOK_STORAGE_BUCKET=$STORYBOOK_STORAGE_BUCKET >> .env;
-                      echo STORYBOOK_MESSAGING_SENDER_ID=$STORYBOOK_MESSAGING_SENDER_ID >> .env;
-                      echo STORYBOOK_APP_ID=$STORYBOOK_APP_ID >> .env;
-
+            - *create_env_file
             - run: yarn install
             - run: yarn deploy --token=$FIREBASE_TOKEN
 
