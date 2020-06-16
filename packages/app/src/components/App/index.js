@@ -3,14 +3,16 @@ import PropTypes from 'prop-types';
 import { BrowserRouter } from 'react-router-dom';
 import Application from 'react-rainbow-components/components/Application';
 import RenderIf from 'react-rainbow-components/components/RenderIf';
+import Spinner from 'react-rainbow-components/components/Spinner';
 import { FirebaseProvider } from '@rainbow-modules/firebase-hooks';
+import { createPortal } from 'react-dom';
 import ReduxContainer from '../ReduxContainer';
 import I18nContainer from '../I18nContainer';
-import AppSpinner from '../AppSpinner';
 import AppMessage from '../AppMessage';
 import ConfirmModal from '../ConfirmModal';
 import { updateAppActions } from '../../actions';
 import getBrowserLocale from '../../helpers/getBrowserLocale';
+import SpinnerContainer from './styled';
 
 const RainbowFirebaseApp = (props) => {
     const { app, theme, locale, translations, children, reducers, initialize, spinner } = props;
@@ -22,7 +24,7 @@ const RainbowFirebaseApp = (props) => {
     const [confirmModalParams, setConfirmModalParams] = useState({});
     const [isInitializing, setIsInitializing] = useState(true);
     const applicationLocale = locale || getBrowserLocale();
-    const currentSpinner = spinner || <AppSpinner />;
+    const currentSpinner = spinner || <Spinner />;
 
     useEffect(() => {
         updateAppActions({
@@ -57,7 +59,14 @@ const RainbowFirebaseApp = (props) => {
                         <RenderIf isTrue={!isInitializing}>
                             <BrowserRouter>{children}</BrowserRouter>
                         </RenderIf>
-                        <RenderIf isTrue={isLoading}>{currentSpinner}</RenderIf>
+                        <RenderIf isTrue={isLoading}>
+                            {createPortal(
+                                <SpinnerContainer data-cy="app-spinner">
+                                    {currentSpinner}
+                                </SpinnerContainer>,
+                                document.body,
+                            )}
+                        </RenderIf>
                         <AppMessage
                             isVisible={isMessageVisible}
                             onHideMessage={() => setIsMessageVisible(false)}

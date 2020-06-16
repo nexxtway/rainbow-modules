@@ -1,10 +1,9 @@
 import React from 'react';
-import { Button } from 'react-rainbow-components';
+import { Button, Spinner } from 'react-rainbow-components';
 import styled from 'styled-components';
 import { RainbowLogo } from '@rainbow-modules/icons';
 import app from '../../../../firebase';
 import RainbowFirebaseApp from '../../src/components/App';
-import AppSpinner from '../../src/components/AppSpinner';
 import { showAppSpinner, hideAppSpinner } from '../../src/actions';
 
 const show = () => {
@@ -44,14 +43,6 @@ const Title = styled.h1.attrs((props) => props.theme.rainbow)`
     margin: 8px 0;
 `;
 
-const Label = styled.h3.attrs((props) => props.theme.rainbow)`
-    font-size: 18px;
-    font-weight: normal;
-    text-align: center;
-    color: ${(props) => props.palette.brand.main};
-    margin: 8px 0;
-`;
-
 const Description = styled.p.attrs((props) => props.theme.rainbow)`
     font-size: 14px;
     font-weight: 400;
@@ -77,14 +68,9 @@ export const circleSpinner = () => {
 };
 
 const customSpinner = (
-    <AppSpinner
-        type="arc"
-        size="x-large"
-        variant="brand"
-        label={<Label>loading react-rainbow</Label>}
-    >
+    <Spinner type="arc" size="x-large" variant="brand">
         <SpinnerLogo />
-    </AppSpinner>
+    </Spinner>
 );
 
 export const arcSpinnerWithChild = () => {
