@@ -1,0 +1,22 @@
+<Meta title="Validation/isDateInFuture" />
+
+# Overview
+
+`isDateInFuture` checks if the specified date instance is in the future.
+
+```js
+const today = new Date(Date.now());
+// today = Mon Jun 15 2020 18:46:01 GMT-0400;
+
+isDateInFuture(new Date('2020/06/16'));
+// returns true
+
+isDateInFuture(new Date('2022/12/11'));
+// returns true
+
+isDateInFuture(new Date('2020/06/12'));
+// returns false
+
+isDateInFuture(new Date('2019/12/11'));
+// returns false
+```

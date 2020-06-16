@@ -1,0 +1,38 @@
+<Meta title="Validation/isEmpty" />
+
+# Overview
+
+`isEmpty` checks if the given value is non empty. The following values are considered empty:
+
+-   null
+-   undefined
+-   Empty strings
+-   Whitespace only strings
+-   Empty arrays
+-   Empty objects
+
+```js
+isEmpty(null);
+// returns true
+
+isEmpty(undefined);
+// returns true
+
+isEmpty([]);
+// returns true
+
+isEmpty({});
+// returns true
+
+isEmpty('');
+// returns true
+
+isEmpty('      ');
+// returns true
+
+isEmpty(23);
+// returns false
+
+isEmpty({ foo: 'bar' });
+// returns false
+```

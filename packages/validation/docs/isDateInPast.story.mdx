@@ -1,0 +1,22 @@
+<Meta title="Validation/isDateInPast" />
+
+# Overview
+
+`isDateInPast` checks if the specified date instance is in the past.
+
+```js
+const today = new Date(Date.now());
+// today = Mon Jun 15 2020 18:46:01 GMT-0400;
+
+isDateInPast(new Date('2020/06/12'));
+// returns true
+
+isDateInPast(new Date('2019/12/11'));
+// returns true
+
+isDateInPast(new Date('2020/06/16'));
+// returns false
+
+isDateInPast(new Date('2021/12/11'));
+// returns false
+```
