@@ -9,3 +9,4 @@ export { default as isDateInPast } from './isDateInPast';
 export { default as isDateInFuture } from './isDateInFuture';
 export { default as isPhoneNumber } from './isPhoneNumber';
 export { default as isFunction } from './isFunction';
+export { default as isPromise } from './isPromise';
