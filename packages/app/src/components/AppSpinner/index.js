@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import RenderIf from 'react-rainbow-components/components/RenderIf';
 import { createPortal } from 'react-dom';
 import styled from 'styled-components';
 import Spinner from 'react-rainbow-components/components/Spinner';
@@ -10,7 +9,7 @@ const SpinnerContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
@@ -22,61 +21,24 @@ const SpinnerContainer = styled.div`
 `;
 
 const AppSpinner = (props) => {
-    const {
-        className,
-        style,
-        assistiveText,
-        isVisible,
-        size,
-        variant,
-        type,
-        label,
-        children,
-    } = props;
+    const { spinner } = props;
+    if (spinner) {
+        return createPortal(
+            <SpinnerContainer data-cy="app-spinner">{spinner}</SpinnerContainer>,
+            document.body,
+        );
+    }
     return createPortal(
         <SpinnerContainer data-cy="app-spinner">
-            <Spinner
-                className={className}
-                style={style}
-                assistiveText={assistiveText}
-                isVisible={isVisible}
-                size={size}
-                variant={variant}
-                type={type}
-            >
-                {children}
-            </Spinner>
-            <RenderIf isTrue={!!label}>{label}</RenderIf>
+            <Spinner />
         </SpinnerContainer>,
         document.body,
     );
 };
 
 AppSpinner.propTypes = {
-    /** The variant changes the appearance of the spinner.
-     * Accepted variants are base, brand, and inverse. This value defaults to base. */
-    variant: PropTypes.oneOf(['base', 'brand', 'inverse', 'neutral']),
-    /** The size of the spinner. Accepted sizes are xx-small, x-small, small, medium, large and x-large.
-     * This value defaults to medium. */
-    size: PropTypes.oneOf(['xx-small', 'x-small', 'small', 'medium', 'large', 'x-large']),
-    /** The label shown under the spinner. */
-    label: PropTypes.node,
-    /** Show/Hide the spinner. */
-    isVisible: PropTypes.bool,
-    /** A description for assistive sreen readers. */
-    assistiveText: PropTypes.string,
-    /** A CSS class for the outer element, in addition to the component's base classes. */
-    className: PropTypes.string,
-    /** An object with custom style applied to the outer element. */
-    style: PropTypes.object,
-    /** The type of the spinner. Accepted types are circle and arc.
-     * This value defaults to circle. */
-    type: PropTypes.oneOf(['circle', 'arc']),
-    /**
-     * This prop that should not be visible in the documentation.
-     * @ignore
-     */
-    children: PropTypes.node,
+    /** The spinner to show when the app is loading. */
+    spinner: PropTypes.node,
 };
 
 export default AppSpinner;

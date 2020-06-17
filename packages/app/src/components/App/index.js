@@ -22,7 +22,6 @@ const RainbowFirebaseApp = (props) => {
     const [confirmModalParams, setConfirmModalParams] = useState({});
     const [isInitializing, setIsInitializing] = useState(true);
     const applicationLocale = locale || getBrowserLocale();
-    const currentSpinner = spinner || <AppSpinner />;
 
     useEffect(() => {
         updateAppActions({
@@ -57,7 +56,9 @@ const RainbowFirebaseApp = (props) => {
                         <RenderIf isTrue={!isInitializing}>
                             <BrowserRouter>{children}</BrowserRouter>
                         </RenderIf>
-                        <RenderIf isTrue={isLoading}>{currentSpinner}</RenderIf>
+                        <RenderIf isTrue={isLoading}>
+                            <AppSpinner spinner={spinner} />
+                        </RenderIf>
                         <AppMessage
                             isVisible={isMessageVisible}
                             onHideMessage={() => setIsMessageVisible(false)}
