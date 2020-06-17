@@ -12,3 +12,4 @@ export { default as isFunction } from './isFunction';
 export { default as isPromise } from './isPromise';
 export { default as isArray } from './isArray';
 export { default as isBoolean } from './isBoolean';
+export { default as isAsync } from './isAsync';
