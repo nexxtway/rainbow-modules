@@ -1,0 +1,19 @@
+<Meta title="Validation/isDate" />
+
+# Overview
+
+`isDate` checks if the given value is a `Date` instance.
+
+```js
+isDate(new Date());
+// returns true
+
+isDate(null);
+// returns false
+
+isDate('2020-05-23');
+// returns false
+
+isDate({});
+// returns false
+```
