@@ -2,8 +2,13 @@ import isAsync from '../isAsync';
 
 describe('isAsync', () => {
     it('should return true', () => {
-        // eslint-disable-next-line func-names, no-empty-function
-        const values = [async function () {}, async () => {}, new Promise(() => {})];
+        const values = [
+            // eslint-disable-next-line func-names, no-empty-function
+            async function () {},
+            async () => {},
+            new Promise(() => {}),
+            async () => new Promise(() => {}),
+        ];
         values.forEach((value) => {
             expect(isAsync(value)).toBe(true);
         });
