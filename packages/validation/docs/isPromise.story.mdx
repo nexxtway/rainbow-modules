@@ -2,16 +2,14 @@
 
 # Overview
 
-`isPromise` checks if the given value is a promise. This used the
-same semantics as the ECMAScript spec which means that any non empty
-object that has a .then function is a promise.
+`isPromise` checks if the given value is a promise.
 
 ```js
 isPromise(new Promise(function () {}));
 // returns true
 
 isPromise({ then: function () {} });
-// returns true
+// returns false
 
 isPromise({});
 // returns false
