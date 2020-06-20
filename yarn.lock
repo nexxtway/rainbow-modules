@@ -15215,7 +15215,6 @@ react-rainbow-components@1.15.0-canary.688145a:
   version "1.15.0-canary.688145a"
   resolved "https://registry.yarnpkg.com/react-rainbow-components/-/react-rainbow-components-1.15.0-canary.688145a.tgz#26a0ea7376bebea69eb770e6096456c872c83c28"
   integrity sha512-UEbfmpvqQZqvkAn6HFKYUShdQjDyBhqkd9fkUC4AhlniSDY3mbHI0NoEHwEAWlvTwFFhKGiBYkXDCMh83eEL8Q==
-
   dependencies:
     autosize "^4.0.2"
     chart.js "2.7.3"
