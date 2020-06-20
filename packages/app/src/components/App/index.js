@@ -13,7 +13,7 @@ import { updateAppActions } from '../../actions';
 import getBrowserLocale from '../../helpers/getBrowserLocale';
 
 const RainbowFirebaseApp = (props) => {
-    const { app, theme, locale, translations, children, reducers, initialize } = props;
+    const { app, theme, locale, translations, children, reducers, initialize, spinner } = props;
     const firebaseContext = useMemo(() => ({ app }), [app]);
     const [isLoading, setLoading] = useState(false);
     const [isMessageVisible, setIsMessageVisible] = useState(false);
@@ -56,7 +56,9 @@ const RainbowFirebaseApp = (props) => {
                         <RenderIf isTrue={!isInitializing}>
                             <BrowserRouter>{children}</BrowserRouter>
                         </RenderIf>
-                        <AppSpinner isLoading={isLoading} />
+                        <RenderIf isTrue={isLoading}>
+                            <AppSpinner spinner={spinner} />
+                        </RenderIf>
                         <AppMessage
                             isVisible={isMessageVisible}
                             onHideMessage={() => setIsMessageVisible(false)}
@@ -90,6 +92,8 @@ RainbowFirebaseApp.propTypes = {
     reducers: PropTypes.object,
     /** An async function to initialize the app. AppSpiner will be visible while this function is running. */
     initialize: PropTypes.func,
+    /** The spinner to show when the app is loading. */
+    spinner: PropTypes.node,
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
 };
 
@@ -98,6 +102,7 @@ RainbowFirebaseApp.defaultProps = {
     locale: undefined,
     translations: {},
     children: null,
+    spinner: null,
     reducers: {},
     initialize: undefined,
 };
