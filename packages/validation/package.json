@@ -1,6 +1,6 @@
 {
     "name": "@rainbow-modules/validation",
-    "version": "0.0.12",
+    "version": "0.0.13",
     "author": "Nexxtway Team",
     "license": "MIT",
     "main": "lib/index.js",
