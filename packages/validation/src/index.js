@@ -11,5 +11,4 @@ export { default as isPhoneNumber } from './isPhoneNumber';
 export { default as isFunction } from './isFunction';
 export { default as isPromise } from './isPromise';
 export { default as isBoolean } from './isBoolean';
-export { default as isAsync } from './isAsync';
 export { default as isInteger } from './isInteger';
