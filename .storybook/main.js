@@ -16,6 +16,7 @@ module.exports = {
             },
         },
         '@storybook/addon-docs',
+        '@storybook/addon-viewport/register',
     ],
     webpackFinal: async (config) => {
         config.resolve = {
