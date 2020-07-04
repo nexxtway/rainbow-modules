@@ -1,5 +1,5 @@
 {
-    "name": "@rainbow-modules/auth",
+    "name": "@rainbow-modules/listview",
     "version": "0.1.0",
     "main": "lib/index.js",
     "author": "Nexxtway Team",
@@ -7,7 +7,7 @@
     "dependencies": {
         "@rainbow-modules/app": "^0.1.0",
         "@rainbow-modules/firebase-hooks": "^0.1.0",
-        "react-router-dom": "^5.1.2"
+        "react-rainbow-components": "1.15.0-canary.688145a"
     },
     "publishConfig": {
         "access": "public"
