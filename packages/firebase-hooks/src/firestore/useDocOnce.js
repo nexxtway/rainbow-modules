@@ -25,10 +25,11 @@ export default function useDocOnce(props) {
                 })
                 .catch((err) => {
                     setIsLoading(false);
+                    // eslint-disable-next-line no-console
                     console.log(err);
                 });
         }
-    }, [props.path]);
+    }, [app, path, props.path]);
 
     return [data, isLoading];
 }

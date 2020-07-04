@@ -7,3 +7,16 @@
 
 1. `yarn bootstrap`
 2. `yarn dev`
+
+<i>Note that you need environment variables in `.env` file in to root of the project</i>
+
+```
+# firebase project config
+STORYBOOK_API_KEY=
+STORYBOOK_AUTH_DOMAIN=
+STORYBOOK_DATABASE_URL=
+STORYBOOK_PROJECT_ID=
+STORYBOOK_STORAGE_BUCKET=
+STORYBOOK_MESSAGING_SENDER_ID=
+STORYBOOK_APP_ID=
+```

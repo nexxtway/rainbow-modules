@@ -23,6 +23,7 @@ export default function useCollection(props) {
                 },
                 (err) => {
                     setIsLoading(false);
+                    // eslint-disable-next-line no-console
                     console.log(err);
                 },
             );
@@ -31,7 +32,7 @@ export default function useCollection(props) {
             };
         }
         return null;
-    }, [props.path, props.onlyIds]);
+    }, [props.path, props.onlyIds, app, path, query, onlyIds]);
 
     return [data, isLoading];
 }
