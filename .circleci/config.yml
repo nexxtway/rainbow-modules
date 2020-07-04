@@ -75,12 +75,42 @@ jobs:
             - run: yarn install
             - run: yarn deploy --token=$FIREBASE_TOKEN
 
+    publish_canary:
+        <<: *defaults
+
+        steps:
+            - checkout
+
+            - restore_cache:
+                  keys:
+                      - v1-dependencies-{{ checksum "yarn.lock" }}
+                      - v1-dependencies-
+
+            - run: yarn bootstrap
+
+            - save_cache:
+                  paths:
+                      - node_modules
+                  key: v1-dependencies-{{ checksum "yarn.lock" }}
+
+            - run: yarn build
+            - run:
+                  name: Auth with registry
+                  command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+            - run: npx lerna publish --canary --preid canary --registry registry.npmjs.org/:_authToken=$NPM_TOKEN
+
 workflows:
     version: 2
     build_and_test:
         jobs:
             - build_and_test
             - deploy_firebase:
+                  requires:
+                      - build_and_test
+                  filters:
+                      branches:
+                          only: master
+            - publish_canary:
                   requires:
                       - build_and_test
                   filters:
