@@ -2,11 +2,9 @@ import React from 'react';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
 import styled from 'styled-components';
 import { Card, Button } from 'react-rainbow-components';
-import {
-    EmailPasswordSignInForm,
-    WhenAuthenticated,
-    WhenNoAuthenticated,
-} from '@rainbow-modules/auth';
+import EmailPasswordSignInForm from '../../src/components/EmailPasswordSignInForm';
+import WhenAuthenticated from '../../src/components/WhenAuthenticated';
+import WhenNoAuthenticated from '../../src/components/WhenNoAuthenticated';
 import app from '../../../../firebase';
 import RainbowLogo from './icons/rainbowLogo';
 
