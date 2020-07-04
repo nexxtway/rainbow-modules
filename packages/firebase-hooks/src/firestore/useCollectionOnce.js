@@ -24,9 +24,11 @@ export default function useCollectionOnce(props) {
                 })
                 .catch((err) => {
                     setIsLoading(false);
+                    // eslint-disable-next-line no-console
                     console.log(err);
                 });
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props.path, props.onlyIds]);
 
     return [data, isLoading];

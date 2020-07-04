@@ -26,6 +26,7 @@ export default function useDoc(props) {
                 },
                 (err) => {
                     setIsLoading(false);
+                    // eslint-disable-next-line no-console
                     console.log(err);
                 },
             );
@@ -34,6 +35,6 @@ export default function useDoc(props) {
             };
         }
         return null;
-    }, [props.path]);
+    }, [app, path, props.path]);
     return [data, isLoading];
 }
