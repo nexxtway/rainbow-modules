@@ -1,0 +1,22 @@
+<Meta title="Validation/isAsync" />
+
+# Overview
+
+`isAsync` checks if the given function is async.
+
+```js
+isAsync(new Promise(function () {}));
+// returns true
+
+isAsync(async function () {});
+// returns true
+
+isAsync(async () => {});
+// returns true
+
+isAsync(function () {});
+// returns false
+
+isAsync(() => {});
+// returns false
+```

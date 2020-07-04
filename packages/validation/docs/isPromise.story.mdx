@@ -1,0 +1,16 @@
+<Meta title="Validation/isPromise" />
+
+# Overview
+
+`isPromise` checks if the given value is a promise.
+
+```js
+isPromise(new Promise(function () {}));
+// returns true
+
+isPromise({ then: function () {} });
+// returns false
+
+isPromise({});
+// returns false
+```
