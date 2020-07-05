@@ -1,15 +1,16 @@
 import { useEffect, useCallback } from 'react';
-import isDomElement from './helpers/isDomElement';
+import { getTarget, isDomElement } from './helpers';
 
-export default function useOutsideClick(ref, handler, isListening = true) {
+export default function useOutsideClick(target, onOutsideClick, isListening = true) {
     const listener = useCallback(
         (event) => {
-            if (ref && isDomElement(ref.current) && !ref.current.contains(event.target)) {
-                handler(event);
+            const targetElement = getTarget(target);
+            if (isDomElement(targetElement) && !targetElement.contains(event.target)) {
+                onOutsideClick(event);
             }
         },
         // eslint-disable-next-line react-hooks/exhaustive-deps
-        [ref],
+        [target],
     );
 
     useEffect(() => {

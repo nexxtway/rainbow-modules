@@ -5,9 +5,9 @@ import { useOutsideClick } from '../../src';
 export default function WrapperOutsideClick() {
     const [counter, setCounter] = useState(0);
     const [isListening, setIsListening] = useState(true);
-    const ref = useRef();
+    const targetRef = useRef();
     useOutsideClick(
-        ref,
+        targetRef,
         () => {
             setCounter((s) => s + 1);
         },
@@ -25,11 +25,11 @@ export default function WrapperOutsideClick() {
                 <label htmlFor="outside-click-input-1">isListening</label>
             </div>
             <br />
-            <span ref={ref}>
-                <button type="button">Click Me and Click Outside Me</button>
-            </span>
+            <button ref={targetRef} type="button">
+                Click Me and Click Outside Me
+            </button>
             <p>
-                counter:
+                Counter:
                 {counter}
             </p>
         </div>
