@@ -1,0 +1,75 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { WrapperOutsideClick } from './wrappers';
+
+<Meta title="Hooks/useOutsideClick" />
+
+# Overview
+
+`useOutsideClick` A hook that elegantly manages click outside of target elements.
+
+### API
+
+```ts
+    useOutsideClick(
+        target : HTMLElement | React.MutableRefObject,
+        onOutsideClick: (event: MouseEvent | TouchEvent) => void,
+        isListening: boolean
+    );
+```
+
+### Params
+
+| Property       | Description                      | Type                                  | Default |
+| -------------- | -------------------------------- | ------------------------------------- | ------- |
+| target         | DOM element or Ref Object        | HTMLElement \| React.MutableRefObject |         |
+| onOutsideClick | Trigger Function                 | (event) => void                       |         |
+| isListening    | Add or remove the event listener | boolean                               | true    |
+
+### Usage
+
+```js
+import React, { useState, useRef } from 'react';
+import { useOutsideClick } from '../../src';
+
+export default function WrapperOutsideClick() {
+    const [counter, setCounter] = useState(0);
+    const [isListening, setIsListening] = useState(true);
+    const targetRef = useRef();
+    useOutsideClick(
+        targetRef,
+        () => {
+            setCounter((s) => s + 1);
+        },
+        isListening,
+    );
+    return (
+        <div>
+            <div>
+                <input
+                    id="outside-click-input-1"
+                    type="checkbox"
+                    checked={isListening}
+                    onChange={(event) => setIsListening(event.target.checked)}
+                />
+                <label htmlFor="outside-click-input-1">isListening</label>
+            </div>
+            <br />
+            <button ref={targetRef} type="button">
+                Click Me and Click Outside Me
+            </button>
+            <p>
+                Counter:
+                {counter}
+            </p>
+        </div>
+    );
+}
+```
+
+### Examples
+
+<Preview>
+    <Story name="WrapperOutsideClik">
+        <WrapperOutsideClick />
+    </Story>
+</Preview>

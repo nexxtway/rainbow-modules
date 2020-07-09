@@ -28,6 +28,7 @@ module.exports = {
                     __dirname,
                     '../packages/firebase-hooks/src/index.js',
                 ),
+                '@rainbow-modules/hooks': path.join(__dirname, '../packages/hooks/src/index.js'),
                 '@rainbow-modules/listview': path.join(
                     __dirname,
                     '../packages/listview/src/index.js',
