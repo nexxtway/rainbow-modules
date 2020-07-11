@@ -38,7 +38,8 @@
                 },
                 "allowChildren": true
             }
-        ]
+        ],
+        "react/jsx-props-no-spreading": ["off"]
     },
     "env": {
         "es6": true,

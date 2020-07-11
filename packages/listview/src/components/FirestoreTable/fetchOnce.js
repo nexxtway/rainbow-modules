@@ -4,10 +4,10 @@ import Table from 'react-rainbow-components/components/Table';
 import { useCollectionOnce } from '@rainbow-modules/firebase-hooks';
 
 const FirestoreTableFetchOnce = (props) => {
-    const { children, collection } = props;
+    const { children, collection, ...rest } = props;
     const [data, isLoading] = useCollectionOnce({ path: collection });
     return (
-        <Table keyField="id" data={data} isLoading={isLoading}>
+        <Table {...rest} keyField="id" data={data} isLoading={isLoading}>
             {children}
         </Table>
     );
