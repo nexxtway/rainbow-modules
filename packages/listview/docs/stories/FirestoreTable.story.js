@@ -26,6 +26,17 @@ export const basicFirestoreTableFetchOnce = () => {
     );
 };
 
+export const firestoreTablePassingDownProps = () => {
+    return (
+        <RainbowFirebaseApp app={app}>
+            <FirestoreTable collection="books" fetchOnce showRowNumberColumn>
+                <Column field="id" header="Id" />
+                <Column field="data.name" header="Name" />
+            </FirestoreTable>
+        </RainbowFirebaseApp>
+    );
+};
+
 export default {
     title: 'Listview/Stories',
     component: FirestoreTable,
