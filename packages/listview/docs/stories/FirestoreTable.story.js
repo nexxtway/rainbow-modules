@@ -29,7 +29,12 @@ export const basicFirestoreTableFetchOnce = () => {
 export const firestoreTablePassingDownProps = () => {
     return (
         <RainbowFirebaseApp app={app}>
-            <FirestoreTable collection="books" fetchOnce showRowNumberColumn>
+            <FirestoreTable
+                collection="books"
+                query={(ref) => ref.where('name', '==', 'Speaking Javascript')}
+                fetchOnce
+                showRowNumberColumn
+            >
                 <Column field="id" header="Id" />
                 <Column field="data.name" header="Name" />
             </FirestoreTable>

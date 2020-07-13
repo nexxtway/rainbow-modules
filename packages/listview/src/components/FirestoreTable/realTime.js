@@ -4,8 +4,8 @@ import Table from 'react-rainbow-components/components/Table';
 import { useCollection } from '@rainbow-modules/firebase-hooks';
 
 const FirestoreTableRealTime = (props) => {
-    const { children, collection, ...rest } = props;
-    const [data, isLoading] = useCollection({ path: collection });
+    const { children, collection, query, ...rest } = props;
+    const [data, isLoading] = useCollection({ path: collection, query });
     return (
         <Table {...rest} keyField="id" data={data} isLoading={isLoading}>
             {children}
@@ -15,10 +15,12 @@ const FirestoreTableRealTime = (props) => {
 
 FirestoreTableRealTime.propTypes = {
     collection: PropTypes.string.isRequired,
+    query: PropTypes.func,
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
 };
 
 FirestoreTableRealTime.defaultProps = {
+    query: undefined,
     children: [],
 };
 
