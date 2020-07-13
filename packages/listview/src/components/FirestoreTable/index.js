@@ -15,12 +15,15 @@ const FirestoreTable = (props) => {
 FirestoreTable.propTypes = {
     /** The path of the Firestore collection e.g. `/books` */
     collection: PropTypes.string.isRequired,
+    /** Query function for firestore. */
+    query: PropTypes.func,
     /** It fetch the collection data once. */
     fetchOnce: PropTypes.bool,
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
 };
 
 FirestoreTable.defaultProps = {
+    query: undefined,
     fetchOnce: false,
     children: [],
 };
