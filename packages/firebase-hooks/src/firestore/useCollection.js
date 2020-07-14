@@ -5,7 +5,7 @@ import getData from '../helpers/getData';
 const defaultData = [];
 
 export default function useCollection(props) {
-    const { path, query, onlyIds = false } = props;
+    const { path, query, onlyIds = false, flat = false } = props;
     const { app } = useContext(Context);
 
     const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +18,7 @@ export default function useCollection(props) {
 
             const unsubscribe = finalQuery.onSnapshot(
                 (querySnapshot) => {
-                    setData(getData(querySnapshot.docs, onlyIds));
+                    setData(getData(querySnapshot.docs, onlyIds, flat));
                     setIsLoading(false);
                 },
                 (err) => {
@@ -32,7 +32,7 @@ export default function useCollection(props) {
             };
         }
         return null;
-    }, [props.path, props.onlyIds, app, path, query, onlyIds]);
+    }, [app, path, query, onlyIds, flat]);
 
     return [data, isLoading];
 }
