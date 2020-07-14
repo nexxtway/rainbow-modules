@@ -9,7 +9,7 @@ export const basicFirestoreTableRealTime = () => {
         <RainbowFirebaseApp app={app}>
             <FirestoreTable collection="books">
                 <Column field="id" header="Id" />
-                <Column field="data.name" header="Name" />
+                <Column field="name" header="Name" />
             </FirestoreTable>
         </RainbowFirebaseApp>
     );
@@ -20,7 +20,7 @@ export const basicFirestoreTableFetchOnce = () => {
         <RainbowFirebaseApp app={app}>
             <FirestoreTable collection="books" fetchOnce>
                 <Column field="id" header="Id" />
-                <Column field="data.name" header="Name" />
+                <Column field="name" header="Name" />
             </FirestoreTable>
         </RainbowFirebaseApp>
     );
@@ -36,7 +36,23 @@ export const firestoreTablePassingDownProps = () => {
                 showRowNumberColumn
             >
                 <Column field="id" header="Id" />
-                <Column field="data.name" header="Name" />
+                <Column field="name" header="Name" />
+            </FirestoreTable>
+        </RainbowFirebaseApp>
+    );
+};
+
+export const firestoreTableWithSortAndQuery = () => {
+    return (
+        <RainbowFirebaseApp app={app}>
+            <FirestoreTable
+                collection="books"
+                fetchOnce
+                query={(ref) => ref.limit(2)}
+                sortedBy="name"
+            >
+                <Column field="id" header="Id" />
+                <Column field="name" header="Name" sortable />
             </FirestoreTable>
         </RainbowFirebaseApp>
     );
