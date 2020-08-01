@@ -8,7 +8,6 @@ const getCategorizedIcons = (icons) => {
         standards: [],
         customs: [],
     };
-
     icons.forEach((rainbowIcon, index) => {
         const key = `rainbowIcon-${index}`;
         const iconBox = (
