@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { Button, Card } from 'react-rainbow-components';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
+import { RainbowLogo } from '@rainbow-modules/icons';
 import app from '../../../../firebase';
 import WhenAuthenticated from '../../src/components/WhenAuthenticated';
 import WhenNoAuthenticated from '../../src/components/WhenNoAuthenticated';
 import EmailPasswordSignUpForm from '../../src/components/EmailPasswordSignUpForm';
-import { RainbowLogo } from '@rainbow-modules/icons';
 
 const Container = styled.div`
     display: flex;
