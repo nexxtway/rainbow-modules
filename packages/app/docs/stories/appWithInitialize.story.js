@@ -4,7 +4,7 @@ import RainbowFirebaseApp from '../../src/components/App';
 import sleep from './helpers/sleep';
 
 export default {
-    title: 'App/Stories/RainbowFirebaseApp',
+    title: 'Modules|App/Stories/RainbowFirebaseApp',
     component: RainbowFirebaseApp,
 };
 

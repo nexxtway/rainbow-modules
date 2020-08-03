@@ -108,6 +108,6 @@ export const arcSpinnerWithChild = () => {
 };
 
 export default {
-    title: 'App/Stories/Spinners',
+    title: 'Modules|App/Stories/Spinners',
     component: RainbowFirebaseApp,
 };

@@ -51,5 +51,5 @@ export const basicEmailPasswordSignUpForm = () => {
 };
 
 export default {
-    title: 'Auth/Stories',
+    title: 'Modules|Auth/Stories',
 };
