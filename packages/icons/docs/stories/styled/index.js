@@ -6,8 +6,8 @@ export const StyledWrapperIcons = styled.div`
     justify-content: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding: 10px 0;
-    color: #333333;
-    font-family: arial;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
 `;
 
 export const StyledIconsTotal = styled.div`
@@ -37,13 +37,13 @@ export const StyledCategoryTitle = styled.div`
     font-size: 1.3rem;
     font-weight: 700;
     margin: 40px 0 10px 0;
-    color: #333333;
-    font-family: arial;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
 `;
 
 export const StyledCategoryDescription = styled.div`
-    font-family: arial;
-    color: #666666;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #666;
 `;
 
 export const StyledButton = styled.button`
@@ -54,6 +54,11 @@ export const StyledButton = styled.button`
     cursor: pointer;
     border-radius: 8px;
     color: #3f4954;
+    > svg {
+        margin-bottom: 10px;
+        width: 40px;
+        height: 40px;
+    }
 
     &:focus,
     &:active {
@@ -65,18 +70,14 @@ export const StyledButton = styled.button`
     &:hover > svg {
         color: #01b6f5;
     }
-    > svg {
-        margin-bottom: 10px;
-        width: 40px;
-        height: 40px;
-    }
 `;
+
 export const StyledTooltip = styled.div`
     padding: 20px;
     border-radius: 0.875rem;
     box-shadow: #a4a7b5 0 0 4px 0;
     border: solid 1px #f6f7f9;
-    background-color: #ffffff;
+    background-color: #fff;
     min-width: 60px;
     max-width: 400px;
 `;
