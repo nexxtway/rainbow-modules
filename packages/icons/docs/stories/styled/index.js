@@ -54,6 +54,7 @@ export const StyledButton = styled.button`
     cursor: pointer;
     border-radius: 8px;
     color: #3f4954;
+
     > svg {
         margin-bottom: 10px;
         width: 40px;
@@ -64,9 +65,11 @@ export const StyledButton = styled.button`
     &:active {
         outline: 0;
     }
+
     &:hover {
         background: #f6f7f9;
     }
+
     &:hover > svg {
         color: #01b6f5;
     }
@@ -88,7 +91,7 @@ export const StyledTitle = styled.div`
     line-height: 1.3rem;
     font-weight: 700;
     margin-bottom: 17px;
-    color: #333333;
+    color: #333;
     align-items: center;
 `;
 
@@ -96,7 +99,7 @@ export const StyledSample = styled.div`
     display: flex;
     font-size: 1rem;
     margin-bottom: 10px;
-    color: #666666;
+    color: #666;
     align-items: center;
 `;
 
@@ -107,7 +110,7 @@ export const StyledIconContainer = styled.span`
 export const StyledText = styled.div`
     font-size: 0.8125rem;
     line-height: 2;
-    color: #333333;
+    color: #333;
     background: #d7d9e2;
     padding: 10px;
     border-radius: 0.375rem;
