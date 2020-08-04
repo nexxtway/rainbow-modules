@@ -1,10 +1,5 @@
-import React from 'react';
 import styled from 'styled-components';
 import { Card } from 'react-rainbow-components';
-import { RainbowFirebaseApp } from '@rainbow-modules/app';
-import EmailPasswordSignUpForm from '@rainbow-modules/auth';
-import app from '../firebase';
-import { RainbowLogo } from '../packages/icons/src';
 
 export const Container = styled.div`
     display: flex;
