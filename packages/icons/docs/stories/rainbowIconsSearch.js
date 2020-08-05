@@ -19,7 +19,7 @@ const RainbowIconsSearch = () => {
                     Raibow Icons
                 </StyledIconsTotal>
                 <StyledInputSearch
-                    label=""
+                    label="search icons"
                     type="search"
                     hideLabel
                     value={searchTerm}

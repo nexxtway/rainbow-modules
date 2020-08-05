@@ -1,4 +1,4 @@
-export default function filterCategoriesByName(data, query) {
+export default function filterIconsBySearchTerm(data, query) {
     const newQuery = query
         .replace(/[^a-z0-9]/gi, '')
         .split('')
