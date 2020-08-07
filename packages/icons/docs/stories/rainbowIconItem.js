@@ -1,4 +1,4 @@
-import React, { useRef, useState, useCallback } from 'react';
+import React, { useRef, useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import InternalOverlay from 'react-rainbow-components/components/InternalOverlay';
 import RenderIf from 'react-rainbow-components/components/RenderIf';
@@ -18,6 +18,14 @@ const RainbowIconItem = (props) => {
     const [isOpen, setIsOpen] = useState(false);
     const closeOverlay = useCallback(() => setIsOpen(false), []);
     const openOverlay = useCallback(() => setIsOpen(true), []);
+
+    useEffect(() => {
+        if (isFocused) {
+            openOverlay();
+        } else {
+            closeOverlay();
+        }
+    }, [closeOverlay, isFocused, openOverlay]);
 
     useWindowResize(() => closeOverlay(), isOpen);
 

@@ -66,16 +66,19 @@ export const StyledButton = styled.button`
         outline: 0;
     }
 
+    &:focus,
     &:hover {
         background: #f6f7f9;
     }
 
+    &:focus > svg,
     &:hover > svg {
         color: #01b6f5;
     }
 `;
 
 export const StyledTooltip = styled.div`
+    font-family: Arial, Helvetica, sans-serif;
     padding: 20px;
     border-radius: 0.875rem;
     box-shadow: #a4a7b5 0 0 4px 0;
@@ -109,6 +112,7 @@ export const StyledIconContainer = styled.span`
 
 export const StyledText = styled.div`
     font-size: 0.8125rem;
+    font-family: 'Courier New', Courier, monospace;
     line-height: 2;
     color: #333;
     background: #d7d9e2;
