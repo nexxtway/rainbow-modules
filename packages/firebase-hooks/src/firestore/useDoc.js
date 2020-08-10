@@ -35,6 +35,6 @@ export default function useDoc(props) {
             };
         }
         return null;
-    }, [app, path, props.path]);
+    }, [app, path]);
     return [data, isLoading];
 }
