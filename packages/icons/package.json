@@ -1,11 +1,11 @@
 {
     "name": "@rainbow-modules/icons",
-    "version": "0.1.1",
+    "version": "0.1.3",
     "main": "lib/index.js",
     "author": "Nexxtway Team",
     "license": "MIT",
-    "dependencies": {
-        "react": "^16.13.1"
+    "peerDependencies": {
+        "react": ">=16.8.0"
     },
     "publishConfig": {
         "access": "public"
