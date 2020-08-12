@@ -29,7 +29,7 @@ export default function useDocOnce(props) {
                     console.log(err);
                 });
         }
-    }, [app, path, props.path]);
+    }, [app, path]);
 
     return [data, isLoading];
 }

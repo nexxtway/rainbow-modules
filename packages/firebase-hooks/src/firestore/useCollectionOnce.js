@@ -5,7 +5,7 @@ import getData from '../helpers/getData';
 const defaultData = [];
 
 export default function useCollectionOnce(props) {
-    const { path, query, onlyIds = false, flat = false } = props;
+    const { path, query, onlyIds = false, flat = false, track = [] } = props;
     const { app } = useContext(Context);
 
     const [data, setData] = useState(defaultData);
@@ -28,7 +28,8 @@ export default function useCollectionOnce(props) {
                     console.log(err);
                 });
         }
-    }, [path, onlyIds, flat, app, query]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [app, path, onlyIds, flat].concat(track));
 
     return [data, isLoading];
 }
