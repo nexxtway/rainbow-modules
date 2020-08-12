@@ -73,7 +73,7 @@ const RainbowIconItem = (props) => {
     const Icon = rainbowIcon.icon;
     const iconName = rainbowIcon.name.charAt(0).toUpperCase() + rainbowIcon.name.slice(1);
     const importLine = `import { ${iconName} } from ‘@rainbowmodules/icons’`;
-    const iconTag = `<${iconName} color=“#096666” size={32} />`;
+    const iconTag = `<${iconName} />`;
 
     return (
         <>

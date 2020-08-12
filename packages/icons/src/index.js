@@ -12,3 +12,6 @@ export { default as RainbowLogo } from './components/rainbowLogo';
 export { default as Share } from './components/share';
 export { default as Trash } from './components/trash';
 export { default as Warning } from './components/warning';
+export { default as ArrowUp } from './components/arrowUp';
+export { default as Cancel } from './components/cancel';
+export { default as Checkmark } from './components/checkMark';

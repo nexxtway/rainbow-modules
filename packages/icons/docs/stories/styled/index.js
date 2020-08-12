@@ -30,6 +30,7 @@ export const StyledIconsGallery = styled.div`
     display: flex;
     padding: 40px 0 15px 0;
     align-items: baseline;
+    flex-wrap: wrap;
 `;
 
 export const StyledCategoryTitle = styled.div`
@@ -85,7 +86,7 @@ export const StyledTooltip = styled.div`
     border: solid 1px #f6f7f9;
     background-color: #fff;
     min-width: 60px;
-    max-width: 400px;
+    max-width: 450px;
 `;
 
 export const StyledTitle = styled.div`

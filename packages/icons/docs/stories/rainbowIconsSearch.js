@@ -9,7 +9,6 @@ const RainbowIconsSearch = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const rainbowIcons = iconsArray;
     const filteredIcons = filterIconsBySearchTerm(rainbowIcons, searchTerm);
-
     return (
         <div>
             <StyledWrapperIcons>
