@@ -16,7 +16,7 @@ const SpinnerContainer = styled.div`
     right: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(239, 241, 245, 0.64);
     z-index: 1000000;
 `;
 
