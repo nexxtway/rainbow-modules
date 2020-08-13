@@ -1,4 +1,4 @@
-const CONFIRM_MODAL_URL = '/iframe.html?id=app-stories-modals--show-confirm-modal-example';
+const CONFIRM_MODAL_URL = '/iframe.html?id=modules-app-stories-modals--show-confirm-modal-example';
 const BUTTON_ICON = 'button[data-id=button-icon-element]';
 const MODAL = 'section[aria-modal=true]';
 const MODAL_BUTTON = 'button[data-id=button-element]';

@@ -155,6 +155,6 @@ export const showYesNoModalExample = () => {
 };
 
 export default {
-    title: 'App/Stories/Modals',
+    title: 'Modules|App/Stories/Modals',
     component: ConfirmModal,
 };

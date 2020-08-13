@@ -1,4 +1,4 @@
-const FORM_URL = '/iframe.html?id=auth-stories--basic-email-password-sign-up-form';
+const FORM_URL = '/iframe.html?id=modules-auth-stories--basic-email-password-sign-up-form';
 const BUTTON = 'button[type="submit"]';
 const SPINNER_BACKDROP = '[data-cy="app-spinner"]';
 const NAME_INPUT = 'input[name="name"]';
