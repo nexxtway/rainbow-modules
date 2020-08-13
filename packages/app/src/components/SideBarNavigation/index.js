@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Sidebar } from 'react-rainbow-components';
+import Sidebar from 'react-rainbow-components/components/Sidebar';
 import { useLocation, matchPath } from 'react-router-dom';
 
 const SideBarNavigation = (props) => {
