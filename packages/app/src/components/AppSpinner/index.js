@@ -17,6 +17,7 @@ const SpinnerContainer = styled.div`
     width: 100%;
     height: 100%;
     background-color: rgba(239, 241, 245, 0.64);
+    backdrop-filter: blur(5px);
     z-index: 1000000;
 `;
 
