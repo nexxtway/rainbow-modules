@@ -99,6 +99,6 @@ export const showAppLevelMessageTimeout3s = () => {
 };
 
 export default {
-    title: 'App/Stories/Messages',
+    title: 'Modules|App/Stories/Messages',
     component: RainbowFirebaseApp,
 };

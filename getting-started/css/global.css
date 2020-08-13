@@ -1,0 +1,84 @@
+.page-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+.page-title > span {
+    font-weight: normal;
+    font-size: 36px;
+    margin-left: 1rem;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.feature-list_item {
+    display: block;
+    width: 250px;
+    padding: 0 32px 32px;
+}
+
+.feature-list_item .feature-image {
+    padding: 32px 0;
+}
+
+.feature-list_item h4.sbdocs-h4 {
+    font-size: 18px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+}
+
+h1.sbdocs-h1 > a,
+h4.sbdocs-h4 > a {
+    text-decoration: none;
+    /* font-size: inherit; */
+    color: inherit;
+}
+
+.sbdocs-pre .docblock-source {
+    border-radius: 8px;
+    background-color: #e7eaf0;
+    border: none;
+    box-shadow: none;
+}
+
+.docblock-source > div:nth-child(2) {
+    display: none;
+}
+
+.docblock-source code {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 2;
+}
+
+.sbdocs-p {
+    font-size: 1rem;
+}
+
+h1.sbdocs-h1 {
+    font-weight: normal;
+    font-size: 36px;
+}
+
+h3.sbdocs-h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+hr {
+    margin: 21px 0;
+    height: 1px;
+    border: solid 1px rgba(217, 219, 229, 0.57);
+}

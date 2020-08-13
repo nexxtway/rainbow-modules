@@ -90,5 +90,5 @@ export const basicEmailPasswordAuthFlow = () => {
 };
 
 export default {
-    title: 'Auth/Stories',
+    title: 'Modules|Auth/Stories',
 };

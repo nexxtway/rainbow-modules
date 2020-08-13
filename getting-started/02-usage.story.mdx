@@ -1,0 +1,29 @@
+import { Meta, Preview } from '@storybook/addon-docs/blocks';
+import { RainbowFirebaseApp } from '@rainbow-modules/app';
+import { EmailPasswordSignUpForm } from '@rainbow-modules/auth';
+import { Container, Title, StyledCard } from './example';
+import { RainbowLogo } from '../packages/icons/src';
+import './css/global.css';
+
+<Meta title="Introduction|Getting Started/Usage" />
+
+# Usage
+
+Rainbow Modules is very simple and easy to use. Explore each module's documentation and play with examples.
+
+## Using rainbow-modules in your web app
+
+It’s easy to incorporate rainbow-modules into your web page. There are several
+runnable examples in this Git repo, but here's a small example:
+
+<Preview>
+    <RainbowFirebaseApp>
+        <Container>
+            <RainbowLogo />
+            <Title>rainbow-modules</Title>
+            <StyledCard>
+                <EmailPasswordSignUpForm />
+            </StyledCard>
+        </Container>
+    </RainbowFirebaseApp>
+</Preview>
