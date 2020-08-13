@@ -1,4 +1,4 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta } from '@storybook/addon-docs/blocks';
 import './css/global.css';
 import logo from './assets/rainbow-logo.svg';
 import puzzle from './assets/puzzle.svg';
@@ -58,16 +58,22 @@ We designed each component with i18n in mind. Any new component or feature we ma
 </div>
 </div>
 
-### Installing from npm
+## Installing from npm
 
----
-
-Rainbow Modules is available as an [npm package](https://www.npmjs.com/package/rainbow-modules).
+Rainbow modules are available as individual [npm packages](https://www.npmjs.com/search?q=@rainbow-modules).
 
 ```bash
 // with npm
-$ npm install rainbow-modules --save
+$ npm install @rainbow-modules/<module> --save
 
 // or yarn
-$ yarn add rainbow-modules
+$ yarn add @rainbow-modules/<module>
 ```
+
+## Available Modules
+
+-   **@rainbow-modules/app**: is the main package. It contains components and helpers to build your apps.
+-   **@rainbow-modules/auth**: components for authentication purposes.
+-   **@rainbow-modules/hooks**: useful hooks for your components.
+-   **@rainbow-modules/validation**: a set of valitators for your forms.
+-   **@rainbow-modules/listview**:
