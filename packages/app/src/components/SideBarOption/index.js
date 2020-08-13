@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { SidebarItem } from 'react-rainbow-components';
+import SidebarItem from 'react-rainbow-components/components/SidebarItem';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 
 const SideBarOption = (props) => {
