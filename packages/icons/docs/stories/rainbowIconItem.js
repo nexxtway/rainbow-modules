@@ -80,7 +80,6 @@ const RainbowIconItem = (props) => {
             <StyledButton
                 id={iconBoxId}
                 ref={triggerRef}
-                onMouseEnter={openOverlay}
                 onMouseLeave={handleButtonMouseLeave}
                 onFocus={() => setIsFocused(true)}
                 onBlur={handleBlur}
