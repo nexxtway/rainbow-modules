@@ -13,7 +13,6 @@ const RainbowIconItem = (props) => {
     const triggerRef = useRef();
     const helpTextId = useUniqueIdentifier('help-text');
     const [isFocused, setIsFocused] = useState(false);
-    const isHoverTooltip = useRef(false);
     const isClickTooltip = useRef(false);
     const [isOpen, setIsOpen] = useState(false);
     const closeOverlay = useCallback(() => setIsOpen(false), []);
@@ -35,14 +34,6 @@ const RainbowIconItem = (props) => {
         }
     };
 
-    const handleButtonMouseLeave = () => {
-        if (!isFocused) {
-            setTimeout(() => {
-                if (!isHoverTooltip.current) closeOverlay();
-            }, 50);
-        }
-    };
-
     const handleTooltipMouseDown = () => {
         isClickTooltip.current = true;
     };
@@ -50,17 +41,6 @@ const RainbowIconItem = (props) => {
     const handleTooltipMouseUp = () => {
         isClickTooltip.current = false;
         triggerRef.current.focus();
-    };
-
-    const handleTooltipMouseEnter = () => {
-        isHoverTooltip.current = true;
-    };
-
-    const handleTooltipMouseLeave = () => {
-        isHoverTooltip.current = false;
-        if (!isFocused) {
-            closeOverlay();
-        }
     };
 
     const handleKeyPressed = (event) => {
@@ -80,8 +60,6 @@ const RainbowIconItem = (props) => {
             <StyledButton
                 id={iconBoxId}
                 ref={triggerRef}
-                onMouseEnter={openOverlay}
-                onMouseLeave={handleButtonMouseLeave}
                 onFocus={() => setIsFocused(true)}
                 onBlur={handleBlur}
                 onKeyDown={handleKeyPressed}
@@ -101,8 +79,6 @@ const RainbowIconItem = (props) => {
                                 role="tooltip"
                                 onMouseDown={handleTooltipMouseDown}
                                 onMouseUp={handleTooltipMouseUp}
-                                onMouseEnter={handleTooltipMouseEnter}
-                                onMouseLeave={handleTooltipMouseLeave}
                             >
                                 <StyledTitle>Using rainbow/icons</StyledTitle>
                                 <StyledSample>Example</StyledSample>
