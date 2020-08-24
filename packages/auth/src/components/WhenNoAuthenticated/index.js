@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 import { useAuthState } from '@rainbow-modules/firebase-hooks';
+import getRedirectTo from '../../helpers/getRedirectTo';
 
 const Private = (props) => {
     // eslint-disable-next-line react/prop-types
@@ -18,10 +19,10 @@ const Private = (props) => {
     if (isAuth) {
         return (
             <Redirect
-                to={{
-                    pathname: redirect,
-                    state: { from: location },
-                }}
+                to={getRedirectTo({
+                    redirect,
+                    location,
+                })}
             />
         );
     }
@@ -30,7 +31,6 @@ const Private = (props) => {
 
 const WhenNoAuthenticated = (props) => {
     const { path, redirect, component, children } = props;
-    // eslint-disable-next-line react/prop-types
 
     return (
         <Route
@@ -48,14 +48,14 @@ const WhenNoAuthenticated = (props) => {
 WhenNoAuthenticated.propTypes = {
     path: PropTypes.string,
     component: PropTypes.func,
-    redirect: PropTypes.string,
+    redirect: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     children: PropTypes.node,
 };
 
 WhenNoAuthenticated.defaultProps = {
     path: '',
     component: undefined,
-    redirect: '',
+    redirect: undefined,
     children: null,
 };
 
