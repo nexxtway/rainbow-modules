@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 import { useAuthState } from '@rainbow-modules/firebase-hooks';
+import getRedirectTo from '../../helpers/getRedirectTo';
 
 const Private = (props) => {
     // eslint-disable-next-line react/prop-types
@@ -18,10 +19,10 @@ const Private = (props) => {
     if (isAuth === false) {
         return (
             <Redirect
-                to={{
-                    pathname: redirect,
-                    state: { from: location },
-                }}
+                to={getRedirectTo({
+                    redirect,
+                    location,
+                })}
             />
         );
     }
@@ -30,7 +31,6 @@ const Private = (props) => {
 
 const WhenAuthenticated = (props) => {
     const { path, redirect, component, children } = props;
-    // eslint-disable-next-line react/prop-types
 
     return (
         <Route
@@ -51,14 +51,16 @@ WhenAuthenticated.propTypes = {
     /** The component class or function that will be rendered if the application is
      * authenticated. */
     component: PropTypes.func,
-    /** The route where the component should redirect if the application ins't authenticated. */
-    redirect: PropTypes.string,
+    /** The route where the component should redirect if the application ins't authenticated. It can also be an
+     * object with the same shape of the `to` prop in the react router Redirect component.
+     */
+    redirect: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     children: PropTypes.node,
 };
 
 WhenAuthenticated.defaultProps = {
     component: undefined,
-    redirect: '',
+    redirect: undefined,
     children: null,
 };
 
