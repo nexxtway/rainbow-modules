@@ -17,6 +17,7 @@ export const StyledNotification = styled.div`
     transition-property: height, transform, margin-top, z-index;
     transition-duration: 0.2s, 0.4s, 0.4s, 0s;
     transition-delay: 0s, 0.2s, 0s, 0s;
+    margin-bottom: 0.5rem;
 
     :nth-child(2) {
         z-index: 9;
@@ -33,13 +34,13 @@ export const StyledNotification = styled.div`
         transition-property: height, transform, margin-top, z-index;
         transition-duration: 0.2s, 0.4s, 0.4s, 0s;
         transition-delay: 0s, 0.2s, 0s, 0s;
-        margin-top: -18%;
+        margin-top: -21%;
         transform: scale(0.95);
         z-index: 5;
     }
 
     :nth-child(5) {
-        margin-top: -19%;
+        margin-top: -21%;
         transform: scale(0.9);
         z-index: 1;
     }
