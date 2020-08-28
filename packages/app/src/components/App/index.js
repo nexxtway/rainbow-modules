@@ -11,6 +11,8 @@ import AppMessage from '../AppMessage';
 import ConfirmModal from '../ConfirmModal';
 import { updateAppActions } from '../../actions';
 import getBrowserLocale from '../../helpers/getBrowserLocale';
+import { Notification } from 'react-rainbow-components';
+import AppNotificationManager from '../AppNotificationManager';
 
 const RainbowFirebaseApp = (props) => {
     const { app, theme, locale, translations, children, reducers, initialize, spinner } = props;
@@ -71,6 +73,7 @@ const RainbowFirebaseApp = (props) => {
                             // eslint-disable-next-line react/jsx-props-no-spreading
                             {...confirmModalParams}
                         />
+                        <AppNotificationManager />
                     </Application>
                 </I18nContainer>
             </FirebaseProvider>
