@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledNotificationContainer = styled.div`
     position: fixed;
     top: 16px;
-    right: 0px;
+    right: 0;
     z-index: 10000;
     display: flex;
     flex-direction: column;
@@ -17,29 +17,6 @@ export const StyledNotification = styled.div`
     transition-property: height, transform, margin-top, z-index;
     transition-duration: 0.2s, 0.4s, 0.4s, 0s;
     transition-delay: 0s, 0.2s, 0s, 0s;
-
-    /* Initial state */
-    transform: translateX(100%);
-    height: 0;
-
-    /* Shown state */
-    ${(props) =>
-        props.shown &&
-        `
-        transform: translateX(0%);
-        height: ${props.height}px;
-        `}
-
-    /* Exit state */
-    ${(props) =>
-        props.shouldExit &&
-        `
-        transition-property: height, transform, margin-top, z-index;
-        transition-duration: 0.2s, 0.4s, 0.4s, 0s;
-        transition-delay: 0.4s, 0s, 0s, 0.6s;
-        transform: translateX(100%);
-        height: 0;
-        `}
 
     :nth-child(2) {
         z-index: 9;
@@ -70,6 +47,29 @@ export const StyledNotification = styled.div`
     :nth-child(n+6) {
         display: none;
     }
+
+    /* Initial state */
+    transform: translateX(100%);
+    height: 0;
+
+    /* Shown state */
+    ${(props) =>
+        props.shown &&
+        `
+        transform: translateX(0%);
+        height: ${props.height}px;
+        `}
+
+    /* Exit state */
+    ${(props) =>
+        props.shouldExit &&
+        `
+        transition-property: height, transform, margin-top, z-index;
+        transition-duration: 0.2s, 0.4s, 0.4s, 0s;
+        transition-delay: 0.4s, 0s, 0s, 0.6s;
+        transform: translateX(100%);
+        height: 0;
+        `}
 `;
 
 /*
