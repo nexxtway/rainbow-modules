@@ -3,7 +3,7 @@ import useUniqueIdentifier from '../useUniqueIdentifier';
 import handleOverflow from './helpers/handleOverflow';
 
 let locks = [];
-export default function useScrollDisabled(disabled = true) {
+export default function useScrollLock(disabled = true) {
     const unique = useUniqueIdentifier();
     useEffect(() => {
         if (disabled) {

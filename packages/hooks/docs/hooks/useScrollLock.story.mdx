@@ -1,0 +1,46 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { WrapperScrollLock } from '../stories';
+
+<Meta title="Modules|Hooks/useScrollLock" />
+
+# Overview
+
+`useScrollLock` A hook that elegantly scroll disabled.
+
+### API
+
+```ts
+    useScrollLock(
+        disabled: boolean
+    );
+```
+
+### Params
+
+| Property | Description                  | Type    | Default |
+| -------- | ---------------------------- | ------- | ------- |
+| disabled | Enable or disable the scroll | boolean | true    |
+
+### Usage
+
+```js
+import React, { useState } from 'react';
+import { CheckboxToggle } from 'react-rainbow-components';
+import { useScrollLock } from '../../src';
+
+export default function WrapperScrollLock() {
+    const [isLock, setIsLock] = useState(false);
+    useScrollLock(isLock);
+    return (
+        <CheckboxToggle
+            label="Lock and unlock scroll"
+            value={isLock}
+            onChange={(event) => setIsLock(event.target.checked)}
+        />
+    );
+}
+```
+
+### Examples
+
+<WrapperScrollLock />

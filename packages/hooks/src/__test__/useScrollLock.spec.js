@@ -1,12 +1,12 @@
 import { renderHook } from '@testing-library/react-hooks';
-import useScrollDisabled from '../useScrollDisabled';
+import useScrollLock from '../useScrollLock';
 
 jest.spyOn(document.documentElement, 'clientWidth', 'get')
     .mockImplementation(() => 185)
     .mockImplementationOnce(() => 200);
 window.innerWidth = 200;
 
-describe('useScrollDisabled', () => {
+describe('useScrollLock', () => {
     beforeEach(() => {
         document.body.style.overflow = '';
         document.body.style.paddingRight = '0';
@@ -15,7 +15,7 @@ describe('useScrollDisabled', () => {
 
     it('should disable scroll when call without param', () => {
         renderHook(() => {
-            useScrollDisabled();
+            useScrollLock();
         });
         jest.runAllTimers();
         expect(document.body.style.overflow).toBe('hidden');
@@ -25,7 +25,7 @@ describe('useScrollDisabled', () => {
         const hooks = Array.from(Array(3)).map(() =>
             renderHook(
                 ({ isDisabled }) => {
-                    useScrollDisabled(isDisabled);
+                    useScrollLock(isDisabled);
                 },
                 { initialProps: { isDisabled: true } },
             ),
