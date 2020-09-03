@@ -17,10 +17,6 @@ export const showAppNotification = (notification, timeout) => {
     AppActions.addNotification(notification, timeout);
 };
 
-export const removeAppNotification = (notification) => {
-    AppActions.removeNotification(notification);
-};
-
 export const updateAppActions = (actions) => {
     AppActions = {
         ...AppActions,
