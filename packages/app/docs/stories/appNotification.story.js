@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { Button, Card, Notification } from 'react-rainbow-components';
+import { Button, Card } from 'react-rainbow-components';
 import app from '../../../../firebase';
 import RainbowFirebaseApp from '../../src/components/App';
-import { showAppNotification, removeAppNotification } from '../../src/actions';
+import { showAppNotification } from '../../src/actions';
 import Cancel from './icons/cancel';
 import Checkmark from './icons/checkmark';
 
@@ -51,16 +51,14 @@ const Description = styled.p.attrs((props) => props.theme.rainbow)`
 
 export const showAppLevelNotification = () => {
     const showNotification = () => {
-        const notification = (
-            <Notification
-                title="Notification"
-                description="This is the Notification description"
-                onRequestClose={() => {
-                    removeAppNotification(notification);
-                }}
-            />
+        showAppNotification(
+            {
+                title: 'Notification',
+                description: 'This is the notification description.',
+                icon: 'success',
+            },
+            null,
         );
-        showAppNotification(notification);
     };
 
     return (
@@ -82,18 +80,15 @@ export const showAppLevelNotification = () => {
 };
 
 export const showAppLevelNotificationTimeout5s = () => {
-    // eslint-disable-next-line
-    const [count, setCount] = useState(1);
     const showNotification = () => {
-        const notification = (
-            <Notification
-                title={`Notification ${count}`}
-                description="This is the Notification description"
-                hideCloseButton
-            />
+        showAppNotification(
+            {
+                title: 'Notification',
+                description: 'This is the notification description.',
+                icon: 'success',
+            },
+            5000,
         );
-        setCount(count + 1);
-        showAppNotification(notification, 5000);
     };
 
     return (

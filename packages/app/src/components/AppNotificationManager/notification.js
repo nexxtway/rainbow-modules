@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { Notification } from 'react-rainbow-components';
 import { StyledNotification } from './styled';
 import ContentMetaResolver from './contentMetaResolver';
 
-const Notification = (props) => {
-    const { notification, timeout } = props;
+const AppNotification = (props) => {
+    const { title, description, icon, timeout, onRequestClose } = props;
     const [shouldExit, setShouldExit] = useState(false);
     const [contentMeta, updateContentMeta] = useState(false);
     const [shown, setShown] = useState(false);
@@ -15,6 +16,13 @@ const Notification = (props) => {
         }, timeout);
     }
 
+    const handleCloseRequest = () => {
+        setShouldExit(true);
+        setTimeout(() => {
+            onRequestClose();
+        }, 600);
+    };
+
     if (contentMeta) {
         const { height } = contentMeta;
         setTimeout(() => {
@@ -22,22 +30,46 @@ const Notification = (props) => {
         }, 0);
         return (
             <StyledNotification height={height} shouldExit={shouldExit} shown={shown}>
-                {notification}
+                <Notification
+                    title={title}
+                    description={description}
+                    icon={icon}
+                    onRequestClose={handleCloseRequest}
+                />
             </StyledNotification>
         );
     }
 
-    return <ContentMetaResolver onResolved={updateContentMeta}>{notification}</ContentMetaResolver>;
+    return (
+        <ContentMetaResolver onResolved={updateContentMeta}>
+            <Notification title={title} description={description} icon={icon} />
+        </ContentMetaResolver>
+    );
 };
 
-Notification.propTypes = {
-    notification: PropTypes.node,
+AppNotification.propTypes = {
+    /** The icon to show if it is passed. It is displayed in the left of the component.
+     * It must be one of this values info, success, warning, error,
+     * or any svg icon. */
+    icon: PropTypes.oneOfType([
+        PropTypes.node,
+        PropTypes.oneOf(['info', 'success', 'warning', 'error']),
+    ]),
+    /** The title that appears in the notification. */
+    title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+    /** The description that appears in the notification. */
+    description: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+    /** The action triggered when the close button is clicked. */
+    onRequestClose: PropTypes.func,
     timeout: PropTypes.number,
 };
 
-Notification.defaultProps = {
-    notification: null,
+AppNotification.defaultProps = {
+    icon: null,
+    title: null,
+    description: null,
+    onRequestClose: () => {},
     timeout: undefined,
 };
 
-export default Notification;
+export default AppNotification;

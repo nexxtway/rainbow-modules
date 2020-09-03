@@ -2,33 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { updateAppActions } from '../../actions';
 import { StyledNotificationContainer } from './styled';
-import Notification from './notification';
+import AppNotification from './notification';
 import uniqueId from './utils/uniqueId';
 
 const AppNotificationManager = () => {
     const [notifications, setNotifications] = useState([]);
 
-    const removeNotification = (notification) => {
-        setNotifications((notifications) => {
-            return notifications.filter((item) => {
-                return item.notification !== notification;
-            });
-        });
+    const removeNotification = (key) => {
+        setNotifications(notifications.filter((item) => item.key !== key));
     };
 
-    const addNotification = (notification, timeout) => {
+    const addNotification = (notification, timeout = 2000) => {
         const key = uniqueId('notification');
-        /*
-        const newNotification = (
-            <Notification key={key} notification={notification} timeout={timeout} />
-        );
-        setNotifications([newNotification, ...notifications]);
-        */
-        setNotifications([{ key, notification, timeout }, ...notifications]);
+        setNotifications([{ key, timeout, ...notification }, ...notifications]);
         if (timeout && timeout > 0) {
             setTimeout(() => {
-                // removeNotification(newNotification);
-                removeNotification(notification);
+                removeNotification(key);
             }, timeout + 600);
         }
     };
@@ -36,13 +25,21 @@ const AppNotificationManager = () => {
     useEffect(() => {
         updateAppActions({
             addNotification,
-            removeNotification,
         });
     });
 
     const children = notifications.map((n) => {
-        const { key, notification, timeout } = n;
-        return <Notification key={key} notification={notification} timeout={timeout} />;
+        const { key, title, description, icon, timeout } = n;
+        return (
+            <AppNotification
+                key={key}
+                title={title}
+                description={description}
+                icon={icon}
+                onRequestClose={() => removeNotification(key)}
+                timeout={timeout}
+            />
+        );
     });
     return createPortal(
         <StyledNotificationContainer>{children}</StyledNotificationContainer>,
