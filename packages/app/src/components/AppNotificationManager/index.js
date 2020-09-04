@@ -9,24 +9,19 @@ const AppNotificationManager = () => {
     const [notifications, setNotifications] = useState([]);
 
     const removeNotification = (key) => {
-        setNotifications(notifications.filter((item) => item.key !== key));
+        setNotifications((notifications) => notifications.filter((item) => item.key !== key));
     };
 
-    const addNotification = (notification, timeout = 2000) => {
+    const addNotification = (notification) => {
         const key = uniqueId('notification');
-        setNotifications([{ key, timeout, ...notification }, ...notifications]);
-        if (timeout && timeout > 0) {
-            setTimeout(() => {
-                removeNotification(key);
-            }, timeout + 600);
-        }
+        setNotifications((notifications) => [{ key, ...notification }, ...notifications]);
     };
 
     useEffect(() => {
         updateAppActions({
             addNotification,
         });
-    });
+    }, []);
 
     const children = notifications.map((n) => {
         const { key, title, description, icon, timeout } = n;

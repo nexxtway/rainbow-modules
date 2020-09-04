@@ -10,17 +10,21 @@ const AppNotification = (props) => {
     const [contentMeta, updateContentMeta] = useState(false);
     const [shown, setShown] = useState(false);
 
+    const scheduleRemove = (removeTimeout = 600) =>
+        setTimeout(() => {
+            onRequestClose();
+        }, removeTimeout);
+
     if (timeout) {
         setTimeout(() => {
             setShouldExit(true);
         }, timeout);
+        scheduleRemove(timeout + 600);
     }
 
     const handleCloseRequest = () => {
         setShouldExit(true);
-        setTimeout(() => {
-            onRequestClose();
-        }, 600);
+        scheduleRemove();
     };
 
     if (contentMeta) {
@@ -79,7 +83,7 @@ AppNotification.defaultProps = {
     title: null,
     description: null,
     onRequestClose: () => {},
-    timeout: undefined,
+    timeout: 2000,
 };
 
 export default AppNotification;
