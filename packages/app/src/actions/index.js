@@ -13,8 +13,8 @@ export const showAppMessage = (params) => {
     AppActions.setIsMessageVisible(true);
 };
 
-export const showAppNotification = (notification, timeout) => {
-    AppActions.addNotification(notification, timeout);
+export const showAppNotification = (notification) => {
+    AppActions.addNotification(notification);
 };
 
 export const updateAppActions = (actions) => {

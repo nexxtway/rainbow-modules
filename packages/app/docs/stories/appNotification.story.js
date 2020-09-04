@@ -51,14 +51,12 @@ const Description = styled.p.attrs((props) => props.theme.rainbow)`
 
 export const showAppLevelNotification = () => {
     const showNotification = () => {
-        showAppNotification(
-            {
-                title: 'Notification',
-                description: 'This is the notification description.',
-                icon: 'success',
-            },
-            null,
-        );
+        showAppNotification({
+            title: 'Notification',
+            description: 'This is the notification description.',
+            icon: 'success',
+            timeout: null,
+        });
     };
 
     return (
@@ -84,14 +82,12 @@ export const showAppLevelNotification = () => {
 
 export const showAppLevelNotificationTimeout5s = () => {
     const showNotification = () => {
-        showAppNotification(
-            {
-                title: 'Notification',
-                description: 'This is the notification description.',
-                icon: 'success',
-            },
-            5000,
-        );
+        showAppNotification({
+            title: 'Notification',
+            description: 'This is the notification description.',
+            icon: 'success',
+            timeout: 5000,
+        });
     };
 
     return (
