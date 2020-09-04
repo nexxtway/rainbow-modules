@@ -29,7 +29,12 @@ const AppNotification = (props) => {
             setShown(true);
         }, 0);
         return (
-            <StyledNotification height={height} shouldExit={shouldExit} shown={shown}>
+            <StyledNotification
+                height={height}
+                shouldExit={shouldExit}
+                shown={shown}
+                data-cy="notification"
+            >
                 <Notification
                     title={title}
                     description={description}
@@ -42,7 +47,12 @@ const AppNotification = (props) => {
 
     return (
         <ContentMetaResolver onResolved={updateContentMeta}>
-            <Notification title={title} description={description} icon={icon} />
+            <Notification
+                title={title}
+                description={description}
+                icon={icon}
+                onRequestClose={handleCloseRequest}
+            />
         </ContentMetaResolver>
     );
 };

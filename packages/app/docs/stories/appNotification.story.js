@@ -67,8 +67,11 @@ export const showAppLevelNotification = () => {
                 <Icon as={Checkmark} />
                 <ContentCard>
                     <Title>Notifications!</Title>
-                    <Description>Click the button below to show a notification.</Description>
+                    <Description>
+                        Click one of the buttons below to show a notification.
+                    </Description>
                     <Button
+                        id="notification-button"
                         label="Show notification"
                         variant="primary"
                         onClick={showNotification}
@@ -101,6 +104,7 @@ export const showAppLevelNotificationTimeout5s = () => {
                         Click the button below to show a notification with timeout.
                     </Description>
                     <Button
+                        id="notification-button"
                         label="Show notification"
                         variant="primary"
                         onClick={showNotification}
