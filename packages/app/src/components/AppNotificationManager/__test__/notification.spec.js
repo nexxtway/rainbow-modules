@@ -17,7 +17,12 @@ describe('AppNotificationManager', () => {
     it('should fire onRequestClose callback', () => {
         const onRequestCloseFn = jest.fn();
         const component = mount(
-            <AppNotification title="Test" description="Test" onRequestClose={onRequestCloseFn} />,
+            <AppNotification
+                title="Test"
+                description="Test"
+                onRequestClose={onRequestCloseFn}
+                timeout={null}
+            />,
         );
         component.find('button').simulate('click');
         jest.runAllTimers();
