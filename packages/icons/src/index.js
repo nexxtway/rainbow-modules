@@ -15,3 +15,4 @@ export { default as Warning } from './components/warning';
 export { default as ArrowUp } from './components/arrowUp';
 export { default as Cancel } from './components/cancel';
 export { default as Checkmark } from './components/checkMark';
+export { default as Picture } from './components/picture';
