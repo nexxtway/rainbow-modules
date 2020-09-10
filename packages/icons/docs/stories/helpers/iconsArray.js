@@ -16,6 +16,9 @@ import {
     Share,
     Trash,
     Warning,
+    ArrowRight,
+    ArrowLeft,
+    Picture,
 } from '../../../src';
 
 export default [
@@ -43,6 +46,16 @@ export default [
         name: 'arrowUp',
         category: 'standard',
         icon: ArrowUp,
+    },
+    {
+        name: 'arrowLeft',
+        category: 'standard',
+        icon: ArrowLeft,
+    },
+    {
+        name: 'arrowRight',
+        category: 'standard',
+        icon: ArrowRight,
     },
     {
         name: 'cancel',
@@ -103,5 +116,10 @@ export default [
         name: 'checkMark',
         category: 'custom',
         icon: Checkmark,
+    },
+    {
+        name: 'picture',
+        category: 'standard',
+        icon: Picture,
     },
 ];
