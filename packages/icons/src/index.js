@@ -17,3 +17,4 @@ export { default as ArrowRight } from './components/arrowRight';
 export { default as ArrowLeft } from './components/arrowLeft';
 export { default as Cancel } from './components/cancel';
 export { default as Checkmark } from './components/checkMark';
+export { default as Picture } from './components/picture';
