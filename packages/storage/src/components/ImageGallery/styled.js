@@ -54,12 +54,13 @@ export const StyledContainerImage = styled.button`
     border: 0;
     padding: 0;
     background-clip: padding-box;
-    box-shadow: rgb(215, 217, 226) 0px 1px 2px 0px;
+    box-shadow: rgb(215, 217, 226) 0 1px 2px 0;
 
     &:hover,
     &:focus {
         border: 0;
         padding: 0;
+
         &::before {
             content: '';
             overflow: hidden;
