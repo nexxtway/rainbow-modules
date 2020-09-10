@@ -16,6 +16,7 @@ import {
     Share,
     Trash,
     Warning,
+    Picture,
 } from '../../../src';
 
 export default [
@@ -103,5 +104,10 @@ export default [
         name: 'checkMark',
         category: 'custom',
         icon: Checkmark,
+    },
+    {
+        name: 'picture',
+        category: 'standard',
+        icon: Picture,
     },
 ];
