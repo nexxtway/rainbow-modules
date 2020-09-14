@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import { useStorageRef } from '../../../../../firebase-hooks/src';
+// eslint-disable-next-line import/no-unresolved
+import { useStorageRef } from '@rainbow-modules/firebase-hooks';
 import useList from './useList';
 
 export default function useImageRefList(props) {

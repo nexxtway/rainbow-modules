@@ -78,13 +78,13 @@ ImageGallery.propTypes = {
     path: PropTypes.string.isRequired,
     /** Allow upload new image. */
     allowUpload: PropTypes.bool,
-    /** Trigger event */
+    /** The action triggered when an image is selected */
     onSelect: PropTypes.func,
-    /** Trigger event */
+    /** The action triggered when some firebase storage error is return */
     onError: PropTypes.func,
-    /** Filter. */
+    /** This filter is applied to the images returned by firebase storage. */
     filter: PropTypes.oneOfType([PropTypes.array, PropTypes.func]),
-    /** Max result. */
+    /** Is the maximum number of images to be displayed.. */
     maxResults: PropTypes.number,
 };
 
