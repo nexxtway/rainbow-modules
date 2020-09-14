@@ -1,0 +1,43 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { WrapperUniqueIdentifier } from '../stories';
+
+<Meta title="Modules|Hooks/useUniqueIdentifier" />
+
+# Overview
+
+`useUniqueIdentifier` A hook that elegantly generate unique identifiers.
+
+### API
+
+```ts
+    useUniqueIdentifier(
+        prefix: string
+    ): string;
+```
+
+### Params
+
+| Property | Description                         | Type   | Default   |
+| -------- | ----------------------------------- | ------ | --------- |
+| prefix   | Base to generate unique identifiers | string | undefined |
+
+### Usage
+
+```js
+import React from 'react';
+import { useUniqueIdentifier } from '../../src';
+
+export default function WrapperUniqueIdentifier() {
+    const uniqueId = useUniqueIdentifier('rainbow');
+    return (
+        <p id={uniqueId}>
+            <span>My unique identifier is: </span>
+            {uniqueId}
+        </p>
+    );
+}
+```
+
+### Examples
+
+<WrapperUniqueIdentifier />

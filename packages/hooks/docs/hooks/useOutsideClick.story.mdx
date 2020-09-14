@@ -1,5 +1,5 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
-import { WrapperOutsideClick } from './wrappers';
+import { Meta } from '@storybook/addon-docs/blocks';
+import { WrapperOutsideClick } from '../stories';
 
 <Meta title="Modules|Hooks/useOutsideClick" />
 
@@ -29,6 +29,7 @@ import { WrapperOutsideClick } from './wrappers';
 
 ```js
 import React, { useState, useRef } from 'react';
+import { CheckboxToggle, Button } from 'react-rainbow-components';
 import { useOutsideClick } from '../../src';
 
 export default function WrapperOutsideClick() {
@@ -44,23 +45,18 @@ export default function WrapperOutsideClick() {
     );
     return (
         <div>
-            <div>
-                <input
-                    id="outside-click-input-1"
-                    type="checkbox"
-                    checked={isListening}
-                    onChange={(event) => setIsListening(event.target.checked)}
-                />
-                <label htmlFor="outside-click-input-1">isListening</label>
-            </div>
-            <br />
-            <button ref={targetRef} type="button">
-                Click Me and Click Outside Me
-            </button>
+            <CheckboxToggle
+                label="Enable and disabled to listener the click outside"
+                value={isListening}
+                onChange={(event) => setIsListening(event.target.checked)}
+            />
             <p>
-                Counter:
+                <span>Click outside counter: </span>
                 {counter}
             </p>
+            <span ref={targetRef}>
+                <Button label="Click Me and Click Outside Me" variant="outline-brand" />
+            </span>
         </div>
     );
 }
@@ -68,8 +64,4 @@ export default function WrapperOutsideClick() {
 
 ### Examples
 
-<Preview>
-    <Story name="WrapperOutsideClik">
-        <WrapperOutsideClick />
-    </Story>
-</Preview>
+<WrapperOutsideClick />
