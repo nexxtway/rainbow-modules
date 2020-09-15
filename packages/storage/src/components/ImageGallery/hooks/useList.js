@@ -1,12 +1,13 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 
 export default function useList(initial) {
-    const [list, set] = useState([]);
-    useEffect(() => {
-        if (Array.isArray(initial)) {
-            set(initial);
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+    const [list, set] = useState(() => (Array.isArray(initial) ? initial : []));
+
+    const put = useCallback((element) => {
+        set((list) => {
+            list.put(element);
+            return list;
+        });
     }, []);
 
     const remove = useCallback((element) => {
@@ -15,16 +16,9 @@ export default function useList(initial) {
         });
     }, []);
 
-    const unshift = useCallback((imageRef) => {
+    const unshift = useCallback((element) => {
         set((list) => {
-            list.unshift(imageRef);
-            return list;
-        });
-    }, []);
-
-    const put = useCallback((imageRef) => {
-        set((list) => {
-            list.put(imageRef);
+            list.unshift(element);
             return list;
         });
     }, []);

@@ -1,9 +1,8 @@
-import { useContext } from 'react';
-import Context from '../context';
+import { useFirebaseApp } from '@rainbow-modules/firebase-hooks/';
 
 export default function useStorageRef(props) {
     const { bucket } = props || {};
-    const { app } = useContext(Context);
+    const app = useFirebaseApp();
 
     return app.storage(bucket).ref();
 }

@@ -12,6 +12,7 @@ export const StyledFileContainer = styled.div`
     width: 200px;
     margin-right: 10px;
     margin-bottom: 10px;
+    overflow: hidden;
 `;
 
 export const StyledFileSeletor = styled(FileSelector)`

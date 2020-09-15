@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { ProgressCircular } from 'react-rainbow-components';
-// eslint-disable-next-line import/no-unresolved
-import { useStorageRef } from '@rainbow-modules/firebase-hooks';
+import { useStorageRef } from './hooks';
 import { StyledContainerUploadImage, StyledFileContainer } from './styled';
 
 export default function UploadImage(props) {
