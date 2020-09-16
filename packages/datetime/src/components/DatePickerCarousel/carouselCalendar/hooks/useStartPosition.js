@@ -1,0 +1,49 @@
+import { useState, useCallback, useEffect } from 'react';
+import { addDays, isDateBelowLimit, isDateBeyondLimit } from '../../helpers';
+import getScrollWindowPivot from '../helpers/getScrollWindowPivot';
+
+export default function useStartPosition({ bounds, currentDate, size }) {
+    const [, setPivot] = useState(getScrollWindowPivot(size));
+    const [fromDate, setFromDate] = useState(null);
+
+    useEffect(() => {
+        if (size > 0) {
+            const newPivot = getScrollWindowPivot(size);
+            setPivot(newPivot);
+            setFromDate(addDays(currentDate, -newPivot.atIndex));
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [size]);
+
+    const moveLeft = useCallback(
+        (amount) => {
+            const { minCalendarDate } = bounds;
+            const date = addDays(fromDate, -amount);
+            if (isDateBelowLimit(date, minCalendarDate)) {
+                setFromDate(minCalendarDate);
+            } else {
+                setFromDate(date);
+            }
+        },
+        [bounds, fromDate],
+    );
+
+    const moveRight = useCallback(
+        (amount) => {
+            const { maxCalendarDate } = bounds;
+            const date = addDays(fromDate, amount);
+            if (isDateBeyondLimit(date, maxCalendarDate)) {
+                setFromDate(maxCalendarDate);
+            } else {
+                setFromDate(date);
+            }
+        },
+        [bounds, fromDate],
+    );
+
+    return {
+        fromDate,
+        moveLeft,
+        moveRight,
+    };
+}
