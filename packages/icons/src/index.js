@@ -18,3 +18,4 @@ export { default as ArrowLeft } from './components/arrowLeft';
 export { default as Cancel } from './components/cancel';
 export { default as Checkmark } from './components/checkMark';
 export { default as Picture } from './components/picture';
+export { default as Check } from './components/check';
