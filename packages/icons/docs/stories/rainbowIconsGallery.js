@@ -30,7 +30,7 @@ const RainbowIconsGallery = (props) => {
     return (
         <div>
             <RenderIf isTrue={!!standards.length}>
-                <StyledCategoryTitle>Standars Icons</StyledCategoryTitle>
+                <StyledCategoryTitle>Standard Icons</StyledCategoryTitle>
                 <StyledCategoryDescription>
                     Lorem ipsum dolor sit amet, lorem ac viverra augue sit, vel eget, lobortis vel.
                 </StyledCategoryDescription>
