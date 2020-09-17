@@ -1,13 +1,10 @@
 import { useMemo, useState, useCallback, useEffect } from 'react';
-// import { addDays } from '../../helpers';
 import { addDays, isSameDay, isDateBelowLimit, isDateBeyondLimit } from '../../helpers';
 import getScrollWindowPivot from '../helpers/getScrollWindowPivot';
 import useCalendarBounds from './useCalendarBounds';
-// import useStartPosition from './useStartPosition';
 
 export default function useVisibleDates({ minDate, maxDate, currentDate, size }) {
     const bounds = useCalendarBounds({ minDate, maxDate });
-    // const { fromDate, moveLeft, moveRight } = useStartPosition({ bounds, size, currentDate });
     const [pivot, setPivot] = useState(getScrollWindowPivot(size));
     const [fromDate, setFromDate] = useState(null);
 
