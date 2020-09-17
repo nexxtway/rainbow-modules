@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
 import app from '../../../../firebase';
 import DatePickerCarousel from '../../src/components/DatePickerCarousel';
-// import CarouselCalendar from '../../src/components/DatePickerCarousel/carouselCalendar';
 
 const Container = styled.div`
     display: flex;
@@ -11,17 +10,10 @@ const Container = styled.div`
     margin: 2rem;
 `;
 
-const PickDate = () => {
+// eslint-disable-next-line react/prop-types
+const PickDate = ({ locale }) => {
     const [date, setDate] = useState(new Date());
-    // return (
-    //     <CarouselCalendar
-    //         value={date}
-    //         onChange={(date) => setDate(date)}
-    //         minDate={new Date('2020/09/01')}
-    //         maxDate={new Date('2020/10/31')}
-    //     />
-    // );
-    return <DatePickerCarousel locale="es-ES" value={date} onChange={(date) => setDate(date)} />;
+    return <DatePickerCarousel locale={locale} value={date} onChange={(date) => setDate(date)} />;
 };
 
 export const datePickerCarousel = () => {
@@ -29,6 +21,16 @@ export const datePickerCarousel = () => {
         <RainbowFirebaseApp app={app}>
             <Container>
                 <PickDate />
+            </Container>
+        </RainbowFirebaseApp>
+    );
+};
+
+export const datePickerCarouselWithCustomLocale = () => {
+    return (
+        <RainbowFirebaseApp app={app}>
+            <Container>
+                <PickDate locale="es-ES" />
             </Container>
         </RainbowFirebaseApp>
     );
