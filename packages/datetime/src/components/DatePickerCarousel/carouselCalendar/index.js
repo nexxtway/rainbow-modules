@@ -1,10 +1,9 @@
 import React, { useRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import useLocale from 'react-rainbow-components/libs/hooks/useLocale';
+import { ChevronLeft, ChevronRight } from '@rainbow-modules/icons';
 import { isSameDay, isDateWithinRange } from '../helpers';
 import { StyledSection, StyledArrowButton, StyledCarouselContent } from './styled';
-import RightIcon from './icons/rightArrow';
-import LeftIcon from './icons/leftArrow';
 import {
     useCardsCount,
     useNormalizedValue,
@@ -101,7 +100,7 @@ export default function CarouselCalendar(props) {
         <StyledSection id={id} className={className} style={style} data-calendar-type="carousel">
             <StyledArrowButton
                 tabIndex="-1"
-                icon={<LeftIcon />}
+                icon={<ChevronLeft />}
                 size="xx-small"
                 disabled={disableScrollLeft}
                 onClick={scrollLeftClick}
@@ -109,7 +108,7 @@ export default function CarouselCalendar(props) {
             <StyledCarouselContent ref={cardsContainerRef}>{days}</StyledCarouselContent>
             <StyledArrowButton
                 tabIndex="-1"
-                icon={<RightIcon />}
+                icon={<ChevronRight />}
                 size="xx-small"
                 disabled={disableScrollRight}
                 onClick={scrollRightClick}

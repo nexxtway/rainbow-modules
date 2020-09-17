@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
 import app from '../../../../firebase';
 import DatePickerCarousel from '../../src/components/DatePickerCarousel';
-import CarouselCalendar from '../../src/components/DatePickerCarousel/carouselCalendar';
 
 const Container = styled.div`
     display: flex;
@@ -14,8 +13,6 @@ const Container = styled.div`
 // eslint-disable-next-line react/prop-types
 const PickDate = ({ locale }) => {
     const [date, setDate] = useState(new Date());
-    // return <CarouselCalendar locale={locale} value={date} onChange={(date) => setDate(date)} />;
-
     return <DatePickerCarousel locale={locale} value={date} onChange={(date) => setDate(date)} />;
 };
 
