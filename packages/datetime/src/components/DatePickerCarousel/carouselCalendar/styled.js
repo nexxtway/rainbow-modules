@@ -22,6 +22,7 @@ export const StyledCarouselContent = styled.div`
     flex: 1;
     align-items: center;
     overflow: hidden;
+    height: 85px;
 `;
 
 export const StyledDayCard = styled.button`
