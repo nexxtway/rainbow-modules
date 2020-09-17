@@ -55,32 +55,22 @@ const DatePickerCarousel = React.forwardRef((props, ref) => {
         },
     }));
 
-    const handleFocus = () => {
-        onFocus(value);
-    };
-
-    const handleBlur = () => {
-        onBlur(value);
-    };
-
     const handleChange = useCallback(
         (newValue) => {
-            if (selectionType === 'single' || newValue.length > 1) {
-                closeModal();
-            }
             onChange(newValue);
+            closeModal();
         },
-        [closeModal, onChange, selectionType],
+        [closeModal, onChange],
     );
 
     const handleClick = useCallback(
         (event) => {
-            if (!readOnly) {
+            if (!readOnly && !disabled) {
                 openModal();
                 onClick(event);
             }
         },
-        [onClick, openModal, readOnly],
+        [onClick, openModal, readOnly, disabled],
     );
 
     return (
