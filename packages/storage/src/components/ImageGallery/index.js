@@ -1,58 +1,35 @@
-import React, { useMemo, useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import RenderIf from 'react-rainbow-components/components/RenderIf';
-import { useList, useImageRefList } from './hooks';
-import Image from './image';
-import UploadImage from './uploadImage';
+import ImagesUpload from './imagesUpload';
+import Images from './images';
+import { useImageRefs } from './hooks';
 import { StyledContainer, StyledFileSeletor, StyledFileContainer } from './styled';
 
 export default function ImageGallery(props) {
     const { path, allowUpload, onSelect, onError, filter, maxResults } = props;
-    const { imageRefList, removeImageRef, addImageRef } = useImageRefList({
+    const [imagesUpload, setImagesUpload] = useState([]);
+
+    const [imageRefs, setImageRefs] = useImageRefs({
         path,
         filter,
         maxResults,
         onError,
     });
-    const { list: uploadList, set: setUplaodList, remove } = useList();
 
-    const handleUploadChange = (fileList) => {
-        setUplaodList((list) => list.concat(Array.from(fileList)));
+    const handleFileSeletorChange = (images) => {
+        setImagesUpload((list) => list.concat(Array.from(images)));
     };
 
-    const onUploaded = useCallback(
-        ({ file, ref }) => {
-            remove(file);
-            addImageRef(ref);
+    const handleUploaded = useCallback(
+        ({ uploadedImage, imageRef }) => {
+            setImagesUpload((list) => list.filter((imageUpload) => imageUpload !== uploadedImage));
+            setImageRefs((list) => {
+                list.push(imageRef);
+                return list;
+            });
         },
-        [addImageRef, remove],
-    );
-    const uploadNodeList = useMemo(
-        () =>
-            uploadList.map((file) => (
-                <UploadImage
-                    key={file.name}
-                    path={path}
-                    file={file}
-                    onUploaded={onUploaded}
-                    onError={onError}
-                />
-            )),
-        [onError, onUploaded, path, uploadList],
-    );
-
-    const imageNodeList = useMemo(
-        () =>
-            imageRefList.map((imageRef) => (
-                <Image
-                    key={imageRef.name}
-                    imageRef={imageRef}
-                    onSelect={onSelect}
-                    onDeleted={removeImageRef}
-                    onError={onError}
-                />
-            )),
-        [imageRefList, onError, onSelect, removeImageRef],
+        [setImageRefs],
     );
 
     return (
@@ -60,15 +37,21 @@ export default function ImageGallery(props) {
             <RenderIf isTrue={allowUpload}>
                 <StyledFileContainer>
                     <StyledFileSeletor
-                        onChange={handleUploadChange}
+                        onChange={handleFileSeletorChange}
                         multiple
                         variant="multiline"
+                        accept="image/*"
                         bottomHelpText="You can upload images up to 5MB "
                     />
                 </StyledFileContainer>
             </RenderIf>
-            {uploadNodeList}
-            {imageNodeList}
+            <ImagesUpload
+                path={path}
+                list={imagesUpload}
+                onUploaded={handleUploaded}
+                onError={onError}
+            />
+            <Images list={imageRefs} onSelect={onSelect} onError={onError} />
         </StyledContainer>
     );
 }
@@ -93,5 +76,5 @@ ImageGallery.defaultProps = {
     onSelect: () => {},
     onError: () => {},
     filter: undefined,
-    maxResults: undefined,
+    maxResults: 1000,
 };

@@ -3,17 +3,23 @@ import PropTypes from 'prop-types';
 import { Spinner } from 'react-rainbow-components';
 import RenderIf from 'react-rainbow-components/components/RenderIf';
 import TruncatedText from 'react-rainbow-components/components/Structural/truncatedText';
-import { StyledFileContainer, StyledContainerImage, StyledContainerSpinner } from './styled';
+import {
+    StyledFileContainer,
+    StyledContainerImage,
+    StyledContainerSpinner,
+    StyledImage,
+} from './styled';
 
 export default function Image(props) {
     const { imageRef, onSelect, onError } = props;
     const [src, setSrc] = useState();
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         let isSubscribed = true;
-        const resultPromise = imageRef.getDownloadURL();
 
-        resultPromise
+        imageRef
+            .getDownloadURL()
             .then((url) => {
                 if (isSubscribed) {
                     setSrc(url);
@@ -32,9 +38,14 @@ export default function Image(props) {
         <StyledFileContainer>
             <StyledContainerImage type="button" onClick={() => onSelect(imageRef)}>
                 <RenderIf isTrue={!!src}>
-                    <img src={src} alt={imageRef.name} />
+                    <StyledImage
+                        src={src}
+                        alt={imageRef.name}
+                        onLoad={() => setLoading(false)}
+                        $loading={loading}
+                    />
                 </RenderIf>
-                <RenderIf isTrue={!src}>
+                <RenderIf isTrue={loading}>
                     <StyledContainerSpinner>
                         <Spinner type="arc" variant="brand" />
                     </StyledContainerSpinner>

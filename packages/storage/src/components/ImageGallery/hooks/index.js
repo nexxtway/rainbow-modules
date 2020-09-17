@@ -1,3 +1,2 @@
-export { default as useList } from './useList';
-export { default as useImageRefList } from './useImageRefList';
+export { default as useImageRefs } from './useImageRefs';
 export { default as useStorageRef } from './useStorageRef';

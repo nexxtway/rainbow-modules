@@ -1,8 +1,9 @@
-import { useFirebaseApp } from '@rainbow-modules/firebase-hooks/';
+import { useMemo } from 'react';
+import { useFirebaseApp } from '@rainbow-modules/firebase-hooks';
 
 export default function useStorageRef(props) {
     const { bucket } = props || {};
     const app = useFirebaseApp();
 
-    return app.storage(bucket).ref();
+    return useMemo(() => app.storage(bucket).ref(), [app, bucket]);
 }

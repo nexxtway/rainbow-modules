@@ -28,7 +28,7 @@ export const StyledFileSeletor = styled(FileSelector)`
     }
 `;
 
-export const StyledContainerUploadImage = styled.div`
+export const StyledContainerImageUpload = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -82,6 +82,10 @@ export const StyledContainerImage = styled.button`
         outline: 0;
         box-shadow: ${(props) => props.theme.rainbow.shadows.brand};
     }
+`;
+
+export const StyledImage = styled.img`
+    display: ${(props) => (props.$loading ? 'none' : 'block')};
 `;
 
 export const StyledContainerSpinner = styled.div`
