@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
-import { useWindowResize } from '../../hooks';
+import useWindowResize from './useWindowResize';
 
 export default function useCardsCount({ cardWidth, containerRef }) {
     const [cardsCount, setCardsCount] = useState(0);

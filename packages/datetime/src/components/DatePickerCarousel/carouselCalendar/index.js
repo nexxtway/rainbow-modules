@@ -1,16 +1,22 @@
-import React, { useRef, useState, useCallback, useEffect, useMemo } from 'react';
+import React, { useRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { compareDates, isDateWithinRange } from '../helpers';
+import { isSameDay, isDateWithinRange } from '../helpers';
 import { StyledSection, StyledArrowButton, StyledCarouselContent } from './styled';
 import RightIcon from './icons/rightArrow';
 import LeftIcon from './icons/leftArrow';
-import { useCardsCount, useNormalizedValue, useCalendarBounds, useVisibleDates } from './hooks';
+import {
+    useCardsCount,
+    useNormalizedValue,
+    useCalendarBounds,
+    useVisibleDates,
+    useScrollArrows,
+    useArrowKeyNav,
+} from './hooks';
 import DayCard from './dayCard';
 
 export default function CarouselCalendar(props) {
     const { id, className, style, minDate, maxDate, value, onChange, locale } = props;
     const currentValue = useNormalizedValue(value);
-    const [focusedDate, setFocusedDate] = useState(currentValue);
     const cardsContainerRef = useRef();
     const { minCalendarDate, maxCalendarDate } = useCalendarBounds({
         minDate,
@@ -27,16 +33,31 @@ export default function CarouselCalendar(props) {
         currentDate: currentValue,
         size: cardsCount,
     });
+    const {
+        disableScrollLeft,
+        disableScrollRight,
+        scrollLeftClick,
+        scrollRightClick,
+    } = useScrollArrows({
+        minDate,
+        maxDate,
+        visibleDates,
+        moveLeft,
+        moveRight,
+    });
 
-    const scrollLeftClick = useCallback(() => moveLeft(1), [moveLeft]);
-
-    const scrollRightClick = useCallback(() => moveRight(1), [moveRight]);
-
-    useEffect(() => {
-        if (compareDates(focusedDate, currentValue) !== 0) {
-            setFocusedDate(currentValue);
-        }
-    }, [currentValue, focusedDate]);
+    const {
+        useAutoFocus,
+        focusedDate,
+        handleKeyDown,
+        enableKeyboardNav,
+        disableKeyboardNav,
+    } = useArrowKeyNav({
+        currentValue,
+        visibleDates,
+        scrollLeft: scrollLeftClick,
+        scrollRight: scrollRightClick,
+    });
 
     const days = useMemo(
         () =>
@@ -46,21 +67,31 @@ export default function CarouselCalendar(props) {
                         date={date}
                         locale={locale}
                         key={date.getTime()}
-                        isSelected={compareDates(date, currentValue) === 0}
+                        useAutoFocus={useAutoFocus}
+                        isFocused={isSameDay(date, focusedDate)}
+                        isSelected={isSameDay(date, currentValue)}
                         isDisabled={!isDateWithinRange(date, [minCalendarDate, maxCalendarDate])}
                         cardMargin={cardMargin}
                         onChange={onChange}
+                        onKeyDown={handleKeyDown}
+                        onFocus={() => enableKeyboardNav()}
+                        onBlur={() => disableKeyboardNav()}
                     />
                 );
             }),
         [
             visibleDates,
             locale,
+            useAutoFocus,
+            focusedDate,
             currentValue,
             minCalendarDate,
             maxCalendarDate,
             cardMargin,
             onChange,
+            handleKeyDown,
+            enableKeyboardNav,
+            disableKeyboardNav,
         ],
     );
 
@@ -70,6 +101,7 @@ export default function CarouselCalendar(props) {
                 tabIndex="-1"
                 icon={<LeftIcon />}
                 size="xx-small"
+                disabled={disableScrollLeft}
                 onClick={scrollLeftClick}
             />
             <StyledCarouselContent ref={cardsContainerRef}>{days}</StyledCarouselContent>
@@ -77,6 +109,7 @@ export default function CarouselCalendar(props) {
                 tabIndex="-1"
                 icon={<RightIcon />}
                 size="xx-small"
+                disabled={disableScrollRight}
                 onClick={scrollRightClick}
             />
         </StyledSection>

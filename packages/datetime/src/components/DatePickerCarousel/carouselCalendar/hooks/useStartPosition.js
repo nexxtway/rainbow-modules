@@ -19,11 +19,14 @@ export default function useStartPosition({ bounds, currentDate, size }) {
         (amount) => {
             const { minCalendarDate } = bounds;
             const date = addDays(fromDate, -amount);
+
             if (isDateBelowLimit(date, minCalendarDate)) {
                 setFromDate(minCalendarDate);
-            } else {
-                setFromDate(date);
+                return minCalendarDate;
             }
+
+            setFromDate(date);
+            return date;
         },
         [bounds, fromDate],
     );
@@ -32,11 +35,14 @@ export default function useStartPosition({ bounds, currentDate, size }) {
         (amount) => {
             const { maxCalendarDate } = bounds;
             const date = addDays(fromDate, amount);
+
             if (isDateBeyondLimit(date, maxCalendarDate)) {
                 setFromDate(maxCalendarDate);
-            } else {
-                setFromDate(date);
+                return maxCalendarDate;
             }
+
+            setFromDate(date);
+            return date;
         },
         [bounds, fromDate],
     );

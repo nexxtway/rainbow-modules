@@ -24,7 +24,7 @@ const PickDate = () => {
     // return <DatePickerCarousel value={date} onChange={(date) => setDate(date)} />;
 };
 
-export const basicUsage = () => {
+export const datePickerCarousel = () => {
     return (
         <RainbowFirebaseApp app={app}>
             <Container>
