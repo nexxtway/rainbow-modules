@@ -12,7 +12,8 @@ export default function useStartPosition({ bounds, currentDate, size }) {
             setPivot(newPivot);
             setFromDate(addDays(currentDate, -newPivot.atIndex));
         }
-    }, [size, currentDate]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [size]);
 
     const moveLeft = useCallback(
         (amount) => {
