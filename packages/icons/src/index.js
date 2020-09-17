@@ -19,3 +19,6 @@ export { default as Cancel } from './components/cancel';
 export { default as Checkmark } from './components/checkMark';
 export { default as Picture } from './components/picture';
 export { default as Check } from './components/check';
+export { default as ChevronLeft } from './components/chevronLeft';
+export { default as ChevronRight } from './components/chevronRight';
+export { default as ChevronDown } from './components/chevronDown';
