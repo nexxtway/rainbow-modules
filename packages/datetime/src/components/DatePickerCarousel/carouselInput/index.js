@@ -2,9 +2,10 @@ import React, { useRef, useImperativeHandle } from 'react';
 import PropTypes from 'prop-types';
 import { StyledContainer, StyledLabelContainer, StyledLabel, StyledInput } from './styled';
 import DownIcon from './icons/downArrow';
+import CarouselCalendar from '../carouselCalendar';
 
 const DatePickerCarouselInput = React.forwardRef((props, ref) => {
-    const { id, className, style, readOnly, label, onLabelClick } = props;
+    const { id, className, style, readOnly, label, value, onLabelClick, onChange } = props;
     const inputRef = useRef();
     const labelRef = useRef();
 
@@ -29,6 +30,7 @@ const DatePickerCarouselInput = React.forwardRef((props, ref) => {
                 </StyledLabel>
             </StyledLabelContainer>
             <StyledInput ref={inputRef} type="hidden" />
+            <CarouselCalendar ref={inputRef} value={value} onChange={onChange} />
         </StyledContainer>
     );
 });
@@ -39,7 +41,12 @@ DatePickerCarouselInput.propTypes = {
     style: PropTypes.object,
     readOnly: PropTypes.bool,
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-    // onChange: PropTypes.func,
+    value: PropTypes.oneOfType([
+        PropTypes.instanceOf(Date),
+        PropTypes.string,
+        PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.string])),
+    ]),
+    onChange: PropTypes.func,
     onLabelClick: PropTypes.func,
 };
 
@@ -49,7 +56,8 @@ DatePickerCarouselInput.defaultProps = {
     style: undefined,
     readOnly: false,
     label: undefined,
-    // onChange: PropTypes.func,
+    value: undefined,
+    onChange: () => {},
     onLabelClick: () => {},
 };
 

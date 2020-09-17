@@ -13,15 +13,15 @@ const Container = styled.div`
 
 const PickDate = () => {
     const [date, setDate] = useState(new Date());
-    return (
-        <CarouselCalendar
-            value={date}
-            onChange={(date) => setDate(date)}
-            minDate={new Date('2020/09/01')}
-            maxDate={new Date('2020/10/31')}
-        />
-    );
-    // return <DatePickerCarousel value={date} onChange={(date) => setDate(date)} />;
+    // return (
+    //     <CarouselCalendar
+    //         value={date}
+    //         onChange={(date) => setDate(date)}
+    //         minDate={new Date('2020/09/01')}
+    //         maxDate={new Date('2020/10/31')}
+    //     />
+    // );
+    return <DatePickerCarousel value={date} onChange={(date) => setDate(date)} />;
 };
 
 export const datePickerCarousel = () => {

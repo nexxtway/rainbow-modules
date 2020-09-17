@@ -89,6 +89,8 @@ const DatePickerCarousel = React.forwardRef((props, ref) => {
                 ref={inputRef}
                 label={formattedDate || placeholder}
                 onLabelClick={handleClick}
+                value={value}
+                onChange={onChange}
             />
             <DatePickerModal
                 id={modalId}
