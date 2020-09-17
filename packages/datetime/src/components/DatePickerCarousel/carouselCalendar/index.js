@@ -14,7 +14,7 @@ import {
 } from './hooks';
 import DayCard from './dayCard';
 
-export default function CarouselCalendar(props) {
+const CarouselCalendar = React.forwardRef((props, ref) => {
     const { id, className, style, minDate, maxDate, value, onChange, locale } = props;
     const currentLocale = useLocale(locale);
     const currentValue = useNormalizedValue(value);
@@ -97,7 +97,13 @@ export default function CarouselCalendar(props) {
     );
 
     return (
-        <StyledSection id={id} className={className} style={style} data-calendar-type="carousel">
+        <StyledSection
+            ref={ref}
+            id={id}
+            className={className}
+            style={style}
+            data-calendar-type="carousel"
+        >
             <StyledArrowButton
                 tabIndex="-1"
                 icon={<ChevronLeft />}
@@ -115,7 +121,7 @@ export default function CarouselCalendar(props) {
             />
         </StyledSection>
     );
-}
+});
 
 CarouselCalendar.propTypes = {
     value: PropTypes.oneOfType([
@@ -142,3 +148,5 @@ CarouselCalendar.defaultProps = {
     id: undefined,
     locale: undefined,
 };
+
+export default CarouselCalendar;

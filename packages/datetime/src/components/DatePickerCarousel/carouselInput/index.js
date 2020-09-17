@@ -31,7 +31,6 @@ const DatePickerCarouselInput = React.forwardRef((props, ref) => {
                     <ChevronDown />
                 </StyledLabel>
             </StyledLabelContainer>
-            <StyledInput ref={inputRef} type="hidden" />
             <CarouselCalendar
                 ref={inputRef}
                 value={value}
