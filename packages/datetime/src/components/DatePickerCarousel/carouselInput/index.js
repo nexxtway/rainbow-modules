@@ -1,11 +1,13 @@
 import React, { useRef, useImperativeHandle } from 'react';
 import PropTypes from 'prop-types';
+import useLocale from 'react-rainbow-components/libs/hooks/useLocale';
 import { StyledContainer, StyledLabelContainer, StyledLabel, StyledInput } from './styled';
 import DownIcon from './icons/downArrow';
 import CarouselCalendar from '../carouselCalendar';
 
 const DatePickerCarouselInput = React.forwardRef((props, ref) => {
-    const { id, className, style, readOnly, label, value, onLabelClick, onChange } = props;
+    const { id, className, style, readOnly, label, value, locale, onLabelClick, onChange } = props;
+    const currentLocale = useLocale(locale);
     const inputRef = useRef();
     const labelRef = useRef();
 
@@ -30,7 +32,12 @@ const DatePickerCarouselInput = React.forwardRef((props, ref) => {
                 </StyledLabel>
             </StyledLabelContainer>
             <StyledInput ref={inputRef} type="hidden" />
-            <CarouselCalendar ref={inputRef} value={value} onChange={onChange} />
+            <CarouselCalendar
+                ref={inputRef}
+                value={value}
+                locale={currentLocale}
+                onChange={onChange}
+            />
         </StyledContainer>
     );
 });
@@ -41,6 +48,7 @@ DatePickerCarouselInput.propTypes = {
     style: PropTypes.object,
     readOnly: PropTypes.bool,
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+    locale: PropTypes.string,
     value: PropTypes.oneOfType([
         PropTypes.instanceOf(Date),
         PropTypes.string,
@@ -57,6 +65,7 @@ DatePickerCarouselInput.defaultProps = {
     readOnly: false,
     label: undefined,
     value: undefined,
+    locale: undefined,
     onChange: () => {},
     onLabelClick: () => {},
 };

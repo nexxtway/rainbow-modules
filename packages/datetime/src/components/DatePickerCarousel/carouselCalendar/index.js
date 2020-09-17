@@ -1,5 +1,6 @@
 import React, { useRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
+import useLocale from 'react-rainbow-components/libs/hooks/useLocale';
 import { isSameDay, isDateWithinRange } from '../helpers';
 import { StyledSection, StyledArrowButton, StyledCarouselContent } from './styled';
 import RightIcon from './icons/rightArrow';
@@ -16,6 +17,7 @@ import DayCard from './dayCard';
 
 export default function CarouselCalendar(props) {
     const { id, className, style, minDate, maxDate, value, onChange, locale } = props;
+    const currentLocale = useLocale(locale);
     const currentValue = useNormalizedValue(value);
     const cardsContainerRef = useRef();
     const { minCalendarDate, maxCalendarDate } = useCalendarBounds({
@@ -65,7 +67,7 @@ export default function CarouselCalendar(props) {
                 return (
                     <DayCard
                         date={date}
-                        locale={locale}
+                        locale={currentLocale}
                         key={date.getTime()}
                         useAutoFocus={useAutoFocus}
                         isFocused={isSameDay(date, focusedDate)}
@@ -81,7 +83,7 @@ export default function CarouselCalendar(props) {
             }),
         [
             visibleDates,
-            locale,
+            currentLocale,
             useAutoFocus,
             focusedDate,
             currentValue,

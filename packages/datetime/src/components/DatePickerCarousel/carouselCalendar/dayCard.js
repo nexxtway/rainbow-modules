@@ -6,7 +6,6 @@ import {
     StyledDayCardDateLabel,
     StyledDayCardDayLabel,
 } from './styled';
-import { isSameDay } from '../helpers';
 import getFormattedDayName from './helpers/getFormattedDayName';
 
 export default function DayCard(props) {
@@ -17,13 +16,14 @@ export default function DayCard(props) {
         isSelected,
         isDisabled,
         cardMargin,
+        locale,
         onChange,
         onFocus,
         onBlur,
         onKeyDown,
     } = props;
     const day = date.getDate();
-    const dayName = useMemo(() => getFormattedDayName(date), [date]);
+    const dayName = useMemo(() => getFormattedDayName(date, 'short', locale), [date, locale]);
     const buttonRef = useRef();
     const tabIndex = isFocused ? 0 : -1;
 
@@ -61,6 +61,7 @@ export default function DayCard(props) {
 
 DayCard.propTypes = {
     date: PropTypes.instanceOf(Date),
+    locale: PropTypes.string,
     firstDayMonth: PropTypes.instanceOf(Date),
     useAutoFocus: PropTypes.bool,
     isFocused: PropTypes.bool,
@@ -75,6 +76,7 @@ DayCard.propTypes = {
 
 DayCard.defaultProps = {
     date: undefined,
+    locale: undefined,
     firstDayMonth: undefined,
     useAutoFocus: false,
     isFocused: false,

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
 import app from '../../../../firebase';
 import DatePickerCarousel from '../../src/components/DatePickerCarousel';
-import CarouselCalendar from '../../src/components/DatePickerCarousel/carouselCalendar';
+// import CarouselCalendar from '../../src/components/DatePickerCarousel/carouselCalendar';
 
 const Container = styled.div`
     display: flex;
@@ -21,7 +21,7 @@ const PickDate = () => {
     //         maxDate={new Date('2020/10/31')}
     //     />
     // );
-    return <DatePickerCarousel value={date} onChange={(date) => setDate(date)} />;
+    return <DatePickerCarousel locale="es-ES" value={date} onChange={(date) => setDate(date)} />;
 };
 
 export const datePickerCarousel = () => {

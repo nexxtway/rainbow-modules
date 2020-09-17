@@ -1,6 +1,7 @@
 import React, { useRef, useImperativeHandle, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { DatePickerModal } from 'react-rainbow-components';
+import useLocale from 'react-rainbow-components/libs/hooks/useLocale';
 import { useReduxForm, useDisclosure, useFormatDate } from './hooks';
 import { StyledContainer } from './styled';
 import DatePickerCarouselInput from './carouselInput';
@@ -34,6 +35,7 @@ const DatePickerCarousel = React.forwardRef((props, ref) => {
         selectionType,
     } = useReduxForm(props);
     const inputRef = useRef();
+    const currentLocale = useLocale(locale);
     const formattedDate = useFormatDate({
         value,
         format: formatStyle,
@@ -81,13 +83,14 @@ const DatePickerCarousel = React.forwardRef((props, ref) => {
                 onLabelClick={handleClick}
                 value={value}
                 onChange={onChange}
+                locale={currentLocale}
             />
             <DatePickerModal
                 id={modalId}
                 isOpen={isOpen}
                 title={formattedDate || placeholder}
                 variant={variant}
-                locale={locale}
+                locale={currentLocale}
                 selectionType={selectionType}
                 minDate={minDate}
                 maxDate={maxDate}
