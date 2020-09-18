@@ -8,13 +8,16 @@ import isChecked from './helpers/isChecked';
 import {
     StyledContainer,
     StyledInput,
-    StyledLabelInput,
     StyledLabel,
+    StyledLabelText,
     StyledValue,
     StyledCheckmarkContainer,
     StyledContent,
 } from './styled';
 
+/**
+ * Component to show information of dashboard
+ */
 export default function Tile(props) {
     const {
         label,
@@ -50,19 +53,19 @@ export default function Tile(props) {
                     onChange={(event) => onChange(nameProp, event.target.checked)}
                     value={valueProp}
                 />
-                <StyledLabelInput htmlFor={inputId} style={{ backgroundColor }}>
+                <StyledLabel htmlFor={inputId} style={{ backgroundColor }}>
                     <RenderIf isTrue={checked}>
                         <StyledCheckmarkContainer>
                             <Check style={{ color }} />
                         </StyledCheckmarkContainer>
                     </RenderIf>
-                    <StyledLabel style={labelStyle}>{label}</StyledLabel>
+                    <StyledLabelText style={labelStyle}>{label}</StyledLabelText>
                     <StyledValue style={{ color }}>{valueProp}</StyledValue>
-                </StyledLabelInput>
+                </StyledLabel>
             </RenderIf>
             <RenderIf isTrue={!context}>
                 <StyledContent style={{ backgroundColor }}>
-                    <StyledLabel style={labelStyle}>{label}</StyledLabel>
+                    <StyledLabelText style={labelStyle}>{label}</StyledLabelText>
                     <StyledValue style={{ color }}>{valueProp}</StyledValue>
                 </StyledContent>
             </RenderIf>

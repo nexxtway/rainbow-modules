@@ -31,7 +31,7 @@ export const StyledContent = styled.div`
     ${CssContent};
 `;
 
-export const StyledLabelInput = styled.label`
+export const StyledLabel = styled.label`
     ${CssContent}
     position: relative;
 
@@ -42,7 +42,7 @@ export const StyledLabelInput = styled.label`
     }
 `;
 
-export const StyledLabel = styled.p`
+export const StyledLabelText = styled.p`
     font-size: 14px;
 `;
 
