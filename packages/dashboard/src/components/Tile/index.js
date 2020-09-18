@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useUniqueIdentifier } from '@rainbow-modules/hooks';
+import { Check } from '@rainbow-modules/icons';
 import RenderIf from 'react-rainbow-components/components/RenderIf';
 import { colorToRgba, replaceAlpha } from 'react-rainbow-components/styles/helpers/color';
 import isChecked from './helpers/isChecked';
-import Checkmark from './checkmark';
 import {
     StyledContainer,
     StyledInput,
@@ -53,7 +53,7 @@ export default function Tile(props) {
                 <StyledLabelInput htmlFor={inputId} style={{ backgroundColor }}>
                     <RenderIf isTrue={checked}>
                         <StyledCheckmarkContainer>
-                            <Checkmark style={{ color }} />
+                            <Check style={{ color }} />
                         </StyledCheckmarkContainer>
                     </RenderIf>
                     <StyledLabel style={labelStyle}>{label}</StyledLabel>
