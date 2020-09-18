@@ -5,7 +5,7 @@ export const StyledContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    text-transform: ${(props) => props.textTransform || 'capitalize'};
+    text-transform: ${(props) => props.textTransform};
     color: ${(props) => props.color};
-    background: ${(props) => props.background};
+    background: ${(props) => props.backgroundColor};
 `;

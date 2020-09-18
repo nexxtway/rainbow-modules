@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import { Table, Column, Application } from 'react-rainbow-components';
 
 import ColoredStatusColumn from '../../src/components/ColoredStatusColumn';
@@ -55,11 +56,15 @@ const initialData = [
     },
 ];
 
+const Container = styled.div`
+    padding: 2rem;
+`;
+
 const colors = {
-    canceled: { backgroundColor: '#f00', color: 'rgba(255, 255, 0, 0.8)' },
-    delivered: { backgroundColor: '#9dc35e' },
-    pending: '#f4d87a',
-    arrived: '#71d4d6',
+    canceled: { backgroundColor: '#f2707a', color: 'rgba(255, 255, 255)' },
+    delivered: '#009900',
+    pending: { backgroundColor: '#EBC665', color: '#fff' },
+    arrived: { backgroundColor: '#4dc9cb', color: '#fff' },
 };
 
 const CustomColoredStatusColumn = ({ ...props }) => (
@@ -69,12 +74,14 @@ const CustomColoredStatusColumn = ({ ...props }) => (
 export const customColoredStatusColumn = () => {
     return (
         <Application>
-            <Table data={initialData} keyField="id" variant="listview">
-                <Column header="Customer" field="customer" />
-                <Column header="Email" field="email" />
-                <Column header="Tracking Number" field="trackingNumber" />
-                <Column header="Status" field="status" component={CustomColoredStatusColumn} />
-            </Table>
+            <Container>
+                <Table data={initialData} keyField="id" variant="listview">
+                    <Column header="Customer" field="customer" />
+                    <Column header="Email" field="email" />
+                    <Column header="Tracking Number" field="trackingNumber" />
+                    <Column header="Status" field="status" component={CustomColoredStatusColumn} />
+                </Table>
+            </Container>
         </Application>
     );
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import { Table, Column, Application } from 'react-rainbow-components';
 
 import ColoredStatusColumn from '../../src/components/ColoredStatusColumn';
@@ -26,13 +27,6 @@ const initialData = [
         id: '1234zxcvbn',
     },
     {
-        customer: 'William Adams',
-        trackingNumber: '6697683209',
-        email: 'williamadams@gmail.com',
-        status: 'arrived',
-        id: '5678qwerty',
-    },
-    {
         customer: 'Joe Smith',
         trackingNumber: '4144176404',
         email: 'joesmith@gmail.com',
@@ -53,7 +47,18 @@ const initialData = [
         status: 'success',
         id: '5178aswegh',
     },
+    {
+        customer: 'William Adams',
+        trackingNumber: '6697683209',
+        email: 'williamadams@gmail.com',
+        status: 'arrived',
+        id: '5678qwerty',
+    },
 ];
+
+const Container = styled.div`
+    padding: 2rem;
+`;
 
 const CustomColoredStatusColumn = ({ ...props }) => (
     <ColoredStatusColumn {...props} textTransform="uppercase" />
@@ -62,12 +67,14 @@ const CustomColoredStatusColumn = ({ ...props }) => (
 export const defaultColoredStatusColumn = () => {
     return (
         <Application>
-            <Table data={initialData} keyField="id" variant="listview">
-                <Column header="Customer" field="customer" />
-                <Column header="Email" field="email" />
-                <Column header="Tracking Number" field="trackingNumber" />
-                <Column header="Status" field="status" component={CustomColoredStatusColumn} />
-            </Table>
+            <Container>
+                <Table data={initialData} keyField="id" variant="listview">
+                    <Column header="Customer" field="customer" />
+                    <Column header="Email" field="email" />
+                    <Column header="Tracking Number" field="trackingNumber" />
+                    <Column header="Status" field="status" component={CustomColoredStatusColumn} />
+                </Table>
+            </Container>
         </Application>
     );
 };
