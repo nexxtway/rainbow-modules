@@ -2,7 +2,7 @@ import React, { useRef, useImperativeHandle } from 'react';
 import PropTypes from 'prop-types';
 import useLocale from 'react-rainbow-components/libs/hooks/useLocale';
 import { ChevronDown } from '@rainbow-modules/icons';
-import { StyledContainer, StyledLabelContainer, StyledLabel, StyledInput } from './styled';
+import { StyledContainer, StyledLabelContainer, StyledLabel } from './styled';
 import CarouselCalendar from '../carouselCalendar';
 
 const DatePickerCarouselInput = React.forwardRef((props, ref) => {

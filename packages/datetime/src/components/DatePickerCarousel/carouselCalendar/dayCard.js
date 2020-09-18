@@ -62,7 +62,6 @@ export default function DayCard(props) {
 DayCard.propTypes = {
     date: PropTypes.instanceOf(Date),
     locale: PropTypes.string,
-    firstDayMonth: PropTypes.instanceOf(Date),
     useAutoFocus: PropTypes.bool,
     isFocused: PropTypes.bool,
     isSelected: PropTypes.bool,
@@ -77,7 +76,6 @@ DayCard.propTypes = {
 DayCard.defaultProps = {
     date: undefined,
     locale: undefined,
-    firstDayMonth: undefined,
     useAutoFocus: false,
     isFocused: false,
     isSelected: false,
