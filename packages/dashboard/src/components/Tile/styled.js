@@ -2,8 +2,12 @@ import styled, { css } from 'styled-components';
 import HiddenElement from 'react-rainbow-components/components/Structural/hiddenElement';
 
 export const StyledContainer = styled.div`
-    margin: 0 0.25rem 0.5rem 0.25rem;
     min-width: 190px;
+    ${(props) =>
+        props.hasMargin &&
+        `
+        margin: 0 5px 10px 5px;
+    `}
 `;
 
 export const StyledInput = styled(HiddenElement)`
@@ -31,7 +35,7 @@ export const StyledContent = styled.div`
     ${CssContent};
 `;
 
-export const StyledLabelInput = styled.label`
+export const StyledLabel = styled.label`
     ${CssContent}
     position: relative;
 
@@ -42,7 +46,7 @@ export const StyledLabelInput = styled.label`
     }
 `;
 
-export const StyledLabel = styled.p`
+export const StyledLabelText = styled.p`
     font-size: 14px;
 `;
 

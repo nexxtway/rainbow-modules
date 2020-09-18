@@ -8,8 +8,8 @@ import isChecked from './helpers/isChecked';
 import {
     StyledContainer,
     StyledInput,
-    StyledLabelInput,
     StyledLabel,
+    StyledLabelText,
     StyledValue,
     StyledCheckmarkContainer,
     StyledContent,
@@ -39,7 +39,7 @@ export default function Tile(props) {
     const labelStyle = { color: replaceAlpha(colorToRgba(color), 0.7) };
 
     return (
-        <StyledContainer id={id} className={className} style={style}>
+        <StyledContainer id={id} className={className} style={style} hasMargin={!!context}>
             <RenderIf isTrue={!!context}>
                 <StyledInput
                     as="input"
@@ -51,19 +51,19 @@ export default function Tile(props) {
                     onChange={(event) => onChange(nameProp, event.target.checked)}
                     value={valueProp}
                 />
-                <StyledLabelInput htmlFor={inputId} style={{ backgroundColor }}>
+                <StyledLabel htmlFor={inputId} style={{ backgroundColor }}>
                     <RenderIf isTrue={checked}>
                         <StyledCheckmarkContainer>
                             <Check style={{ color }} />
                         </StyledCheckmarkContainer>
                     </RenderIf>
-                    <StyledLabel style={labelStyle}>{label}</StyledLabel>
+                    <StyledLabelText style={labelStyle}>{label}</StyledLabelText>
                     <StyledValue style={{ color }}>{valueProp}</StyledValue>
-                </StyledLabelInput>
+                </StyledLabel>
             </RenderIf>
             <RenderIf isTrue={!context}>
                 <StyledContent style={{ backgroundColor }}>
-                    <StyledLabel style={labelStyle}>{label}</StyledLabel>
+                    <StyledLabelText style={labelStyle}>{label}</StyledLabelText>
                     <StyledValue style={{ color }}>{valueProp}</StyledValue>
                 </StyledContent>
             </RenderIf>

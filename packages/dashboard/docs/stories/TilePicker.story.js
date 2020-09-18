@@ -103,6 +103,6 @@ export const MultipleSelection = () => {
 };
 
 export default {
-    title: 'Modules|Dashboard/TilePicker',
+    title: 'Modules|Dashboard/Stories/TilePicker',
     component: TilePicker,
 };
