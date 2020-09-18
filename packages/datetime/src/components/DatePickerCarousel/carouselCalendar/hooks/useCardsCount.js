@@ -1,7 +1,8 @@
 import { useState, useCallback, useEffect } from 'react';
-import useWindowResize from './useWindowResize';
+import useContainerSize from './useContainerSize';
 
 export default function useCardsCount({ cardWidth, containerRef }) {
+    const containerSize = useContainerSize({ containerRef });
     const [cardsCount, setCardsCount] = useState(0);
     const [cardMargin, setCardMargin] = useState(0);
 
@@ -13,13 +14,7 @@ export default function useCardsCount({ cardWidth, containerRef }) {
         setCardMargin((margin + 10) / 2);
     }, [containerRef, cardWidth]);
 
-    useWindowResize(() => {
-        updateCardsCount();
-    }, true);
-
-    useEffect(() => {
-        updateCardsCount();
-    }, [updateCardsCount]);
+    useEffect(() => updateCardsCount(), [containerSize, updateCardsCount]);
 
     return { cardsCount, cardMargin };
 }
