@@ -23,7 +23,10 @@ module.exports = {
             alias: {
                 '@rainbow-modules/app': path.join(__dirname, '../packages/app/src/index.js'),
                 '@rainbow-modules/auth': path.join(__dirname, '../packages/auth/src/index.js'),
-                '@rainbow-modules/auth': path.join(__dirname, '../packages/dashboard/src/index.js'),
+                '@rainbow-modules/dashboard': path.join(
+                    __dirname,
+                    '../packages/dashboard/src/index.js',
+                ),
                 '@rainbow-modules/icons': path.join(__dirname, '../packages/icons/src/index.js'),
                 '@rainbow-modules/firebase-hooks': path.join(
                     __dirname,
