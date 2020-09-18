@@ -26,7 +26,7 @@ const ColoredStatusColumn = ({ value, colors, textTransform }) => {
 export default ColoredStatusColumn;
 
 ColoredStatusColumn.propTypes = {
-    /**  */
+    /** A string that comes from the data and is displayed in the table cell  */
     value: PropTypes.string,
     /** An object with the mapping that indicates the backgroundColor and color of the component */
     colors: PropTypes.objectOf(
