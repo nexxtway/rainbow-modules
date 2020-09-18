@@ -12,6 +12,7 @@ import {
     StyledLabel,
     StyledValue,
     StyledCheckmarkContainer,
+    StyledContent,
 } from './styled';
 
 export default function Tile(props) {
@@ -25,7 +26,8 @@ export default function Tile(props) {
         className,
         style,
     } = props;
-    const { ariaDescribedby, groupName, onChange, value, multiple } = {};
+    const context = undefined;
+    const { ariaDescribedby, groupName, onChange, value, multiple } = context || {};
 
     const inputId = useUniqueIdentifier('tile-input');
 
@@ -37,25 +39,33 @@ export default function Tile(props) {
 
     return (
         <StyledContainer id={id} className={className} style={style}>
-            <StyledInput
-                as="input"
-                type={type}
-                id={inputId}
-                name={name}
-                checked={checked}
-                aria-describedby={ariaDescribedby}
-                onChange={(event) => onChange(nameProp, event.target.checked)}
-                value={valueProp}
-            />
-            <StyledLabelInput htmlFor={inputId} style={{ backgroundColor }}>
-                <RenderIf isTrue={checked}>
-                    <StyledCheckmarkContainer>
-                        <Checkmark style={{ color }} />
-                    </StyledCheckmarkContainer>
-                </RenderIf>
-                <StyledLabel style={labelStyle}>{label}</StyledLabel>
-                <StyledValue style={{ color }}>{valueProp}</StyledValue>
-            </StyledLabelInput>
+            <RenderIf isTrue={!!context}>
+                <StyledInput
+                    as="input"
+                    type={type}
+                    id={inputId}
+                    name={name}
+                    checked={checked}
+                    aria-describedby={ariaDescribedby}
+                    onChange={(event) => onChange(nameProp, event.target.checked)}
+                    value={valueProp}
+                />
+                <StyledLabelInput htmlFor={inputId} style={{ backgroundColor }}>
+                    <RenderIf isTrue={checked}>
+                        <StyledCheckmarkContainer>
+                            <Checkmark style={{ color }} />
+                        </StyledCheckmarkContainer>
+                    </RenderIf>
+                    <StyledLabel style={labelStyle}>{label}</StyledLabel>
+                    <StyledValue style={{ color }}>{valueProp}</StyledValue>
+                </StyledLabelInput>
+            </RenderIf>
+            <RenderIf isTrue={!context}>
+                <StyledContent style={{ backgroundColor }}>
+                    <StyledLabel style={labelStyle}>{label}</StyledLabel>
+                    <StyledValue style={{ color }}>{valueProp}</StyledValue>
+                </StyledContent>
+            </RenderIf>
         </StyledContainer>
     );
 }

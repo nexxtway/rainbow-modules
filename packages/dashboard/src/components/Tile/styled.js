@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import HiddenElement from 'react-rainbow-components/components/Structural/hiddenElement';
 
 export const StyledContainer = styled.div`
@@ -17,8 +17,7 @@ export const StyledInput = styled(HiddenElement)`
     }
 `;
 
-export const StyledLabelInput = styled.label`
-    position: relative;
+const CssContent = css`
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -26,6 +25,15 @@ export const StyledLabelInput = styled.label`
     border-radius: 14px;
     box-shadow: ${(props) => props.theme.rainbow.shadows.shadow_4};
     border: solid 1px rgba(227, 229, 237, 0.25);
+`;
+
+export const StyledContent = styled.div`
+    ${CssContent};
+`;
+
+export const StyledLabelInput = styled.label`
+    ${CssContent}
+    position: relative;
 
     &:hover {
         cursor: pointer;
