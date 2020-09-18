@@ -2,7 +2,6 @@ import styled, { css } from 'styled-components';
 import HiddenElement from 'react-rainbow-components/components/Structural/hiddenElement';
 
 export const StyledContainer = styled.div`
-    margin: 0 0.25rem 0.5rem 0.25rem;
     min-width: 190px;
 `;
 
