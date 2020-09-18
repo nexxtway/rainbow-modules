@@ -1,25 +1,47 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useCallback, useLayoutEffect } from 'react';
 
 export default function useContainerSize({ containerRef }) {
-    const [containerSize, setContainerSize] = useState(0);
+    const observer = useRef(null);
+    const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
 
-    const observer = useRef(
-        new ResizeObserver((entries) => {
-            const { width } = entries[0].contentRect;
-            setContainerSize(width);
-        }),
-    );
-
-    useEffect(() => {
-        const currentObserver = observer.current;
+    const handleResize = useCallback(() => {
         if (containerRef.current) {
-            currentObserver.observe(containerRef.current);
+            setContainerSize({
+                width: containerRef.current.clientWidth,
+                height: containerRef.current.clientHeight,
+            });
         }
+    }, [containerRef]);
 
-        return () => {
-            currentObserver.unobserve();
-        };
-    }, [containerRef, observer]);
+    const observe = useCallback(() => {
+        if (containerRef.current) {
+            handleResize();
+            if (typeof ResizeObserver === 'function') {
+                observer.current = new ResizeObserver(() => {
+                    handleResize();
+                });
+                observer.current.observe(containerRef.current);
+            } else {
+                window.addEventListener('resize', handleResize);
+            }
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [containerRef]);
+
+    const disconnect = useCallback(() => {
+        if (observer.current) {
+            observer.current.disconnect(containerRef.current);
+            observer.current = null;
+        } else {
+            window.removeEventListener('resize', handleResize);
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [containerRef]);
+
+    useLayoutEffect(() => {
+        observe();
+        return () => disconnect();
+    }, [disconnect, observe]);
 
     return containerSize;
 }

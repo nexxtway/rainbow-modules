@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight } from '@rainbow-modules/icons';
 import { isSameDay, isDateWithinRange } from '../helpers';
 import { StyledSection, StyledArrowButton, StyledCarouselContent } from './styled';
 import {
+    useContainerSize,
     useCardsCount,
     useNormalizedValue,
     useCalendarBounds,
@@ -24,8 +25,9 @@ const CarouselCalendar = React.forwardRef((props, ref) => {
         maxDate,
         currentValue,
     });
+    const { width: containerSize } = useContainerSize({ containerRef: cardsContainerRef });
     const { cardsCount, cardMargin } = useCardsCount({
-        containerRef: cardsContainerRef,
+        containerSize,
         cardWidth: 67,
     });
     const { visibleDates, moveLeft, moveRight } = useVisibleDates({

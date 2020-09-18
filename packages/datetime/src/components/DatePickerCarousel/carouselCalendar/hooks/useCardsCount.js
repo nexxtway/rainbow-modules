@@ -1,20 +1,17 @@
 import { useState, useCallback, useEffect } from 'react';
-import useContainerSize from './useContainerSize';
 
-export default function useCardsCount({ cardWidth, containerRef }) {
-    const containerSize = useContainerSize({ containerRef });
+export default function useCardsCount({ cardWidth, containerSize }) {
     const [cardsCount, setCardsCount] = useState(0);
     const [cardMargin, setCardMargin] = useState(0);
 
     const updateCardsCount = useCallback(() => {
-        const maxVisibleCards = Math.floor(containerRef.current.clientWidth / cardWidth);
-        const margin =
-            (containerRef.current.clientWidth - maxVisibleCards * cardWidth) / maxVisibleCards;
+        const maxVisibleCards = Math.floor(containerSize / cardWidth);
+        const margin = (containerSize - maxVisibleCards * cardWidth) / maxVisibleCards;
         setCardsCount(maxVisibleCards);
         setCardMargin((margin + 10) / 2);
-    }, [containerRef, cardWidth]);
+    }, [containerSize, cardWidth]);
 
-    useEffect(() => updateCardsCount(), [containerSize, updateCardsCount]);
+    useEffect(() => updateCardsCount(), [updateCardsCount]);
 
     return { cardsCount, cardMargin };
 }
