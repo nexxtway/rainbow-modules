@@ -18,12 +18,12 @@ const DatePickerCarousel = React.forwardRef((props, ref) => {
         // onFocus,
         // onBlur,
         // label,
-        // required,
+        required,
         style,
         className,
         formatStyle,
         // hideLabel,
-        // name,
+        name,
         // bottomHelpText,
         // isCentered,
         // error,
@@ -80,11 +80,15 @@ const DatePickerCarousel = React.forwardRef((props, ref) => {
         <StyledContainer id={id} className={className} style={style}>
             <DatePickerCarouselInput
                 ref={inputRef}
+                name={name}
                 label={formattedDate || placeholder}
                 onLabelClick={handleClick}
                 value={value}
                 onChange={onChange}
                 locale={currentLocale}
+                required={required}
+                disabled={disabled}
+                readOnly={readOnly}
             />
             <DatePickerModal
                 id={modalId}
@@ -125,32 +129,32 @@ DatePickerCarousel.propTypes = {
      * to prompt the user for a valid entry. */
     placeholder: PropTypes.string,
     /** Text label for the DatePicker. */
-    label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+    // label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     /** A boolean to hide the DatePicker label. */
-    hideLabel: PropTypes.bool,
+    // hideLabel: PropTypes.bool,
     /** Specifies that the DatePicker field must be filled out before submitting the form.
      * This value defaults to false. */
     required: PropTypes.bool,
     /** The name of the DatePicker. */
     name: PropTypes.string,
     /** Shows the help message below the DatePicker. */
-    bottomHelpText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+    // bottomHelpText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     /** Specifies that the DatePicker text will be centered. This value defaults to false. */
-    isCentered: PropTypes.bool,
+    // isCentered: PropTypes.bool,
     /** Specifies that the DatePicker must be filled out before submitting the form. */
-    error: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+    // error: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     /** Specifies that the DatePicker is read-only. This value defaults to false. */
     readOnly: PropTypes.bool,
     /** Specifies that the DatePicker element should be disabled. This value defaults to false. */
     disabled: PropTypes.bool,
     /** Specifies the tab order of an element (when the tab button is used for navigating). */
-    tabIndex: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    // tabIndex: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     /** The action triggered when the element is clicked. */
     onClick: PropTypes.func,
     /** The action triggered when the element receives focus. */
-    onFocus: PropTypes.func,
+    // onFocus: PropTypes.func,
     /** The action triggered when the element releases focus. */
-    onBlur: PropTypes.func,
+    // onBlur: PropTypes.func,
     /** The id of the outer element. */
     id: PropTypes.string,
     /** A CSS class for the outer element, in addition to the component's base classes. */
@@ -172,19 +176,19 @@ DatePickerCarousel.defaultProps = {
     formatStyle: 'medium',
     onChange: () => {},
     placeholder: undefined,
-    label: undefined,
-    hideLabel: false,
+    // label: undefined,
+    // hideLabel: false,
     required: false,
     name: undefined,
-    bottomHelpText: null,
-    isCentered: false,
-    error: null,
+    // bottomHelpText: null,
+    // isCentered: false,
+    // error: null,
     readOnly: false,
     disabled: false,
-    tabIndex: undefined,
+    // tabIndex: undefined,
     onClick: () => {},
-    onFocus: () => {},
-    onBlur: () => {},
+    // onFocus: () => {},
+    // onBlur: () => {},
     id: undefined,
     className: undefined,
     style: undefined,
