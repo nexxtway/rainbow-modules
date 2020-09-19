@@ -8,7 +8,7 @@ import { Provider } from './context';
 import { StyledContainer, StyledLabel, StyledOptionsContainer } from './styled';
 
 /**
- * A TilePicker can be either radio buttons or checkboxes that are visually enhanced.
+ * TilePicker can be either radio buttons or checkboxes that are visually enhanced.
  */
 export default function TilePicker(props) {
     const {

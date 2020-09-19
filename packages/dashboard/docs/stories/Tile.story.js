@@ -3,11 +3,14 @@ import styled from 'styled-components';
 import { Application } from 'react-rainbow-components';
 import Tile from '../../src/components/Tile';
 
+const StyledContainer = styled.div`
+    padding: 10px;
+    background-color: #f4f6f9;
+    display: flex;
+    flex-wrap: wrap;
+`;
+
 export const simpleTile = () => {
-    const StyledContainer = styled.div`
-        padding: 10px;
-        background-color: #f4f6f9;
-    `;
     const tileStyle = { width: 190 };
     return (
         <Application>
@@ -19,13 +22,6 @@ export const simpleTile = () => {
 };
 
 export const differentsColorsTite = () => {
-    const StyledContainer = styled.div`
-        padding: 10px;
-        background-color: #f4f6f9;
-        display: flex;
-        flex-wrap: wrap;
-    `;
-
     const tileStyle = { marginBottom: 10, marginRight: 5, marginLeft: 5 };
     return (
         <Application>
