@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Tile from '../../src/components/Tile';
+import * as stories from '../stories/Tile.story.js';
+
+<Meta title="Modules|Dashboard/Components" component={Tile} />
+
+# Overview
+
+`Tile` component to show information of dashboard
+
+### This is a basic example.
+
+<Preview>
+    <Story name="Tile">{stories.simpleTile()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={Tile} />
