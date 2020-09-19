@@ -7,19 +7,19 @@ describe('helper getBackgroundColor', () => {
     };
     it('should return map[value] if typeof map[value] === string and isValidColor(map[value])', () => {
         const value = 'delivered';
-        const backgroundColor = getBackgroundColor(map, value);
+        const backgroundColor = getBackgroundColor(map[value]);
         expect(backgroundColor).toBe('#009900');
     });
 
     it('should return map[value] if typeof map[value].backgroundColor === string && isValidColor(map[value].backgroundColor)', () => {
         const value = 'pending';
-        const backgroundColor = getBackgroundColor(map, value);
+        const backgroundColor = getBackgroundColor(map[value]);
         expect(backgroundColor).toBe('#EBC665');
     });
 
     it('should return default BackgroundColor = #fff if map[value] does not exist', () => {
         const value = 'canceled';
-        const backgroundColor = getBackgroundColor(map, value);
+        const backgroundColor = getBackgroundColor(map[value]);
         expect(backgroundColor).toBe('#fff');
     });
 
@@ -29,7 +29,7 @@ describe('helper getBackgroundColor', () => {
             delivered: 990000,
             pending: { backgroundColor: '#EBC665' },
         };
-        const backgroundColor = getBackgroundColor(map, value);
+        const backgroundColor = getBackgroundColor(map[value]);
         expect(backgroundColor).toBe('#fff');
     });
 
@@ -39,7 +39,7 @@ describe('helper getBackgroundColor', () => {
             delivered: '#009900',
             pending: { backgroundColor: ['#EBC665'] },
         };
-        const backgroundColor = getBackgroundColor(map, value);
+        const backgroundColor = getBackgroundColor(map[value]);
         expect(backgroundColor).toBe('#fff');
     });
 });

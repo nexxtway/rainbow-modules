@@ -2,11 +2,11 @@ import getContrastText from 'react-rainbow-components/styles/helpers/color/getCo
 import isValidColor from 'react-rainbow-components/styles/helpers/color/isValidColor.js';
 import getBackgroundColor from './getBackgroundColor';
 
-const getColor = (map, value) => {
-    if (map[value] && typeof map[value].color === 'string' && isValidColor(map[value].color)) {
-        return map[value].color;
+const getColor = (value) => {
+    if (value && typeof value.color === 'string' && isValidColor(value.color)) {
+        return value.color;
     }
-    const backgroundColor = getBackgroundColor(map, value);
+    const backgroundColor = getBackgroundColor(value);
     return getContrastText(backgroundColor);
 };
 

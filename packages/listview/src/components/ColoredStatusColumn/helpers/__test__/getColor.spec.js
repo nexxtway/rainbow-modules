@@ -9,13 +9,13 @@ describe('helper getColor', () => {
 
     it('should return map[value].color if typeof map[value].color === string && isValidColor(map[value].color)', () => {
         const value = 'pending';
-        const color = getColor(map, value);
+        const color = getColor(map[value]);
         expect(color).toBe('#fff');
     });
 
     it('should return getContrastText if map[value].color does not exist', () => {
         const value = 'delivered';
-        const color = getColor(map, value);
+        const color = getColor(map[value]);
         const getConstrastText = getContrastText('#0f0');
         expect(color).toBe(getConstrastText);
     });
@@ -26,7 +26,7 @@ describe('helper getColor', () => {
             pending: { backgroundColor: '#EBC665', color: ['#fff'] },
         };
         const value = 'delivered';
-        const color = getColor(map, value);
+        const color = getColor(map[value]);
         const getConstrastText = getContrastText('#EBC665');
         expect(color).toBe(getConstrastText);
     });

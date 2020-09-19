@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import useTheme from 'react-rainbow-components/libs/hooks/useTheme.js';
+import useDefaultColors from './hooks/useDefaultColors';
 import getBackgroundColor from './helpers/getBackgroundColor';
 import getNormalizedColors from './helpers/getNormalizedColors';
 import getColor from './helpers/getColor';
 import { StyledContainer } from './styled';
 
 const ColoredStatusColumn = ({ value, colors, textTransform }) => {
-    const theme = useTheme();
-    const map = getNormalizedColors(colors, theme);
-    const backgroundColor = getBackgroundColor(map, value.toLowerCase());
-    const color = getColor(map, value.toLowerCase());
+    const defaultColors = useDefaultColors();
+    const map = colors ? getNormalizedColors(colors) : defaultColors;
+    const backgroundColor = getBackgroundColor(map[value.toLowerCase()]);
+    const color = getColor(map[value.toLowerCase()]);
 
     return (
         <StyledContainer
