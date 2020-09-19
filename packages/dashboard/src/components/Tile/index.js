@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useUniqueIdentifier } from '@rainbow-modules/hooks';
 import { Check } from '@rainbow-modules/icons';
+import { useTheme } from 'react-rainbow-components/libs/hooks';
 import RenderIf from 'react-rainbow-components/components/RenderIf';
-import { colorToRgba, replaceAlpha } from 'react-rainbow-components/styles/helpers/color';
+import {
+    colorToRgba,
+    replaceAlpha,
+    getContrastText,
+    isValidColor,
+} from 'react-rainbow-components/styles/helpers/color';
+import { TilePickerContext } from '../TilePicker/context';
 import isChecked from './helpers/isChecked';
 import {
     StyledContainer,
@@ -22,26 +29,32 @@ export default function Tile(props) {
     const {
         label,
         value: valueProp,
-        color,
-        backgroundColor,
+        color: colorProp,
+        backgroundColor: backgroundColorProp,
         name: nameProp,
         id,
         className,
         style,
     } = props;
-    const context = undefined;
+    const context = useContext(TilePickerContext);
     const { ariaDescribedby, groupName, onChange, value, multiple } = context || {};
 
     const inputId = useUniqueIdentifier('tile-input');
 
+    const mainBackground = useTheme().rainbow.palette.background.main;
+    const backgroundColor = isValidColor(backgroundColorProp)
+        ? backgroundColorProp
+        : mainBackground;
+    const color = isValidColor(colorProp) ? colorProp : getContrastText(backgroundColor);
+
     const type = multiple ? 'checkbox' : 'radio';
     const name = groupName || nameProp;
-    const checked = isChecked(multiple, value, nameProp);
+    const checked = isChecked({ multiple, value, name: nameProp });
 
     const labelStyle = { color: replaceAlpha(colorToRgba(color), 0.7) };
 
     return (
-        <StyledContainer id={id} className={className} style={style}>
+        <StyledContainer id={id} className={className} style={style} hasMargin={!!context}>
             <RenderIf isTrue={!!context}>
                 <StyledInput
                     as="input"
@@ -77,7 +90,7 @@ Tile.propTypes = {
     /** Text label of the element. */
     label: PropTypes.string,
     /** The value of the element. */
-    value: PropTypes.number,
+    value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     /** The color of the text. */
     color: PropTypes.string,
     /** The background color of the element. */
@@ -95,8 +108,8 @@ Tile.propTypes = {
 Tile.defaultProps = {
     label: undefined,
     value: undefined,
-    color: '#333333',
-    backgroundColor: '#ffffff',
+    color: undefined,
+    backgroundColor: undefined,
     name: undefined,
     id: undefined,
     className: undefined,
