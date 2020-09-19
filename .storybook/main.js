@@ -37,6 +37,10 @@ module.exports = {
                     __dirname,
                     '../packages/listview/src/index.js',
                 ),
+                '@rainbow-modules/storage': path.join(
+                    __dirname,
+                    '../packages/storage/src/index.js',
+                ),
             },
         };
         return config;
