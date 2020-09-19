@@ -1,4 +1,4 @@
-export default function isChecked(multiple, value, name) {
+export default function isChecked({ multiple, value, name }) {
     if (multiple) {
         return Array.isArray(value) && value.includes(name);
     }

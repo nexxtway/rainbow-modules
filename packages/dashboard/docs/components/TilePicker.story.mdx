@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import TilePicker from '../../src/components/TilePicker';
+import * as stories from '../stories/TilePicker.story.js';
+
+<Meta title="Modules|Dashboard/Components" component={TilePicker} />
+
+# Overview
+
+`TilePicker` can be either radio buttons or checkboxes that are visually enhanced.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="TilePicker">{stories.OnlyOneSelection()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={TilePicker} />

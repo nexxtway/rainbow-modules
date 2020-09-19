@@ -3,6 +3,11 @@ import HiddenElement from 'react-rainbow-components/components/Structural/hidden
 
 export const StyledContainer = styled.div`
     min-width: 190px;
+    ${(props) =>
+        props.hasMargin &&
+        `
+        margin: 0 5px 10px 5px;
+    `}
 `;
 
 export const StyledInput = styled(HiddenElement)`
