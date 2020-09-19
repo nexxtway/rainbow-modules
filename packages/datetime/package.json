@@ -1,0 +1,17 @@
+{
+    "name": "@rainbow-modules/datetime",
+    "version": "0.1.4",
+    "main": "lib/index.js",
+    "author": "Nexxtway Team",
+    "license": "MIT",
+    "peerDependencies": {
+        "react": ">=16.8.0",
+        "react-intl": ">=4.0.0",
+        "react-rainbow-components": ">=1.15.0",
+        "redux-form": ">=8.0.0",
+        "styled-components": "^4.3.2"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}
