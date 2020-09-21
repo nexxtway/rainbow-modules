@@ -11,12 +11,12 @@ const Container = styled.div`
 `;
 
 // eslint-disable-next-line react/prop-types
-const PickDate = ({ locale }) => {
+const PickDate = (props) => {
     const [date, setDate] = useState(new Date());
-    return <DatePickerCarousel locale={locale} value={date} onChange={(date) => setDate(date)} />;
+    return <DatePickerCarousel {...props} value={date} onChange={(date) => setDate(date)} />;
 };
 
-export const datePickerCarousel = () => {
+export const basicUsage = () => {
     return (
         <RainbowFirebaseApp app={app}>
             <Container>
@@ -26,7 +26,7 @@ export const datePickerCarousel = () => {
     );
 };
 
-export const datePickerCarouselWithCustomLocale = () => {
+export const usageWithCustomLocale = () => {
     return (
         <RainbowFirebaseApp app={app}>
             <Container>
@@ -36,7 +36,17 @@ export const datePickerCarouselWithCustomLocale = () => {
     );
 };
 
+export const withDoubleCalendar = () => {
+    return (
+        <RainbowFirebaseApp app={app}>
+            <Container>
+                <PickDate variant="double" />
+            </Container>
+        </RainbowFirebaseApp>
+    );
+};
+
 export default {
-    title: 'Modules|Datetime/Stories',
+    title: 'Modules|Datetime/Stories/DatePickerCarousel',
     component: DatePickerCarousel,
 };
