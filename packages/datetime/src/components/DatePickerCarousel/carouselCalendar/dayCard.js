@@ -34,7 +34,7 @@ export default function DayCard(props) {
 
     if (isDisabled) {
         return (
-            <StyledDisabledDayCard cardMargin={cardMargin} aria-selected="false">
+            <StyledDisabledDayCard aria-selected="false">
                 <StyledDayCardDayLabel>{dayName}</StyledDayCardDayLabel>
                 <StyledDayCardDateLabel>{day}</StyledDayCardDateLabel>
             </StyledDisabledDayCard>
@@ -44,8 +44,9 @@ export default function DayCard(props) {
     return (
         <StyledDayCard
             ref={buttonRef}
-            isSelected={isSelected}
+            data-selected={isSelected}
             tabIndex={tabIndex}
+            isSelected={isSelected}
             onClick={() => onChange(date)}
             onKeyDown={onKeyDown}
             onFocus={onFocus}
