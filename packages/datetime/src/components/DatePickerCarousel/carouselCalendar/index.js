@@ -26,7 +26,7 @@ const CarouselCalendar = React.forwardRef((props, ref) => {
         currentValue,
     });
     const { width: containerSize } = useContainerSize({ containerRef: cardsContainerRef });
-    const { cardsCount, cardMargin } = useCardsCount({
+    const cardsCount = useCardsCount({
         containerSize,
         cardWidth: 67,
     });
@@ -74,7 +74,6 @@ const CarouselCalendar = React.forwardRef((props, ref) => {
                         isFocused={isSameDay(date, focusedDate)}
                         isSelected={isSameDay(date, currentValue)}
                         isDisabled={!isDateWithinRange(date, [minCalendarDate, maxCalendarDate])}
-                        cardMargin={cardMargin}
                         onChange={onChange}
                         onKeyDown={handleKeyDown}
                         onFocus={() => enableKeyboardNav()}
@@ -90,7 +89,6 @@ const CarouselCalendar = React.forwardRef((props, ref) => {
             currentValue,
             minCalendarDate,
             maxCalendarDate,
-            cardMargin,
             onChange,
             handleKeyDown,
             enableKeyboardNav,

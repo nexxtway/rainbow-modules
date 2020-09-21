@@ -15,7 +15,6 @@ export default function DayCard(props) {
         isFocused,
         isSelected,
         isDisabled,
-        cardMargin,
         locale,
         onChange,
         onFocus,
@@ -45,7 +44,6 @@ export default function DayCard(props) {
     return (
         <StyledDayCard
             ref={buttonRef}
-            cardMargin={cardMargin}
             isSelected={isSelected}
             tabIndex={tabIndex}
             onClick={() => onChange(date)}
@@ -66,7 +64,6 @@ DayCard.propTypes = {
     isFocused: PropTypes.bool,
     isSelected: PropTypes.bool,
     isDisabled: PropTypes.bool,
-    cardMargin: PropTypes.number,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
     onBlur: PropTypes.func,
@@ -80,7 +77,6 @@ DayCard.defaultProps = {
     isFocused: false,
     isSelected: false,
     isDisabled: false,
-    cardMargin: 5,
     onChange: () => {},
     onFocus: () => {},
     onBlur: () => {},
