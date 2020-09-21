@@ -1,0 +1,38 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Button } from 'react-rainbow-components';
+import AppNotificationManager from '../../src/components/AppNotificationManager';
+import * as stories from '../stories/appNotification.story.js';
+
+<Meta title="Modules|App/Components" component={AppNotificationManager} />
+
+# Overview
+
+`AppNotificationManager` is a component that handles showing and removing notifications.
+You should not use this component directly, instead use `showAppNotification` action.
+
+### Observations
+
+-   A maximum of three notifications will be visible at the same time, newer notifications
+    will stack on top of older notifications.
+-   The default timeout is two seconds.
+
+### Example
+
+<Preview>
+    <Story name="AppNotification">{stories.showAppLevelNotification()}</Story>
+</Preview>
+
+### Usage
+
+```jsx
+showAppNotification({
+    title: 'Notification title',
+    description: 'Notification description.',
+    icon: 'info' | 'success' | 'warning' | 'error' | <CustomIcon />,
+    timeout: 5000,
+});
+```
+
+# Component props
+
+<Props of={AppNotificationManager} />
