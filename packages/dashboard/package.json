@@ -1,5 +1,5 @@
 {
-    "name": "dashboard",
+    "name": "@rainbow-modules/dashboard",
     "version": "0.0.1",
     "main": "lib/index.js",
     "author": "Nexxtway Team",
