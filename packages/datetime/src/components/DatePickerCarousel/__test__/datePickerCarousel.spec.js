@@ -16,7 +16,7 @@ describe('<DatePickerCarousel />', () => {
         component.find('DayCard').at(4).simulate('click');
         expect(mockChangeFn).toHaveBeenCalledWith(new Date('2020/10/24'));
     });
-    it('should fire onClick when label is clicked', async () => {
+    it('should fire onClick when label is clicked', () => {
         const mockClickFn = jest.fn();
         const component = mountWithApplication(
             <DatePickerCarousel value={date} onClick={mockClickFn} />,
