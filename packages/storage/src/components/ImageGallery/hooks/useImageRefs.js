@@ -8,46 +8,48 @@ export default function useImageRefs(props) {
 
     useEffect(() => {
         const maxResults = maxResultsProp >= 0 ? maxResultsProp : 1000;
-        let isSubscribed = true;
-        if (Array.isArray(filter)) {
-            const imagesFiltered = filter.map((name) => storageRef.child(`${path}/${name}`));
-            setImageRefs(imagesFiltered.slice(0, maxResults));
-        } else if (typeof filter === 'function') {
-            storageRef
-                .child(path)
-                .listAll()
-                .then(({ items }) => {
-                    if (isSubscribed) {
+        (async () => {
+            if (Array.isArray(filter)) {
+                const imagesFiltered = [];
+                await Promise.all(
+                    filter.map(async (name) => {
+                        const imageRef = storageRef.child(`${path}/${name}`);
+                        await imageRef
+                            .getDownloadURL()
+                            .then(() => {
+                                imagesFiltered.push(imageRef);
+                            })
+                            .catch((error) => {
+                                onError(error);
+                            });
+                    }),
+                );
+                setImageRefs(imagesFiltered.slice(0, maxResults));
+            } else if (typeof filter === 'function') {
+                await storageRef
+                    .child(path)
+                    .listAll()
+                    .then(({ items }) => {
                         const filteredList = items.filter((ref) => filter(ref));
                         setImageRefs(filteredList.slice(0, maxResults));
-                    }
-                })
-                .catch((error) => {
-                    if (isSubscribed) {
+                    })
+                    .catch((error) => {
                         onError(error);
                         setImageRefs([]);
-                    }
-                });
-        } else {
-            storageRef
-                .child(path)
-                .list({ maxResults })
-                .then(({ items }) => {
-                    if (isSubscribed) {
+                    });
+            } else {
+                await await storageRef
+                    .child(path)
+                    .list({ maxResults })
+                    .then(({ items }) => {
                         setImageRefs(items);
-                    }
-                })
-                .catch((error) => {
-                    if (isSubscribed) {
+                    })
+                    .catch((error) => {
                         onError(error);
                         setImageRefs([]);
-                    }
-                });
-        }
-
-        return () => {
-            isSubscribed = false;
-        };
+                    });
+            }
+        })();
     }, [path, filter, storageRef, onError, maxResultsProp]);
 
     return [imageRefs, setImageRefs];
