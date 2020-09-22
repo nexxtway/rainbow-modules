@@ -76,7 +76,7 @@ const CarouselCalendar = React.forwardRef((props, ref) => {
                         isDisabled={!isDateWithinRange(date, [minCalendarDate, maxCalendarDate])}
                         onChange={onChange}
                         onKeyDown={handleKeyDown}
-                        onFocus={() => enableKeyboardNav()}
+                        onFocus={() => enableKeyboardNav(date)}
                         onBlur={() => disableKeyboardNav()}
                     />
                 );
