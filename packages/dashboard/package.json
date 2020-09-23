@@ -1,12 +1,12 @@
 {
-    "name": "dashboard",
-    "version": "0.0.1",
+    "name": "@rainbow-modules/dashboard",
+    "version": "0.0.2",
     "main": "lib/index.js",
     "author": "Nexxtway Team",
     "license": "MIT",
     "dependencies": {
-        "@rainbow-modules/icons": "^0.1.5",
         "@rainbow-modules/hooks": "^0.1.4",
+        "@rainbow-modules/icons": "^0.1.6",
         "styled-components": "^4.3.2"
     },
     "peerDependencies": {

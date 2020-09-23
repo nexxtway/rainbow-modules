@@ -22,3 +22,4 @@ export { default as Check } from './components/check';
 export { default as ChevronLeft } from './components/chevronLeft';
 export { default as ChevronRight } from './components/chevronRight';
 export { default as ChevronDown } from './components/chevronDown';
+export { default as Github } from './components/github';
