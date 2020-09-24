@@ -12,7 +12,7 @@ const Container = styled.div`
 
 // eslint-disable-next-line react/prop-types
 const PickDate = (props) => {
-    const [date, setDate] = useState(new Date());
+    const [date, setDate] = useState(new Date('2020/09/15'));
     return <DatePickerCarousel {...props} value={date} onChange={(date) => setDate(date)} />;
 };
 
@@ -41,6 +41,20 @@ export const withDoubleCalendar = () => {
         <RainbowFirebaseApp app={app}>
             <Container>
                 <PickDate variant="double" />
+            </Container>
+        </RainbowFirebaseApp>
+    );
+};
+
+export const withDateBounds = () => {
+    return (
+        <RainbowFirebaseApp app={app}>
+            <Container>
+                <PickDate
+                    id="date-picker-carousel-1"
+                    minDate={new Date('2020/09/01')}
+                    maxDate={new Date('2020/09/30')}
+                />
             </Container>
         </RainbowFirebaseApp>
     );

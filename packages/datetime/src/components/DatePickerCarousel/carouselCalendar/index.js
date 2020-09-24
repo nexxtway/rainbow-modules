@@ -105,7 +105,6 @@ const CarouselCalendar = React.forwardRef((props, ref) => {
             data-calendar-type="carousel"
         >
             <StyledArrowButton
-                data-cy="carousel-calendar__scroll-left"
                 tabIndex="-1"
                 icon={<ChevronLeft />}
                 size="xx-small"
@@ -114,7 +113,6 @@ const CarouselCalendar = React.forwardRef((props, ref) => {
             />
             <StyledCarouselContent ref={cardsContainerRef}>{days}</StyledCarouselContent>
             <StyledArrowButton
-                data-cy="carousel-calendar__scroll-right"
                 tabIndex="-1"
                 icon={<ChevronRight />}
                 size="xx-small"
