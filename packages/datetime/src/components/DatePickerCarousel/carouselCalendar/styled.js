@@ -9,7 +9,7 @@ export const StyledSection = styled.section`
 `;
 
 export const StyledArrowButton = styled(ButtonIcon)`
-    color: ${(props) => props.theme.rainbow.palette.brand.main};
+    color: ${(props) => props.theme.rainbow.palette.text.header};
     ${(props) =>
         props.disabled &&
         `
@@ -34,11 +34,11 @@ export const StyledDayCard = styled.button`
     margin: 5px ${(props) => props.cardMargin}px 8px;
     border: 1px solid transparent;
     border-radius: 18px;
-    background: #eceff4;
+    background: ${(props) => props.theme.rainbow.palette.background.hightlight};
     color: ${(props) => props.theme.rainbow.palette.text.header};
-    min-width: 57px;
-    max-width: 57px;
-    width: 57px;
+    min-width: 60px;
+    max-width: 60px;
+    width: 60px;
     height: 68px;
     padding: 0;
     appearance: button;
@@ -47,29 +47,44 @@ export const StyledDayCard = styled.button`
     outline: none;
 
     &:focus {
-        box-shadow: 0 0 2px ${(props) => props.theme.rainbow.palette.brand.main};
+        box-shadow: ${(props) => props.theme.rainbow.shadows.shadow_2};
+        color: ${(props) => props.theme.rainbow.palette.text.label};
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+            box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    }
+
+    &:hover {
+        box-shadow: ${(props) => props.theme.rainbow.shadows.shadow_2};
+        color: ${(props) => props.theme.rainbow.palette.text.label};
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+            box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     }
 
     ${(props) =>
         props.isSelected &&
         `
         height: 72px;
-        color: white;
+        color: ${props.theme.rainbow.palette.background.main};
         background: ${props.theme.rainbow.palette.brand.main};
         box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
 
         &:focus {
             box-shadow: 0 2px 8px 0 ${props.theme.rainbow.palette.brand.dark};
-        }
-        `};
+            color: ${props.theme.rainbow.palette.background.main};
+            transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 
-    ${(props) =>
-        !props.isSelected &&
-        `
-        &:hover {
-            border: 1px solid ${props.theme.rainbow.palette.brand.dark};
+            &:hover {
+                box-shadow: 0 2px 8px 0 ${props.theme.rainbow.palette.brand.dark};
+            }
         }
-        `};
+
+        &:hover {
+            color: ${props.theme.rainbow.palette.background.main};
+            background: ${props.theme.rainbow.palette.brand.main};
+            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        }
+    `};
 `;
 
 export const StyledDisabledDayCard = styled.div`
@@ -97,15 +112,14 @@ export const StyledDayCardDayLabel = styled.span`
     font-size: 12px;
     text-transform: capitalize;
     font-weight: normal;
-    letter-spacing: 0.25px;
+    letter-spacing: 0.29px;
     text-align: center;
     color: inherit;
     ${(props) =>
         props.isSelected &&
         `
         font-size: 14px;
-        font-weight: bold;
-        letter-spacing: 0.29px;
+        font-weight: 700;
         `};
 `;
 
@@ -120,6 +134,5 @@ export const StyledDayCardDateLabel = styled.span`
         `
         font-size: 24px;
         font-weight: 800;
-        letter-spacing: 0.5px;
         `};
 `;
