@@ -34,7 +34,7 @@ export default function DayCard(props) {
 
     if (isDisabled) {
         return (
-            <StyledDisabledDayCard aria-selected="false">
+            <StyledDisabledDayCard aria-selected="false" data-cy="carousel-calendar__day-card">
                 <StyledDayCardDayLabel>{dayName}</StyledDayCardDayLabel>
                 <StyledDayCardDateLabel>{day}</StyledDayCardDateLabel>
             </StyledDisabledDayCard>
@@ -45,6 +45,7 @@ export default function DayCard(props) {
         <StyledDayCard
             ref={buttonRef}
             data-selected={isSelected}
+            data-cy="carousel-calendar__day-card"
             tabIndex={tabIndex}
             isSelected={isSelected}
             onClick={() => onChange(date)}
