@@ -28,7 +28,7 @@ const CarouselCalendar = React.forwardRef((props, ref) => {
     const { width: containerSize } = useContainerSize({ containerRef: cardsContainerRef });
     const { cardsCount, cardMargin } = useCardsCount({
         containerSize,
-        cardWidth: 67,
+        cardWidth: 70,
     });
     const { visibleDates, moveLeft, moveRight } = useVisibleDates({
         minDate,
