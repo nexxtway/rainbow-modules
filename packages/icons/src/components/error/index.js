@@ -16,7 +16,7 @@ const Error = (props) => {
             xmlnsXlink="http://www.w3.org/1999/xlink"
         >
             <title>error</title>
-            <g id="pages" stroke="none" strokWidth="1" fillRule="evenodd">
+            <g id="pages" stroke="none" strokwidth="1" fillRule="evenodd">
                 <g
                     id="react-rainbow-custom-work-form-error-V1"
                     transform="translate(-42.000000, -20.000000)"
