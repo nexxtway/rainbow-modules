@@ -32,12 +32,7 @@ const Message = (props) => {
             <MessageContainer>
                 <MessageIcon variant={variant} as={iconMap[variant]} />
                 <MessageText variant={variant}>{message}</MessageText>
-                <ButtonIcon
-                    variant={variant}
-                    size="medium"
-                    icon={<Close />}
-                    onClick={hideMessage}
-                />
+                <ButtonIcon size="medium" icon={<Close />} onClick={hideMessage} />
             </MessageContainer>
         </Container>
     );
