@@ -16,22 +16,16 @@ export default function Image(props) {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        let isSubscribed = true;
-
-        imageRef
-            .getDownloadURL()
-            .then((url) => {
-                if (isSubscribed) {
+        (async () => {
+            await imageRef
+                .getDownloadURL()
+                .then((url) => {
                     setSrc(url);
-                }
-            })
-            .catch((error) => {
-                onError(error);
-            });
-
-        return () => {
-            isSubscribed = false;
-        };
+                })
+                .catch((error) => {
+                    onError(error);
+                });
+        })();
     }, [imageRef, onError]);
 
     return (

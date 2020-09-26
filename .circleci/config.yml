@@ -5,19 +5,20 @@ defaults: &defaults
     docker:
         - image: circleci/node:12.9.1-stretch-browsers
 
+restore_cache_dependencies: &restore_cache_dependencies
+    restore_cache:
+        keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-
+
 jobs:
     build_and_test:
         <<: *defaults
 
         steps:
             - checkout
-            - restore_cache:
-                  keys:
-                      - v1-dependencies-{{ checksum "yarn.lock" }}
-                      - v1-dependencies-
-
+            - *restore_cache_dependencies
             - run: yarn bootstrap
-
             - save_cache:
                   paths:
                       - node_modules
@@ -29,9 +30,9 @@ jobs:
                   name: run test
                   command: |
                       if [ -n "$COVERALLS_REPO_TOKEN" ]; then
-                          yarn test --ci --coverage && cat ./.jest-coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+                          yarn test --runInBand --ci --coverage && cat ./.jest-coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
                       else
-                          yarn test --ci --coverage
+                          yarn test --runInBand --ci --coverage
                       fi
 
             - run: yarn cypress install
@@ -52,14 +53,8 @@ jobs:
 
         steps:
             - checkout
-
-            # Download and cache dependencies
-            - restore_cache:
-                  keys:
-                      - v1-dependencies-{{ checksum "yarn.lock" }}
-                      # fallback to using the latest cache if no exact match is found
-                      - v1-dependencies-
-
+            - *restore_cache_dependencies
+            - run: yarn bootstrap
             - run:
                   name: Create .env file
                   command: |
@@ -72,7 +67,6 @@ jobs:
                       echo STORYBOOK_MESSAGING_SENDER_ID=$STORYBOOK_MESSAGING_SENDER_ID >> .env;
                       echo STORYBOOK_APP_ID=$STORYBOOK_APP_ID >> .env;
 
-            - run: yarn install
             - run: yarn deploy --token=$FIREBASE_TOKEN
 
     publish_canary:
@@ -80,24 +74,9 @@ jobs:
 
         steps:
             - checkout
-
-            - restore_cache:
-                  keys:
-                      - v1-dependencies-{{ checksum "yarn.lock" }}
-                      - v1-dependencies-
-
+            - *restore_cache_dependencies
             - run: yarn bootstrap
-
-            - save_cache:
-                  paths:
-                      - node_modules
-                  key: v1-dependencies-{{ checksum "yarn.lock" }}
-
-            - run: yarn build
-            - run:
-                  name: Auth with registry
-                  command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
-            - run: npx lerna publish --canary --preid canary --registry registry.npmjs.org/:_authToken=$NPM_TOKEN
+            - run: yarn publish-packages --canary --preid canary --yes --registry registry.npmjs.org/:_authToken=$NPM_TOKEN
 
 workflows:
     version: 2

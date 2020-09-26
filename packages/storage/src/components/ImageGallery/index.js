@@ -23,11 +23,11 @@ export default function ImageGallery(props) {
 
     const handleUploaded = useCallback(
         ({ uploadedImage, imageRef }) => {
-            setImagesUpload((list) => list.filter((imageUpload) => imageUpload !== uploadedImage));
             setImageRefs((list) => {
                 list.push(imageRef);
                 return list;
             });
+            setImagesUpload((list) => list.filter((imageUpload) => imageUpload !== uploadedImage));
         },
         [setImageRefs],
     );
@@ -37,6 +37,7 @@ export default function ImageGallery(props) {
             <RenderIf isTrue={allowUpload}>
                 <StyledFileContainer>
                     <StyledFileSeletor
+                        value={null}
                         onChange={handleFileSeletorChange}
                         multiple
                         variant="multiline"
