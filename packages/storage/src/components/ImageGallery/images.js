@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Image from './image';
 
-const Images = React.memo((props) => {
+const Images = (props) => {
     const { list, onSelect, onError } = props;
 
     return list.map((imageRef) => (
         <Image key={imageRef.name} imageRef={imageRef} onSelect={onSelect} onError={onError} />
     ));
-});
+};
 
 Images.propTypes = {
     list: PropTypes.array,
