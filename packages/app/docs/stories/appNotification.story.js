@@ -99,25 +99,23 @@ export const showAppLevelNotification = () => {
                     </Description>
                     <div>
                         <StyledButton
-                            id="notification-button"
+                            id="notification-button-info"
                             label="Info"
                             variant="neutral"
                             onClick={() => showNotification('info')}
                         />
                         <StyledButton
-                            id="notification-button"
+                            id="notification-button-success"
                             label="Success"
                             variant="success"
                             onClick={() => showNotification('success')}
                         />
                         <StyledButton
-                            id="notification-button"
                             label="Error"
                             variant="destructive"
                             onClick={() => showNotification('error')}
                         />
                         <StyledButton
-                            id="notification-button"
                             label="Custom"
                             variant="border-filled"
                             onClick={() => showNotification('custom')}
@@ -149,7 +147,7 @@ export const showAppLevelNotificationTimeout5s = () => {
                         Click the button below to show a notification with timeout.
                     </Description>
                     <Button
-                        id="notification-button"
+                        id="notification-button-timeout"
                         label="Show notification"
                         variant="primary"
                         onClick={showNotification}
