@@ -6,3 +6,4 @@ lib
 storybook-static
 .env*
 .vscode/
+cypress/screenshots

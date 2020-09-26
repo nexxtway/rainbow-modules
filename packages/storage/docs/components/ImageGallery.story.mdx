@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import ImageGallery from '../../src/components/ImageGallery';
+import * as stories from '../stories/ImageGallery.story.js';
+
+<Meta title="Modules|Storage/Components" component={ImageGallery} />
+
+# Overview
+
+`ImageGallery` is a component to manage and select images stored in Firebase Storage.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="ImageGallery">{stories.basicStorageImageGallery()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={ImageGallery} />
