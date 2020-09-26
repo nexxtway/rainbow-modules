@@ -6,7 +6,7 @@
     "license": "MIT",
     "dependencies": {
         "@rainbow-modules/firebase-hooks": "^0.1.6",
-        "@rainbow-modules/icons": "^0.1.4"
+        "@rainbow-modules/icons": "^0.1.6"
     },
     "peerDependencies": {
         "react": ">=16.8.0",

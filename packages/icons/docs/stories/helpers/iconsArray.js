@@ -20,6 +20,7 @@ import {
     ArrowLeft,
     Picture,
     Check,
+    Github,
 } from '../../../src';
 
 export default [
@@ -127,5 +128,10 @@ export default [
         name: 'check',
         category: 'standard',
         icon: Check,
+    },
+    {
+        name: 'github',
+        category: 'standard',
+        icon: Github,
     },
 ];

@@ -6,16 +6,18 @@ export const StyledContainer = styled.div`
 `;
 
 export const StyledLabelContainer = styled.div`
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1rem;
 `;
 
 export const StyledLabel = styled.button`
     font-size: 1.5rem;
     font-weight: 800;
     color: ${(props) => props.theme.rainbow.palette.brand.main};
-    border: none;
-    border-radius: 18px;
+    border: 1px solid transparent;
+    border-radius: 40px;
     background: transparent;
+    padding: 0 0.8rem;
+    height: 44px;
     align-items: center;
     display: inline-flex;
     justify-content: center;
@@ -56,7 +58,7 @@ export const StyledLabel = styled.button`
 
     &:focus {
         outline: 0;
-        box-shadow: ${(props) => props.theme.rainbow.shadows.brand};
+        border: 1px solid ${(props) => props.theme.rainbow.palette.brand.dark};
     }
 
     &:active {
