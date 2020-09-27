@@ -18,7 +18,7 @@ jobs:
         steps:
             - checkout
             - *restore_cache_dependencies
-            - run: yarn bootstrap
+            - run: yarn install
             - save_cache:
                   paths:
                       - node_modules
@@ -54,7 +54,7 @@ jobs:
         steps:
             - checkout
             - *restore_cache_dependencies
-            - run: yarn bootstrap
+            - run: yarn install
             - run:
                   name: Create .env file
                   command: |
@@ -75,7 +75,7 @@ jobs:
         steps:
             - checkout
             - *restore_cache_dependencies
-            - run: yarn bootstrap
+            - run: yarn install
             - run:
                   name: Auth with registry
                   command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
