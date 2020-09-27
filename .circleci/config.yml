@@ -76,7 +76,10 @@ jobs:
             - checkout
             - *restore_cache_dependencies
             - run: yarn bootstrap
-            - run: yarn publish-packages --canary --preid canary --yes --registry registry.npmjs.org/:_authToken=$NPM_TOKEN
+            - run:
+                  name: Auth with registry
+                  command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+            - run: yarn publish-packages --canary --preid canary --yes
 
 workflows:
     version: 2
