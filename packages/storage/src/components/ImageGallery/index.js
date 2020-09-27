@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import RenderIf from 'react-rainbow-components/components/RenderIf';
+import { Picture } from '@rainbow-modules/icons';
 import ImagesUpload from './imagesUpload';
 import Images from './images';
 import { useImageRefs } from './hooks';
@@ -23,10 +24,7 @@ export default function ImageGallery(props) {
 
     const handleUploaded = useCallback(
         ({ uploadedImage, imageRef }) => {
-            setImageRefs((list) => {
-                list.push(imageRef);
-                return list;
-            });
+            setImageRefs((list) => [imageRef, ...list]);
             setImagesUpload((list) => list.filter((imageUpload) => imageUpload !== uploadedImage));
         },
         [setImageRefs],
@@ -40,6 +38,7 @@ export default function ImageGallery(props) {
                         value={null}
                         onChange={handleFileSeletorChange}
                         multiple
+                        uploadIcon={<Picture />}
                         variant="multiline"
                         accept="image/*"
                         bottomHelpText="You can upload images up to 5MB "

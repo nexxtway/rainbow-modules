@@ -16,7 +16,9 @@ export default function ImageUpload(props) {
             'state_changed',
             (snapshot) => {
                 const percent = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-                setProgress((p) => (percent > p ? percent : p));
+                setProgress((previousPercent) =>
+                    percent > previousPercent ? percent : previousPercent,
+                );
             },
             (error) => {
                 onError(error);

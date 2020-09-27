@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import useStorageRef from './useStorageRef';
+import { attachMetadata, sortByDate } from '../helpers';
 
 export default function useImageRefs(props) {
     const { path, filter, maxResults: maxResultsProp, onError } = props;
@@ -14,40 +15,32 @@ export default function useImageRefs(props) {
                 await Promise.all(
                     filter.map(async (name) => {
                         const imageRef = storageRef.child(`${path}/${name}`);
-                        await imageRef
-                            .getDownloadURL()
-                            .then(() => {
-                                imagesFiltered.push(imageRef);
-                            })
-                            .catch((error) => {
-                                onError(error);
-                            });
+                        try {
+                            await imageRef.getDownloadURL();
+                            imagesFiltered.push(imageRef);
+                        } catch (error) {
+                            onError(error);
+                        }
                     }),
                 );
                 setImageRefs(imagesFiltered.slice(0, maxResults));
             } else if (typeof filter === 'function') {
-                await storageRef
-                    .child(path)
-                    .listAll()
-                    .then(({ items }) => {
-                        const filteredList = items.filter((ref) => filter(ref));
-                        setImageRefs(filteredList.slice(0, maxResults));
-                    })
-                    .catch((error) => {
-                        onError(error);
-                        setImageRefs([]);
-                    });
+                try {
+                    const { items } = await storageRef.child(path).listAll();
+                    const filteredList = items.filter((ref) => filter(ref)).slice(0, maxResults);
+                    setImageRefs(await sortByDate(await attachMetadata(filteredList)));
+                } catch (error) {
+                    onError(error);
+                    setImageRefs([]);
+                }
             } else {
-                await await storageRef
-                    .child(path)
-                    .list({ maxResults })
-                    .then(({ items }) => {
-                        setImageRefs(items);
-                    })
-                    .catch((error) => {
-                        onError(error);
-                        setImageRefs([]);
-                    });
+                try {
+                    const { items } = await storageRef.child(path).list({ maxResults });
+                    setImageRefs(await sortByDate(await attachMetadata(items)));
+                } catch (error) {
+                    onError(error);
+                    setImageRefs([]);
+                }
             }
         })();
     }, [path, filter, storageRef, onError, maxResultsProp]);
