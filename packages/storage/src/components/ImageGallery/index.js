@@ -72,7 +72,7 @@ ImageGallery.propTypes = {
 };
 
 ImageGallery.defaultProps = {
-    allowUpload: true,
+    allowUpload: false,
     onSelect: () => {},
     onError: () => {},
     filter: undefined,
