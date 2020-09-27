@@ -1,5 +1,6 @@
 {
     "name": "@rainbow-modules/app",
+    "version": "0.1.8",
     "main": "lib/index.js",
     "author": "Nexxtway Team",
     "license": "MIT",
