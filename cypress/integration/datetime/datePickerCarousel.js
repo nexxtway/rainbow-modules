@@ -7,6 +7,7 @@ const DATE_PICKER_MODAL = `${DATE_PICKER_CAROUSEL}_modal`;
 
 describe('DatePickerCarousel', () => {
     beforeEach(() => {
+        cy.viewport(1024, 768);
         cy.visit(FORM_URL);
     });
     it('it should open modal when click on input label', () => {
