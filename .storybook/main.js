@@ -19,6 +19,7 @@ module.exports = {
         '@storybook/addon-viewport/register',
     ],
     webpackFinal: async (config) => {
+        config.devtool = 'inline-source-map';
         config.resolve = {
             alias: {
                 '@rainbow-modules/app': path.join(__dirname, '../packages/app/src/index.js'),

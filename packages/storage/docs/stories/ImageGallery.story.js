@@ -6,7 +6,12 @@ import app from '../../../../firebase';
 export const basicStorageImageGallery = () => {
     return (
         <RainbowFirebaseApp app={app}>
-            <ImageGallery path="/users/u123/gallery" allowUpload />
+            <ImageGallery
+                path="/users/u123/gallery"
+                allowUpload
+                // eslint-disable-next-line no-alert
+                onSelect={(imageRef) => alert(imageRef.name)}
+            />
         </RainbowFirebaseApp>
     );
 };
