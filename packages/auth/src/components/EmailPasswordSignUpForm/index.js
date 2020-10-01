@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
-import { showAppMessage, showAppSpinner, hideAppSpinner } from '../../../../app/src/actions';
-import useFirebaseApp from '../../../../firebase-hooks/src/useFirebaseApp';
+import { showAppMessage, showAppSpinner, hideAppSpinner } from '@rainbow-modules/app';
+import { useFirebaseApp } from '@rainbow-modules/firebase-hooks';
 import { nameIcon, emailIcon, passwordIcon } from './icons';
 import { StyledInput, StyledButton } from './styled';
 import { nameLabel, emailLabel, passwordLabel, buttonLabel } from './labels';
