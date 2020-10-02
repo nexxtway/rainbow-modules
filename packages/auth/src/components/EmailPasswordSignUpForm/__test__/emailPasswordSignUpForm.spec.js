@@ -1,19 +1,23 @@
 import React from 'react';
-import EmailPasswordSignUpForm from '../index';
+import * as actions from '@rainbow-modules/app';
+import EmailPasswordSignUpForm from '..';
 import { mountWithIntl } from '../../../helpers/intlEnzyme';
-import * as actions from '../../../../../app/src/actions';
 
 const mockCreateUserWithEmailAndPassword = jest
     .fn()
     .mockResolvedValueOnce()
     .mockRejectedValueOnce();
-jest.mock('../../../../../firebase-hooks/src/useFirebaseApp', () => () => ({
-    auth: () => ({ createUserWithEmailAndPassword: mockCreateUserWithEmailAndPassword }),
+jest.mock('@rainbow-modules/firebase-hooks', () => ({
+    useFirebaseApp: () => ({
+        auth: () => ({ createUserWithEmailAndPassword: mockCreateUserWithEmailAndPassword }),
+    }),
 }));
 
-actions.showAppMessage = jest.fn();
-actions.showAppSpinner = jest.fn();
-actions.hideAppSpinner = jest.fn();
+jest.mock('@rainbow-modules/app', () => ({
+    showAppMessage: jest.fn(),
+    showAppSpinner: jest.fn(),
+    hideAppSpinner: jest.fn(),
+}));
 
 describe('<EmailPasswordSignUpForm />', () => {
     beforeEach(() => {
