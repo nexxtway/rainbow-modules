@@ -48,9 +48,6 @@ jobs:
             - store_artifacts:
                   path: .jest-coverage
 
-            - store_artifacts:
-                  path: cypress/videos
-
     deploy_firebase:
         <<: *defaults
 
