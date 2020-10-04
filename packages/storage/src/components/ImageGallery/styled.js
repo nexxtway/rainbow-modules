@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { FileSelector } from 'react-rainbow-components';
+import { Trash } from '@rainbow-modules/icons';
 
 export const StyledContainer = styled.div`
     display: flex;
@@ -45,6 +46,21 @@ export const StyledContainerImageUpload = styled.div`
     }
 `;
 
+export const StyledDeleteButton = styled.div`
+    position: absolute;
+    top: 8px;
+    right: 2px;
+    display: none;
+`;
+
+export const StyledCheckContainer = styled.div`
+    color: #fff;
+    position: absolute;
+    top: 18px;
+    left: 16px;
+    display: none;
+`;
+
 export const StyledContainerImage = styled.button`
     position: relative;
     width: 100%;
@@ -56,6 +72,14 @@ export const StyledContainerImage = styled.button`
     padding: 0;
     background-clip: padding-box;
     box-shadow: rgb(215, 217, 226) 0 1px 2px 0;
+
+    &:hover ${StyledDeleteButton} {
+        display: block;
+    }
+
+    &:hover ${StyledCheckContainer} {
+        display: block;
+    }
 
     &:hover,
     &:focus {
@@ -93,4 +117,11 @@ export const StyledContainerSpinner = styled.div`
     width: 100%;
     height: 100%;
     justify-content: center;
+`;
+
+export const TrashIcon = styled(Trash)`
+    width: 60px;
+    height: 60px;
+    margin: 12px 12px 20px 0;
+    color: ${(props) => props.theme.rainbow.palette.error.main};
 `;
