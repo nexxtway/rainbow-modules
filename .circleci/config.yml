@@ -48,6 +48,9 @@ jobs:
             - store_artifacts:
                   path: .jest-coverage
 
+            - store_artifacts:
+                  path: cypress/screenshots
+
     deploy_firebase:
         <<: *defaults
 

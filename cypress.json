@@ -4,5 +4,7 @@
     "execTimeout": 60000,
     "video": false,
     "defaultCommandTimeout": 60000,
+    "numTestsKeptInMemory": 20,
+    "retries": { "runMode": 2 },
     "baseUrl": "http://localhost:5555"
 }
