@@ -40,16 +40,16 @@ describe('DatePickerCarousel', () => {
         cy.get(CALENDAR_DAY_CARD).eq(2).should('be.focused');
     });
     it('should focus next date and scroll right when latest visible date is focused and press ARROW_RIGHT key', () => {
-        cy.get(CALENDAR_DAY_CARD).last().contains('24');
-        cy.get(CALENDAR_DAY_CARD).last().type('{rightArrow}');
-        cy.get(CALENDAR_DAY_CARD).last().should('be.focused');
-        cy.get(CALENDAR_DAY_CARD).last().contains('25');
+        cy.get(CALENDAR_DAY_CARD).eq(12).contains('24');
+        cy.get(CALENDAR_DAY_CARD).eq(12).type('{rightArrow}');
+        cy.get(CALENDAR_DAY_CARD).eq(12).should('be.focused');
+        cy.get(CALENDAR_DAY_CARD).eq(12).contains('25');
     });
     it('should focus previous date and scroll left when first visible date is focused and press ARROW_LEFT key', () => {
-        cy.get(CALENDAR_DAY_CARD).first().contains('12');
-        cy.get(CALENDAR_DAY_CARD).first().type('{leftArrow}');
-        cy.get(CALENDAR_DAY_CARD).first().should('be.focused');
-        cy.get(CALENDAR_DAY_CARD).first().contains('11');
+        cy.get(CALENDAR_DAY_CARD).eq(0).contains('12');
+        cy.get(CALENDAR_DAY_CARD).eq(0).type('{leftArrow}');
+        cy.get(CALENDAR_DAY_CARD).eq(0).should('be.focused');
+        cy.get(CALENDAR_DAY_CARD).eq(0).contains('11');
     });
     it('should select date when ENTER_KEY is pressed', () => {
         cy.get(CALENDAR_DAY_CARD).eq(4).type('{enter}');
