@@ -1,8 +1,6 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-import { Button } from 'react-rainbow-components';
 import ColoredStatusColumn from '../../src/components/ColoredStatusColumn';
-import * as defaultStories from '../stories/DefaultColoredStatusColumn.story.js';
-import * as customStories from '../stories/CustomColoredStatusColumn.story.js';
+import * as stories from '../stories/DefaultColoredStatusColumn.story.js';
 
 <Meta title="Modules|Listview/Components" component={ColoredStatusColumn} />
 
@@ -13,13 +11,7 @@ import * as customStories from '../stories/CustomColoredStatusColumn.story.js';
 ### This is a basic example with the colors and status by default.
 
 <Preview>
-    <Story name="DefaultColoredStatusColumn">{defaultStories.defaultColoredStatusColumn()}</Story>
-</Preview>
-
-### This is a basic example with custom colors and status.
-
-<Preview>
-    <Story name="CustomColoredStatusColumn">{customStories.customColoredStatusColumn()}</Story>
+    <Story name="ColoredStatusColumn">{stories.defaultColoredStatusColumn()}</Story>
 </Preview>
 
 # Component props
