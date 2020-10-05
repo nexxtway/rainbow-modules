@@ -2,9 +2,6 @@
     "chromeWebSecurity": false,
     "pageLoadTimeout": 60000,
     "execTimeout": 60000,
-    "video": false,
-    "defaultCommandTimeout": 60000,
-    "numTestsKeptInMemory": 20,
-    "retries": { "runMode": 2 },
+    "video": true,
     "baseUrl": "http://localhost:5555"
 }
