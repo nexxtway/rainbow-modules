@@ -9,6 +9,7 @@ export const basicStorageImageGallery = () => {
             <ImageGallery
                 path="/users/u123/gallery"
                 allowUpload
+                allowDelete
                 // eslint-disable-next-line no-alert
                 onSelect={(imageRef) => alert(imageRef.name)}
             />
