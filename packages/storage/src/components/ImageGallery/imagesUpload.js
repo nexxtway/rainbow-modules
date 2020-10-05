@@ -4,7 +4,6 @@ import ImageUpload from './imageUpload';
 
 const ImagesUpload = React.memo((props) => {
     const { path, list, onUploaded, onError } = props;
-
     return list.map((image) => (
         <ImageUpload
             key={image.name}
