@@ -1,14 +1,15 @@
 const FORM_URL = '/iframe.html?id=modules-datetime-stories-datepickercarousel--with-date-bounds';
 const DATE_PICKER_CAROUSEL = '#date-picker-carousel-1';
-const PICKER_LABEL = `${DATE_PICKER_CAROUSEL} [data-cy=carousel-input__label-button]`;
-const CALENDAR_DAY_CARD = `${DATE_PICKER_CAROUSEL} [data-cy=carousel-calendar__day-cards-container] > [data-cy=carousel-calendar__day-card]`;
-const CALENDAR_SCROLL_BUTTON = `${DATE_PICKER_CAROUSEL} [data-id=button-icon-element]`;
+const PICKER_LABEL = `[data-cy=carousel-input__label-button]`;
+const CALENDAR_DAY_CARD = `[data-cy=carousel-calendar__day-card]`;
+const CALENDAR_SCROLL_BUTTON = `[data-id=button-icon-element]`;
 const DATE_PICKER_MODAL = `${DATE_PICKER_CAROUSEL}_modal`;
 
 describe('DatePickerCarousel', () => {
     beforeEach(() => {
-        cy.viewport(1024, 768);
         cy.visit(FORM_URL);
+        cy.viewport(1024, 768);
+        cy.reload(true);
     });
     it('it should open modal when click on input label', () => {
         cy.get(PICKER_LABEL).click();
@@ -19,6 +20,7 @@ describe('DatePickerCarousel', () => {
         cy.get(PICKER_LABEL).should('contain', 'September 18, 2020');
     });
     it('should select date when ENTER_KEY is pressed', () => {
+        cy.get(CALENDAR_DAY_CARD).eq(5).type('{leftArrow}');
         cy.get(CALENDAR_DAY_CARD).eq(5).type('{enter}');
         cy.get(CALENDAR_DAY_CARD).eq(5).should('be.focused');
         cy.get(CALENDAR_DAY_CARD).eq(5).should('have.attr', 'data-selected', 'true');
