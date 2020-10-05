@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { Spinner, ButtonIcon } from 'react-rainbow-components';
-import { Trash, Check } from '@rainbow-modules/icons';
+import { Spinner } from 'react-rainbow-components';
+import { Trash } from '@rainbow-modules/icons';
 import { confirmModal } from '@rainbow-modules/app';
 import RenderIf from 'react-rainbow-components/components/RenderIf';
 import TruncatedText from 'react-rainbow-components/components/Structural/truncatedText';
@@ -11,12 +11,12 @@ import {
     StyledContainerSpinner,
     StyledImage,
     StyledDeleteButton,
-    StyledCheckContainer,
+    StyledCheckMark,
     TrashIcon,
 } from './styled';
 
 export default function Image(props) {
-    const { imageRef, onSelect, onError, allowDelete, handleDeleteClick } = props;
+    const { imageRef, onSelect, onError, allowDelete, onDelete } = props;
     const [src, setSrc] = useState();
     const [loading, setLoading] = useState(true);
     const deleteBtn = useRef(null);
@@ -35,8 +35,8 @@ export default function Image(props) {
     }, [imageRef, onError]);
 
     const handleClick = (e) => {
-        const isClickDeleteBtn = deleteBtn.current.htmlElementRef.current.contains(e.target);
-        if (isClickDeleteBtn) {
+        const isDeleteButtonClicked = deleteBtn.current.htmlElementRef.current.contains(e.target);
+        if (isDeleteButtonClicked) {
             return null;
         }
         return onSelect(imageRef);
@@ -52,7 +52,7 @@ export default function Image(props) {
         });
 
         if (result) {
-            handleDeleteClick(imageRef);
+            onDelete(imageRef);
         }
     };
 
@@ -67,19 +67,15 @@ export default function Image(props) {
                         $loading={loading}
                     />
                     <RenderIf isTrue={allowDelete}>
-                        <StyledDeleteButton>
-                            <ButtonIcon
-                                variant="inverse"
-                                size="medium"
-                                icon={<Trash />}
-                                onClick={openModalDelete}
-                                ref={deleteBtn}
-                            />
-                        </StyledDeleteButton>
+                        <StyledDeleteButton
+                            variant="inverse"
+                            size="medium"
+                            icon={<Trash />}
+                            onClick={openModalDelete}
+                            ref={deleteBtn}
+                        />
                     </RenderIf>
-                    <StyledCheckContainer>
-                        <Check />
-                    </StyledCheckContainer>
+                    <StyledCheckMark />
                 </RenderIf>
                 <RenderIf isTrue={loading}>
                     <StyledContainerSpinner>
@@ -96,13 +92,13 @@ Image.propTypes = {
     imageRef: PropTypes.object.isRequired,
     onSelect: PropTypes.func,
     onError: PropTypes.func,
-    handleDeleteClick: PropTypes.func,
+    onDelete: PropTypes.func,
     allowDelete: PropTypes.bool,
 };
 
 Image.defaultProps = {
     onSelect: () => {},
     onError: () => {},
-    handleDeleteClick: () => {},
+    onDelete: () => {},
     allowDelete: false,
 };

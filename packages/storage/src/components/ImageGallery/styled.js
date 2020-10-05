@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { FileSelector } from 'react-rainbow-components';
-import { Trash } from '@rainbow-modules/icons';
+import { FileSelector, ButtonIcon } from 'react-rainbow-components';
+import { Trash, Check } from '@rainbow-modules/icons';
 
 export const StyledContainer = styled.div`
     display: flex;
@@ -46,14 +46,14 @@ export const StyledContainerImageUpload = styled.div`
     }
 `;
 
-export const StyledDeleteButton = styled.div`
+export const StyledDeleteButton = styled(ButtonIcon)`
     position: absolute;
     top: 8px;
     right: 2px;
     display: none;
 `;
 
-export const StyledCheckContainer = styled.div`
+export const StyledCheckMark = styled(Check)`
     color: #fff;
     position: absolute;
     top: 18px;
@@ -77,7 +77,7 @@ export const StyledContainerImage = styled.button`
         display: block;
     }
 
-    &:hover ${StyledCheckContainer} {
+    &:hover ${StyledCheckMark} {
         display: block;
     }
 

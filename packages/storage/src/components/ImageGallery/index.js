@@ -64,7 +64,7 @@ export default function ImageGallery(props) {
                 list={imageRefs}
                 onSelect={onSelect}
                 onError={onError}
-                handleDeleteClick={handleDeleteClick}
+                onDelete={handleDeleteClick}
             />
         </StyledContainer>
     );
