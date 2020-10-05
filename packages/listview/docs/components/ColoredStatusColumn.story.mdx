@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import ColoredStatusColumn from '../../src/components/ColoredStatusColumn';
+import * as stories from '../stories/DefaultColoredStatusColumn.story.js';
+
+<Meta title="Modules|Listview/Components" component={ColoredStatusColumn} />
+
+# Overview
+
+`ColoredStatusColumn` is a component that formats a cell in a table column depending on status. It is configured with the success, warning, and error status, and with a text-transform capitalize by default, but it can be customized with other colors, status, and text-transform properties.
+
+### This is a basic example with the colors and status by default.
+
+<Preview>
+    <Story name="ColoredStatusColumn">{stories.defaultColoredStatusColumn()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={ColoredStatusColumn} />
