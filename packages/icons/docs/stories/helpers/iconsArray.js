@@ -19,7 +19,11 @@ import {
     ArrowRight,
     ArrowLeft,
     Picture,
+    Flag,
+    Point,
+    CheckinFilled,
     Check,
+    Github,
 } from '../../../src';
 
 export default [
@@ -124,8 +128,28 @@ export default [
         icon: Picture,
     },
     {
+        name: 'flag',
+        category: 'standard',
+        icon: Flag,
+    },
+    {
+        name: 'point',
+        category: 'standard',
+        icon: Point,
+    },
+    {
+        name: 'checkinFilled',
+        category: 'standard',
+        icon: CheckinFilled,
+    },
+    {
         name: 'check',
         category: 'standard',
         icon: Check,
+    },
+    {
+        name: 'github',
+        category: 'standard',
+        icon: Github,
     },
 ];

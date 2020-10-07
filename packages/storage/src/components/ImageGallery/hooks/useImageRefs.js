@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import useStorageRef from './useStorageRef';
+import { attachMetadata, sortByDate } from '../helpers';
 
 export default function useImageRefs(props) {
     const { path, filter, maxResults: maxResultsProp, onError } = props;
@@ -8,46 +9,40 @@ export default function useImageRefs(props) {
 
     useEffect(() => {
         const maxResults = maxResultsProp >= 0 ? maxResultsProp : 1000;
-        let isSubscribed = true;
-        if (Array.isArray(filter)) {
-            const imagesFiltered = filter.map((name) => storageRef.child(`${path}/${name}`));
-            setImageRefs(imagesFiltered.slice(0, maxResults));
-        } else if (typeof filter === 'function') {
-            storageRef
-                .child(path)
-                .listAll()
-                .then(({ items }) => {
-                    if (isSubscribed) {
-                        const filteredList = items.filter((ref) => filter(ref));
-                        setImageRefs(filteredList.slice(0, maxResults));
-                    }
-                })
-                .catch((error) => {
-                    if (isSubscribed) {
-                        onError(error);
-                        setImageRefs([]);
-                    }
-                });
-        } else {
-            storageRef
-                .child(path)
-                .list({ maxResults })
-                .then(({ items }) => {
-                    if (isSubscribed) {
-                        setImageRefs(items);
-                    }
-                })
-                .catch((error) => {
-                    if (isSubscribed) {
-                        onError(error);
-                        setImageRefs([]);
-                    }
-                });
-        }
-
-        return () => {
-            isSubscribed = false;
-        };
+        (async () => {
+            if (Array.isArray(filter)) {
+                const imagesFiltered = [];
+                await Promise.all(
+                    filter.map(async (name) => {
+                        const imageRef = storageRef.child(`${path}/${name}`);
+                        try {
+                            await imageRef.getDownloadURL();
+                            imagesFiltered.push(imageRef);
+                        } catch (error) {
+                            onError(error);
+                        }
+                    }),
+                );
+                setImageRefs(imagesFiltered.slice(0, maxResults));
+            } else if (typeof filter === 'function') {
+                try {
+                    const { items } = await storageRef.child(path).listAll();
+                    const filteredList = items.filter((ref) => filter(ref)).slice(0, maxResults);
+                    setImageRefs(await sortByDate(await attachMetadata(filteredList)));
+                } catch (error) {
+                    onError(error);
+                    setImageRefs([]);
+                }
+            } else {
+                try {
+                    const { items } = await storageRef.child(path).list({ maxResults });
+                    setImageRefs(await sortByDate(await attachMetadata(items)));
+                } catch (error) {
+                    onError(error);
+                    setImageRefs([]);
+                }
+            }
+        })();
     }, [path, filter, storageRef, onError, maxResultsProp]);
 
     return [imageRefs, setImageRefs];

@@ -1,16 +1,19 @@
 {
     "name": "@rainbow-modules/storage",
-    "version": "0.1.0",
+    "version": "0.2.1",
     "main": "lib/index.js",
     "author": "Nexxtway Team",
     "license": "MIT",
+    "files": [
+        "lib"
+    ],
     "dependencies": {
-        "@rainbow-modules/firebase-hooks": "^0.1.6",
-        "@rainbow-modules/icons": "^0.1.4"
+        "@rainbow-modules/firebase-hooks": "^0.2.1",
+        "@rainbow-modules/icons": "^0.2.1"
     },
     "peerDependencies": {
         "react": ">=16.8.0",
-        "react-rainbow-components": ">=1.15.0"
+        "react-rainbow-components": ">=1.18.1"
     },
     "publishConfig": {
         "access": "public"

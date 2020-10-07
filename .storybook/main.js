@@ -19,6 +19,7 @@ module.exports = {
         '@storybook/addon-viewport/register',
     ],
     webpackFinal: async (config) => {
+        config.devtool = 'inline-source-map';
         config.resolve = {
             alias: {
                 '@rainbow-modules/app': path.join(__dirname, '../packages/app/src/index.js'),
@@ -40,6 +41,10 @@ module.exports = {
                 '@rainbow-modules/storage': path.join(
                     __dirname,
                     '../packages/storage/src/index.js',
+                ),
+                '@rainbow-modules/validation': path.join(
+                    __dirname,
+                    '../packages/validation/src/index.js',
                 ),
             },
         };

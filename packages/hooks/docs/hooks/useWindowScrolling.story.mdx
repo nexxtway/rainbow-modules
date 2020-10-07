@@ -1,0 +1,108 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { WrapperWindowScrolling } from '../stories';
+
+<Meta title="Modules|Hooks/useWindowScrolling" />
+
+# Overview
+
+`useWindowScrolling` A hook that elegantly manages window scrolling.
+
+### API
+
+```ts
+    useWindowScrolling(
+        callback: (event: UIEvent | WheelEvent) => void,
+        isListening: boolean
+    );
+```
+
+### Params
+
+| Property    | Description                      | Type            | Default |
+| ----------- | -------------------------------- | --------------- | ------- |
+| callback    | Callback Function                | (event) => void |         |
+| isListening | Add or remove the event listener | boolean         | true    |
+
+### Usage
+
+```js
+import React, { useState, useRef } from 'react';
+import { createPortal } from 'react-dom';
+import styled from 'styled-components';
+import { Application, Button } from 'react-rainbow-components';
+import { useWindowScrolling } from '../../src';
+
+const StyledBox = styled.div`
+    display: flex;
+    position: fixed;
+    padding: 1rem 0.75rem 1rem 1rem;
+    border-radius: 1rem;
+    background-color: white;
+    left: calc(50vw - 175px);
+    bottom: 1rem;
+    width: 350px;
+    height: 250px;
+    transform: all linear 300ms;
+    opacity: 0;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.4);
+    ${(props) =>
+        props.isVisible &&
+        `
+        opacity: 1;
+        `};
+
+    & > div {
+        overflow-y: auto;
+    }
+`;
+
+const FloatingBox = React.forwardRef((props, ref) => {
+    const { isOpen } = props;
+    return createPortal(
+        <StyledBox ref={ref} isVisible={isOpen}>
+            <div>
+                <p>
+                    Deserunt anim magna do sit id incididunt. Labore sunt aute eiusmod incididunt
+                    consequat veniam nostrud ea veniam consequat eu ad. Dolor ea id ad nisi. Mollit
+                    in occaecat officia deserunt commodo cillum fugiat consequat. Sint ex mollit
+                    aliquip proident labore tempor irure cupidatat.
+                </p>
+                <p>
+                    Ex ullamco ut ipsum ullamco irure dolor. Velit nisi dolor culpa reprehenderit
+                    consequat nulla voluptate ut incididunt tempor veniam consectetur consectetur.
+                    Consectetur nostrud officia deserunt dolor. Veniam est enim mollit culpa
+                    consectetur excepteur est est. Lorem proident ea cillum fugiat deserunt irure.
+                    Est do exercitation nisi anim. Elit minim anim non et non amet.
+                </p>
+            </div>
+        </StyledBox>,
+        document.body,
+    );
+});
+
+export default function WrapperWindowScrolling() {
+    const boxRef = useRef();
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggle = () => setIsOpen(!isOpen);
+
+    const label = isOpen ? 'Hide help' : 'Show help';
+
+    useWindowScrolling((event) => {
+        if (isOpen && !boxRef.current.contains(event.target)) {
+            setIsOpen(false);
+        }
+    }, isOpen);
+
+    return (
+        <Application>
+            <Button shaded variant="brand" label={label} onClick={toggle} />
+            <FloatingBox ref={boxRef} isOpen={isOpen} />
+        </Application>
+    );
+}
+```
+
+### Examples
+
+<WrapperWindowScrolling />

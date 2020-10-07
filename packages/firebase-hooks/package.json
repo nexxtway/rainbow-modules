@@ -1,9 +1,12 @@
 {
     "name": "@rainbow-modules/firebase-hooks",
-    "version": "0.1.7",
+    "version": "0.2.1",
     "main": "lib/index.js",
     "author": "Nexxtway Team",
     "license": "MIT",
+    "files": [
+        "lib"
+    ],
     "peerDependencies": {
         "react": ">=16.8.0"
     },
