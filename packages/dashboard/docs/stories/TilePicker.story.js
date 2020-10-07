@@ -13,7 +13,7 @@ export const OnlyOneSelection = () => {
     return (
         <Application>
             <StyledContainer>
-                <TilePicker value={value} onChange={setValue} label="Only one Selection">
+                <TilePicker value={value} onChange={setValue}>
                     <Tile
                         name="completed"
                         label="Completed"
@@ -60,7 +60,7 @@ export const MultipleSelection = () => {
     return (
         <Application>
             <StyledContainer>
-                <TilePicker value={value} onChange={setValue} label="Multiple Selection" multiple>
+                <TilePicker value={value} onChange={setValue} multiple>
                     <Tile
                         name="completed"
                         label="Completed"
