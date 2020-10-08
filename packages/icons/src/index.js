@@ -28,3 +28,4 @@ export { default as ChevronLeft } from './components/chevronLeft';
 export { default as ChevronRight } from './components/chevronRight';
 export { default as ChevronDown } from './components/chevronDown';
 export { default as Github } from './components/github';
+export { default as Minus } from './components/minus';

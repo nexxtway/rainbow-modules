@@ -26,6 +26,7 @@ import {
     CheckinFilled,
     Check,
     Github,
+    Minus,
 } from '../../../src';
 
 export default [
@@ -163,5 +164,10 @@ export default [
         name: 'github',
         category: 'standard',
         icon: Github,
+    },
+    {
+        name: 'minus',
+        category: 'standard',
+        icon: Minus,
     },
 ];
