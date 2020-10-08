@@ -19,7 +19,9 @@ import {
     ArrowRight,
     ArrowLeft,
     Picture,
-    Flag,
+    Plus,
+    ClockFilled,
+    FinishFlag,
     Point,
     CheckinFilled,
     Check,
@@ -128,9 +130,19 @@ export default [
         icon: Picture,
     },
     {
-        name: 'flag',
+        name: 'plus',
         category: 'standard',
-        icon: Flag,
+        icon: Plus,
+    },
+    {
+        name: 'clockFilled',
+        category: 'standard',
+        icon: ClockFilled,
+    },
+    {
+        name: 'finishFlag',
+        category: 'standard',
+        icon: FinishFlag,
     },
     {
         name: 'point',
