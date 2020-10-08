@@ -8,6 +8,8 @@ import renderLine from './renderLine';
 import start from './icons/start';
 import finish from './icons/finish';
 
+const firBoundsPadding = { top: 350, left: 200, right: 200, bottom: 200 };
+
 export default function Route(props) {
     const { waypoints } = props;
     const { accessToken, map } = useContext(Map.context);
@@ -26,7 +28,7 @@ export default function Route(props) {
                 const bounds = [waypoints[0], waypoints[0]];
 
                 map.fitBounds(bounds, {
-                    padding: { top: 350, left: 200, right: 200, bottom: 200 },
+                    padding: firBoundsPadding,
                     maxZoom: 12,
                 });
 
@@ -54,7 +56,7 @@ export default function Route(props) {
                         .addTo(map);
 
                     map.fitBounds(waypoints, {
-                        padding: { top: 350, left: 200, right: 200, bottom: 200 },
+                        padding: firBoundsPadding,
                     });
                 }
             }

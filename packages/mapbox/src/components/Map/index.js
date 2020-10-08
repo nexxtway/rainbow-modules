@@ -33,10 +33,11 @@ export default function Map(props) {
                 <p>Oops! Something went wrong.</p>
                 <p>We need an accessToken to render the map</p>
             </RenderIf>
-            <MapContainer ref={mapContainerRef} />
-            <MapContext.Provider value={context}>
-                <RenderIf isTrue={context.map}>{children}</RenderIf>
-            </MapContext.Provider>
+            <MapContainer ref={mapContainerRef}>
+                <MapContext.Provider value={context}>
+                    <RenderIf isTrue={context.map}>{children}</RenderIf>
+                </MapContext.Provider>
+            </MapContainer>
         </Container>
     );
 }
