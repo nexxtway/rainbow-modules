@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Map from '../../src/components/Map';
+import * as stories from '../stories/Map.story.js';
+
+<Meta title="Modules|Dashboard/Components" component={Map} />
+
+# Overview
+
+`Map` is a component for Mapbox solution.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="Mapbox">{stories.simpleMap()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={Map} />
