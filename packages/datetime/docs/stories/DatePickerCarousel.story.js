@@ -13,7 +13,7 @@ const Container = styled.div`
 // eslint-disable-next-line react/prop-types
 const PickDate = (props) => {
     const [date, setDate] = useState(new Date('2020/09/15'));
-    return <DatePickerCarousel {...props} value={date} onChange={(date) => setDate(date)} />;
+    return <DatePickerCarousel {...props} value={date} onChange={setDate} />;
 };
 
 export const basicUsage = () => {
