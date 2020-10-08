@@ -21,18 +21,32 @@ export default function Route(props) {
 
         (async () => {
             if (Array.isArray(waypoints) && waypoints.length >= 1) {
-                const startElement = document.createElement('div');
-                startElement.innerHTML = start;
-                startMarker = new mapboxgl.Marker(startElement).setLngLat(waypoints[0]).addTo(map);
+                if (waypoints[0]) {
+                    const startElement = document.createElement('div');
+                    startElement.innerHTML = start;
+                    startMarker = new mapboxgl.Marker(startElement)
+                        .setLngLat(waypoints[0])
+                        .addTo(map);
+                }
+                if (waypoints[1]) {
+                    const finishElement = document.createElement('div');
+                    finishElement.innerHTML = finish;
+                    endMarker = new mapboxgl.Marker({
+                        element: finishElement,
+                        offset: [2, -6],
+                    })
+                        .setLngLat(waypoints[1])
+                        .addTo(map);
+                }
 
-                const bounds = [waypoints[0], waypoints[0]];
-
+                const waypoint = waypoints[0] || waypoints[1];
+                const bounds = [waypoint, waypoint];
                 map.fitBounds(bounds, {
                     padding: firBoundsPadding,
                     maxZoom: 12,
                 });
 
-                if (waypoints.length >= 2) {
+                if (waypoints.length >= 2 && waypoints[0] && waypoints[1]) {
                     const geoJson = await getDirections({
                         accessToken,
                         waypoints,
@@ -45,15 +59,7 @@ export default function Route(props) {
                     });
 
                     startMarker.setLngLat(coordinates[0]);
-
-                    const finishElement = document.createElement('div');
-                    finishElement.innerHTML = finish;
-                    endMarker = new mapboxgl.Marker({
-                        element: finishElement,
-                        offset: [2, -6],
-                    })
-                        .setLngLat(coordinates[coordinates.length - 1])
-                        .addTo(map);
+                    endMarker.setLngLat(coordinates[coordinates.length - 1]);
 
                     map.fitBounds(waypoints, {
                         padding: firBoundsPadding,

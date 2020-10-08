@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Application, GoogleAddressLookup } from 'react-rainbow-components';
 import styled from 'styled-components';
 import { Map, Route } from '../../src';
@@ -86,6 +86,8 @@ const Lookups = (props) => {
 const MapWithDynamicRoute = () => {
     const [origin, setOrigin] = useState();
     const [destination, setDestination] = useState();
+    const waypoints = useMemo(() => getWaypoints(origin, destination), [origin, destination]);
+
     return (
         <MapBox accessToken={MAPBOX_ACCESS_TOKEN} center={[-103.4647322, 20.5710266]} zoom={10}>
             <Lookups
@@ -94,7 +96,7 @@ const MapWithDynamicRoute = () => {
                 onChangeDestination={setDestination}
                 destination={destination}
             />
-            <Route waypoints={getWaypoints(origin, destination)} />
+            <Route waypoints={waypoints} />
         </MapBox>
     );
 };
