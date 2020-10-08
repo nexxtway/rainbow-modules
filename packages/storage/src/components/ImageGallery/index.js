@@ -8,9 +8,8 @@ import { useImageRefs } from './hooks';
 import { StyledContainer, StyledFileSeletor, StyledFileContainer } from './styled';
 
 export default function ImageGallery(props) {
-    const { path, allowUpload, onSelect, onError, filter, maxResults } = props;
+    const { path, allowUpload, allowDelete, onSelect, onError, filter, maxResults } = props;
     const [imagesUpload, setImagesUpload] = useState([]);
-
     const [imageRefs, setImageRefs] = useImageRefs({
         path,
         filter,
@@ -29,6 +28,15 @@ export default function ImageGallery(props) {
         },
         [setImageRefs],
     );
+
+    const handleDeleteClick = async (imageRef) => {
+        try {
+            await imageRef.delete();
+            setImageRefs(imageRefs.filter((item) => item.fullPath !== imageRef.fullPath));
+        } catch (error) {
+            console.log('Uh-oh, an error occurred!', error);
+        }
+    };
 
     return (
         <StyledContainer>
@@ -51,7 +59,13 @@ export default function ImageGallery(props) {
                 onUploaded={handleUploaded}
                 onError={onError}
             />
-            <Images list={imageRefs} onSelect={onSelect} onError={onError} />
+            <Images
+                allowDelete={allowDelete}
+                list={imageRefs}
+                onSelect={onSelect}
+                onError={onError}
+                onDelete={handleDeleteClick}
+            />
         </StyledContainer>
     );
 }
@@ -61,6 +75,8 @@ ImageGallery.propTypes = {
     path: PropTypes.string.isRequired,
     /** Allow upload new image. */
     allowUpload: PropTypes.bool,
+    /** Allow delete new image. */
+    allowDelete: PropTypes.bool,
     /** The action triggered when an image is selected */
     onSelect: PropTypes.func,
     /** The action triggered when some firebase storage error is return */
@@ -73,6 +89,7 @@ ImageGallery.propTypes = {
 
 ImageGallery.defaultProps = {
     allowUpload: false,
+    allowDelete: false,
     onSelect: () => {},
     onError: () => {},
     filter: undefined,
