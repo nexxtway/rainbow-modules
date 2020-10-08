@@ -1,6 +1,6 @@
 {
     "name": "@rainbow-modules/mapbox",
-    "version": "0.2.1",
+    "version": "0.3.0",
     "main": "lib/index.js",
     "author": "Nexxtway Team",
     "license": "MIT",
@@ -8,7 +8,7 @@
         "lib"
     ],
     "dependencies": {
-        "@rainbow-modules/hooks": "0.2.1",
+        "@rainbow-modules/hooks": "^0.3.0",
         "mapbox-gl": "^1.12.0",
         "styled-components": "^4.3.2"
     },

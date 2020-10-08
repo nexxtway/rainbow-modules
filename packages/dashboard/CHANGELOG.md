@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.3.0 (2020-10-08)
+
+### Bug Fixes
+
+-   auth EmailPasswordSignInForm imports ([#141](https://github.com/nexxtway/rainbow-modules/issues/141)) ([9117349](https://github.com/nexxtway/rainbow-modules/commit/91173499008dba99a21a2b00ad583dd44d521d8e))
+
+### Features
+
+-   implement Tile component on [@dashboard](https://github.com/dashboard) module ([#106](https://github.com/nexxtway/rainbow-modules/issues/106)) ([77fed5b](https://github.com/nexxtway/rainbow-modules/commit/77fed5b1fdf50dfd15c077365d4058388ecc4c4a))
+-   implement TilePicker component on dashboard module ([#110](https://github.com/nexxtway/rainbow-modules/issues/110)) ([2057719](https://github.com/nexxtway/rainbow-modules/commit/20577196efa28b62b62280d133a2744371cfe838))
+
 ## 0.2.1 (2020-10-01)
 
 ### Features
