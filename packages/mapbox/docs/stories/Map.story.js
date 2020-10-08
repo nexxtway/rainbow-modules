@@ -35,7 +35,6 @@ export const mapWithRoute = () => {
 
 const lookupsStyles = {
     display: 'flex',
-    justifyContent: 'space-around',
 };
 
 const lookupStyles = {
@@ -88,17 +87,15 @@ const MapWithDynamicRoute = () => {
     const [origin, setOrigin] = useState();
     const [destination, setDestination] = useState();
     return (
-        <>
+        <MapBox accessToken={MAPBOX_ACCESS_TOKEN} center={[-103.4647322, 20.5710266]} zoom={10}>
             <Lookups
                 onChangeOrigin={setOrigin}
                 origin={origin}
                 onChangeDestination={setDestination}
                 destination={destination}
             />
-            <MapBox accessToken={MAPBOX_ACCESS_TOKEN} center={[-103.4647322, 20.5710266]} zoom={8}>
-                <Route waypoints={getWaypoints(origin, destination)} />
-            </MapBox>
-        </>
+            <Route waypoints={getWaypoints(origin, destination)} />
+        </MapBox>
     );
 };
 
