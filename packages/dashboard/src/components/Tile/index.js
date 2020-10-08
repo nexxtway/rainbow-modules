@@ -37,7 +37,7 @@ export default function Tile(props) {
         style,
     } = props;
     const context = useContext(TilePickerContext);
-    const { ariaDescribedby, groupName, onChange, value, multiple } = context || {};
+    const { groupName, onChange, value, multiple } = context || {};
 
     const inputId = useUniqueIdentifier('tile-input');
 
@@ -62,7 +62,6 @@ export default function Tile(props) {
                     id={inputId}
                     name={name}
                     checked={checked}
-                    aria-describedby={ariaDescribedby}
                     onChange={(event) => onChange(nameProp, event.target.checked)}
                     value={valueProp}
                 />
