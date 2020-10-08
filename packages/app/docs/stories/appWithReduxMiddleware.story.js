@@ -97,7 +97,7 @@ export const appWithReduxMiddleware = () => {
         };
 
         const onError = (store) => () => {
-            store.dispatch({ type: 'DISCONNECTED' });
+            store.dispatch({ type: 'DISCONNECT' });
         };
 
         // eslint-disable-next-line consistent-return
@@ -118,6 +118,8 @@ export const appWithReduxMiddleware = () => {
                     if (socket.isConnected()) {
                         store.dispatch({ type: 'DISCONNECTING' });
                         socket.disconnect();
+                    } else {
+                        store.dispatch({ type: 'DISCONNECTED' });
                     }
                     break;
                 default:
