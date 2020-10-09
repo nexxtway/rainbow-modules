@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import mapboxgl from 'mapbox-gl';
 import { RenderIf } from 'react-rainbow-components';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { Container, MapContainer } from './styled';
+import { Container, MapContainer, ChildrenContainer } from './styled';
 
 const MapContext = createContext({});
 
@@ -33,11 +33,12 @@ export default function Map(props) {
                 <p>Oops! Something went wrong.</p>
                 <p>We need an accessToken to render the map</p>
             </RenderIf>
-            <MapContainer ref={mapContainerRef}>
+            <MapContainer ref={mapContainerRef} />
+            <ChildrenContainer>
                 <MapContext.Provider value={context}>
                     <RenderIf isTrue={context.map}>{children}</RenderIf>
                 </MapContext.Provider>
-            </MapContainer>
+            </ChildrenContainer>
         </Container>
     );
 }
