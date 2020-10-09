@@ -29,3 +29,5 @@ export { default as ChevronRight } from './components/chevronRight';
 export { default as ChevronDown } from './components/chevronDown';
 export { default as Github } from './components/github';
 export { default as Minus } from './components/minus';
+export { default as FocusFilled } from './components/focusFilled';
+export { default as Avatar } from './components/avatar';

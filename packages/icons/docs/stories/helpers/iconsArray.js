@@ -27,6 +27,8 @@ import {
     Check,
     Github,
     Minus,
+    Avatar,
+    FocusFilled,
 } from '../../../src';
 
 export default [
@@ -169,5 +171,15 @@ export default [
         name: 'minus',
         category: 'standard',
         icon: Minus,
+    },
+    {
+        name: 'focusFilled',
+        category: 'standard',
+        icon: FocusFilled,
+    },
+    {
+        name: 'avatar',
+        category: 'custom',
+        icon: Avatar,
     },
 ];
