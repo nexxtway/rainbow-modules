@@ -33,9 +33,14 @@ export const mapWithRoute = () => {
     );
 };
 
-const lookupsStyles = {
-    display: 'flex',
-};
+const LookupContainer = styled.div`
+    display: inline-flex;
+    pointer-events: none;
+
+    & * {
+        pointer-events: initial;
+    }
+`;
 
 const lookupStyles = {
     minWidth: 400,
@@ -60,7 +65,7 @@ const Lookups = (props) => {
     const { onChangeOrigin, origin, onChangeDestination, destination } = props;
 
     return (
-        <div style={lookupsStyles}>
+        <LookupContainer>
             <GoogleAddressLookup
                 label="Origin"
                 onChange={onChangeOrigin}
@@ -79,7 +84,7 @@ const Lookups = (props) => {
                 style={lookupStyles}
                 className="rainbow-m-vertical_x-large rainbow-p-horizontal_medium"
             />
-        </div>
+        </LookupContainer>
     );
 };
 
