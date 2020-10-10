@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import UniversalPicker from '../../src/components/UniversalPicker';
+import * as stories from '../stories/UniversalPicker.story.js';
+
+<Meta title="Modules|Forms/Components" component={UniversalPicker} />
+
+# Overview
+
+`UniversalPicker` is a component to manage and select images stored in Firebase Storage.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="UniversalPicker">{stories.BasicFormUniversalPicker()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={UniversalPicker} />
