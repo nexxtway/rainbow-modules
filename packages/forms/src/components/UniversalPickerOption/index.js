@@ -2,11 +2,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useUniqueIdentifier } from '@rainbow-modules/hooks';
+import DefaultItem from './defaultItem';
 import { StyledContainer, StyledInput, StyledLabel } from './styled';
 import { Consumer as UniversalPickerConsumer } from '../UniversalPicker/context';
 
-const PickerItem = (props) => {
-    const { id, style, className, onChange, ariaDescribedby, component: Item, ...rest } = props;
+const PickerOption = (props) => {
+    const { id, style, className, onChange, ariaDescribedby, component, ...rest } = props;
     const { name, disabled, multiple, groupName, value } = rest;
 
     const [isFocused, setFocused] = useState(false);
@@ -24,6 +25,8 @@ const PickerItem = (props) => {
     };
 
     const state = { isSelected: isSelected(), isFocused };
+
+    const Item = component || DefaultItem;
 
     return (
         <StyledContainer className={className} style={style} id={id}>
@@ -50,16 +53,18 @@ const PickerItem = (props) => {
 /**
  * A UniversalPickerItem.
  */
-export default function UniversalPickerItem(props) {
+export default function UniversalPickerOption(props) {
     return (
         <UniversalPickerConsumer>
-            {(context) => <PickerItem {...props} {...context} />}
+            {(context) => <PickerOption {...props} {...context} />}
         </UniversalPickerConsumer>
     );
 }
 
-UniversalPickerItem.propTypes = {
-    component: PropTypes.elementType.isRequired,
+UniversalPickerOption.propTypes = {
+    /** Functional component or class that will be rendered with props:
+     * name, disabled, multiple, groupName, value and the state isSelected and isFocused. */
+    component: PropTypes.elementType,
     /** It is a unique value that identifies the picker option. */
     name: PropTypes.string,
     /** Specifies that an UniversalPickerItem element should be disabled.
@@ -78,7 +83,8 @@ UniversalPickerItem.propTypes = {
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
 };
 
-UniversalPickerItem.defaultProps = {
+UniversalPickerOption.defaultProps = {
+    component: undefined,
     name: undefined,
     disabled: false,
     id: undefined,

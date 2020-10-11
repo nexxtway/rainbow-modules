@@ -1,0 +1,44 @@
+import styled from 'styled-components';
+import HiddenElement from 'react-rainbow-components/components/Structural/hiddenElement';
+import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
+
+export const StyledContainer = styled.span`
+    margin: 0 0.25rem 0.5rem 0.25rem;
+`;
+
+export const StyledLabel = styled.label`
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: center;
+`;
+
+export const StyledInput = styled(HiddenElement)`
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    line-height: normal;
+`;
+
+export const StyledItem = attachThemeAttrs(styled.div)`
+    border: solid 1px ${(props) => props.palette.border.main};
+
+    ${(props) =>
+        props.isFocused &&
+        `
+        border: solid 1px ${props.palette.brand.light};
+        box-shadow: ${props.shadows.shadow_4}, ${props.shadows.brand};
+    `};
+
+    ${(props) =>
+        props.isSelected &&
+        `
+        border: solid 1px ${props.palette.brand.main};
+    `};
+
+    :hover {
+        cursor: pointer;
+        border: solid 1px ${(props) => props.palette.brand.main};
+        box-shadow: ${(props) => props.shadows.shadow_2};
+    }
+`;

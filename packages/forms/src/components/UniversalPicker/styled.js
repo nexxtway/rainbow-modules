@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
 
 export const StyledContainer = styled.fieldset`
     margin: 0;
@@ -10,10 +11,10 @@ export const StyledContainer = styled.fieldset`
     box-sizing: border-box;
 `;
 
-export const StyledLabel = styled.legend`
+export const StyledLabel = attachThemeAttrs(styled.legend)`
     border: 0;
     padding: 0;
-    color: ${(props) => props.theme.rainbow.palette.text.label};
+    color: ${(props) => props.palette.text.label};
     line-height: 1.5;
     margin: 0 auto 0.25rem auto;
     text-align: center;
