@@ -62,7 +62,7 @@ export default function UniversalPickerOption(props) {
 }
 
 UniversalPickerOption.propTypes = {
-    /** Functional component or class that will be rendered with props:
+    /** Functional component or class that will be rendered with the props:
      * name, disabled, multiple, groupName, value and the state isSelected and isFocused. */
     component: PropTypes.elementType,
     /** It is a unique value that identifies the picker option. */
