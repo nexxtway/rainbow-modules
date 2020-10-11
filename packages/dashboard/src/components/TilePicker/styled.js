@@ -1,24 +1,12 @@
 import styled from 'styled-components';
 
-export const StyledContainer = styled.fieldset`
+const StyledContainer = styled.div`
     margin: 0;
     padding: 0;
     border: 0;
     display: inline-flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     box-sizing: border-box;
 `;
 
-export const StyledLabel = styled.legend`
-    border: 0;
-    padding: 0;
-    color: ${(props) => props.theme.rainbow.palette.text.label};
-    font-size: 1.2rem;
-    line-height: 1.5;
-    margin: 0 5px 5px 5px;
-`;
-
-export const StyledOptionsContainer = styled.div`
-    display: inline-flex;
-    flex-wrap: wrap;
-`;
+export default StyledContainer;

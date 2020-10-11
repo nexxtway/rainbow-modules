@@ -14,7 +14,17 @@ import getBrowserLocale from '../../helpers/getBrowserLocale';
 import AppNotificationManager from '../AppNotificationManager';
 
 const RainbowFirebaseApp = (props) => {
-    const { app, theme, locale, translations, children, reducers, initialize, spinner } = props;
+    const {
+        app,
+        theme,
+        locale,
+        translations,
+        children,
+        reducers,
+        middlewares,
+        initialize,
+        spinner,
+    } = props;
     const firebaseContext = useMemo(() => ({ app }), [app]);
     const [isLoading, setLoading] = useState(false);
     const [isMessageVisible, setIsMessageVisible] = useState(false);
@@ -48,7 +58,7 @@ const RainbowFirebaseApp = (props) => {
     }, []);
 
     return (
-        <ReduxContainer reducers={reducers}>
+        <ReduxContainer reducers={reducers} middlewares={middlewares}>
             <FirebaseProvider value={firebaseContext}>
                 <I18nContainer
                     locale={applicationLocale}
@@ -93,6 +103,8 @@ RainbowFirebaseApp.propTypes = {
     translations: PropTypes.object,
     /** Object with your application Redux reducers. */
     reducers: PropTypes.object,
+    /** Array with your application Redux middlewares. */
+    middlewares: PropTypes.array,
     /** An async function to initialize the app. AppSpiner will be visible while this function is running. */
     initialize: PropTypes.func,
     /** The spinner to show when the app is loading. */
@@ -107,6 +119,7 @@ RainbowFirebaseApp.defaultProps = {
     children: null,
     spinner: null,
     reducers: {},
+    middlewares: [],
     initialize: undefined,
 };
 
