@@ -60,9 +60,7 @@ const Container = styled.div`
     padding: 2rem;
 `;
 
-const CustomColoredStatusColumn = ({ ...props }) => (
-    <ColoredStatusColumn {...props} textTransform="uppercase" />
-);
+const CustomColoredStatusColumn = ({ ...props }) => <ColoredStatusColumn {...props} />;
 
 export const defaultColoredStatusColumn = () => {
     return (

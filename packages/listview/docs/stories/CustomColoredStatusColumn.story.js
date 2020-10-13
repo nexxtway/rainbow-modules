@@ -68,7 +68,7 @@ const colors = {
 };
 
 const CustomColoredStatusColumn = ({ ...props }) => (
-    <ColoredStatusColumn {...props} colors={colors} />
+    <ColoredStatusColumn {...props} colors={colors} textTransform="uppercase" />
 );
 
 export const customColoredStatusColumn = () => {
