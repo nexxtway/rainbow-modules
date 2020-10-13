@@ -8,10 +8,10 @@ import renderLine from './renderLine';
 import start from './icons/start';
 import finish from './icons/finish';
 
-const firBoundsPadding = { top: 350, left: 200, right: 200, bottom: 200 };
+const fitBoundsPadding = { top: 350, left: 200, right: 200, bottom: 200 };
 
 export default function Route(props) {
-    const { waypoints } = props;
+    const { waypoints, onRenderRoute } = props;
     const { accessToken, map } = useContext(Map.context);
     const uniqueId = useUniqueIdentifier('mapbox-route');
 
@@ -42,7 +42,7 @@ export default function Route(props) {
                 const waypoint = waypoints[0] || waypoints[1];
                 const bounds = [waypoint, waypoint];
                 map.fitBounds(bounds, {
-                    padding: firBoundsPadding,
+                    padding: fitBoundsPadding,
                     maxZoom: 12,
                 });
 
@@ -62,7 +62,12 @@ export default function Route(props) {
                     endMarker.setLngLat(coordinates[coordinates.length - 1]);
 
                     map.fitBounds(waypoints, {
-                        padding: firBoundsPadding,
+                        padding: fitBoundsPadding,
+                    });
+
+                    onRenderRoute({
+                        routes: geoJson.routes,
+                        waypoints: geoJson.waypoints,
                     });
                 }
             }
@@ -86,8 +91,10 @@ export default function Route(props) {
 
 Route.propsTypes = {
     waypoints: PropTypes.array,
+    onRenderRoute: PropTypes.func,
 };
 
 Route.defaultProps = {
     waypoints: [],
+    onRenderRoute: () => {},
 };
