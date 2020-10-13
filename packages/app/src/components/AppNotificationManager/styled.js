@@ -4,7 +4,7 @@ export const StyledNotificationContainer = styled.div`
     position: fixed;
     top: 16px;
     right: 0;
-    z-index: 10000;
+    z-index: 10000002;
     display: flex;
     flex-direction: column;
     overflow: hidden;

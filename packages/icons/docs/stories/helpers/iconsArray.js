@@ -19,11 +19,16 @@ import {
     ArrowRight,
     ArrowLeft,
     Picture,
-    Flag,
+    Plus,
+    ClockFilled,
+    FinishFlag,
     Point,
     CheckinFilled,
     Check,
     Github,
+    Minus,
+    Avatar,
+    FocusFilled,
 } from '../../../src';
 
 export default [
@@ -128,9 +133,19 @@ export default [
         icon: Picture,
     },
     {
-        name: 'flag',
+        name: 'plus',
         category: 'standard',
-        icon: Flag,
+        icon: Plus,
+    },
+    {
+        name: 'clockFilled',
+        category: 'standard',
+        icon: ClockFilled,
+    },
+    {
+        name: 'finishFlag',
+        category: 'standard',
+        icon: FinishFlag,
     },
     {
         name: 'point',
@@ -151,5 +166,20 @@ export default [
         name: 'github',
         category: 'standard',
         icon: Github,
+    },
+    {
+        name: 'minus',
+        category: 'standard',
+        icon: Minus,
+    },
+    {
+        name: 'focusFilled',
+        category: 'standard',
+        icon: FocusFilled,
+    },
+    {
+        name: 'avatar',
+        category: 'custom',
+        icon: Avatar,
     },
 ];
