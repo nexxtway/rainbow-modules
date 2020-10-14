@@ -26,7 +26,7 @@ export const Container = styled.article`
     justify-content: center;
     position: fixed;
     top: 0;
-    z-index: 999999;
+    z-index: 10000001;
     transform: translateY(-101%);
     transition: transform 250ms linear, opacity 250ms linear;
     background-color: ${(props) => getBackgroundColor(props)};
