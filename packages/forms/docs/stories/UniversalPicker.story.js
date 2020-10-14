@@ -2,11 +2,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Application, RenderIf } from 'react-rainbow-components';
+import { Check, ClockFilled, Picture, HomeFilled, Plus, Visa } from '@rainbow-modules/icons';
 import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
 import { BORDER_RADIUS_2 } from 'react-rainbow-components/styles/borderRadius';
-import { Check, ClockFilled, Picture, HomeFilled, Plus } from '@rainbow-modules/icons';
 import { UniversalPicker, UniversalPickerOption } from '../../src';
-import Visa from '../assets/visa';
 
 const Container = styled.div`
     padding: 20px;
@@ -15,9 +14,9 @@ const Container = styled.div`
 `;
 
 const StyledOption = attachThemeAttrs(styled.span)`
-    font-size: 15px;
-    margin: 6px;
     color: ${(props) => props.palette.text.label};
+    margin: 6px;
+    font-size: 15px;
 `;
 
 export const BasicUniversalPicker = () => {
@@ -45,12 +44,12 @@ const StyledCheckedTriangle = attachThemeAttrs(styled.span)`
     position: absolute;
     top: -1px;
     right: -1px;
-    border: 1.5rem solid transparent;
-    border-radius: 0 20px 0 0;
-    border-right-color: ${(props) => props.palette.brand.main};
-    border-top-color: ${(props) => props.palette.brand.main};
     margin: 0;
     padding: 0;
+    border: 1.5rem solid transparent;
+    border-right-color: ${(props) => props.palette.brand.main};
+    border-top-color: ${(props) => props.palette.brand.main};
+    border-radius: 0 20px 0 0;
 `;
 
 const StyledCheckmarkIcon = attachThemeAttrs(styled(Check))`
@@ -65,24 +64,24 @@ const StyledCheckmarkIcon = attachThemeAttrs(styled(Check))`
 const sizeMap = { large: '210px', medium: '142px', small: '100px' };
 
 const StyledItem = attachThemeAttrs(styled.span)`
+    position: relative;
     height: ${(props) => sizeMap[props.size] || sizeMap.medium};
     width: ${(props) => sizeMap[props.size] || sizeMap.medium};
+    background-color: ${(props) => props.palette.background.main};
+    border: solid 2px ${(props) => props.palette.border.divider};
     border-radius: 22px;
     box-shadow: ${(props) => props.shadows.shadow_4};
-    border: solid 2px ${(props) => props.palette.border.divider};
-    background-color: ${(props) => props.palette.background.main};
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
 
     ${(props) =>
         props.isHover &&
         `
-        cursor: pointer;
         border: solid 1.5px ${props.palette.brand.main};
         box-shadow: ${props.shadows.shadow_2};
+        cursor: pointer;
     `};
 
     ${(props) =>
@@ -101,15 +100,15 @@ const StyledItem = attachThemeAttrs(styled.span)`
     ${(props) =>
         props.disabled &&
         `
+        background-color: ${props.palette.background.disabled};
         border: solid 1.5px ${props.palette.border.disabled};
         box-shadow: 0 0 0 0 transparent;
-        background-color: ${props.palette.background.disabled};
         cursor: not-allowed;
     `};
 `;
 
 const Item = (props) => {
-    const { state, children, disabled, size } = props;
+    const { state, disabled, size, children } = props;
     const { isSelected } = state;
 
     return (
@@ -124,15 +123,15 @@ const Item = (props) => {
 };
 
 const StyledLabel = attachThemeAttrs(styled.h2)`
-    font-size: 15px;
-    font-weight: 300;
     margin-top:6px
     color: ${(props) => props.palette.text.label};
+    font-size: 15px;
+    font-weight: 300;
 `;
 
 const styleIcon = { width: '50px', height: '40px' };
 
-export const VisualPicker = () => {
+export const BasicVisualPicker = () => {
     const [value, setValue] = useState('option-2');
     return (
         <Application>
@@ -156,7 +155,7 @@ export const VisualPicker = () => {
     );
 };
 
-export const VisualPickerMultiple = () => {
+export const MultipleVisualPicker = () => {
     const [value, setValue] = useState(['option-2']);
     return (
         <Application>
@@ -181,23 +180,23 @@ export const VisualPickerMultiple = () => {
 };
 
 const StyledRadioItem = attachThemeAttrs(styled.span)`
+    position: relative;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: ${(props) => props.palette.background.main};
+    border: solid 1px ${(props) => props.palette.border.divider};
     border-radius: 14px;
     box-shadow: ${(props) => props.shadows.shadow_4};
-    border: solid 1px ${(props) => props.palette.border.divider};
-    background-color: ${(props) => props.palette.background.main};
-    padding: 0.5rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-    width: 100%;
 
     ${(props) =>
         props.isHover &&
         `
-        cursor: pointer;
         border: solid 1px ${props.palette.brand.main};
         box-shadow: ${props.shadows.shadow_2};
+        cursor: pointer;
     `};
 
     ${(props) =>
@@ -216,9 +215,9 @@ const StyledRadioItem = attachThemeAttrs(styled.span)`
     ${(props) =>
         props.disabled &&
         `
+        background-color: ${props.palette.background.disabled};
         border: solid 1px ${props.palette.border.disabled};
         box-shadow: 0 0 0 0 transparent;
-        background-color: ${props.palette.background.disabled};
         cursor: not-allowed;
     `};
 `;
@@ -245,26 +244,27 @@ const getShadow = (props) => {
 };
 
 const StyledRadio = attachThemeAttrs(styled.span)`
+    position: relative;
     width: 20px;
     height: 20px;
-    display: inline-block;
-    position: relative;
-    vertical-align: middle;
+    padding: 0;
+    background: ${(props) => props.palette.background.main};
     border: ${getInitialBorder};
     border-radius: ${BORDER_RADIUS_2};
-    background: ${(props) => props.palette.background.main};
+    display: inline-block;
+    vertical-align: middle;
     box-sizing: border-box;
-    padding: 0;
+    
 
     &::after {
         content: '';
+        position: absolute;
         height: 12px;
         width: 12px;
-        position: absolute;
         top: 2px;
         left: 2px;
-        border-radius: ${BORDER_RADIUS_2};
         background: transparent;
+        border-radius: ${BORDER_RADIUS_2};
         box-sizing: border-box;
     }
 
@@ -302,16 +302,12 @@ const StyledRadio = attachThemeAttrs(styled.span)`
     `};
 `;
 
-const RadioItem = (props) => {
-    const { state, children, disabled, error } = props;
-
-    return (
-        <StyledRadioItem {...state} disabled={disabled} error={error}>
-            <div>{children}</div>
-            <StyledRadio {...state} disabled={disabled} error={error} />
-        </StyledRadioItem>
-    );
-};
+const RadioItem = ({ state, disabled, error, children }) => (
+    <StyledRadioItem {...state} disabled={disabled} error={error}>
+        <div>{children}</div>
+        <StyledRadio {...state} disabled={disabled} error={error} />
+    </StyledRadioItem>
+);
 
 const StyledRadioPicker = styled(UniversalPicker)`
     width: 500px;
@@ -321,26 +317,33 @@ const StyledRadioPicker = styled(UniversalPicker)`
     }
 `;
 
+const RadioPicker = ({ children, ...rest }) => (
+    <StyledRadioPicker {...rest} multiple={false}>
+        {children}
+    </StyledRadioPicker>
+);
+
 const StyledContent = styled.div`
     display: flex;
 `;
 
 const StyledIcon = attachThemeAttrs(styled.span)`
-    width: 48px;
-    height: 30px;
-    border: 1px solid ${(props) => props.palette.border.divider};
-    background-color: ${(props) => props.palette.background.main};
-    border-radius: 5px;
+    width: 53px;
+    height: 38px;
     margin-right: 20px;
+    background-color: ${(props) => props.palette.background.main};
+    color: ${(props) => props.palette.brand.main};
+    border: 1px solid ${(props) => props.palette.border.divider};
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
 `;
 
 const StyledLabelNewCard = attachThemeAttrs(styled('span'))`
+color: ${(props) => props.palette.text.main};
     font-size: 18px;
-    line-height: 1.7;
-    color: ${(props) => props.palette.text.main};
+    line-height: 2;
 `;
 
 const StyledCreditCard = styled.div`
@@ -349,15 +352,15 @@ const StyledCreditCard = styled.div`
 `;
 
 const StyledLabelCard = attachThemeAttrs(styled('span'))`
+    color: ${(props) => props.palette.text.header};
     font-size: 14px;
     line-height: 1;
-    color: ${(props) => props.palette.text.header};
 `;
 
 const StyledNumberCard = attachThemeAttrs(styled('span'))`
-    font-size: 16px;
-    line-height: 0.88;
     color: ${(props) => props.palette.text.main};
+    font-size: 16px;
+    line-height: 1.5;
 `;
 
 const theme = {
@@ -366,12 +369,12 @@ const theme = {
     },
 };
 
-export const RadioPicker = () => {
+export const BasicRadioPicker = () => {
     const [value, setValue] = useState('card-1');
     return (
         <Application theme={theme}>
             <Container>
-                <StyledRadioPicker label="Pay With" value={value} onChange={setValue}>
+                <RadioPicker label="Pay With" value={value} onChange={setValue}>
                     <UniversalPickerOption component={RadioItem} name="new-card">
                         <StyledContent>
                             <StyledIcon>
@@ -402,7 +405,7 @@ export const RadioPicker = () => {
                             </StyledCreditCard>
                         </StyledContent>
                     </UniversalPickerOption>
-                </StyledRadioPicker>
+                </RadioPicker>
             </Container>
         </Application>
     );
