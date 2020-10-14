@@ -315,6 +315,7 @@ const RadioItem = (props) => {
 
 const StyledRadioPicker = styled(UniversalPicker)`
     width: 500px;
+
     > div {
         flex-direction: column;
     }
