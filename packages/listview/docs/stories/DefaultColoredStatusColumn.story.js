@@ -78,5 +78,5 @@ export const defaultColoredStatusColumn = () => {
 };
 
 export default {
-    title: 'Modules|Listview/Stories',
+    title: 'Modules|Listview/Stories/ColoredStatusColumn',
 };

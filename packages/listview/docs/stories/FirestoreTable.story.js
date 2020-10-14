@@ -59,5 +59,5 @@ export const firestoreTableWithSortAndQuery = () => {
 };
 
 export default {
-    title: 'Modules|Listview/Stories',
+    title: 'Modules|Listview/Stories/FirestoreTable',
 };
