@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 import { StyledItem } from './styled';
 
 export default function DefaultItem(props) {
-    const { state, children } = props;
-    const { isSelected, isFocused } = state;
+    const { state, disabled, children } = props;
 
     return (
-        <StyledItem isSelected={isSelected} isFocused={isFocused}>
+        <StyledItem {...state} disabled={disabled}>
             {children}
         </StyledItem>
     );
@@ -18,6 +17,7 @@ DefaultItem.propTypes = {
         isSelected: PropTypes.bool,
         isFocused: PropTypes.bool,
     }),
+    disabled: PropTypes.bool,
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
 };
 
@@ -26,5 +26,6 @@ DefaultItem.defaultProps = {
         isSelected: false,
         isFocused: false,
     },
+    disabled: false,
     children: [],
 };

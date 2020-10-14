@@ -24,6 +24,14 @@ export const StyledItem = attachThemeAttrs(styled.div)`
     border: solid 1px ${(props) => props.palette.border.main};
 
     ${(props) =>
+        props.isHover &&
+        `
+        cursor: pointer;
+        border: solid 1px ${props.palette.brand.main};
+        box-shadow: ${props.shadows.shadow_2};
+    `};
+
+    ${(props) =>
         props.isFocused &&
         `
         border: solid 1px ${props.palette.brand.light};
@@ -36,9 +44,12 @@ export const StyledItem = attachThemeAttrs(styled.div)`
         border: solid 1px ${props.palette.brand.main};
     `};
 
-    :hover {
-        cursor: pointer;
-        border: solid 1px ${(props) => props.palette.brand.main};
-        box-shadow: ${(props) => props.shadows.shadow_2};
-    }
+    ${(props) =>
+        props.disabled &&
+        `
+        border: solid 1px ${props.palette.border.disabled};
+        box-shadow: 0 0 0 0 transparent;
+        background-color: ${props.palette.background.disabled};
+        cursor: not-allowed;
+    `};
 `;

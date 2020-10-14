@@ -51,6 +51,7 @@ export default function UniversalPicker(props) {
         ariaDescribedby: errorMessageId,
         groupName,
         size,
+        error,
     };
 
     return (

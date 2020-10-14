@@ -11,6 +11,7 @@ const PickerOption = (props) => {
     const { name, disabled, multiple, groupName, value } = rest;
 
     const [isFocused, setFocused] = useState(false);
+    const [isHover, setHover] = useState(false);
 
     const type = multiple ? 'checkbox' : 'radio';
 
@@ -24,7 +25,7 @@ const PickerOption = (props) => {
         return typeof value === 'string' && name === value;
     };
 
-    const state = { isSelected: isSelected(), isFocused };
+    const state = { isSelected: isSelected(), isFocused, isHover };
 
     const Item = component || DefaultItem;
 
@@ -43,7 +44,11 @@ const PickerOption = (props) => {
                 onBlur={() => setFocused(false)}
             />
 
-            <StyledLabel htmlFor={inputId}>
+            <StyledLabel
+                htmlFor={inputId}
+                onMouseEnter={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}
+            >
                 <Item {...rest} state={state} />
             </StyledLabel>
         </StyledContainer>

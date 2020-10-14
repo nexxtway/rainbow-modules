@@ -5,10 +5,11 @@ export const StyledContainer = styled.fieldset`
     margin: 0;
     padding: 0;
     border: 0;
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     box-sizing: border-box;
+    width: 100%;
 `;
 
 export const StyledLabel = attachThemeAttrs(styled.legend)`
@@ -21,7 +22,8 @@ export const StyledLabel = attachThemeAttrs(styled.legend)`
 `;
 
 export const StyledOptionsContainer = styled.div`
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
 `;
