@@ -1,14 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useUniqueIdentifier } from '@rainbow-modules/hooks';
+import { RenderIf } from 'react-rainbow-components';
+import { useWindowResize } from 'react-rainbow-components/libs/hooks';
+import { ChevronLeft, ChevronRight } from '@rainbow-modules/icons';
 import { Provider } from './context';
-import StyledContainer from './styled';
+import { StyledContainer, StyledArrowButton } from './styled';
 
 /**
  * TilePicker can be either radio buttons or checkboxes that are visually enhanced.
  */
 export default function TilePicker(props) {
     const { style, id, children, value, multiple, className, name, onChange } = props;
+
+    const containerRef = useRef();
+    const [width, setWidth] = useState();
+    const [current, setCurrent] = useState(0);
+
+    useEffect(() => {
+        setWidth(containerRef.current.getClientRects()[0].width);
+    }, []);
+
+    useWindowResize(() => {
+        setWidth(containerRef.current.getClientRects()[0].width);
+    });
+
+    const isCarousel = width && children.length > Math.floor(width / 200);
+    const delta = isCarousel ? width && Math.floor((width - 54) / 200) : children.length;
+    const isDisablePrevious = current < 1;
+    const isDisableNext = current + delta >= children.length;
+    const tiles = children.slice(current, current + delta);
 
     const nameUnique = useUniqueIdentifier('tile-picker');
     const groupNameId = name || nameUnique;
@@ -37,8 +58,34 @@ export default function TilePicker(props) {
     };
 
     return (
-        <StyledContainer id={id} className={className} style={style}>
-            <Provider value={context}>{children}</Provider>
+        <StyledContainer
+            id={id}
+            className={className}
+            style={style}
+            ref={containerRef}
+            isCarousel={isCarousel}
+        >
+            <RenderIf isTrue={!!width}>
+                <RenderIf isTrue={isCarousel}>
+                    <StyledArrowButton
+                        tabIndex="-1"
+                        icon={<ChevronLeft />}
+                        size="small"
+                        disabled={isDisablePrevious}
+                        onClick={() => setCurrent((previous) => previous - 1)}
+                    />
+                </RenderIf>
+                <Provider value={context}>{tiles}</Provider>
+                <RenderIf isTrue={isCarousel}>
+                    <StyledArrowButton
+                        tabIndex="-1"
+                        icon={<ChevronRight />}
+                        size="small"
+                        disabled={isDisableNext}
+                        onClick={() => setCurrent((previous) => previous + 1)}
+                    />
+                </RenderIf>
+            </RenderIf>
         </StyledContainer>
     );
 }

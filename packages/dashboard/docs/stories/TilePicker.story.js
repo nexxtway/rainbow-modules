@@ -89,6 +89,81 @@ export const MultipleSelection = () => {
                         color="#ffffff"
                         backgroundColor="#f4d87a"
                     />
+                </TilePicker>
+            </StyledContainer>
+        </Application>
+    );
+};
+
+export const Carusel = () => {
+    const [value, setValue] = useState();
+    return (
+        <Application>
+            <StyledContainer>
+                <TilePicker value={value} onChange={setValue}>
+                    <Tile
+                        name="completed"
+                        label="Completed"
+                        value={12}
+                        color="#ffffff"
+                        backgroundColor="#9dc35e"
+                    />
+                    <Tile
+                        name="inProgress"
+                        label="InProgress"
+                        value={66}
+                        color="#ffffff"
+                        backgroundColor="#98d38c"
+                    />
+                    <Tile
+                        name="inProgress"
+                        label="InProgress"
+                        value={66}
+                        color="#ffffff"
+                        backgroundColor="#98d38c"
+                    />
+                    <Tile
+                        name="assigned"
+                        label="Assigned"
+                        value={32}
+                        color="#ffffff"
+                        backgroundColor="#71d4d6"
+                    />
+                    <Tile
+                        name="unassigned"
+                        label="Unassigned"
+                        value={23}
+                        color="#ffffff"
+                        backgroundColor="#f4d87a"
+                    />
+                    <Tile
+                        name="cancelled"
+                        label="Cancelled"
+                        value={8}
+                        color="#ffffff"
+                        backgroundColor="#f2707a"
+                    />
+                    <Tile
+                        name="inProgress"
+                        label="InProgress"
+                        value={66}
+                        color="#ffffff"
+                        backgroundColor="#98d38c"
+                    />
+                    <Tile
+                        name="assigned"
+                        label="Assigned"
+                        value={32}
+                        color="#ffffff"
+                        backgroundColor="#71d4d6"
+                    />
+                    <Tile
+                        name="unassigned"
+                        label="Unassigned"
+                        value={23}
+                        color="#ffffff"
+                        backgroundColor="#f4d87a"
+                    />
                     <Tile
                         name="cancelled"
                         label="Cancelled"
