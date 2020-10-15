@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Application, RenderIf } from 'react-rainbow-components';
-import { Check, ClockFilled, Picture, HomeFilled, Plus, Visa } from '@rainbow-modules/icons';
+import { Check, Design, Photographer, Programmer, Plus, Visa } from '@rainbow-modules/icons';
 import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
 import { BORDER_RADIUS_2 } from 'react-rainbow-components/styles/borderRadius';
 import { UniversalPicker, UniversalPickerOption } from '../../src';
@@ -10,6 +10,7 @@ import { UniversalPicker, UniversalPickerOption } from '../../src';
 const Container = styled.div`
     padding: 20px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 `;
 
@@ -108,11 +109,11 @@ const StyledItem = attachThemeAttrs(styled.span)`
 `;
 
 const Item = (props) => {
-    const { state, disabled, size, children } = props;
-    const { isSelected } = state;
+    const { children, ...rest } = props;
+    const { isSelected } = rest;
 
     return (
-        <StyledItem {...state} disabled={disabled} size={size}>
+        <StyledItem {...rest}>
             <RenderIf isTrue={isSelected}>
                 <StyledCheckedTriangle />
                 <StyledCheckmarkIcon />
@@ -122,6 +123,14 @@ const Item = (props) => {
     );
 };
 
+const StyledHeader = attachThemeAttrs(styled.h1)`
+    color: ${(props) => props.palette.text.main};
+    margin-bottom: 1rem;
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+`;
+
 const StyledLabel = attachThemeAttrs(styled.h2)`
     margin-top:6px
     color: ${(props) => props.palette.text.label};
@@ -129,25 +138,24 @@ const StyledLabel = attachThemeAttrs(styled.h2)`
     font-weight: 300;
 `;
 
-const styleIcon = { width: '50px', height: '40px' };
-
 export const BasicVisualPicker = () => {
     const [value, setValue] = useState('option-2');
     return (
         <Application>
             <Container>
+                <StyledHeader>What are you doing?</StyledHeader>
                 <UniversalPicker label="Select Option" value={value} onChange={setValue}>
                     <UniversalPickerOption component={Item} name="option-1">
-                        <HomeFilled style={styleIcon} />
-                        <StyledLabel>Home</StyledLabel>
+                        <Design />
+                        <StyledLabel>Design</StyledLabel>
                     </UniversalPickerOption>
                     <UniversalPickerOption component={Item} name="option-2">
-                        <Picture />
-                        <StyledLabel>Picture</StyledLabel>
+                        <Photographer />
+                        <StyledLabel>Photographer</StyledLabel>
                     </UniversalPickerOption>
                     <UniversalPickerOption component={Item} name="option-3">
-                        <ClockFilled style={styleIcon} />
-                        <StyledLabel>Clock</StyledLabel>
+                        <Programmer />
+                        <StyledLabel>Programmer</StyledLabel>
                     </UniversalPickerOption>
                 </UniversalPicker>
             </Container>
@@ -160,18 +168,19 @@ export const MultipleVisualPicker = () => {
     return (
         <Application>
             <Container>
+                <StyledHeader>What are you doing?</StyledHeader>
                 <UniversalPicker label="Select Option" value={value} onChange={setValue} multiple>
                     <UniversalPickerOption component={Item} name="option-1">
-                        <HomeFilled style={styleIcon} />
-                        <StyledLabel>Home</StyledLabel>
+                        <Design />
+                        <StyledLabel>Design</StyledLabel>
                     </UniversalPickerOption>
                     <UniversalPickerOption component={Item} name="option-2">
-                        <Picture />
-                        <StyledLabel>Picture</StyledLabel>
+                        <Photographer />
+                        <StyledLabel>Photographer</StyledLabel>
                     </UniversalPickerOption>
                     <UniversalPickerOption component={Item} name="option-3">
-                        <ClockFilled style={styleIcon} />
-                        <StyledLabel>Clock</StyledLabel>
+                        <Programmer />
+                        <StyledLabel>Programmer</StyledLabel>
                     </UniversalPickerOption>
                 </UniversalPicker>
             </Container>
@@ -302,25 +311,17 @@ const StyledRadio = attachThemeAttrs(styled.span)`
     `};
 `;
 
-const RadioItem = ({ state, disabled, error, children }) => (
-    <StyledRadioItem {...state} disabled={disabled} error={error}>
+const RadioItem = ({ children, ...rest }) => (
+    <StyledRadioItem {...rest}>
         <div>{children}</div>
-        <StyledRadio {...state} disabled={disabled} error={error} />
+        <StyledRadio {...rest} />
     </StyledRadioItem>
 );
 
-const StyledRadioPicker = styled(UniversalPicker)`
-    width: 500px;
-
-    > div {
-        flex-direction: column;
-    }
-`;
-
 const RadioPicker = ({ children, ...rest }) => (
-    <StyledRadioPicker {...rest} multiple={false}>
+    <UniversalPicker {...rest} multiple={false} direction="vertical">
         {children}
-    </StyledRadioPicker>
+    </UniversalPicker>
 );
 
 const StyledContent = styled.div`
@@ -369,12 +370,19 @@ const theme = {
     },
 };
 
+const styleRadioPicker = { width: '500px', alignSelf: 'center' };
+
 export const BasicRadioPicker = () => {
     const [value, setValue] = useState('card-1');
     return (
         <Application theme={theme}>
             <Container>
-                <RadioPicker label="Pay With" value={value} onChange={setValue}>
+                <RadioPicker
+                    label="Pay With"
+                    value={value}
+                    onChange={setValue}
+                    style={styleRadioPicker}
+                >
                     <UniversalPickerOption component={RadioItem} name="new-card">
                         <StyledContent>
                             <StyledIcon>

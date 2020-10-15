@@ -30,6 +30,9 @@ import {
     Avatar,
     FocusFilled,
     Visa,
+    Photographer,
+    Design,
+    Programmer,
 } from '../../../src';
 
 export default [
@@ -187,5 +190,20 @@ export default [
         name: 'visa',
         category: 'custom',
         icon: Visa,
+    },
+    {
+        name: 'photographer',
+        category: 'custom',
+        icon: Photographer,
+    },
+    {
+        name: 'design',
+        category: 'custom',
+        icon: Design,
+    },
+    {
+        name: 'programmer',
+        category: 'custom',
+        icon: Programmer,
     },
 ];

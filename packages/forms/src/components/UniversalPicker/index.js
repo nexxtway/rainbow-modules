@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import PropTypes from 'prop-types';
 import { RenderIf } from 'react-rainbow-components';
 import RequiredAsterisk from 'react-rainbow-components/components/RequiredAsterisk';
@@ -6,7 +6,8 @@ import StyledError from 'react-rainbow-components/components/Input/styled/errorT
 import { useUniqueIdentifier } from '@rainbow-modules/hooks';
 import { useErrorMessageId } from 'react-rainbow-components/libs/hooks';
 import { StyledContainer, StyledLabel, StyledOptionsContainer } from './styled';
-import { Provider } from './context';
+
+const UniversalPickerContext = createContext({});
 
 export default function UniversalPicker(props) {
     const {
@@ -21,6 +22,7 @@ export default function UniversalPicker(props) {
         multiple,
         className,
         size,
+        direction,
         onChange,
     } = props;
 
@@ -62,8 +64,10 @@ export default function UniversalPicker(props) {
                     {label}
                 </StyledLabel>
             </RenderIf>
-            <StyledOptionsContainer>
-                <Provider value={context}>{children}</Provider>
+            <StyledOptionsContainer direction={direction}>
+                <UniversalPickerContext.Provider value={context}>
+                    {children}
+                </UniversalPickerContext.Provider>
             </StyledOptionsContainer>
             <RenderIf isTrue={!!error}>
                 <StyledError id={errorMessageId}>{error}</StyledError>
@@ -72,8 +76,10 @@ export default function UniversalPicker(props) {
     );
 }
 
+UniversalPicker.context = UniversalPickerContext;
+
 UniversalPicker.propTypes = {
-    /** The name of VisualPicker. */
+    /** The name of UniversalPicker. */
     name: PropTypes.string,
     /** The value of the element. */
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
@@ -81,15 +87,17 @@ UniversalPicker.propTypes = {
     multiple: PropTypes.bool,
     /** The action triggered when a value attribute changes. */
     onChange: PropTypes.func,
-    /** If is set to true the VisualPicker is required. This value defaults to false. */
+    /** If is set to true the UniversalPicker is required. This value defaults to false. */
     required: PropTypes.bool,
-    /** The title at the top of the VisualPicker component. */
+    /** The title at the top of the UniversalPicker component. */
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-    /** Specifies that an VisualPicker must be filled out before submitting the form. */
+    /** Specifies that an UniversalPicker must be filled out before submitting the form. */
     error: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-    /** The size of the VisualPicker. Valid values are small, medium, and large.
+    /** The size of the UniversalPicker. Valid values are small, medium, and large.
      * This value defaults to medium. */
     size: PropTypes.oneOf(['small', 'medium', 'large']),
+    /** The direction of the children. */
+    direction: PropTypes.oneOf(['horizontal', 'vertical']),
     /** The id of the outer element. */
     id: PropTypes.string,
     /** The class name of the root element. */
@@ -111,6 +119,7 @@ UniversalPicker.defaultProps = {
     label: '',
     error: null,
     size: 'medium',
+    direction: 'horizontal',
     onChange: () => {},
     id: undefined,
     className: undefined,

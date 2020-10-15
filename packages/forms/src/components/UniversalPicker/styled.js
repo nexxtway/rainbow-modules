@@ -26,4 +26,10 @@ export const StyledOptionsContainer = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
+
+    ${(props) =>
+        props.direction === 'vertical' &&
+        `
+        flex-direction: column;
+    `};
 `;

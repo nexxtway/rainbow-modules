@@ -1,14 +1,17 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useUniqueIdentifier } from '@rainbow-modules/hooks';
+import UniversalPicker from '../UniversalPicker';
 import DefaultItem from './defaultItem';
 import { StyledContainer, StyledInput, StyledLabel } from './styled';
-import { Consumer as UniversalPickerConsumer } from '../UniversalPicker/context';
 
-const PickerOption = (props) => {
-    const { id, style, className, onChange, ariaDescribedby, component, ...rest } = props;
-    const { name, disabled, multiple, groupName, value } = rest;
+export default function UniversalPickerOption(props) {
+    const { component, id, className, style, ...rest } = props;
+    const { onChange, ariaDescribedby, ...context } = useContext(UniversalPicker.context) || {};
+
+    const { name, disabled } = rest;
+    const { multiple, groupName, value } = context;
 
     const [isFocused, setFocused] = useState(false);
     const [isHover, setHover] = useState(false);
@@ -24,8 +27,6 @@ const PickerOption = (props) => {
 
         return typeof value === 'string' && name === value;
     };
-
-    const state = { isSelected: isSelected(), isFocused, isHover };
 
     const Item = component || DefaultItem;
 
@@ -49,20 +50,15 @@ const PickerOption = (props) => {
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
             >
-                <Item {...rest} state={state} />
+                <Item
+                    {...rest}
+                    {...context}
+                    isSelected={isSelected()}
+                    isFocused={isFocused}
+                    isHover={isHover}
+                />
             </StyledLabel>
         </StyledContainer>
-    );
-};
-
-/**
- * A UniversalPickerItem.
- */
-export default function UniversalPickerOption(props) {
-    return (
-        <UniversalPickerConsumer>
-            {(context) => <PickerOption {...props} {...context} />}
-        </UniversalPickerConsumer>
     );
 }
 

@@ -3,13 +3,9 @@ import PropTypes from 'prop-types';
 import { StyledItem } from './styled';
 
 export default function DefaultItem(props) {
-    const { state, disabled, children } = props;
+    const { children, ...rest } = props;
 
-    return (
-        <StyledItem {...state} disabled={disabled}>
-            {children}
-        </StyledItem>
-    );
+    return <StyledItem {...rest}>{children}</StyledItem>;
 }
 
 DefaultItem.propTypes = {
