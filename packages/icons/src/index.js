@@ -32,6 +32,3 @@ export { default as Minus } from './components/minus';
 export { default as FocusFilled } from './components/focusFilled';
 export { default as Avatar } from './components/avatar';
 export { default as Visa } from './components/visa';
-export { default as Photographer } from './components/photographer';
-export { default as Design } from './components/design';
-export { default as Programmer } from './components/programmer';

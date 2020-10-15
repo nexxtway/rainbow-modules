@@ -2,9 +2,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Application, RenderIf } from 'react-rainbow-components';
-import { Check, Design, Photographer, Programmer, Plus, Visa } from '@rainbow-modules/icons';
+import { Check, Plus, Visa } from '@rainbow-modules/icons';
 import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
 import { BORDER_RADIUS_2 } from 'react-rainbow-components/styles/borderRadius';
+import Design from './icons/design';
+import Photographer from './icons/photographer';
+import Programmer from './icons/programmer';
 import { UniversalPicker, UniversalPickerOption } from '../../src';
 
 const Container = styled.div`

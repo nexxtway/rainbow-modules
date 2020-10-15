@@ -9,19 +9,15 @@ export default function DefaultItem(props) {
 }
 
 DefaultItem.propTypes = {
-    state: PropTypes.shape({
-        isSelected: PropTypes.bool,
-        isFocused: PropTypes.bool,
-    }),
+    isSelected: PropTypes.bool,
+    isFocused: PropTypes.bool,
     disabled: PropTypes.bool,
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
 };
 
 DefaultItem.defaultProps = {
-    state: {
-        isSelected: false,
-        isFocused: false,
-    },
+    isSelected: false,
+    isFocused: false,
     disabled: false,
     children: [],
 };

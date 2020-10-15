@@ -7,11 +7,11 @@ import DefaultItem from './defaultItem';
 import { StyledContainer, StyledInput, StyledLabel } from './styled';
 
 export default function UniversalPickerOption(props) {
-    const { component, id, className, style, ...rest } = props;
-    const { onChange, ariaDescribedby, ...context } = useContext(UniversalPicker.context) || {};
+    const { component, id, className, style, name, ...rest } = props;
+    const { onChange, ariaDescribedby, groupName, value, multiple, ...context } =
+        useContext(UniversalPicker.context) || {};
 
-    const { name, disabled } = rest;
-    const { multiple, groupName, value } = context;
+    const { disabled } = rest;
 
     const [isFocused, setFocused] = useState(false);
     const [isHover, setHover] = useState(false);
