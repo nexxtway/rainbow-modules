@@ -3100,11 +3100,6 @@
   resolved "https://registry.yarnpkg.com/@rainbow-modules/hooks/-/hooks-0.1.4.tgz#87940e81a81ac7dda599bbd266d928bfa3043b77"
   integrity sha512-S0zn26xH5RRIoDKevDq1A6S17c9c/n5pPZeYVtRBzvUd2IYb9ZtR3/X25sKZwqugGnD6MSpS7SnImQJW7X1OnA==
 
-"@rainbow-modules/hooks@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@rainbow-modules/hooks/-/hooks-0.2.1.tgz#68a7310044846284daed876bc22a2b81da79082a"
-  integrity sha512-TuztjEf8tHw1A+EK1l8bvX5YyUsXCjwGBuqKvBm24DS8TnN8m4abzTNY+qCdq0BPf51Z4zABsEZ/In3lJzbagw==
-
 "@reach/router@^1.2.1":
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/@reach/router/-/router-1.3.3.tgz#58162860dce6c9449d49be86b0561b5ef46d80db"
