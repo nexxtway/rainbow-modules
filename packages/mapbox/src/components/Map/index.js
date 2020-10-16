@@ -27,6 +27,14 @@ export default function Map(props) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [accessToken]);
 
+    useEffect(() => {
+        if (map.current && typeof map.current.flyTo === 'function') {
+            map.current.flyTo({
+                center,
+            });
+        }
+    }, [center]);
+
     return (
         <Container className={className} style={style}>
             <RenderIf isTrue={!accessToken}>

@@ -60,8 +60,6 @@ const Container = styled.div`
     padding: 2rem;
 `;
 
-const CustomColoredStatusColumn = ({ ...props }) => <ColoredStatusColumn {...props} />;
-
 export const defaultColoredStatusColumn = () => {
     return (
         <Application>
@@ -70,7 +68,7 @@ export const defaultColoredStatusColumn = () => {
                     <Column header="Customer" field="customer" />
                     <Column header="Email" field="email" />
                     <Column header="Tracking Number" field="trackingNumber" />
-                    <Column header="Status" field="status" component={CustomColoredStatusColumn} />
+                    <Column header="Status" field="status" component={ColoredStatusColumn} />
                 </Table>
             </Container>
         </Application>
