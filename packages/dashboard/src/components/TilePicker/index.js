@@ -6,6 +6,7 @@ import { useWindowResize } from 'react-rainbow-components/libs/hooks';
 import { ChevronLeft, ChevronRight } from '@rainbow-modules/icons';
 import { Provider } from './context';
 import { StyledContainer, StyledArrowButton } from './styled';
+import useKeyNav from './hooks/useKeyNav';
 
 /**
  * TilePicker can be either radio buttons or checkboxes that are visually enhanced.
@@ -30,6 +31,8 @@ export default function TilePicker(props) {
     const isDisablePrevious = current < 1;
     const isDisableNext = current + delta >= children.length;
     const tiles = children.slice(current, current + delta);
+
+    const { handleKeyDown } = useKeyNav({ isCarousel });
 
     const nameUnique = useUniqueIdentifier('tile-picker');
     const groupNameId = name || nameUnique;
@@ -64,6 +67,7 @@ export default function TilePicker(props) {
             style={style}
             ref={containerRef}
             isCarousel={isCarousel}
+            onKeyDown={handleKeyDown}
         >
             <RenderIf isTrue={!!width}>
                 <RenderIf isTrue={isCarousel}>
