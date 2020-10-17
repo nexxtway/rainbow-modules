@@ -20,6 +20,15 @@ export default function Route(props) {
         let endMarker;
 
         (async () => {
+            const shouldSendRouteAsNull =
+                !Array.isArray(waypoints) ||
+                waypoints.length === 0 ||
+                waypoints.length < 2 ||
+                (waypoints.length === 2 && waypoints.some((waypoint) => !waypoint));
+
+            if (shouldSendRouteAsNull) {
+                onRenderRoute(null);
+            }
             if (Array.isArray(waypoints) && waypoints.length >= 1) {
                 if (waypoints[0]) {
                     const startElement = document.createElement('div');
