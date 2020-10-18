@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { UniversalPickerOption } from '@rainbow-modules/forms';
-import { Visa } from '@rainbow-modules/icons';
+import { Visa, Amex, DinersClub } from '@rainbow-modules/icons';
 import {
     StyledContent,
     StyledCreditCard,
@@ -14,9 +14,10 @@ import Option from './option';
 const cardsIconMap = {
     visa: Visa,
     mastercard: Visa,
-    'american express': Visa,
+    'american express': Amex,
+    amex: Amex,
     discover: Visa,
-    'diners club': Visa,
+    'diners club': DinersClub,
     jcb: Visa,
     unionpay: Visa,
 };

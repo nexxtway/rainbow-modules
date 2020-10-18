@@ -20,6 +20,16 @@ const options = [
         id: 'qwer',
         last4: 5454,
     },
+    {
+        brand: 'American Express',
+        id: '12qw',
+        last4: '0005',
+    },
+    {
+        brand: 'Diners Club',
+        id: '5678',
+        last4: '0004',
+    },
 ];
 
 export const BasicCreditCardPicker = () => {

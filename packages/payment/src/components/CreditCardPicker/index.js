@@ -8,7 +8,18 @@ import Option from './option';
 import Cards from './cards';
 
 export default function CreditCardPicker(props) {
-    const { className, style, label, value, onChange, options, required, error, id } = props;
+    const {
+        className,
+        style,
+        label,
+        value,
+        onChange,
+        // isLoading,
+        options,
+        required,
+        error,
+        id,
+    } = props;
     return (
         <UniversalPicker
             className={className}
@@ -41,12 +52,14 @@ CreditCardPicker.propTypes = {
     value: PropTypes.string,
     /** The action triggered when a value attribute changes. */
     onChange: PropTypes.func,
+    /** Indicate that the cards are loading when true */
+    isLoading: PropTypes.bool,
     /** An array with the credit card options. */
     options: PropTypes.arrayOf(
         PropTypes.shape({
             brand: PropTypes.string,
             id: PropTypes.string,
-            last4: PropTypes.number,
+            last4: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
             disabled: PropTypes.bool,
         }),
     ),
@@ -67,6 +80,7 @@ CreditCardPicker.propTypes = {
 CreditCardPicker.defaultProps = {
     value: undefined,
     onChange: () => {},
+    isLoading: false,
     options: [],
     required: false,
     label: undefined,
