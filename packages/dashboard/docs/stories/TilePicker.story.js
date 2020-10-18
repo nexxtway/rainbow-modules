@@ -110,42 +110,21 @@ export const Carusel = () => {
                     />
                     <Tile
                         name="inProgress"
-                        label="InProgress"
+                        label="In Progress"
                         value={66}
                         color="#ffffff"
                         backgroundColor="#98d38c"
                     />
                     <Tile
-                        name="inProgress"
-                        label="InProgress"
+                        name="inRoute"
+                        label="In Route"
                         value={66}
                         color="#ffffff"
                         backgroundColor="#98d38c"
                     />
                     <Tile
-                        name="assigned"
-                        label="Assigned"
-                        value={32}
-                        color="#ffffff"
-                        backgroundColor="#71d4d6"
-                    />
-                    <Tile
-                        name="unassigned"
-                        label="Unassigned"
-                        value={23}
-                        color="#ffffff"
-                        backgroundColor="#f4d87a"
-                    />
-                    <Tile
-                        name="cancelled"
-                        label="Cancelled"
-                        value={8}
-                        color="#ffffff"
-                        backgroundColor="#f2707a"
-                    />
-                    <Tile
-                        name="inProgress"
-                        label="InProgress"
+                        name="arrived"
+                        label="Arrived"
                         value={66}
                         color="#ffffff"
                         backgroundColor="#98d38c"

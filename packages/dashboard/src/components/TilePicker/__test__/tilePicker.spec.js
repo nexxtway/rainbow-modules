@@ -5,6 +5,23 @@ import TilePicker from '..';
 import Tile from '../../Tile';
 
 describe('<TilePicker />', () => {
+    beforeEach(() => {
+        Element.prototype.getClientRects = jest.fn(() => {
+            return [
+                {
+                    bottom: 0,
+                    height: 0,
+                    left: 0,
+                    right: 0,
+                    top: 0,
+                    width: 500,
+                    x: 0,
+                    y: 0,
+                },
+            ];
+        });
+    });
+
     it('should call onChange with string when multiple is false', () => {
         const onChangeMock = jest.fn();
         const name = 'option-1';

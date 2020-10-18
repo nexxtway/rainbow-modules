@@ -1,27 +1,34 @@
 import styled from 'styled-components';
+import { UniversalPicker } from '@rainbow-modules/forms';
 import { ButtonIcon } from 'react-rainbow-components';
+import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
 
 export const StyledContainer = styled.div`
-    margin: 0;
-    padding: 0;
-    border: 0;
     width: 100%;
-    display: inline-flex;
+    height: 135px;
+    display: flex;
     align-items: center;
     box-sizing: border-box;
-
-    ${(props) =>
-        props.isCarousel &&
-        `
-            justify-content: space-around;
-        `};
+    justify-content: space-between;
 `;
 
-export const StyledArrowButton = styled(ButtonIcon)`
-    color: ${(props) => props.theme.rainbow.palette.text.header};
+export const StylesScrollable = styled.div`
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+`;
+
+export const StyledUniversalPicker = styled(UniversalPicker)`
+    > div {
+        flex-wrap: nowrap;
+    }
+`;
+
+export const StyledArrowButton = attachThemeAttrs(styled(ButtonIcon))`
+    color: ${(props) => props.palette.text.header};
     ${(props) =>
         props.disabled &&
         `
-            color: ${(props) => props.theme.rainbow.palette.text.disabled};
+            color: ${(props) => props.palette.text.disabled};
         `};
 `;

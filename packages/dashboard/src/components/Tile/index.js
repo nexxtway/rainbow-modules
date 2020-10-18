@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { useUniqueIdentifier } from '@rainbow-modules/hooks';
-import { Check } from '@rainbow-modules/icons';
+import { UniversalPickerOption } from '@rainbow-modules/forms';
 import { useTheme } from 'react-rainbow-components/libs/hooks';
 import RenderIf from 'react-rainbow-components/components/RenderIf';
 import {
@@ -10,17 +9,9 @@ import {
     getContrastText,
     isValidColor,
 } from 'react-rainbow-components/styles/helpers/color';
-import { TilePickerContext } from '../TilePicker/context';
-import isChecked from './helpers/isChecked';
-import {
-    StyledContainer,
-    StyledInput,
-    StyledLabel,
-    StyledLabelText,
-    StyledValue,
-    StyledCheckmarkContainer,
-    StyledContent,
-} from './styled';
+import TilePicker from '../TilePicker';
+import TileOption from './tileOption';
+import { StyledContainer, StyledLabelText, StyledValue, StyledContent } from './styled';
 
 /**
  * Component to show information of dashboard
@@ -28,57 +19,39 @@ import {
 export default function Tile(props) {
     const {
         label,
-        value: valueProp,
+        value,
         color: colorProp,
         backgroundColor: backgroundColorProp,
-        name: nameProp,
+        name,
         id,
         className,
         style,
     } = props;
-    const context = useContext(TilePickerContext);
-    const { groupName, onChange, value, multiple } = context || {};
-
-    const inputId = useUniqueIdentifier('tile-input');
+    const isTilePicker = useContext(TilePicker.context) !== undefined;
 
     const mainBackground = useTheme().rainbow.palette.background.main;
     const backgroundColor = isValidColor(backgroundColorProp)
         ? backgroundColorProp
         : mainBackground;
     const color = isValidColor(colorProp) ? colorProp : getContrastText(backgroundColor);
-
-    const type = multiple ? 'checkbox' : 'radio';
-    const name = groupName || nameProp;
-    const checked = isChecked({ multiple, value, name: nameProp });
-
     const labelStyle = { color: replaceAlpha(colorToRgba(color), 0.7) };
 
     return (
-        <StyledContainer id={id} className={className} style={style} hasMargin={!!context}>
-            <RenderIf isTrue={!!context}>
-                <StyledInput
-                    as="input"
-                    type={type}
-                    id={inputId}
+        <StyledContainer id={id} className={className} style={style} hasMargin={isTilePicker}>
+            <RenderIf isTrue={isTilePicker}>
+                <UniversalPickerOption
                     name={name}
-                    checked={checked}
-                    onChange={(event) => onChange(nameProp, event.target.checked)}
-                    value={valueProp}
+                    component={TileOption}
+                    value={value}
+                    label={label}
+                    color={color}
+                    backgroundColor={backgroundColor}
                 />
-                <StyledLabel htmlFor={inputId} style={{ backgroundColor }}>
-                    <RenderIf isTrue={checked}>
-                        <StyledCheckmarkContainer>
-                            <Check style={{ color }} />
-                        </StyledCheckmarkContainer>
-                    </RenderIf>
-                    <StyledLabelText style={labelStyle}>{label}</StyledLabelText>
-                    <StyledValue style={{ color }}>{valueProp}</StyledValue>
-                </StyledLabel>
             </RenderIf>
-            <RenderIf isTrue={!context}>
+            <RenderIf isTrue={!isTilePicker}>
                 <StyledContent style={{ backgroundColor }}>
                     <StyledLabelText style={labelStyle}>{label}</StyledLabelText>
-                    <StyledValue style={{ color }}>{valueProp}</StyledValue>
+                    <StyledValue style={{ color }}>{value}</StyledValue>
                 </StyledContent>
             </RenderIf>
         </StyledContainer>

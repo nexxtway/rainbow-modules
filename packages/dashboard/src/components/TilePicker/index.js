@@ -1,13 +1,18 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback, createContext } from 'react';
 import PropTypes from 'prop-types';
 import { useUniqueIdentifier } from '@rainbow-modules/hooks';
 import { RenderIf } from 'react-rainbow-components';
 import { useWindowResize } from 'react-rainbow-components/libs/hooks';
 import { ChevronLeft, ChevronRight } from '@rainbow-modules/icons';
-import { Provider } from './context';
-import { StyledContainer, StyledArrowButton } from './styled';
-import useKeyNav from './hooks/useKeyNav';
+import {
+    StyledContainer,
+    StylesScrollable,
+    StyledUniversalPicker,
+    StyledArrowButton,
+} from './styled';
+import useRegisterChildren from './hooks/useRegisterChildren';
 
+const TilePickerContext = createContext();
 /**
  * TilePicker can be either radio buttons or checkboxes that are visually enhanced.
  */
@@ -15,6 +20,7 @@ export default function TilePicker(props) {
     const { style, id, children, value, multiple, className, name, onChange } = props;
 
     const containerRef = useRef();
+    const scrollableRef = useRef();
     const [width, setWidth] = useState();
     const [current, setCurrent] = useState(0);
 
@@ -27,72 +33,80 @@ export default function TilePicker(props) {
     });
 
     const isCarousel = width && children.length > Math.floor(width / 200);
-    const delta = isCarousel ? width && Math.floor((width - 54) / 200) : children.length;
+    const delta = isCarousel ? width && Math.floor((width - 32) / 200) : children.length;
     const isDisablePrevious = current < 1;
     const isDisableNext = current + delta >= children.length;
-    const tiles = children.slice(current, current + delta);
-
-    const { handleKeyDown } = useKeyNav({ isCarousel });
 
     const nameUnique = useUniqueIdentifier('tile-picker');
-    const groupNameId = name || nameUnique;
+    const groupName = name || nameUnique;
 
-    const handleChange = (optionName, isChecked) => {
-        if (multiple) {
-            if (Array.isArray(value)) {
-                const currentValue = isChecked
-                    ? [...value, optionName]
-                    : value.filter((item) => item !== optionName);
+    const { activeChildren, registerChild, unregisterChild } = useRegisterChildren({
+        containerRef,
+    });
 
-                return onChange(currentValue);
-            }
-
-            const currentValue = isChecked ? [optionName] : [];
-            return onChange(currentValue);
+    useEffect(() => {
+        if (width) {
+            scrollableRef.current.scrollLeft = current * 200;
         }
-        return onChange(optionName);
-    };
+    }, [current, width]);
 
-    const context = {
-        groupName: groupNameId,
-        onChange: handleChange,
-        value,
-        multiple,
-    };
+    const setFocused = useCallback(
+        (childRef) => {
+            const activeIndex = activeChildren.current.findIndex((child) => child.ref === childRef);
+            if (activeIndex > -1) {
+                if (activeIndex < current) {
+                    setCurrent(activeIndex);
+                }
+                if (activeIndex >= current + delta) {
+                    setCurrent(activeIndex - delta + 1);
+                }
+            }
+        },
+        [activeChildren, current, delta],
+    );
+
+    const context = { registerChild, unregisterChild, setFocused };
 
     return (
-        <StyledContainer
-            id={id}
-            className={className}
-            style={style}
-            ref={containerRef}
-            isCarousel={isCarousel}
-            onKeyDown={handleKeyDown}
-        >
+        <StyledContainer id={id} className={className} style={style} ref={containerRef}>
             <RenderIf isTrue={!!width}>
-                <RenderIf isTrue={isCarousel}>
-                    <StyledArrowButton
-                        tabIndex="-1"
-                        icon={<ChevronLeft />}
-                        size="small"
-                        disabled={isDisablePrevious}
-                        onClick={() => setCurrent((previous) => previous - 1)}
-                    />
-                </RenderIf>
-                <Provider value={context}>{tiles}</Provider>
-                <RenderIf isTrue={isCarousel}>
-                    <StyledArrowButton
-                        tabIndex="-1"
-                        icon={<ChevronRight />}
-                        size="small"
-                        disabled={isDisableNext}
-                        onClick={() => setCurrent((previous) => previous + 1)}
-                    />
-                </RenderIf>
+                <TilePickerContext.Provider value={context}>
+                    <RenderIf isTrue={isCarousel}>
+                        <StyledArrowButton
+                            tabIndex="-1"
+                            icon={<ChevronLeft />}
+                            size="xx-small"
+                            disabled={isDisablePrevious}
+                            onClick={() => setCurrent((previous) => previous - 1)}
+                        />
+                    </RenderIf>
+                    <StylesScrollable ref={scrollableRef}>
+                        <StyledUniversalPicker
+                            value={value}
+                            onChange={onChange}
+                            name={groupName}
+                            multiple={multiple}
+                            isCarousel={isCarousel}
+                        >
+                            {children}
+                        </StyledUniversalPicker>
+                    </StylesScrollable>
+                    <RenderIf isTrue={isCarousel}>
+                        <StyledArrowButton
+                            tabIndex="-1"
+                            icon={<ChevronRight />}
+                            size="xx-small"
+                            disabled={isDisableNext}
+                            onClick={() => setCurrent((previous) => previous + 1)}
+                        />
+                    </RenderIf>
+                </TilePickerContext.Provider>
             </RenderIf>
         </StyledContainer>
     );
 }
+
+TilePicker.context = TilePickerContext;
 
 TilePicker.propTypes = {
     /** The name of TilePicker. */
