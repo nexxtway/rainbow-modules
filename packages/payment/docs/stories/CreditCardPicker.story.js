@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Application } from 'react-rainbow-components';
+import { RainbowFirebaseApp } from '@rainbow-modules/app';
 import styled from 'styled-components';
 import { CreditCardPicker } from '../../src';
 
@@ -15,6 +15,7 @@ const options = [
         id: '1234',
         last4: 1111,
         primary: true,
+        disabled: true,
     },
     {
         brand: 'MasterCard',
@@ -36,7 +37,7 @@ const options = [
 export const BasicCreditCardPicker = () => {
     const [value, setValue] = useState('card-1');
     return (
-        <Application>
+        <RainbowFirebaseApp>
             <StyledCreditCardPicker
                 label="Select a credit card"
                 required
@@ -46,8 +47,9 @@ export const BasicCreditCardPicker = () => {
                 showAddCreditCardButton
                 // eslint-disable-next-line no-alert
                 onAdd={() => alert('Add new card')}
+                onRemove={(card) => alert(`Remove ${card.brand} card with last4: ${card.last4}`)}
             />
-        </Application>
+        </RainbowFirebaseApp>
     );
 };
 

@@ -15,6 +15,8 @@ export default function CreditCardPicker(props) {
         value,
         onChange,
         onAdd,
+        onRemove,
+        // TODO: implement loading
         // isLoading,
         options,
         required,
@@ -45,7 +47,7 @@ export default function CreditCardPicker(props) {
                     </StyledContent>
                 </AddNewCardButton>
             </RenderIf>
-            <Cards options={options} />
+            <Cards options={options} onRemove={onRemove} />
         </UniversalPicker>
     );
 }
@@ -57,6 +59,8 @@ CreditCardPicker.propTypes = {
     onChange: PropTypes.func,
     /** The action triggerd when new card button is clicked. */
     onAdd: PropTypes.func,
+    /** The action triggered when the remove card action is confirmed. */
+    onRemove: PropTypes.func,
     /** Indicate that the cards are loading when set to true */
     isLoading: PropTypes.bool,
     /** An array with the credit card options. */
@@ -67,6 +71,8 @@ CreditCardPicker.propTypes = {
             last4: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
             disabled: PropTypes.bool,
             primary: PropTypes.bool,
+            expMonth: PropTypes.number,
+            expYear: PropTypes.number,
         }),
     ),
     /** If is set to true the UniversalPicker is required. This value defaults to false. */
@@ -89,6 +95,7 @@ CreditCardPicker.defaultProps = {
     value: undefined,
     onChange: () => {},
     onAdd: () => {},
+    onRemove: () => {},
     isLoading: false,
     options: [],
     required: false,
