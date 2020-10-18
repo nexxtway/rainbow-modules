@@ -32,3 +32,5 @@ export { default as Minus } from './components/minus';
 export { default as FocusFilled } from './components/focusFilled';
 export { default as Avatar } from './components/avatar';
 export { default as Visa } from './components/visa';
+export { default as Amex } from './components/amex';
+export { default as DinersClub } from './components/dinersClub';

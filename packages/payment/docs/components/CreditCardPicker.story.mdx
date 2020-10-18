@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import CreditCardPicker from '../../src/components/CreditCardPicker';
+import * as stories from '../stories/CreditCardPicker.story.js';
+
+<Meta title="Modules|Payment/Components" component={CreditCardPicker} />
+
+# Overview
+
+`CreditCardPicker` is a component for select credit cards.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="CreditCardPicker">{stories.BasicCreditCardPicker()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={CreditCardPicker} />

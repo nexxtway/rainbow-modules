@@ -30,6 +30,7 @@ import {
     Avatar,
     FocusFilled,
     Visa,
+    Amex,
 } from '../../../src';
 
 export default [
@@ -187,5 +188,10 @@ export default [
         name: 'visa',
         category: 'custom',
         icon: Visa,
+    },
+    {
+        name: 'amex',
+        category: 'custom',
+        icon: Amex,
     },
 ];
