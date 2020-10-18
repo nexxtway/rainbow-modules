@@ -14,6 +14,7 @@ const options = [
         brand: 'Visa',
         id: '1234',
         last4: 1111,
+        primary: true,
     },
     {
         brand: 'MasterCard',
@@ -42,6 +43,9 @@ export const BasicCreditCardPicker = () => {
                 onChange={setValue}
                 value={value}
                 options={options}
+                showAddCreditCardButton
+                // eslint-disable-next-line no-alert
+                onAdd={() => alert('Add new card')}
             />
         </Application>
     );

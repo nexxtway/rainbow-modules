@@ -11,6 +11,7 @@ import {
 } from './styled';
 import Option from './option';
 
+// TODO: add other cards to the mapping
 const cardsIconMap = {
     visa: Visa,
     mastercard: Visa,
@@ -26,7 +27,8 @@ const defaultCard = () => <div />;
 
 export default function Cards({ options }) {
     return options.map((option) => {
-        const { brand, id, last4, disabled } = option;
+        // TODO: add primary card styles
+        const { brand, id, last4, disabled, primary } = option;
         const CardIcon = cardsIconMap[brand.toLowerCase()] || defaultCard;
         return (
             <UniversalPickerOption component={Option} name={id} disabled={disabled}>

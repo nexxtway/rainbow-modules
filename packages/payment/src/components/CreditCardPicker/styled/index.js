@@ -171,3 +171,12 @@ export const StyledNumberCard = attachThemeAttrs(styled.span)`
     font-size: 16px;
     line-height: 1.5;
 `;
+
+export const AddNewCardButton = styled(StyledRadioItem)`
+    margin: 0 0.25rem 0.5rem 0.25rem;
+    outline: none;
+
+    &:focus {
+        border: solid 1px rgba(1, 182, 245, 1);
+    }
+`;
