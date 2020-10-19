@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/nexxtway/rainbow-modules/compare/v0.3.2...v0.4.0) (2020-10-19)
+
+### Bug Fixes
+
+-   call onRenderRoute with null when not valid two waypoints ([4ed6ba2](https://github.com/nexxtway/rainbow-modules/commit/4ed6ba24156766249862e4ccedacbdb03e519e4a))
+-   react to center change mapbox Map ([2b1176c](https://github.com/nexxtway/rainbow-modules/commit/2b1176c3b2704c1d316c4a73c5624170f1e95037))
+
+### Features
+
+-   add onRenderRoute prop to mapbox Route component ([e60a690](https://github.com/nexxtway/rainbow-modules/commit/e60a6908f573266a7dcfc9f882732f5155e27e92))
+-   implement CreditCardPicker ([#163](https://github.com/nexxtway/rainbow-modules/issues/163)) ([7bc3ce2](https://github.com/nexxtway/rainbow-modules/commit/7bc3ce2ec94f47e979a23f0d0677eef0184e3259))
+
 ## [0.3.2](https://github.com/nexxtway/rainbow-modules/compare/v0.3.1...v0.3.2) (2020-10-09)
 
 ### Bug Fixes
