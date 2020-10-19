@@ -1,5 +1,6 @@
 import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
 import styled from 'styled-components';
+import { Trash } from '@rainbow-modules/icons';
 
 const getInitialBorder = (props) => {
     if (props.error) {
@@ -36,6 +37,7 @@ export const StyledRadio = attachThemeAttrs(styled.span)`
     vertical-align: middle;
     box-sizing: border-box;
     transition: all 0.2s ease;
+    margin-right: 12px;
 
     &::after {
         content: '';
@@ -92,13 +94,13 @@ export const StyledRadio = attachThemeAttrs(styled.span)`
 export const StyledRadioItem = attachThemeAttrs(styled.span)`
     position: relative;
     width: 100%;
-    padding: 0.5rem 1rem;
+    min-height: 64px;
+    padding: 8px 8px 8px 12px;
     background-color: ${(props) => props.palette.background.main};
     border: solid 1px ${(props) => props.palette.border.divider};
     border-radius: 14px;
     box-shadow: ${(props) => props.shadows.shadow_4};
     display: flex;
-    justify-content: space-between;
     align-items: center;
 
     ${(props) =>
@@ -134,18 +136,18 @@ export const StyledRadioItem = attachThemeAttrs(styled.span)`
 
 export const StyledContent = styled.div`
     display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
 `;
 
-export const StyledIcon = attachThemeAttrs(styled.span)`
-    width: 53px;
-    height: 38px;
-    margin-right: 20px;
-    background-color: ${(props) => props.palette.background.main};
-    color: ${(props) => props.palette.brand.main};
-    border: 1px solid ${(props) => props.palette.border.divider};
-    border-radius: 5px;
+export const RightContent = styled.div`
     display: flex;
-    justify-content: center;
+    flex-grow: 1;
+    align-items: center;
+`;
+
+export const LeftContent = styled.div`
+    display: flex;
     align-items: center;
 `;
 
@@ -153,17 +155,19 @@ export const StyledLabelNewCard = attachThemeAttrs(styled.span)`
     color: ${(props) => props.palette.text.main};
     font-size: 18px;
     line-height: 2;
+    margin-left: 12px;
 `;
 
-export const StyledCreditCard = styled.div`
+export const CardInfo = styled.div`
     display: flex;
     flex-direction: column;
+    margin-left: 16px;
 `;
 
 export const StyledLabelCard = attachThemeAttrs(styled.span)`
     color: ${(props) => props.palette.text.header};
     font-size: 14px;
-    line-height: 1;
+    line-height: 1.5;
 `;
 
 export const StyledNumberCard = attachThemeAttrs(styled.span)`
@@ -172,11 +176,68 @@ export const StyledNumberCard = attachThemeAttrs(styled.span)`
     line-height: 1.5;
 `;
 
-export const AddNewCardButton = styled(StyledRadioItem)`
-    margin: 0 0.25rem 0.5rem 0.25rem;
+export const AddNewCardButton = attachThemeAttrs(styled(StyledRadioItem))`
+    margin: 4px 0.25rem 0.5rem 0.25rem;
+    padding: 12px 8px 12px 12px;
     outline: none;
+    color: ${(props) => props.palette.brand.main};
+
+    &:hover {
+        border: solid 1px ${(props) => props.palette.brand.main};secondary
+        background: ${(props) => props.palette.background.secondary};
+    }
 
     &:focus {
         border: solid 1px rgba(1, 182, 245, 1);
     }
+`;
+
+export const TrashIcon = attachThemeAttrs(styled(Trash))`
+    width: 60px;
+    height: 60px;
+    margin: 12px 12px 20px 0;
+    color: ${(props) => props.theme.rainbow.palette.error.main};
+`;
+
+export const LoadingContent = styled.div`
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+`;
+
+export const LoadingCard = styled.div`
+    width: 52px;
+    height: 36px;
+    margin-right: 12px;
+    border-radius: 4px;
+    overflow: hidden;
+`;
+
+export const LoadingInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 36px;
+    flex-grow: 1;
+    margin-left: 4px;
+`;
+
+export const LoadingFirstLine = styled.div`
+    width: 70%;
+
+    ${(props) =>
+        props.lineWidth === 'small' &&
+        `
+        width: 50%;
+    `};
+`;
+
+export const LoadingSecondLine = styled.div`
+    width: 40%;
+
+    ${(props) =>
+        props.lineWidth === 'small' &&
+        `
+        width: 20%;
+    `};
 `;

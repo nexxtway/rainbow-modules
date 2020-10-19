@@ -5,8 +5,8 @@ import { StyledRadio, StyledRadioItem } from './styled';
 export default function Option({ children, ...rest }) {
     return (
         <StyledRadioItem {...rest}>
-            <div>{children}</div>
             <StyledRadio {...rest} />
+            {children}
         </StyledRadioItem>
     );
 }

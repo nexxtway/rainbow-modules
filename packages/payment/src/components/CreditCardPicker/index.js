@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { UniversalPicker } from '@rainbow-modules/forms';
-import { Plus } from '@rainbow-modules/icons';
+import { NewCard } from '@rainbow-modules/icons';
 import RenderIf from 'react-rainbow-components/components/RenderIf';
-import { StyledContent, StyledIcon, StyledLabelNewCard, AddNewCardButton } from './styled';
+import { StyledLabelNewCard, AddNewCardButton } from './styled';
 import { newCreditCardLabel } from './labels';
 import Cards from './cards';
+import Loading from './loading';
 
 export default function CreditCardPicker(props) {
     const {
@@ -16,8 +17,7 @@ export default function CreditCardPicker(props) {
         onChange,
         onAdd,
         onRemove,
-        // TODO: implement loading
-        // isLoading,
+        isLoading,
         options,
         required,
         error,
@@ -39,15 +39,16 @@ export default function CreditCardPicker(props) {
         >
             <RenderIf isTrue={showAddCreditCardButton}>
                 <AddNewCardButton as="button" onClick={onAdd}>
-                    <StyledContent>
-                        <StyledIcon>
-                            <Plus />
-                        </StyledIcon>
-                        <StyledLabelNewCard>{newCreditCardLabel}</StyledLabelNewCard>
-                    </StyledContent>
+                    <NewCard />
+                    <StyledLabelNewCard>{newCreditCardLabel}</StyledLabelNewCard>
                 </AddNewCardButton>
             </RenderIf>
-            <Cards options={options} onRemove={onRemove} />
+            <RenderIf isTrue={!isLoading}>
+                <Cards options={options} onRemove={onRemove} />
+            </RenderIf>
+            <RenderIf isTrue={isLoading}>
+                <Loading />
+            </RenderIf>
         </UniversalPicker>
     );
 }
@@ -95,7 +96,7 @@ CreditCardPicker.defaultProps = {
     value: undefined,
     onChange: () => {},
     onAdd: () => {},
-    onRemove: () => {},
+    onRemove: undefined,
     isLoading: false,
     options: [],
     required: false,

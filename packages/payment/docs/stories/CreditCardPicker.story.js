@@ -15,12 +15,15 @@ const options = [
         id: '1234',
         last4: 1111,
         primary: true,
-        disabled: true,
+        expMonth: 24,
+        expYear: 2020,
     },
     {
         brand: 'MasterCard',
         id: 'qwer',
         last4: 5454,
+        expMonth: 24,
+        expYear: 2020,
     },
     {
         brand: 'American Express',
@@ -31,10 +34,63 @@ const options = [
         brand: 'Diners Club',
         id: '5678',
         last4: '0004',
+        expMonth: 24,
+        expYear: 2020,
+    },
+    {
+        brand: 'Discover',
+        id: '12qwe',
+        last4: '0005',
+    },
+    {
+        brand: 'JCB',
+        id: '12qwer',
+        last4: '0005',
+    },
+    {
+        brand: 'UnionPay',
+        id: '12qwert',
+        last4: '0005',
+    },
+    {
+        brand: 'Mexico',
+        id: '12qwerty',
+        last4: '0005',
     },
 ];
 
 export const BasicCreditCardPicker = () => {
+    const [value, setValue] = useState('card-1');
+    return (
+        <RainbowFirebaseApp>
+            <StyledCreditCardPicker
+                label="Select a credit card"
+                required
+                onChange={setValue}
+                value={value}
+                options={options}
+            />
+        </RainbowFirebaseApp>
+    );
+};
+
+export const CreditCardPickerLoading = () => {
+    const [value, setValue] = useState('card-1');
+    return (
+        <RainbowFirebaseApp>
+            <StyledCreditCardPicker
+                label="Select a credit card"
+                required
+                onChange={setValue}
+                value={value}
+                options={options}
+                isLoading
+            />
+        </RainbowFirebaseApp>
+    );
+};
+
+export const CreditCardPickerWithActions = () => {
     const [value, setValue] = useState('card-1');
     return (
         <RainbowFirebaseApp>
