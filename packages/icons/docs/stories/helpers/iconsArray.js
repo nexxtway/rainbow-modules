@@ -30,6 +30,13 @@ import {
     Avatar,
     FocusFilled,
     Visa,
+    Amex,
+    Mastercard,
+    Discover,
+    JCB,
+    UnionPay,
+    NewCard,
+    UnknownCard,
 } from '../../../src';
 
 export default [
@@ -187,5 +194,40 @@ export default [
         name: 'visa',
         category: 'custom',
         icon: Visa,
+    },
+    {
+        name: 'amex',
+        category: 'custom',
+        icon: Amex,
+    },
+    {
+        name: 'mastercard',
+        category: 'custom',
+        icon: Mastercard,
+    },
+    {
+        name: 'discover',
+        category: 'custom',
+        icon: Discover,
+    },
+    {
+        name: 'jcb',
+        category: 'custom',
+        icon: JCB,
+    },
+    {
+        name: 'unionPay',
+        category: 'custom',
+        icon: UnionPay,
+    },
+    {
+        name: 'newCard',
+        category: 'custom',
+        icon: NewCard,
+    },
+    {
+        name: 'unknownCard',
+        category: 'custom',
+        icon: UnknownCard,
     },
 ];
