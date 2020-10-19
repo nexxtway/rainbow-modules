@@ -31,17 +31,19 @@ const cardsIconMap = {
     visa: Visa,
     mastercard: Mastercard,
     'american express': Amex,
+    americanexpress: Amex,
     amex: Amex,
     discover: Discover,
     'diners club': DinersClub,
+    dinersclub: DinersClub,
     jcb: JCB,
     unionpay: UnionPay,
+    'union pay': UnionPay,
 };
-
-const defaultCard = () => <UnknownCard />;
 
 export default function Cards({ options, onRemove }) {
     const intl = useIntl();
+    const showRemoveButton = typeof onRemove === 'function';
 
     const handleDeleteClick = async (card) => {
         const result = await confirmModal({
@@ -61,7 +63,7 @@ export default function Cards({ options, onRemove }) {
         const { brand, id, last4, disabled, primary, expMonth, expYear } = option;
         const expires = `${expMonth}/${expYear}`;
         const hasExpirationDate = expMonth && expYear;
-        const CardIcon = cardsIconMap[brand.toLowerCase()] || defaultCard;
+        const CardIcon = cardsIconMap[brand.toLowerCase()] || UnknownCard;
 
         return (
             <UniversalPickerOption component={Option} name={id} disabled={disabled}>
@@ -79,7 +81,7 @@ export default function Cards({ options, onRemove }) {
                         <RenderIf isTrue={primary}>
                             <Badge label="PRIMARY" className="rainbow-m-right_small" />
                         </RenderIf>
-                        <RenderIf isTrue={onRemove}>
+                        <RenderIf isTrue={showRemoveButton}>
                             <ButtonIcon
                                 icon={<Trash />}
                                 onClick={() => handleDeleteClick(option)}

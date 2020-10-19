@@ -53,14 +53,14 @@ const options = [
         last4: '0005',
     },
     {
-        brand: 'Mexico',
+        brand: 'UnknownCreditCard',
         id: '12qwerty',
         last4: '0005',
     },
 ];
 
 export const BasicCreditCardPicker = () => {
-    const [value, setValue] = useState('card-1');
+    const [value, setValue] = useState();
     return (
         <RainbowFirebaseApp>
             <StyledCreditCardPicker
@@ -75,7 +75,7 @@ export const BasicCreditCardPicker = () => {
 };
 
 export const CreditCardPickerLoading = () => {
-    const [value, setValue] = useState('card-1');
+    const [value, setValue] = useState();
     return (
         <RainbowFirebaseApp>
             <StyledCreditCardPicker
@@ -91,7 +91,7 @@ export const CreditCardPickerLoading = () => {
 };
 
 export const CreditCardPickerWithActions = () => {
-    const [value, setValue] = useState('card-1');
+    const [value, setValue] = useState('qwer');
     return (
         <RainbowFirebaseApp>
             <StyledCreditCardPicker
@@ -100,7 +100,6 @@ export const CreditCardPickerWithActions = () => {
                 onChange={setValue}
                 value={value}
                 options={options}
-                showAddCreditCardButton
                 // eslint-disable-next-line no-alert
                 onAdd={() => alert('Add new card')}
                 onRemove={(card) => alert(`Remove ${card.brand} card with last4: ${card.last4}`)}

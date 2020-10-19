@@ -183,7 +183,7 @@ export const AddNewCardButton = attachThemeAttrs(styled(StyledRadioItem))`
     color: ${(props) => props.palette.brand.main};
 
     &:hover {
-        border: solid 1px ${(props) => props.palette.brand.main};secondary
+        border: solid 1px ${(props) => props.palette.brand.main};
         background: ${(props) => props.palette.background.secondary};
     }
 

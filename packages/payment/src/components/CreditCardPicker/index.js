@@ -21,9 +21,9 @@ export default function CreditCardPicker(props) {
         options,
         required,
         error,
-        showAddCreditCardButton,
         id,
     } = props;
+    const showAddCreditCardButton = typeof onAdd === 'function';
 
     return (
         <UniversalPicker
@@ -58,9 +58,9 @@ CreditCardPicker.propTypes = {
     value: PropTypes.string,
     /** The action triggered when a value attribute changes. */
     onChange: PropTypes.func,
-    /** The action triggerd when new card button is clicked. */
+    /** The action triggerd when new card button is clicked. When passed it will show an add new card button. */
     onAdd: PropTypes.func,
-    /** The action triggered when the remove card action is confirmed. */
+    /** The action triggered when the remove card action is confirmed. When passed it will show a remove card button. */
     onRemove: PropTypes.func,
     /** Indicate that the cards are loading when set to true */
     isLoading: PropTypes.bool,
@@ -82,8 +82,6 @@ CreditCardPicker.propTypes = {
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     /** Specifies that an UniversalPicker must be filled out before submitting the form. */
     error: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-    /** Indicate that will show the add credit card button when set to true. */
-    showAddCreditCardButton: PropTypes.bool,
     /** The id of the outer element. */
     id: PropTypes.string,
     /** The class name of the root element. */
@@ -95,14 +93,13 @@ CreditCardPicker.propTypes = {
 CreditCardPicker.defaultProps = {
     value: undefined,
     onChange: () => {},
-    onAdd: () => {},
+    onAdd: undefined,
     onRemove: undefined,
     isLoading: false,
     options: [],
     required: false,
     label: undefined,
     error: undefined,
-    showAddCreditCardButton: false,
     id: undefined,
     className: undefined,
     style: undefined,
