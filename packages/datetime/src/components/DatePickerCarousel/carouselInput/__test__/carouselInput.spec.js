@@ -10,7 +10,6 @@ describe('<CarouselInput />', () => {
         const date = new Date('2020/10/21');
         const component = mountWithApplication(<CarouselInput value={date} />);
         expect(component.find(CarouselCalendar).prop('value')).toEqual(date);
-        expect(component.find(CarouselCalendar).prop('value')).toEqual(date);
     });
     it('should fire onChange when click on a date', () => {
         const mockChangeFn = jest.fn();
