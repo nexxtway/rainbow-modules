@@ -101,7 +101,7 @@ describe('<TilePicker />', () => {
         expect(onChangeMock).toBeCalledWith([]);
     });
 
-    it('should render a carousel when the option is overflow', () => {
+    it('should render a carousel when the options are overflow', () => {
         const wrapper = mount(
             <TilePicker>
                 <Tile name="option-1" />

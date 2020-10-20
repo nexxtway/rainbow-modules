@@ -89,6 +89,13 @@ export const MultipleSelection = () => {
                         color="#ffffff"
                         backgroundColor="#f4d87a"
                     />
+                    <Tile
+                        name="cancelled"
+                        label="Cancelled"
+                        value={8}
+                        color="#ffffff"
+                        backgroundColor="#f2707a"
+                    />
                 </TilePicker>
             </StyledContainer>
         </Application>
@@ -104,30 +111,30 @@ export const Carusel = () => {
                     <Tile
                         name="completed"
                         label="Completed"
-                        value={12}
+                        value={66}
                         color="#ffffff"
                         backgroundColor="#9dc35e"
                     />
                     <Tile
                         name="inProgress"
                         label="In Progress"
-                        value={66}
+                        value={46}
                         color="#ffffff"
                         backgroundColor="#98d38c"
                     />
                     <Tile
                         name="inRoute"
                         label="In Route"
-                        value={66}
+                        value={30}
                         color="#ffffff"
-                        backgroundColor="#98d38c"
+                        backgroundColor="#9ef0bf"
                     />
                     <Tile
                         name="arrived"
                         label="Arrived"
-                        value={66}
+                        value={15}
                         color="#ffffff"
-                        backgroundColor="#98d38c"
+                        backgroundColor="#f5bc24"
                     />
                     <Tile
                         name="assigned"
