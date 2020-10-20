@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import FirestoreTable from '../../src/components/FirestoreTable';
+import * as stories from '../stories/FirestoreTable.story.js';
+
+<Meta title="Modules|Listview/Components" component={FirestoreTable} />
+
+# Overview
+
+`FirestoreTable` is a component to display the data of a collection in a Firestore database.
+
+### This is a basic example with real time data.
+
+<Preview>
+    <Story name="FirestoreTable">{stories.basicFirestoreTableRealTime()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={FirestoreTable} />

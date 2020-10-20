@@ -67,10 +67,6 @@ const colors = {
     arrived: { backgroundColor: '#4dc9cb', color: '#fff' },
 };
 
-const CustomColoredStatusColumn = ({ ...props }) => (
-    <ColoredStatusColumn {...props} colors={colors} />
-);
-
 export const customColoredStatusColumn = () => {
     return (
         <Application>
@@ -79,7 +75,13 @@ export const customColoredStatusColumn = () => {
                     <Column header="Customer" field="customer" />
                     <Column header="Email" field="email" />
                     <Column header="Tracking Number" field="trackingNumber" />
-                    <Column header="Status" field="status" component={CustomColoredStatusColumn} />
+                    <Column
+                        header="Status"
+                        field="status"
+                        colors={colors}
+                        textTransform="uppercase"
+                        component={ColoredStatusColumn}
+                    />
                 </Table>
             </Container>
         </Application>
@@ -87,5 +89,5 @@ export const customColoredStatusColumn = () => {
 };
 
 export default {
-    title: 'Modules|Listview/Stories',
+    title: 'Modules|Listview/Stories/ColoredStatusColumn',
 };

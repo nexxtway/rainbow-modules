@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/nexxtway/rainbow-modules/compare/v0.3.2...v0.4.0) (2020-10-19)
+
+### Bug Fixes
+
+-   app message z-index ([83b4428](https://github.com/nexxtway/rainbow-modules/commit/83b44281bd50ce1435c1389f369880996f0bdd3a))
+-   call onRenderRoute with null when not valid two waypoints ([4ed6ba2](https://github.com/nexxtway/rainbow-modules/commit/4ed6ba24156766249862e4ccedacbdb03e519e4a))
+-   changed coloredstatuscolumn stories ([#159](https://github.com/nexxtway/rainbow-modules/issues/159)) ([7da7f0d](https://github.com/nexxtway/rainbow-modules/commit/7da7f0da0bb68cf109d204ef5d80c92fe22795e8))
+-   export showAppNotification in app module ([9ee96ca](https://github.com/nexxtway/rainbow-modules/commit/9ee96cae1c108d2e37e85ebdcd69ea2b10a63499))
+-   react to center change mapbox Map ([2b1176c](https://github.com/nexxtway/rainbow-modules/commit/2b1176c3b2704c1d316c4a73c5624170f1e95037))
+-   z-index in app notification ([8bd8d53](https://github.com/nexxtway/rainbow-modules/commit/8bd8d53393995782cd08af4b5edaafac33a5080a))
+
+### Features
+
+-   add avatar and focus icons ([#155](https://github.com/nexxtway/rainbow-modules/issues/155)) ([5c50509](https://github.com/nexxtway/rainbow-modules/commit/5c505093d040a954a96d1db65cb7b65e3210d881))
+-   add onRenderRoute prop to mapbox Route component ([e60a690](https://github.com/nexxtway/rainbow-modules/commit/e60a6908f573266a7dcfc9f882732f5155e27e92))
+-   implement CreditCardPicker ([#163](https://github.com/nexxtway/rainbow-modules/issues/163)) ([7bc3ce2](https://github.com/nexxtway/rainbow-modules/commit/7bc3ce2ec94f47e979a23f0d0677eef0184e3259))
+-   implement UniversalPicker ([#156](https://github.com/nexxtway/rainbow-modules/issues/156)) ([03485a7](https://github.com/nexxtway/rainbow-modules/commit/03485a71f3c9f0ca1f2fd724d5609c0d372f9470))
+
 ## [0.3.2](https://github.com/nexxtway/rainbow-modules/compare/v0.3.1...v0.3.2) (2020-10-09)
 
 ### Bug Fixes

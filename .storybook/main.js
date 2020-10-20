@@ -33,6 +33,7 @@ module.exports = {
                     __dirname,
                     '../packages/firebase-hooks/src/index.js',
                 ),
+                '@rainbow-modules/forms': path.join(__dirname, '../packages/forms/src/index.js'),
                 '@rainbow-modules/hooks': path.join(__dirname, '../packages/hooks/src/index.js'),
                 '@rainbow-modules/listview': path.join(
                     __dirname,
@@ -45,6 +46,10 @@ module.exports = {
                 '@rainbow-modules/validation': path.join(
                     __dirname,
                     '../packages/validation/src/index.js',
+                ),
+                '@rainbow-modules/payment': path.join(
+                    __dirname,
+                    '../packages/payment/src/index.js',
                 ),
             },
         };
