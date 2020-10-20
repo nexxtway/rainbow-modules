@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/nexxtway/rainbow-modules/compare/v0.3.2...v0.4.0) (2020-10-19)
+
+### Bug Fixes
+
+-   app message z-index ([83b4428](https://github.com/nexxtway/rainbow-modules/commit/83b44281bd50ce1435c1389f369880996f0bdd3a))
+-   export showAppNotification in app module ([9ee96ca](https://github.com/nexxtway/rainbow-modules/commit/9ee96cae1c108d2e37e85ebdcd69ea2b10a63499))
+-   z-index in app notification ([8bd8d53](https://github.com/nexxtway/rainbow-modules/commit/8bd8d53393995782cd08af4b5edaafac33a5080a))
+
 # 0.3.0 (2020-10-08)
 
 ### Bug Fixes

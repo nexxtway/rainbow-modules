@@ -34,7 +34,8 @@ export default function ImageGallery(props) {
             await imageRef.delete();
             setImageRefs(imageRefs.filter((item) => item.fullPath !== imageRef.fullPath));
         } catch (error) {
-            console.log('Uh-oh, an error occurred!', error);
+            // eslint-disable-next-line no-console
+            console.error(error);
         }
     };
 
