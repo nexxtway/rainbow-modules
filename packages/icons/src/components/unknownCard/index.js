@@ -7,76 +7,29 @@ const UnknownCard = (props) => {
         <svg
             className={className}
             style={style}
-            width="52px"
-            height="37px"
-            viewBox="0 0 52 37"
+            width="50px"
+            height="35px"
+            viewBox="0 0 50 35"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
         >
             <title>unknown</title>
-            <defs>
-                <path
-                    d="M47.0444336,33.6 L2.95556641,33.6 C1.32324219,33.6 0,32.3105141 0,30.7198532 L0,2.88005166 C0,1.28939073 1.32324219,1.81188398e-13 2.95556641,1.81188398e-13 L47.0444336,1.81188398e-13 C48.6768555,1.81188398e-13 50,1.28948589 50,2.88005166 L50,30.7198532 C50,32.3105141 48.6767578,33.6 47.0444336,33.6 Z"
-                    id="path-1"
-                />
-                <filter
-                    x="-3.5%"
-                    y="-5.2%"
-                    width="107.0%"
-                    height="110.4%"
-                    filterUnits="objectBoundingBox"
-                    id="filter-2"
-                >
-                    <feMorphology
-                        radius="0.25"
-                        operator="dilate"
-                        in="SourceAlpha"
-                        result="shadowSpreadOuter1"
-                    />
-                    <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1" />
-                    <feGaussianBlur
-                        stdDeviation="0.5"
-                        in="shadowOffsetOuter1"
-                        result="shadowBlurOuter1"
-                    />
-                    <feComposite
-                        in="shadowBlurOuter1"
-                        in2="SourceAlpha"
-                        operator="out"
-                        result="shadowBlurOuter1"
-                    />
-                    <feColorMatrix
-                        values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.174579327 0"
-                        type="matrix"
-                        in="shadowBlurOuter1"
-                    />
-                </filter>
-            </defs>
             <g id="modules" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="rainbow-UniversalPicker-"
-                    transform="translate(-331.000000, -102.000000)"
+                    transform="translate(-322.000000, -122.000000)"
                     fillRule="nonzero"
                 >
-                    <g id="unknown" transform="translate(333.000000, 104.200000)">
-                        <g id="Shape">
-                            <use
-                                fill="black"
-                                fillOpacity="1"
-                                filter="url(#filter-2)"
-                                xlinkHref="#path-1"
-                            />
-                            <use
-                                stroke="#EBEDF1"
-                                strokeWidth="0.5"
-                                fill="#EBEDF1"
-                                xlinkHref="#path-1"
-                            />
-                        </g>
+                    <g id="unknown" transform="translate(322.000000, 122.200000)">
+                        <path
+                            d="M47.0444336,33.6 L2.95556641,33.6 C1.32324219,33.6 0,32.3105141 0,30.7198532 L0,2.88005166 C0,1.28939073 1.32324219,1.81188398e-13 2.95556641,1.81188398e-13 L47.0444336,1.81188398e-13 C48.6768555,1.81188398e-13 50,1.28948589 50,2.88005166 L50,30.7198532 C50,32.3105141 48.6767578,33.6 47.0444336,33.6 Z"
+                            id="Shape"
+                            fill="#EBEDF1"
+                        />
                         <path
                             d="M15.4545455,6.8 C16.8603612,6.8 18,7.80735931 18,9.05 L18,13.55 C18,14.7926407 16.8603612,15.8 15.4545455,15.8 L6.54545455,15.8 C5.13963882,15.8 4,14.7926407 4,13.55 L4,9.05 C4,7.80735931 5.13963882,6.8 6.54545455,6.8 L15.4545455,6.8 Z"
-                            id="Rectangle-Copy"
+                            id="Path"
                             fill="#FFFFFF"
                         />
                         <path
