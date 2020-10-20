@@ -1,0 +1,27 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import CreditCardPicker from '../../src/components/CreditCardPicker';
+import * as stories from '../stories/CreditCardPicker.story.js';
+
+<Meta title="Modules|Payment/Components" component={CreditCardPicker} />
+
+# Overview
+
+`CreditCardPicker` is a component for select, add or remove credit cards.
+
+### Internationalization FormattedMessage keys
+
+-   CreditCardPicker.newCreditCardLabel: label of the new credit card button
+-   CreditCardPicker.ConfirmationModal.header: header text of the confirmation modal when remove a card
+-   CreditCardPicker.ConfirmationModal.question: question text of the confirmation modal when remove a card
+-   CreditCardPicker.ConfirmationModal.okButtonLabel: ok button label of the confirmation modal when remove a card
+-   CreditCardPicker.ConfirmationModal.cancelButtonLabel: cancel button label of the confirmation modal when remove a card
+
+### This is a basic example.
+
+<Preview>
+    <Story name="CreditCardPicker">{stories.BasicCreditCardPicker()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={CreditCardPicker} />

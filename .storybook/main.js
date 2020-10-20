@@ -47,6 +47,10 @@ module.exports = {
                     __dirname,
                     '../packages/validation/src/index.js',
                 ),
+                '@rainbow-modules/payment': path.join(
+                    __dirname,
+                    '../packages/payment/src/index.js',
+                ),
             },
         };
         return config;

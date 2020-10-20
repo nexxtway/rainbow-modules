@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/nexxtway/rainbow-modules/compare/v0.3.2...v0.4.0) (2020-10-19)
+
+### Features
+
+-   add avatar and focus icons ([#155](https://github.com/nexxtway/rainbow-modules/issues/155)) ([5c50509](https://github.com/nexxtway/rainbow-modules/commit/5c505093d040a954a96d1db65cb7b65e3210d881))
+-   implement CreditCardPicker ([#163](https://github.com/nexxtway/rainbow-modules/issues/163)) ([7bc3ce2](https://github.com/nexxtway/rainbow-modules/commit/7bc3ce2ec94f47e979a23f0d0677eef0184e3259))
+-   implement UniversalPicker ([#156](https://github.com/nexxtway/rainbow-modules/issues/156)) ([03485a7](https://github.com/nexxtway/rainbow-modules/commit/03485a71f3c9f0ca1f2fd724d5609c0d372f9470))
+
 # 0.3.0 (2020-10-08)
 
 ### Bug Fixes
