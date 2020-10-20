@@ -37,6 +37,7 @@ import {
     UnionPay,
     NewCard,
     UnknownCard,
+    DinersClub,
 } from '../../../src';
 
 export default [
@@ -219,6 +220,11 @@ export default [
         name: 'unionPay',
         category: 'custom',
         icon: UnionPay,
+    },
+    {
+        name: 'dinersClub',
+        category: 'custom',
+        icon: DinersClub,
     },
     {
         name: 'newCard',

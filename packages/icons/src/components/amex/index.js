@@ -7,75 +7,32 @@ const Amex = (props) => {
         <svg
             className={className}
             style={style}
-            width="52px"
-            height="37px"
-            viewBox="0 0 52 37"
+            width="51px"
+            height="36px"
+            viewBox="0 0 51 36"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
         >
-            <title>american-express</title>
-            <defs>
-                <path
-                    d="M45.79875,33.6 L2.87730634,33.6 C1.28820423,33.6 1.59872116e-13,32.3105141 1.59872116e-13,30.7198532 L1.59872116e-13,2.88005166 C1.59872116e-13,1.28939073 1.28820423,1.81188398e-13 2.87730634,1.81188398e-13 L45.79875,1.81188398e-13 C47.3879472,1.81188398e-13 48.6760563,1.28948589 48.6760563,2.88005166 L48.6760563,30.7198532 C48.6760563,32.3105141 47.3878521,33.6 45.79875,33.6 Z"
-                    id="path-1"
-                />
-                <filter
-                    x="-3.6%"
-                    y="-5.2%"
-                    width="107.2%"
-                    height="110.4%"
-                    filterUnits="objectBoundingBox"
-                    id="filter-2"
-                >
-                    <feMorphology
-                        radius="0.25"
-                        operator="dilate"
-                        in="SourceAlpha"
-                        result="shadowSpreadOuter1"
-                    />
-                    <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1" />
-                    <feGaussianBlur
-                        stdDeviation="0.5"
-                        in="shadowOffsetOuter1"
-                        result="shadowBlurOuter1"
-                    />
-                    <feComposite
-                        in="shadowBlurOuter1"
-                        in2="SourceAlpha"
-                        operator="out"
-                        result="shadowBlurOuter1"
-                    />
-                    <feColorMatrix
-                        values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.15 0"
-                        type="matrix"
-                        in="shadowBlurOuter1"
-                    />
-                </filter>
-            </defs>
+            <title>amex</title>
             <g id="modules" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
-                    id="rainbow-UniversalPicker--Copy"
-                    transform="translate(-453.000000, -209.000000)"
+                    id="rainbow-UniversalPicker-"
+                    transform="translate(-359.000000, -222.000000)"
                     fillRule="nonzero"
                 >
-                    <g id="american-express" transform="translate(455.000000, 211.033333)">
-                        <g id="Shape">
-                            <use
-                                fill="black"
-                                fillOpacity="1"
-                                filter="url(#filter-2)"
-                                xlinkHref="#path-1"
-                            />
-                            <use
-                                strokeOpacity="0.501857517"
-                                stroke="#E7EAEE"
-                                strokeWidth="0.5"
-                                fill="#FFFFFF"
-                                xlinkHref="#path-1"
-                            />
-                        </g>
-                        <g transform="translate(3.000000, 9.966667)">
+                    <g id="amex" transform="translate(359.750000, 222.950000)">
+                        <path
+                            d="M46.04875,33.85 L3.12730634,33.85 C1.53820423,33.85 0.25,32.5605141 0.25,30.9698532 L0.25,3.13005166 C0.25,1.53939073 1.53820423,0.25 3.12730634,0.25 L46.04875,0.25 C47.6379472,0.25 48.9260563,1.53948589 48.9260563,3.13005166 L48.9260563,30.9698532 C48.9260563,32.5605141 47.6378521,33.85 46.04875,33.85 Z"
+                            id="Shape"
+                            fill="#FBFBFC"
+                        />
+                        <path
+                            d="M46.04875,1.88293825e-13 L3.12730634,1.88293825e-13 C1.40006551,1.88293825e-13 1.70530257e-13,1.40138703 1.70530257e-13,3.13005166 L1.70530257e-13,30.9698532 C1.70530257e-13,32.6985334 1.40008109,34.1 3.12730634,34.1 L46.04875,34.1 C47.7759753,34.1 49.1760563,32.6985334 49.1760563,30.9698532 L49.1760563,3.13005166 C49.1760563,1.40141901 47.7760228,1.88293825e-13 46.04875,1.88293825e-13 Z M3.12730634,0.5 L46.04875,0.5 C47.4997696,0.5 48.6760563,1.67745074 48.6760563,3.13005166 L48.6760563,30.9698532 C48.6760563,32.4225017 47.4997221,33.6 46.04875,33.6 L3.12730634,33.6 C1.67633423,33.6 0.5,32.4225017 0.5,30.9698532 L0.5,3.13005166 C0.5,1.67742386 1.67631354,0.5 3.12730634,0.5 Z"
+                            id="border"
+                            fill="#EDEFF2"
+                        />
+                        <g id="american-express" transform="translate(3.250000, 10.050000)">
                             <polygon
                                 id="Path"
                                 fill="#2FABF7"
