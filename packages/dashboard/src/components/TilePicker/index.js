@@ -80,7 +80,7 @@ export default function TilePicker(props) {
                             onClick={() => setCurrent((previous) => previous - 1)}
                         />
                     </RenderIf>
-                    <StylesScrollable ref={scrollableRef}>
+                    <StylesScrollable ref={scrollableRef} style={{ margin: '0px' }}>
                         <StyledUniversalPicker
                             value={value}
                             onChange={onChange}

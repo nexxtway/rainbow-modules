@@ -38,7 +38,7 @@ describe('<Tile />', () => {
 
     it('should render a input type radio when the context prop multiple is false', () => {
         const wrapper = mount(
-            <TilePicker multiple={false}>
+            <TilePicker>
                 <Tile />
             </TilePicker>,
         );

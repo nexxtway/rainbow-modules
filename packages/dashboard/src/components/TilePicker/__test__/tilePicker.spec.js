@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { Application } from 'react-rainbow-components';
 import TilePicker from '..';
 import Tile from '../../Tile';
 
@@ -26,11 +25,9 @@ describe('<TilePicker />', () => {
         const onChangeMock = jest.fn();
         const name = 'option-1';
         const wrapper = mount(
-            <Application>
-                <TilePicker onChange={onChangeMock}>
-                    <Tile name={name} />
-                </TilePicker>
-            </Application>,
+            <TilePicker onChange={onChangeMock}>
+                <Tile name={name} />
+            </TilePicker>,
         );
 
         wrapper
@@ -44,11 +41,9 @@ describe('<TilePicker />', () => {
         const onChangeMock = jest.fn();
         const name = 'option-1';
         const wrapper = mount(
-            <Application>
-                <TilePicker onChange={onChangeMock} multiple>
-                    <Tile name={name} />
-                </TilePicker>
-            </Application>,
+            <TilePicker onChange={onChangeMock} multiple>
+                <Tile name={name} />
+            </TilePicker>,
         );
 
         wrapper
@@ -62,11 +57,9 @@ describe('<TilePicker />', () => {
         const onChangeMock = jest.fn();
         const name = 'option-1';
         const wrapper = mount(
-            <Application>
-                <TilePicker onChange={onChangeMock} multiple>
-                    <Tile name={name} />
-                </TilePicker>
-            </Application>,
+            <TilePicker onChange={onChangeMock} multiple>
+                <Tile name={name} />
+            </TilePicker>,
         );
 
         wrapper
@@ -80,11 +73,9 @@ describe('<TilePicker />', () => {
         const onChangeMock = jest.fn();
         const name = 'option-1';
         const wrapper = mount(
-            <Application>
-                <TilePicker value={[]} onChange={onChangeMock} multiple>
-                    <Tile name={name} />
-                </TilePicker>
-            </Application>,
+            <TilePicker value={[]} onChange={onChangeMock} multiple>
+                <Tile name={name} />
+            </TilePicker>,
         );
 
         wrapper
@@ -98,11 +89,9 @@ describe('<TilePicker />', () => {
         const onChangeMock = jest.fn();
         const name = 'option-1';
         const wrapper = mount(
-            <Application>
-                <TilePicker value={[name]} onChange={onChangeMock} multiple>
-                    <Tile name={name} />
-                </TilePicker>
-            </Application>,
+            <TilePicker value={[name]} onChange={onChangeMock} multiple>
+                <Tile name={name} />
+            </TilePicker>,
         );
 
         wrapper
@@ -110,5 +99,17 @@ describe('<TilePicker />', () => {
             .first()
             .simulate('change', { target: { checked: false } });
         expect(onChangeMock).toBeCalledWith([]);
+    });
+
+    it('should render a carousel when the option is overflow', () => {
+        const wrapper = mount(
+            <TilePicker>
+                <Tile name="option-1" />
+                <Tile name="option-2" />
+                <Tile name="option-3" />
+            </TilePicker>,
+        );
+
+        expect(wrapper.find('ButtonIcon').length).toBe(2);
     });
 });
