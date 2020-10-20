@@ -38,7 +38,7 @@ export default function CreditCardPicker(props) {
             id={id}
         >
             <RenderIf isTrue={showAddCreditCardButton}>
-                <AddNewCardButton as="button" onClick={onAdd}>
+                <AddNewCardButton as="button" onClick={onAdd} type="button">
                     <NewCard />
                     <StyledLabelNewCard>{newCreditCardLabel}</StyledLabelNewCard>
                 </AddNewCardButton>

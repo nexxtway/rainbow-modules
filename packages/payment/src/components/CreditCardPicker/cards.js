@@ -66,7 +66,7 @@ export default function Cards({ options, onRemove }) {
         const CardIcon = cardsIconMap[brand.toLowerCase()] || UnknownCard;
 
         return (
-            <UniversalPickerOption component={Option} name={id} disabled={disabled}>
+            <UniversalPickerOption key={id} component={Option} name={id} disabled={disabled}>
                 <StyledContent>
                     <RightContent>
                         <CardIcon />
