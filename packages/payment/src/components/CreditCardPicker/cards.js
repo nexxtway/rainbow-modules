@@ -73,6 +73,7 @@ export default function Cards({ options, onRemove }) {
                         <CardInfo>
                             <StyledNumberCard>{`•••• ${last4}`}</StyledNumberCard>
                             <RenderIf isTrue={hasExpirationDate}>
+                                {/* TODO: Localize expires text */}
                                 <StyledLabelCard>{`Expires ${expires}`}</StyledLabelCard>
                             </RenderIf>
                         </CardInfo>
