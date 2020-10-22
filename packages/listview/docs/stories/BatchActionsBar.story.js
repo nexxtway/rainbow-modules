@@ -40,7 +40,7 @@ const Container = styled.div`
 
 const StyledStatus = styled.div`
     text-transform: capitalize;
-    color: #ffffff;
+    color: #fff;
     background-color: #f2707a;
 `;
 
