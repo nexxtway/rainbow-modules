@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 const functions = require('firebase-functions');
 
 const { secret_key, customer_id } = functions.config().stripe;

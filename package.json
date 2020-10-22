@@ -7,7 +7,7 @@
         "build-storybook": "build-storybook",
         "start": "start-storybook -p 5555 -s ./getting-started/assets",
         "dev": "yarn start",
-        "lint:js": "eslint . --ext .js --ignore-pattern lib --ignore-pattern node_modules",
+        "lint:js": "eslint . --ext .js --ignore-pattern lib --ignore-pattern node_modules --ignore-pattern functions",
         "lint:styles": "stylelint './packages/**/*.js'",
         "lint": "yarn lint:js && yarn lint:styles",
         "test": "jest ./packages --verbose",
