@@ -51,7 +51,7 @@ export const StyledNotification = styled.div`
         text-indent: -1000em;
     }
 
-    :nth-child(n+6) {
+    :nth-child(n + 6) {
         display: none;
     }
 
