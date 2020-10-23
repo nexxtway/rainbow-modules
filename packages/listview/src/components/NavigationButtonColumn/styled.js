@@ -14,6 +14,6 @@ export const StyledButton = styled.button`
     text-decoration: none;
 
     :hover {
-        box-shadow: 0px 4px 6px -5px ${(props) => props.theme.rainbow.palette.text.main};
+        box-shadow: 0 4px 6px -5px ${(props) => props.theme.rainbow.palette.text.main};
     }
 `;
