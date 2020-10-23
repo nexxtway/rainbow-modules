@@ -12,6 +12,7 @@ export const StyledButton = styled.button`
     line-height: 5px;
     text-align: center;
     text-decoration: none;
+
     :hover {
         box-shadow: 0px 4px 6px -5px ${(props) => props.theme.rainbow.palette.text.main};
     }
