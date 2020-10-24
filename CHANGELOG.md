@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/nexxtway/rainbow-modules/compare/v0.4.0...v0.5.0) (2020-10-22)
+
+### Bug Fixes
+
+-   ad stripe env variable to CI ([64377c9](https://github.com/nexxtway/rainbow-modules/commit/64377c9dcc4a4c9546976f6889c589d3774c69c9))
+-   card icons ([#164](https://github.com/nexxtway/rainbow-modules/issues/164)) ([c1d5346](https://github.com/nexxtway/rainbow-modules/commit/c1d5346f0ed6214a32dba9854eae040decb19a9a))
+-   some fixes in CreditCardPicker ([50aca8b](https://github.com/nexxtway/rainbow-modules/commit/50aca8bcc08fbdfdb9e531933a4955c0bdb8991e))
+
+### Features
+
+-   implement StripeCheckoutModal ([3b274fc](https://github.com/nexxtway/rainbow-modules/commit/3b274fc7090d0a59edcbbefd75101844bc2ddb38))
+
 # [0.4.0](https://github.com/nexxtway/rainbow-modules/compare/v0.3.2...v0.4.0) (2020-10-19)
 
 ### Bug Fixes

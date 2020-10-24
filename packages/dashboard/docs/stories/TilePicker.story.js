@@ -102,7 +102,7 @@ export const MultipleSelection = () => {
     );
 };
 
-export const Carusel = () => {
+export const Carousel = () => {
     const [value, setValue] = useState();
     return (
         <Application>

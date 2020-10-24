@@ -20,7 +20,8 @@ export default function TileOption(props) {
 
     useEffect(() => {
         if (isFocused) {
-            setTimeout(() => setFocused(ref));
+            // setTimeout(() => setFocused(ref));
+            setFocused(ref);
         }
     }, [isFocused, setFocused]);
 

@@ -66,13 +66,14 @@ export default function Cards({ options, onRemove }) {
         const CardIcon = cardsIconMap[brand.toLowerCase()] || UnknownCard;
 
         return (
-            <UniversalPickerOption component={Option} name={id} disabled={disabled}>
+            <UniversalPickerOption key={id} component={Option} name={id} disabled={disabled}>
                 <StyledContent>
                     <RightContent>
                         <CardIcon />
                         <CardInfo>
                             <StyledNumberCard>{`•••• ${last4}`}</StyledNumberCard>
                             <RenderIf isTrue={hasExpirationDate}>
+                                {/* TODO: Localize expires text */}
                                 <StyledLabelCard>{`Expires ${expires}`}</StyledLabelCard>
                             </RenderIf>
                         </CardInfo>
