@@ -6,14 +6,18 @@ export const StyledButton = styled.button`
     height: 28px;
     border: none;
     border-radius: 8px;
-    background-color: ${(props) => props.theme.rainbow.palette.border.disabled};
-    border-color: ${(props) => props.theme.rainbow.palette.border.disabled};
+    background-color: ${(props) => props.theme.rainbow.palette.background.hightlight};
     color: ${(props) => props.theme.rainbow.palette.text.main};
     line-height: 5px;
     text-align: center;
     text-decoration: none;
 
     :hover {
-        box-shadow: 0 4px 6px -5px ${(props) => props.theme.rainbow.palette.text.main};
+        box-shadow: ${(props) => props.theme.rainbow.shadows.shadow_2};
+    }
+
+    :focus {
+        box-shadow: ${(props) => props.theme.rainbow.shadows.shadow_2};
+        outline: none;
     }
 `;
