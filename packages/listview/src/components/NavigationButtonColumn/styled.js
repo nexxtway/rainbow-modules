@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
 
 // eslint-disable-next-line import/prefer-default-export
-export const StyledButton = styled.button`
+export const StyledButton = attachThemeAttrs(styled.button)`
     width: 90%;
     height: 28px;
     border: none;
