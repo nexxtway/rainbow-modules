@@ -71,6 +71,7 @@ jobs:
                       echo STORYBOOK_APP_ID=$STORYBOOK_APP_ID >> .env;
                       echo STORYBOOK_MAPBOX_ACCESS_TOKEN=$STORYBOOK_MAPBOX_ACCESS_TOKEN >> .env;
                       echo STORYBOOK_GOOGLE_MAPS_API_KEY=$STORYBOOK_GOOGLE_MAPS_API_KEY >> .env;
+                      echo STORYBOOK_STRIPE_APIKEY=$STORYBOOK_STRIPE_APIKEY >> .env;
 
             - run: yarn deploy --token=$FIREBASE_TOKEN
 
