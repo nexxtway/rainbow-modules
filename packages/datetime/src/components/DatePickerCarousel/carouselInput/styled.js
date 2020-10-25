@@ -12,7 +12,7 @@ export const StyledLabelContainer = styled.div`
 export const StyledLabel = styled.button`
     font-size: 1.5rem;
     font-weight: 800;
-    color: ${(props) => props.theme.rainbow.palette.brand.main};
+    color: ${(props) => props.theme.rainbow.palette.text.main};
     border: 1px solid transparent;
     border-radius: 40px;
     background: transparent;
@@ -37,6 +37,7 @@ export const StyledLabel = styled.button`
 
     & > svg {
         margin-left: 0.5rem;
+        color: ${(props) => props.theme.rainbow.palette.brand.main};
     }
 
     ::-moz-focus-inner {
@@ -53,16 +54,19 @@ export const StyledLabel = styled.button`
 
     &:hover,
     &:focus {
-        color: ${(props) => props.theme.rainbow.palette.brand.dark};
+        background: ${(props) => props.theme.rainbow.palette.background.main};
+        box-shadow: ${(props) => props.theme.rainbow.shadows.shadow_4};
     }
 
     &:focus {
         outline: 0;
-        border: 1px solid ${(props) => props.theme.rainbow.palette.brand.dark};
+        background: ${(props) => props.theme.rainbow.palette.background.main};
+        box-shadow: ${(props) => props.theme.rainbow.shadows.shadow_4};
     }
 
     &:active {
-        color: ${(props) => props.theme.rainbow.palette.brand.dark};
+        background: ${(props) => props.theme.rainbow.palette.background.main};
+        box-shadow: ${(props) => props.theme.rainbow.shadows.shadow_4};
         transition: all 0.2s ease;
     }
 `;
