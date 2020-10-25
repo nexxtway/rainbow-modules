@@ -21,6 +21,57 @@ export const simpleTile = () => {
     );
 };
 
+export const TileWithBadgeVariant = () => {
+    return (
+        <Application>
+            <StyledContainer>
+                <Tile
+                    name="tile-1"
+                    label="Total"
+                    value={125}
+                    variant="badge"
+                    className="rainbow-m-right_medium"
+                />
+                <Tile
+                    name="tile-2"
+                    label="Completed"
+                    value={12}
+                    variant="badge"
+                    backgroundColor="#9dc35e"
+                    color="#fff"
+                    className="rainbow-m-right_medium"
+                />
+                <Tile
+                    name="tile-3"
+                    label="Assigned"
+                    value={6}
+                    variant="badge"
+                    backgroundColor="#71d4d6"
+                    color="#fff"
+                    className="rainbow-m-right_medium"
+                />
+                <Tile
+                    name="tile-4"
+                    label="Pending"
+                    value={86}
+                    variant="badge"
+                    backgroundColor="#f4d87a"
+                    color="#fff"
+                    className="rainbow-m-right_medium"
+                />
+                <Tile
+                    name="tile-5"
+                    label="Canceled"
+                    value={12}
+                    variant="badge"
+                    backgroundColor="#f2707a"
+                    color="#fff"
+                />
+            </StyledContainer>
+        </Application>
+    );
+};
+
 export const differentsColorsTite = () => {
     const tileStyle = { marginBottom: 10, marginRight: 5, marginLeft: 5 };
     return (

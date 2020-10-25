@@ -40,3 +40,4 @@ export { default as JCB } from './components/jcb';
 export { default as UnionPay } from './components/unionPay';
 export { default as NewCard } from './components/newCard';
 export { default as UnknownCard } from './components/unknownCard';
+export { default as FilterFilled } from './components/filterFilled';

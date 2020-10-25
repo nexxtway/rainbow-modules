@@ -38,6 +38,7 @@ import {
     NewCard,
     UnknownCard,
     DinersClub,
+    FilterFilled,
 } from '../../../src';
 
 export default [
@@ -235,5 +236,10 @@ export default [
         name: 'unknownCard',
         category: 'custom',
         icon: UnknownCard,
+    },
+    {
+        name: 'filterFilled',
+        category: 'standard',
+        icon: FilterFilled,
     },
 ];
