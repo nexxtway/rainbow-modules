@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/nexxtway/rainbow-modules/compare/v0.6.0...v0.7.0) (2020-10-26)
+
+### Features
+
+-   add search icon ([#177](https://github.com/nexxtway/rainbow-modules/issues/177)) ([a8cf780](https://github.com/nexxtway/rainbow-modules/commit/a8cf780d553fe3cb817e31ccd38ffd572584b608))
+
 # [0.6.0](https://github.com/nexxtway/rainbow-modules/compare/v0.4.0...v0.6.0) (2020-10-26)
 
 ### Bug Fixes
