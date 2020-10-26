@@ -69,6 +69,7 @@ export const BasicCreditCardPicker = () => {
                 onChange={setValue}
                 value={value}
                 options={options}
+                labelAlignment="left"
             />
         </RainbowFirebaseApp>
     );
