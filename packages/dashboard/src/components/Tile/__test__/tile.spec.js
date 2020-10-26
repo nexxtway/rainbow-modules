@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import { Application } from 'react-rainbow-components';
 import Tile from '..';
 import { Provider } from '../../TilePicker/context';
-import { StyledContent, StyledValue } from '../styled';
+import { StyledContent } from '../styled';
 
 describe('<Tile />', () => {
     it('should render a simple div content when do not have TilePicker context', () => {
