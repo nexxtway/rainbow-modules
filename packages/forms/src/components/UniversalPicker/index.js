@@ -14,6 +14,7 @@ export default function UniversalPicker(props) {
         name,
         style,
         label,
+        labelAlignment,
         required,
         error,
         id,
@@ -59,7 +60,7 @@ export default function UniversalPicker(props) {
     return (
         <StyledContainer id={id} className={className} style={style}>
             <RenderIf isTrue={!!label}>
-                <StyledLabel>
+                <StyledLabel labelAlignment={labelAlignment}>
                     <RequiredAsterisk required={required} />
                     {label}
                 </StyledLabel>
@@ -91,6 +92,9 @@ UniversalPicker.propTypes = {
     required: PropTypes.bool,
     /** The title at the top of the UniversalPicker component. */
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+    /** Describes the position of the UniversalPicker label. Options include left, center and right.
+     * This value defaults to center. */
+    labelAlignment: PropTypes.oneOf(['left', 'center', 'right']),
     /** Specifies that an UniversalPicker must be filled out before submitting the form. */
     error: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     /** The size of the UniversalPicker. Valid values are small, medium, and large.
@@ -117,6 +121,7 @@ UniversalPicker.defaultProps = {
     multiple: false,
     required: false,
     label: '',
+    labelAlignment: 'center',
     error: null,
     size: 'medium',
     direction: 'horizontal',
