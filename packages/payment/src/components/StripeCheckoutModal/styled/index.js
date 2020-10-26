@@ -3,7 +3,7 @@ import { StripeCardInput, Button, Modal } from 'react-rainbow-components';
 
 export const ModalContainer = styled(Modal)`
     width: 410px;
-    height: 420px;
+    height: 400px;
     min-height: 400px;
     max-height: 400px;
 `;
