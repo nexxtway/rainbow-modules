@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/nexxtway/rainbow-modules/compare/v0.4.0...v0.6.0) (2020-10-26)
+
+### Bug Fixes
+
+-   add defaultCenter to mapbox Map ([8de4a2e](https://github.com/nexxtway/rainbow-modules/commit/8de4a2e50bfb6cc8d8d159c3fa2839f41046ffc5))
+
+### Features
+
+-   implement StripeCheckoutModal ([#170](https://github.com/nexxtway/rainbow-modules/issues/170)) ([acb66e7](https://github.com/nexxtway/rainbow-modules/commit/acb66e7965d642c1d5228eabfeffe67d4656a931))
+
 # [0.5.0](https://github.com/nexxtway/rainbow-modules/compare/v0.4.0...v0.5.0) (2020-10-22)
 
 **Note:** Version bump only for package @rainbow-modules/app
