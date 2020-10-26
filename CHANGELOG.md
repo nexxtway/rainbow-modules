@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.1](https://github.com/nexxtway/rainbow-modules/compare/v0.7.0...v0.7.1) (2020-10-26)
+
+### Bug Fixes
+
+-   add labelAlignment on CreditCardPicker component ([#179](https://github.com/nexxtway/rainbow-modules/issues/179)) ([351baac](https://github.com/nexxtway/rainbow-modules/commit/351baac0df8b00b7e1ccd7552fb40f08806399d7))
+
 # [0.7.0](https://github.com/nexxtway/rainbow-modules/compare/v0.6.0...v0.7.0) (2020-10-26)
 
 ### Bug Fixes
