@@ -55,7 +55,7 @@ const Label = styled.h3.attrs((props) => props.theme.rainbow)`
     font-weight: normal;
     text-align: center;
     color: ${(props) => props.palette.brand.main};
-    margin: 8px 0;
+    margin-top: 120px;
 `;
 
 const Description = styled.p.attrs((props) => props.theme.rainbow)`
