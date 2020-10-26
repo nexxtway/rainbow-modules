@@ -68,26 +68,4 @@ describe('<Tile />', () => {
             .simulate('change', { target: { checked: true } });
         expect(onChangeMock).toBeCalledWith(name, true);
     });
-
-    it('should render a component to the background color passed ', () => {
-        const backgroundColor = '#000000';
-        const wrapper = mount(
-            <Application>
-                <Tile backgroundColor={backgroundColor} />
-            </Application>,
-        );
-        expect(wrapper.find(StyledContent).first().prop('style')).toStrictEqual({
-            backgroundColor,
-        });
-    });
-
-    it('should render a component to the color passed', () => {
-        const color = '#ffffff';
-        const wrapper = mount(
-            <Application>
-                <Tile color={color} />
-            </Application>,
-        );
-        expect(wrapper.find(StyledValue).first().prop('style')).toStrictEqual({ color });
-    });
 });
