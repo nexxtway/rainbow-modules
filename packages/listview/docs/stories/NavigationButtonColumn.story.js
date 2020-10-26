@@ -12,7 +12,7 @@ const initialData = [
         status: 'canceled',
         id: '1234qwerty',
         company: 'Google',
-        createdAt: '09/06/2020 09:)) AM',
+        createdAt: '09/06/2020 09:00 AM',
     },
     {
         name: 'John Snow',
@@ -21,7 +21,7 @@ const initialData = [
         status: 'delivered',
         id: '1234asdfgh',
         company: 'Google',
-        createdAt: '09/06/2020 09:)) AM',
+        createdAt: '09/06/2020 09:00 AM',
     },
     {
         name: 'Anna Adams',
@@ -30,7 +30,7 @@ const initialData = [
         status: 'pending',
         id: '1234zxcvbn',
         company: 'Google',
-        createdAt: '09/06/2020 09:)) AM',
+        createdAt: '09/06/2020 09:00 AM',
     },
     {
         name: 'William Adams',
@@ -39,7 +39,7 @@ const initialData = [
         status: 'arrived',
         id: '5678qwerty',
         company: 'Google',
-        createdAt: '09/06/2020 09:)) AM',
+        createdAt: '09/06/2020 09:00 AM',
     },
     {
         name: 'Joe Smith',
@@ -48,7 +48,7 @@ const initialData = [
         status: 'arrived',
         id: '5678asdfgh',
         company: 'Google',
-        createdAt: '09/06/2020 09:)) AM',
+        createdAt: '09/06/2020 09:00 AM',
     },
     {
         name: 'John Doe',
@@ -57,7 +57,7 @@ const initialData = [
         status: 'arrived',
         id: '5278aswegh',
         company: 'Google',
-        createdAt: '09/06/2020 09:)) AM',
+        createdAt: '09/06/2020 09:00 AM',
     },
     {
         name: 'Jane Adams',
@@ -66,7 +66,7 @@ const initialData = [
         status: 'arrived',
         id: '5178aswegh',
         company: 'Google',
-        createdAt: '09/06/2020 09:)) AM',
+        createdAt: '09/06/2020 09:00 AM',
     },
 ];
 
