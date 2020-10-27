@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { Button, Table, Column, RenderIf } from 'react-rainbow-components';
-import { Error, Trash } from '@rainbow-modules/icons';
+import { Button, Table, Column, RenderIf, Application } from 'react-rainbow-components';
+import { Edit, Trash } from '@rainbow-modules/icons';
 import BatchActionsBar from '../../src/components/BatchActionsBar';
 import { dataTable } from './data/batchActionsBar';
 
@@ -15,22 +15,24 @@ const iconStyle = { width: 15, marginRight: 5 };
 
 export const basicBatchActionsBar = () => {
     return (
-        <BatchActionsBar
-            label="Rides Selected"
-            itemsLength={2}
-            // eslint-disable-next-line no-alert
-            onRequestClose={() => alert('Request Close Batch Actions Bar')}
-            style={fixedStyle}
-        >
-            <StyledButton variant="border-filled">
-                <Error style={iconStyle} />
-                Edit
-            </StyledButton>
-            <StyledButton variant="destructive">
-                <Trash style={iconStyle} />
-                Delete
-            </StyledButton>
-        </BatchActionsBar>
+        <Application>
+            <BatchActionsBar
+                label="Rides Selected"
+                itemsLength={2}
+                // eslint-disable-next-line no-alert
+                onRequestClose={() => alert('Request Close Batch Actions Bar')}
+                style={fixedStyle}
+            >
+                <StyledButton variant="border-filled">
+                    <Edit style={iconStyle} />
+                    Edit
+                </StyledButton>
+                <StyledButton variant="destructive">
+                    <Trash style={iconStyle} />
+                    Delete
+                </StyledButton>
+            </BatchActionsBar>
+        </Application>
     );
 };
 
@@ -76,34 +78,36 @@ export const TableWithBatchActionsBar = () => {
     };
 
     return (
-        <Container>
-            <Table
-                data={data}
-                keyField="id"
-                variant="listview"
-                showCheckboxColumn
-                onRowSelection={setRowSelection}
-            >
-                <Column header="Created At" field="createdAt" component={CreatedAt} />
-                <Column header="Id" field="id" />
-                <Column header="Name" field="name" />
-                <Column header="Company" field="company" />
-                <Column header="Status" field="status" component={Status} />
-            </Table>
-            <RenderIf isTrue={isVisible}>
-                <BatchActionsBar
-                    label="Rides Selected"
-                    itemsLength={itemsLength}
-                    onRequestClose={() => setVisible(false)}
-                    style={style}
+        <Application>
+            <Container>
+                <Table
+                    data={data}
+                    keyField="id"
+                    variant="listview"
+                    showCheckboxColumn
+                    onRowSelection={setRowSelection}
                 >
-                    <StyledButton variant="destructive" onClick={handleDelete}>
-                        <Trash style={iconStyle} />
-                        Delete
-                    </StyledButton>
-                </BatchActionsBar>
-            </RenderIf>
-        </Container>
+                    <Column header="Created At" field="createdAt" component={CreatedAt} />
+                    <Column header="Id" field="id" />
+                    <Column header="Name" field="name" />
+                    <Column header="Company" field="company" />
+                    <Column header="Status" field="status" component={Status} />
+                </Table>
+                <RenderIf isTrue={isVisible}>
+                    <BatchActionsBar
+                        label="Rides Selected"
+                        itemsLength={itemsLength}
+                        onRequestClose={() => setVisible(false)}
+                        style={style}
+                    >
+                        <StyledButton variant="destructive" onClick={handleDelete}>
+                            <Trash style={iconStyle} />
+                            Delete
+                        </StyledButton>
+                    </BatchActionsBar>
+                </RenderIf>
+            </Container>
+        </Application>
     );
 };
 

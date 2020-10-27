@@ -38,6 +38,7 @@ import {
     NewCard,
     UnknownCard,
     DinersClub,
+    Edit,
 } from '../../../src';
 
 export default [
@@ -75,6 +76,11 @@ export default [
         name: 'arrowRight',
         category: 'standard',
         icon: ArrowRight,
+    },
+    {
+        name: 'edit',
+        category: 'standard',
+        icon: Edit,
     },
     {
         name: 'cancel',

@@ -8,11 +8,11 @@ export const StyledContainer = attachThemeAttrs(styled.div)`
     position: fixed;
     bottom: 30px;
     left: 10px;
-    right: 10px;
     padding: 0.5rem;
     background-color: ${(props) => props.palette.background.main};
     color: ${(props) => props.palette.text.main};
-    border: 1px solid ${(props) => props.palette.border.main};
+    border: 1px solid transparent;
+    box-shadow: 0 15px 28px 0 rgba(0, 0, 0, 0.2);
     border-radius: ${BORDER_RADIUS_2};
     transition: all 0.1s linear, padding 0s, border 0s;
     line-height: 2.5rem;
