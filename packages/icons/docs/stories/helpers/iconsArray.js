@@ -40,6 +40,7 @@ import {
     DinersClub,
     FilterFilled,
     MagnifyingGlass,
+    Star,
 } from '../../../src';
 
 export default [
@@ -247,5 +248,10 @@ export default [
         name: 'magnifyingGlass',
         category: 'standard',
         icon: MagnifyingGlass,
+    },
+    {
+        name: 'star',
+        category: 'standard',
+        icon: Star,
     },
 ];
