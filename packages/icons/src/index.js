@@ -41,3 +41,6 @@ export { default as UnionPay } from './components/unionPay';
 export { default as NewCard } from './components/newCard';
 export { default as UnknownCard } from './components/unknownCard';
 export { default as Edit } from './components/edit';
+export { default as FilterFilled } from './components/filterFilled';
+export { default as MagnifyingGlass } from './components/magnifyingGlass';
+export { default as Star } from './components/star';

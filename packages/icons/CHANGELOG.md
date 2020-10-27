@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/nexxtway/rainbow-modules/compare/v0.7.1...v0.8.0) (2020-10-27)
+
+### Features
+
+-   add star icon ([#180](https://github.com/nexxtway/rainbow-modules/issues/180)) ([9917e27](https://github.com/nexxtway/rainbow-modules/commit/9917e27fd6e63f58b75aea7ff86151446b77047f))
+
+# [0.7.0](https://github.com/nexxtway/rainbow-modules/compare/v0.6.0...v0.7.0) (2020-10-26)
+
+### Features
+
+-   add search icon ([#177](https://github.com/nexxtway/rainbow-modules/issues/177)) ([a8cf780](https://github.com/nexxtway/rainbow-modules/commit/a8cf780d553fe3cb817e31ccd38ffd572584b608))
+
+# [0.6.0](https://github.com/nexxtway/rainbow-modules/compare/v0.4.0...v0.6.0) (2020-10-26)
+
+### Bug Fixes
+
+-   card icons ([#164](https://github.com/nexxtway/rainbow-modules/issues/164)) ([c1d5346](https://github.com/nexxtway/rainbow-modules/commit/c1d5346f0ed6214a32dba9854eae040decb19a9a))
+
+### Features
+
+-   add badge variant on Tile component ([#175](https://github.com/nexxtway/rainbow-modules/issues/175)) ([2d8571a](https://github.com/nexxtway/rainbow-modules/commit/2d8571ae7cdd15d8f51dd60e4ca5d3842e8459ca))
+-   implement StripeCheckoutModal ([#170](https://github.com/nexxtway/rainbow-modules/issues/170)) ([acb66e7](https://github.com/nexxtway/rainbow-modules/commit/acb66e7965d642c1d5228eabfeffe67d4656a931))
+
 # [0.5.0](https://github.com/nexxtway/rainbow-modules/compare/v0.4.0...v0.5.0) (2020-10-22)
 
 ### Bug Fixes

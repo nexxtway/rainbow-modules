@@ -39,6 +39,9 @@ import {
     UnknownCard,
     DinersClub,
     Edit,
+    FilterFilled,
+    MagnifyingGlass,
+    Star,
 } from '../../../src';
 
 export default [
@@ -241,5 +244,20 @@ export default [
         name: 'unknownCard',
         category: 'custom',
         icon: UnknownCard,
+    },
+    {
+        name: 'filterFilled',
+        category: 'standard',
+        icon: FilterFilled,
+    },
+    {
+        name: 'magnifyingGlass',
+        category: 'standard',
+        icon: MagnifyingGlass,
+    },
+    {
+        name: 'star',
+        category: 'standard',
+        icon: Star,
     },
 ];

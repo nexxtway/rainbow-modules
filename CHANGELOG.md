@@ -3,6 +3,48 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/nexxtway/rainbow-modules/compare/v0.7.1...v0.8.0) (2020-10-27)
+
+### Bug Fixes
+
+-   notification padding ([#181](https://github.com/nexxtway/rainbow-modules/issues/181)) ([5ead820](https://github.com/nexxtway/rainbow-modules/commit/5ead820fd27b51038ab7b0e709bd0cde0f0397c1))
+
+### Features
+
+-   add star icon ([#180](https://github.com/nexxtway/rainbow-modules/issues/180)) ([9917e27](https://github.com/nexxtway/rainbow-modules/commit/9917e27fd6e63f58b75aea7ff86151446b77047f))
+
+## [0.7.1](https://github.com/nexxtway/rainbow-modules/compare/v0.7.0...v0.7.1) (2020-10-26)
+
+### Bug Fixes
+
+-   add labelAlignment on CreditCardPicker component ([#179](https://github.com/nexxtway/rainbow-modules/issues/179)) ([351baac](https://github.com/nexxtway/rainbow-modules/commit/351baac0df8b00b7e1ccd7552fb40f08806399d7))
+
+# [0.7.0](https://github.com/nexxtway/rainbow-modules/compare/v0.6.0...v0.7.0) (2020-10-26)
+
+### Bug Fixes
+
+-   story component mdx in StripeCheckoutModal ([c63a6cd](https://github.com/nexxtway/rainbow-modules/commit/c63a6cdbda78e4a0b9a9ab225576eb3bece31057))
+
+### Features
+
+-   add search icon ([#177](https://github.com/nexxtway/rainbow-modules/issues/177)) ([a8cf780](https://github.com/nexxtway/rainbow-modules/commit/a8cf780d553fe3cb817e31ccd38ffd572584b608))
+
+# [0.6.0](https://github.com/nexxtway/rainbow-modules/compare/v0.4.0...v0.6.0) (2020-10-26)
+
+### Bug Fixes
+
+-   add defaultCenter to mapbox Map ([8de4a2e](https://github.com/nexxtway/rainbow-modules/commit/8de4a2e50bfb6cc8d8d159c3fa2839f41046ffc5))
+-   card icons ([#164](https://github.com/nexxtway/rainbow-modules/issues/164)) ([c1d5346](https://github.com/nexxtway/rainbow-modules/commit/c1d5346f0ed6214a32dba9854eae040decb19a9a))
+-   carousel calendar styles ([#176](https://github.com/nexxtway/rainbow-modules/issues/176)) ([0816961](https://github.com/nexxtway/rainbow-modules/commit/081696147fd3826866467c0f5f200b4b05b054d3))
+-   some fixes in CreditCardPicker ([50aca8b](https://github.com/nexxtway/rainbow-modules/commit/50aca8bcc08fbdfdb9e531933a4955c0bdb8991e))
+
+### Features
+
+-   add badge variant on Tile component ([#175](https://github.com/nexxtway/rainbow-modules/issues/175)) ([2d8571a](https://github.com/nexxtway/rainbow-modules/commit/2d8571ae7cdd15d8f51dd60e4ca5d3842e8459ca))
+-   add labelAlignment prop on the UniversalPicker component ([#171](https://github.com/nexxtway/rainbow-modules/issues/171)) ([ba5e521](https://github.com/nexxtway/rainbow-modules/commit/ba5e521e4c4a2f9c107fc37bccac830f3c48ae5d)), closes [#165](https://github.com/nexxtway/rainbow-modules/issues/165)
+-   implement navigation button column ([#173](https://github.com/nexxtway/rainbow-modules/issues/173)) ([6d14efe](https://github.com/nexxtway/rainbow-modules/commit/6d14efe9561ce28f84efc9b5f3987a1f458e4d22))
+-   implement StripeCheckoutModal ([#170](https://github.com/nexxtway/rainbow-modules/issues/170)) ([acb66e7](https://github.com/nexxtway/rainbow-modules/commit/acb66e7965d642c1d5228eabfeffe67d4656a931))
+
 # [0.5.0](https://github.com/nexxtway/rainbow-modules/compare/v0.4.0...v0.5.0) (2020-10-22)
 
 ### Bug Fixes

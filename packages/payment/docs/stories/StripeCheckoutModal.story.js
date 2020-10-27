@@ -85,7 +85,7 @@ export const StripeCheckoutModalWithSetupIntent = () => {
                 onAdd={() => setOpen(true)}
                 onRemove={async (value) => {
                     await removeCard(value);
-                    setKey(value.id);
+                    setKey(Date.now());
                 }}
             />
             <StripeCheckoutModal
@@ -94,7 +94,7 @@ export const StripeCheckoutModalWithSetupIntent = () => {
                 variant="setupIntent"
                 onCancel={() => setOpen(false)}
                 clientSecretResolver={clientSecretResolverSetupIntent}
-                onSuccess={(result) => {
+                onSuccess={() => {
                     setOpen(false);
                     showAppNotification({
                         title: 'Success!',
@@ -102,7 +102,7 @@ export const StripeCheckoutModalWithSetupIntent = () => {
                         icon: 'success',
                         timeout: 5000,
                     });
-                    setKey(result.setupIntent.id);
+                    setKey(Date.now());
                 }}
             />
         </RainbowFirebaseApp>

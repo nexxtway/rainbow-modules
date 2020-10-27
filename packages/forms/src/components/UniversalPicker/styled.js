@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
 
+const labelAlignmentMap = {
+    left: 'left',
+    center: 'center',
+    right: 'right',
+};
+
 export const StyledContainer = styled.fieldset`
     margin: 0;
     padding: 0;
@@ -9,16 +15,15 @@ export const StyledContainer = styled.fieldset`
     flex-direction: column;
     justify-content: center;
     box-sizing: border-box;
-    width: 100%;
 `;
 
 export const StyledLabel = attachThemeAttrs(styled.legend)`
     border: 0;
-    padding: 0;
+    padding: 0 1rem;
     color: ${(props) => props.palette.text.label};
     line-height: 1.5;
-    margin: 0 auto 0.25rem auto;
-    text-align: center;
+    margin-bottom: 0.25rem;
+    text-align: ${(props) => labelAlignmentMap[props.labelAlignment] || labelAlignmentMap.center};
 `;
 
 export const StyledOptionsContainer = styled.div`

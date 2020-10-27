@@ -13,6 +13,7 @@ export default function CreditCardPicker(props) {
         className,
         style,
         label,
+        labelAlignment,
         value,
         onChange,
         onAdd,
@@ -34,6 +35,7 @@ export default function CreditCardPicker(props) {
             onChange={onChange}
             required={required}
             error={error}
+            labelAlignment={labelAlignment}
             direction="vertical"
             id={id}
         >
@@ -80,6 +82,9 @@ CreditCardPicker.propTypes = {
     required: PropTypes.bool,
     /** The title at the top of the UniversalPicker component. */
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+    /** Describes the position of the CreditCardPicker label. Options include left, center and right.
+     * This value defaults to center. */
+    labelAlignment: PropTypes.oneOf(['left', 'center', 'right']),
     /** Specifies that an UniversalPicker must be filled out before submitting the form. */
     error: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     /** The id of the outer element. */
@@ -99,6 +104,7 @@ CreditCardPicker.defaultProps = {
     options: [],
     required: false,
     label: undefined,
+    labelAlignment: 'center',
     error: undefined,
     id: undefined,
     className: undefined,

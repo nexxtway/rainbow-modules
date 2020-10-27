@@ -69,6 +69,7 @@ export const BasicCreditCardPicker = () => {
                 onChange={setValue}
                 value={value}
                 options={options}
+                labelAlignment="left"
             />
         </RainbowFirebaseApp>
     );
@@ -102,6 +103,7 @@ export const CreditCardPickerWithActions = () => {
                 options={options}
                 // eslint-disable-next-line no-alert
                 onAdd={() => alert('Add new card')}
+                // eslint-disable-next-line no-alert
                 onRemove={(card) => alert(`Remove ${card.brand} card with last4: ${card.last4}`)}
             />
         </RainbowFirebaseApp>
