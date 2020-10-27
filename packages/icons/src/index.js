@@ -42,3 +42,4 @@ export { default as NewCard } from './components/newCard';
 export { default as UnknownCard } from './components/unknownCard';
 export { default as FilterFilled } from './components/filterFilled';
 export { default as MagnifyingGlass } from './components/magnifyingGlass';
+export { default as Star } from './components/star';
