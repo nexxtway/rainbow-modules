@@ -4,6 +4,7 @@ export const StyledNotificationContainer = styled.div`
     position: fixed;
     top: 16px;
     right: 0;
+    padding-right: 16px;
     z-index: 10000002;
     display: flex;
     flex-direction: column;
@@ -56,7 +57,7 @@ export const StyledNotification = styled.div`
     }
 
     /* Initial state */
-    transform: translateX(100%);
+    transform: translateX(105%);
     height: 0;
 
     /* Shown state */
