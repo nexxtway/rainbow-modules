@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/nexxtway/rainbow-modules/compare/v0.7.1...v0.8.0) (2020-10-27)
+
+### Bug Fixes
+
+-   notification padding ([#181](https://github.com/nexxtway/rainbow-modules/issues/181)) ([5ead820](https://github.com/nexxtway/rainbow-modules/commit/5ead820fd27b51038ab7b0e709bd0cde0f0397c1))
+
 # [0.7.0](https://github.com/nexxtway/rainbow-modules/compare/v0.6.0...v0.7.0) (2020-10-26)
 
 **Note:** Version bump only for package @rainbow-modules/app

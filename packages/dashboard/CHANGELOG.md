@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/nexxtway/rainbow-modules/compare/v0.7.1...v0.8.0) (2020-10-27)
+
+**Note:** Version bump only for package @rainbow-modules/dashboard
+
 # [0.7.0](https://github.com/nexxtway/rainbow-modules/compare/v0.6.0...v0.7.0) (2020-10-26)
 
 **Note:** Version bump only for package @rainbow-modules/dashboard

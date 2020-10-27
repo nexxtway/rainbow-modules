@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/nexxtway/rainbow-modules/compare/v0.7.1...v0.8.0) (2020-10-27)
+
+### Bug Fixes
+
+-   notification padding ([#181](https://github.com/nexxtway/rainbow-modules/issues/181)) ([5ead820](https://github.com/nexxtway/rainbow-modules/commit/5ead820fd27b51038ab7b0e709bd0cde0f0397c1))
+
+### Features
+
+-   add star icon ([#180](https://github.com/nexxtway/rainbow-modules/issues/180)) ([9917e27](https://github.com/nexxtway/rainbow-modules/commit/9917e27fd6e63f58b75aea7ff86151446b77047f))
+
 ## [0.7.1](https://github.com/nexxtway/rainbow-modules/compare/v0.7.0...v0.7.1) (2020-10-26)
 
 ### Bug Fixes

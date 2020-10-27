@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/nexxtway/rainbow-modules/compare/v0.7.1...v0.8.0) (2020-10-27)
+
+### Features
+
+-   add star icon ([#180](https://github.com/nexxtway/rainbow-modules/issues/180)) ([9917e27](https://github.com/nexxtway/rainbow-modules/commit/9917e27fd6e63f58b75aea7ff86151446b77047f))
+
 # [0.7.0](https://github.com/nexxtway/rainbow-modules/compare/v0.6.0...v0.7.0) (2020-10-26)
 
 ### Features
