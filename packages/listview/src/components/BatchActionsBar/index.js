@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { createPortal } from 'react-dom';
 import { isFunction } from '@rainbow-modules/validation';
 import { Close } from '@rainbow-modules/icons';
 import { RenderIf } from 'react-rainbow-components';
@@ -10,24 +9,29 @@ import {
     StyledLabel,
     StyledClosetButton,
     StyledButtonsContainer,
+    StyledLeftContent,
+    StyledRightContent,
 } from './styled';
 
-export default function BatchActionsBar(props) {
+const BatchActionsBar = (props) => {
     const { label, itemsLength, onRequestClose, className, style, children } = props;
     const showCloseButton = isFunction(onRequestClose);
 
-    return createPortal(
+    return (
         <StyledContainer className={className} style={style}>
-            <StyledBadge label={itemsLength} title={label} />
-            <StyledLabel>{label}</StyledLabel>
-            <StyledButtonsContainer>{children}</StyledButtonsContainer>
-            <RenderIf isTrue={showCloseButton}>
-                <StyledClosetButton icon={<Close />} onClick={onRequestClose} />
-            </RenderIf>
-        </StyledContainer>,
-        document.body,
+            <StyledLeftContent>
+                <StyledBadge label={itemsLength} title={label} />
+                <StyledLabel>{label}</StyledLabel>
+            </StyledLeftContent>
+            <StyledRightContent>
+                <StyledButtonsContainer>{children}</StyledButtonsContainer>
+                <RenderIf isTrue={showCloseButton}>
+                    <StyledClosetButton icon={<Close />} onClick={onRequestClose} />
+                </RenderIf>
+            </StyledRightContent>
+        </StyledContainer>
     );
-}
+};
 
 BatchActionsBar.propTypes = {
     /** The title at the left of the BatchActionsBar component. */
@@ -52,3 +56,5 @@ BatchActionsBar.defaultProps = {
     style: undefined,
     children: [],
 };
+
+export default BatchActionsBar;

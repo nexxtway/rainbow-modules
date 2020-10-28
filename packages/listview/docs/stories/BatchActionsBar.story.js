@@ -7,37 +7,52 @@ import BatchActionsBar from '../../src/components/BatchActionsBar';
 import { dataTable } from './data/batchActionsBar';
 
 const StyledButton = styled(Button)`
-    margin-left: 10px;
+    margin-left: 20px;
 `;
 
-const fixedStyle = { position: 'absolute' };
+const StyledContainer = styled.div`
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+`;
+
 const iconStyle = { width: 15, marginRight: 5 };
 
 export const basicBatchActionsBar = () => {
     return (
         <Application>
-            <BatchActionsBar
-                label="Rides Selected"
-                itemsLength={2}
-                // eslint-disable-next-line no-alert
-                onRequestClose={() => alert('Request Close Batch Actions Bar')}
-                style={fixedStyle}
-            >
-                <StyledButton variant="border-filled">
-                    <Edit style={iconStyle} />
-                    Edit
-                </StyledButton>
-                <StyledButton variant="destructive">
-                    <Trash style={iconStyle} />
-                    Delete
-                </StyledButton>
-            </BatchActionsBar>
+            <StyledContainer>
+                <BatchActionsBar
+                    label="Rides Selected"
+                    itemsLength={2}
+                    // eslint-disable-next-line no-alert
+                    onRequestClose={() => alert('Request Close Batch Actions Bar')}
+                    className="rainbow-m-top_medium"
+                >
+                    <StyledButton variant="border-filled">
+                        <Edit style={iconStyle} />
+                        Edit
+                    </StyledButton>
+                    <StyledButton variant="destructive">
+                        <Trash style={iconStyle} />
+                        Delete
+                    </StyledButton>
+                </BatchActionsBar>
+            </StyledContainer>
         </Application>
     );
 };
 
 const Container = styled.div`
-    padding: 0 20px 50px 20px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
 `;
 
 const StyledStatus = styled.div`
@@ -57,8 +72,6 @@ const CreatedAt = ({ value }) =>
     }).format(value);
 
 const Status = ({ value }) => <StyledStatus>{value}</StyledStatus>;
-
-const style = { left: 28, right: 30 };
 
 export const TableWithBatchActionsBar = () => {
     const [data, setData] = useState(dataTable);
@@ -98,7 +111,7 @@ export const TableWithBatchActionsBar = () => {
                         label="Rides Selected"
                         itemsLength={itemsLength}
                         onRequestClose={() => setVisible(false)}
-                        style={style}
+                        className="rainbow-m-top_medium"
                     >
                         <StyledButton variant="destructive" onClick={handleDelete}>
                             <Trash style={iconStyle} />
