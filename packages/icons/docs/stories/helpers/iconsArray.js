@@ -38,6 +38,7 @@ import {
     NewCard,
     UnknownCard,
     DinersClub,
+    Edit,
     FilterFilled,
     MagnifyingGlass,
     Star,
@@ -78,6 +79,11 @@ export default [
         name: 'arrowRight',
         category: 'standard',
         icon: ArrowRight,
+    },
+    {
+        name: 'edit',
+        category: 'standard',
+        icon: Edit,
     },
     {
         name: 'cancel',
