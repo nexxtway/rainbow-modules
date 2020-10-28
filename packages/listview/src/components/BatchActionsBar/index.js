@@ -14,22 +14,24 @@ import {
 } from './styled';
 
 const BatchActionsBar = (props) => {
-    const { label, itemsLength, onRequestClose, className, style, children } = props;
+    const { label, itemsLength, onRequestClose, className, style, children, isVisible } = props;
     const showCloseButton = isFunction(onRequestClose);
 
     return (
-        <StyledContainer className={className} style={style}>
-            <StyledLeftContent>
-                <StyledBadge label={itemsLength} title={label} />
-                <StyledLabel>{label}</StyledLabel>
-            </StyledLeftContent>
-            <StyledRightContent>
-                <StyledButtonsContainer>{children}</StyledButtonsContainer>
-                <RenderIf isTrue={showCloseButton}>
-                    <StyledClosetButton icon={<Close />} onClick={onRequestClose} />
-                </RenderIf>
-            </StyledRightContent>
-        </StyledContainer>
+        <RenderIf isTrue={isVisible}>
+            <StyledContainer className={className} style={style}>
+                <StyledLeftContent>
+                    <StyledBadge label={itemsLength} title={label} />
+                    <StyledLabel>{label}</StyledLabel>
+                </StyledLeftContent>
+                <StyledRightContent>
+                    <StyledButtonsContainer>{children}</StyledButtonsContainer>
+                    <RenderIf isTrue={showCloseButton}>
+                        <StyledClosetButton icon={<Close />} onClick={onRequestClose} />
+                    </RenderIf>
+                </StyledRightContent>
+            </StyledContainer>
+        </RenderIf>
     );
 };
 
@@ -46,6 +48,8 @@ BatchActionsBar.propTypes = {
     style: PropTypes.object,
     /** An object with custom style applied to the outer element. */
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
+    /** Show/Hide the component. */
+    isVisible: PropTypes.bool,
 };
 
 BatchActionsBar.defaultProps = {
@@ -55,6 +59,7 @@ BatchActionsBar.defaultProps = {
     className: undefined,
     style: undefined,
     children: [],
+    isVisible: false,
 };
 
 export default BatchActionsBar;

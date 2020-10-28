@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { Button, Table, Column, RenderIf, Application } from 'react-rainbow-components';
+import { Button, Table, Column, Application } from 'react-rainbow-components';
 import { Edit, Trash } from '@rainbow-modules/icons';
 import BatchActionsBar from '../../src/components/BatchActionsBar';
 import { dataTable } from './data/batchActionsBar';
@@ -31,6 +31,7 @@ export const basicBatchActionsBar = () => {
                     // eslint-disable-next-line no-alert
                     onRequestClose={() => alert('Request Close Batch Actions Bar')}
                     className="rainbow-m-top_medium"
+                    isVisible
                 >
                     <StyledButton variant="border-filled">
                         <Edit style={iconStyle} />
@@ -106,19 +107,18 @@ export const TableWithBatchActionsBar = () => {
                     <Column header="Company" field="company" />
                     <Column header="Status" field="status" component={Status} />
                 </Table>
-                <RenderIf isTrue={isVisible}>
-                    <BatchActionsBar
-                        label="Rides Selected"
-                        itemsLength={itemsLength}
-                        onRequestClose={() => setVisible(false)}
-                        className="rainbow-m-top_medium"
-                    >
-                        <StyledButton variant="destructive" onClick={handleDelete}>
-                            <Trash style={iconStyle} />
-                            Delete
-                        </StyledButton>
-                    </BatchActionsBar>
-                </RenderIf>
+                <BatchActionsBar
+                    label="Rides Selected"
+                    itemsLength={itemsLength}
+                    onRequestClose={() => setVisible(false)}
+                    className="rainbow-m-top_medium"
+                    isVisible={isVisible}
+                >
+                    <StyledButton variant="destructive" onClick={handleDelete}>
+                        <Trash style={iconStyle} />
+                        Delete
+                    </StyledButton>
+                </BatchActionsBar>
             </Container>
         </Application>
     );

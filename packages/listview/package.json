@@ -8,8 +8,8 @@
         "lib"
     ],
     "dependencies": {
-        "@rainbow-modules/icons": "^0.4.0",
-        "@rainbow-modules/validation": "^0.4.0",
+        "@rainbow-modules/icons": "^0.8.0",
+        "@rainbow-modules/validation": "^0.8.0",
         "@rainbow-modules/app": "^0.8.0",
         "@rainbow-modules/firebase-hooks": "^0.8.0",
         "styled-components": "^4.3.2"
