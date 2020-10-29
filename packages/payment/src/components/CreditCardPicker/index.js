@@ -23,6 +23,7 @@ export default function CreditCardPicker(props) {
         required,
         error,
         id,
+        name,
     } = props;
     const showAddCreditCardButton = typeof onAdd === 'function';
 
@@ -38,6 +39,7 @@ export default function CreditCardPicker(props) {
             labelAlignment={labelAlignment}
             direction="vertical"
             id={id}
+            name={name}
         >
             <RenderIf isTrue={showAddCreditCardButton}>
                 <AddNewCardButton as="button" onClick={onAdd} type="button">
@@ -56,6 +58,8 @@ export default function CreditCardPicker(props) {
 }
 
 CreditCardPicker.propTypes = {
+    /** The name of CreditCardPicker. */
+    name: PropTypes.string,
     /** The value of the component. */
     value: PropTypes.string,
     /** The action triggered when a value attribute changes. */
@@ -96,6 +100,7 @@ CreditCardPicker.propTypes = {
 };
 
 CreditCardPicker.defaultProps = {
+    name: undefined,
     value: undefined,
     onChange: () => {},
     onAdd: undefined,
