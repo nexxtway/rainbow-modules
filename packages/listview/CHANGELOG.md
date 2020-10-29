@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/nexxtway/rainbow-modules/compare/v0.8.0...v0.9.0) (2020-10-29)
+
+### Features
+
+-   implement BatchActionsBar component on listview ([#172](https://github.com/nexxtway/rainbow-modules/issues/172)) ([987ce18](https://github.com/nexxtway/rainbow-modules/commit/987ce18997cbe2ab465ccecc7b471ea10b83a874))
+
 # [0.8.0](https://github.com/nexxtway/rainbow-modules/compare/v0.7.1...v0.8.0) (2020-10-27)
 
 **Note:** Version bump only for package @rainbow-modules/listview
