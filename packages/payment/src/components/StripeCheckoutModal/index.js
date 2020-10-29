@@ -87,6 +87,7 @@ export default function StripeCheckoutModal(props) {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        event.stopPropagation();
         const { stripe, card, isComplete } = stripeCard || {};
         const hasNotErrors = isEmptyObject(getErrors(true, cardholderName, stripeCard));
 
