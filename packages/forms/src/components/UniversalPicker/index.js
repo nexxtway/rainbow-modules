@@ -116,7 +116,7 @@ UniversalPicker.propTypes = {
 };
 
 UniversalPicker.defaultProps = {
-    name: null,
+    name: undefined,
     value: undefined,
     multiple: false,
     required: false,

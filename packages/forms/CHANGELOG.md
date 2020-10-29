@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/nexxtway/rainbow-modules/compare/v0.8.0...v0.9.0) (2020-10-29)
+
+### Bug Fixes
+
+-   add prop name to CreditCardPicker ([5c1dd64](https://github.com/nexxtway/rainbow-modules/commit/5c1dd648d0551a26e4bac3b6d474d1fae97604ee))
+
 # [0.8.0](https://github.com/nexxtway/rainbow-modules/compare/v0.7.1...v0.8.0) (2020-10-27)
 
 **Note:** Version bump only for package @rainbow-modules/forms
