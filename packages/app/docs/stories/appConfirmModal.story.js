@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Button, Card as RainbowCard, ButtonIcon } from 'react-rainbow-components';
 import { RainbowLogo, Trash } from '@rainbow-modules/icons';
 import RainbowFirebaseApp from '../../src/components/App';
-import ConfirmModal from '../../src/components/ConfirmModal';
 import { confirmModal, showAppMessage } from '../../src/actions';
 
 const TrashIcon = styled(Trash)`
