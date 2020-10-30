@@ -4,7 +4,6 @@ import { Button, Card } from 'react-rainbow-components';
 import { RainbowLogo } from '@rainbow-modules/icons';
 import app from '../../../../firebase';
 import RainbowFirebaseApp from '../../src/components/App';
-import AppNotificationManager from '../../src/components/AppNotificationManager';
 import { showAppNotification } from '../../src/actions';
 import Cancel from './icons/cancel';
 import Checkmark from './icons/checkmark';
