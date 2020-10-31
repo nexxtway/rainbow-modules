@@ -13,6 +13,7 @@ export default function CreditCardPicker(props) {
         className,
         style,
         label,
+        labelAlignment,
         value,
         onChange,
         onAdd,
@@ -22,6 +23,7 @@ export default function CreditCardPicker(props) {
         required,
         error,
         id,
+        name,
     } = props;
     const showAddCreditCardButton = typeof onAdd === 'function';
 
@@ -34,8 +36,10 @@ export default function CreditCardPicker(props) {
             onChange={onChange}
             required={required}
             error={error}
+            labelAlignment={labelAlignment}
             direction="vertical"
             id={id}
+            name={name}
         >
             <RenderIf isTrue={showAddCreditCardButton}>
                 <AddNewCardButton as="button" onClick={onAdd} type="button">
@@ -54,6 +58,8 @@ export default function CreditCardPicker(props) {
 }
 
 CreditCardPicker.propTypes = {
+    /** The name of CreditCardPicker. */
+    name: PropTypes.string,
     /** The value of the component. */
     value: PropTypes.string,
     /** The action triggered when a value attribute changes. */
@@ -80,6 +86,9 @@ CreditCardPicker.propTypes = {
     required: PropTypes.bool,
     /** The title at the top of the UniversalPicker component. */
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+    /** Describes the position of the CreditCardPicker label. Options include left, center and right.
+     * This value defaults to center. */
+    labelAlignment: PropTypes.oneOf(['left', 'center', 'right']),
     /** Specifies that an UniversalPicker must be filled out before submitting the form. */
     error: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     /** The id of the outer element. */
@@ -91,6 +100,7 @@ CreditCardPicker.propTypes = {
 };
 
 CreditCardPicker.defaultProps = {
+    name: undefined,
     value: undefined,
     onChange: () => {},
     onAdd: undefined,
@@ -99,6 +109,7 @@ CreditCardPicker.defaultProps = {
     options: [],
     required: false,
     label: undefined,
+    labelAlignment: 'center',
     error: undefined,
     id: undefined,
     className: undefined,

@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/nexxtway/rainbow-modules/compare/v0.8.0...v0.10.0) (2020-10-29)
+
+### Bug Fixes
+
+-   add prop name to CreditCardPicker ([#183](https://github.com/nexxtway/rainbow-modules/issues/183)) ([6a51dfd](https://github.com/nexxtway/rainbow-modules/commit/6a51dfd25933942b2aa732e8c29c9d8cccc0d6c5))
+
+### Features
+
+-   implement BatchActionsBar component on listview ([#172](https://github.com/nexxtway/rainbow-modules/issues/172)) ([987ce18](https://github.com/nexxtway/rainbow-modules/commit/987ce18997cbe2ab465ccecc7b471ea10b83a874))
+
+# [0.9.0](https://github.com/nexxtway/rainbow-modules/compare/v0.8.0...v0.9.0) (2020-10-29)
+
+### Features
+
+-   implement BatchActionsBar component on listview ([#172](https://github.com/nexxtway/rainbow-modules/issues/172)) ([987ce18](https://github.com/nexxtway/rainbow-modules/commit/987ce18997cbe2ab465ccecc7b471ea10b83a874))
+
+# [0.8.0](https://github.com/nexxtway/rainbow-modules/compare/v0.7.1...v0.8.0) (2020-10-27)
+
+**Note:** Version bump only for package @rainbow-modules/listview
+
+# [0.7.0](https://github.com/nexxtway/rainbow-modules/compare/v0.6.0...v0.7.0) (2020-10-26)
+
+**Note:** Version bump only for package @rainbow-modules/listview
+
+# [0.6.0](https://github.com/nexxtway/rainbow-modules/compare/v0.4.0...v0.6.0) (2020-10-26)
+
+### Features
+
+-   implement navigation button column ([#173](https://github.com/nexxtway/rainbow-modules/issues/173)) ([6d14efe](https://github.com/nexxtway/rainbow-modules/commit/6d14efe9561ce28f84efc9b5f3987a1f458e4d22))
+-   implement StripeCheckoutModal ([#170](https://github.com/nexxtway/rainbow-modules/issues/170)) ([acb66e7](https://github.com/nexxtway/rainbow-modules/commit/acb66e7965d642c1d5228eabfeffe67d4656a931))
+
 # [0.5.0](https://github.com/nexxtway/rainbow-modules/compare/v0.4.0...v0.5.0) (2020-10-22)
 
 **Note:** Version bump only for package @rainbow-modules/listview

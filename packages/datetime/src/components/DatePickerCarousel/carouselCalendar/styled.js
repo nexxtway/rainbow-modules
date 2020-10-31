@@ -35,8 +35,8 @@ export const StyledDayCard = styled.button`
     margin: 5px auto 8px;
     border: 1px solid transparent;
     border-radius: 18px;
-    background: ${(props) => props.theme.rainbow.palette.background.hightlight};
-    color: ${(props) => props.theme.rainbow.palette.text.header};
+    background: ${(props) => props.theme.rainbow.palette.background.main};
+    color: ${(props) => props.theme.rainbow.palette.text.label};
     min-width: 60px;
     max-width: 60px;
     width: 60px;
@@ -46,6 +46,7 @@ export const StyledDayCard = styled.button`
     cursor: pointer;
     box-sizing: border-box;
     outline: none;
+    box-shadow: ${(props) => props.theme.rainbow.shadows.shadow_4};
 
     &:focus {
         box-shadow: ${(props) => props.theme.rainbow.shadows.shadow_2};
@@ -56,7 +57,7 @@ export const StyledDayCard = styled.button`
 
     &:hover {
         box-shadow: ${(props) => props.theme.rainbow.shadows.shadow_2};
-        color: ${(props) => props.theme.rainbow.palette.text.label};
+        color: ${(props) => props.theme.rainbow.palette.text.main};
         transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
             box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     }
