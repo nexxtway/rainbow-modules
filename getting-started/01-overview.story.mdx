@@ -37,6 +37,18 @@ $ npm install @rainbow-modules/<module> --save
 $ yarn add @rainbow-modules/<module>
 ```
 
+## Peer Dependencies
+
+Rainbow Modules has peer dependencies that needs to be installed. By installing these dependencies yourself we guarantee our modules will use the version you installed and avoid conflicts of multiple version of the same package in the your application.
+
+```bash
+// with npm
+$ npm install react-intl react-redux react-router-dom redux redux-form
+
+// or yarn
+$ yarn add react-intl react-redux react-router-dom redux redux-form
+```
+
 ## Available Modules
 
 -   **@rainbow-modules/app**: is the main package. It contains components and helpers to build your apps.
@@ -48,3 +60,5 @@ $ yarn add @rainbow-modules/<module>
 -   **@rainbow-modules/storage**: files storage and visualization experiences.
 -   **@rainbow-modules/datetime**: datetime picker experiences.
 -   **@rainbow-modules/dashboard**: component to help builing dashboard.
+-   **@rainbow-modules/form**: specific experiences of reusable form components.
+-   **@rainbow-modules/mapbox**: specific experiences of reusable map components.

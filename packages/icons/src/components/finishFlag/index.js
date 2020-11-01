@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Flag = (props) => {
+const FinishFlag = (props) => {
     const { className, style } = props;
     return (
         <svg
@@ -17,7 +17,7 @@ const Flag = (props) => {
         >
             <g id="Page-1" fill="none" fillRule="evenodd">
                 <g
-                    id="037---Waypoint-Flag"
+                    id="037---Waypoint-FinishFlag"
                     fill="currentColor"
                     fillRule="nonzero"
                     transform="translate(0 -1)"
@@ -36,13 +36,13 @@ const Flag = (props) => {
     );
 };
 
-Flag.propTypes = {
+FinishFlag.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
 };
-Flag.defaultProps = {
+FinishFlag.defaultProps = {
     className: undefined,
     style: undefined,
 };
 
-export default Flag;
+export default FinishFlag;

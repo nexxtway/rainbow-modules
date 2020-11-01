@@ -19,11 +19,29 @@ import {
     ArrowRight,
     ArrowLeft,
     Picture,
-    Flag,
+    Plus,
+    ClockFilled,
+    FinishFlag,
     Point,
     CheckinFilled,
     Check,
     Github,
+    Minus,
+    Avatar,
+    FocusFilled,
+    Visa,
+    Amex,
+    Mastercard,
+    Discover,
+    JCB,
+    UnionPay,
+    NewCard,
+    UnknownCard,
+    DinersClub,
+    Edit,
+    FilterFilled,
+    MagnifyingGlass,
+    Star,
 } from '../../../src';
 
 export default [
@@ -61,6 +79,11 @@ export default [
         name: 'arrowRight',
         category: 'standard',
         icon: ArrowRight,
+    },
+    {
+        name: 'edit',
+        category: 'standard',
+        icon: Edit,
     },
     {
         name: 'cancel',
@@ -128,9 +151,19 @@ export default [
         icon: Picture,
     },
     {
-        name: 'flag',
+        name: 'plus',
         category: 'standard',
-        icon: Flag,
+        icon: Plus,
+    },
+    {
+        name: 'clockFilled',
+        category: 'standard',
+        icon: ClockFilled,
+    },
+    {
+        name: 'finishFlag',
+        category: 'standard',
+        icon: FinishFlag,
     },
     {
         name: 'point',
@@ -151,5 +184,80 @@ export default [
         name: 'github',
         category: 'standard',
         icon: Github,
+    },
+    {
+        name: 'minus',
+        category: 'standard',
+        icon: Minus,
+    },
+    {
+        name: 'focusFilled',
+        category: 'standard',
+        icon: FocusFilled,
+    },
+    {
+        name: 'avatar',
+        category: 'custom',
+        icon: Avatar,
+    },
+    {
+        name: 'visa',
+        category: 'custom',
+        icon: Visa,
+    },
+    {
+        name: 'amex',
+        category: 'custom',
+        icon: Amex,
+    },
+    {
+        name: 'mastercard',
+        category: 'custom',
+        icon: Mastercard,
+    },
+    {
+        name: 'discover',
+        category: 'custom',
+        icon: Discover,
+    },
+    {
+        name: 'jcb',
+        category: 'custom',
+        icon: JCB,
+    },
+    {
+        name: 'unionPay',
+        category: 'custom',
+        icon: UnionPay,
+    },
+    {
+        name: 'dinersClub',
+        category: 'custom',
+        icon: DinersClub,
+    },
+    {
+        name: 'newCard',
+        category: 'custom',
+        icon: NewCard,
+    },
+    {
+        name: 'unknownCard',
+        category: 'custom',
+        icon: UnknownCard,
+    },
+    {
+        name: 'filterFilled',
+        category: 'standard',
+        icon: FilterFilled,
+    },
+    {
+        name: 'magnifyingGlass',
+        category: 'standard',
+        icon: MagnifyingGlass,
+    },
+    {
+        name: 'star',
+        category: 'standard',
+        icon: Star,
     },
 ];

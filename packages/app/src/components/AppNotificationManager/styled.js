@@ -4,7 +4,8 @@ export const StyledNotificationContainer = styled.div`
     position: fixed;
     top: 16px;
     right: 0;
-    z-index: 10000;
+    padding-right: 16px;
+    z-index: 10000002;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -51,12 +52,12 @@ export const StyledNotification = styled.div`
         text-indent: -1000em;
     }
 
-    :nth-child(n+6) {
+    :nth-child(n + 6) {
         display: none;
     }
 
     /* Initial state */
-    transform: translateX(100%);
+    transform: translateX(105%);
     height: 0;
 
     /* Shown state */

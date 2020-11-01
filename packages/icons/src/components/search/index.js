@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const SearchIcon = (props) => {
-    const { className } = props;
+    const { className, style } = props;
     return (
         <svg
             className={className}
+            style={style}
             width="20px"
             height="20px"
             viewBox="0 0 20 20"
@@ -59,10 +60,12 @@ const SearchIcon = (props) => {
 
 SearchIcon.propTypes = {
     className: PropTypes.string,
+    style: PropTypes.object,
 };
 
 SearchIcon.defaultProps = {
     className: undefined,
+    style: undefined,
 };
 
 export default SearchIcon;

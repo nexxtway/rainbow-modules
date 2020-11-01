@@ -22,6 +22,10 @@ STORYBOOK_PROJECT_ID=
 STORYBOOK_STORAGE_BUCKET=
 STORYBOOK_MESSAGING_SENDER_ID=
 STORYBOOK_APP_ID=
+
+# maps
+STORYBOOK_MAPBOX_ACCESS_TOKEN=map box access token
+STORYBOOK_GOOGLE_MAPS_API_KEY=google maps api key
 ```
 
 _If you want to run command in a specific package:_

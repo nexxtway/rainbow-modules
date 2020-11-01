@@ -1,0 +1,31 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import StripeCheckoutModal from '../../src/components/StripeCheckoutModal';
+import * as stories from '../stories/StripeCheckoutModal.story.js';
+
+<Meta title="Modules|Payment/Components" component={StripeCheckoutModal} />
+
+# Overview
+
+`StripeCheckoutModal` is a component for store or pay with credit cards.
+
+### Internationalization FormattedMessage keys
+
+-   StripeCheckoutModal.setupIntent.title: modal title when variant is `setupIntent`
+-   StripeCheckoutModal.paymentIntent.title: modal title when variant is `paymentIntent`
+-   StripeCheckoutModal.errorMessage: error message
+-   StripeCheckoutModal.cardholderLabel: label of the cardholder input
+-   StripeCheckoutModal.cardholderPlaceholder: placeholder of the cardholder input
+-   StripeCheckoutModal.cardInformationLabel: label of the card information input
+-   StripeCheckoutModal.cancelButtonLabel: label of cancel button
+-   StripeCheckoutModal.setupIntent.okButtonLabel: label of ok button when variant is `setupIntent`
+-   StripeCheckoutModal.paymentIntent.okButtonLabel: label of ok button when variant is `paymentIntent`
+
+### This is a basic example.
+
+<Preview>
+    <Story name="StripeCheckoutModal">{stories.StripeCheckoutModalWithSetupIntent()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={StripeCheckoutModal} />
