@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useState, useRef, useEffect, useMemo } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import styled from 'styled-components';
 import { Application, Button } from 'react-rainbow-components';
@@ -61,7 +61,7 @@ export default function WrapperUserHasScrolled() {
 
     const label = isOpen ? 'Hide help' : 'Show help';
 
-    const userHasScrolled = useUserHasScrolled({ threshold: 200 }, isOpen);
+    const userHasScrolled = useUserHasScrolled({ threshold: 100 }, isOpen);
 
     useEffect(() => {
         if (userHasScrolled) {
@@ -71,7 +71,6 @@ export default function WrapperUserHasScrolled() {
 
     return (
         <Application>
-            {`userHasScrolled: ${userHasScrolled}`}
             <Button shaded variant="brand" label={label} onClick={toggle} />
             <FloatingBox ref={boxRef} isOpen={isOpen} />
         </Application>

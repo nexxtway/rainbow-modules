@@ -1,5 +1,10 @@
-import { useRef, useState, useEffect, useCallback } from 'react';
-import { getDefaultScrollTarget, getDefaultScrollTrigger } from './helpers';
+import { useRef, useState, useEffect } from 'react';
+import useWindowScrolling from './useWindowScrolling';
+import {
+    getDefaultScrollTarget,
+    getDefaultScrollTrigger,
+    getTargetScrollPosition,
+} from './helpers';
 
 export default function useUserHasScrolled(options = {}, isListening = true) {
     const {
@@ -8,34 +13,21 @@ export default function useUserHasScrolled(options = {}, isListening = true) {
         ...otherOptions
     } = options;
     const scroll = useRef();
-    const isTicking = useRef(false);
-    const [scrollTriggered, setScrollTriggered] = useState(() =>
-        triggerFn(null, scroll, otherOptions),
-    );
+    const [scrollTriggered, setScrollTriggered] = useState(false);
 
-    const listener = useCallback(() => {
-        if (!isTicking.current) {
-            window.requestAnimationFrame(() => {
-                setScrollTriggered(triggerFn(target, scroll, otherOptions));
-                isTicking.current = false;
-            });
-            isTicking.current = true;
+    useWindowScrolling(() => {
+        if (isListening) {
+            setScrollTriggered(triggerFn(target, scroll.current, otherOptions));
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [JSON.stringify(otherOptions), target, triggerFn]);
+    }, isListening);
 
     useEffect(() => {
         if (isListening) {
-            window.addEventListener('scroll', listener);
-            window.addEventListener('wheel', listener);
+            scroll.current = getTargetScrollPosition(target);
             setScrollTriggered(false);
         }
-
-        return () => {
-            window.removeEventListener('scroll', listener);
-            window.removeEventListener('wheel', listener);
-        };
-    }, [listener, isListening]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [isListening]);
 
     return scrollTriggered;
 }

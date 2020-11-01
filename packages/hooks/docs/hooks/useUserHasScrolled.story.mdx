@@ -5,12 +5,12 @@ import { WrapperUserHasScrolled } from '../stories';
 
 # Overview
 
-`useUserHasScrolled` A hook that elegantly manages window scrolling.
+`useUserHasScrolled` A hook to detect user scroll intention.
 
 ### API
 
 ```ts
-const userHasScrolled = useUserHasScrolled({});
+const userHasScrolled = useUserHasScrolled(options, isListening);
 ```
 
 ### Params
@@ -20,16 +20,12 @@ const userHasScrolled = useUserHasScrolled({});
 | options     | options passed                   | object  | {}      |
 | isListening | Add or remove the event listener | boolean | true    |
 
-#### options
+the `options` parameter is an object that can be extended with any property that will be passed to `triggerFn` when called. Basic options are:
 
-| Property  | Description                                                      | Type     | Default |
-| --------- | ---------------------------------------------------------------- | -------- | ------- |
-| target    | the target element that will be used to monitor scroll intention | ref      | window  |
-| triggerFn | the trigger function to calculate scroll intention               | function |         |
-
-you can also pass aditional options that will be passed to triggerFn
-
-`triggerFn` will receive `target`, `currentScrollPos`, and `aditionalOptions` as params
+| Property  | Description                                                      | Type                                   | Default |
+| --------- | ---------------------------------------------------------------- | -------------------------------------- | ------- |
+| target    | the target element that will be used to monitor scroll intention | ref                                    | window  |
+| triggerFn | custom trigger function to calculate scroll intention            | function(target, previousPos, options) | -       |
 
 ### Usage
 
