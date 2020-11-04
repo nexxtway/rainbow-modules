@@ -42,6 +42,7 @@ import {
     FilterFilled,
     MagnifyingGlass,
     Star,
+    Camera,
 } from '../../../src';
 
 export default [
@@ -259,5 +260,10 @@ export default [
         name: 'star',
         category: 'standard',
         icon: Star,
+    },
+    {
+        name: 'camera',
+        category: 'standard',
+        icon: Camera,
     },
 ];
