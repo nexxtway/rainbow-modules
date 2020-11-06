@@ -43,6 +43,7 @@ import {
     MagnifyingGlass,
     Star,
     Camera,
+    Component,
 } from '../../../src';
 
 export default [
@@ -265,5 +266,10 @@ export default [
         name: 'camera',
         category: 'standard',
         icon: Camera,
+    },
+    {
+        name: 'component',
+        category: 'standard',
+        icon: Component,
     },
 ];

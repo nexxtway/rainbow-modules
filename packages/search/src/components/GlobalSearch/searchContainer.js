@@ -1,17 +1,18 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import styled from 'styled-components';
-import { Input, RenderIf } from 'react-rainbow-components';
-
-const Container = styled.div`
-    position: fixed;
-    top: 0;
-    margin: 0 auto;
-    width: 80%;
-    background-color: white;
-    border: 1px solid #eee;
-    border-radius: 4px;
-`;
+import { RenderIf, Tabset, Tab } from 'react-rainbow-components';
+import Header from './searchHeader';
+import Option from './option';
+import ResultItem from './resultItem';
+import {
+    Backdrop,
+    Container,
+    OptionsContainer,
+    StyledMagnifyingGlass,
+    BrandMagnifyingGlass,
+    ResultsContainer,
+    ResultsContent,
+} from './styled';
 
 const SearchContainer = (props) => {
     const { isOpen } = props;
@@ -35,15 +36,37 @@ const SearchContainer = (props) => {
 
     if (isOpen) {
         return createPortal(
-            <Container>
-                <RenderIf isTrue={searchMode === 'picklist'}>
-                    <Input type="search" ref={inputRef} onKeyDown={handleKeyDown} />
-                    <h1>picklist</h1>
-                </RenderIf>
-                <RenderIf isTrue={searchMode === 'results'}>
-                    <h1>search results</h1>
-                </RenderIf>
-            </Container>,
+            <Backdrop>
+                <Container>
+                    <RenderIf isTrue={searchMode === 'picklist'}>
+                        <Header inputRef={inputRef} handleKeyDown={handleKeyDown} />
+                        <OptionsContainer role="presentation">
+                            <Option label="First Option Label" icon={<BrandMagnifyingGlass />} />
+                            <Option
+                                label="Label"
+                                description="Description"
+                                icon={<StyledMagnifyingGlass />}
+                            />
+                        </OptionsContainer>
+                    </RenderIf>
+                    <RenderIf isTrue={searchMode === 'results'}>
+                        <Header />
+                        <ResultsContainer>
+                            <Tabset variant="line">
+                                <Tab label="Components" name="components" id="components" />
+                                <Tab label="Examples" name="examples" id="examples" />
+                            </Tabset>
+                            <ResultsContent>
+                                <ResultItem
+                                    label="text"
+                                    description="Description"
+                                    icon={<StyledMagnifyingGlass />}
+                                />
+                            </ResultsContent>
+                        </ResultsContainer>
+                    </RenderIf>
+                </Container>
+            </Backdrop>,
             document.body,
         );
     }

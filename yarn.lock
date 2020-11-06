@@ -15748,10 +15748,10 @@ react-popper@^1.3.7:
     typed-styles "^0.0.7"
     warning "^4.0.2"
 
-react-rainbow-components@1.18.1-canary.d79ab56:
-  version "1.18.1-canary.d79ab56"
-  resolved "https://registry.yarnpkg.com/react-rainbow-components/-/react-rainbow-components-1.18.1-canary.d79ab56.tgz#3581bb535fe299dc6e3b5f28de30ea1dae73799e"
-  integrity sha512-AKhO+Tg23utqUm9AvJ2XZNj6vAiRVzsO8cHu6xyL+PslFwEAw4+QR3Av7CJVH+DqfWyAwSApuoWBArBHQXHnSw==
+react-rainbow-components@1.18.1-canary.7f6bc18:
+  version "1.18.1-canary.7f6bc18"
+  resolved "https://registry.yarnpkg.com/react-rainbow-components/-/react-rainbow-components-1.18.1-canary.7f6bc18.tgz#43d6c5198a6def4e9747f666b52ae915778f32fb"
+  integrity sha512-PtyAAbMhPDvdTxcFKBcWsLW3DwLmvt7Bj4wh9Sem2210DnUbjmQMj7WIq3jHTc4Uw91hoytUFlxbkgVn6HvI4A==
   dependencies:
     "@rainbow-modules/hooks" "^0.1.2"
     autosize "^4.0.2"
