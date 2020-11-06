@@ -51,6 +51,10 @@ module.exports = {
                     __dirname,
                     '../packages/payment/src/index.js',
                 ),
+                '@rainbow-modules/keyboard': path.join(
+                    __dirname,
+                    '../packages/keyboard/src/index.js',
+                ),
             },
         };
         return config;

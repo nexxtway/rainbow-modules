@@ -1,0 +1,18 @@
+{
+    "name": "@rainbow-modules/keyboard",
+    "version": "0.10.0",
+    "main": "lib/index.js",
+    "author": "Nexxtway Team",
+    "license": "MIT",
+    "files": [
+        "lib"
+    ],
+    "peerDependencies": {
+        "react": ">=16.13.1",
+        "react-dom": "^16.13.1",
+        "react-rainbow-components": ">=1.18.1"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}
