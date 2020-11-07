@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect, Children } from 'react';
 import PropTypes from 'prop-types';
 import { Input } from 'react-rainbow-components';
 import { Search } from '@rainbow-modules/icons';
@@ -9,6 +9,7 @@ const GlobalSearch = (props) => {
     const { variant, placeholder, className, style } = props;
     const [isOpen, setOpen] = useState(false);
     const [query, setQuery] = useState('');
+    const [searchResults, setSearchResults] = useState({});
     const containerRef = useRef();
     useOutsideClick(
         containerRef,
@@ -17,6 +18,20 @@ const GlobalSearch = (props) => {
         },
         isOpen,
     );
+
+    const search = async ({ query }) => {
+        const results = await Promise.all(
+            Children.map(props.children, (child) => {
+                return child.props.onSearch({ query });
+            }),
+        );
+        setSearchResults(
+            Children.toArray(props.children).reduce((seed, child, index) => {
+                seed[child.props.name] = results[index];
+                return seed;
+            }, {}),
+        );
+    };
 
     return (
         <div ref={containerRef} style={style} className={className}>
@@ -30,7 +45,7 @@ const GlobalSearch = (props) => {
                 variant={variant}
                 placeholder={placeholder}
             />
-            <SearchContainer isOpen={isOpen} />
+            <SearchContainer isOpen={isOpen} onSearch={search} results={searchResults} />
         </div>
     );
 };

@@ -3,6 +3,7 @@ import { RenderIf, Tabset, Tab, Input } from 'react-rainbow-components';
 import { Search } from '@rainbow-modules/icons';
 import { createPortal } from 'react-dom';
 import Option from './option';
+import Options from './options';
 import ResultItem from './resultItem';
 import {
     Backdrop,
@@ -17,7 +18,7 @@ import {
 } from './styled';
 
 const SearchContainer = (props) => {
-    const { isOpen } = props;
+    const { isOpen, onSearch, results } = props;
     const inputRef = useRef();
     const [searchMode, setSearchMode] = useState('empty');
     const [query, setQuery] = useState('');
@@ -37,6 +38,12 @@ const SearchContainer = (props) => {
         }
     };
 
+    const search = (event) => {
+        const query = event.target.value;
+        setQuery(query);
+        onSearch({ query });
+    };
+
     if (isOpen) {
         return createPortal(
             <Backdrop>
@@ -50,7 +57,7 @@ const SearchContainer = (props) => {
                             isBare
                             icon={<Search />}
                             autoComplete="off"
-                            onChange={(event) => setQuery(event.target.value)}
+                            onChange={search}
                         />
                     </StyledHeader>
                     <RenderIf isTrue={searchMode === 'empty'}>
@@ -58,12 +65,8 @@ const SearchContainer = (props) => {
                     </RenderIf>
                     <RenderIf isTrue={searchMode === 'picklist'}>
                         <OptionsContainer role="presentation">
-                            <Option label="First Option Label" icon={<BrandMagnifyingGlass />} />
-                            <Option
-                                label="Label"
-                                description="Description"
-                                icon={<StyledCubeFilled />}
-                            />
+                            <Option label={query} icon={<BrandMagnifyingGlass />} />
+                            <Options results={results} />
                         </OptionsContainer>
                     </RenderIf>
                     <RenderIf isTrue={searchMode === 'results'}>
