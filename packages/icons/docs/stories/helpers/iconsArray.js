@@ -44,6 +44,7 @@ import {
     Star,
     Camera,
     Component,
+    CubeFilled,
 } from '../../../src';
 
 export default [
@@ -271,5 +272,10 @@ export default [
         name: 'component',
         category: 'standard',
         icon: Component,
+    },
+    {
+        name: 'cubeFilled',
+        category: 'standard',
+        icon: CubeFilled,
     },
 ];

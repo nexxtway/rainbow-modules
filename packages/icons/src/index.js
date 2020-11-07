@@ -46,3 +46,4 @@ export { default as FilterFilled } from './components/filterFilled';
 export { default as MagnifyingGlass } from './components/magnifyingGlass';
 export { default as Star } from './components/star';
 export { default as Component } from './components/component';
+export { default as CubeFilled } from './components/cubeFilled';

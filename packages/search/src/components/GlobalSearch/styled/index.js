@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
 import { replaceAlpha } from 'react-rainbow-components/styles/helpers/color';
-import { MagnifyingGlass } from '@rainbow-modules/icons';
+import { MagnifyingGlass, CubeFilled } from '@rainbow-modules/icons';
 
 export const Backdrop = attachThemeAttrs(styled.section)`
     top: 0;
@@ -54,6 +54,16 @@ export const OptionText = styled.div`
     width: 100%;
 `;
 
+export const OptionIconContainer = attachThemeAttrs(styled.span)`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+    color: ${(props) => props.palette.border.divider};
+`;
+
 export const Label = attachThemeAttrs(styled.span)`
     display: inline-block;
     font-size: 16px;
@@ -86,13 +96,19 @@ export const ResultsContainer = attachThemeAttrs(styled.div)`
     border-radius: 0 0 14px 14px;
 `;
 
-export const ResultsContent = attachThemeAttrs(styled.div)`
+export const Content = attachThemeAttrs(styled.div)`
     background: ${(props) => props.palette.background.secondary};
     padding: 20px;
     border-radius: 0 0 14px 14px;
 `;
 
-export const ResultItemContainer = attachThemeAttrs(styled.div)`
+export const ResultsContent = styled.ul`
+    list-style: none;
+    margin: 0;
+    padding: 0;
+`;
+
+export const ResultItemContainer = attachThemeAttrs(styled.li)`
     background: ${(props) => props.palette.background.main};
     padding: 12px;
     border-radius: 12px;
@@ -100,6 +116,11 @@ export const ResultItemContainer = attachThemeAttrs(styled.div)`
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
+
+    :hover {
+        box-shadow: ${(props) => props.shadows.shadow_4};
+        cursor: pointer;
+    }
 `;
 
 export const IconContainer = attachThemeAttrs(styled.span)`
@@ -110,6 +131,12 @@ export const IconContainer = attachThemeAttrs(styled.span)`
     min-width: 44px;
     height: 44px;
     background: ${(props) => props.palette.background.secondary};
-    color: ${(props) => props.palette.text.header};
+    color: ${(props) => props.palette.border.divider};
     border-radius: 44px;
+`;
+
+export const StyledCubeFilled = attachThemeAttrs(styled(CubeFilled))`
+    width: 20px;
+    height: 20px;
+    color: ${(props) => props.palette.border.divider};
 `;
