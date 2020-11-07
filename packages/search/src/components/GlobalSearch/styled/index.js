@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
 import { replaceAlpha } from 'react-rainbow-components/styles/helpers/color';
 import { MagnifyingGlass, CubeFilled } from '@rainbow-modules/icons';
+import { UniversalPicker } from '@rainbow-modules/forms';
 
 export const Backdrop = attachThemeAttrs(styled.section)`
     top: 0;
@@ -139,4 +140,39 @@ export const StyledCubeFilled = attachThemeAttrs(styled(CubeFilled))`
     width: 20px;
     height: 20px;
     color: ${(props) => props.palette.border.divider};
+`;
+
+export const EmptyModeContainer = styled.div`
+    padding: 16px 0;
+`;
+
+export const StyledChipOption = attachThemeAttrs(styled.div)`
+    background: ${(props) => props.palette.background.highlight};
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 32px;
+    color: ${(props) => props.palette.text.label};
+
+    :hover {
+        cursor: pointer;
+        background: ${(props) => props.palette.action.hover};
+        color: ${(props) => props.palette.text.main};
+    }
+`;
+
+export const StyledUniversalPicker = styled(UniversalPicker)`
+    margin: 0 8px;
+
+    > div {
+        justify-content: flex-start;
+    }
+`;
+
+export const OptionHeader = attachThemeAttrs(styled.li)`
+    color: ${(props) => props.palette.text.label};
+    line-height: 1.5;
+    font-size: 0.8125rem;
+    list-style: none;
+    margin-left: 24px;
+    margin-top: 16px;
 `;

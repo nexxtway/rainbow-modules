@@ -5,6 +5,7 @@ import { createPortal } from 'react-dom';
 import Option from './option';
 import Options from './options';
 import ResultItem from './resultItem';
+import EmptyMode from './emptyMode';
 import {
     Backdrop,
     Container,
@@ -61,7 +62,7 @@ const SearchContainer = (props) => {
                         />
                     </StyledHeader>
                     <RenderIf isTrue={searchMode === 'empty'}>
-                        <h1>empty</h1>
+                        <EmptyMode />
                     </RenderIf>
                     <RenderIf isTrue={searchMode === 'picklist'}>
                         <OptionsContainer role="presentation">
