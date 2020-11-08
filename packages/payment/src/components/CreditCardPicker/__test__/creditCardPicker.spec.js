@@ -27,27 +27,12 @@ const options = [
 ];
 
 describe('<CreditCardPicker/>', () => {
-    it('should call onChanged with "qwer" value', () => {
-        const onChangeFn = jest.fn();
-        const component = mount(
-            <CreditCardPicker
-                label="Select a credit card"
-                required
-                onChange={onChangeFn}
-                options={options}
-            />,
-        );
-        component.find('UniversalPickerOption').at(1).find('input').simulate('change');
-        expect(onChangeFn).toHaveBeenCalledWith('qwer');
-    });
     it('should render AddNewCardButton when onAdd is passed', () => {
-        const onChangeFn = jest.fn();
         const onAddFn = jest.fn();
         const component = mount(
             <CreditCardPicker
                 label="Select a credit card"
                 required
-                onChange={onChangeFn}
                 options={options}
                 onAdd={onAddFn}
             />,
@@ -65,6 +50,20 @@ describe('<CreditCardPicker/>', () => {
             />,
         );
         expect(component.find(AddNewCardButton).exists()).toBe(false);
+    });
+    it('should call the function passed in onAdd prop', () => {
+        const onAddFn = jest.fn();
+        const component = mount(
+            <CreditCardPicker
+                label="Select a credit card"
+                required
+                options={options}
+                onAdd={onAddFn}
+            />,
+        );
+        const buttonComponent = component.find(AddNewCardButton);
+        buttonComponent.simulate('click');
+        expect(onAddFn).toHaveBeenCalled();
     });
     it('should render Cards component when isLoading is not passed', () => {
         const onChangeFn = jest.fn();
