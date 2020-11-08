@@ -1,23 +1,22 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import BatchActionsBar from '..';
-import { StyledLabel } from '../styled';
+import { StyledLabel, StyledBadge } from '../styled';
 
 describe('<BatchActionsBar />', () => {
-    it('should render an span with the label', () => {
+    it('should render a span with the label', () => {
         const component = mount(<BatchActionsBar label="Rides Selected" isVisible />);
         const span = component.find(StyledLabel);
         expect(span.text().includes('Rides Selected')).toBe(true);
     });
 
-    it('should render an span with the itemsLength', () => {
+    it('should render a span with the itemsLength', () => {
         const component = mount(<BatchActionsBar itemsLength={253} isVisible />);
-        const badge = component.find('Badge');
-        const span = badge.find('span');
-        expect(span.at(1).text().includes('253')).toBe(true);
+        const badge = component.find(StyledBadge);
+        expect(badge.prop('label')).toBe(253);
     });
 
-    it('should call onRequestCloseMock when click on close button', () => {
+    it('should fire onRequestClose when click on close button', () => {
         const onRequestCloseMock = jest.fn();
         const component = mount(<BatchActionsBar onRequestClose={onRequestCloseMock} isVisible />);
         component.find('button').simulate('click');
