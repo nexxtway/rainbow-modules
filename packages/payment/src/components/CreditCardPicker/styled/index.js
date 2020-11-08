@@ -188,7 +188,7 @@ export const AddNewCardButton = attachThemeAttrs(styled(StyledRadioItem))`
     }
 
     &:focus {
-        border: solid 1px rgba(1, 182, 245, 1);
+        border: solid 1px ${(props) => props.palette.brand.main};
     }
 `;
 

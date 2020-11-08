@@ -42,11 +42,11 @@ const ConfirmModal = (props) => {
 ConfirmModal.propTypes = {
     /** @ignore */
     isOpen: PropTypes.bool,
-    /** The modal header. */
+    /** The header that will be displayed in the modal. */
     header: PropTypes.string,
-    /** The modal prompt. */
+    /** The text or question that will be displayed in the modal. */
     question: PropTypes.string,
-    /** The modal icon. */
+    /** The icon that will be displayed in the modal. */
     icon: PropTypes.node,
     /** The label for OK button. */
     okButtonLabel: PropTypes.string,
