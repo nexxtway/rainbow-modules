@@ -18,5 +18,8 @@
     },
     "publishConfig": {
         "access": "public"
+    },
+    "devDependencies": {
+        "algoliasearch": "^4.6.0"
     }
 }

@@ -1,11 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { RenderIf, Tabset, Tab, Input } from 'react-rainbow-components';
+import { RenderIf, Tabset, Input } from 'react-rainbow-components';
 import { Search } from '@rainbow-modules/icons';
 import { createPortal } from 'react-dom';
 import Option from './option';
 import Options from './options';
-import ResultItem from './resultItem';
+import ResultItems from './resultItems';
 import EmptyMode from './emptyMode';
+import Tabs from './tabs';
 import {
     Backdrop,
     Container,
@@ -14,15 +15,16 @@ import {
     ResultsContainer,
     ResultsContent,
     Content,
-    StyledCubeFilled,
     StyledHeader,
 } from './styled';
 
 const SearchContainer = (props) => {
-    const { isOpen, onSearch, results } = props;
+    const { isOpen, onSearch, results, onRequestClose } = props;
     const inputRef = useRef();
+    const backdropRef = useRef();
     const [searchMode, setSearchMode] = useState('empty');
     const [query, setQuery] = useState('');
+    const [activeResultTab, setActiveResultTab] = useState();
 
     useEffect(() => {
         if (isOpen) {
@@ -31,11 +33,26 @@ const SearchContainer = (props) => {
                 inputRef.current.focus();
             }, 0);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isOpen, query.length === 0]);
 
+    useEffect(() => {
+        const entities = Object.keys(results);
+        if (searchMode === 'results' && entities.length > 0) {
+            setActiveResultTab(entities[0]);
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [searchMode === 'results']);
+
     const handleKeyDown = (event) => {
-        if (event.keyCode === 13) {
-            setSearchMode('results');
+        switch (event.keyCode) {
+            case 27:
+                onRequestClose();
+                break;
+            case 13:
+                setSearchMode('results');
+                break;
+            default:
         }
     };
 
@@ -45,9 +62,15 @@ const SearchContainer = (props) => {
         onSearch({ query });
     };
 
+    const handleBackdropClick = (event) => {
+        if (event.target === backdropRef.current) {
+            onRequestClose();
+        }
+    };
+
     if (isOpen) {
         return createPortal(
-            <Backdrop>
+            <Backdrop ref={backdropRef} onClick={handleBackdropClick}>
                 <Container>
                     <StyledHeader>
                         <Input
@@ -72,17 +95,16 @@ const SearchContainer = (props) => {
                     </RenderIf>
                     <RenderIf isTrue={searchMode === 'results'}>
                         <ResultsContainer>
-                            <Tabset variant="line">
-                                <Tab label="Components" name="components" id="components" />
-                                <Tab label="Examples" name="examples" id="examples" />
+                            <Tabset
+                                variant="line"
+                                activeTabName={activeResultTab}
+                                onSelect={(e, selected) => setActiveResultTab(selected)}
+                            >
+                                <Tabs results={results} />
                             </Tabset>
                             <Content>
                                 <ResultsContent role="presentation">
-                                    <ResultItem
-                                        label="text"
-                                        description="Description"
-                                        icon={<StyledCubeFilled />}
-                                    />
+                                    <ResultItems results={results} activeTab={activeResultTab} />
                                 </ResultsContent>
                             </Content>
                         </ResultsContainer>

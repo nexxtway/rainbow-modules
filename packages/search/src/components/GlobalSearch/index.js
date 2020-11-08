@@ -11,13 +11,6 @@ const GlobalSearch = (props) => {
     const [query, setQuery] = useState('');
     const [searchResults, setSearchResults] = useState({});
     const containerRef = useRef();
-    useOutsideClick(
-        containerRef,
-        () => {
-            setOpen(false);
-        },
-        isOpen,
-    );
 
     const search = async ({ query }) => {
         const results = await Promise.all(
@@ -33,6 +26,10 @@ const GlobalSearch = (props) => {
         );
     };
 
+    const onRequestClose = () => {
+        setOpen(false);
+    };
+
     return (
         <div ref={containerRef} style={style} className={className}>
             <Input
@@ -45,7 +42,12 @@ const GlobalSearch = (props) => {
                 variant={variant}
                 placeholder={placeholder}
             />
-            <SearchContainer isOpen={isOpen} onSearch={search} results={searchResults} />
+            <SearchContainer
+                isOpen={isOpen}
+                onSearch={search}
+                results={searchResults}
+                onRequestClose={onRequestClose}
+            />
         </div>
     );
 };
