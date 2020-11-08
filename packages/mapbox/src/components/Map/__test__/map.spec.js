@@ -3,6 +3,18 @@ import { mount } from 'enzyme';
 import { Application } from 'react-rainbow-components';
 import Map from '../index';
 
+jest.mock('mapbox-gl/dist/mapbox-gl', () => ({
+    GeolocateControl: jest.fn(),
+    Map: jest.fn(() => ({
+        addControl: jest.fn(),
+        on: jest.fn(),
+        remove: jest.fn(),
+        once: jest.fn(),
+    })),
+    NavigationControl: jest.fn(),
+}));
+jest.mock('mapbox-gl/dist/mapbox-gl.css', () => ({}));
+
 describe('<Map />', () => {
     it('should render two p with right text when accessToken is undefined', () => {
         const component = mount(
