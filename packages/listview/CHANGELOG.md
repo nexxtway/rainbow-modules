@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/nexxtway/rainbow-modules/compare/v0.10.0...v0.11.0) (2020-11-13)
+
+### Bug Fixes
+
+-   fixed tests on batchactionsbar module ([#191](https://github.com/nexxtway/rainbow-modules/issues/191)) ([61a4ef4](https://github.com/nexxtway/rainbow-modules/commit/61a4ef4bdd1694689e97bb3cbd01fa4e44f426df))
+
+### Features
+
+-   added test to batchactionsbar module ([#186](https://github.com/nexxtway/rainbow-modules/issues/186)) ([74e1f2f](https://github.com/nexxtway/rainbow-modules/commit/74e1f2f9d3fbe3f39fb85cee4e22e80ac5c59171))
+
+# [0.10.0](https://github.com/nexxtway/rainbow-modules/compare/v0.8.0...v0.10.0) (2020-10-29)
+
+### Bug Fixes
+
+-   add prop name to CreditCardPicker ([#183](https://github.com/nexxtway/rainbow-modules/issues/183)) ([6a51dfd](https://github.com/nexxtway/rainbow-modules/commit/6a51dfd25933942b2aa732e8c29c9d8cccc0d6c5))
+
+### Features
+
+-   implement BatchActionsBar component on listview ([#172](https://github.com/nexxtway/rainbow-modules/issues/172)) ([987ce18](https://github.com/nexxtway/rainbow-modules/commit/987ce18997cbe2ab465ccecc7b471ea10b83a874))
+
 # [0.9.0](https://github.com/nexxtway/rainbow-modules/compare/v0.8.0...v0.9.0) (2020-10-29)
 
 ### Features

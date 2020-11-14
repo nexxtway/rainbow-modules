@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/nexxtway/rainbow-modules/compare/v0.10.0...v0.11.0) (2020-11-13)
+
+### Bug Fixes
+
+-   border 0n CreditCardPicker component ([#194](https://github.com/nexxtway/rainbow-modules/issues/194)) ([3d581b1](https://github.com/nexxtway/rainbow-modules/commit/3d581b131a27adec92bb81acd652564873402e58))
+
+# [0.10.0](https://github.com/nexxtway/rainbow-modules/compare/v0.8.0...v0.10.0) (2020-10-29)
+
+### Bug Fixes
+
+-   add prop name to CreditCardPicker ([#183](https://github.com/nexxtway/rainbow-modules/issues/183)) ([6a51dfd](https://github.com/nexxtway/rainbow-modules/commit/6a51dfd25933942b2aa732e8c29c9d8cccc0d6c5))
+-   call stopPropagation when submit in StripeCheckoutModal ([#185](https://github.com/nexxtway/rainbow-modules/issues/185)) ([e8eafd1](https://github.com/nexxtway/rainbow-modules/commit/e8eafd1115a158db4786293c3886950f1c04ad32))
+
 # [0.9.0](https://github.com/nexxtway/rainbow-modules/compare/v0.8.0...v0.9.0) (2020-10-29)
 
 ### Bug Fixes
