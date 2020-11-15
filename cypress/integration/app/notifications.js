@@ -23,8 +23,10 @@ describe('App notifications', () => {
 
     it('should remove the notification after the timeout', () => {
         cy.visit(APP_NOTIFICATION_TIMEOUT_URL);
+        cy.clock();
         cy.get(NOTIFICATION_BUTTON_TIMEOUT).click();
         cy.get('[data-cy=notification]').should('have.length', 1);
+        cy.tick(10000);
         cy.get('[data-cy=notification]').should('have.length', 0);
     });
 });
