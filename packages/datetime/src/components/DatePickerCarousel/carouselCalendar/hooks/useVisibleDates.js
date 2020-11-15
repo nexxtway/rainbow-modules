@@ -10,7 +10,8 @@ export default function useVisibleDates({ minDate, maxDate, currentDate, size })
 
     const visibleDates = useMemo(() => {
         return Array.from(Array(size), (_, index) => addDays(fromDate, index));
-    }, [size, fromDate]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [fromDate]);
 
     const moveLeft = useCallback(
         (amount) => {
