@@ -23,6 +23,7 @@ const StyledBox = styled.div`
         `
         opacity: 1;
         `};
+
     & > div {
         overflow-y: auto;
     }
