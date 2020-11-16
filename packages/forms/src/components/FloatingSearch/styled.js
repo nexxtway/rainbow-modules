@@ -39,6 +39,7 @@ export const StyledClearButton = attachThemeAttrs(styled.button)`
 export const StyledInput = styled(Input)`
     > div > input {
         padding-right: 85px;
+
         :focus {
             padding-right: 85px;
         }
