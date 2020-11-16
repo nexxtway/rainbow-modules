@@ -13,7 +13,9 @@
     },
     "peerDependencies": {
         "react": ">=16.8.0",
-        "react-rainbow-components": ">=1.18.1"
+        "react-rainbow-components": ">=1.18.1",
+        "@rainbow-modules/app": ">=^0.10.0",
+        "react-intl": ">=4.0.0"
     },
     "publishConfig": {
         "access": "public"
