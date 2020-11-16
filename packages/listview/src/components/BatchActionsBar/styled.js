@@ -5,11 +5,11 @@ import { BORDER_RADIUS_2 } from 'react-rainbow-components/styles/borderRadius';
 import { FONT_SIZE_TEXT_LARGE } from 'react-rainbow-components/styles/fontSizes';
 
 export const StyledContainer = attachThemeAttrs(styled.div)`
-    padding: 16px;
+    padding: 8px;
     background-color: ${(props) => props.palette.background.main};
     color: ${(props) => props.palette.text.main};
     border: 1px solid transparent;
-    box-shadow: 0 10px 28px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
     border-radius: ${BORDER_RADIUS_2};
     transition: all 0.1s linear, padding 0s, border 0s;
     line-height: 2.5rem;
