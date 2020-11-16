@@ -43,6 +43,7 @@ const FloatingSearch = (props) => {
             isVisible={isVisible}
             triggerElementRef={triggerElementRef}
             onOpened={() => inputRef.current.focus()}
+            keepScrollEnabled
         >
             <StyledContainer style={style} className={className}>
                 <StyledInput
