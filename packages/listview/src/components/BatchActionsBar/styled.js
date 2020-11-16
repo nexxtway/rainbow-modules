@@ -5,7 +5,7 @@ import { BORDER_RADIUS_2 } from 'react-rainbow-components/styles/borderRadius';
 import { FONT_SIZE_TEXT_LARGE } from 'react-rainbow-components/styles/fontSizes';
 
 export const StyledContainer = attachThemeAttrs(styled.div)`
-    padding: 8px;
+    padding: 8px 8px 8px 12px;
     background-color: ${(props) => props.palette.background.main};
     color: ${(props) => props.palette.text.main};
     border: 1px solid transparent;
@@ -33,12 +33,12 @@ export const StyledRightContent = styled.div`
 
 export const StyledBadge = styled(Badge)`
     flex: 0 0 auto;
-    font-size: 20px;
+    font-size: 18px;
     margin-right: 16px;
-    height: 40px;
-    line-height: 40px;
+    height: 36px;
+    line-height: 36px;
     font-weight: 800;
-    padding: 0 16px;
+    padding: 0 12px;
 `;
 
 export const StyledLabel = attachThemeAttrs(styled.span)`
