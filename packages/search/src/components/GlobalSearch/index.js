@@ -1,8 +1,7 @@
-import React, { useState, useRef, useEffect, Children } from 'react';
+import React, { useState, useRef, Children } from 'react';
 import PropTypes from 'prop-types';
 import { Input } from 'react-rainbow-components';
 import { Search } from '@rainbow-modules/icons';
-import { useOutsideClick } from '@rainbow-modules/hooks';
 import SearchContainer from './searchContainer';
 
 const GlobalSearch = (props) => {
