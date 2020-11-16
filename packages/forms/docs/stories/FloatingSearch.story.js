@@ -18,10 +18,6 @@ export const BasicFloatingSearch = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [value, setValue] = useState('');
 
-    const handleOnChange = (value) => {
-        setValue(value);
-    };
-
     const toggleOpen = () => {
         setIsOpen(!isOpen);
     };
@@ -46,9 +42,9 @@ export const BasicFloatingSearch = () => {
                     triggerRef={() => triggerRef.current.htmlElementRef}
                     placeholder="Search..."
                     style={searchStyles}
-                    onChange={handleOnChange}
+                    onChange={setValue}
                     value={value}
-                    closeSearch={handleCloseSearch}
+                    onCloseSearch={handleCloseSearch}
                 />
             </Container>
         </RainbowFirebaseApp>

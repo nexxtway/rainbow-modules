@@ -5,14 +5,14 @@ import { Input, ButtonIcon, RenderIf } from 'react-rainbow-components';
 import { MagnifyingGlass, Close } from '@rainbow-modules/icons';
 import InternalOverlay from 'react-rainbow-components/components/InternalOverlay';
 import { StyledContainer, ButtonsContainer, StyledDivider, StyledClearButton } from './styled';
-import clearMessages from './clearMessages';
+import messages from './messages';
 
 const FloatingSearch = (props) => {
-    const { isOpen, triggerRef, onChange, placeholder, style, value, closeSearch } = props;
-    const inputRef = useRef(null);
+    const { isOpen, triggerRef, onChange, placeholder, style, value, onCloseSearch } = props;
+    const inputRef = useRef();
     const intl = useIntl();
-    const isValue = value.length > 0;
-    const clearButton = intl.formatMessage(clearMessages.clearButton);
+    const hasValue = value.length > 0;
+    const clearButton = intl.formatMessage(messages.clearButton);
 
     const handleOnChange = (event) => {
         onChange(event.target.value);
@@ -39,13 +39,13 @@ const FloatingSearch = (props) => {
                     ref={inputRef}
                 />
                 <ButtonsContainer>
-                    <RenderIf isTrue={isValue}>
+                    <RenderIf isTrue={hasValue}>
                         <StyledClearButton onMouseDown={handleOnMouseDown}>
                             {clearButton}
                         </StyledClearButton>
                         <StyledDivider />
                     </RenderIf>
-                    <ButtonIcon size="small" icon={<Close />} onClick={closeSearch} />
+                    <ButtonIcon size="small" icon={<Close />} onClick={onCloseSearch} />
                 </ButtonsContainer>
             </StyledContainer>
         </InternalOverlay>
@@ -66,15 +66,15 @@ FloatingSearch.propTypes = {
     /** An object with custom style applied to the outer element. */
     style: PropTypes.object,
     /** The action triggered to close the FloatingSearch. */
-    closeSearch: PropTypes.func,
+    onCloseSearch: PropTypes.func,
 };
 
 FloatingSearch.defaultProps = {
-    value: undefined,
+    value: '',
     placeholder: null,
     isOpen: false,
     onChange: () => {},
-    closeSearch: () => {},
+    onCloseSearch: () => {},
     style: undefined,
 };
 

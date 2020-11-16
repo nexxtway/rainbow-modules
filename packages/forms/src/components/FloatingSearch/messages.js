@@ -1,6 +1,6 @@
 import { defineMessages } from 'react-intl';
 
-const clearMessages = defineMessages({
+const messages = defineMessages({
     clearButton: {
         id: 'FloatingSearch.clearButton.text',
         defaultMessage: 'Clear',
@@ -8,4 +8,4 @@ const clearMessages = defineMessages({
     },
 });
 
-export default clearMessages;
+export default messages;

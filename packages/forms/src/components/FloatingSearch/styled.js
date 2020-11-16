@@ -27,7 +27,10 @@ export const StyledDivider = attachThemeAttrs(styled.div)`
     background-color: ${(props) => props.palette.border.divider};
 `;
 
-export const StyledClearButton = styled.button`
+export const StyledClearButton = attachThemeAttrs(styled.button)`
     background-color: transparent;
     border: none;
+    :hover{
+        color: ${(props) => props.theme.rainbow.palette.brand.main};
+    }
 `;
