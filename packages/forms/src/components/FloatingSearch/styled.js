@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { Input } from 'react-rainbow-components';
+
 import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
 
 export const StyledContainer = attachThemeAttrs(styled.div)`
@@ -10,7 +12,6 @@ export const StyledContainer = attachThemeAttrs(styled.div)`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     position: relative;
 `;
 
@@ -32,5 +33,14 @@ export const StyledClearButton = attachThemeAttrs(styled.button)`
     border: none;
     :hover{
         color: ${(props) => props.theme.rainbow.palette.brand.main};
+    }
+`;
+
+export const StyledInput = styled(Input)`
+    > div > input {
+        padding-right: 85px;
+        :focus {
+            padding-right: 85px;
+        }
     }
 `;

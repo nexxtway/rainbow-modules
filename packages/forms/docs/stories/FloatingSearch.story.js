@@ -38,13 +38,13 @@ export const BasicFloatingSearch = () => {
                     onClick={toggleOpen}
                 />
                 <FloatingSearch
-                    isOpen={isOpen}
-                    triggerRef={() => triggerRef.current.htmlElementRef}
+                    isVisible={isOpen}
+                    triggerElementRef={() => triggerRef.current.htmlElementRef}
                     placeholder="Search..."
                     style={searchStyles}
                     onChange={setValue}
                     value={value}
-                    onCloseSearch={handleCloseSearch}
+                    onRequestClose={handleCloseSearch}
                 />
             </Container>
         </RainbowFirebaseApp>
