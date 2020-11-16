@@ -11,7 +11,7 @@ const MapContext = createContext({});
 const geoOptions = {
     maximumAge: 600000,
     enableHighAccuracy: true,
-    timeout: 2000,
+    timeout: 10000,
 };
 
 export default function Map(props) {
