@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/nexxtway/rainbow-modules/compare/v0.11.0...v0.12.0) (2020-11-17)
+
+### Bug Fixes
+
+-   batchActionBar shadow ([#203](https://github.com/nexxtway/rainbow-modules/issues/203)) ([f76b7de](https://github.com/nexxtway/rainbow-modules/commit/f76b7dea96b34f377ec3f125f8640b7a9dc88d50))
+-   padding on BatchActionsBar ([#201](https://github.com/nexxtway/rainbow-modules/issues/201)) ([1edca15](https://github.com/nexxtway/rainbow-modules/commit/1edca153ec1021a2392420d3d5fcc283e2350d00))
+
+### Features
+
+-   add useScrollingIntent hook ([#200](https://github.com/nexxtway/rainbow-modules/issues/200)) ([e4728b8](https://github.com/nexxtway/rainbow-modules/commit/e4728b8a981ed63b05033937b89fbaae2f779348))
+-   implement floating search component ([#199](https://github.com/nexxtway/rainbow-modules/issues/199)) ([5ff5b91](https://github.com/nexxtway/rainbow-modules/commit/5ff5b91bb3ce3676b64d230653889703833608f0))
+
+# [0.11.0](https://github.com/nexxtway/rainbow-modules/compare/v0.10.0...v0.11.0) (2020-11-13)
+
+### Bug Fixes
+
+-   border 0n CreditCardPicker component ([#194](https://github.com/nexxtway/rainbow-modules/issues/194)) ([3d581b1](https://github.com/nexxtway/rainbow-modules/commit/3d581b131a27adec92bb81acd652564873402e58))
+-   change getCurrentPosition timeout ([2ccb426](https://github.com/nexxtway/rainbow-modules/commit/2ccb426c39f95f243de21d994fa0a5445861ac56))
+-   fixed tests on batchactionsbar module ([#191](https://github.com/nexxtway/rainbow-modules/issues/191)) ([61a4ef4](https://github.com/nexxtway/rainbow-modules/commit/61a4ef4bdd1694689e97bb3cbd01fa4e44f426df))
+
+### Features
+
+-   added camera to icons module ([#193](https://github.com/nexxtway/rainbow-modules/issues/193)) ([9ac529f](https://github.com/nexxtway/rainbow-modules/commit/9ac529f76ed09591177ce7327147c05f1fec327c))
+-   added test to batchactionsbar module ([#186](https://github.com/nexxtway/rainbow-modules/issues/186)) ([74e1f2f](https://github.com/nexxtway/rainbow-modules/commit/74e1f2f9d3fbe3f39fb85cee4e22e80ac5c59171))
+
 # [0.10.0](https://github.com/nexxtway/rainbow-modules/compare/v0.8.0...v0.10.0) (2020-10-29)
 
 ### Bug Fixes

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/nexxtway/rainbow-modules/compare/v0.11.0...v0.12.0) (2020-11-17)
+
+### Features
+
+-   add useScrollingIntent hook ([#200](https://github.com/nexxtway/rainbow-modules/issues/200)) ([e4728b8](https://github.com/nexxtway/rainbow-modules/commit/e4728b8a981ed63b05033937b89fbaae2f779348))
+
+# [0.11.0](https://github.com/nexxtway/rainbow-modules/compare/v0.10.0...v0.11.0) (2020-11-13)
+
+**Note:** Version bump only for package @rainbow-modules/hooks
+
 # [0.10.0](https://github.com/nexxtway/rainbow-modules/compare/v0.8.0...v0.10.0) (2020-10-29)
 
 ### Bug Fixes

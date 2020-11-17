@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/nexxtway/rainbow-modules/compare/v0.11.0...v0.12.0) (2020-11-17)
+
+### Features
+
+-   implement floating search component ([#199](https://github.com/nexxtway/rainbow-modules/issues/199)) ([5ff5b91](https://github.com/nexxtway/rainbow-modules/commit/5ff5b91bb3ce3676b64d230653889703833608f0))
+
+# [0.11.0](https://github.com/nexxtway/rainbow-modules/compare/v0.10.0...v0.11.0) (2020-11-13)
+
+**Note:** Version bump only for package @rainbow-modules/forms
+
 # [0.10.0](https://github.com/nexxtway/rainbow-modules/compare/v0.8.0...v0.10.0) (2020-10-29)
 
 ### Bug Fixes

@@ -48,12 +48,13 @@ export const basicBatchActionsBar = () => {
 };
 
 const Container = styled.div`
-    margin: 50px auto;
+    margin: 50px auto 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 80%;
+    height: fit-content;
 `;
 
 const StyledStatus = styled.div`
@@ -61,6 +62,8 @@ const StyledStatus = styled.div`
     color: #fff;
     background-color: #f2707a;
 `;
+
+const BarStyle = { position: 'absolute', bottom: '0' };
 
 const CreatedAt = ({ value }) =>
     new Intl.DateTimeFormat('en', {
@@ -111,8 +114,8 @@ export const TableWithBatchActionsBar = () => {
                     label="Rides Selected"
                     itemsLength={itemsLength}
                     onRequestClose={() => setVisible(false)}
-                    className="rainbow-m-top_medium"
                     isVisible={isVisible}
+                    style={BarStyle}
                 >
                     <StyledButton variant="destructive" onClick={handleDelete}>
                         <Trash style={iconStyle} />
