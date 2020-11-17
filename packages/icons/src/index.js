@@ -45,3 +45,6 @@ export { default as Edit } from './components/edit';
 export { default as FilterFilled } from './components/filterFilled';
 export { default as MagnifyingGlass } from './components/magnifyingGlass';
 export { default as Star } from './components/star';
+export { default as Logout } from './components/logout';
+export { default as Login } from './components/login';
+export { default as SettingsFilled } from './components/settingsFilled';
