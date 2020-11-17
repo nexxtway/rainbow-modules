@@ -19,14 +19,13 @@ const FloatingSearchButtonIcon = (props) => {
         style,
         tabIndex,
         title,
-        type,
         variant,
         placeholder,
         onChange,
         value,
     } = props;
 
-    const triggerRef = useRef(null);
+    const triggerRef = useRef();
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleOpen = () => {
@@ -52,7 +51,6 @@ const FloatingSearchButtonIcon = (props) => {
                 style={style}
                 tabIndex={tabIndex}
                 title={title}
-                type={type}
                 variant={variant}
                 ref={triggerRef}
             />

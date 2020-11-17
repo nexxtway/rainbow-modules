@@ -52,5 +52,5 @@ export const BasicFloatingSearch = () => {
 };
 
 export default {
-    title: 'Modules|Forms/Stories',
+    title: 'Modules|Listview/Stories',
 };

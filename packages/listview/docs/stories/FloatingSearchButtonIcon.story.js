@@ -27,5 +27,5 @@ export const BasicFloatingSearchButtonIcon = () => {
 };
 
 export default {
-    title: 'Modules|Forms/Stories',
+    title: 'Modules|Listview/Stories',
 };
