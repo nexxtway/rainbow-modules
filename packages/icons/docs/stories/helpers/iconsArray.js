@@ -43,6 +43,9 @@ import {
     MagnifyingGlass,
     Star,
     Camera,
+    SettingsFilled,
+    Login,
+    Logout,
 } from '../../../src';
 
 export default [
@@ -265,5 +268,20 @@ export default [
         name: 'camera',
         category: 'standard',
         icon: Camera,
+    },
+    {
+        name: 'login',
+        category: 'standard',
+        icon: Login,
+    },
+    {
+        name: 'logout',
+        category: 'standard',
+        icon: Logout,
+    },
+    {
+        name: 'settingsFilled',
+        category: 'standard',
+        icon: SettingsFilled,
     },
 ];
