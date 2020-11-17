@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { ButtonIcon } from 'react-rainbow-components';
 import { FilterFilled } from '@rainbow-modules/icons';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
-import FloatingSearch from '../../src/components/FloatingSearch';
+import { FloatingSearch } from '../../src';
 
 const Container = styled.div`
     padding: 20px;
