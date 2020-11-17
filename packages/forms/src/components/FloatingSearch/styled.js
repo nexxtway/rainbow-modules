@@ -5,10 +5,10 @@ import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThem
 
 export const StyledContainer = attachThemeAttrs(styled.div)`
     padding: 5px;
-    border: solid 1px ${(props) => props.theme.rainbow.palette.border.divider};
+    border: solid 1px ${(props) => props.palette.border.divider};
     border-radius: 100px;
-    background: ${(props) => props.theme.rainbow.palette.background.main};
-    box-shadow: ${(props) => props.theme.rainbow.shadows.shadow_2};
+    background: ${(props) => props.palette.background.main};
+    box-shadow: ${(props) => props.shadows.shadow_2};
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,7 +32,7 @@ export const StyledClearButton = attachThemeAttrs(styled.button)`
     background-color: transparent;
     border: none;
     :hover{
-        color: ${(props) => props.theme.rainbow.palette.brand.main};
+        color: ${(props) => props.palette.brand.main};
     }
 `;
 
