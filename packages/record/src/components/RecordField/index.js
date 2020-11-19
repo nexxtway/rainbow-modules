@@ -7,10 +7,13 @@ export default function RecordField(props) {
     const { className, style, label, value, type } = props;
     const context = useContext(RecordFieldContext);
     const { privateParentName } = context || {};
+
     return (
         <Container className={className} style={style} privateParentName={privateParentName}>
-            <Label>{label}</Label>
-            <Value type={type}>{value}</Value>
+            <Label privateParentName={privateParentName}>{label}</Label>
+            <Value privateParentName={privateParentName} type={type}>
+                {value}
+            </Value>
         </Container>
     );
 }

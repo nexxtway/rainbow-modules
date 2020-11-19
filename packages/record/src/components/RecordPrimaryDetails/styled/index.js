@@ -1,3 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledContainer = styled.div``;
+// eslint-disable-next-line import/prefer-default-export
+export const StyledContainer = styled.div`
+    display: flex;
+`;

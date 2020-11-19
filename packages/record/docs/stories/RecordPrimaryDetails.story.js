@@ -20,9 +20,9 @@ export const basicRecordPrimaryDetails = () => {
         <Application>
             <Container>
                 <RecordPrimaryDetails>
-                    <RecordField label="Customer Name" value="John Doe" />
-                    <RecordField label="Customer Name" value="John Doe" />
-                    <RecordField label="Customer Name" value="John Doe" />
+                    <RecordField label="Name" value="John Doe" />
+                    <RecordField label="Age" value="25 years" />
+                    <RecordField label="Gender" value="Male" />
                 </RecordPrimaryDetails>
             </Container>
         </Application>

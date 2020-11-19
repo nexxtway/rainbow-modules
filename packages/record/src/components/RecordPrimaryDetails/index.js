@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Provider } from '../RecordField/context';
 import { StyledContainer } from './styled';
 
-const RecordPrimaryDetails = (props) => {
+export default function RecordPrimaryDetails(props) {
     const { style, id, children, className } = props;
 
     const context = {
@@ -14,6 +15,20 @@ const RecordPrimaryDetails = (props) => {
             <Provider value={context}>{children}</Provider>
         </StyledContainer>
     );
+}
+
+RecordPrimaryDetails.propTypes = {
+    /** A CSS class for the outer element, in addition to the component's base classes. */
+    className: PropTypes.string,
+    /** An object with custom style applied to the outer element. */
+    style: PropTypes.object,
+    id: PropTypes.string,
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
 };
 
-export default RecordPrimaryDetails;
+RecordPrimaryDetails.defaultProps = {
+    className: undefined,
+    style: undefined,
+    id: undefined,
+    children: null,
+};
