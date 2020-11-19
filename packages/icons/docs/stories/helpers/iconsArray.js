@@ -46,6 +46,7 @@ import {
     SettingsFilled,
     Login,
     Logout,
+    CubeFilled,
 } from '../../../src';
 
 export default [
@@ -283,5 +284,10 @@ export default [
         name: 'settingsFilled',
         category: 'standard',
         icon: SettingsFilled,
+    },
+    {
+        name: 'cubeFilled',
+        category: 'standard',
+        icon: CubeFilled,
     },
 ];
