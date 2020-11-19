@@ -6,7 +6,7 @@ import RecordSection from '../../src/components/RecordSection';
 
 const Container = styled.div`
     background-color: ${(props) => props.theme.rainbow.palette.background.main};
-    padding: 0 32px 32px 32px;
+    padding: 0 32px 12px 32px;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -5,13 +5,12 @@ export const Container = styled.section`
     flex-direction: column;
 `;
 
-export const Header = styled.div`
+export const Header = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 16px 0;
     border-bottom: 1px solid ${(props) => props.theme.rainbow.palette.border.divider};
-    margin-bottom: 20px;
 `;
 
 export const Label = styled.h2`
@@ -22,4 +21,13 @@ export const Label = styled.h2`
 
 export const ActionsContainer = styled.div`
     padding-left: 8px;
+`;
+
+export const Body = styled.div`
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: auto;
+    box-sizing: border-box;
 `;

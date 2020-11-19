@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container, Label, Header, ActionsContainer } from './styled';
+import { Container, Label, Header, ActionsContainer, Body } from './styled';
 
 export default function RecordSection(props) {
     const { className, style, label, children, actions } = props;
@@ -10,7 +10,7 @@ export default function RecordSection(props) {
                 <Label>{label}</Label>
                 <ActionsContainer>{actions}</ActionsContainer>
             </Header>
-            {children}
+            <Body>{children}</Body>
         </Container>
     );
 }
@@ -20,7 +20,7 @@ RecordSection.propTypes = {
     className: PropTypes.string,
     /** An object with custom style applied to the outer element. */
     style: PropTypes.object,
-    /** The label of the component. */
+    /** /** The text label that appears in the header of the component. */
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     /** The actions prop is used to place on the right a group of actions that you want to perform on the RecordSection, you are in charge of displaying these actions in the way you prefer. */
     actions: PropTypes.node,
