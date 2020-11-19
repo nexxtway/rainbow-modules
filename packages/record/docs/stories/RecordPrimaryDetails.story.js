@@ -5,10 +5,14 @@ import RecordField from '../../src/components/RecordField';
 import RecordPrimaryDetails from '../../src/components/RecordPrimaryDetails';
 
 const Container = styled.div`
+    background-color: ${(props) => props.theme.rainbow.palette.background.main};
+    padding: 32px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px;
+    height: 100%;
+    border-radius: 20px;
+    margin: 36px;
 `;
 
 export const basicRecordPrimaryDetails = () => {
