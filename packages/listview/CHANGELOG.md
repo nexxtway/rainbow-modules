@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/nexxtway/rainbow-modules/compare/v0.11.0...v0.12.0) (2020-11-17)
+
+### Bug Fixes
+
+-   batchActionBar shadow ([#203](https://github.com/nexxtway/rainbow-modules/issues/203)) ([f76b7de](https://github.com/nexxtway/rainbow-modules/commit/f76b7dea96b34f377ec3f125f8640b7a9dc88d50))
+-   padding on BatchActionsBar ([#201](https://github.com/nexxtway/rainbow-modules/issues/201)) ([1edca15](https://github.com/nexxtway/rainbow-modules/commit/1edca153ec1021a2392420d3d5fcc283e2350d00))
+
 # [0.11.0](https://github.com/nexxtway/rainbow-modules/compare/v0.10.0...v0.11.0) (2020-11-13)
 
 ### Bug Fixes
