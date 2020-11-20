@@ -38,5 +38,4 @@ export const datePickerCarouselWithCustomLocale = () => {
 
 export default {
     title: 'Modules|Datetime/Stories',
-    component: DatePickerCarousel,
 };
