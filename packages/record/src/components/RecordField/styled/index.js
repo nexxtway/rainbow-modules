@@ -6,7 +6,7 @@ export const Container = styled.div`
     box-sizing: border-box;
 
     ${(props) =>
-        props.privateParentName === 'RecordPrimaryDetails' &&
+        props.privateVariant === 'border-vertical' &&
         `
             padding-right: 24px;
             border-right: 1px solid ${props.theme.rainbow.palette.border.disabled};
@@ -19,7 +19,7 @@ export const Container = styled.div`
     `};
 
     ${(props) =>
-        props.privateParentName === 'RecordDetails' &&
+        props.privateVariant === 'horizontal' &&
         `
             flex-direction: row;
             align-items: center;
@@ -34,7 +34,7 @@ export const Label = styled.span`
     line-height: 1.5;
 
     ${(props) =>
-        props.privateParentName === 'RecordDetails' &&
+        props.privateVariant === 'horizontal' &&
         `
             flex: 0 0 20%;
             min-width: 200px;
@@ -53,7 +53,7 @@ export const Value = styled.span`
     line-height: 1.5;
 
     ${(props) =>
-        props.privateParentName === 'RecordDetails' &&
+        props.privateVariant === 'horizontal' &&
         `
             padding-right: 4px;
             padding-left: 4px;

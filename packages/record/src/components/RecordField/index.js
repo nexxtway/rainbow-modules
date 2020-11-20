@@ -1,17 +1,17 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { RecordFieldContext } from './context';
+import { RecordFieldContext } from '../../context';
 import { Container, Label, Value } from './styled';
 
 export default function RecordField(props) {
     const { className, style, label, value, type } = props;
     const context = useContext(RecordFieldContext);
-    const { privateParentName } = context || {};
+    const { privateVariant } = context || {};
 
     return (
-        <Container className={className} style={style} privateParentName={privateParentName}>
-            <Label privateParentName={privateParentName}>{label}</Label>
-            <Value privateParentName={privateParentName} type={type}>
+        <Container className={className} style={style} privateVariant={privateVariant}>
+            <Label privateVariant={privateVariant}>{label}</Label>
+            <Value privateVariant={privateVariant} type={type}>
                 {value}
             </Value>
         </Container>

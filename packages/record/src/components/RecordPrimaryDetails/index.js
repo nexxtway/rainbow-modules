@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Provider } from '../RecordField/context';
+import { Provider } from '../../context';
 import { StyledContainer } from './styled';
 
 export default function RecordPrimaryDetails(props) {
     const { style, id, children, className } = props;
 
     const context = {
-        privateParentName: 'RecordPrimaryDetails',
+        privateVariant: 'border-vertical',
     };
 
     return (
