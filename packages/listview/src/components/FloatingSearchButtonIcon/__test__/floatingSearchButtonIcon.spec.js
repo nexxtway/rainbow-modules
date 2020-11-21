@@ -10,14 +10,14 @@ jest.mock('../../FloatingSearch', () =>
 describe('<FloatingSearchButtonIcon />', () => {
     it('should render a button and not render FloatingSearch', () => {
         const component = mount(<FloatingSearchButtonIcon />);
-        const button = component.find('button');
+        const button = component.find('ButtonIcon');
         expect(button.exists()).toBe(true);
         expect(component.find(FloatingSearch).prop('isVisible')).toBe(false);
     });
 
     it('should render a FloatingSearch when click on button', () => {
         const component = mount(<FloatingSearchButtonIcon />);
-        const button = component.find('button');
+        const button = component.find('ButtonIcon');
         button.simulate('click');
         expect(component.find(FloatingSearch).prop('isVisible')).toBe(true);
     });

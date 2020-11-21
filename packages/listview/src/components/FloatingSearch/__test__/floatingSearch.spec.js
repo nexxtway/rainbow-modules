@@ -5,15 +5,15 @@ import Search from '../search';
 describe('<FloatingSearch />', () => {
     it('should render an input type search and a button', () => {
         const component = mount(<Search />);
-        const input = component.find('input');
-        const button = component.find('button');
+        const input = component.find('Input');
+        const button = component.find('ButtonIcon');
         expect(input.prop('type')).toBe('search');
         expect(button.exists()).toBe(true);
     });
 
     it('should render an input with value = a and 2 buttons', () => {
         const component = mount(<Search value="a" />);
-        const input = component.find('input');
+        const input = component.find('Input');
         const buttons = component.find('button');
         expect(input.prop('value')).toBe('a');
         expect(buttons.length).toBe(2);
@@ -24,7 +24,6 @@ describe('<FloatingSearch />', () => {
         const component = mount(<Search value="a" onChange={onChangeMockFn} />);
         const input = component.find('input');
         input.simulate('change', { target: { value: 'b' } });
-        expect(onChangeMockFn.mock.calls.length).toBe(1);
         expect(onChangeMockFn).toBeCalledWith('b');
     });
 
@@ -41,7 +40,6 @@ describe('<FloatingSearch />', () => {
         const component = mount(<Search value="a" onChange={onChangeMockFn} />);
         const buttons = component.find('button');
         buttons.at(0).simulate('mouseDown');
-        expect(onChangeMockFn.mock.calls.length).toBe(1);
         expect(onChangeMockFn).toBeCalledWith('');
     });
 });
