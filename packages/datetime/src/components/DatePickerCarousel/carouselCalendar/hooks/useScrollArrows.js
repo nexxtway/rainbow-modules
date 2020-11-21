@@ -8,14 +8,16 @@ export default function useScrollArrows({ minDate, maxDate, visibleDates, moveLe
     const [disableScrollRight, setDisableScrollRight] = useState(false);
 
     const scrollLeftClick = useCallback(() => {
+        if (disableScrollLeft) return;
         const nextStartDate = moveLeft(1);
         setDisableScrollLeft(isSameDay(nextStartDate, minCalendarDate));
-    }, [moveLeft, minCalendarDate]);
+    }, [disableScrollLeft, moveLeft, minCalendarDate]);
 
     const scrollRightClick = useCallback(() => {
+        if (disableScrollRight) return;
         const nextStartDate = moveRight(1);
         setDisableScrollRight(isSameDay(nextStartDate, maxCalendarDate));
-    }, [moveRight, maxCalendarDate]);
+    }, [disableScrollRight, moveRight, maxCalendarDate]);
 
     useEffect(() => {
         if (visibleDates.length > 0) {

@@ -21,6 +21,7 @@ export const StyledCarouselContent = styled.div`
     display: flex;
     flex: 1;
     align-items: center;
+    justify-content: space-around;
     overflow: hidden;
     height: 85px;
 `;
@@ -31,7 +32,7 @@ export const StyledDayCard = styled.button`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 5px ${(props) => props.cardMargin}px 8px;
+    margin: 5px auto 8px;
     border: 1px solid transparent;
     border-radius: 18px;
     background: ${(props) => props.theme.rainbow.palette.background.main};
@@ -94,7 +95,7 @@ export const StyledDisabledDayCard = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 5px ${(props) => props.cardMargin}px 8px;
+    margin: 5px auto 8px;
     border: 1px solid transparent;
     border-radius: 18px;
     background: ${(props) => props.theme.rainbow.palette.background.disabled};
