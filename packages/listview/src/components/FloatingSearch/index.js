@@ -1,42 +1,11 @@
 import React, { useRef } from 'react';
-import { useIntl } from 'react-intl';
 import PropTypes from 'prop-types';
-import { ButtonIcon, RenderIf } from 'react-rainbow-components';
-import { MagnifyingGlass, Close } from '@rainbow-modules/icons';
 import InternalOverlay from 'react-rainbow-components/components/InternalOverlay';
-import {
-    StyledContainer,
-    ButtonsContainer,
-    StyledDivider,
-    StyledClearButton,
-    StyledInput,
-} from './styled';
-import messages from './messages';
+import Search from './search';
 
 const FloatingSearch = (props) => {
-    const {
-        isVisible,
-        triggerElementRef,
-        onChange,
-        placeholder,
-        style,
-        className,
-        value,
-        onRequestClose,
-    } = props;
+    const { isVisible, triggerElementRef, ...rest } = props;
     const inputRef = useRef();
-    const intl = useIntl();
-    const hasValue = value && value.length > 0;
-    const clearButton = intl.formatMessage(messages.clearButton);
-
-    const handleOnChange = (event) => {
-        onChange(event.target.value);
-    };
-
-    const handleOnMouseDown = (event) => {
-        event.preventDefault();
-        onChange('');
-    };
 
     return (
         <InternalOverlay
@@ -45,25 +14,7 @@ const FloatingSearch = (props) => {
             onOpened={() => inputRef.current.focus()}
             keepScrollEnabled
         >
-            <StyledContainer style={style} className={className}>
-                <StyledInput
-                    placeholder={placeholder}
-                    icon={<MagnifyingGlass />}
-                    onChange={handleOnChange}
-                    value={value}
-                    ref={inputRef}
-                    type="search"
-                />
-                <ButtonsContainer>
-                    <RenderIf isTrue={hasValue}>
-                        <StyledClearButton onMouseDown={handleOnMouseDown}>
-                            {clearButton}
-                        </StyledClearButton>
-                        <StyledDivider />
-                    </RenderIf>
-                    <ButtonIcon size="small" icon={<Close />} onClick={onRequestClose} />
-                </ButtonsContainer>
-            </StyledContainer>
+            <Search inputRef={inputRef} {...rest} />
         </InternalOverlay>
     );
 };
