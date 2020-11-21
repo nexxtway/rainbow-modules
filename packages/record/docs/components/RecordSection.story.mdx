@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import RecordSection from '../../src/components/RecordSection';
+import * as stories from '../stories/RecordSection.story.js';
+
+<Meta title="Modules|Record/Components" component={RecordSection} />
+
+# Overview
+
+`RecordSection` component is used to separate and organize the information of a record in a data collection.
+
+### This is an example with the RecordSection.
+
+<Preview>
+    <Story name="RecordSection">{stories.basicRecordSection()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={RecordSection} />

@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import DatePickerCarousel from '../../src/components/DatePickerCarousel';
+import * as stories from '../stories/DatePickerCarousel.story.js';
+
+<Meta title="Modules|Datetime/Components" component={DatePickerCarousel} />
+
+# Overview
+
+`DatePickerCarousel` is an input element that allows to select a date from an interactive calendar in the form of a carousel.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="DatePickerCarousel">{stories.basicUsage()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={DatePickerCarousel} />
