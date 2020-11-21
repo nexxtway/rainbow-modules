@@ -52,5 +52,4 @@ export const basicEmailPasswordSignInForm = () => {
 
 export default {
     title: 'Modules|Auth/Stories',
-    component: 'EmailPasswordSignInForm',
 };
