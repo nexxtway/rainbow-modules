@@ -94,12 +94,19 @@ export default function Map(props) {
 Map.context = MapContext;
 
 Map.propTypes = {
+    /** A CSS class for the outer element, in addition to the component's base classes. */
     className: PropTypes.string,
+    /** An object with custom style applied for the outer element. */
     style: PropTypes.object,
+    /** Identifier that is used as authentication for the use of the services provided by mapbox */
     accessToken: PropTypes.string.isRequired,
+    /** A mapbox url where styles are defined */
     mapStyle: PropTypes.string,
+    /** A number that defines the zoom with which the map will be rendered */
     zoom: PropTypes.number,
+    /** An array with the coordinates where the map will be centered when rendered */
     center: PropTypes.arrayOf(PropTypes.number),
+    /** An array with the coordinates where the map will be centered when it does not have a center prop and the location of the device fails */
     defaultCenter: PropTypes.arrayOf(PropTypes.number),
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
 };
