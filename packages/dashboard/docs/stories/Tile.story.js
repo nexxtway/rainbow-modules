@@ -124,5 +124,4 @@ export const differentsColorsTite = () => {
 
 export default {
     title: 'Modules|Dashboard/Stories/Tile',
-    component: Tile,
 };

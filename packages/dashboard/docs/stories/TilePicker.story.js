@@ -202,5 +202,4 @@ export const BadgeVariantWithCustomIcon = () => {
 
 export default {
     title: 'Modules|Dashboard/Stories/TilePicker',
-    component: TilePicker,
 };

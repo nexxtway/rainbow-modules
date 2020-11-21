@@ -76,6 +76,10 @@ const DatePickerCarousel = React.forwardRef((props, ref) => {
                 label={formattedDate || placeholder}
                 onLabelClick={handleClick}
                 value={value}
+                selectionType={selectionType}
+                formatStyle={formatStyle}
+                minDate={minDate}
+                maxDate={maxDate}
                 onChange={onChange}
                 locale={currentLocale}
                 required={required}
