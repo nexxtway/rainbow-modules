@@ -48,5 +48,6 @@ export { default as Star } from './components/star';
 export { default as Logout } from './components/logout';
 export { default as Login } from './components/login';
 export { default as SettingsFilled } from './components/settingsFilled';
+export { default as CubeFilled } from './components/cubeFilled';
 export { default as TrashFilled } from './components/trashFilled';
 export { default as PencilFilled } from './components/pencilFilled';
