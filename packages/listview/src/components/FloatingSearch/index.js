@@ -52,6 +52,7 @@ const FloatingSearch = (props) => {
                     onChange={handleOnChange}
                     value={value}
                     ref={inputRef}
+                    type="search"
                 />
                 <ButtonsContainer>
                     <RenderIf isTrue={hasValue}>

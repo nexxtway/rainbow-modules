@@ -19,14 +19,13 @@ const FloatingSearchButtonIcon = (props) => {
         style,
         tabIndex,
         title,
-        type,
         variant,
         placeholder,
         onChange,
         value,
     } = props;
 
-    const triggerRef = useRef(null);
+    const triggerRef = useRef();
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleOpen = () => {
@@ -52,7 +51,6 @@ const FloatingSearchButtonIcon = (props) => {
                 style={style}
                 tabIndex={tabIndex}
                 title={title}
-                type={type}
                 variant={variant}
                 ref={triggerRef}
             />
@@ -98,9 +96,6 @@ FloatingSearchButtonIcon.propTypes = {
     shaded: PropTypes.bool,
     /** Displays tooltip text when the mouse moves over the element. */
     title: PropTypes.string,
-    /** Specifies the type of button. Valid values are button, reset, and submit.
-     * This value defaults to button. */
-    type: PropTypes.oneOf(['button', 'submit', 'reset']),
     /** Specifies whether this button should be displayed in a disabled state.
      * Disabled buttons can't be clicked. This value defaults to false. */
     disabled: PropTypes.bool,
@@ -129,7 +124,6 @@ FloatingSearchButtonIcon.defaultProps = {
     size: 'medium',
     shaded: false,
     title: undefined,
-    type: 'button',
     disabled: false,
     tabIndex: undefined,
     onChange: () => {},

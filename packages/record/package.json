@@ -1,5 +1,5 @@
 {
-    "name": "@rainbow-modules/forms",
+    "name": "@rainbow-modules/record",
     "version": "0.12.0",
     "main": "lib/index.js",
     "author": "Nexxtway Team",
@@ -8,12 +8,12 @@
         "lib"
     ],
     "dependencies": {
-        "@rainbow-modules/hooks": "^0.12.0",
+        "@rainbow-modules/icons": "^0.12.0",
         "styled-components": "^4.3.2"
     },
     "peerDependencies": {
         "react": ">=16.8.0",
-        "react-rainbow-components": ">=1.18.1"
+        "react-rainbow-components": ">=1.15.0"
     },
     "publishConfig": {
         "access": "public"
