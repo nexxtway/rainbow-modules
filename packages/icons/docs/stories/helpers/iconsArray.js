@@ -47,6 +47,8 @@ import {
     Login,
     Logout,
     CubeFilled,
+    TrashFilled,
+    PencilFilled,
 } from '../../../src';
 
 export default [
@@ -289,5 +291,15 @@ export default [
         name: 'cubeFilled',
         category: 'standard',
         icon: CubeFilled,
+    },
+    {
+        name: 'trashFilled',
+        category: 'standard',
+        icon: TrashFilled,
+    },
+    {
+        name: 'pencilFilled',
+        category: 'standard',
+        icon: PencilFilled,
     },
 ];
