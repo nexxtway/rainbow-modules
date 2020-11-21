@@ -3,12 +3,11 @@ import PropTypes from 'prop-types';
 import { Provider } from '../../context';
 import { StyledContainer } from './styled';
 
+const context = {
+    privateVariant: 'border-vertical',
+};
 export default function RecordPrimaryDetails(props) {
     const { style, id, children, className } = props;
-
-    const context = {
-        privateVariant: 'border-vertical',
-    };
 
     return (
         <StyledContainer id={id} className={className} style={style}>
