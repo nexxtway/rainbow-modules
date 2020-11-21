@@ -46,6 +46,8 @@ import {
     SettingsFilled,
     Login,
     Logout,
+    TrashFilled,
+    PencilFilled,
 } from '../../../src';
 
 export default [
@@ -283,5 +285,15 @@ export default [
         name: 'settingsFilled',
         category: 'standard',
         icon: SettingsFilled,
+    },
+    {
+        name: 'trashFilled',
+        category: 'standard',
+        icon: TrashFilled,
+    },
+    {
+        name: 'pencilFilled',
+        category: 'standard',
+        icon: PencilFilled,
     },
 ];

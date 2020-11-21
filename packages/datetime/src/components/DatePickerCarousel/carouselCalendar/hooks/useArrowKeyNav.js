@@ -6,8 +6,19 @@ export default function useArrowKeyNav({ currentValue, visibleDates, scrollLeft,
     const [enableNavKeys, setEnableNavKeys] = useState(false);
     const [focusedDateIndex, setFocusedDateIndex] = useState(-1);
 
-    const enableKeyboardNav = useCallback(() => setEnableNavKeys(true), []);
-    const disableKeyboardNav = useCallback(() => setEnableNavKeys(false), []);
+    const enableKeyboardNav = useCallback(
+        (date) => {
+            setEnableNavKeys(true);
+            setFocusedDateIndex(
+                visibleDates.findIndex((visibleDate) => isSameDay(date, visibleDate)),
+            );
+        },
+        [visibleDates],
+    );
+    const disableKeyboardNav = useCallback(() => {
+        setEnableNavKeys(false);
+        setFocusedDateIndex(-1);
+    }, []);
 
     const moveFocusedDate = useCallback(
         (delta) => {
