@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Application } from 'react-rainbow-components';
 import RecordField from '../../src/components/RecordField';
+import RecordPrimaryDetails from '../../src/components/RecordPrimaryDetails';
 
 const Container = styled.div`
     background-color: ${(props) => props.theme.rainbow.palette.background.main};
@@ -14,11 +15,15 @@ const Container = styled.div`
     margin: 36px;
 `;
 
-export const basicRecordField = () => {
+export const basicRecordPrimaryDetails = () => {
     return (
         <Application>
             <Container>
-                <RecordField label="Customer Name" value="John Doe" />
+                <RecordPrimaryDetails>
+                    <RecordField label="Name" value="John Doe" />
+                    <RecordField label="Age" value="25 years" />
+                    <RecordField label="Gender" value="Male" />
+                </RecordPrimaryDetails>
             </Container>
         </Application>
     );
