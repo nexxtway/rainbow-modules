@@ -61,6 +61,5 @@ export const withDateBounds = () => {
 };
 
 export default {
-    title: 'Modules|Datetime/Stories/DatePickerCarousel',
-    component: DatePickerCarousel,
+    title: 'Modules|Datetime/Stories',
 };
