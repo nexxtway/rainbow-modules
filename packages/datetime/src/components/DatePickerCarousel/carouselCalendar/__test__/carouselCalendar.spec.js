@@ -39,7 +39,6 @@ describe('<CarouselCalendar />', () => {
         const scrollLeft = component.find('ButtonIcon').at(1);
         expect(scrollLeft.prop('disabled')).toBe(true);
     });
-
     it.skip('should render the right date when value is updated', () => {
         const date = new Date('2020/10/21');
         const newDate = new Date('10/24/2019');

@@ -43,6 +43,12 @@ import {
     MagnifyingGlass,
     Star,
     Camera,
+    SettingsFilled,
+    Login,
+    Logout,
+    CubeFilled,
+    TrashFilled,
+    PencilFilled,
 } from '../../../src';
 
 export default [
@@ -265,5 +271,35 @@ export default [
         name: 'camera',
         category: 'standard',
         icon: Camera,
+    },
+    {
+        name: 'login',
+        category: 'standard',
+        icon: Login,
+    },
+    {
+        name: 'logout',
+        category: 'standard',
+        icon: Logout,
+    },
+    {
+        name: 'settingsFilled',
+        category: 'standard',
+        icon: SettingsFilled,
+    },
+    {
+        name: 'cubeFilled',
+        category: 'standard',
+        icon: CubeFilled,
+    },
+    {
+        name: 'trashFilled',
+        category: 'standard',
+        icon: TrashFilled,
+    },
+    {
+        name: 'pencilFilled',
+        category: 'standard',
+        icon: PencilFilled,
     },
 ];

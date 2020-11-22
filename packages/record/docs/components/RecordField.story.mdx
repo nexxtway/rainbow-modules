@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import RecordField from '../../src/components/RecordField';
+import * as stories from '../stories/RecordField.story.js';
+
+<Meta title="Modules|Record/Components" component={RecordField} />
+
+# Overview
+
+`RecordField` component is used to display the details of a record in a data collection. The `RecordField` also allows you to display the different types of fields in different ways.
+
+### This is an example with the RecordField.
+
+<Preview>
+    <Story name="RecordField">{stories.basicRecordField()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={RecordField} />
