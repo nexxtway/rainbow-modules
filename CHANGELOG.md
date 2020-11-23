@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.13.0](https://github.com/nexxtway/rainbow-modules/compare/v0.12.0...v0.13.0) (2020-11-23)
+
+### Bug Fixes
+
+-   added tests to floatingsearch and floatingsearchbuttonicon ([#206](https://github.com/nexxtway/rainbow-modules/issues/206)) ([a132711](https://github.com/nexxtway/rainbow-modules/commit/a13271197a9df5425b74828430522d536cc84812))
+-   bug in `DatePickerCalendar` component when using arrow keys navigation and bounds are reached ([#198](https://github.com/nexxtway/rainbow-modules/issues/198)) ([cb385b4](https://github.com/nexxtway/rainbow-modules/commit/cb385b48d9200d00d95f5d32e855a5433175b83a))
+-   move floatingsearchbuttonicon to listview ([#205](https://github.com/nexxtway/rainbow-modules/issues/205)) ([385bacc](https://github.com/nexxtway/rainbow-modules/commit/385bacc6f44b371e554bef954d5a42d14b46d6f7))
+-   test Mapbox component first commit ([#197](https://github.com/nexxtway/rainbow-modules/issues/197)) ([6b38591](https://github.com/nexxtway/rainbow-modules/commit/6b38591784cb6787a0dd6ed0a3596ed376468216))
+
+### Features
+
+-   add Settings, Login and Logout icons ([#204](https://github.com/nexxtway/rainbow-modules/issues/204)) ([f13238f](https://github.com/nexxtway/rainbow-modules/commit/f13238f7a526dfb902b5525fd6e2e62a72fd1024))
+-   created recordfield in rocord module ([#210](https://github.com/nexxtway/rainbow-modules/issues/210)) ([24f851e](https://github.com/nexxtway/rainbow-modules/commit/24f851eb35ff6a5a8d4d5a46e3a255dc349747e0))
+-   implemented recordheader module ([#214](https://github.com/nexxtway/rainbow-modules/issues/214)) ([a4595a0](https://github.com/nexxtway/rainbow-modules/commit/a4595a099b017589b56a9eb0e3ad18751237a6b0))
+-   implemented recordprimarydetails module ([#215](https://github.com/nexxtway/rainbow-modules/issues/215)) ([7a71241](https://github.com/nexxtway/rainbow-modules/commit/7a71241c3f83119446491dacbcbe6ab27b39ea8d))
+-   implemented recordsection module ([#213](https://github.com/nexxtway/rainbow-modules/issues/213)) ([1f83178](https://github.com/nexxtway/rainbow-modules/commit/1f83178d4d85e58baac98b54dc076606e3c88f21))
+
 # [0.12.0](https://github.com/nexxtway/rainbow-modules/compare/v0.11.0...v0.12.0) (2020-11-17)
 
 ### Bug Fixes

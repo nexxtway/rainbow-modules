@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.13.0](https://github.com/nexxtway/rainbow-modules/compare/v0.12.0...v0.13.0) (2020-11-23)
+
+### Bug Fixes
+
+-   move floatingsearchbuttonicon to listview ([#205](https://github.com/nexxtway/rainbow-modules/issues/205)) ([385bacc](https://github.com/nexxtway/rainbow-modules/commit/385bacc6f44b371e554bef954d5a42d14b46d6f7))
+
 # [0.12.0](https://github.com/nexxtway/rainbow-modules/compare/v0.11.0...v0.12.0) (2020-11-17)
 
 ### Features
