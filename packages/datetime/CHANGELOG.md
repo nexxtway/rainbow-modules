@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.13.0](https://github.com/nexxtway/rainbow-modules/compare/v0.12.0...v0.13.0) (2020-11-23)
+
+### Bug Fixes
+
+-   bug in `DatePickerCalendar` component when using arrow keys navigation and bounds are reached ([#198](https://github.com/nexxtway/rainbow-modules/issues/198)) ([cb385b4](https://github.com/nexxtway/rainbow-modules/commit/cb385b48d9200d00d95f5d32e855a5433175b83a))
+
 # [0.12.0](https://github.com/nexxtway/rainbow-modules/compare/v0.11.0...v0.12.0) (2020-11-17)
 
 **Note:** Version bump only for package @rainbow-modules/datetime

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.13.0](https://github.com/nexxtway/rainbow-modules/compare/v0.12.0...v0.13.0) (2020-11-23)
+
+### Features
+
+-   add Settings, Login and Logout icons ([#204](https://github.com/nexxtway/rainbow-modules/issues/204)) ([f13238f](https://github.com/nexxtway/rainbow-modules/commit/f13238f7a526dfb902b5525fd6e2e62a72fd1024))
+-   implemented recordheader module ([#214](https://github.com/nexxtway/rainbow-modules/issues/214)) ([a4595a0](https://github.com/nexxtway/rainbow-modules/commit/a4595a099b017589b56a9eb0e3ad18751237a6b0))
+-   implemented recordsection module ([#213](https://github.com/nexxtway/rainbow-modules/issues/213)) ([1f83178](https://github.com/nexxtway/rainbow-modules/commit/1f83178d4d85e58baac98b54dc076606e3c88f21))
+
 # [0.12.0](https://github.com/nexxtway/rainbow-modules/compare/v0.11.0...v0.12.0) (2020-11-17)
 
 **Note:** Version bump only for package @rainbow-modules/icons

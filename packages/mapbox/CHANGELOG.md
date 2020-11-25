@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.13.0](https://github.com/nexxtway/rainbow-modules/compare/v0.12.0...v0.13.0) (2020-11-23)
+
+### Bug Fixes
+
+-   test Mapbox component first commit ([#197](https://github.com/nexxtway/rainbow-modules/issues/197)) ([6b38591](https://github.com/nexxtway/rainbow-modules/commit/6b38591784cb6787a0dd6ed0a3596ed376468216))
+
 # [0.12.0](https://github.com/nexxtway/rainbow-modules/compare/v0.11.0...v0.12.0) (2020-11-17)
 
 **Note:** Version bump only for package @rainbow-modules/mapbox
