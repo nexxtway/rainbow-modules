@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { LoadingShape } from 'react-rainbow-components';
 
 export const Container = styled.div`
     display: flex;
@@ -59,4 +60,8 @@ export const Value = styled.span`
             padding-left: 4px;
             line-height: 20px;
     `};
+`;
+
+export const StyledLoading = styled(LoadingShape)`
+    margin: 5px 0 4px;
 `;

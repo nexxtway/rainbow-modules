@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { LoadingShape } from 'react-rainbow-components';
 
 export const Container = styled.section`
     display: flex;
@@ -64,4 +65,15 @@ export const Body = styled.div`
     height: 100%;
     overflow: auto;
     box-sizing: border-box;
+`;
+
+export const LabelLoadingShape = styled(LoadingShape)`
+    margin: 5px 0 4px;
+    width: 120px;
+`;
+
+export const DescriptionLoadingShape = styled(LoadingShape)`
+    margin: 5px 0 4px;
+    width: 220px;
+    height: 25px;
 `;

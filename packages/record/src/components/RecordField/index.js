@@ -1,19 +1,25 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import { RenderIf } from 'react-rainbow-components';
 import { Context } from '../../context';
-import { Container, Label, Value } from './styled';
+import { Container, Label, Value, StyledLoading } from './styled';
 
 export default function RecordField(props) {
-    const { className, style, label, value, type } = props;
+    const { className, style, label, value, type, isLoading } = props;
     const context = useContext(Context);
     const { privateVariant } = context || {};
 
     return (
         <Container className={className} style={style} privateVariant={privateVariant}>
             <Label privateVariant={privateVariant}>{label}</Label>
-            <Value privateVariant={privateVariant} type={type}>
-                {value}
-            </Value>
+            <RenderIf isTrue={isLoading}>
+                <StyledLoading />
+            </RenderIf>
+            <RenderIf isTrue={!isLoading}>
+                <Value privateVariant={privateVariant} type={type}>
+                    {value}
+                </Value>
+            </RenderIf>
         </Container>
     );
 }
@@ -29,6 +35,8 @@ RecordField.propTypes = {
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     /** The type prop specifies the format that the component will have, by default is text. */
     type: PropTypes.oneOf(['text']),
+    /** Specifies whether data is being loaded. The default is false. */
+    isLoading: PropTypes.bool,
 };
 
 RecordField.defaultProps = {
@@ -37,4 +45,5 @@ RecordField.defaultProps = {
     label: undefined,
     value: undefined,
     type: 'text',
+    isLoading: false,
 };
