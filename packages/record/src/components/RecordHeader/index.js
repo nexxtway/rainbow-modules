@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { RenderIf, LoadingShape } from 'react-rainbow-components';
+import { RenderIf } from 'react-rainbow-components';
 import { CubeFilled } from '@rainbow-modules/icons';
 import {
     Container,
