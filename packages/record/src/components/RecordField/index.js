@@ -2,24 +2,42 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { RenderIf } from 'react-rainbow-components';
 import { Context } from '../../context';
-import { Container, Label, Value, StyledLoading } from './styled';
+import {
+    Container,
+    Label,
+    Value,
+    StyledLoadingValue,
+    StyledLoadingLabel,
+    IconContainer,
+} from './styled';
 
 export default function RecordField(props) {
-    const { className, style, label, value, type, isLoading } = props;
+    const { className, style, label, value, type, isLoading, icon, iconPosition } = props;
     const context = useContext(Context);
     const { privateVariant } = context || {};
 
     return (
         <Container className={className} style={style} privateVariant={privateVariant}>
-            <Label privateVariant={privateVariant}>{label}</Label>
-            <RenderIf isTrue={isLoading}>
-                <StyledLoading />
-            </RenderIf>
-            <RenderIf isTrue={!isLoading}>
-                <Value privateVariant={privateVariant} type={type}>
+            <Label privateVariant={privateVariant}>
+                <RenderIf isTrue={isLoading}>
+                    <StyledLoadingLabel privateVariant={privateVariant} />
+                </RenderIf>
+                <RenderIf isTrue={!isLoading}>{label}</RenderIf>
+            </Label>
+            <Value
+                privateVariant={privateVariant}
+                type={type}
+                icon={icon}
+                iconPosition={iconPosition}
+            >
+                <RenderIf isTrue={isLoading}>
+                    <StyledLoadingValue />
+                </RenderIf>
+                <RenderIf isTrue={!isLoading}>
+                    <IconContainer iconPosition={iconPosition}>{icon}</IconContainer>
                     {value}
-                </Value>
-            </RenderIf>
+                </RenderIf>
+            </Value>
         </Container>
     );
 }
@@ -37,6 +55,11 @@ RecordField.propTypes = {
     type: PropTypes.oneOf(['text']),
     /** Specifies whether data is being loaded. The default is false. */
     isLoading: PropTypes.bool,
+    /** The icon to show if it is passed. It must be a svg icon or a font icon. */
+    icon: PropTypes.node,
+    /** Describes the position of the icon with respect to body. Options include left and right.
+     * This value defaults to left. */
+    iconPosition: PropTypes.oneOf(['left', 'right']),
 };
 
 RecordField.defaultProps = {
@@ -46,4 +69,6 @@ RecordField.defaultProps = {
     value: undefined,
     type: 'text',
     isLoading: false,
+    icon: undefined,
+    iconPosition: 'left',
 };

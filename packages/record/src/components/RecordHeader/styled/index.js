@@ -68,12 +68,12 @@ export const Body = styled.div`
 `;
 
 export const LabelLoadingShape = styled(LoadingShape)`
-    margin: 5px 0 4px;
+    margin: 5px 0 15px;
     width: 120px;
 `;
 
 export const DescriptionLoadingShape = styled(LoadingShape)`
-    margin: 5px 0 4px;
+    margin: 0 0 6px;
     width: 220px;
     height: 25px;
 `;

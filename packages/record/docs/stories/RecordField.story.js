@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Application } from 'react-rainbow-components';
+import { CubeFilled } from '@rainbow-modules/icons';
 import RecordField from '../../src/components/RecordField';
 
 const Container = styled.div`
@@ -14,11 +15,35 @@ const Container = styled.div`
     margin: 36px;
 `;
 
-export const basicRecordField = () => {
+const useChangeLoading = () => {
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false);
+        }, 1500);
+    }, []);
+
+    return loading;
+};
+
+export const BasicRecordField = () => {
+    const loading = useChangeLoading();
     return (
         <Application>
             <Container>
-                <RecordField label="Customer Name" value="John Doe" />
+                <RecordField label="Customer Name" value="John Doe" isLoading={loading} />
+            </Container>
+            <Container>
+                <RecordField label="Customer Name" value="John Doe" icon={<CubeFilled />} />
+            </Container>
+            <Container>
+                <RecordField
+                    label="Customer Name"
+                    value="John Doe"
+                    icon={<CubeFilled />}
+                    iconPosition="right"
+                />
             </Container>
         </Application>
     );
