@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { RenderIf } from 'react-rainbow-components';
 import { CubeFilled } from '@rainbow-modules/icons';
 import {
     Container,
@@ -12,21 +13,43 @@ import {
     RowContainer,
     TagsContainer,
     Body,
+    LabelLoadingShape,
+    DescriptionLoadingShape,
 } from './styled';
 
 export default function RecordHeader(props) {
-    const { className, style, label, description, icon, tags, children, actions } = props;
+    const {
+        className,
+        style,
+        label,
+        description,
+        icon,
+        tags,
+        children,
+        actions,
+        isLoading,
+    } = props;
     return (
         <Container className={className} style={style}>
             <Header>
                 <Details>
                     <RowContainer>
-                        <IconContainer>{icon}</IconContainer>
-                        <Label>{label}</Label>
+                        <RenderIf isTrue={isLoading}>
+                            <LabelLoadingShape />
+                        </RenderIf>
+                        <RenderIf isTrue={!isLoading}>
+                            <IconContainer>{icon}</IconContainer>
+                            <Label>{label}</Label>
+                        </RenderIf>
                     </RowContainer>
                     <RowContainer>
-                        <Description>{description}</Description>
-                        <TagsContainer>{tags}</TagsContainer>
+                        <RenderIf isTrue={isLoading}>
+                            <DescriptionLoadingShape />
+                        </RenderIf>
+                        <RenderIf isTrue={!isLoading}>
+                            <Description>{description}</Description>
+                            <TagsContainer>{tags}</TagsContainer>
+                        </RenderIf>
                     </RowContainer>
                 </Details>
 
@@ -53,6 +76,8 @@ RecordHeader.propTypes = {
     /** The tags prop is used to show badges on the header of the component. */
     tags: PropTypes.node,
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
+    /** Specifies whether data is being loaded. The default is false. */
+    isLoading: PropTypes.bool,
 };
 
 RecordHeader.defaultProps = {
@@ -64,4 +89,5 @@ RecordHeader.defaultProps = {
     tags: null,
     children: null,
     icon: <CubeFilled />,
+    isLoading: false,
 };
