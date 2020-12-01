@@ -2,12 +2,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Modal } from 'react-rainbow-components';
-import { Header, Question, Container, IconContainer, ButtonsContainer, Button } from './styled';
+import { Question, ButtonsContainer, Button, Container, IconContainer } from './styled';
 
 const ConfirmModal = (props) => {
     const {
         header,
-        icon,
         question,
         variant,
         isOpen,
@@ -15,12 +14,15 @@ const ConfirmModal = (props) => {
         onConfirm,
         cancelButtonLabel,
         okButtonLabel,
+        icon,
+        children,
     } = props;
 
     return (
         <Modal
             isOpen={isOpen}
             onRequestClose={onCancel}
+            title={header}
             footer={
                 <ButtonsContainer>
                     <Button label={cancelButtonLabel} variant="border" onClick={onCancel} />
@@ -28,13 +30,11 @@ const ConfirmModal = (props) => {
                 </ButtonsContainer>
             }
         >
-            <Container direction="row">
+            <Container>
                 <IconContainer>{icon}</IconContainer>
-                <Container direction="column">
-                    <Header>{header}</Header>
-                    <Question>{question}</Question>
-                </Container>
+                <Question>{question}</Question>
             </Container>
+            {children}
         </Modal>
     );
 };
@@ -58,6 +58,7 @@ ConfirmModal.propTypes = {
     onCancel: PropTypes.func,
     /** @ignore */
     onConfirm: PropTypes.func,
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
 };
 
 ConfirmModal.defaultProps = {
@@ -70,6 +71,7 @@ ConfirmModal.defaultProps = {
     variant: 'brand',
     onCancel: undefined,
     onConfirm: undefined,
+    children: null,
 };
 
 export default ConfirmModal;
