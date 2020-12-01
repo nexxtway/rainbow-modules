@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Trash, Edit, SettingsFilled } from '@rainbow-modules/icons';
 import { Application, ButtonGroup, ButtonIcon, Badge } from 'react-rainbow-components';
@@ -25,7 +25,21 @@ const Actions = () => {
     );
 };
 
-export const basicRecordHeader = () => {
+const useChangeLoading = () => {
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false);
+        }, 1500);
+    }, []);
+
+    return loading;
+};
+
+export const BasicRecordHeader = () => {
+    const loading = useChangeLoading();
+
     return (
         <Application>
             <Container>
@@ -34,6 +48,7 @@ export const basicRecordHeader = () => {
                     description="John Doe"
                     actions={<Actions />}
                     tags={<Badge label="active" />}
+                    isLoading={loading}
                 />
             </Container>
         </Application>
