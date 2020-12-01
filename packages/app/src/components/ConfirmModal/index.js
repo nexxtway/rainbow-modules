@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-wrap-multilines */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Modal } from 'react-rainbow-components';
+import { Modal, RenderIf } from 'react-rainbow-components';
 import { Question, ButtonsContainer, Button, Container, IconContainer } from './styled';
 
 const ConfirmModal = (props) => {
@@ -30,10 +30,12 @@ const ConfirmModal = (props) => {
                 </ButtonsContainer>
             }
         >
-            <Container>
-                <IconContainer>{icon}</IconContainer>
-                <Question>{question}</Question>
-            </Container>
+            <RenderIf isTrue={!children}>
+                <Container>
+                    <IconContainer>{icon}</IconContainer>
+                    <Question>{question}</Question>
+                </Container>
+            </RenderIf>
             {children}
         </Modal>
     );
