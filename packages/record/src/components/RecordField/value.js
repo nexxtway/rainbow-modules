@@ -6,7 +6,8 @@ import * as formaterValueMap from './helpers/valueFormater';
 const Value = (props) => {
     const { type, value, currency, href, onClick } = props;
     const isUrl = type === 'url';
-    const types = type === 'url' ? 'text' : type;
+    const formaterValue = formaterValueMap[type] || formaterValueMap.text;
+    const formatedValue = formaterValue(value, currency);
 
     return (
         <>
@@ -15,7 +16,7 @@ const Value = (props) => {
                     {value}
                 </a>
             </RenderIf>
-            <RenderIf isTrue={!isUrl}>{formaterValueMap[types](value, currency)}</RenderIf>
+            <RenderIf isTrue={!isUrl}>{formatedValue}</RenderIf>
         </>
     );
 };
