@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { LoadingShape } from 'react-rainbow-components';
 import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
 
 export const Container = styled.div`
@@ -32,8 +31,8 @@ export const Container = styled.div`
 
 export const Label = styled.span`
     font-size: 12px;
-    color: ${(props) => props.theme.rainbow.palette.text.header};
     line-height: 1.5;
+    color: ${(props) => props.theme.rainbow.palette.text.header};
 
     ${(props) =>
         props.privateVariant === 'horizontal' &&
@@ -49,7 +48,7 @@ export const Label = styled.span`
     `};
 `;
 
-export const Value = styled.span`
+export const ValueContainer = styled.span`
     font-size: 14px;
     color: ${(props) => props.theme.rainbow.palette.text.main};
     line-height: 1.5;
@@ -68,20 +67,31 @@ export const Value = styled.span`
         `
         padding-left: 30px;
     `}
-`;
-
-export const StyledLoadingLabel = styled(LoadingShape)`
-    margin: 0 0 15px;
-    max-width: 100px;
     ${(props) =>
-        props.privateVariant === 'horizontal' &&
+        props.type === 'url' &&
         `
-            margin: 0;
+            > a {
+                color:${props.theme.rainbow.palette.text.main};
+
+                : hover {
+                    color:${props.theme.rainbow.palette.text.main};
+                }
+            }
     `};
 `;
 
-export const StyledLoadingValue = styled(LoadingShape)`
-    width: 150px;
+export const StyledLoadingLabel = styled.div`
+    margin: 7px 0 8px 0;
+    width: ${() => Math.floor(Math.random() * (120 - 92) + 92)}px;
+    ${(props) =>
+        props.privateVariant === 'horizontal' &&
+        `
+        margin: 4px 0 5px 0;
+    `};
+`;
+
+export const StyledLoadingValue = styled.div`
+    width: ${() => Math.floor(Math.random() * (150 - 92) + 92)}px;
 `;
 
 export const IconContainer = attachThemeAttrs(styled.span)`

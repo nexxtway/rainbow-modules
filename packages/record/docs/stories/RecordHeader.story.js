@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { Trash, Edit, SettingsFilled } from '@rainbow-modules/icons';
 import { Application, ButtonGroup, ButtonIcon, Badge } from 'react-rainbow-components';
 import RecordHeader from '../../src/components/RecordHeader';
+import RecordField from '../../src/components/RecordField';
+import RecordPrimaryDetails from '../../src/components/RecordPrimaryDetails';
 
 const Container = styled.div`
     background-color: ${(props) => props.theme.rainbow.palette.background.main};
@@ -49,7 +51,35 @@ export const BasicRecordHeader = () => {
                     actions={<Actions />}
                     tags={<Badge label="active" />}
                     isLoading={loading}
-                />
+                >
+                    <RecordPrimaryDetails>
+                        <RecordField label="Organization" isLoading={loading} value="Google" />
+                        <RecordField
+                            label="Date & Time"
+                            isLoading={loading}
+                            value={new Date()}
+                            type="dateTime"
+                        />
+                        <RecordField
+                            label="Web page"
+                            isLoading={loading}
+                            value="https://google.com"
+                            href="https://google.com"
+                            type="url"
+                        />
+                        <RecordField
+                            label="Price"
+                            isLoading={loading}
+                            value={50.5}
+                            type="currency"
+                        />
+                        <RecordField
+                            label="Status"
+                            isLoading={loading}
+                            component={<Badge label="success" variant="success" size="small" />}
+                        />
+                    </RecordPrimaryDetails>
+                </RecordHeader>
             </Container>
         </Application>
     );
