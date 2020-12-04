@@ -26,6 +26,7 @@ export default function RecordField(props) {
         href,
         component,
         onClick,
+        ...restComponentProps
     } = props;
     const context = useContext(Context);
     const { privateVariant } = context || {};
@@ -55,16 +56,15 @@ export default function RecordField(props) {
                     <RenderIf isTrue={icon}>
                         <IconContainer iconPosition={iconPosition}>{icon}</IconContainer>
                     </RenderIf>
-                    <RenderIf isTrue={component}>{component}</RenderIf>
-                    <RenderIf isTrue={!component}>
-                        <Value
-                            type={type}
-                            value={value}
-                            currency={currency}
-                            href={href}
-                            onClick={onClick}
-                        />
-                    </RenderIf>
+                    <Value
+                        component={component}
+                        type={type}
+                        value={value}
+                        currency={currency}
+                        href={href}
+                        onClick={onClick}
+                        restComponentProps={restComponentProps}
+                    />
                 </RenderIf>
             </ValueContainer>
         </Container>

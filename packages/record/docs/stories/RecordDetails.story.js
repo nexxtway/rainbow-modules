@@ -16,7 +16,7 @@ const Container = styled.div`
 `;
 
 const useChangeLoading = () => {
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         setTimeout(() => {
@@ -25,6 +25,11 @@ const useChangeLoading = () => {
     }, []);
 
     return loading;
+};
+
+// eslint-disable-next-line react/prop-types
+const StatusBadge = ({ value }) => {
+    return <Badge label={value} variant="success" size="small" />;
 };
 
 export const BasicRecordDetails = () => {
@@ -51,8 +56,9 @@ export const BasicRecordDetails = () => {
                     <RecordField label="Price" value={50.5} type="currency" isLoading={loading} />
                     <RecordField
                         label="Status"
-                        component={<Badge label="success" variant="success" size="small" />}
+                        component={StatusBadge}
                         isLoading={loading}
+                        value="success"
                     />
                 </RecordDetails>
             </Container>

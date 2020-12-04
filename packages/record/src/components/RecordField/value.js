@@ -4,7 +4,15 @@ import { RenderIf } from 'react-rainbow-components';
 import * as formatterValueMap from './helpers/valueFormatter';
 
 const Value = (props) => {
-    const { type, value, currency, href, onClick } = props;
+    const {
+        type,
+        value,
+        currency,
+        href,
+        onClick,
+        component: Component,
+        restComponentProps,
+    } = props;
     const isUrl = type === 'url';
     const formatterValue = formatterValueMap[type] || formatterValueMap.text;
     const formattedValue = formatterValue(value, currency);
@@ -12,11 +20,21 @@ const Value = (props) => {
     return (
         <>
             <RenderIf isTrue={isUrl}>
-                <a href={href} onClick={onClick}>
-                    {value}
-                </a>
+                <RenderIf isTrue={Component}>
+                    <Component {...restComponentProps} value={value} href={href} />
+                </RenderIf>
+                <RenderIf isTrue={!Component}>
+                    <a href={href} onClick={onClick}>
+                        {value}
+                    </a>
+                </RenderIf>
             </RenderIf>
-            <RenderIf isTrue={!isUrl}>{formattedValue}</RenderIf>
+            <RenderIf isTrue={!isUrl}>
+                <RenderIf isTrue={Component}>
+                    <Component {...restComponentProps} value={formattedValue} />
+                </RenderIf>
+                <RenderIf isTrue={!Component}>{formattedValue}</RenderIf>
+            </RenderIf>
         </>
     );
 };
@@ -36,6 +54,8 @@ Value.propTypes = {
     href: PropTypes.string,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     onClick: PropTypes.func,
+    component: PropTypes.func,
+    restComponentProps: PropTypes.object,
 };
 
 Value.defaultProps = {
@@ -44,6 +64,8 @@ Value.defaultProps = {
     currency: 'USD',
     href: undefined,
     onClick: () => {},
+    component: undefined,
+    restComponentProps: undefined,
 };
 
 export default Value;

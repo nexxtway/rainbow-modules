@@ -39,6 +39,11 @@ const useChangeLoading = () => {
     return loading;
 };
 
+// eslint-disable-next-line react/prop-types
+const StatusBadge = ({ value }) => {
+    return <Badge label={value} variant="success" size="small" />;
+};
+
 export const BasicRecordHeader = () => {
     const loading = useChangeLoading();
 
@@ -75,8 +80,9 @@ export const BasicRecordHeader = () => {
                         />
                         <RecordField
                             label="Status"
+                            component={StatusBadge}
                             isLoading={loading}
-                            component={<Badge label="success" variant="success" size="small" />}
+                            value="success"
                         />
                     </RecordPrimaryDetails>
                 </RecordHeader>
