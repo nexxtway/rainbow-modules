@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { RenderIf } from 'react-rainbow-components';
-import * as formaterValueMap from './helpers/valueFormater';
+import * as formatterValueMap from './helpers/valueFormatter';
 
 const Value = (props) => {
     const { type, value, currency, href, onClick } = props;
     const isUrl = type === 'url';
-    const formaterValue = formaterValueMap[type] || formaterValueMap.text;
-    const formatedValue = formaterValue(value, currency);
+    const formatterValue = formatterValueMap[type] || formatterValueMap.text;
+    const formattedValue = formatterValue(value, currency);
 
     return (
         <>
@@ -16,7 +16,7 @@ const Value = (props) => {
                     {value}
                 </a>
             </RenderIf>
-            <RenderIf isTrue={!isUrl}>{formatedValue}</RenderIf>
+            <RenderIf isTrue={!isUrl}>{formattedValue}</RenderIf>
         </>
     );
 };
