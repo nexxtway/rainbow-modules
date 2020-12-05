@@ -21,7 +21,12 @@ const Value = (props) => {
         <>
             <RenderIf isTrue={isUrl}>
                 <RenderIf isTrue={Component}>
-                    <Component {...restComponentProps} value={value} href={href} />
+                    <Component
+                        {...restComponentProps}
+                        value={value}
+                        href={href}
+                        onClick={onClick}
+                    />
                 </RenderIf>
                 <RenderIf isTrue={!Component}>
                     <a href={href} onClick={onClick}>
