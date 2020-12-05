@@ -53,63 +53,6 @@ describe('<Map />', () => {
             zoom: 9,
         });
     });
-    it('should call navigator.geolocation.getCurrentPosition when center is not passed', () => {
-        const mockGeolocation = { getCurrentPosition: jest.fn() };
-        global.navigator.geolocation = mockGeolocation;
-
-        mount(
-            <Application>
-                <Map accessToken="qwerty" zoom={9} />
-            </Application>,
-        );
-        expect(mockGeolocation.getCurrentPosition).toBeCalled();
-    });
-    it('should init map with resolved position', () => {
-        const mockGeolocation = {
-            getCurrentPosition: jest.fn().mockImplementationOnce((success) =>
-                Promise.resolve(
-                    success({
-                        coords: { latitude: 51.1, longitude: 45.3 },
-                    }),
-                ),
-            ),
-        };
-        global.navigator.geolocation = mockGeolocation;
-
-        mount(
-            <Application>
-                <Map accessToken="qwerty" defaultCenter={[-70.5, 31]} zoom={9} />
-            </Application>,
-        );
-        expect(mapboxgl.Map).toBeCalledWith({
-            accessToken: 'qwerty',
-            center: [45.3, 51.1],
-            container: expect.any(Node),
-            style: 'mapbox://styles/mapbox/light-v10',
-            zoom: 9,
-        });
-    });
-    it('should init map with the default center passed', () => {
-        const mockGeolocation = {
-            getCurrentPosition: jest
-                .fn()
-                .mockImplementationOnce((_success, error) => Promise.resolve(error())),
-        };
-        global.navigator.geolocation = mockGeolocation;
-
-        mount(
-            <Application>
-                <Map accessToken="qwerty" defaultCenter={[-70.5, 31]} zoom={9} />
-            </Application>,
-        );
-        expect(mapboxgl.Map).toBeCalledWith({
-            accessToken: 'qwerty',
-            center: [-70.5, 31],
-            container: expect.any(Node),
-            style: 'mapbox://styles/mapbox/light-v10',
-            zoom: 9,
-        });
-    });
     it('should render the children passed', () => {
         const component = mount(
             <Application>
