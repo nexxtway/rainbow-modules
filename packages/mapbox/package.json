@@ -12,6 +12,10 @@
         "mapbox-gl": "^1.12.0",
         "styled-components": "^4.3.2"
     },
+    "devDependencies": {
+        "@rainbow-modules/app": "^0.13.0",
+        "@rainbow-modules/record": "^0.13.0"
+    },
     "peerDependencies": {
         "react": ">=16.8.0",
         "react-rainbow-components": ">=1.15.0"
