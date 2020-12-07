@@ -49,6 +49,7 @@ import {
     CubeFilled,
     TrashFilled,
     PencilFilled,
+    Google,
 } from '../../../src';
 
 export default [
@@ -301,5 +302,10 @@ export default [
         name: 'pencilFilled',
         category: 'standard',
         icon: PencilFilled,
+    },
+    {
+        name: 'google',
+        category: 'custom',
+        icon: Google,
     },
 ];
