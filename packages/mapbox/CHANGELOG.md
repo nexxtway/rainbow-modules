@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/nexxtway/rainbow-modules/compare/v0.13.0...v0.14.0) (2020-12-05)
+
+### Bug Fixes
+
+-   map improvements + getCurrentLocation helper ([#228](https://github.com/nexxtway/rainbow-modules/issues/228)) ([25e6866](https://github.com/nexxtway/rainbow-modules/commit/25e6866990a3064efb4a7cbfaa845411ff8054a1))
+
 # [0.13.0](https://github.com/nexxtway/rainbow-modules/compare/v0.12.0...v0.13.0) (2020-11-23)
 
 ### Bug Fixes
