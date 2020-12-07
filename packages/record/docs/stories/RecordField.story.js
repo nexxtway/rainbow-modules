@@ -29,10 +29,11 @@ const useChangeLoading = () => {
 
 export const BasicRecordField = () => {
     const loading = useChangeLoading();
+
     return (
         <Application>
             <Container>
-                <RecordField label="Customer Name" value="John Doe" isLoading={loading} />
+                <RecordField label="Customer Name" isLoading={loading} value="John Doe" />
             </Container>
             <Container>
                 <RecordField label="Customer Name" value="John Doe" icon={<CubeFilled />} />

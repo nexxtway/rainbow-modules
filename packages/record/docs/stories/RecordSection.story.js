@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { Application, ButtonGroup, ButtonIcon } from 'react-rainbow-components';
+import { Application, ButtonGroup, ButtonIcon, Badge } from 'react-rainbow-components';
 import { TrashFilled, PencilFilled, SettingsFilled } from '@rainbow-modules/icons';
 import RecordSection from '../../src/components/RecordSection';
+import RecordField from '../../src/components/RecordField';
+import RecordDetails from '../../src/components/RecordDetails';
 
 const Container = styled.div`
     background-color: ${(props) => props.theme.rainbow.palette.background.main};
@@ -15,11 +17,29 @@ const Container = styled.div`
     margin: 36px;
 `;
 
-const Text = styled.p`
-    font-size: 14px;
-    padding: 0 36px;
-    color: ${(props) => props.theme.rainbow.palette.text.header};
+const RecordContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
 `;
+
+const Divider = styled.div`
+    width: 1px;
+    height: 120px;
+    background-color: ${(props) => props.theme.rainbow.palette.border.divider};
+    margin: 20px 50px;
+`;
+
+const useChangeLoading = () => {
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false);
+        }, 1500);
+    }, []);
+
+    return loading;
+};
 
 const Actions = () => {
     return (
@@ -31,23 +51,75 @@ const Actions = () => {
     );
 };
 
-export const basicRecordSection = () => {
+// eslint-disable-next-line react/prop-types
+const StatusBadge = ({ value }) => {
+    return <Badge label={value} variant="success" size="small" />;
+};
+
+export const BasicRecordSection = () => {
+    const loading = useChangeLoading();
+
     return (
         <Application>
             <Container>
                 <RecordSection label="Identity" actions={<Actions />}>
-                    <Text>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos
-                        similique iusto non sit consequuntur rem delectus maxime quia quam, sapiente
-                        perferendis unde culpa optio. Porro optio sint impPencilFilled dolor minus
-                        velit dolorum iure cupiditate eveniet commodi at quas consectetur, vero
-                        blanditiis? Quo corporis iusto ad dicta doloremque, facilis doloribus ipsam.
-                        Modi, dicta! Alias aspernatur inventore accusantium officiis delectus earum
-                        beatae ex ad. Rerum facere, animi natus ipsum unde tempora consectetur!
-                        Quisquam, cumque. Ipsam consequuntur, similique illo perferendis veniam iste
-                        totam sit doloremque natus facere voluptate quos ipsum. Fuga, earum voluptas
-                        architecto enim animi dignissimos facere? Fugit odio ipsam veritatis minus?
-                    </Text>
+                    <RecordContainer>
+                        <RecordDetails>
+                            <RecordField label="Name" value="John Doe" isLoading={loading} />
+                            <RecordField
+                                label="Date & Time"
+                                value={new Date()}
+                                type="dateTime"
+                                isLoading={loading}
+                            />
+                            <RecordField
+                                label="Email"
+                                value="johndoe@mail.com"
+                                isLoading={loading}
+                            />
+                            <RecordField
+                                label="Percent"
+                                value={0.5389}
+                                type="percent"
+                                isLoading={loading}
+                            />
+                            <RecordField
+                                label="Status"
+                                component={StatusBadge}
+                                isLoading={loading}
+                                value="success"
+                            />
+                        </RecordDetails>
+                        <Divider />
+                        <RecordDetails>
+                            <RecordField label="Organization" value="Google" isLoading={loading} />
+                            <RecordField
+                                label="Date"
+                                value={new Date()}
+                                type="date"
+                                isLoading={loading}
+                            />
+                            <RecordField
+                                label="Web page"
+                                value="https://google.com"
+                                href="https://google.com"
+                                type="url"
+                                isLoading={loading}
+                            />
+                            <RecordField
+                                label="Price"
+                                value={50.5}
+                                type="currency"
+                                isLoading={loading}
+                            />
+                            <RecordField
+                                label="Number of workers"
+                                value={1023425}
+                                type="number"
+                                isLoading={loading}
+                            />
+                        </RecordDetails>
+                    </RecordContainer>
                 </RecordSection>
             </Container>
         </Application>

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { Application } from 'react-rainbow-components';
+import { Application, Badge } from 'react-rainbow-components';
 import RecordField from '../../src/components/RecordField';
 import RecordDetails from '../../src/components/RecordDetails';
 
@@ -15,17 +15,51 @@ const Container = styled.div`
     margin: 36px;
 `;
 
-export const basicRecordDetails = () => {
+const useChangeLoading = () => {
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false);
+        }, 1500);
+    }, []);
+
+    return loading;
+};
+
+// eslint-disable-next-line react/prop-types
+const StatusBadge = ({ value }) => {
+    return <Badge label={value} variant="success" size="small" />;
+};
+
+export const BasicRecordDetails = () => {
+    const loading = useChangeLoading();
+
     return (
         <Application>
             <Container>
                 <RecordDetails>
+                    <RecordField label="Organization" value="Google" isLoading={loading} />
                     <RecordField
-                        label="Name: od the casa of the carousel on un "
-                        value="John Doe"
+                        label="Date & Time"
+                        value={new Date()}
+                        type="dateTime"
+                        isLoading={loading}
                     />
-                    <RecordField label="Age:" value="25 years" />
-                    <RecordField label="Gender:" value="Male" />
+                    <RecordField
+                        label="Web page"
+                        value="https://google.com"
+                        href="https://google.com"
+                        type="url"
+                        isLoading={loading}
+                    />
+                    <RecordField label="Price" value={50.5} type="currency" isLoading={loading} />
+                    <RecordField
+                        label="Status"
+                        component={StatusBadge}
+                        isLoading={loading}
+                        value="success"
+                    />
                 </RecordDetails>
             </Container>
         </Application>
