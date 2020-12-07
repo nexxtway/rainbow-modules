@@ -51,3 +51,4 @@ export { default as SettingsFilled } from './components/settingsFilled';
 export { default as CubeFilled } from './components/cubeFilled';
 export { default as TrashFilled } from './components/trashFilled';
 export { default as PencilFilled } from './components/pencilFilled';
+export { default as Google } from './components/google';
