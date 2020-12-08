@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Roles = (props) => {
-    const { className } = props;
+    const { className, style } = props;
     return (
         <svg
             className={className}
+            style={style}
             width="32px"
             height="26px"
             viewBox="0 0 40 32"
@@ -48,8 +49,10 @@ export default Roles;
 
 Roles.propTypes = {
     className: PropTypes.string,
+    style: PropTypes.object,
 };
 
 Roles.defaultProps = {
     className: undefined,
+    style: undefined,
 };

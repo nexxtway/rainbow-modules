@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const LockFilled = (props) => {
-    const { className } = props;
+    const { className, style } = props;
     return (
         <svg
             className={className}
+            style={style}
             width="22px"
             height="30px"
             viewBox="0 0 20 26"
@@ -32,8 +33,10 @@ export default LockFilled;
 
 LockFilled.propTypes = {
     className: PropTypes.string,
+    style: PropTypes.object,
 };
 
 LockFilled.defaultProps = {
     className: undefined,
+    style: undefined,
 };

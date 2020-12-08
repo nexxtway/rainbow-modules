@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const RolesFilled = (props) => {
-    const { className } = props;
+    const { className, style } = props;
     return (
         <svg
             className={className}
+            style={style}
             width="32px"
             height="26px"
             viewBox="0 0 40 32"
@@ -27,8 +28,10 @@ export default RolesFilled;
 
 RolesFilled.propTypes = {
     className: PropTypes.string,
+    style: PropTypes.object,
 };
 
 RolesFilled.defaultProps = {
     className: undefined,
+    style: undefined,
 };

@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const UsersFilled = (props) => {
-    const { className } = props;
+    const { className, style } = props;
     return (
         <svg
             className={className}
+            style={style}
             width="30px"
             height="26px"
             viewBox="0 0 48 42"
@@ -27,8 +28,10 @@ export default UsersFilled;
 
 UsersFilled.propTypes = {
     className: PropTypes.string,
+    style: PropTypes.object,
 };
 
 UsersFilled.defaultProps = {
     className: undefined,
+    style: undefined,
 };
