@@ -50,13 +50,59 @@ import {
     TrashFilled,
     PencilFilled,
     Google,
+    Lock,
+    LockFilled,
+    RolesFilled,
+    Roles,
+    UsersFilled,
+    Users,
 } from '../../../src';
 
 export default [
     {
+        name: 'arrowLeft',
+        category: 'standard',
+        icon: ArrowLeft,
+    },
+    {
+        name: 'arrowRight',
+        category: 'standard',
+        icon: ArrowRight,
+    },
+    {
+        name: 'arrowUp',
+        category: 'standard',
+        icon: ArrowUp,
+    },
+    {
+        name: 'check',
+        category: 'standard',
+        icon: Check,
+    },
+    {
         name: 'close',
         category: 'standard',
         icon: Close,
+    },
+    {
+        name: 'minus',
+        category: 'standard',
+        icon: Minus,
+    },
+    {
+        name: 'plus',
+        category: 'standard',
+        icon: Plus,
+    },
+    {
+        name: 'login',
+        category: 'standard',
+        icon: Login,
+    },
+    {
+        name: 'logout',
+        category: 'standard',
+        icon: Logout,
     },
     {
         name: 'done',
@@ -69,34 +115,9 @@ export default [
         icon: Error,
     },
     {
-        name: 'search',
-        category: 'custom',
-        icon: Search,
-    },
-    {
-        name: 'arrowUp',
+        name: 'warning',
         category: 'standard',
-        icon: ArrowUp,
-    },
-    {
-        name: 'arrowLeft',
-        category: 'standard',
-        icon: ArrowLeft,
-    },
-    {
-        name: 'arrowRight',
-        category: 'standard',
-        icon: ArrowRight,
-    },
-    {
-        name: 'edit',
-        category: 'standard',
-        icon: Edit,
-    },
-    {
-        name: 'cancel',
-        category: 'custom',
-        icon: Cancel,
+        icon: Warning,
     },
     {
         name: 'exportBorder',
@@ -119,14 +140,9 @@ export default [
         icon: HomeFilled,
     },
     {
-        name: 'rainbowLogo',
-        category: 'custom',
-        icon: RainbowLogo,
-    },
-    {
-        name: 'share',
+        name: 'star',
         category: 'standard',
-        icon: Share,
+        icon: Star,
     },
     {
         name: 'trash',
@@ -134,9 +150,44 @@ export default [
         icon: Trash,
     },
     {
-        name: 'warning',
+        name: 'trashFilled',
         category: 'standard',
-        icon: Warning,
+        icon: TrashFilled,
+    },
+    {
+        name: 'lock',
+        category: 'standard',
+        icon: Lock,
+    },
+    {
+        name: 'lockFilled',
+        category: 'standard',
+        icon: LockFilled,
+    },
+    {
+        name: 'roles',
+        category: 'standard',
+        icon: Roles,
+    },
+    {
+        name: 'rolesFilled',
+        category: 'standard',
+        icon: RolesFilled,
+    },
+    {
+        name: 'users',
+        category: 'standard',
+        icon: Users,
+    },
+    {
+        name: 'usersFilled',
+        category: 'standard',
+        icon: UsersFilled,
+    },
+    {
+        name: 'share',
+        category: 'standard',
+        icon: Share,
     },
     {
         name: 'moneyBorder',
@@ -149,19 +200,24 @@ export default [
         icon: MoneyFilled,
     },
     {
-        name: 'checkMark',
-        category: 'custom',
-        icon: Checkmark,
+        name: 'edit',
+        category: 'standard',
+        icon: Edit,
+    },
+    {
+        name: 'pencilFilled',
+        category: 'standard',
+        icon: PencilFilled,
+    },
+    {
+        name: 'camera',
+        category: 'standard',
+        icon: Camera,
     },
     {
         name: 'picture',
         category: 'standard',
         icon: Picture,
-    },
-    {
-        name: 'plus',
-        category: 'standard',
-        icon: Plus,
     },
     {
         name: 'clockFilled',
@@ -184,9 +240,29 @@ export default [
         icon: CheckinFilled,
     },
     {
-        name: 'check',
+        name: 'focusFilled',
         category: 'standard',
-        icon: Check,
+        icon: FocusFilled,
+    },
+    {
+        name: 'filterFilled',
+        category: 'standard',
+        icon: FilterFilled,
+    },
+    {
+        name: 'magnifyingGlass',
+        category: 'standard',
+        icon: MagnifyingGlass,
+    },
+    {
+        name: 'settingsFilled',
+        category: 'standard',
+        icon: SettingsFilled,
+    },
+    {
+        name: 'cubeFilled',
+        category: 'standard',
+        icon: CubeFilled,
     },
     {
         name: 'github',
@@ -194,19 +270,14 @@ export default [
         icon: Github,
     },
     {
-        name: 'minus',
-        category: 'standard',
-        icon: Minus,
-    },
-    {
-        name: 'focusFilled',
-        category: 'standard',
-        icon: FocusFilled,
-    },
-    {
-        name: 'avatar',
+        name: 'newCard',
         category: 'custom',
-        icon: Avatar,
+        icon: NewCard,
+    },
+    {
+        name: 'unknownCard',
+        category: 'custom',
+        icon: UnknownCard,
     },
     {
         name: 'visa',
@@ -243,69 +314,35 @@ export default [
         category: 'custom',
         icon: DinersClub,
     },
+
     {
-        name: 'newCard',
+        name: 'checkMark',
         category: 'custom',
-        icon: NewCard,
+        icon: Checkmark,
     },
     {
-        name: 'unknownCard',
+        name: 'cancel',
         category: 'custom',
-        icon: UnknownCard,
+        icon: Cancel,
     },
     {
-        name: 'filterFilled',
-        category: 'standard',
-        icon: FilterFilled,
-    },
-    {
-        name: 'magnifyingGlass',
-        category: 'standard',
-        icon: MagnifyingGlass,
-    },
-    {
-        name: 'star',
-        category: 'standard',
-        icon: Star,
-    },
-    {
-        name: 'camera',
-        category: 'standard',
-        icon: Camera,
-    },
-    {
-        name: 'login',
-        category: 'standard',
-        icon: Login,
-    },
-    {
-        name: 'logout',
-        category: 'standard',
-        icon: Logout,
-    },
-    {
-        name: 'settingsFilled',
-        category: 'standard',
-        icon: SettingsFilled,
-    },
-    {
-        name: 'cubeFilled',
-        category: 'standard',
-        icon: CubeFilled,
-    },
-    {
-        name: 'trashFilled',
-        category: 'standard',
-        icon: TrashFilled,
-    },
-    {
-        name: 'pencilFilled',
-        category: 'standard',
-        icon: PencilFilled,
+        name: 'rainbowLogo',
+        category: 'custom',
+        icon: RainbowLogo,
     },
     {
         name: 'google',
         category: 'custom',
         icon: Google,
+    },
+    {
+        name: 'avatar',
+        category: 'custom',
+        icon: Avatar,
+    },
+    {
+        name: 'search',
+        category: 'custom',
+        icon: Search,
     },
 ];
