@@ -16,7 +16,7 @@ const Container = styled.div`
 `;
 
 const useChangeLoading = () => {
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         setTimeout(() => {
