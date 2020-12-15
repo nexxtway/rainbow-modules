@@ -59,3 +59,4 @@ export { default as Roles } from './components/roles';
 export { default as UsersFilled } from './components/usersFilled';
 export { default as Users } from './components/users';
 export { default as More } from './components/more';
+export { default as CopyToClipboard } from './components/copyToClipboard';

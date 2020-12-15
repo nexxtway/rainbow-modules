@@ -57,6 +57,7 @@ import {
     UsersFilled,
     Users,
     More,
+    CopyToClipboard,
 } from '../../../src';
 
 export default [
@@ -264,6 +265,11 @@ export default [
         name: 'more',
         category: 'standard',
         icon: More,
+    },
+    {
+        name: 'copyToClipboard',
+        category: 'standard',
+        icon: CopyToClipboard,
     },
     {
         name: 'cubeFilled',
