@@ -4,7 +4,7 @@ import Item from './resultItem';
 import { StyledCubeFilled } from './styled';
 
 const ResultItems = (props) => {
-    const { results, activeTab } = props;
+    const { results, activeTab, onSelect } = props;
     if (activeTab) {
         return results[activeTab].items.map((item) => {
             const { title, description } = item;
@@ -15,6 +15,7 @@ const ResultItems = (props) => {
                     label={title}
                     description={description}
                     icon={<StyledCubeFilled />}
+                    onClick={() => onSelect(item)}
                 />
             );
         });
@@ -24,6 +25,7 @@ const ResultItems = (props) => {
 
 ResultItems.propTypes = {
     results: PropTypes.object.isRequired,
+    onSelect: PropTypes.func.isRequired,
     activeTab: PropTypes.string,
 };
 

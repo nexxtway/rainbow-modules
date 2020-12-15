@@ -20,7 +20,7 @@ import {
 } from './styled';
 
 const SearchContainer = (props) => {
-    const { isOpen, onSearch, results, onRequestClose, query } = props;
+    const { isOpen, onSearch, results, onRequestClose, query, onSelect } = props;
     const inputRef = useRef();
     const backdropRef = useRef();
     const [searchMode, setSearchMode] = useState('empty');
@@ -93,7 +93,7 @@ const SearchContainer = (props) => {
                                 icon={<BrandMagnifyingGlass />}
                                 onClick={() => setSearchMode('results')}
                             />
-                            <Options results={results} />
+                            <Options results={results} onSelect={onSelect} />
                         </OptionsContainer>
                     </RenderIf>
                     <RenderIf isTrue={searchMode === 'results'}>
@@ -107,7 +107,11 @@ const SearchContainer = (props) => {
                             </Tabset>
                             <Content>
                                 <ResultsContent role="presentation">
-                                    <ResultItems results={results} activeTab={activeResultTab} />
+                                    <ResultItems
+                                        results={results}
+                                        activeTab={activeResultTab}
+                                        onSelect={onSelect}
+                                    />
                                 </ResultsContent>
                             </Content>
                         </ResultsContainer>

@@ -5,7 +5,7 @@ import { Search } from '@rainbow-modules/icons';
 import SearchContainer from './searchContainer';
 
 const GlobalSearch = (props) => {
-    const { variant, placeholder, children, className, style } = props;
+    const { onSelect, variant, placeholder, children, className, style } = props;
     const [isOpen, setOpen] = useState(false);
     const [query, setQuery] = useState('');
     const [searchResults, setSearchResults] = useState({});
@@ -48,12 +48,14 @@ const GlobalSearch = (props) => {
                 query={query}
                 results={searchResults}
                 onRequestClose={closeSearch}
+                onSelect={onSelect}
             />
         </div>
     );
 };
 
 GlobalSearch.propTypes = {
+    onSelect: PropTypes.func,
     /** The variant changes the appearance of the GlobalSearch input. Accepted variants include default,
      * and shaded. This value defaults to default. */
     variant: PropTypes.oneOf(['default', 'shaded', 'bare']),
@@ -67,6 +69,7 @@ GlobalSearch.propTypes = {
 };
 
 GlobalSearch.defaultProps = {
+    onSelect: () => {},
     variant: 'default',
     placeholder: undefined,
     className: undefined,

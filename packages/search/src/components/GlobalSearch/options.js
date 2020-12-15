@@ -2,7 +2,7 @@ import React from 'react';
 import Option from './option';
 import { StyledCubeFilled } from './styled';
 
-const Options = ({ results }) => {
+const Options = ({ results, onSelect }) => {
     return Object.keys(results).map((entityName) => {
         return results[entityName].items.map((item) => {
             const { title, description } = item;
@@ -14,6 +14,7 @@ const Options = ({ results }) => {
                     label={title}
                     description={description}
                     icon={<StyledCubeFilled />}
+                    onClick={() => onSelect(item)}
                 />
             );
         });

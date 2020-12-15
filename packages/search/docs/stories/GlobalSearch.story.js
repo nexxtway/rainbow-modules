@@ -14,7 +14,12 @@ const StyledGlobalSearch = styled(GlobalSearch)`
 export const DefaultGlobalSearch = () => {
     return (
         <RainbowFirebaseApp>
-            <StyledGlobalSearch variant="shaded" placeholder="Search">
+            <StyledGlobalSearch
+                variant="shaded"
+                placeholder="Search"
+                // eslint-disable-next-line no-alert
+                onSelect={(item) => alert(JSON.stringify(item))}
+            >
                 <SearchEntity name="Books" onSearch={searchBooks} />
                 <SearchEntity name="Authors" onSearch={searchAuthors} />
             </StyledGlobalSearch>
