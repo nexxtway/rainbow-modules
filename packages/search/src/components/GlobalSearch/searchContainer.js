@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { RenderIf, Tabset, Input } from 'react-rainbow-components';
 import { Search } from '@rainbow-modules/icons';
 import { createPortal } from 'react-dom';
@@ -19,11 +20,10 @@ import {
 } from './styled';
 
 const SearchContainer = (props) => {
-    const { isOpen, onSearch, results, onRequestClose } = props;
+    const { isOpen, onSearch, results, onRequestClose, query } = props;
     const inputRef = useRef();
     const backdropRef = useRef();
     const [searchMode, setSearchMode] = useState('empty');
-    const [query, setQuery] = useState('');
     const [activeResultTab, setActiveResultTab] = useState();
 
     useEffect(() => {
@@ -58,7 +58,6 @@ const SearchContainer = (props) => {
 
     const search = (event) => {
         const query = event.target.value;
-        setQuery(query);
         onSearch({ query });
     };
 
@@ -115,6 +114,14 @@ const SearchContainer = (props) => {
         );
     }
     return null;
+};
+
+SearchContainer.propTypes = {
+    isOpen: PropTypes.bool.isRequired,
+    onSearch: PropTypes.func.isRequired,
+    results: PropTypes.object.isRequired,
+    onRequestClose: PropTypes.func.isRequired,
+    query: PropTypes.string.isRequired,
 };
 
 export default SearchContainer;

@@ -5,27 +5,29 @@ import { Search } from '@rainbow-modules/icons';
 import SearchContainer from './searchContainer';
 
 const GlobalSearch = (props) => {
-    const { variant, placeholder, className, style } = props;
+    const { variant, placeholder, children, className, style } = props;
     const [isOpen, setOpen] = useState(false);
     const [query, setQuery] = useState('');
     const [searchResults, setSearchResults] = useState({});
     const containerRef = useRef();
 
     const search = async ({ query }) => {
+        setQuery(query);
         const results = await Promise.all(
-            Children.map(props.children, (child) => {
+            Children.map(children, (child) => {
                 return child.props.onSearch({ query });
             }),
         );
         setSearchResults(
-            Children.toArray(props.children).reduce((seed, child, index) => {
+            Children.toArray(children).reduce((seed, child, index) => {
+                // eslint-disable-next-line no-param-reassign
                 seed[child.props.name] = results[index];
                 return seed;
             }, {}),
         );
     };
 
-    const onRequestClose = () => {
+    const closeSearch = () => {
         setOpen(false);
     };
 
@@ -34,7 +36,6 @@ const GlobalSearch = (props) => {
             <Input
                 type="search"
                 value={query}
-                onChange={(event) => setQuery(event.target.value)}
                 onFocus={() => setOpen(true)}
                 autoComplete="off"
                 icon={<Search />}
@@ -44,8 +45,9 @@ const GlobalSearch = (props) => {
             <SearchContainer
                 isOpen={isOpen}
                 onSearch={search}
+                query={query}
                 results={searchResults}
-                onRequestClose={onRequestClose}
+                onRequestClose={closeSearch}
             />
         </div>
     );
@@ -61,6 +63,7 @@ GlobalSearch.propTypes = {
     className: PropTypes.string,
     /** An object with custom style applied to the outer element. */
     style: PropTypes.object,
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
 };
 
 GlobalSearch.defaultProps = {
@@ -68,6 +71,7 @@ GlobalSearch.defaultProps = {
     placeholder: undefined,
     className: undefined,
     style: undefined,
+    children: undefined,
 };
 
 export default GlobalSearch;
