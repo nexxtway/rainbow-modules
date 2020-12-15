@@ -38,7 +38,6 @@ describe('StripeCheckoutModal', () => {
         mockElement = mocks.mockElement();
         mockStripe.elements.mockReturnValue(mockElements);
         mockElements.create.mockReturnValue(mockElement);
-        jest.spyOn(React, 'useLayoutEffect');
         mockElement.on = jest.fn((event, fn) => {
             switch (event) {
                 case 'change':
