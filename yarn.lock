@@ -3146,10 +3146,10 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
-"@rainbow-modules/hooks@^0.1.2":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@rainbow-modules/hooks/-/hooks-0.1.4.tgz#87940e81a81ac7dda599bbd266d928bfa3043b77"
-  integrity sha512-S0zn26xH5RRIoDKevDq1A6S17c9c/n5pPZeYVtRBzvUd2IYb9ZtR3/X25sKZwqugGnD6MSpS7SnImQJW7X1OnA==
+"@rainbow-modules/hooks@^0.12.0":
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/@rainbow-modules/hooks/-/hooks-0.12.0.tgz#d1293691aff4d94202b694d5004254fb25900824"
+  integrity sha512-ndpr7Hazm+np5wYwPPGKsxFMKwFyfxiYQTy/cMo/nQyi7orcYR8myU2/qsHcNJXLPA4UQl6s1la3rQnVIQ4NFA==
 
 "@reach/router@^1.2.1":
   version "1.3.4"
@@ -15872,12 +15872,12 @@ react-popper@^1.3.7:
     typed-styles "^0.0.7"
     warning "^4.0.2"
 
-react-rainbow-components@1.18.1-canary.7f6bc18:
-  version "1.18.1-canary.7f6bc18"
-  resolved "https://registry.yarnpkg.com/react-rainbow-components/-/react-rainbow-components-1.18.1-canary.7f6bc18.tgz#43d6c5198a6def4e9747f666b52ae915778f32fb"
-  integrity sha512-PtyAAbMhPDvdTxcFKBcWsLW3DwLmvt7Bj4wh9Sem2210DnUbjmQMj7WIq3jHTc4Uw91hoytUFlxbkgVn6HvI4A==
+react-rainbow-components@1.20.0-canary.777c458:
+  version "1.20.0-canary.777c458"
+  resolved "https://registry.yarnpkg.com/react-rainbow-components/-/react-rainbow-components-1.20.0-canary.777c458.tgz#77342e4ac458f37907f25466217066b37834ddd8"
+  integrity sha512-10Q5MQNS55NVx3UTjTwLd9O0/2EtSwCZKtaC407KqvKwYz3zGp/Slg3RlxtvLlWq8IW7T5NOMMAe+bLeXrCWFA==
   dependencies:
-    "@rainbow-modules/hooks" "^0.1.2"
+    "@rainbow-modules/hooks" "^0.12.0"
     autosize "^4.0.2"
     chart.js "2.7.3"
     clipboard-copy "^2.0.0"

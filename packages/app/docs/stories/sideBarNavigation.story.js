@@ -94,5 +94,4 @@ export const sideBarNavigation = () => {
 
 export default {
     title: 'Modules|App/Stories',
-    component: SideBarNavigation,
 };

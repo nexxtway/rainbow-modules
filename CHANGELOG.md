@@ -3,6 +3,59 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/nexxtway/rainbow-modules/compare/v0.13.0...v0.14.0) (2020-12-05)
+
+### Bug Fixes
+
+-   map improvements + getCurrentLocation helper ([#228](https://github.com/nexxtway/rainbow-modules/issues/228)) ([25e6866](https://github.com/nexxtway/rainbow-modules/commit/25e6866990a3064efb4a7cbfaa845411ff8054a1))
+
+### Features
+
+-   add children confirm modal ([#225](https://github.com/nexxtway/rainbow-modules/issues/225)) ([5216a14](https://github.com/nexxtway/rainbow-modules/commit/5216a1412714dee9f25eb784e59fd601bfe09bc9))
+-   add loading recordheader recordfield ([#224](https://github.com/nexxtway/rainbow-modules/issues/224)) ([d73263b](https://github.com/nexxtway/rainbow-modules/commit/d73263b6a77fe683b17d7222df5b6ec2e613bcb6))
+
+# [0.13.0](https://github.com/nexxtway/rainbow-modules/compare/v0.12.0...v0.13.0) (2020-11-23)
+
+### Bug Fixes
+
+-   added tests to floatingsearch and floatingsearchbuttonicon ([#206](https://github.com/nexxtway/rainbow-modules/issues/206)) ([a132711](https://github.com/nexxtway/rainbow-modules/commit/a13271197a9df5425b74828430522d536cc84812))
+-   bug in `DatePickerCalendar` component when using arrow keys navigation and bounds are reached ([#198](https://github.com/nexxtway/rainbow-modules/issues/198)) ([cb385b4](https://github.com/nexxtway/rainbow-modules/commit/cb385b48d9200d00d95f5d32e855a5433175b83a))
+-   move floatingsearchbuttonicon to listview ([#205](https://github.com/nexxtway/rainbow-modules/issues/205)) ([385bacc](https://github.com/nexxtway/rainbow-modules/commit/385bacc6f44b371e554bef954d5a42d14b46d6f7))
+-   test Mapbox component first commit ([#197](https://github.com/nexxtway/rainbow-modules/issues/197)) ([6b38591](https://github.com/nexxtway/rainbow-modules/commit/6b38591784cb6787a0dd6ed0a3596ed376468216))
+
+### Features
+
+-   add Settings, Login and Logout icons ([#204](https://github.com/nexxtway/rainbow-modules/issues/204)) ([f13238f](https://github.com/nexxtway/rainbow-modules/commit/f13238f7a526dfb902b5525fd6e2e62a72fd1024))
+-   created recordfield in rocord module ([#210](https://github.com/nexxtway/rainbow-modules/issues/210)) ([24f851e](https://github.com/nexxtway/rainbow-modules/commit/24f851eb35ff6a5a8d4d5a46e3a255dc349747e0))
+-   implemented recordheader module ([#214](https://github.com/nexxtway/rainbow-modules/issues/214)) ([a4595a0](https://github.com/nexxtway/rainbow-modules/commit/a4595a099b017589b56a9eb0e3ad18751237a6b0))
+-   implemented recordprimarydetails module ([#215](https://github.com/nexxtway/rainbow-modules/issues/215)) ([7a71241](https://github.com/nexxtway/rainbow-modules/commit/7a71241c3f83119446491dacbcbe6ab27b39ea8d))
+-   implemented recordsection module ([#213](https://github.com/nexxtway/rainbow-modules/issues/213)) ([1f83178](https://github.com/nexxtway/rainbow-modules/commit/1f83178d4d85e58baac98b54dc076606e3c88f21))
+
+# [0.12.0](https://github.com/nexxtway/rainbow-modules/compare/v0.11.0...v0.12.0) (2020-11-17)
+
+### Bug Fixes
+
+-   batchActionBar shadow ([#203](https://github.com/nexxtway/rainbow-modules/issues/203)) ([f76b7de](https://github.com/nexxtway/rainbow-modules/commit/f76b7dea96b34f377ec3f125f8640b7a9dc88d50))
+-   padding on BatchActionsBar ([#201](https://github.com/nexxtway/rainbow-modules/issues/201)) ([1edca15](https://github.com/nexxtway/rainbow-modules/commit/1edca153ec1021a2392420d3d5fcc283e2350d00))
+
+### Features
+
+-   add useScrollingIntent hook ([#200](https://github.com/nexxtway/rainbow-modules/issues/200)) ([e4728b8](https://github.com/nexxtway/rainbow-modules/commit/e4728b8a981ed63b05033937b89fbaae2f779348))
+-   implement floating search component ([#199](https://github.com/nexxtway/rainbow-modules/issues/199)) ([5ff5b91](https://github.com/nexxtway/rainbow-modules/commit/5ff5b91bb3ce3676b64d230653889703833608f0))
+
+# [0.11.0](https://github.com/nexxtway/rainbow-modules/compare/v0.10.0...v0.11.0) (2020-11-13)
+
+### Bug Fixes
+
+-   border 0n CreditCardPicker component ([#194](https://github.com/nexxtway/rainbow-modules/issues/194)) ([3d581b1](https://github.com/nexxtway/rainbow-modules/commit/3d581b131a27adec92bb81acd652564873402e58))
+-   change getCurrentPosition timeout ([2ccb426](https://github.com/nexxtway/rainbow-modules/commit/2ccb426c39f95f243de21d994fa0a5445861ac56))
+-   fixed tests on batchactionsbar module ([#191](https://github.com/nexxtway/rainbow-modules/issues/191)) ([61a4ef4](https://github.com/nexxtway/rainbow-modules/commit/61a4ef4bdd1694689e97bb3cbd01fa4e44f426df))
+
+### Features
+
+-   added camera to icons module ([#193](https://github.com/nexxtway/rainbow-modules/issues/193)) ([9ac529f](https://github.com/nexxtway/rainbow-modules/commit/9ac529f76ed09591177ce7327147c05f1fec327c))
+-   added test to batchactionsbar module ([#186](https://github.com/nexxtway/rainbow-modules/issues/186)) ([74e1f2f](https://github.com/nexxtway/rainbow-modules/commit/74e1f2f9d3fbe3f39fb85cee4e22e80ac5c59171))
+
 # [0.10.0](https://github.com/nexxtway/rainbow-modules/compare/v0.8.0...v0.10.0) (2020-10-29)
 
 ### Bug Fixes

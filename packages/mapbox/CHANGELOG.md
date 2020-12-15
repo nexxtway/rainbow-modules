@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/nexxtway/rainbow-modules/compare/v0.13.0...v0.14.0) (2020-12-05)
+
+### Bug Fixes
+
+-   map improvements + getCurrentLocation helper ([#228](https://github.com/nexxtway/rainbow-modules/issues/228)) ([25e6866](https://github.com/nexxtway/rainbow-modules/commit/25e6866990a3064efb4a7cbfaa845411ff8054a1))
+
+# [0.13.0](https://github.com/nexxtway/rainbow-modules/compare/v0.12.0...v0.13.0) (2020-11-23)
+
+### Bug Fixes
+
+-   test Mapbox component first commit ([#197](https://github.com/nexxtway/rainbow-modules/issues/197)) ([6b38591](https://github.com/nexxtway/rainbow-modules/commit/6b38591784cb6787a0dd6ed0a3596ed376468216))
+
+# [0.12.0](https://github.com/nexxtway/rainbow-modules/compare/v0.11.0...v0.12.0) (2020-11-17)
+
+**Note:** Version bump only for package @rainbow-modules/mapbox
+
+# [0.11.0](https://github.com/nexxtway/rainbow-modules/compare/v0.10.0...v0.11.0) (2020-11-13)
+
+### Bug Fixes
+
+-   change getCurrentPosition timeout ([2ccb426](https://github.com/nexxtway/rainbow-modules/commit/2ccb426c39f95f243de21d994fa0a5445861ac56))
+
 # [0.10.0](https://github.com/nexxtway/rainbow-modules/compare/v0.8.0...v0.10.0) (2020-10-29)
 
 ### Bug Fixes

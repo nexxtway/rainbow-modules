@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import RecordDetails from '../../src/components/RecordDetails';
+import * as stories from '../stories/RecordDetails.story.js';
+
+<Meta title="Modules|Record/Components" component={RecordDetails} />
+
+# Overview
+
+`RecordDetails` component is used to display a group of `RecordField` components in a column form.
+
+### This is an example with the RecordDetails.
+
+<Preview>
+    <Story name="RecordDetails">{stories.BasicRecordDetails()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={RecordDetails} />

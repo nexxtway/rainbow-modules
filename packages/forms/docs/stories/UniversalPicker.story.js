@@ -425,5 +425,4 @@ export const BasicRadioPicker = () => {
 
 export default {
     title: 'Modules|Forms/Stories/UniversalPicker',
-    component: UniversalPicker,
 };

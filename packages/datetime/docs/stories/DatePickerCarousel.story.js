@@ -11,12 +11,12 @@ const Container = styled.div`
 `;
 
 // eslint-disable-next-line react/prop-types
-const PickDate = ({ locale }) => {
-    const [date, setDate] = useState(new Date());
-    return <DatePickerCarousel locale={locale} value={date} onChange={(date) => setDate(date)} />;
+const PickDate = (props) => {
+    const [date, setDate] = useState(new Date('2020/09/15'));
+    return <DatePickerCarousel {...props} value={date} onChange={setDate} />;
 };
 
-export const datePickerCarousel = () => {
+export const basicUsage = () => {
     return (
         <RainbowFirebaseApp app={app}>
             <Container>
@@ -26,7 +26,7 @@ export const datePickerCarousel = () => {
     );
 };
 
-export const datePickerCarouselWithCustomLocale = () => {
+export const usageWithCustomLocale = () => {
     return (
         <RainbowFirebaseApp app={app}>
             <Container>
@@ -36,7 +36,30 @@ export const datePickerCarouselWithCustomLocale = () => {
     );
 };
 
+export const withDoubleCalendar = () => {
+    return (
+        <RainbowFirebaseApp app={app}>
+            <Container>
+                <PickDate variant="double" />
+            </Container>
+        </RainbowFirebaseApp>
+    );
+};
+
+export const withDateBounds = () => {
+    return (
+        <RainbowFirebaseApp app={app}>
+            <Container>
+                <PickDate
+                    id="date-picker-carousel-1"
+                    minDate={new Date('2020/09/01')}
+                    maxDate={new Date('2020/09/30')}
+                />
+            </Container>
+        </RainbowFirebaseApp>
+    );
+};
+
 export default {
     title: 'Modules|Datetime/Stories',
-    component: DatePickerCarousel,
 };

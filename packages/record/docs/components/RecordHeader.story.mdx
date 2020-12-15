@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import RecordHeader from '../../src/components/RecordHeader';
+import * as stories from '../stories/RecordHeader.story.js';
+
+<Meta title="Modules|Record/Components" component={RecordHeader} />
+
+# Overview
+
+`RecordHeader` component is used as the header of a record in a data collection. It is where the most important information of the record is displayed.
+
+### This is an example with the RecordHeader.
+
+<Preview>
+    <Story name="RecordHeader">{stories.BasicRecordHeader()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={RecordHeader} />

@@ -15,7 +15,6 @@ export default function DayCard(props) {
         isFocused,
         isSelected,
         isDisabled,
-        cardMargin,
         locale,
         onChange,
         onFocus,
@@ -35,7 +34,7 @@ export default function DayCard(props) {
 
     if (isDisabled) {
         return (
-            <StyledDisabledDayCard cardMargin={cardMargin} aria-selected="false">
+            <StyledDisabledDayCard aria-selected="false" data-cy="carousel-calendar__day-card">
                 <StyledDayCardDayLabel>{dayName}</StyledDayCardDayLabel>
                 <StyledDayCardDateLabel>{day}</StyledDayCardDateLabel>
             </StyledDisabledDayCard>
@@ -45,9 +44,10 @@ export default function DayCard(props) {
     return (
         <StyledDayCard
             ref={buttonRef}
-            cardMargin={cardMargin}
-            isSelected={isSelected}
+            data-selected={isSelected}
+            data-cy="carousel-calendar__day-card"
             tabIndex={tabIndex}
+            isSelected={isSelected}
             onClick={() => onChange(date)}
             onKeyDown={onKeyDown}
             onFocus={onFocus}
@@ -66,7 +66,6 @@ DayCard.propTypes = {
     isFocused: PropTypes.bool,
     isSelected: PropTypes.bool,
     isDisabled: PropTypes.bool,
-    cardMargin: PropTypes.number,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
     onBlur: PropTypes.func,
@@ -80,7 +79,6 @@ DayCard.defaultProps = {
     isFocused: false,
     isSelected: false,
     isDisabled: false,
-    cardMargin: 5,
     onChange: () => {},
     onFocus: () => {},
     onBlur: () => {},

@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/nexxtway/rainbow-modules/compare/v0.13.0...v0.14.0) (2020-12-05)
+
+### Features
+
+-   add children confirm modal ([#225](https://github.com/nexxtway/rainbow-modules/issues/225)) ([5216a14](https://github.com/nexxtway/rainbow-modules/commit/5216a1412714dee9f25eb784e59fd601bfe09bc9))
+
+# [0.13.0](https://github.com/nexxtway/rainbow-modules/compare/v0.12.0...v0.13.0) (2020-11-23)
+
+**Note:** Version bump only for package @rainbow-modules/app
+
+# [0.12.0](https://github.com/nexxtway/rainbow-modules/compare/v0.11.0...v0.12.0) (2020-11-17)
+
+**Note:** Version bump only for package @rainbow-modules/app
+
+# [0.11.0](https://github.com/nexxtway/rainbow-modules/compare/v0.10.0...v0.11.0) (2020-11-13)
+
+**Note:** Version bump only for package @rainbow-modules/app
+
 # [0.10.0](https://github.com/nexxtway/rainbow-modules/compare/v0.8.0...v0.10.0) (2020-10-29)
 
 ### Bug Fixes
