@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Item from './resultItem';
 import { StyledCubeFilled } from './styled';
 
@@ -16,6 +17,15 @@ const ResultItems = (props) => {
         });
     }
     return null;
+};
+
+ResultItems.propTypes = {
+    results: PropTypes.object.isRequired,
+    activeTab: PropTypes.string,
+};
+
+ResultItems.defaultProps = {
+    activeTab: undefined,
 };
 
 export default ResultItems;
