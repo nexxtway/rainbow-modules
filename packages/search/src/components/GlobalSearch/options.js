@@ -2,14 +2,17 @@ import React from 'react';
 import Option from './option';
 import { StyledCubeFilled } from './styled';
 
-const Options = (props) => {
-    const { results } = props;
+const Options = ({ results }) => {
     return Object.keys(results).map((entityName) => {
         return results[entityName].items.map((item) => {
+            const { title, description } = item;
+            const key = `${title}_${description}`;
+
             return (
                 <Option
-                    label={item.title}
-                    description={item.description}
+                    key={key}
+                    label={title}
+                    description={description}
                     icon={<StyledCubeFilled />}
                 />
             );

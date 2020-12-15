@@ -4,7 +4,7 @@ import { Tab } from 'react-rainbow-components';
 const Tabs = (props) => {
     const { results } = props;
     return Object.keys(results).map((entityName) => {
-        return <Tab label={entityName} name={entityName} id={entityName} />;
+        return <Tab key={entityName} label={entityName} name={entityName} id={entityName} />;
     });
 };
 

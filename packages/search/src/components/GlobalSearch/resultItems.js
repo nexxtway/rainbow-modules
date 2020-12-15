@@ -7,10 +7,13 @@ const ResultItems = (props) => {
     const { results, activeTab } = props;
     if (activeTab) {
         return results[activeTab].items.map((item) => {
+            const { title, description } = item;
+            const key = `${title}_${description}`;
             return (
                 <Item
-                    label={item.title}
-                    description={item.description}
+                    key={key}
+                    label={title}
+                    description={description}
                     icon={<StyledCubeFilled />}
                 />
             );

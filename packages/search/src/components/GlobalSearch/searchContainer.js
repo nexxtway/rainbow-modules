@@ -88,7 +88,11 @@ const SearchContainer = (props) => {
                     </RenderIf>
                     <RenderIf isTrue={searchMode === 'picklist'}>
                         <OptionsContainer role="presentation">
-                            <Option label={query} icon={<BrandMagnifyingGlass />} />
+                            <Option
+                                label={query}
+                                icon={<BrandMagnifyingGlass />}
+                                onClick={() => setSearchMode('results')}
+                            />
                             <Options results={results} />
                         </OptionsContainer>
                     </RenderIf>
