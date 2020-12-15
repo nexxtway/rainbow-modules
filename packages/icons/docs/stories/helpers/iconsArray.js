@@ -57,6 +57,7 @@ import {
     Roles,
     UsersFilled,
     Users,
+    More,
 } from '../../../src';
 
 export default [
@@ -259,6 +260,11 @@ export default [
         name: 'settingsFilled',
         category: 'standard',
         icon: SettingsFilled,
+    },
+    {
+        name: 'more',
+        category: 'standard',
+        icon: More,
     },
     {
         name: 'cubeFilled',
