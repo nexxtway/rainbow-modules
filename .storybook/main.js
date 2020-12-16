@@ -51,6 +51,7 @@ module.exports = {
                     __dirname,
                     '../packages/payment/src/index.js',
                 ),
+                '@rainbow-modules/search': path.join(__dirname, '../packages/search/src/index.js'),
                 '@rainbow-modules/record': path.join(__dirname, '../packages/record/src/index.js'),
             },
         };
