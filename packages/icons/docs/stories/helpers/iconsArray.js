@@ -43,10 +43,11 @@ import {
     MagnifyingGlass,
     Star,
     Camera,
+    Component,
+    CubeFilled,
     SettingsFilled,
     Login,
     Logout,
-    CubeFilled,
     TrashFilled,
     PencilFilled,
     Google,
@@ -350,5 +351,10 @@ export default [
         name: 'search',
         category: 'custom',
         icon: Search,
+    },
+    {
+        name: 'component',
+        category: 'standard',
+        icon: Component,
     },
 ];

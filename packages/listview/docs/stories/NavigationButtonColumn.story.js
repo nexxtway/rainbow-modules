@@ -82,6 +82,7 @@ const colors = {
 };
 
 const handleIdOnClick = ({ value }) => {
+    // eslint-disable-next-line no-alert
     alert(`Clicked id: ${value}`);
 };
 
