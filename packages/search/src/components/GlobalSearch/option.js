@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { StyledOption, OptionText, Label, Description, OptionIconContainer } from './styled';
+import LabelText from './labelText';
+import DescriptionText from './descriptionText';
+import { StyledOption, OptionText, OptionIconContainer } from './styled';
 
 const Option = (props) => {
     const { icon, label, description, onClick } = props;
@@ -8,8 +10,8 @@ const Option = (props) => {
         <StyledOption onClick={onClick}>
             <OptionIconContainer>{icon}</OptionIconContainer>
             <OptionText>
-                <Label>{label}</Label>
-                <Description>{description}</Description>
+                <LabelText value={label} />
+                <DescriptionText value={description} />
             </OptionText>
         </StyledOption>
     );

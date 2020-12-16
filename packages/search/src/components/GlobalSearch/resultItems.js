@@ -6,9 +6,9 @@ import { StyledCubeFilled } from './styled';
 const ResultItems = (props) => {
     const { results, activeTab, onSelect } = props;
     if (activeTab) {
-        return results[activeTab].items.map((item) => {
+        return results[activeTab].items.map((item, index) => {
             const { title, description } = item;
-            const key = `${title}_${description}`;
+            const key = `item-${index}`;
             return (
                 <Item
                     key={key}

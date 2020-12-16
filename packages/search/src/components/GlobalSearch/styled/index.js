@@ -65,14 +65,12 @@ export const OptionIconContainer = styled.span`
 `;
 
 export const Label = styled.span`
-    display: inline-block;
     font-size: 16px;
     color: ${(props) => props.theme.rainbow.palette.text.main};
     line-height: 1.5;
 `;
 
 export const Description = styled.span`
-    display: inline-block;
     font-size: 14px;
     color: ${(props) => props.theme.rainbow.palette.text.header};
     line-height: 1.5;
@@ -116,6 +114,7 @@ export const ResultItemContainer = styled.li`
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
+    margin-bottom: 8px;
 
     :hover {
         box-shadow: ${(props) => props.theme.rainbow.shadows.shadow_4};

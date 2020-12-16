@@ -4,9 +4,9 @@ import { StyledCubeFilled } from './styled';
 
 const Options = ({ results, onSelect }) => {
     return Object.keys(results).map((entityName) => {
-        return results[entityName].items.map((item) => {
+        return results[entityName].items.map((item, index) => {
             const { title, description } = item;
-            const key = `${title}_${description}`;
+            const key = `option-${index}`;
 
             return (
                 <Option

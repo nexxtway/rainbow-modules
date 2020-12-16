@@ -31,6 +31,11 @@ const GlobalSearch = (props) => {
         setOpen(false);
     };
 
+    const handleSelect = (item) => {
+        closeSearch();
+        onSelect(item);
+    };
+
     return (
         <div ref={containerRef} style={style} className={className}>
             <Input
@@ -48,7 +53,7 @@ const GlobalSearch = (props) => {
                 query={query}
                 results={searchResults}
                 onRequestClose={closeSearch}
-                onSelect={onSelect}
+                onSelect={handleSelect}
             />
         </div>
     );

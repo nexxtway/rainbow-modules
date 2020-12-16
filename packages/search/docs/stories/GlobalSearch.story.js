@@ -3,15 +3,17 @@ import styled from 'styled-components';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
 import GlobalSearch from '../../src/components/GlobalSearch';
 import SearchEntity from '../../src/components/SearchEntity';
-import searchBooks from './searchBooksAlgolia';
-import searchAuthors from './searchAuthorsAlgolia';
+import searchBooksAlgolia from './algolia/searchBooksAlgolia';
+import searchAuthorsAlgolia from './algolia/searchAuthorsAlgolia';
+import searchMoviesTitleMongo from './mongo/searchMoviesTitleMongo';
+import searchMoviesPlotMongo from './mongo/searchMoviesPlotMongo';
 
 const StyledGlobalSearch = styled(GlobalSearch)`
     width: 400px;
     margin: 64px auto;
 `;
 
-export const DefaultGlobalSearch = () => {
+export const AlgoliaGlobalSearch = () => {
     return (
         <RainbowFirebaseApp>
             <StyledGlobalSearch
@@ -20,8 +22,24 @@ export const DefaultGlobalSearch = () => {
                 // eslint-disable-next-line no-alert
                 onSelect={(item) => alert(JSON.stringify(item))}
             >
-                <SearchEntity name="Books" onSearch={searchBooks} />
-                <SearchEntity name="Authors" onSearch={searchAuthors} />
+                <SearchEntity name="Books" onSearch={searchBooksAlgolia} />
+                <SearchEntity name="Authors" onSearch={searchAuthorsAlgolia} />
+            </StyledGlobalSearch>
+        </RainbowFirebaseApp>
+    );
+};
+
+export const MongoAtlasGlobalSearch = () => {
+    return (
+        <RainbowFirebaseApp>
+            <StyledGlobalSearch
+                variant="shaded"
+                placeholder="Search"
+                // eslint-disable-next-line no-alert
+                onSelect={(item) => alert(JSON.stringify(item))}
+            >
+                <SearchEntity name="Movies" onSearch={searchMoviesTitleMongo} />
+                <SearchEntity name="Plot" onSearch={searchMoviesPlotMongo} />
             </StyledGlobalSearch>
         </RainbowFirebaseApp>
     );
