@@ -61,3 +61,6 @@ export { default as UsersFilled } from './components/usersFilled';
 export { default as Users } from './components/users';
 export { default as More } from './components/more';
 export { default as CopyToClipboard } from './components/copyToClipboard';
+export { default as FacebookCircle } from './components/facebookCircle';
+export { default as CloseCircleFilled } from './components/closeCircleFilled';
+export { default as Email } from './components/email';
