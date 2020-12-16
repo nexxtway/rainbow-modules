@@ -59,6 +59,9 @@ import {
     Users,
     More,
     CopyToClipboard,
+    FacebookCircle,
+    CloseCircleFilled,
+    Email,
 } from '../../../src';
 
 export default [
@@ -359,8 +362,23 @@ export default [
         icon: Search,
     },
     {
+        name: 'facebookCircle',
+        category: 'custom',
+        icon: FacebookCircle,
+    },
+    {
         name: 'component',
         category: 'standard',
         icon: Component,
+    },
+    {
+        name: 'closeCircleFilled',
+        category: 'standard',
+        icon: CloseCircleFilled,
+    },
+    {
+        name: 'email',
+        category: 'standard',
+        icon: Email,
     },
 ];

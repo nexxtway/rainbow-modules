@@ -19,7 +19,7 @@ const Component = (props) => {
                 <g
                     id="rainbow-GlobalSearch-results"
                     transform="translate(-147.000000, -201.000000)"
-                    fill="#C2C6C8"
+                    fill="currentColor"
                     fillRule="nonzero"
                 >
                     <g id="Group-22" transform="translate(87.500000, 0.000000)">
