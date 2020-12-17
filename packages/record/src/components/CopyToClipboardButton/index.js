@@ -50,6 +50,7 @@ export default function CopyToClipboardButton(props) {
     const handleClick = () => {
         const success = copy(value);
         triggerRef.current.focus();
+        console.log(success);
         if (success) {
             setCopied(true);
             setVisible(true);
@@ -97,9 +98,9 @@ CopyToClipboardButton.propTypes = {
     /** Text to be copied to clipboard */
     value: PropTypes.string,
     /** Text for the tooltip that describes the action of copying to clipboard. */
-    copyText: PropTypes.element,
+    copyText: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     /** text for the tooltip that describes that the text was copied to the clipboard. */
-    copiedText: PropTypes.element,
+    copiedText: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     /** The variant changes the appearance of the button. Accepted variants include
      * base, brand, success, destructive, neutral, outline-brand, border, border-filled, inverse and border-inverse. */
     variant: PropTypes.oneOf([
