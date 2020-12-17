@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { LoadingShape } from 'react-rainbow-components';
+import { CubeFilled } from '@rainbow-modules/icons';
 
 export const Container = styled.section`
     display: flex;
@@ -35,6 +36,11 @@ export const IconContainer = styled.div`
     align-items: center;
     justify-content: center;
     color: ${(props) => props.theme.rainbow.palette.text.disabled};
+`;
+
+export const CubeIcon = styled(CubeFilled)`
+    width: 16px;
+    height: 16px;
 `;
 
 export const Label = styled.h3`
