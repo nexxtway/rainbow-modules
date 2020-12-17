@@ -15,7 +15,7 @@ export const BasicCopyToClipboardButton = () => {
     return (
         <Application>
             <Container>
-                <CopyToClipboardButton value="aasasjdkajsdjkaskjdkasdas" />
+                <CopyToClipboardButton value="Text copied using the CopyToClipboardButton component" />
             </Container>
         </Application>
     );

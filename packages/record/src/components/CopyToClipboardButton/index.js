@@ -50,7 +50,6 @@ export default function CopyToClipboardButton(props) {
     const handleClick = () => {
         const success = copy(value);
         triggerRef.current.focus();
-        console.log(success);
         if (success) {
             setCopied(true);
             setVisible(true);
