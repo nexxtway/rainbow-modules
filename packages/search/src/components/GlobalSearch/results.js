@@ -24,8 +24,7 @@ const getInitialActiveTab = (results) => {
 export default function Results(props) {
     const { results, isLoading, query, onSearchWithPagination, onSelect } = props;
     const [activeTab, setActiveResultTab] = useState(() => getInitialActiveTab(results));
-    const totalPages = activeTab && results[activeTab].totalPages;
-    const activePage = activeTab && results[activeTab].page;
+    const { totalPages, page: activePage } = (activeTab && results[activeTab]) || {};
     const showPagination = totalPages > 1;
     const { hits } = results[activeTab] || {};
 
