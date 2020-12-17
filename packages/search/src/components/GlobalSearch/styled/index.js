@@ -19,10 +19,10 @@ export const Backdrop = attachThemeAttrs(styled.section)`
 
 export const Container = styled.div`
     width: 60%;
-    height: fit-content;
     background-color: white;
     border: 1px solid #eee;
     border-radius: 14px;
+    position: absolute;
 `;
 
 export const StyledHeader = styled.header`
@@ -34,6 +34,8 @@ export const OptionsContainer = styled.ul`
     list-style: none;
     margin: 12px 0;
     padding: 0;
+    max-height: 57vh;
+    overflow-y: auto;
 `;
 
 export const StyledOption = styled.li`
@@ -96,14 +98,15 @@ export const ResultsContainer = styled.div`
 
 export const Content = styled.div`
     background: ${(props) => props.theme.rainbow.palette.background.secondary};
-    padding: 20px;
     border-radius: 0 0 14px 14px;
 `;
 
 export const ResultsContent = styled.ul`
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 20px;
+    overflow-y: scroll;
+    height: calc(100vh - 101px);
 `;
 
 export const ResultItemContainer = styled.li`

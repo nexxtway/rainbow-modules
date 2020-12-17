@@ -2,6 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 import 'firebase/functions';
+import 'firebase/storage';
 
 const firebaseConfig = {
     apiKey: process.env.STORYBOOK_API_KEY,

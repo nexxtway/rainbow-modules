@@ -4,9 +4,9 @@ import Item from './resultItem';
 import { StyledCubeFilled } from './styled';
 
 const ResultItems = (props) => {
-    const { results, activeTab, onSelect } = props;
-    if (activeTab) {
-        return results[activeTab].items.map((item, index) => {
+    const { hits, onSelect } = props;
+    if (Array.isArray(hits)) {
+        return hits.map((item, index) => {
             const { title, description } = item;
             const key = `item-${index}`;
             return (
@@ -24,13 +24,8 @@ const ResultItems = (props) => {
 };
 
 ResultItems.propTypes = {
-    results: PropTypes.object.isRequired,
+    hits: PropTypes.array.isRequired,
     onSelect: PropTypes.func.isRequired,
-    activeTab: PropTypes.string,
-};
-
-ResultItems.defaultProps = {
-    activeTab: undefined,
 };
 
 export default ResultItems;
