@@ -1,30 +1,38 @@
 import React, { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { RenderIf, Tabset, Input } from 'react-rainbow-components';
+import { RenderIf, Input } from 'react-rainbow-components';
 import { Search } from '@rainbow-modules/icons';
 import { createPortal } from 'react-dom';
 import Option from './option';
 import Options from './options';
-import ResultItems from './resultItems';
 import Initial from './initial';
-import Tabs from './tabs';
+import Results from './results';
 import {
     Backdrop,
     Container,
     OptionsContainer,
     BrandMagnifyingGlass,
-    ResultsContainer,
-    ResultsContent,
-    Content,
     StyledHeader,
 } from './styled';
 
 const SearchContainer = (props) => {
-    const { isOpen, onSearch, results, onRequestClose, query, onSelect } = props;
+    const {
+        isOpen,
+        onSearch,
+        onSearchWithPagination,
+        results,
+        onRequestClose,
+        query,
+        onSelect,
+        isLoading,
+    } = props;
     const inputRef = useRef();
     const backdropRef = useRef();
     const [searchMode, setSearchMode] = useState('empty');
-    const [activeResultTab, setActiveResultTab] = useState();
+
+    const isEmptyMode = searchMode === 'empty';
+    const isPicklistMode = searchMode === 'picklist';
+    const isResultsMode = searchMode === 'results';
 
     useEffect(() => {
         if (isOpen) {
@@ -36,13 +44,10 @@ const SearchContainer = (props) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isOpen, query.length === 0]);
 
-    useEffect(() => {
-        const entities = Object.keys(results);
-        if (searchMode === 'results' && entities.length > 0) {
-            setActiveResultTab(entities[0]);
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [searchMode === 'results']);
+    const showResults = () => {
+        setSearchMode('results');
+        onSearchWithPagination({ query, page: 1 });
+    };
 
     const handleKeyDown = (event) => {
         switch (event.keyCode) {
@@ -50,15 +55,15 @@ const SearchContainer = (props) => {
                 onRequestClose();
                 break;
             case 13:
-                setSearchMode('results');
+                showResults();
                 break;
             default:
         }
     };
 
     const search = (event) => {
-        const query = event.target.value;
-        onSearch({ query });
+        const { value } = event.target;
+        onSearch({ query: value });
     };
 
     const handleBackdropClick = (event) => {
@@ -83,38 +88,27 @@ const SearchContainer = (props) => {
                             onChange={search}
                         />
                     </StyledHeader>
-                    <RenderIf isTrue={searchMode === 'empty'}>
+                    <RenderIf isTrue={isEmptyMode}>
                         <Initial />
                     </RenderIf>
-                    <RenderIf isTrue={searchMode === 'picklist'}>
+                    <RenderIf isTrue={isPicklistMode}>
                         <OptionsContainer role="presentation">
                             <Option
                                 label={query}
                                 icon={<BrandMagnifyingGlass />}
-                                onClick={() => setSearchMode('results')}
+                                onClick={showResults}
                             />
                             <Options results={results} onSelect={onSelect} />
                         </OptionsContainer>
                     </RenderIf>
-                    <RenderIf isTrue={searchMode === 'results'}>
-                        <ResultsContainer>
-                            <Tabset
-                                variant="line"
-                                activeTabName={activeResultTab}
-                                onSelect={(e, selected) => setActiveResultTab(selected)}
-                            >
-                                <Tabs results={results} />
-                            </Tabset>
-                            <Content>
-                                <ResultsContent role="presentation">
-                                    <ResultItems
-                                        results={results}
-                                        activeTab={activeResultTab}
-                                        onSelect={onSelect}
-                                    />
-                                </ResultsContent>
-                            </Content>
-                        </ResultsContainer>
+                    <RenderIf isTrue={isResultsMode}>
+                        <Results
+                            query={query}
+                            results={results}
+                            isLoading={isLoading}
+                            onSearchWithPagination={onSearchWithPagination}
+                            onSelect={onSelect}
+                        />
                     </RenderIf>
                 </Container>
             </Backdrop>,
@@ -127,9 +121,11 @@ const SearchContainer = (props) => {
 SearchContainer.propTypes = {
     isOpen: PropTypes.bool.isRequired,
     onSearch: PropTypes.func.isRequired,
+    onSearchWithPagination: PropTypes.func.isRequired,
     results: PropTypes.object.isRequired,
     onRequestClose: PropTypes.func.isRequired,
     query: PropTypes.string.isRequired,
+    isLoading: PropTypes.bool.isRequired,
 };
 
 export default SearchContainer;

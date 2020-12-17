@@ -4,9 +4,18 @@ import { Input } from 'react-rainbow-components';
 import { Search } from '@rainbow-modules/icons';
 import SearchContainer from './searchContainer';
 
+const getSearchResults = ({ children, results }) => {
+    return Children.toArray(children).reduce((seed, child, index) => {
+        // eslint-disable-next-line no-param-reassign
+        seed[child.props.name] = results[index];
+        return seed;
+    }, {});
+};
+
 const GlobalSearch = (props) => {
     const { onSelect, variant, placeholder, children, className, style } = props;
     const [isOpen, setOpen] = useState(false);
+    const [isLoading, setLoading] = useState(false);
     const [query, setQuery] = useState('');
     const [searchResults, setSearchResults] = useState({});
     const containerRef = useRef();
@@ -18,13 +27,25 @@ const GlobalSearch = (props) => {
                 return child.props.onSearch({ query });
             }),
         );
-        setSearchResults(
-            Children.toArray(children).reduce((seed, child, index) => {
-                // eslint-disable-next-line no-param-reassign
-                seed[child.props.name] = results[index];
-                return seed;
-            }, {}),
-        );
+        setSearchResults(getSearchResults({ children, results }));
+    };
+
+    const searchWithPagination = async ({ query, page }) => {
+        const hasOnSearchWithPagination = Children.toArray(children).some((child) => {
+            const { onSearchWithPagination } = child.props;
+            return typeof onSearchWithPagination === 'function';
+        });
+        if (hasOnSearchWithPagination) {
+            setLoading(true);
+            setQuery(query);
+            const results = await Promise.all(
+                Children.map(children, (child) => {
+                    return child.props.onSearchWithPagination({ query, page });
+                }),
+            );
+            setLoading(false);
+            setSearchResults(getSearchResults({ children, results }));
+        }
     };
 
     const closeSearch = () => {
@@ -50,10 +71,12 @@ const GlobalSearch = (props) => {
             <SearchContainer
                 isOpen={isOpen}
                 onSearch={search}
+                onSearchWithPagination={searchWithPagination}
                 query={query}
                 results={searchResults}
                 onRequestClose={closeSearch}
                 onSelect={handleSelect}
+                isLoading={isLoading}
             />
         </div>
     );
