@@ -3,11 +3,25 @@ import PropTypes from 'prop-types';
 import { ButtonIcon } from 'react-rainbow-components';
 import InternalTooltip from 'react-rainbow-components/components/InternalTooltip';
 import { useScrollingIntent } from '@rainbow-modules/hooks';
-import { Cancel } from '@rainbow-modules/icons';
+import { CopyToClipboard } from '@rainbow-modules/icons';
 import { isSupported, copy } from './helpers';
 
+/** A button with modern approach to copy text to clipboard. Would try to use execCommand with fallback to IE specific clipboardData interface. */
 export default function CopyToClipboardButton(props) {
-    const { style, id, className, value, copyText, copiedText } = props;
+    const {
+        style,
+        id,
+        className,
+        value,
+        copyText,
+        copiedText,
+        variant,
+        size,
+        shaded,
+        disabled,
+        tabIndex,
+        assistiveText,
+    } = props;
     const triggerRef = useRef();
     const tooltipRef = useRef();
     const [isVisible, setVisible] = useState(false);
@@ -54,13 +68,19 @@ export default function CopyToClipboardButton(props) {
                 id={id}
                 className={className}
                 style={style}
-                icon={<Cancel />}
+                icon={<CopyToClipboard />}
                 onClick={handleClick}
                 onMouseEnter={() => setVisible(true)}
                 onMouseLeave={hiddenTooltip}
                 onFocus={() => setVisible(true)}
                 onBlur={hiddenTooltip}
                 ref={triggerRef}
+                variant={variant}
+                size={size}
+                shaded={shaded}
+                disabled={disabled}
+                tabIndex={tabIndex}
+                assistiveText={assistiveText}
             />
             <InternalTooltip
                 triggerElementRef={() => triggerRef.current.htmlElementRef}
@@ -74,21 +94,59 @@ export default function CopyToClipboardButton(props) {
 }
 
 CopyToClipboardButton.propTypes = {
+    /** Text to be copied to clipboard */
+    value: PropTypes.string,
+    /** Text for the tooltip that describes the action of copying to clipboard. */
+    copyText: PropTypes.element,
+    /** text for the tooltip that describes that the text was copied to the clipboard. */
+    copiedText: PropTypes.element,
+    /** The variant changes the appearance of the button. Accepted variants include
+     * base, brand, success, destructive, neutral, outline-brand, border, border-filled, inverse and border-inverse. */
+    variant: PropTypes.oneOf([
+        'base',
+        'neutral',
+        'brand',
+        'outline-brand',
+        'destructive',
+        'success',
+        'border',
+        'border-filled',
+        'border-inverse',
+        'inverse',
+    ]),
+    /** The size of the buttonIcon. For the base variant, options include x-small, small, medium,
+     * and large. For non-base variants, options include xx-small, x-small, small, and medium. */
+    size: PropTypes.oneOf(['xx-small', 'x-small', 'small', 'medium', 'large']),
+    /** Specify true when the button has a shadow around it.
+     * This value defaults to false.
+     * Only border-filled, brand, and success variant can be shaded. */
+    shaded: PropTypes.bool,
+    /** Specifies whether this button should be displayed in a disabled state.
+     * Disabled buttons can't be clicked. */
+    disabled: PropTypes.bool,
+    /** Specifies the tab order of an element (when the tab button is used for navigating). */
+    tabIndex: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    /** A description for assistive sreen readers. */
+    assistiveText: PropTypes.string,
     /** A CSS class for the outer element, in addition to the component's base classes. */
     className: PropTypes.string,
     /** An object with custom style applied to the outer element. */
     style: PropTypes.object,
+    /** The id of the outer element. */
     id: PropTypes.string,
-    value: PropTypes.string,
-    copyText: PropTypes.element,
-    copiedText: PropTypes.element,
 };
 
 CopyToClipboardButton.defaultProps = {
-    className: undefined,
-    style: undefined,
-    id: undefined,
     value: undefined,
     copyText: 'Click to copy',
     copiedText: 'Copied',
+    variant: 'base',
+    size: 'medium',
+    shaded: false,
+    disabled: false,
+    tabIndex: undefined,
+    assistiveText: undefined,
+    className: undefined,
+    style: undefined,
+    id: undefined,
 };
