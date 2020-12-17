@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { RenderIf } from 'react-rainbow-components';
-import { CubeFilled } from '@rainbow-modules/icons';
 import {
     Container,
     Label,
@@ -15,6 +14,7 @@ import {
     Body,
     LabelLoadingShape,
     DescriptionLoadingShape,
+    CubeIcon,
 } from './styled';
 
 export default function RecordHeader(props) {
@@ -90,6 +90,6 @@ RecordHeader.defaultProps = {
     actions: null,
     tags: null,
     children: null,
-    icon: <CubeFilled />,
+    icon: <CubeIcon />,
     isLoading: false,
 };
