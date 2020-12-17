@@ -62,6 +62,7 @@ import {
     FacebookCircle,
     CloseCircleFilled,
     Email,
+    QuestionFilled,
 } from '../../../src';
 
 export default [
@@ -380,5 +381,10 @@ export default [
         name: 'email',
         category: 'standard',
         icon: Email,
+    },
+    {
+        name: 'questionFilled',
+        category: 'standard',
+        icon: QuestionFilled,
     },
 ];
