@@ -43,10 +43,11 @@ import {
     MagnifyingGlass,
     Star,
     Camera,
+    Component,
+    CubeFilled,
     SettingsFilled,
     Login,
     Logout,
-    CubeFilled,
     TrashFilled,
     PencilFilled,
     Google,
@@ -57,6 +58,11 @@ import {
     UsersFilled,
     Users,
     More,
+    CopyToClipboard,
+    FacebookCircle,
+    CloseCircleFilled,
+    Email,
+    QuestionFilled,
 } from '../../../src';
 
 export default [
@@ -266,6 +272,11 @@ export default [
         icon: More,
     },
     {
+        name: 'copyToClipboard',
+        category: 'standard',
+        icon: CopyToClipboard,
+    },
+    {
         name: 'cubeFilled',
         category: 'standard',
         icon: CubeFilled,
@@ -350,5 +361,30 @@ export default [
         name: 'search',
         category: 'custom',
         icon: Search,
+    },
+    {
+        name: 'facebookCircle',
+        category: 'custom',
+        icon: FacebookCircle,
+    },
+    {
+        name: 'component',
+        category: 'standard',
+        icon: Component,
+    },
+    {
+        name: 'closeCircleFilled',
+        category: 'standard',
+        icon: CloseCircleFilled,
+    },
+    {
+        name: 'email',
+        category: 'standard',
+        icon: Email,
+    },
+    {
+        name: 'questionFilled',
+        category: 'standard',
+        icon: QuestionFilled,
     },
 ];
