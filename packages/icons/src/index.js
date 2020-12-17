@@ -64,3 +64,4 @@ export { default as CopyToClipboard } from './components/copyToClipboard';
 export { default as FacebookCircle } from './components/facebookCircle';
 export { default as CloseCircleFilled } from './components/closeCircleFilled';
 export { default as Email } from './components/email';
+export { default as QuestionFilled } from './components/questionFilled';
