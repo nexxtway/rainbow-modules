@@ -22,8 +22,16 @@ export const AlgoliaGlobalSearch = () => {
                 // eslint-disable-next-line no-alert
                 onSelect={(item) => alert(JSON.stringify(item))}
             >
-                <SearchEntity name="Books" onSearch={searchBooksAlgolia} />
-                <SearchEntity name="Authors" onSearch={searchAuthorsAlgolia} />
+                <SearchEntity
+                    name="Books"
+                    onSearch={searchBooksAlgolia}
+                    onSearchWithPagination={searchBooksAlgolia}
+                />
+                <SearchEntity
+                    name="Authors"
+                    onSearch={searchAuthorsAlgolia}
+                    onSearchWithPagination={searchAuthorsAlgolia}
+                />
             </StyledGlobalSearch>
         </RainbowFirebaseApp>
     );
