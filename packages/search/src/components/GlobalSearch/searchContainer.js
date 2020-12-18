@@ -30,8 +30,8 @@ function isOptionVisible(elem, container) {
 const SearchContainer = (props) => {
     const {
         isOpen,
+        onAutocomplete,
         onSearch,
-        onSearchWithPagination,
         results,
         onRequestClose,
         query,
@@ -64,7 +64,7 @@ const SearchContainer = (props) => {
 
     const showResults = () => {
         setSearchMode('results');
-        onSearchWithPagination({ query, page: 1 });
+        onSearch({ query, page: 1 });
     };
 
     const [activeOptionIndex, setActiveOptionIndex] = useState(0);
@@ -136,9 +136,9 @@ const SearchContainer = (props) => {
         }
     };
 
-    const search = (event) => {
+    const handleChange = (event) => {
         const { value } = event.target;
-        onSearch({ query: value });
+        onAutocomplete({ query: value });
     };
 
     const handleBackdropClick = (event) => {
@@ -164,7 +164,7 @@ const SearchContainer = (props) => {
                             isBare
                             icon={<Search />}
                             autoComplete="off"
-                            onChange={search}
+                            onChange={handleChange}
                         />
                     </StyledHeader>
                     <RenderIf isTrue={isEmptyMode}>
@@ -186,7 +186,7 @@ const SearchContainer = (props) => {
                             query={query}
                             results={results}
                             isLoading={isLoading}
-                            onSearchWithPagination={onSearchWithPagination}
+                            onSearch={onSearch}
                             onSelect={handleResultsSelect}
                         />
                     </RenderIf>
@@ -200,8 +200,8 @@ const SearchContainer = (props) => {
 
 SearchContainer.propTypes = {
     isOpen: PropTypes.bool.isRequired,
+    onAutocomplete: PropTypes.func.isRequired,
     onSearch: PropTypes.func.isRequired,
-    onSearchWithPagination: PropTypes.func.isRequired,
     onSelect: PropTypes.func.isRequired,
     results: PropTypes.object.isRequired,
     onRequestClose: PropTypes.func.isRequired,

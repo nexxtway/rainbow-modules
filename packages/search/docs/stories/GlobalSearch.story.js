@@ -24,13 +24,13 @@ export const AlgoliaGlobalSearch = () => {
             >
                 <SearchEntity
                     name="Books"
+                    onAutocomplete={searchBooksAlgolia}
                     onSearch={searchBooksAlgolia}
-                    onSearchWithPagination={searchBooksAlgolia}
                 />
                 <SearchEntity
                     name="Authors"
+                    onAutocomplete={searchAuthorsAlgolia}
                     onSearch={searchAuthorsAlgolia}
-                    onSearchWithPagination={searchAuthorsAlgolia}
                 />
             </StyledGlobalSearch>
         </RainbowFirebaseApp>
@@ -46,8 +46,8 @@ export const MongoAtlasGlobalSearch = () => {
                 // eslint-disable-next-line no-alert
                 onSelect={(item) => alert(JSON.stringify(item))}
             >
-                <SearchEntity name="Movies" onSearch={searchMoviesTitleMongo} />
-                <SearchEntity name="Plot" onSearch={searchMoviesPlotMongo} />
+                <SearchEntity name="Movies" onAutocomplete={searchMoviesTitleMongo} />
+                <SearchEntity name="Plot" onAutocomplete={searchMoviesPlotMongo} />
             </StyledGlobalSearch>
         </RainbowFirebaseApp>
     );
