@@ -26,7 +26,7 @@ export default function Results(props) {
     const [activeTab, setActiveResultTab] = useState(() => getInitialActiveTab(results));
     const { totalPages, page: activePage } = (activeTab && results[activeTab]) || {};
     const showPagination = totalPages > 1;
-    const { hits } = results[activeTab] || {};
+    const { hits = [] } = results[activeTab] || {};
 
     const hasPagination = typeof totalPages === 'number' && typeof activePage === 'number';
     const showInternalPagination = !hasPagination && hits.length > HITS_PER_PAGE;
