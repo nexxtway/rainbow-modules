@@ -32,7 +32,7 @@ SideBarNavigation.propTypes = {
     /**
      * @ignore
      */
-    children: PropTypes.arrayOf(PropTypes.node),
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
 };
 
 SideBarNavigation.defaultProps = {
