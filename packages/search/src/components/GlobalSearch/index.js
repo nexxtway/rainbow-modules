@@ -54,6 +54,7 @@ const GlobalSearch = (props) => {
 
     const handleSelect = (item) => {
         closeSearch();
+        setQuery('');
         onSelect(item);
     };
 
