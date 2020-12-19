@@ -20,7 +20,7 @@ describe('<Tile />', () => {
         const values = [
             { date: '01/01/2020', formated: '1/1/2020, 12:00:00 AM' },
             { date: '01-01-2020', formated: '1/1/2020, 12:00:00 AM' },
-            { date: 0, formated: '12/31/1969, 7:00:00 PM' },
+            { date: 0, formated: '1/1/1970, 12:00:00 AM' },
             { date: new Date('01-01-2020'), formated: '1/1/2020, 12:00:00 AM' },
         ];
         values.forEach(({ date, formated }) => {
