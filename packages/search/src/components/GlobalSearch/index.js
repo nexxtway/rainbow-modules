@@ -20,27 +20,27 @@ const GlobalSearch = (props) => {
     const [searchResults, setSearchResults] = useState({});
     const containerRef = useRef();
 
-    const search = async ({ query }) => {
+    const handleAutocomplete = async ({ query }) => {
         setQuery(query);
         const results = await Promise.all(
             Children.map(children, (child) => {
-                return child.props.onSearch({ query });
+                return child.props.onAutocomplete({ query });
             }),
         );
         setSearchResults(getSearchResults({ children, results }));
     };
 
-    const searchWithPagination = async ({ query, page }) => {
-        const hasOnSearchWithPagination = Children.toArray(children).some((child) => {
-            const { onSearchWithPagination } = child.props;
-            return typeof onSearchWithPagination === 'function';
+    const handleSearch = async ({ query, page }) => {
+        const hasOnSearchEvent = Children.toArray(children).some((child) => {
+            const { onSearch } = child.props;
+            return typeof onSearch === 'function';
         });
-        if (hasOnSearchWithPagination) {
+        if (hasOnSearchEvent) {
             setLoading(true);
             setQuery(query);
             const results = await Promise.all(
                 Children.map(children, (child) => {
-                    return child.props.onSearchWithPagination({ query, page });
+                    return child.props.onSearch({ query, page });
                 }),
             );
             setLoading(false);
@@ -54,6 +54,7 @@ const GlobalSearch = (props) => {
 
     const handleSelect = (item) => {
         closeSearch();
+        setQuery('');
         onSelect(item);
     };
 
@@ -70,8 +71,8 @@ const GlobalSearch = (props) => {
             />
             <SearchContainer
                 isOpen={isOpen}
-                onSearch={search}
-                onSearchWithPagination={searchWithPagination}
+                onAutocomplete={handleAutocomplete}
+                onSearch={handleSearch}
                 query={query}
                 results={searchResults}
                 onRequestClose={closeSearch}

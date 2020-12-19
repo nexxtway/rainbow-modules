@@ -22,11 +22,11 @@ const getInitialActiveTab = (results) => {
 };
 
 export default function Results(props) {
-    const { results, isLoading, query, onSearchWithPagination, onSelect } = props;
+    const { results, isLoading, query, onSearch, onSelect } = props;
     const [activeTab, setActiveResultTab] = useState(() => getInitialActiveTab(results));
     const { totalPages, page: activePage } = (activeTab && results[activeTab]) || {};
     const showPagination = totalPages > 1;
-    const { hits } = results[activeTab] || {};
+    const { hits = [] } = results[activeTab] || {};
 
     const hasPagination = typeof totalPages === 'number' && typeof activePage === 'number';
     const showInternalPagination = !hasPagination && hits.length > HITS_PER_PAGE;
@@ -38,7 +38,7 @@ export default function Results(props) {
         : hits;
 
     const handlePaginationChange = (event, page) => {
-        onSearchWithPagination({ query, page });
+        onSearch({ query, page });
     };
 
     const handleInternalPaginationChange = (event, page) => {
@@ -48,7 +48,7 @@ export default function Results(props) {
     const handleTabChange = (e, selected) => {
         setActiveResultTab(selected);
         setInternalActivePage(1);
-        onSearchWithPagination({ query, page: 1 });
+        onSearch({ query, page: 1 });
     };
 
     return (
@@ -88,6 +88,6 @@ Results.propTypes = {
     results: PropTypes.object.isRequired,
     isLoading: PropTypes.bool.isRequired,
     query: PropTypes.string.isRequired,
-    onSearchWithPagination: PropTypes.func.isRequired,
+    onSearch: PropTypes.func.isRequired,
     onSelect: PropTypes.func.isRequired,
 };

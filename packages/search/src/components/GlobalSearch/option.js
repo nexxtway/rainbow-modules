@@ -5,9 +5,9 @@ import DescriptionText from './descriptionText';
 import { StyledOption, OptionText, OptionIconContainer } from './styled';
 
 const Option = (props) => {
-    const { icon, label, description, onClick } = props;
+    const { icon, label, description, onClick, isActive, onHover } = props;
     return (
-        <StyledOption onClick={onClick}>
+        <StyledOption isActive={isActive} onClick={onClick} onMouseEnter={onHover}>
             <OptionIconContainer>{icon}</OptionIconContainer>
             <OptionText>
                 <LabelText value={label} />
