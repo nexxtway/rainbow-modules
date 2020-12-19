@@ -46,6 +46,13 @@ export const StyledOption = styled.li`
         cursor: pointer;
         background: ${(props) => props.theme.rainbow.palette.action.active};
     }
+
+    ${(props) =>
+        props.isActive &&
+        `
+        cursor: pointer;
+        background: ${props.theme.rainbow.palette.action.active};
+    `}
 `;
 
 export const OptionText = styled.div`

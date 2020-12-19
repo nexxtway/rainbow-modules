@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://github.com/nexxtway/rainbow-modules/compare/v0.14.0...v0.15.0) (2020-12-18)
+
+### Features
+
+-   add copytoclipboard icon ([#234](https://github.com/nexxtway/rainbow-modules/issues/234)) ([eae9dae](https://github.com/nexxtway/rainbow-modules/commit/eae9dae334a2df279f349eceb02df65cb77f08e8))
+-   add facebookCircle, email and CloseFilled icons ([#239](https://github.com/nexxtway/rainbow-modules/issues/239)) ([0652477](https://github.com/nexxtway/rainbow-modules/commit/06524778ca068eba1b045c971e4236ce418330c7))
+-   add Google icon ([#229](https://github.com/nexxtway/rainbow-modules/issues/229)) ([fdb99b1](https://github.com/nexxtway/rainbow-modules/commit/fdb99b1a23158587cbc87e5df0d7da93c93532c2))
+-   add QuestionFilled icon ([#243](https://github.com/nexxtway/rainbow-modules/issues/243)) ([93e9c6c](https://github.com/nexxtway/rainbow-modules/commit/93e9c6cc91a6ef57a8f83f057651134c4b759dc7))
+-   added icons users roles lock ([#230](https://github.com/nexxtway/rainbow-modules/issues/230)) ([b04bbdf](https://github.com/nexxtway/rainbow-modules/commit/b04bbdf3d187b1865e58cfd2f74a5859dd81764d))
+-   added more icon ([#233](https://github.com/nexxtway/rainbow-modules/issues/233)) ([dbeb872](https://github.com/nexxtway/rainbow-modules/commit/dbeb872fa805d9bf6344b1c722ae3df0c8e66ba9))
+-   search module first commit ([#195](https://github.com/nexxtway/rainbow-modules/issues/195)) ([351cdd7](https://github.com/nexxtway/rainbow-modules/commit/351cdd72d27d14a7cb4ebc16c9dc01cd8a425c0f))
+
 # [0.14.0](https://github.com/nexxtway/rainbow-modules/compare/v0.13.0...v0.14.0) (2020-12-05)
 
 **Note:** Version bump only for package @rainbow-modules/icons
