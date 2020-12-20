@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 import { ButtonIcon } from 'react-rainbow-components';
 import InternalTooltip from 'react-rainbow-components/components/InternalTooltip';
 import { useScrollingIntent } from '@rainbow-modules/hooks';
@@ -13,8 +14,6 @@ export default function CopyToClipboardButton(props) {
         id,
         className,
         value,
-        copyText,
-        copiedText,
         variant,
         size,
         shaded,
@@ -26,7 +25,9 @@ export default function CopyToClipboardButton(props) {
     const tooltipRef = useRef();
     const [isVisible, setVisible] = useState(false);
     const [isCopied, setCopied] = useState(false);
-    const text = isCopied ? copiedText : copyText;
+    const copyProps = { id: 'click_to_copy', defaultMessage: 'Click to copy' };
+    const copiedProps = { id: 'copied', defaultMessage: 'Copied' };
+    const formattedMessageProps = isCopied ? copiedProps : copyProps;
 
     useEffect(() => {
         if (isCopied) {
@@ -56,7 +57,7 @@ export default function CopyToClipboardButton(props) {
         }
     };
 
-    const hiddenTooltip = () => {
+    const hideTooltip = () => {
         if (!isCopied) {
             setVisible(false);
         }
@@ -71,9 +72,9 @@ export default function CopyToClipboardButton(props) {
                 icon={<CopyToClipboard />}
                 onClick={handleClick}
                 onMouseEnter={() => setVisible(true)}
-                onMouseLeave={hiddenTooltip}
+                onMouseLeave={hideTooltip}
                 onFocus={() => setVisible(true)}
-                onBlur={hiddenTooltip}
+                onBlur={hideTooltip}
                 ref={triggerRef}
                 variant={variant}
                 size={size}
@@ -87,7 +88,7 @@ export default function CopyToClipboardButton(props) {
                 isVisible={isVisible}
                 ref={tooltipRef}
             >
-                {text}
+                <FormattedMessage {...formattedMessageProps} />
             </InternalTooltip>
         </>
     );
@@ -96,10 +97,6 @@ export default function CopyToClipboardButton(props) {
 CopyToClipboardButton.propTypes = {
     /** Text to be copied to clipboard */
     value: PropTypes.string,
-    /** Text for the tooltip that describes the action of copying to clipboard. */
-    copyText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-    /** text for the tooltip that describes that the text was copied to the clipboard. */
-    copiedText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     /** The variant changes the appearance of the button. Accepted variants include
      * base, brand, success, destructive, neutral, outline-brand, border, border-filled, inverse and border-inverse. */
     variant: PropTypes.oneOf([
@@ -138,8 +135,6 @@ CopyToClipboardButton.propTypes = {
 
 CopyToClipboardButton.defaultProps = {
     value: undefined,
-    copyText: 'Click to copy',
-    copiedText: 'Copied',
     variant: 'base',
     size: 'medium',
     shaded: false,
