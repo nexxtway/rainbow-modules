@@ -63,6 +63,8 @@ import {
     CloseCircleFilled,
     Email,
     QuestionFilled,
+    LocationPin,
+    LocationPinFilled,
 } from '../../../src';
 
 export default [
@@ -386,5 +388,15 @@ export default [
         name: 'questionFilled',
         category: 'standard',
         icon: QuestionFilled,
+    },
+    {
+        name: 'locationPin',
+        category: 'standard',
+        icon: LocationPin,
+    },
+    {
+        name: 'locationPinFilled',
+        category: 'standard',
+        icon: LocationPinFilled,
     },
 ];
