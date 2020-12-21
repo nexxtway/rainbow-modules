@@ -2,7 +2,7 @@ import React from 'react';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
 import { WhenAuthenticated } from '@rainbow-modules/auth';
 import app from '../../../../firebase';
-import useCurrentUser from '../../src/firestore/useCurrentUser';
+import useCurrentUser from '../../src/auth/useCurrentUser';
 
 const initialize = async () => {
     try {

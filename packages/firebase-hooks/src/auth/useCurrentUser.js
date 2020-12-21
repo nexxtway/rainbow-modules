@@ -1,7 +1,10 @@
 import { useContext } from 'react';
-import context from '../context';
+import Context from '../context';
 
-export default function useAuthState() {
-    const { app } = useContext(context);
-    return app.auth().currentUser;
+export default function useCurrentUser() {
+    const { app } = useContext(Context);
+    if (app) {
+        return app.auth().currentUser;
+    }
+    return null;
 }
