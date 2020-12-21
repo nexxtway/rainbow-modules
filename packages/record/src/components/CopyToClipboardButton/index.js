@@ -6,6 +6,7 @@ import InternalTooltip from 'react-rainbow-components/components/InternalTooltip
 import { useScrollingIntent } from '@rainbow-modules/hooks';
 import { CopyToClipboard } from '@rainbow-modules/icons';
 import { isSupported, copy } from './helpers';
+import messages from './messages';
 
 /** A button with modern approach to copy text to clipboard. Would try to use execCommand with fallback to IE specific clipboardData interface. */
 export default function CopyToClipboardButton(props) {
@@ -25,9 +26,7 @@ export default function CopyToClipboardButton(props) {
     const tooltipRef = useRef();
     const [isVisible, setVisible] = useState(false);
     const [isCopied, setCopied] = useState(false);
-    const copyProps = { id: 'click_to_copy', defaultMessage: 'Click to copy' };
-    const copiedProps = { id: 'copied', defaultMessage: 'Copied' };
-    const formattedMessageProps = isCopied ? copiedProps : copyProps;
+    const formattedMessageProps = isCopied ? messages.copied : messages.clickToCopy;
 
     useEffect(() => {
         if (isCopied) {
