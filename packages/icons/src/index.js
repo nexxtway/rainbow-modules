@@ -65,3 +65,5 @@ export { default as FacebookCircle } from './components/facebookCircle';
 export { default as CloseCircleFilled } from './components/closeCircleFilled';
 export { default as Email } from './components/email';
 export { default as QuestionFilled } from './components/questionFilled';
+export { default as LocationPinFilled } from './components/locationPinFilled';
+export { default as LocationPin } from './components/locationPin';
