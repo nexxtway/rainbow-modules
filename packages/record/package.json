@@ -8,6 +8,7 @@
         "lib"
     ],
     "dependencies": {
+        "@rainbow-modules/validation": "^0.15.0",
         "@rainbow-modules/icons": "^0.15.0",
         "styled-components": "^4.3.2"
     },
