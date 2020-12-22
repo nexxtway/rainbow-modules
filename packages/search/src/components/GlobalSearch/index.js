@@ -12,6 +12,18 @@ const getSearchResults = ({ children, results }) => {
     }, {});
 };
 
+const resultsMatchCurrentQuery = (results, query) => {
+    if (Array.isArray(results)) {
+        return results.every((item) => {
+            if (item && item.query) {
+                return item.query === query;
+            }
+            return true;
+        });
+    }
+    return true;
+};
+
 const GlobalSearch = (props) => {
     const {
         onSelect,
@@ -28,30 +40,34 @@ const GlobalSearch = (props) => {
     const [query, setQuery] = useState('');
     const [searchResults, setSearchResults] = useState({});
     const containerRef = useRef();
+    const currentQuery = useRef('');
 
-    const handleAutocomplete = async ({ query }) => {
+    const handleAutocomplete = async ({ query: searchQuery }) => {
         setLoading(true);
-        setQuery(query);
+        setQuery(searchQuery);
+        currentQuery.current = searchQuery;
         const results = await Promise.all(
             Children.map(children, (child) => {
-                return child.props.onAutocomplete({ query });
+                return child.props.onAutocomplete({ query: searchQuery });
             }),
         );
         setLoading(false);
-        setSearchResults(getSearchResults({ children, results }));
+        if (resultsMatchCurrentQuery(results, currentQuery.current)) {
+            setSearchResults(getSearchResults({ children, results }));
+        }
     };
 
-    const handleSearch = async ({ query, page }) => {
+    const handleSearch = async ({ query: searchQuery, page }) => {
         const hasOnSearchEvent = Children.toArray(children).some((child) => {
             const { onSearch } = child.props;
             return typeof onSearch === 'function';
         });
         if (hasOnSearchEvent) {
             setLoading(true);
-            setQuery(query);
+            setQuery(searchQuery);
             const results = await Promise.all(
                 Children.map(children, (child) => {
-                    return child.props.onSearch({ query, page });
+                    return child.props.onSearch({ query: searchQuery, page });
                 }),
             );
             setLoading(false);
