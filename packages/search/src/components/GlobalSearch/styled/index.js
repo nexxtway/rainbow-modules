@@ -150,14 +150,14 @@ export const StyledCubeFilled = styled(CubeFilled)`
     color: ${(props) => props.theme.rainbow.palette.border.divider};
 `;
 
-export const InitialContainer = styled.div`
-    padding: 16px 0;
-`;
-
 export const OptionHeader = styled.li`
     color: ${(props) => props.theme.rainbow.palette.text.label};
     line-height: 1.5;
     font-size: 0.8125rem;
     list-style: none;
     margin-left: 20px;
+`;
+
+export const Bold = styled.b`
+    color: ${(props) => props.theme.rainbow.palette.text.main};
 `;

@@ -4,7 +4,8 @@ import { RenderIf, Input } from 'react-rainbow-components';
 import { Search } from '@rainbow-modules/icons';
 import { createPortal } from 'react-dom';
 import Options from './options';
-import Initial from './initial';
+import Recents from './recents';
+import Message from './message';
 import Results from './results';
 import { Backdrop, Container, OptionsContainer, StyledHeader } from './styled';
 
@@ -13,11 +14,11 @@ const DOWN_KEY = 40;
 const ESCAPE_KEY = 27;
 const ENTER_KEY = 13;
 
-function scrollTo(ref, offset) {
+const scrollTo = (ref, offset) => {
     ref.current.scrollTo(0, offset);
-}
+};
 
-function isOptionVisible(elem, container) {
+const isOptionVisible = (elem, container) => {
     const { top: elTop, bottom: elBottom } = elem.getBoundingClientRect();
     const { top: containerTop, bottom: containerBottom } = container.getBoundingClientRect();
 
@@ -25,7 +26,14 @@ function isOptionVisible(elem, container) {
         Math.floor(elTop) >= Math.floor(containerTop) &&
         Math.ceil(elBottom) <= Math.ceil(containerBottom)
     );
-}
+};
+
+const getOptions = ({ query, options, isPicklistMode, recents }) => {
+    if (isPicklistMode) {
+        return [{ title: query }].concat(...options);
+    }
+    return recents;
+};
 
 const SearchContainer = (props) => {
     const {
@@ -37,18 +45,27 @@ const SearchContainer = (props) => {
         query,
         onSelect,
         isLoading,
+        recents,
+        globalOnSearch,
     } = props;
     const inputRef = useRef();
     const backdropRef = useRef();
     const menuRef = useRef();
+    const [activeOptionIndex, setActiveOptionIndex] = useState(0);
     const [searchMode, setSearchMode] = useState('empty');
     const isEmptyMode = searchMode === 'empty';
     const isPicklistMode = searchMode === 'picklist';
     const isResultsMode = searchMode === 'results';
+    const hasRecents = recents && recents.length > 0;
+    const showRecents = isEmptyMode && hasRecents;
+    const showInitMessage = isEmptyMode && !hasRecents;
+    const [childNodes, setChildNodes] = useState();
 
     useEffect(() => {
         if (query.length > 0) {
             setSearchMode('picklist');
+        } else {
+            setSearchMode('empty');
         }
     }, [query]);
 
@@ -62,15 +79,29 @@ const SearchContainer = (props) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isOpen]);
 
+    useEffect(() => {
+        setActiveOptionIndex(0);
+        if (isOpen && menuRef && menuRef.current) {
+            setChildNodes(menuRef.current.childNodes);
+        }
+    }, [isOpen, searchMode]);
+
     const showResults = () => {
         setSearchMode('results');
         onSearch({ query, page: 1 });
+        globalOnSearch({ query });
     };
 
-    const [activeOptionIndex, setActiveOptionIndex] = useState(0);
+    const selectRecent = (recentItem) => {
+        setTimeout(() => {
+            setSearchMode('results');
+        }, 0);
+        onSearch({ query: recentItem, page: 1 });
+        onAutocomplete({ query: recentItem });
+    };
+
     const options = Object.keys(results).map((entityName) => results[entityName].hits);
-    const flattenedOptions = [{ title: query }].concat(...options);
-    const { childNodes } = menuRef.current || {};
+    const flattenedOptions = getOptions({ query, options, isPicklistMode, recents });
 
     const scrollBy = (offset) => {
         menuRef.current.scrollBy(0, offset);
@@ -86,7 +117,7 @@ const SearchContainer = (props) => {
     };
 
     const handleKeyUpPressed = () => {
-        if (isPicklistMode) {
+        if (!isResultsMode) {
             const nextActiveIndex =
                 (flattenedOptions.length + activeOptionIndex - 1) % flattenedOptions.length;
 
@@ -102,7 +133,7 @@ const SearchContainer = (props) => {
     };
 
     const handleKeyDownPressed = () => {
-        if (isPicklistMode) {
+        if (!isResultsMode) {
             const nextActiveIndex = (activeOptionIndex + 1) % flattenedOptions.length;
             if (nextActiveIndex > 0) {
                 scrollToOption(nextActiveIndex);
@@ -112,11 +143,14 @@ const SearchContainer = (props) => {
     };
 
     const handleKeyEnterPressed = () => {
-        if (activeOptionIndex === 0) {
-            showResults();
-        } else {
-            onSelect(flattenedOptions[activeOptionIndex]);
+        const currentOption = flattenedOptions[activeOptionIndex];
+        if (showRecents) {
+            return selectRecent(currentOption);
         }
+        if (activeOptionIndex === 0) {
+            return showResults();
+        }
+        return onSelect(currentOption);
     };
 
     const handleKeyEscPressed = () => {
@@ -167,18 +201,28 @@ const SearchContainer = (props) => {
                             onChange={handleChange}
                         />
                     </StyledHeader>
-                    <RenderIf isTrue={isEmptyMode}>
-                        <Initial />
-                    </RenderIf>
-                    <RenderIf isTrue={isPicklistMode}>
+                    <RenderIf isTrue={!isResultsMode}>
                         <OptionsContainer role="presentation" ref={menuRef}>
-                            <Options
-                                hits={flattenedOptions}
-                                onSelect={onSelect}
-                                activeOptionIndex={activeOptionIndex}
-                                onHover={setActiveOptionIndex}
-                                onClickFirstOption={showResults}
-                            />
+                            <RenderIf isTrue={isPicklistMode}>
+                                <Options
+                                    hits={flattenedOptions}
+                                    onSelect={onSelect}
+                                    activeOptionIndex={activeOptionIndex}
+                                    onHover={setActiveOptionIndex}
+                                    onClickFirstOption={showResults}
+                                />
+                            </RenderIf>
+                            <RenderIf isTrue={showRecents}>
+                                <Recents
+                                    items={recents}
+                                    onSelect={selectRecent}
+                                    activeOptionIndex={activeOptionIndex}
+                                    onHover={setActiveOptionIndex}
+                                />
+                            </RenderIf>
+                            <RenderIf isTrue={showInitMessage}>
+                                <Message title="Type something to search" />
+                            </RenderIf>
                         </OptionsContainer>
                     </RenderIf>
                     <RenderIf isTrue={isResultsMode}>
@@ -207,6 +251,8 @@ SearchContainer.propTypes = {
     onRequestClose: PropTypes.func.isRequired,
     query: PropTypes.string.isRequired,
     isLoading: PropTypes.bool.isRequired,
+    recents: PropTypes.array.isRequired,
+    globalOnSearch: PropTypes.func.isRequired,
 };
 
 export default SearchContainer;
