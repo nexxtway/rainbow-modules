@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const useLocalData = (key) => {
     const data = localStorage.getItem(key);
@@ -14,7 +14,13 @@ const useLocalData = (key) => {
 
 const useLocalRecentSearches = (key) => {
     const sessionData = useLocalData(key);
-    const [persistentState, setState] = useState(Array.isArray(sessionData) ? sessionData : []);
+    const [persistentState, setState] = useState();
+
+    useEffect(() => {
+        setState(Array.isArray(sessionData) ? sessionData : []);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [key]);
+
     const setPersistentState = (newValue) => {
         if (typeof newValue === 'string') {
             const newArray = [...persistentState];
