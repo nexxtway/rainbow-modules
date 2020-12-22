@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { RenderIf, Input } from 'react-rainbow-components';
-import { Search } from '@rainbow-modules/icons';
+import { RenderIf } from 'react-rainbow-components';
 import { createPortal } from 'react-dom';
+import InputSearch from './search';
 import Options from './options';
 import Recents from './recents';
 import Message from './message';
@@ -48,7 +48,6 @@ const SearchContainer = (props) => {
         recents,
         globalOnSearch,
     } = props;
-    const inputRef = useRef();
     const backdropRef = useRef();
     const menuRef = useRef();
     const [activeOptionIndex, setActiveOptionIndex] = useState(0);
@@ -72,9 +71,6 @@ const SearchContainer = (props) => {
     useEffect(() => {
         if (isOpen) {
             setSearchMode(query.length === 0 ? 'empty' : 'results');
-            setTimeout(() => {
-                inputRef.current.focus();
-            }, 0);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isOpen]);
@@ -153,15 +149,11 @@ const SearchContainer = (props) => {
         return onSelect(currentOption);
     };
 
-    const handleKeyEscPressed = () => {
-        onRequestClose();
-    };
-
     const keyHandlerMap = {
         [UP_KEY]: handleKeyUpPressed,
         [DOWN_KEY]: handleKeyDownPressed,
         [ENTER_KEY]: handleKeyEnterPressed,
-        [ESCAPE_KEY]: handleKeyEscPressed,
+        [ESCAPE_KEY]: onRequestClose,
     };
 
     const handleKeyPressed = (event) => {
@@ -170,8 +162,7 @@ const SearchContainer = (props) => {
         }
     };
 
-    const handleChange = (event) => {
-        const { value } = event.target;
+    const handleChange = (value) => {
         onAutocomplete({ query: value });
     };
 
@@ -191,14 +182,10 @@ const SearchContainer = (props) => {
             <Backdrop ref={backdropRef} onClick={handleBackdropClick}>
                 <Container onKeyDown={handleKeyPressed}>
                     <StyledHeader>
-                        <Input
-                            type="search"
-                            ref={inputRef}
-                            value={query}
-                            isBare
-                            icon={<Search />}
-                            autoComplete="off"
+                        <InputSearch
                             onChange={handleChange}
+                            value={query}
+                            onRequestClose={onRequestClose}
                         />
                     </StyledHeader>
                     <RenderIf isTrue={!isResultsMode}>
