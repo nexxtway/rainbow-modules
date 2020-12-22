@@ -13,7 +13,16 @@ const getSearchResults = ({ children, results }) => {
 };
 
 const GlobalSearch = (props) => {
-    const { onSelect, variant, placeholder, children, className, style } = props;
+    const {
+        onSelect,
+        variant,
+        placeholder,
+        children,
+        className,
+        style,
+        recents,
+        onSearch: globalOnSearch,
+    } = props;
     const [isOpen, setOpen] = useState(false);
     const [isLoading, setLoading] = useState(false);
     const [query, setQuery] = useState('');
@@ -21,12 +30,14 @@ const GlobalSearch = (props) => {
     const containerRef = useRef();
 
     const handleAutocomplete = async ({ query }) => {
+        setLoading(true);
         setQuery(query);
         const results = await Promise.all(
             Children.map(children, (child) => {
                 return child.props.onAutocomplete({ query });
             }),
         );
+        setLoading(false);
         setSearchResults(getSearchResults({ children, results }));
     };
 
@@ -78,13 +89,20 @@ const GlobalSearch = (props) => {
                 onRequestClose={closeSearch}
                 onSelect={handleSelect}
                 isLoading={isLoading}
+                recents={recents}
+                globalOnSearch={globalOnSearch}
             />
         </div>
     );
 };
 
 GlobalSearch.propTypes = {
+    /** Event triggerd when select a search (select the first search option). It can be used for store recent searches. */
+    onSearch: PropTypes.func,
+    /** Event triggered when select an option. */
     onSelect: PropTypes.func,
+    /** An array with the recent searches. */
+    recents: PropTypes.arrayOf(PropTypes.string),
     /** The variant changes the appearance of the GlobalSearch input. Accepted variants include default,
      * and shaded. This value defaults to default. */
     variant: PropTypes.oneOf(['default', 'shaded', 'bare']),
@@ -98,7 +116,9 @@ GlobalSearch.propTypes = {
 };
 
 GlobalSearch.defaultProps = {
+    onSearch: () => {},
     onSelect: () => {},
+    recents: [],
     variant: 'default',
     placeholder: undefined,
     className: undefined,
