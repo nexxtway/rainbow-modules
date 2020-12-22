@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.16.0](https://github.com/nexxtway/rainbow-modules/compare/v0.15.1...v0.16.0) (2020-12-22)
+
+### Features
+
+-   add recents to GlobalSearch ([#254](https://github.com/nexxtway/rainbow-modules/issues/254)) ([247e4e8](https://github.com/nexxtway/rainbow-modules/commit/247e4e8bd8c9d87c4fa533beb7b70043291a99de))
+
 ## [0.15.1](https://github.com/nexxtway/rainbow-modules/compare/v0.15.0...v0.15.1) (2020-12-18)
 
 ### Bug Fixes
