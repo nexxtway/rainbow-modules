@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.16.0](https://github.com/nexxtway/rainbow-modules/compare/v0.15.1...v0.16.0) (2020-12-22)
+
+### Features
+
+-   add locationPin and locationPinFilled icons ([#252](https://github.com/nexxtway/rainbow-modules/issues/252)) ([8473ed2](https://github.com/nexxtway/rainbow-modules/commit/8473ed2829046fcc350808cf769f4b378c44e3a6))
+
 # [0.15.0](https://github.com/nexxtway/rainbow-modules/compare/v0.14.0...v0.15.0) (2020-12-18)
 
 ### Features

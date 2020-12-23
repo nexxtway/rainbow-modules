@@ -1,0 +1,33 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import * as stories from '../stories/useCollection.story.js';
+
+<Meta title="Modules|firebase-hooks/Hooks" />
+
+# Overview
+
+`useCollection` hook will subscribe to a firestore collection by providing the path e.g `/books`. It will return an tuple with [data, isLoading].
+
+### This is a basic example.
+
+In this example we are subcribing to a `/books` collection and rendering the result in a `Table`.
+
+```js
+const [data, isLoading] = useCollection({
+    path: '/books',
+});
+```
+
+<Preview>
+    <Story name="useCollection">{stories.subcribeToCollection()}</Story>
+</Preview>
+
+### How to apply queries
+
+In this example we are subcribing to a `/books` collection and applying a query only for `Axel Rauschmayer` as author.
+
+```js
+const [data, isLoading] = useCollection({
+    path: '/books',
+    query: (query) => query.where('author', '==', 'Axel Rauschmayer'),
+});
+```

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { RenderIf, Tabset, Pagination, Spinner } from 'react-rainbow-components';
 import ResultItems from './resultItems';
@@ -27,6 +27,12 @@ export default function Results(props) {
     const { totalPages, page: activePage } = (activeTab && results[activeTab]) || {};
     const showPagination = totalPages > 1;
     const { hits = [] } = results[activeTab] || {};
+
+    useEffect(() => {
+        if (results && !activeTab) {
+            setActiveResultTab(getInitialActiveTab(results));
+        }
+    }, [results, activeTab]);
 
     const hasPagination = typeof totalPages === 'number' && typeof activePage === 'number';
     const showInternalPagination = !hasPagination && hits.length > HITS_PER_PAGE;
@@ -62,7 +68,7 @@ export default function Results(props) {
                         <Spinner />
                     </RenderIf>
                     <RenderIf isTrue={!isLoading}>
-                        <ResultItems hits={hitsToShow} onSelect={onSelect} />
+                        <ResultItems hits={hitsToShow} onSelect={onSelect} query={query} />
                         <RenderIf isTrue={showPagination}>
                             <Pagination
                                 pages={totalPages}
