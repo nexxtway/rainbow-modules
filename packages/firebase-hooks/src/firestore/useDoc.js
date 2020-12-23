@@ -5,13 +5,12 @@ export default function useDoc(props) {
     const { path } = props;
     const { app } = useContext(Context);
 
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const [data, setData] = useState(null);
 
     useEffect(() => {
         if (app) {
             const ref = app.firestore().doc(path);
-            setIsLoading(true);
             const unsubscribe = ref.onSnapshot(
                 (doc) => {
                     if (doc.exists) {
