@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Dataset from '../../src/components/Dataset';
+import * as stories from '../stories/Chart.story.js';
+
+<Meta title="Modules|Charts/Components" component={Dataset} />
+
+# Overview
+
+`Dataset` component provides data to the chart.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="Dataset">{stories.StackedBarChart()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={Dataset} />

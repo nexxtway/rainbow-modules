@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Legend from '../../src/components/Legend';
+import * as stories from '../stories/Chart.story.js';
+
+<Meta title="Modules|Charts/Components" component={Legend} />
+
+# Overview
+
+`Legend` component provides configuration of chart legend
+
+### This is a basic example.
+
+<Preview>
+    <Story name="Legend">{stories.StackedBarChart()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={Legend} />

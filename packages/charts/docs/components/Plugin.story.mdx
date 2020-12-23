@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Plugin from '../../src/components/Plugins/plugin';
+import * as stories from '../stories/Chart.story.js';
+
+<Meta title="Modules|Charts/Components" component={Plugin} />
+
+# Overview
+
+`Plugin` component provides plugin configuration to the chart.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="Plugin">{stories.StackedBarChart()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={Plugin} />

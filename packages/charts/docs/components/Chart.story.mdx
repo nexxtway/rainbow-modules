@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Chart from '../../src/components/Chart';
+import * as stories from '../stories/Chart.story.js';
+
+<Meta title="Modules|Charts/Components" component={Chart} />
+
+# Overview
+
+`BarChart` component to show information of dashboard
+
+### This is a basic example.
+
+<Preview>
+    <Story name="Chart">{stories.StackedBarChart()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={Chart} />

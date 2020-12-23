@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Axis from '../../src/components/Scales/axis';
+import * as stories from '../stories/Chart.story.js';
+
+<Meta title="Modules|Charts/Components" component={Axis} />
+
+# Overview
+
+`Axis` component provides configuration of the chart axes. Must by a child of `Scales`.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="Axis">{stories.StackedBarChart()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={Axis} />
