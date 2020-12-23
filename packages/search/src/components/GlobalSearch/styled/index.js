@@ -132,7 +132,7 @@ export const ResultsContent = styled.ul`
     height: calc(100vh - 101px);
 `;
 
-export const ResultItemContainer = styled.li`
+export const ResultItemContainer = styled.div`
     background: ${(props) => props.theme.rainbow.palette.background.main};
     padding: 12px;
     border-radius: 12px;

@@ -12,6 +12,7 @@ const getSearchResults = ({ children, results }) => {
         seed[child.props.name] = {
             ...results[index],
             icon: child.props.icon,
+            component: child.props.component,
         };
         return seed;
     }, {});
