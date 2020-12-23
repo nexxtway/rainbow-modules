@@ -67,3 +67,5 @@ export { default as Email } from './components/email';
 export { default as QuestionFilled } from './components/questionFilled';
 export { default as LocationPinFilled } from './components/locationPinFilled';
 export { default as LocationPin } from './components/locationPin';
+export { default as OpenBookFilled } from './components/openBookFilled';
+export { default as Download } from './components/download';
