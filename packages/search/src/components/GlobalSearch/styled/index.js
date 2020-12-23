@@ -1,7 +1,23 @@
 import styled from 'styled-components';
+import { Input, ButtonIcon } from 'react-rainbow-components';
 import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
 import { replaceAlpha } from 'react-rainbow-components/styles/helpers/color';
 import { MagnifyingGlass, CubeFilled } from '@rainbow-modules/icons';
+
+export const StyledInput = styled(Input)`
+    input {
+        padding-right: 50px;
+
+        :focus {
+            padding-right: 50px;
+        }
+    }
+`;
+
+export const StyledButtonIcon = styled(ButtonIcon)`
+    position: absolute;
+    right: 1rem;
+`;
 
 export const Backdrop = attachThemeAttrs(styled.section)`
     top: 0;
@@ -42,7 +58,7 @@ export const StyledOption = styled.li`
     display: flex;
     padding: 12px;
 
-    :hover {
+    &:hover {
         cursor: pointer;
         background: ${(props) => props.theme.rainbow.palette.action.active};
     }
@@ -126,7 +142,7 @@ export const ResultItemContainer = styled.li`
     justify-content: flex-start;
     margin-bottom: 8px;
 
-    :hover {
+    &:hover {
         box-shadow: ${(props) => props.theme.rainbow.shadows.shadow_4};
         cursor: pointer;
     }

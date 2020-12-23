@@ -112,7 +112,7 @@ RecordField.propTypes = {
     /**
      * The component class or function that is going to be render if you pass a custom component to the RecordField
      */
-    component: PropTypes.element,
+    component: PropTypes.func,
 };
 
 RecordField.defaultProps = {

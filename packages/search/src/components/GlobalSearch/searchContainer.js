@@ -96,7 +96,15 @@ const SearchContainer = (props) => {
         onAutocomplete({ query: recentItem });
     };
 
-    const options = Object.keys(results).map((entityName) => results[entityName].hits);
+    const options = Object.keys(results).map((entityName) => {
+        if (Array.isArray(results[entityName].hits)) {
+            return results[entityName].hits.map((item) => ({
+                ...item,
+                icon: results[entityName].icon,
+            }));
+        }
+        return [];
+    });
     const flattenedOptions = getOptions({ query, options, isPicklistMode, recents });
 
     const scrollBy = (offset) => {
