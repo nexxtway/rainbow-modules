@@ -6,20 +6,19 @@ import Message from './message';
 import { StyledCubeFilled, Bold } from './styled';
 
 const ResultItems = (props) => {
-    const { hits, onSelect, query, icon } = props;
+    const { hits, onSelect, query, icon, component } = props;
     const iconToShow = icon || <StyledCubeFilled />;
 
     if (Array.isArray(hits) && hits.length > 0) {
         return hits.map((item, index) => {
-            const { title, description } = item;
             const key = `item-${index}`;
             return (
                 <Item
+                    {...item}
                     key={key}
-                    label={title}
-                    description={description}
                     icon={iconToShow}
                     onClick={() => onSelect(item)}
+                    component={component}
                 />
             );
         });
@@ -39,11 +38,13 @@ ResultItems.propTypes = {
     onSelect: PropTypes.func.isRequired,
     query: PropTypes.string,
     icon: PropTypes.node,
+    component: PropTypes.func,
 };
 
 ResultItems.defaultProps = {
     query: '',
     icon: undefined,
+    component: undefined,
 };
 
 export default ResultItems;

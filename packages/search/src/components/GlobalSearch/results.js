@@ -24,7 +24,7 @@ const getInitialActiveTab = (results) => {
 export default function Results(props) {
     const { results, isLoading, query, onSearch, onSelect } = props;
     const [activeTab, setActiveResultTab] = useState(() => getInitialActiveTab(results));
-    const { totalPages, page: activePage, hits = [], icon } =
+    const { totalPages, page: activePage, hits = [], icon, component } =
         (activeTab && results[activeTab]) || {};
     const showPagination = totalPages > 1;
 
@@ -69,6 +69,7 @@ export default function Results(props) {
                     </RenderIf>
                     <RenderIf isTrue={!isLoading}>
                         <ResultItems
+                            component={component}
                             icon={icon}
                             hits={hitsToShow}
                             onSelect={onSelect}
