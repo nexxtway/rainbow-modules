@@ -1,13 +1,18 @@
 import React, { useState, useRef, Children } from 'react';
 import PropTypes from 'prop-types';
-import { Input } from 'react-rainbow-components';
-import { Search } from '@rainbow-modules/icons';
+import { RenderIf } from 'react-rainbow-components';
+import { Search, Close } from '@rainbow-modules/icons';
 import SearchContainer from './searchContainer';
+import { StyledInput, StyledButtonIcon } from './styled';
+import { StyledContainer } from './styled/search';
 
 const getSearchResults = ({ children, results }) => {
     return Children.toArray(children).reduce((seed, child, index) => {
         // eslint-disable-next-line no-param-reassign
-        seed[child.props.name] = results[index];
+        seed[child.props.name] = {
+            ...results[index],
+            icon: child.props.icon,
+        };
         return seed;
     }, {});
 };
@@ -41,6 +46,7 @@ const GlobalSearch = (props) => {
     const [searchResults, setSearchResults] = useState({});
     const containerRef = useRef();
     const currentQuery = useRef('');
+    const hasQuery = query && query.length > 0;
 
     const handleAutocomplete = async ({ query: searchQuery }) => {
         setLoading(true);
@@ -87,15 +93,20 @@ const GlobalSearch = (props) => {
 
     return (
         <div ref={containerRef} style={style} className={className}>
-            <Input
-                type="search"
-                value={query}
-                onFocus={() => setOpen(true)}
-                autoComplete="off"
-                icon={<Search />}
-                variant={variant}
-                placeholder={placeholder}
-            />
+            <StyledContainer>
+                <StyledInput
+                    type="search"
+                    value={query}
+                    onFocus={() => setOpen(true)}
+                    autoComplete="off"
+                    icon={<Search />}
+                    variant={variant}
+                    placeholder={placeholder}
+                />
+                <RenderIf isTrue={hasQuery}>
+                    <StyledButtonIcon size="small" icon={<Close />} onClick={() => setQuery('')} />
+                </RenderIf>
+            </StyledContainer>
             <SearchContainer
                 isOpen={isOpen}
                 onAutocomplete={handleAutocomplete}

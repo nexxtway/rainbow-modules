@@ -24,9 +24,9 @@ const getInitialActiveTab = (results) => {
 export default function Results(props) {
     const { results, isLoading, query, onSearch, onSelect } = props;
     const [activeTab, setActiveResultTab] = useState(() => getInitialActiveTab(results));
-    const { totalPages, page: activePage } = (activeTab && results[activeTab]) || {};
+    const { totalPages, page: activePage, hits = [], icon } =
+        (activeTab && results[activeTab]) || {};
     const showPagination = totalPages > 1;
-    const { hits = [] } = results[activeTab] || {};
 
     useEffect(() => {
         if (results && !activeTab) {
@@ -68,7 +68,12 @@ export default function Results(props) {
                         <Spinner />
                     </RenderIf>
                     <RenderIf isTrue={!isLoading}>
-                        <ResultItems hits={hitsToShow} onSelect={onSelect} query={query} />
+                        <ResultItems
+                            icon={icon}
+                            hits={hitsToShow}
+                            onSelect={onSelect}
+                            query={query}
+                        />
                         <RenderIf isTrue={showPagination}>
                             <Pagination
                                 pages={totalPages}

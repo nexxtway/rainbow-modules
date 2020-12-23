@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
+import { Github, Avatar } from '@rainbow-modules/icons';
 import GlobalSearch from '../../src/components/GlobalSearch';
 import SearchEntity from '../../src/components/SearchEntity';
 import useLocalRecentSearches from '../../src/hooks/useLocalRecentSearches';
@@ -27,11 +28,13 @@ export const AlgoliaGlobalSearch = () => {
                     name="Books"
                     onAutocomplete={searchBooksAlgolia}
                     onSearch={searchBooksAlgolia}
+                    icon={<Github />}
                 />
                 <SearchEntity
                     name="Authors"
                     onAutocomplete={searchAuthorsAlgolia}
                     onSearch={searchAuthorsAlgolia}
+                    icon={<Avatar />}
                 />
             </StyledGlobalSearch>
         </RainbowFirebaseApp>
