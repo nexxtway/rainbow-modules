@@ -65,6 +65,8 @@ import {
     QuestionFilled,
     LocationPin,
     LocationPinFilled,
+    Download,
+    OpenBookFilled,
 } from '../../../src';
 
 export default [
@@ -398,5 +400,15 @@ export default [
         name: 'locationPinFilled',
         category: 'standard',
         icon: LocationPinFilled,
+    },
+    {
+        name: 'openBookFilled',
+        category: 'standard',
+        icon: OpenBookFilled,
+    },
+    {
+        name: 'download',
+        category: 'standard',
+        icon: Download,
     },
 ];
