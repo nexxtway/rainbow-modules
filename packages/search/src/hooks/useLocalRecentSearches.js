@@ -12,10 +12,6 @@ const useLocalData = (key) => {
     return undefined;
 };
 
-const alreadyExists = (string, array) => {
-    return array.indexOf(string) !== -1;
-};
-
 const useLocalRecentSearches = (key) => {
     const sessionData = useLocalData(key);
     const [persistentState, setState] = useState();
@@ -26,8 +22,8 @@ const useLocalRecentSearches = (key) => {
     }, [key]);
 
     const setPersistentState = (newValue) => {
-        if (typeof newValue === 'string' && !alreadyExists(newValue, persistentState)) {
-            const newArray = [...persistentState];
+        if (typeof newValue === 'string') {
+            const newArray = persistentState.filter((item) => item !== newValue);
             newArray.unshift(newValue);
             const values = newArray.slice(0, 5);
             localStorage.setItem(key, JSON.stringify(values));

@@ -39,9 +39,10 @@ export default function Results(props) {
     const [internalActivePage, setInternalActivePage] = useState(1);
     const internalPages = Math.ceil(hits.length / HITS_PER_PAGE);
 
+    const sortedHits = [...hits].sort((a, b) => b.score - a.score);
     const hitsToShow = showInternalPagination
-        ? getPageHits({ activePage: internalActivePage, hits })
-        : hits;
+        ? getPageHits({ activePage: internalActivePage, hits: sortedHits })
+        : sortedHits;
 
     const handlePaginationChange = (event, page) => {
         onSearch({ query, page });
