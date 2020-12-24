@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0](https://github.com/nexxtway/rainbow-modules/compare/v0.16.0...v0.17.0) (2020-12-24)
+
+### Features
+
+-   add clear and close buttons to global search ([#255](https://github.com/nexxtway/rainbow-modules/issues/255)) ([3c55312](https://github.com/nexxtway/rainbow-modules/commit/3c55312f39b120df82818157e375c0aa098b1689))
+
 # [0.16.0](https://github.com/nexxtway/rainbow-modules/compare/v0.15.1...v0.16.0) (2020-12-22)
 
 **Note:** Version bump only for package @rainbow-modules/listview

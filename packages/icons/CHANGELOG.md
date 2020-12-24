@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0](https://github.com/nexxtway/rainbow-modules/compare/v0.16.0...v0.17.0) (2020-12-24)
+
+### Features
+
+-   book and download ([#257](https://github.com/nexxtway/rainbow-modules/issues/257)) ([60163af](https://github.com/nexxtway/rainbow-modules/commit/60163af0eab5359fd96584819dd6b6d7a8946cae))
+
 # [0.16.0](https://github.com/nexxtway/rainbow-modules/compare/v0.15.1...v0.16.0) (2020-12-22)
 
 ### Features

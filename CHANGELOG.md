@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0](https://github.com/nexxtway/rainbow-modules/compare/v0.16.0...v0.17.0) (2020-12-24)
+
+### Bug Fixes
+
+-   check for current query when set results in GlobalSearch ([e5e7241](https://github.com/nexxtway/rainbow-modules/commit/e5e7241532a81600c05cb3020c3006041ec5f276))
+-   global search custom icon ([#258](https://github.com/nexxtway/rainbow-modules/issues/258)) ([1188717](https://github.com/nexxtway/rainbow-modules/commit/1188717d6f01043ba9a23eb37547eb06c3d93d67))
+-   make key reactive in useLocalRecentSearches hook ([e25d8e5](https://github.com/nexxtway/rainbow-modules/commit/e25d8e54ed69ee95760a9ce3d4614ceacc4b3d4d))
+-   skip recent searches that already exists in useLocalRecentSearches ([50f7199](https://github.com/nexxtway/rainbow-modules/commit/50f719972ba36af8749c0193a5bce1fca2596a34))
+-   useDoc initi isLoading in true ([88e5d19](https://github.com/nexxtway/rainbow-modules/commit/88e5d19d239c6199dd381702ef54ae8290a1cef8))
+
+### Features
+
+-   add clear and close buttons to global search ([#255](https://github.com/nexxtway/rainbow-modules/issues/255)) ([3c55312](https://github.com/nexxtway/rainbow-modules/commit/3c55312f39b120df82818157e375c0aa098b1689))
+-   add component prop to SearchEntity ([#259](https://github.com/nexxtway/rainbow-modules/issues/259)) ([dc72cef](https://github.com/nexxtway/rainbow-modules/commit/dc72cef4e98ed46768e678a0407bcfadbbe52d87))
+-   book and download ([#257](https://github.com/nexxtway/rainbow-modules/issues/257)) ([60163af](https://github.com/nexxtway/rainbow-modules/commit/60163af0eab5359fd96584819dd6b6d7a8946cae))
+
 # [0.16.0](https://github.com/nexxtway/rainbow-modules/compare/v0.15.1...v0.16.0) (2020-12-22)
 
 ### Bug Fixes

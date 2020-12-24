@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0](https://github.com/nexxtway/rainbow-modules/compare/v0.16.0...v0.17.0) (2020-12-24)
+
+### Bug Fixes
+
+-   useDoc initi isLoading in true ([88e5d19](https://github.com/nexxtway/rainbow-modules/commit/88e5d19d239c6199dd381702ef54ae8290a1cef8))
+
 # [0.16.0](https://github.com/nexxtway/rainbow-modules/compare/v0.15.1...v0.16.0) (2020-12-22)
 
 **Note:** Version bump only for package @rainbow-modules/firebase-hooks
