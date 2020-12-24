@@ -30,7 +30,7 @@ const isOptionVisible = (elem, container) => {
 
 const getOptions = ({ query, options, isPicklistMode, recents }) => {
     if (isPicklistMode) {
-        return [{ title: query }].concat(...options);
+        return [{ title: query }].concat(...options).sort((a, b) => b.score - a.score);
     }
     return recents;
 };
