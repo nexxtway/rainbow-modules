@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { RenderIf, Tabset, Pagination, Spinner } from 'react-rainbow-components';
 import ResultItems from './resultItems';
@@ -24,18 +24,25 @@ const getInitialActiveTab = (results) => {
 export default function Results(props) {
     const { results, isLoading, query, onSearch, onSelect } = props;
     const [activeTab, setActiveResultTab] = useState(() => getInitialActiveTab(results));
-    const { totalPages, page: activePage } = (activeTab && results[activeTab]) || {};
+    const { totalPages, page: activePage, hits = [], icon, component } =
+        (activeTab && results[activeTab]) || {};
     const showPagination = totalPages > 1;
-    const { hits = [] } = results[activeTab] || {};
+
+    useEffect(() => {
+        if (results && !activeTab) {
+            setActiveResultTab(getInitialActiveTab(results));
+        }
+    }, [results, activeTab]);
 
     const hasPagination = typeof totalPages === 'number' && typeof activePage === 'number';
     const showInternalPagination = !hasPagination && hits.length > HITS_PER_PAGE;
     const [internalActivePage, setInternalActivePage] = useState(1);
     const internalPages = Math.ceil(hits.length / HITS_PER_PAGE);
 
+    const sortedHits = [...hits].sort((a, b) => b.score - a.score);
     const hitsToShow = showInternalPagination
-        ? getPageHits({ activePage: internalActivePage, hits })
-        : hits;
+        ? getPageHits({ activePage: internalActivePage, hits: sortedHits })
+        : sortedHits;
 
     const handlePaginationChange = (event, page) => {
         onSearch({ query, page });
@@ -62,7 +69,13 @@ export default function Results(props) {
                         <Spinner />
                     </RenderIf>
                     <RenderIf isTrue={!isLoading}>
-                        <ResultItems hits={hitsToShow} onSelect={onSelect} />
+                        <ResultItems
+                            component={component}
+                            icon={icon}
+                            hits={hitsToShow}
+                            onSelect={onSelect}
+                            query={query}
+                        />
                         <RenderIf isTrue={showPagination}>
                             <Pagination
                                 pages={totalPages}

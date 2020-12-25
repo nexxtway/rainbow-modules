@@ -7,13 +7,14 @@ const searchMoviesTitleMongo = async ({ query }) => {
         const response = await fetch(`${ENDPOINT_URL}/movies/search?query=${query}`);
         const result = await response.json();
         return {
-            hits: result.map(({ highlights, title, plot }) => ({
+            hits: result.map(({ highlights, title, plot, score }) => ({
                 title: getMongoHighlightParts({ highlights, path: 'title', defaultValue: title }),
                 description: getMongoHighlightParts({
                     highlights,
                     path: 'plot',
                     defaultValue: plot,
                 }),
+                score,
             })),
         };
     }

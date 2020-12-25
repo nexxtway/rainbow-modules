@@ -79,7 +79,12 @@ RecordField.propTypes = {
     /** The label of the component. */
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     /** The value of the component. */
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+    value: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.node,
+        PropTypes.number,
+        PropTypes.object,
+    ]),
     /** The type prop specifies the format that the component will have, by default is text. */
     type: PropTypes.oneOf([
         'text',

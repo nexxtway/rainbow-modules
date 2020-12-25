@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.18.0](https://github.com/nexxtway/rainbow-modules/compare/v0.17.0...v0.18.0) (2020-12-24)
+
+**Note:** Version bump only for package @rainbow-modules/record
+
+# [0.17.0](https://github.com/nexxtway/rainbow-modules/compare/v0.16.0...v0.17.0) (2020-12-24)
+
+### Bug Fixes
+
+-   global search custom icon ([#258](https://github.com/nexxtway/rainbow-modules/issues/258)) ([1188717](https://github.com/nexxtway/rainbow-modules/commit/1188717d6f01043ba9a23eb37547eb06c3d93d67))
+
+# [0.16.0](https://github.com/nexxtway/rainbow-modules/compare/v0.15.1...v0.16.0) (2020-12-22)
+
+### Bug Fixes
+
+-   `RecordField` with `type="dateTime" crashes when pass a string date or a new Date(string) ([#247](https://github.com/nexxtway/rainbow-modules/issues/247)) ([b6f7f2c](https://github.com/nexxtway/rainbow-modules/commit/b6f7f2c122e8de4f4f6185ff152c1456ab7c9a66))
+
 # [0.15.0](https://github.com/nexxtway/rainbow-modules/compare/v0.14.0...v0.15.0) (2020-12-18)
 
 ### Bug Fixes

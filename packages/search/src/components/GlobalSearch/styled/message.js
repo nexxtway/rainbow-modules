@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
-export const EmptyMessageContainer = styled.div`
+export const MessageContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 `;
 
 export const Title = styled.h1`

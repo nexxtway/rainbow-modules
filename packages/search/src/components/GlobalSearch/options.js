@@ -2,14 +2,22 @@ import React from 'react';
 import Option from './option';
 import { StyledCubeFilled, BrandMagnifyingGlass } from './styled';
 
+const getIcon = ({ isFirstItem, icon }) => {
+    if (isFirstItem) {
+        return <BrandMagnifyingGlass />;
+    }
+    return icon || <StyledCubeFilled />;
+};
+
 const Options = (props) => {
     const { hits, onSelect, activeOptionIndex, onHover, onClickFirstOption } = props;
+
     return hits.map((item, index) => {
-        const { title, description } = item;
+        const { title, description, icon } = item;
         const key = `option-${index}`;
         const isFirstItem = index === 0;
         const isActive = activeOptionIndex === index;
-        const icon = isFirstItem ? <BrandMagnifyingGlass /> : <StyledCubeFilled />;
+        const iconToShow = getIcon({ isFirstItem, icon });
 
         const handleSelect = () => {
             if (isFirstItem) {
@@ -24,7 +32,7 @@ const Options = (props) => {
                 key={key}
                 label={title}
                 description={description}
-                icon={icon}
+                icon={iconToShow}
                 onClick={handleSelect}
                 isActive={isActive}
                 onHover={() => onHover(index)}

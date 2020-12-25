@@ -1,46 +1,80 @@
 import React, { useState, useRef, Children } from 'react';
 import PropTypes from 'prop-types';
-import { Input } from 'react-rainbow-components';
-import { Search } from '@rainbow-modules/icons';
+import { RenderIf } from 'react-rainbow-components';
+import { Search, Close } from '@rainbow-modules/icons';
 import SearchContainer from './searchContainer';
+import { StyledInput, StyledButtonIcon } from './styled';
+import { StyledContainer } from './styled/search';
 
 const getSearchResults = ({ children, results }) => {
     return Children.toArray(children).reduce((seed, child, index) => {
         // eslint-disable-next-line no-param-reassign
-        seed[child.props.name] = results[index];
+        seed[child.props.name] = {
+            ...results[index],
+            icon: child.props.icon,
+            component: child.props.component,
+        };
         return seed;
     }, {});
 };
 
+const resultsMatchCurrentQuery = (results, query) => {
+    if (Array.isArray(results)) {
+        return results.every((item) => {
+            if (item && item.query) {
+                return item.query === query;
+            }
+            return true;
+        });
+    }
+    return true;
+};
+
 const GlobalSearch = (props) => {
-    const { onSelect, variant, placeholder, children, className, style } = props;
+    const {
+        onSelect,
+        variant,
+        placeholder,
+        children,
+        className,
+        style,
+        recents,
+        onSearch: globalOnSearch,
+    } = props;
     const [isOpen, setOpen] = useState(false);
     const [isLoading, setLoading] = useState(false);
     const [query, setQuery] = useState('');
     const [searchResults, setSearchResults] = useState({});
     const containerRef = useRef();
+    const currentQuery = useRef('');
+    const hasQuery = query && query.length > 0;
 
-    const handleAutocomplete = async ({ query }) => {
-        setQuery(query);
+    const handleAutocomplete = async ({ query: searchQuery }) => {
+        setLoading(true);
+        setQuery(searchQuery);
+        currentQuery.current = searchQuery;
         const results = await Promise.all(
             Children.map(children, (child) => {
-                return child.props.onAutocomplete({ query });
+                return child.props.onAutocomplete({ query: searchQuery });
             }),
         );
-        setSearchResults(getSearchResults({ children, results }));
+        setLoading(false);
+        if (resultsMatchCurrentQuery(results, currentQuery.current)) {
+            setSearchResults(getSearchResults({ children, results }));
+        }
     };
 
-    const handleSearch = async ({ query, page }) => {
+    const handleSearch = async ({ query: searchQuery, page }) => {
         const hasOnSearchEvent = Children.toArray(children).some((child) => {
             const { onSearch } = child.props;
             return typeof onSearch === 'function';
         });
         if (hasOnSearchEvent) {
             setLoading(true);
-            setQuery(query);
+            setQuery(searchQuery);
             const results = await Promise.all(
                 Children.map(children, (child) => {
-                    return child.props.onSearch({ query, page });
+                    return child.props.onSearch({ query: searchQuery, page });
                 }),
             );
             setLoading(false);
@@ -60,15 +94,20 @@ const GlobalSearch = (props) => {
 
     return (
         <div ref={containerRef} style={style} className={className}>
-            <Input
-                type="search"
-                value={query}
-                onFocus={() => setOpen(true)}
-                autoComplete="off"
-                icon={<Search />}
-                variant={variant}
-                placeholder={placeholder}
-            />
+            <StyledContainer>
+                <StyledInput
+                    type="search"
+                    value={query}
+                    onFocus={() => setOpen(true)}
+                    autoComplete="off"
+                    icon={<Search />}
+                    variant={variant}
+                    placeholder={placeholder}
+                />
+                <RenderIf isTrue={hasQuery}>
+                    <StyledButtonIcon size="small" icon={<Close />} onClick={() => setQuery('')} />
+                </RenderIf>
+            </StyledContainer>
             <SearchContainer
                 isOpen={isOpen}
                 onAutocomplete={handleAutocomplete}
@@ -78,13 +117,20 @@ const GlobalSearch = (props) => {
                 onRequestClose={closeSearch}
                 onSelect={handleSelect}
                 isLoading={isLoading}
+                recents={recents}
+                globalOnSearch={globalOnSearch}
             />
         </div>
     );
 };
 
 GlobalSearch.propTypes = {
+    /** Event triggerd when select a search (select the first search option). It can be used for store recent searches. */
+    onSearch: PropTypes.func,
+    /** Event triggered when select an option. */
     onSelect: PropTypes.func,
+    /** An array with the recent searches. */
+    recents: PropTypes.arrayOf(PropTypes.string),
     /** The variant changes the appearance of the GlobalSearch input. Accepted variants include default,
      * and shaded. This value defaults to default. */
     variant: PropTypes.oneOf(['default', 'shaded', 'bare']),
@@ -98,7 +144,9 @@ GlobalSearch.propTypes = {
 };
 
 GlobalSearch.defaultProps = {
+    onSearch: () => {},
     onSelect: () => {},
+    recents: [],
     variant: 'default',
     placeholder: undefined,
     className: undefined,
