@@ -1,0 +1,26 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import * as stories from '../../../forms/docs/stories/UniversalFormModal.story.js';
+
+<Meta title="Modules|firebase-hooks/Hooks" />
+
+# Overview
+
+`useUpdateDoc` hook uses [react-query/useMutation](https://react-query.tanstack.com/guides/mutations)
+hook behind the scene. The hook will return an object with a `mutate` async function that will update a document in a Firestore collection.
+
+### Usage.
+
+```js
+const { mutate, isLoading } = useUpdateDoc();
+const onUpdate = async (values) => {
+    await mutate('/books/JLaSkUit8rIIqqXQvav1', values);
+};
+
+<Button label="Update Book" onClick={onUpdate} isLoading={isLoading} />;
+```
+
+This is end-to-end implementation of `how to` Add/Remove/Update on Firestore.
+
+<Preview>
+    <Story name="useUpdateDoc">{stories.Basic()}</Story>
+</Preview>
