@@ -21,14 +21,23 @@ const UniversalForm = (props) => {
 };
 
 UniversalForm.propTypes = {
+    /** Callback that will be invoke after on submit event, it will receive an object with all
+     * the values of the form already validated.
+     */
     onSubmit: PropTypes.func,
-    id: PropTypes.string.isRequired,
+    /** The id of the form element */
+    id: PropTypes.string,
+    /** The markup of your form goes here. Use react-final-form Field component to conform
+     * the fields of your form. https://final-form.org/react
+     * */
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
+    /** The initial values of the form e.g. { name: 'Max', age: 30 } */
     initialValues: PropTypes.object,
 };
 
 UniversalForm.defaultProps = {
     onSubmit: () => {},
+    id: undefined,
     children: null,
     initialValues: {},
 };

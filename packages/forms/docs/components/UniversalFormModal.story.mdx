@@ -1,0 +1,20 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import UniversalFormModal from '../../src/components/UniversalFormModal';
+import * as stories from '../stories/UniversalFormModal.story.js';
+
+<Meta title="Modules|Forms/Components" component={UniversalFormModal} />
+
+# Overview
+
+`UniversalFormModal` is an abstraction on top of [react-final-form](https://final-form.org/react). It simplify
+the way fo how we want to create form using react `inside of a modal`.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="UniversalFormModal">{stories.Basic()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={UniversalFormModal} />

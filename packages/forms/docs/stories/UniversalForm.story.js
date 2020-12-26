@@ -15,7 +15,7 @@ const Container = styled.div`
     max-width: 860px;
 `;
 
-export const UniversalFormBasic = () => {
+export const Basic = () => {
     const onSubmit = (values) => {
         // eslint-disable-next-line no-alert
         alert(JSON.stringify(values));
