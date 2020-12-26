@@ -3744,7 +3744,7 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@testing-library/react-hooks@^3.3.0":
+"@testing-library/react-hooks@^3.7.0":
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/@testing-library/react-hooks/-/react-hooks-3.7.0.tgz#6d75c5255ef49bce39b6465bf6b49e2dac84919e"
   integrity sha512-TwfbY6BWtWIHitjT05sbllyLIProcysC0dF0q1bbDa7OHLC6A6rJOYJwZ13hzfz3O4RtOuInmprBozJRyyo7/g==

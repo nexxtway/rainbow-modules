@@ -15,4 +15,5 @@ const firebaseConfig = {
 };
 
 const instance = firebase.initializeApp(firebaseConfig);
+
 export default instance;
