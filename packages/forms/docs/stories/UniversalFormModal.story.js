@@ -36,7 +36,7 @@ const Books = () => {
         } catch (err) {
             hideAppSpinner();
             showAppNotification({
-                description: `There was and error adding book ${id}`,
+                description: `There was an error adding book ${id}`,
                 title: 'Error!',
                 icon: 'error',
             });
@@ -86,7 +86,7 @@ const App = () => {
         } catch (err) {
             hideAppSpinner();
             showAppNotification({
-                description: `There was and error adding book ${values.name}`,
+                description: `There was an error adding book ${values.name}`,
                 title: 'Error!',
                 icon: 'error',
             });
