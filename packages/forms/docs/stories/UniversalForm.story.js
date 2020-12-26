@@ -66,7 +66,7 @@ const StyledButton = styled(Button)`
     margin-top: 20px;
 `;
 
-export const UniversalFormBasic = () => {
+export const Basic = () => {
     const onSubmit = (values) => {
         // eslint-disable-next-line no-alert
         alert(JSON.stringify(values));

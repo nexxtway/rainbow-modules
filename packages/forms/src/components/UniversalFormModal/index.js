@@ -12,18 +12,19 @@ const UniversalFormModal = (props) => {
         onSubmit,
         title,
         initialValues,
+        submitButtonLabel,
+        cancelButtonLabel,
         ...rest
     } = props;
     const uniqueId = useUniqueIdentifier();
     const footer = (
         <div className="rainbow-flex rainbow-justify_end">
-            <Button
-                className="rainbow-m-right_large"
-                label="Cancel"
-                variant="neutral"
-                onClick={onRequestClose}
-            />
-            <Button label="Save" variant="brand" type="submit" form={uniqueId} />
+            <Button className="rainbow-m-right_large" variant="neutral" onClick={onRequestClose}>
+                {cancelButtonLabel}
+            </Button>
+            <Button label="Save" variant="brand" type="submit" form={uniqueId}>
+                {submitButtonLabel}
+            </Button>
         </div>
     );
     return (
@@ -36,12 +37,26 @@ const UniversalFormModal = (props) => {
 };
 
 UniversalFormModal.propTypes = {
+    /** The title of the Modal */
     title: PropTypes.string,
+    /** When `true` the Modal opens */
     isOpen: PropTypes.bool,
+    /** Callback that will be invoke when close event. Click on Cancel or Close Button or press ESC. */
     onRequestClose: PropTypes.func,
+    /** Callback that will be invoke after on submit event, it will receive an object with all
+     * the values of the form already validated.
+     */
     onSubmit: PropTypes.func,
+    /**
+     * Component Class or Function with the fields of your form. Use Field component of react-final-form.
+     */
     fields: PropTypes.func,
+    /** The initial values of the form e.g. { name: 'Max', age: 30 } */
     initialValues: PropTypes.object,
+    /** The label of the submit button on the form */
+    submitButtonLabel: PropTypes.oneOfType(PropTypes.string, PropTypes.node),
+    /** The label of the cancel button on the form */
+    cancelButtonLabel: PropTypes.oneOfType(PropTypes.string, PropTypes.node),
 };
 
 UniversalFormModal.defaultProps = {
@@ -51,6 +66,8 @@ UniversalFormModal.defaultProps = {
     onSubmit: () => {},
     fields: () => null,
     initialValues: {},
+    submitButtonLabel: 'Submit',
+    cancelButtonLabel: 'Cancel',
 };
 
 export default UniversalFormModal;
