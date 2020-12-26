@@ -1,18 +1,69 @@
 import React from 'react';
 import { Field } from 'react-final-form';
-import { Input, Button } from 'react-rainbow-components';
+import {
+    Input,
+    Button,
+    PhoneInput,
+    DatePicker,
+    RadioGroup,
+    Select,
+} from 'react-rainbow-components';
 import styled from 'styled-components';
+import { RainbowFirebaseApp } from '@rainbow-modules/app';
 import UniversalForm from '../../src/components/UniversalForm';
 import compose from '../../src/helpers/composeValidators';
 
 const isRequired = (value) => {
     return value ? undefined : 'Required.';
 };
-const minLength = (num) => (value) =>
-    value.length >= num ? undefined : `Min length must be ${num}.`;
+
+const genders = [
+    { value: 'female', label: 'Female' },
+    { value: 'male', label: 'Male' },
+    { value: 'custom', label: 'Custom' },
+];
+
+const options = [
+    { value: 'placeholder', label: 'Select your Pronoun', disabled: true },
+    { value: 'she', label: 'She: Wish her a happy birthday!' },
+    { value: 'he', label: 'He: Wish him a happy birthday!' },
+    { value: 'they', label: 'They: Wish them a happy birthday!' },
+];
 
 const Container = styled.div`
-    max-width: 860px;
+    max-width: 480px;
+    margin: 48px auto;
+`;
+
+const Header = styled.header`
+    padding: 12px 0;
+    border-bottom: 1px solid ${(props) => props.theme.rainbow.palette.border.divider};
+    margin-bottom: 36px;
+`;
+
+const Title = styled.h1`
+    font-size: 20px;
+    color: ${(props) => props.theme.rainbow.palette.text.main};
+`;
+
+const Description = styled.h2`
+    font-size: 14px;
+    color: ${(props) => props.theme.rainbow.palette.text.label};
+`;
+
+const Row = styled.div`
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+`;
+
+const StyledInput = styled(Input)`
+    width: 48%;
+`;
+
+const StyledButton = styled(Button)`
+    width: 100%;
+    margin-top: 20px;
 `;
 
 export const UniversalFormBasic = () => {
@@ -21,17 +72,87 @@ export const UniversalFormBasic = () => {
         alert(JSON.stringify(values));
     };
     return (
-        <Container>
-            <UniversalForm id="basic" onSubmit={onSubmit}>
-                <Field
-                    name="name"
-                    component={Input}
-                    label="Name"
-                    validate={compose(isRequired, minLength(3))}
-                />
-            </UniversalForm>
-            <Button label="Submit" type="submit" form="basic" />
-        </Container>
+        <RainbowFirebaseApp>
+            <Container>
+                <UniversalForm id="basic" onSubmit={onSubmit}>
+                    <Header>
+                        <Title>Sign Up</Title>
+                        <Description>It’s quick and easy.</Description>
+                    </Header>
+                    <Row className="rainbow-m-bottom_large">
+                        <Field
+                            name="first-name"
+                            component={StyledInput}
+                            label="First Name"
+                            placeholder="Enter your first name"
+                            required
+                            labelAlignment="left"
+                            validate={compose(isRequired)}
+                        />
+                        <Field
+                            name="last-name"
+                            component={StyledInput}
+                            label="Last Name"
+                            placeholder="Enter your last name"
+                            required
+                            labelAlignment="left"
+                            validate={compose(isRequired)}
+                        />
+                    </Row>
+                    <Field
+                        name="phone-number"
+                        component={PhoneInput}
+                        label="Last Name"
+                        placeholder="Enter your phone number"
+                        required
+                        labelAlignment="left"
+                        validate={compose(isRequired)}
+                        className="rainbow-m-bottom_large"
+                    />
+                    <Field
+                        name="email"
+                        component={Input}
+                        label="Email"
+                        placeholder="Enter your email"
+                        required
+                        labelAlignment="left"
+                        validate={compose(isRequired)}
+                        className="rainbow-m-bottom_large"
+                    />
+                    <Field
+                        name="date"
+                        component={DatePicker}
+                        label="Birthday"
+                        placeholder="Enter your Birthday"
+                        required
+                        labelAlignment="left"
+                        validate={compose(isRequired)}
+                        className="rainbow-m-bottom_large"
+                    />
+                    <Field
+                        name="gender"
+                        component={RadioGroup}
+                        label="Gender"
+                        required
+                        orientation="horizontal"
+                        options={genders}
+                        validate={compose(isRequired)}
+                        className="rainbow-m-bottom_large"
+                    />
+                    <Field
+                        name="pronoun"
+                        component={Select}
+                        label="Pronoun"
+                        required
+                        labelAlignment="left"
+                        validate={compose(isRequired)}
+                        options={options}
+                        className="rainbow-m-bottom_large"
+                    />
+                </UniversalForm>
+                <StyledButton label="Sign Up" type="submit" form="basic" variant="brand" />
+            </Container>
+        </RainbowFirebaseApp>
     );
 };
 
