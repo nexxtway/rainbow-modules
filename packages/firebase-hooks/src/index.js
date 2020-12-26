@@ -6,3 +6,6 @@ export { default as useDoc } from './firestore/useDoc';
 export { default as useDocOnce } from './firestore/useDocOnce';
 export { default as useAuthState } from './auth/useAuthState';
 export { default as useCurrentUser } from './auth/useCurrentUser';
+export { default as useAddDoc } from './firestore/useAddDoc';
+export { default as useRemoveDoc } from './firestore/useRemoveDoc';
+export { default as useUpdateDoc } from './firestore/useUpdateDoc';

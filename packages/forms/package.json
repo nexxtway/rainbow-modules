@@ -9,6 +9,9 @@
     ],
     "dependencies": {
         "@rainbow-modules/hooks": "^0.18.0",
+        "@rainbow-modules/app": "^0.18.0",
+        "final-form": "^4.20.1",
+        "react-final-form": "^6.5.2",
         "styled-components": "^4.3.2"
     },
     "peerDependencies": {
