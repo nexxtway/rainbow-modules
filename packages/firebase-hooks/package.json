@@ -12,5 +12,8 @@
     },
     "publishConfig": {
         "access": "public"
+    },
+    "dependencies": {
+        "react-query": "^3.5.5"
     }
 }
