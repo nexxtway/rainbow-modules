@@ -1,5 +1,5 @@
-import React from 'react';
-import { Field } from 'react-final-form';
+import React, { useState } from 'react';
+import { Field, FormSpy } from 'react-final-form';
 import {
     Input,
     Button,
@@ -7,15 +7,16 @@ import {
     DatePicker,
     RadioGroup,
     Select,
+    RenderIf,
 } from 'react-rainbow-components';
 import styled from 'styled-components';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
 import UniversalForm from '../../src/components/UniversalForm';
-import compose from '../../src/helpers/composeValidators';
 
-const isRequired = (value) => {
-    return value ? undefined : 'Required.';
-};
+// validations
+import compose from '../../src/helpers/composeValidators';
+import isRequired from '../../src/validators/isRequired';
+import isEmail from '../../src/validators/isEmail';
 
 const genders = [
     { value: 'female', label: 'Female' },
@@ -67,6 +68,7 @@ const StyledButton = styled(Button)`
 `;
 
 export const Basic = () => {
+    const [gender, setGender] = useState(undefined);
     const onSubmit = (values) => {
         // eslint-disable-next-line no-alert
         alert(JSON.stringify(values));
@@ -87,7 +89,7 @@ export const Basic = () => {
                             placeholder="Enter your first name"
                             required
                             labelAlignment="left"
-                            validate={compose(isRequired)}
+                            validate={compose(isRequired())}
                         />
                         <Field
                             name="last-name"
@@ -96,7 +98,7 @@ export const Basic = () => {
                             placeholder="Enter your last name"
                             required
                             labelAlignment="left"
-                            validate={compose(isRequired)}
+                            validate={compose(isRequired())}
                         />
                     </Row>
                     <Field
@@ -106,7 +108,7 @@ export const Basic = () => {
                         placeholder="Enter your phone number"
                         required
                         labelAlignment="left"
-                        validate={compose(isRequired)}
+                        validate={compose(isRequired())}
                         className="rainbow-m-bottom_large"
                     />
                     <Field
@@ -116,7 +118,7 @@ export const Basic = () => {
                         placeholder="Enter your email"
                         required
                         labelAlignment="left"
-                        validate={compose(isRequired)}
+                        validate={compose(isRequired(), isEmail())}
                         className="rainbow-m-bottom_large"
                     />
                     <Field
@@ -126,7 +128,7 @@ export const Basic = () => {
                         placeholder="Enter your Birthday"
                         required
                         labelAlignment="left"
-                        validate={compose(isRequired)}
+                        validate={compose(isRequired())}
                         className="rainbow-m-bottom_large"
                     />
                     <Field
@@ -136,19 +138,22 @@ export const Basic = () => {
                         required
                         orientation="horizontal"
                         options={genders}
-                        validate={compose(isRequired)}
+                        validate={compose(isRequired())}
                         className="rainbow-m-bottom_large"
                     />
-                    <Field
-                        name="pronoun"
-                        component={Select}
-                        label="Pronoun"
-                        required
-                        labelAlignment="left"
-                        validate={compose(isRequired)}
-                        options={options}
-                        className="rainbow-m-bottom_large"
-                    />
+                    <FormSpy onChange={({ values }) => setGender(values.gender)} />
+                    <RenderIf isTrue={gender === 'custom'}>
+                        <Field
+                            name="pronoun"
+                            component={Select}
+                            label="Pronoun"
+                            required
+                            labelAlignment="left"
+                            validate={compose(isRequired())}
+                            options={options}
+                            className="rainbow-m-bottom_large"
+                        />
+                    </RenderIf>
                 </UniversalForm>
                 <StyledButton label="Sign Up" type="submit" form="basic" variant="brand" />
             </Container>
