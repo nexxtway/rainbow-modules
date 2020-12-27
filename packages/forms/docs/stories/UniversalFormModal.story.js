@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Field } from 'react-final-form';
-import { Input, Button, Column, MenuItem } from 'react-rainbow-components';
+import styled from 'styled-components';
+import {
+    Input,
+    ButtonIcon,
+    Column,
+    MenuItem,
+    Textarea,
+    MultiSelect,
+    Option,
+    Badge,
+} from 'react-rainbow-components';
 import { FirestoreTable } from '@rainbow-modules/listview';
+import { Plus } from '@rainbow-modules/icons';
 import { useAddDoc, useRemoveDoc, useUpdateDoc } from '@rainbow-modules/firebase-hooks';
 import {
     RainbowFirebaseApp,
@@ -10,10 +21,64 @@ import {
     showAppNotification,
 } from '@rainbow-modules/app';
 import { useConnectModal, useOpenModal } from '@rainbow-modules/hooks';
-
 import app from '../../../../firebase';
 import UniversalFormModal from '../../src/components/UniversalFormModal';
 import isRequired from '../../src/validators/isRequired';
+
+const StyledBadge = styled(Badge)`
+    margin: 0 5px;
+`;
+
+const TableContainer = styled.div`
+    margin: 20px 50px;
+`;
+
+const TitleContainer = styled.div`
+    margin: 20px 50px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+const Title = styled.h1`
+    font-size: 30px;
+    color: ${(props) => props.theme.rainbow.palette.text.main};
+    font-family: Lato Bold, Helvetica, sans-serif;
+`;
+
+const convertCetgoriesToString = (values) => {
+    const { categories } = values;
+    const newCategories = categories.reduce((accumulator, currentValue) => {
+        return [...accumulator, currentValue.label];
+    }, []);
+    const stringCategories = String(newCategories);
+    const newValues = { ...values, categories: stringCategories };
+    return newValues;
+};
+
+const convertCetgoriesToArray = (values) => {
+    const categoriesMap = {
+        Fantasy: 'option-1',
+        Adventure: 'option-2',
+        Classics: 'option-3',
+        Academic: 'option-4',
+        Novel: 'option-5',
+    };
+    const categories = values.categories.split(',');
+    const arrayCategories = categories.reduce((accumulator, currentValue) => {
+        return [...accumulator, { label: currentValue, name: categoriesMap[currentValue] }];
+    }, []);
+    const newValue = { ...values, categories: arrayCategories };
+    return newValue;
+};
+
+const CategoriesBadge = ({ value }) => {
+    const categories = value.split(',');
+    return categories.map((categorie, index) => {
+        // eslint-disable-next-line react/no-array-index-key
+        return <StyledBadge key={`${categorie}-${index}`} label={categorie} />;
+    });
+};
 
 // eslint-disable-next-line react/prop-types
 const Books = () => {
@@ -25,7 +90,8 @@ const Books = () => {
     const onUpdate = async (values, id) => {
         showAppSpinner();
         try {
-            await updateDoc({ path: `/books/${id}`, data: values });
+            const newValues = convertCetgoriesToString(values);
+            await updateDoc({ path: `/books/${id}`, data: newValues });
             closeModal();
             hideAppSpinner();
             showAppNotification({
@@ -43,30 +109,80 @@ const Books = () => {
         }
     };
     const onEdit = (_, book) => {
+        const newBook = convertCetgoriesToArray(book);
         openModal({
             title: 'Edit Book',
-            initialValues: book,
+            initialValues: newBook,
             onSubmit: (values) => onUpdate(values, book.id),
         });
     };
     return (
-        <FirestoreTable collection="books" variant="listview">
-            <Column field="name" header="Name" />
-            <Column field="author" header="Author" />
-            <Column type="action">
-                <MenuItem label="Edit" onClick={onEdit} />
-                <MenuItem label="Remove" onClick={onRemove} />
-            </Column>
-        </FirestoreTable>
+        <TableContainer>
+            <FirestoreTable collection="books" variant="listview">
+                <Column field="name" header="Name" />
+                <Column field="author" header="Author" />
+                <Column field="description" header="Description" />
+                <Column field="categories" header="Categories" component={CategoriesBadge} />
+                <Column type="action">
+                    <MenuItem label="Edit" onClick={onEdit} />
+                    <MenuItem label="Remove" onClick={onRemove} />
+                </Column>
+            </FirestoreTable>
+        </TableContainer>
     );
 };
 
-const Fields = () => (
-    <div>
-        <Field name="name" component={Input} label="Name" validate={isRequired()} />
-        <Field name="author" component={Input} label="Auhtor" validate={isRequired()} />
-    </div>
-);
+const Fields = () => {
+    const [value, setValue] = useState([]);
+
+    return (
+        <div>
+            <Field
+                name="name"
+                component={Input}
+                label="Name"
+                validate={isRequired()}
+                required
+                placeholder="Enter the book name"
+                className="rainbow-m-bottom_large"
+            />
+            <Field
+                name="author"
+                component={Input}
+                label="Auhtor"
+                validate={isRequired()}
+                required
+                placeholder="Enter the book author"
+                className="rainbow-m-bottom_large"
+            />
+            <Field
+                name="categories"
+                component={MultiSelect}
+                label="Select categories"
+                placeholder="Select categories"
+                value={value}
+                onChange={setValue}
+                bottomHelpText="You can select several options"
+                variant="chip"
+                className="rainbow-m-bottom_large"
+            >
+                <Option name="option-1" label="Fantasy" />
+                <Option name="option-2" label="Adventure" />
+                <Option name="option-3" label="Classics" />
+                <Option name="option-4" label="Academic" />
+                <Option name="option-5" label="Novel" />
+            </Field>
+            <Field
+                name="description"
+                component={Textarea}
+                label="Description"
+                rows={4}
+                placeholder="Enter the book description"
+                className="rainbow-m-bottom_large"
+            />
+        </div>
+    );
+};
 
 const App = () => {
     const connectedModalProps = useConnectModal('add-edit-book');
@@ -75,7 +191,8 @@ const App = () => {
     const onSubmit = async (values) => {
         showAppSpinner();
         try {
-            await addBook(values);
+            const newValues = convertCetgoriesToString(values);
+            await addBook(newValues);
             closeModal();
             hideAppSpinner();
             showAppNotification({
@@ -100,9 +217,21 @@ const App = () => {
 
     return (
         <div>
-            <Button label="Add Book" onClick={openCreateBook} />
+            <TitleContainer>
+                <Title>Books</Title>
+                <ButtonIcon
+                    icon={<Plus />}
+                    variant="border-filled"
+                    shaded
+                    onClick={openCreateBook}
+                />
+            </TitleContainer>
             <Books />
-            <UniversalFormModal fields={Fields} {...connectedModalProps} />
+            <UniversalFormModal
+                fields={Fields}
+                {...connectedModalProps}
+                submitButtonLabel="Create"
+            />
         </div>
     );
 };
