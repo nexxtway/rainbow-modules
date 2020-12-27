@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.19.0](https://github.com/nexxtway/rainbow-modules/compare/v0.18.0...v0.19.0) (2020-12-27)
+
+### Bug Fixes
+
+-   UniversalForm examples ([#264](https://github.com/nexxtway/rainbow-modules/issues/264)) ([1b604f4](https://github.com/nexxtway/rainbow-modules/commit/1b604f4bf2f97b4121c001e3c5526b7494e54703))
+
 # [0.18.0](https://github.com/nexxtway/rainbow-modules/compare/v0.17.0...v0.18.0) (2020-12-24)
 
 **Note:** Version bump only for package @rainbow-modules/icons
