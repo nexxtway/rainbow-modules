@@ -65,13 +65,13 @@ const GlobalSearch = (props) => {
     };
 
     const handleSearch = async ({ query: searchQuery, page }) => {
+        setQuery(searchQuery);
         const hasOnSearchEvent = Children.toArray(children).some((child) => {
             const { onSearch } = child.props;
             return typeof onSearch === 'function';
         });
         if (hasOnSearchEvent) {
             setLoading(true);
-            setQuery(searchQuery);
             const results = await Promise.all(
                 Children.map(children, (child) => {
                     return child.props.onSearch({ query: searchQuery, page });
@@ -92,13 +92,20 @@ const GlobalSearch = (props) => {
         onSelect(item);
     };
 
+    const handleFocus = () => {
+        setOpen(true);
+        if (hasQuery) {
+            handleSearch({ query, page: 1 });
+        }
+    };
+
     return (
         <div ref={containerRef} style={style} className={className}>
             <StyledContainer>
                 <StyledInput
                     type="search"
                     value={query}
-                    onFocus={() => setOpen(true)}
+                    onFocus={handleFocus}
                     autoComplete="off"
                     icon={<Search />}
                     variant={variant}
