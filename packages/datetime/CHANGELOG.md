@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.19.0](https://github.com/nexxtway/rainbow-modules/compare/v0.18.0...v0.19.0) (2020-12-27)
+
+**Note:** Version bump only for package @rainbow-modules/datetime
+
 # [0.18.0](https://github.com/nexxtway/rainbow-modules/compare/v0.17.0...v0.18.0) (2020-12-24)
 
 **Note:** Version bump only for package @rainbow-modules/datetime

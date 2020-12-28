@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.19.1](https://github.com/nexxtway/rainbow-modules/compare/v0.19.0...v0.19.1) (2020-12-27)
+
+### Bug Fixes
+
+-   add exports on forms module ([#270](https://github.com/nexxtway/rainbow-modules/issues/270)) ([fed4243](https://github.com/nexxtway/rainbow-modules/commit/fed4243de33a2deb0edc586dc4633344caad0dd3))
+
+# [0.19.0](https://github.com/nexxtway/rainbow-modules/compare/v0.18.0...v0.19.0) (2020-12-27)
+
+### Bug Fixes
+
+-   UniversalForm examples ([#264](https://github.com/nexxtway/rainbow-modules/issues/264)) ([1b604f4](https://github.com/nexxtway/rainbow-modules/commit/1b604f4bf2f97b4121c001e3c5526b7494e54703))
+
+### Features
+
+-   implement `CopyToClipboardButton` component on `@rainbow-modules/record` module ([#246](https://github.com/nexxtway/rainbow-modules/issues/246)) ([9238dcc](https://github.com/nexxtway/rainbow-modules/commit/9238dcce44439935621487d67d4a3b958a25c1f8))
+-   implemented universal form modal example ([#268](https://github.com/nexxtway/rainbow-modules/issues/268)) ([4e128c5](https://github.com/nexxtway/rainbow-modules/commit/4e128c5f9147a21974d952e453c630997b9355fd))
+-   universal forms + more hooks ([#262](https://github.com/nexxtway/rainbow-modules/issues/262)) ([4686a72](https://github.com/nexxtway/rainbow-modules/commit/4686a72c8aab61d2dd802d5d2a96dd8187ccb4b3))
+
 # [0.18.0](https://github.com/nexxtway/rainbow-modules/compare/v0.17.0...v0.18.0) (2020-12-24)
 
 ### Features
