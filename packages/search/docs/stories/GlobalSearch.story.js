@@ -53,8 +53,16 @@ export const MongoAtlasGlobalSearch = () => {
                 recents={recents}
                 onSearch={({ query }) => addRecents(query)}
             >
-                <SearchEntity name="Movies" onAutocomplete={searchMoviesTitleMongo} />
-                <SearchEntity name="Plot" onAutocomplete={searchMoviesPlotMongo} />
+                <SearchEntity
+                    name="Movies"
+                    onAutocomplete={searchMoviesTitleMongo}
+                    onSearch={searchMoviesTitleMongo}
+                />
+                <SearchEntity
+                    name="Plot"
+                    onAutocomplete={searchMoviesPlotMongo}
+                    onSearch={searchMoviesPlotMongo}
+                />
             </StyledGlobalSearch>
         </RainbowFirebaseApp>
     );

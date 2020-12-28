@@ -93,7 +93,6 @@ const SearchContainer = (props) => {
             setSearchMode('results');
         }, 0);
         onSearch({ query: recentItem, page: 1 });
-        onAutocomplete({ query: recentItem });
     };
 
     const options = Object.keys(results).map((entityName) => {
