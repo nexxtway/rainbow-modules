@@ -33,6 +33,22 @@ const TableContainer = styled.div`
     margin: 20px 50px;
 `;
 
+const StyledLeftText = styled.div`
+    text-align: left;
+    margin-left: 12px;
+    margin-right: 6px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+`;
+
+const CategoriesContent = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 8px;
+`;
+
 const TitleContainer = styled.div`
     margin: 20px 50px 0;
     display: flex;
@@ -81,6 +97,16 @@ const CategoriesBadge = ({ value }) => {
 };
 
 // eslint-disable-next-line react/prop-types
+const LeftText = ({ value }) => <StyledLeftText>{value}</StyledLeftText>;
+
+// eslint-disable-next-line react/prop-types
+const Categories = ({ value }) => (
+    <CategoriesContent>
+        <CategoriesBadge value={value} />
+    </CategoriesContent>
+);
+
+// eslint-disable-next-line react/prop-types
 const Books = () => {
     const { mutate: removeBook } = useRemoveDoc();
     const { mutate: updateDoc } = useUpdateDoc();
@@ -119,10 +145,10 @@ const Books = () => {
     return (
         <TableContainer>
             <FirestoreTable collection="books" variant="listview">
-                <Column field="name" header="Name" />
-                <Column field="author" header="Author" />
-                <Column field="description" header="Description" />
-                <Column field="categories" header="Categories" component={CategoriesBadge} />
+                <Column field="name" header="Name" component={LeftText} />
+                <Column field="author" header="Author" component={LeftText} />
+                <Column field="description" header="Description" component={LeftText} />
+                <Column field="categories" header="Categories" component={Categories} />
                 <Column type="action">
                     <MenuItem label="Edit" onClick={onEdit} />
                     <MenuItem label="Remove" onClick={onRemove} />
