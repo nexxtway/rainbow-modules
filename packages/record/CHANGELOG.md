@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.19.0](https://github.com/nexxtway/rainbow-modules/compare/v0.18.0...v0.19.0) (2020-12-27)
+
+### Features
+
+-   implement `CopyToClipboardButton` component on `@rainbow-modules/record` module ([#246](https://github.com/nexxtway/rainbow-modules/issues/246)) ([9238dcc](https://github.com/nexxtway/rainbow-modules/commit/9238dcce44439935621487d67d4a3b958a25c1f8))
+
 # [0.18.0](https://github.com/nexxtway/rainbow-modules/compare/v0.17.0...v0.18.0) (2020-12-24)
 
 **Note:** Version bump only for package @rainbow-modules/record
