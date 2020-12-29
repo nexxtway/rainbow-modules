@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { Field } from 'react-final-form';
 import styled from 'styled-components';
@@ -14,13 +15,8 @@ import {
 import { FirestoreTable } from '@rainbow-modules/listview';
 import { Plus } from '@rainbow-modules/icons';
 import { useAddDoc, useRemoveDoc, useUpdateDoc } from '@rainbow-modules/firebase-hooks';
-import {
-    RainbowFirebaseApp,
-    showAppSpinner,
-    hideAppSpinner,
-    showAppNotification,
-} from '@rainbow-modules/app';
-import { useConnectModal, useOpenModal } from '@rainbow-modules/hooks';
+import { RainbowFirebaseApp } from '@rainbow-modules/app';
+import { useConnectModal, useOpenModal, useMutationFlow } from '@rainbow-modules/hooks';
 import app from '../../../../firebase';
 import UniversalFormModal from '../../src/components/UniversalFormModal';
 import isRequired from '../../src/validators/isRequired';
@@ -62,72 +58,59 @@ const Title = styled.h1`
     font-family: Lato Bold, Helvetica, sans-serif;
 `;
 
-const convertCategoriesToString = (values) => {
-    return {
-        ...values,
-        categories: values.categories.map((cat) => cat.label).join(),
-    };
+const categoriesToOptions = (categories) => {
+    return categories.map((cat) => ({ label: cat, name: cat }));
 };
 
-const convertCategoriesToArray = (values) => {
-    return {
-        ...values,
-        categories: values.categories.split(',').map((cat) => ({ label: cat, name: cat })),
-    };
+const optionsToCategories = (options) => {
+    if (Array.isArray(options)) {
+        return options.map((opt) => opt.label);
+    }
+    return [];
 };
 
 const CategoriesBadge = ({ value }) => {
-    const categories = value.split(',');
-    return categories.map((category, index) => {
-        // eslint-disable-next-line react/no-array-index-key
-        return <StyledBadge key={`${category}-${index}`} label={category} />;
-    });
+    if (Array.isArray(value)) {
+        return value.map((category, index) => {
+            // eslint-disable-next-line react/no-array-index-key
+            return <StyledBadge key={`${category}-${index}`} label={category} />;
+        });
+    }
+    return null;
 };
 
-// eslint-disable-next-line react/prop-types
 const LeftText = ({ value }) => <StyledLeftText>{value}</StyledLeftText>;
 
-// eslint-disable-next-line react/prop-types
 const Categories = ({ value }) => (
     <CategoriesContent>
         <CategoriesBadge value={value} />
     </CategoriesContent>
 );
 
-// eslint-disable-next-line react/prop-types
 const Books = () => {
     const { mutate: removeBook } = useRemoveDoc();
     const { mutate: updateDoc } = useUpdateDoc();
     const [openModal, closeModal] = useOpenModal('add-edit-book');
     const onRemove = (_, { id }) => removeBook(`/books/${id}`);
-
-    const onUpdate = async (values, id) => {
-        showAppSpinner();
-        try {
-            const newValues = convertCategoriesToString(values);
-            await updateDoc({ path: `/books/${id}`, data: newValues });
-            closeModal();
-            hideAppSpinner();
-            showAppNotification({
-                description: `Book '${id}' was update.`,
-                title: 'Success!',
-                icon: 'success',
-            });
-        } catch (err) {
-            hideAppSpinner();
-            showAppNotification({
-                description: `There was an error adding book ${id}`,
-                title: 'Error!',
-                icon: 'error',
-            });
-        }
-    };
+    const { mutate } = useMutationFlow({
+        mutation: updateDoc,
+        onSucess: closeModal,
+    });
     const onEdit = (_, book) => {
-        const newBook = convertCategoriesToArray(book);
         openModal({
             title: 'Edit Book',
-            initialValues: newBook,
-            onSubmit: (values) => onUpdate(values, book.id),
+            initialValues: {
+                ...book,
+                categories: categoriesToOptions(book.categories),
+            },
+            onSubmit: (values) =>
+                mutate({
+                    path: `/books/${book.id}`,
+                    data: {
+                        ...values,
+                        categories: optionsToCategories(values.categories),
+                    },
+                }),
         });
     };
     return (
@@ -202,31 +185,18 @@ const App = () => {
     const connectedModalProps = useConnectModal('add-edit-book');
     const [openModal, closeModal] = useOpenModal('add-edit-book');
     const { mutate: addBook } = useAddDoc('books');
-    const onSubmit = async (values) => {
-        showAppSpinner();
-        try {
-            const newValues = convertCategoriesToString(values);
-            await addBook(newValues);
-            closeModal();
-            hideAppSpinner();
-            showAppNotification({
-                description: `Book '${values.name}' was added.`,
-                title: 'Success!',
-                icon: 'success',
-            });
-        } catch (err) {
-            hideAppSpinner();
-            showAppNotification({
-                description: `There was an error adding book ${values.name}`,
-                title: 'Error!',
-                icon: 'error',
-            });
-        }
-    };
+    const { mutate } = useMutationFlow({
+        mutation: addBook,
+        onSucess: closeModal,
+    });
     const openCreateBook = () =>
         openModal({
             title: 'Add Book',
-            onSubmit,
+            onSubmit: (values) =>
+                mutate({
+                    ...values,
+                    categories: optionsToCategories(values.categories),
+                }),
         });
 
     return (

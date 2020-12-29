@@ -12,5 +12,8 @@
     },
     "publishConfig": {
         "access": "public"
+    },
+    "dependencies": {
+        "@rainbow-modules/app": "^0.19.0"
     }
 }
