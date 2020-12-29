@@ -95,6 +95,7 @@ const Books = () => {
     const { mutate } = useMutationFlow({
         mutation: updateDoc,
         onSucess: closeModal,
+        successMessage: 'Book updated sucessfully.',
     });
     const onEdit = (_, book) => {
         openModal({
@@ -103,6 +104,7 @@ const Books = () => {
                 ...book,
                 categories: categoriesToOptions(book.categories),
             },
+            submitButtonLabel: 'Update',
             onSubmit: (values) =>
                 mutate({
                     path: `/books/${book.id}`,
@@ -188,10 +190,12 @@ const App = () => {
     const { mutate } = useMutationFlow({
         mutation: addBook,
         onSucess: closeModal,
+        successMessage: 'Book created successfully.',
     });
     const openCreateBook = () =>
         openModal({
             title: 'Add Book',
+            submitButtonLabel: 'Add',
             onSubmit: (values) =>
                 mutate({
                     ...values,
@@ -211,11 +215,7 @@ const App = () => {
                 />
             </TitleContainer>
             <Books />
-            <UniversalFormModal
-                fields={Fields}
-                {...connectedModalProps}
-                submitButtonLabel="Create"
-            />
+            <UniversalFormModal fields={Fields} {...connectedModalProps} />
         </div>
     );
 };
