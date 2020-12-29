@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.19.2](https://github.com/nexxtway/rainbow-modules/compare/v0.19.1...v0.19.2) (2020-12-28)
+
+### Bug Fixes
+
+-   cell styles ([#269](https://github.com/nexxtway/rainbow-modules/issues/269)) ([5ad7896](https://github.com/nexxtway/rainbow-modules/commit/5ad7896c7272fce5307b5ceb4835c7e542c267ac))
+
 ## [0.19.1](https://github.com/nexxtway/rainbow-modules/compare/v0.19.0...v0.19.1) (2020-12-27)
 
 ### Bug Fixes

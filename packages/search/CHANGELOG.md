@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.19.2](https://github.com/nexxtway/rainbow-modules/compare/v0.19.1...v0.19.2) (2020-12-28)
+
+### Bug Fixes
+
+-   make search when focus input and has a value ([#272](https://github.com/nexxtway/rainbow-modules/issues/272)) ([5fcddcb](https://github.com/nexxtway/rainbow-modules/commit/5fcddcb8faa89240b064efa11474a9f0c9f5505a))
+
 # [0.19.0](https://github.com/nexxtway/rainbow-modules/compare/v0.18.0...v0.19.0) (2020-12-27)
 
 **Note:** Version bump only for package @rainbow-modules/search
