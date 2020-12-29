@@ -1,0 +1,78 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Modules|Hooks/useMutationFlow" />
+
+# Overview
+
+When our applications need to mutate(create/update/delete) data in the Server(database, etc, ...), 
+the UI we want to implement, 90% of the time does the same e.g.
+
+1. show app/global spinner because we are about to do an `async` call.
+2. call the `async` function that will communicate with our servers and make the desired mutation
+3. on the success we want to:
+    - hide the spinner
+    - show visual feedback `notification` that explains `Success!`
+4. on the error we want to:
+    - hide the spinner
+    - show visual feedback `notification` that explains `Error!`
+
+<b>This is a very repetitive work!</b>
+
+# Solution
+
+## useMutationFlow() hook
+
+
+```js
+const saveBook = async (values) => { /* save a the book in DB. */};
+const { mutate } = useMutationFlow({
+    mutation: saveBook,
+    successMessage: 'Book created sucessfully.',
+    errorMessage: 'There was an error.Please try again.',
+});
+const values = { name: 'Foo', author: 'Bar', ... };
+<Button label="Add Book" onClick={() => mutate(values)} 
+```
+
+### How compose success|error messages based on the server response
+
+```js
+const { mutate } = useMutationFlow({
+    mutation: saveBook,
+    successMessage: (res) => `The book ${res.name} was created successfully.`,
+});
+```
+
+### How close a Modal after success
+
+```js
+const { mutate } = useMutationFlow({
+    mutation: saveBook,
+    successMessage: (res) => `The book ${res.name} was created successfully.`,
+    onSucess: (res) => setModalOpen(false),
+});
+```
+
+### How customize the icons on the notifications
+
+```js
+const { mutate } = useMutationFlow({
+    mutation: saveBook,
+    successMessage: (res) => ({
+        description: `The book ${res.name} was created successfully.`,
+        icon: <MyCustomIcon />,
+    }),
+    onSucess: (res) => setModalOpen(false),
+});
+```
+
+## useMutationFlow API
+
+| Property       | Description                      | Type                                  | Default |
+| -------------- | -------------------------------- | ------------------------------------- | ------- |
+| mutation       | The async function that perform the server call. | async () => {} | undefined |
+| successMessage | The success message on the Notification |  String or Function | 'The mutation was executed successfully.'
+| errorMessage | The error message on the Notification |  String or Function | 'There was an error, Please try again.'
+| onSucess    | Callback on the success | (res) => {}                               | undefined   |
+| onError    | Callback on the error | (error) => {}                               | undefined   |
+

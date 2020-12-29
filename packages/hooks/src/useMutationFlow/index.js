@@ -10,7 +10,7 @@ const defaults = {
     },
     error: {
         title: 'Error!',
-        description: 'There was an error, please try again.',
+        description: 'There was an error, Please try again.',
         icon: 'error',
         timeout: 3000,
     },
