@@ -62,37 +62,25 @@ const Title = styled.h1`
     font-family: Lato Bold, Helvetica, sans-serif;
 `;
 
-const convertCetgoriesToString = (values) => {
-    const { categories } = values;
-    const newCategories = categories.reduce((accumulator, currentValue) => {
-        return [...accumulator, currentValue.label];
-    }, []);
-    const stringCategories = String(newCategories);
-    const newValues = { ...values, categories: stringCategories };
-    return newValues;
+const convertCategoriesToString = (values) => {
+    return {
+        ...values,
+        categories: values.categories.map((cat) => cat.label).join(),
+    };
 };
 
-const convertCetgoriesToArray = (values) => {
-    const categoriesMap = {
-        Fantasy: 'option-1',
-        Adventure: 'option-2',
-        Classics: 'option-3',
-        Academic: 'option-4',
-        Novel: 'option-5',
+const convertCategoriesToArray = (values) => {
+    return {
+        ...values,
+        categories: values.categories.split(',').map((cat) => ({ label: cat, name: cat })),
     };
-    const categories = values.categories.split(',');
-    const arrayCategories = categories.reduce((accumulator, currentValue) => {
-        return [...accumulator, { label: currentValue, name: categoriesMap[currentValue] }];
-    }, []);
-    const newValue = { ...values, categories: arrayCategories };
-    return newValue;
 };
 
 const CategoriesBadge = ({ value }) => {
     const categories = value.split(',');
-    return categories.map((categorie, index) => {
+    return categories.map((category, index) => {
         // eslint-disable-next-line react/no-array-index-key
-        return <StyledBadge key={`${categorie}-${index}`} label={categorie} />;
+        return <StyledBadge key={`${category}-${index}`} label={category} />;
     });
 };
 
@@ -116,7 +104,7 @@ const Books = () => {
     const onUpdate = async (values, id) => {
         showAppSpinner();
         try {
-            const newValues = convertCetgoriesToString(values);
+            const newValues = convertCategoriesToString(values);
             await updateDoc({ path: `/books/${id}`, data: newValues });
             closeModal();
             hideAppSpinner();
@@ -135,7 +123,7 @@ const Books = () => {
         }
     };
     const onEdit = (_, book) => {
-        const newBook = convertCetgoriesToArray(book);
+        const newBook = convertCategoriesToArray(book);
         openModal({
             title: 'Edit Book',
             initialValues: newBook,
@@ -192,11 +180,11 @@ const Fields = () => {
                 variant="chip"
                 className="rainbow-m-bottom_large"
             >
-                <Option name="option-1" label="Fantasy" />
-                <Option name="option-2" label="Adventure" />
-                <Option name="option-3" label="Classics" />
-                <Option name="option-4" label="Academic" />
-                <Option name="option-5" label="Novel" />
+                <Option name="Fantasy" label="Fantasy" />
+                <Option name="Adventure" label="Adventure" />
+                <Option name="Classics" label="Classics" />
+                <Option name="Academic" label="Academic" />
+                <Option name="Novel" label="Novel" />
             </Field>
             <Field
                 name="description"
@@ -217,7 +205,7 @@ const App = () => {
     const onSubmit = async (values) => {
         showAppSpinner();
         try {
-            const newValues = convertCetgoriesToString(values);
+            const newValues = convertCategoriesToString(values);
             await addBook(newValues);
             closeModal();
             hideAppSpinner();
