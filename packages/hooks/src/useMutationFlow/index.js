@@ -1,4 +1,3 @@
-import { useCallback } from 'react';
 import { showAppSpinner, hideAppSpinner, showAppNotification } from '@rainbow-modules/app';
 
 const defaults = {
@@ -49,7 +48,7 @@ const useMutationFlow = (opts) => {
         onSucess = () => {},
         onError = () => {},
     } = opts;
-    const mutate = useCallback(async (...args) => {
+    const mutate = async (...args) => {
         showAppSpinner();
         try {
             const res = await mutation(...args);
@@ -61,8 +60,7 @@ const useMutationFlow = (opts) => {
             hideAppSpinner();
             showAppNotification(resolveMessage(errorMessage, error, 'error'));
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    };
     return { mutate };
 };
 

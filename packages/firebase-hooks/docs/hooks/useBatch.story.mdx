@@ -1,5 +1,5 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-import * as stories from '../stories/useCollection.story.js';
+import * as stories from '../stories/useBatch.story.js';
 
 <Meta title="Modules|firebase-hooks/Hooks" />
 
@@ -72,5 +72,5 @@ await batchDelete([{ id: 'JUMdZUwPzD2bWERLaJ4u' }, { id: 'LsNohzkufhrz92OPRYqZ' 
 ```
 
 <Preview>
-    <Story name="useBatch" />
+    <Story name="useBatch">{stories.batchOperations()}</Story>
 </Preview>
