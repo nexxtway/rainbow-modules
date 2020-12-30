@@ -1,11 +1,14 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import InternalTooltip from 'react-rainbow-components/components/InternalTooltip';
+import copy from 'copy-to-clipboard';
 import CopyToClipboardButton from '../index';
-import copy from '../helpers/copy';
 
 jest.mock('../helpers/isSupported', () => jest.fn(() => true).mockImplementationOnce(() => false));
-jest.mock('../helpers/copy', () => jest.fn(() => true).mockImplementationOnce(() => false));
+jest.mock('copy-to-clipboard', () => ({
+    __esModule: true,
+    default: jest.fn(() => true).mockImplementationOnce(() => false),
+}));
 jest.mock('react-rainbow-components/components/InternalTooltip', () =>
     jest.fn(({ children, ...props }) => (
         // eslint-disable-next-line react/jsx-props-no-spreading
