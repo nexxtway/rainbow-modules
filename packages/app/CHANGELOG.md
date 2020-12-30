@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.20.0](https://github.com/nexxtway/rainbow-modules/compare/v0.19.2...v0.20.0) (2020-12-30)
+
+### Bug Fixes
+
+-   universal form modal examples ([#273](https://github.com/nexxtway/rainbow-modules/issues/273)) ([eda9ff0](https://github.com/nexxtway/rainbow-modules/commit/eda9ff0d221f9c83f3db3d9f810e33626c2a2ef6))
+
 # [0.19.0](https://github.com/nexxtway/rainbow-modules/compare/v0.18.0...v0.19.0) (2020-12-27)
 
 **Note:** Version bump only for package @rainbow-modules/app
