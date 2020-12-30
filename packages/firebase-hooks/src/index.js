@@ -9,3 +9,4 @@ export { default as useCurrentUser } from './auth/useCurrentUser';
 export { default as useAddDoc } from './firestore/useAddDoc';
 export { default as useRemoveDoc } from './firestore/useRemoveDoc';
 export { default as useUpdateDoc } from './firestore/useUpdateDoc';
+export { default as useBatch } from './firestore/useBatch/index';
