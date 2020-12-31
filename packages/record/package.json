@@ -11,6 +11,7 @@
         "@rainbow-modules/hooks": "^0.20.0",
         "@rainbow-modules/icons": "^0.20.0",
         "@rainbow-modules/validation": "^0.20.0",
+        "copy-to-clipboard": "^3.3.1",
         "styled-components": "^4.3.2"
     },
     "peerDependencies": {

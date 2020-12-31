@@ -1,2 +1,2 @@
-export { default as copy } from './copy';
+// eslint-disable-next-line import/prefer-default-export
 export { default as isSupported } from './isSupported';
