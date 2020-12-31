@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.20.1](https://github.com/nexxtway/rainbow-modules/compare/v0.20.0...v0.20.1) (2020-12-31)
+
+### Bug Fixes
+
+-   add doc to useBatch and fix useMutationFlow ([#277](https://github.com/nexxtway/rainbow-modules/issues/277)) ([b78268d](https://github.com/nexxtway/rainbow-modules/commit/b78268dd37d6910a5e3a924255f726ddd85719b8))
+-   fixed bug in copy to clipboard ([#276](https://github.com/nexxtway/rainbow-modules/issues/276)) ([307c429](https://github.com/nexxtway/rainbow-modules/commit/307c42958a1db8fd92f73079146344e98d09ae6a))
+
 # [0.20.0](https://github.com/nexxtway/rainbow-modules/compare/v0.19.2...v0.20.0) (2020-12-30)
 
 ### Bug Fixes
