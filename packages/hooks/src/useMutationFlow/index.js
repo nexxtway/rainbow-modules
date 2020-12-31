@@ -45,14 +45,14 @@ const useMutationFlow = (opts) => {
         mutation = async () => {},
         successMessage = defaults.success.description,
         errorMessage = defaults.error.description,
-        onSucess = () => {},
+        onSuccess = () => {},
         onError = () => {},
     } = opts;
     const mutate = async (...args) => {
         showAppSpinner();
         try {
             const res = await mutation(...args);
-            onSucess(res);
+            onSuccess(res);
             hideAppSpinner();
             showAppNotification(resolveMessage(successMessage, res, 'success'));
         } catch (error) {

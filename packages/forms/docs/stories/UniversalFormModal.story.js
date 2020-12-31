@@ -94,7 +94,7 @@ const Books = () => {
     const onRemove = (_, { id }) => removeBook(`/books/${id}`);
     const { mutate } = useMutationFlow({
         mutation: updateDoc,
-        onSucess: closeModal,
+        onSuccess: closeModal,
         successMessage: 'Book updated sucessfully.',
     });
     const onEdit = (_, book) => {
@@ -189,7 +189,7 @@ const App = () => {
     const { mutate: addBook } = useAddDoc('books');
     const { mutate } = useMutationFlow({
         mutation: addBook,
-        onSucess: closeModal,
+        onSuccess: closeModal,
         successMessage: 'Book created successfully.',
     });
     const openCreateBook = () =>
