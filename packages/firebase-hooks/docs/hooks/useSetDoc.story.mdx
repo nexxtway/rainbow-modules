@@ -5,22 +5,22 @@ import * as stories from '../../../forms/docs/stories/UniversalFormModal.story.j
 
 # Overview
 
-`useUpdateDoc` hook uses [react-query/useMutation](https://react-query.tanstack.com/guides/mutations)
+`useSetDoc` hook uses [react-query/useMutation](https://react-query.tanstack.com/guides/mutations)
 hook behind the scene. The hook will return an object with a `mutate` async function that will update a document in a Firestore collection.
 
 ### Usage.
 
 ```js
-const { mutate, isLoading } = useUpdateDoc();
-const onUpdate = async (data) => {
-    await mutate({ path: '/books/JLaSkUit8rIIqqXQvav1', data });
+const { mutate, isLoading } = useSetDoc();
+const onSet = async (data) => {
+    await mutate({ path: '/books/JLaSkUit8rIIqqXQvav1', data, options: { merge: true } });
 };
 
-<Button label="Update Book" onClick={onUpdate} isLoading={isLoading} />;
+<Button label="Set Book" onClick={onSet} isLoading={isLoading} />;
 ```
 
 This is end-to-end implementation of `how to` Add/Remove/Update on Firestore.
 
 <Preview>
-    <Story name="useUpdateDoc">{stories.Basic()}</Story>
+    <Story name="useSetDoc">{stories.Basic()}</Story>
 </Preview>
