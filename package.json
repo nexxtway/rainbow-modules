@@ -77,13 +77,14 @@
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-intl": "^4.4.0",
-        "react-rainbow-components": "1.21.0-canary.09326ff",
+        "react-rainbow-components": "1.22.0-canary.938cdf3",
         "react-redux": "^7.2.0",
         "react-router-dom": "^5.2.0",
         "redux": "^4.0.5",
         "redux-form": "^8.3.5",
         "redux-thunk": "^2.3.0",
-        "styled-components": "^4.3.2"
+        "styled-components": "^4.3.2",
+        "chartjs-plugin-datalabels": "^0.7.0"
     },
     "husky": {
         "hooks": {
