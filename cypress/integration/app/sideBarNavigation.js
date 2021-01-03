@@ -17,6 +17,6 @@ describe('SideBarNavigation', () => {
         cy.window().then((win) => {
             win.history.pushState({}, '', 'billing');
         });
-        cy.get(NAVIGATION_ITEM).eq(2).its('aria-current').should('be', 'page');
+        cy.get(NAVIGATION_ITEM).eq(2).should('have.attr', 'aria-current', 'page');
     });
 });
