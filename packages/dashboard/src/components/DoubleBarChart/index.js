@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import { Chart, Dataset } from 'react-rainbow-components';
 import { useTheme } from 'react-rainbow-components/libs/hooks';
 import datalabels from 'chartjs-plugin-datalabels';
-import handleData from './helpers/handleData';
+import { getNormalizedData, getOptions } from './helpers';
 import { Legend, LegendItem } from './legend';
 import { StyledContainer } from './styled';
-import getOptions from './helpers/getOptions';
 
 const plugins = [datalabels];
 const datalabelsConf = {
@@ -18,7 +17,7 @@ const datalabelsConf = {
 const DoubleBarChart = (props) => {
     const { titles, data, xLabel, yLabel } = props;
     const theme = useTheme();
-    const [labels, [frontDataset, backDataset]] = handleData(data);
+    const [labels, [frontDataset, backDataset]] = getNormalizedData(data);
     const [frontTitle, backTitle] = titles;
     const frontColor = theme.rainbow.palette.brand.main;
     const backColor = theme.rainbow.palette.border.divider;

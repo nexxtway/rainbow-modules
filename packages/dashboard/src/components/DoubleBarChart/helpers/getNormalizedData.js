@@ -1,4 +1,4 @@
-export default function handleData(data) {
+export default function getNormalizedData(data) {
     const labels = [];
     const firstDataset = [];
     const secondDataset = [];
