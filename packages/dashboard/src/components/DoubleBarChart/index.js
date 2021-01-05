@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Chart, Dataset } from 'react-rainbow-components';
+import { Chart, Dataset, RenderIf } from 'react-rainbow-components';
 import { useTheme } from 'react-rainbow-components/libs/hooks';
 import datalabels from 'chartjs-plugin-datalabels';
 import { getNormalizedData, getOptions } from './helpers';
@@ -23,13 +23,16 @@ const DoubleBarChart = (props) => {
     const backColor = theme.rainbow.palette.border.divider;
     const suggestedMax = Math.max(...frontDataset, ...backDataset) + 1;
     const options = getOptions({ xLabel, yLabel, suggestedMax });
+    const hasTitles = frontTitle && backTitle;
 
     return (
         <StyledContainer>
-            <Legend>
-                <LegendItem color={backColor}>{titles[1]}</LegendItem>
-                <LegendItem color={frontColor}>{titles[0]}</LegendItem>
-            </Legend>
+            <RenderIf isTrue={hasTitles}>
+                <Legend>
+                    <LegendItem color={backColor}>{backTitle}</LegendItem>
+                    <LegendItem color={frontColor}>{frontTitle}</LegendItem>
+                </Legend>
+            </RenderIf>
             <Chart
                 plugins={plugins}
                 datalabels={datalabelsConf}
@@ -62,14 +65,14 @@ const DoubleBarChart = (props) => {
 
 DoubleBarChart.propTypes = {
     /** The titles of the datasets */
-    titles: PropTypes.arrayOf(PropTypes.string).isRequired,
+    titles: PropTypes.arrayOf(PropTypes.string),
     /** The data to show in the chart */
     data: PropTypes.arrayOf(
         PropTypes.shape({
             label: PropTypes.string.isRequired,
             values: PropTypes.arrayOf(PropTypes.number),
         }),
-    ).isRequired,
+    ),
     /** Label of the X axis */
     xLabel: PropTypes.string,
     /** Label of the Y axis */
@@ -77,6 +80,8 @@ DoubleBarChart.propTypes = {
 };
 
 DoubleBarChart.defaultProps = {
+    titles: [],
+    data: undefined,
     xLabel: undefined,
     yLabel: undefined,
 };
