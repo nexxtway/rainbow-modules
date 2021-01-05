@@ -61,6 +61,7 @@ import {
     CopyToClipboard,
     FacebookCircle,
     CloseCircleFilled,
+    ColumnsFilled,
     Email,
     QuestionFilled,
     LocationPin,
@@ -410,5 +411,10 @@ export default [
         name: 'download',
         category: 'standard',
         icon: Download,
+    },
+    {
+        name: 'columnsFilled',
+        category: 'standard',
+        icon: ColumnsFilled,
     },
 ];
