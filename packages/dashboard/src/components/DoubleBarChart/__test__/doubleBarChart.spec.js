@@ -4,7 +4,7 @@ import { Chart } from 'react-rainbow-components';
 import DoubleBarChart from '..';
 
 describe('<DoubleBarChart />', () => {
-    test('should render a Chart with type `bar`', () => {
+    it('should render a Chart with type `bar`', () => {
         const titles = ['Test 1', 'Test 2'];
         const data = [
             { label: '1', values: [50, 75] },
@@ -17,7 +17,7 @@ describe('<DoubleBarChart />', () => {
         expect(chart.prop('type')).toBe('bar');
     });
 
-    test('should pass the correct labels to the Chart component', () => {
+    it('should pass the correct labels to the Chart component', () => {
         const titles = ['Test 1', 'Test 2'];
         const data = [
             { label: '1', values: [50, 75] },
@@ -29,7 +29,7 @@ describe('<DoubleBarChart />', () => {
         expect(chart.prop('labels')).toEqual(['1', '2', '3']);
     });
 
-    test('should pass the correct values to each dataset', () => {
+    it('should pass the correct values to each dataset', () => {
         const titles = ['Test 1', 'Test 2'];
         const data = [
             { label: '1', values: [50, 75] },
@@ -43,7 +43,7 @@ describe('<DoubleBarChart />', () => {
         expect(datasets.at(1).prop('values')).toEqual([75, 90, 100]);
     });
 
-    test('should render a legend with the titles provided', () => {
+    it('should render a legend with the titles provided', () => {
         const titles = ['Test 1', 'Test 2'];
         const data = [
             { label: '1', values: [50, 75] },
