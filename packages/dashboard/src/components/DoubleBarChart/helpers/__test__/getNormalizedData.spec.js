@@ -1,14 +1,14 @@
 import getNormalizedData from '../getNormalizedData';
 
 describe('getNormalizedData', () => {
-    it('should return an array with 2 items', () => {
+    it('should return an array with 3 items', () => {
         const data = [
             { label: '1/21', values: [50, 75] },
             { label: '2/21', values: [75, 90] },
             { label: '3/21', values: [95, 100] },
         ];
         const array = getNormalizedData(data);
-        expect(array.length).toBe(2);
+        expect(array.length).toBe(3);
     });
 
     it('should return the correct labels', () => {
@@ -32,8 +32,9 @@ describe('getNormalizedData', () => {
             [50, 75, 95],
             [75, 90, 100],
         ];
-        const [, datasets] = getNormalizedData(data);
-        expect(datasets).toEqual(expected);
+        const [, firstDataset, secondDataset] = getNormalizedData(data);
+        expect(firstDataset).toEqual(expected[0]);
+        expect(secondDataset).toEqual(expected[1]);
     });
 
     it('should fill missing or wrong data with zero', () => {
@@ -47,16 +48,18 @@ describe('getNormalizedData', () => {
             [50, 75, 0, 0],
             [0, 90, 0, 100],
         ];
-        const [, datasets] = getNormalizedData(data);
-        expect(datasets).toEqual(expected);
+        const [, firstDataset, secondDataset] = getNormalizedData(data);
+        expect(firstDataset).toEqual(expected[0]);
+        expect(secondDataset).toEqual(expected[1]);
     });
 
     it('should return empty arrays for labels and dataset when data is wrong', () => {
         const datas = [undefined, 0, 'string', {}];
         datas.forEach((data) => {
-            const [labels, datasets] = getNormalizedData(data);
+            const [labels, firstDataset, secondDataset] = getNormalizedData(data);
             expect(labels).toEqual([]);
-            expect(datasets).toEqual([[], []]);
+            expect(firstDataset).toEqual([]);
+            expect(secondDataset).toEqual([]);
         });
     });
 });

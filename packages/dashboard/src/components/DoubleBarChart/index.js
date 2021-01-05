@@ -17,7 +17,7 @@ const datalabelsConf = {
 const DoubleBarChart = (props) => {
     const { titles, data, xLabel, yLabel } = props;
     const theme = useTheme();
-    const [labels, [frontDataset, backDataset]] = getNormalizedData(data);
+    const [labels, frontDataset, backDataset] = getNormalizedData(data);
     const [frontTitle, backTitle] = titles;
     const frontColor = theme.rainbow.palette.brand.main;
     const backColor = theme.rainbow.palette.border.divider;

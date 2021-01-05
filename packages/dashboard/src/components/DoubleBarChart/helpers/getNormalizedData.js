@@ -1,16 +1,20 @@
 export default function getNormalizedData(data) {
-    const labels = [];
-    const firstDataset = [];
-    const secondDataset = [];
+    const reducer = (accumulator, currentValue) => {
+        const { label, values } = currentValue;
+        if (label) {
+            const [labels, firstDataset, secondDataset] = accumulator;
+            const firstValue = (values && !Number.isNaN(Number(values[0])) && values[0]) || 0;
+            const secondValue = (values && !Number.isNaN(Number(values[1])) && values[1]) || 0;
+            return [
+                [...labels, label],
+                [...firstDataset, firstValue],
+                [...secondDataset, secondValue],
+            ];
+        }
+        return accumulator;
+    };
     if (Array.isArray(data)) {
-        data.forEach((value) => {
-            const { label, values } = value;
-            if (label) {
-                labels.push(label);
-                firstDataset.push((values && !Number.isNaN(Number(values[0])) && values[0]) || 0);
-                secondDataset.push((values && !Number.isNaN(Number(values[1])) && values[1]) || 0);
-            }
-        });
+        return data.reduce(reducer, [[], [], []]);
     }
-    return [labels, [firstDataset, secondDataset]];
+    return [[], [], []];
 }
