@@ -187,7 +187,7 @@ const SearchContainer = (props) => {
     if (isOpen) {
         return createPortal(
             <Backdrop ref={backdropRef} onClick={handleBackdropClick}>
-                <Container onKeyDown={handleKeyPressed}>
+                <Container onKeyDown={handleKeyPressed} data-cy="global-search">
                     <StyledHeader>
                         <InputSearch
                             onChange={handleChange}

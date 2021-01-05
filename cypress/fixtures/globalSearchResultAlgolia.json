@@ -12,10 +12,10 @@
             "objectID": "oyiqaObDENYNsXewJFKZ",
             "_highlightResult": {
                 "title": {
-                    "value": "Complete <em>Harry</em> <em>Potter</em> Boxed Set",
+                    "value": "Complete <em>Harry</em> Potter Boxed Set",
                     "matchLevel": "full",
                     "fullyHighlighted": false,
-                    "matchedWords": ["harry", "potter"]
+                    "matchedWords": ["harry"]
                 },
                 "authors": {
                     "value": "J.K. Rowling",
@@ -41,10 +41,10 @@
             "objectID": "6uCQZbsPDTTdTcHlNSzL",
             "_highlightResult": {
                 "title": {
-                    "value": "<em>Harry</em> <em>Potter</em> Collection (<em>Harry</em> <em>Potter</em>, #1-6)",
+                    "value": "<em>Harry</em> Potter Collection (<em>Harry</em> Potter, #1-6)",
                     "matchLevel": "full",
                     "fullyHighlighted": false,
-                    "matchedWords": ["harry", "potter"]
+                    "matchedWords": ["harry"]
                 },
                 "authors": {
                     "value": "J.K. Rowling",
@@ -70,10 +70,10 @@
             "objectID": "BSYo3WJmPwWhUo1PaQho",
             "_highlightResult": {
                 "title": {
-                    "value": "<em>Harry</em> <em>Potter</em> Boxed Set Books 1-4",
+                    "value": "<em>Harry</em> Potter Boxed Set Books 1-4",
                     "matchLevel": "full",
                     "fullyHighlighted": false,
-                    "matchedWords": ["harry", "potter"]
+                    "matchedWords": ["harry"]
                 },
                 "authors": {
                     "value": "J.K. Rowling, Mary GrandPré",
@@ -99,10 +99,10 @@
             "objectID": "8w2lpjZeKGYiFysROHlE",
             "_highlightResult": {
                 "title": {
-                    "value": "<em>Harry</em> <em>Potter</em> and the Deathly Hallows",
+                    "value": "<em>Harry</em> Potter and the Deathly Hallows",
                     "matchLevel": "full",
                     "fullyHighlighted": false,
-                    "matchedWords": ["harry", "potter"]
+                    "matchedWords": ["harry"]
                 },
                 "authors": {
                     "value": "J.K. Rowling, Mary GrandPré",
@@ -128,10 +128,10 @@
             "objectID": "YnQlBDYOfrd547drP0RW",
             "_highlightResult": {
                 "title": {
-                    "value": "<em>Harry</em> <em>Potter</em> and the Half-Blood Prince",
+                    "value": "<em>Harry</em> Potter and the Half-Blood Prince",
                     "matchLevel": "full",
                     "fullyHighlighted": false,
-                    "matchedWords": ["harry", "potter"]
+                    "matchedWords": ["harry"]
                 },
                 "authors": {
                     "value": "J.K. Rowling, Mary GrandPré",
@@ -157,10 +157,10 @@
             "objectID": "EUN0RcXn03VMSjVbuTdg",
             "_highlightResult": {
                 "title": {
-                    "value": "<em>Harry</em> <em>Potter</em> and the Goblet of Fire",
+                    "value": "<em>Harry</em> Potter and the Goblet of Fire",
                     "matchLevel": "full",
                     "fullyHighlighted": false,
-                    "matchedWords": ["harry", "potter"]
+                    "matchedWords": ["harry"]
                 },
                 "authors": {
                     "value": "J.K. Rowling, Mary GrandPré",
@@ -186,10 +186,10 @@
             "objectID": "5X72Su8YCoRFo2OBUgA7",
             "_highlightResult": {
                 "title": {
-                    "value": "<em>Harry</em> <em>Potter</em> and the Prisoner of Azkaban",
+                    "value": "<em>Harry</em> Potter and the Prisoner of Azkaban",
                     "matchLevel": "full",
                     "fullyHighlighted": false,
-                    "matchedWords": ["harry", "potter"]
+                    "matchedWords": ["harry"]
                 },
                 "authors": {
                     "value": "J.K. Rowling, Mary GrandPré, Rufus Beck",
@@ -215,10 +215,10 @@
             "objectID": "YBCSW1N6ETeJQVa7FqRY",
             "_highlightResult": {
                 "title": {
-                    "value": "<em>Harry</em> <em>Potter</em>: Film Wizardry",
+                    "value": "<em>Harry</em> Potter: Film Wizardry",
                     "matchLevel": "full",
                     "fullyHighlighted": false,
-                    "matchedWords": ["harry", "potter"]
+                    "matchedWords": ["harry"]
                 },
                 "authors": {
                     "value": "Brian Sibley",
@@ -244,10 +244,10 @@
             "objectID": "38hcHkztXxoVkOFBz9ba",
             "_highlightResult": {
                 "title": {
-                    "value": "<em>Harry</em> <em>Potter</em> and the Order of the Phoenix",
+                    "value": "<em>Harry</em> Potter and the Order of the Phoenix",
                     "matchLevel": "full",
                     "fullyHighlighted": false,
-                    "matchedWords": ["harry", "potter"]
+                    "matchedWords": ["harry"]
                 },
                 "authors": {
                     "value": "J.K. Rowling, Mary GrandPré",
@@ -260,159 +260,14 @@
                     "matchedWords": []
                 }
             }
-        },
-        {
-            "title": "Harry Potter and the Philosopher's Stone",
-            "authors": "J.K. Rowling, Mary GrandPré",
-            "cover": "https://images.gr-assets.com/books/1474154022m/3.jpg",
-            "averageRating": 4.44,
-            "releaseDate": 1997,
-            "isbn": "439554934",
-            "language": "eng",
-            "ratingCount": 4800065,
-            "objectID": "UwyPnwJiU38sxJkL2iq6",
-            "_highlightResult": {
-                "title": {
-                    "value": "<em>Harry</em> <em>Potter</em> and the Philosopher's Stone",
-                    "matchLevel": "full",
-                    "fullyHighlighted": false,
-                    "matchedWords": ["harry", "potter"]
-                },
-                "authors": {
-                    "value": "J.K. Rowling, Mary GrandPré",
-                    "matchLevel": "none",
-                    "matchedWords": []
-                },
-                "isbn": {
-                    "value": "439554934",
-                    "matchLevel": "none",
-                    "matchedWords": []
-                }
-            }
-        },
-        {
-            "title": "Harry Potter and the Chamber of Secrets",
-            "authors": "J.K. Rowling, Mary GrandPré",
-            "cover": "https://images.gr-assets.com/books/1474169725m/15881.jpg",
-            "averageRating": 4.37,
-            "releaseDate": 1998,
-            "isbn": "439064864",
-            "language": "eng",
-            "ratingCount": 1906199,
-            "objectID": "vGlVhdF0VuG3IVUh0sXC",
-            "_highlightResult": {
-                "title": {
-                    "value": "<em>Harry</em> <em>Potter</em> and the Chamber of Secrets",
-                    "matchLevel": "full",
-                    "fullyHighlighted": false,
-                    "matchedWords": ["harry", "potter"]
-                },
-                "authors": {
-                    "value": "J.K. Rowling, Mary GrandPré",
-                    "matchLevel": "none",
-                    "matchedWords": []
-                },
-                "isbn": {
-                    "value": "439064864",
-                    "matchLevel": "none",
-                    "matchedWords": []
-                }
-            }
-        },
-        {
-            "title": "Harry, A History: The True Story of a Boy Wizard, His Fans, and Life Inside the Harry Potter Phenomenon",
-            "authors": "Melissa Anelli, J.K. Rowling",
-            "cover": "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png",
-            "averageRating": 4.09,
-            "releaseDate": 2008,
-            "isbn": "1416554955",
-            "language": "eng",
-            "ratingCount": 12528,
-            "objectID": "KSEXgJYPjssVeN6KHwo4",
-            "_highlightResult": {
-                "title": {
-                    "value": "<em>Harry</em>, A History: The True Story of a Boy Wizard, His Fans, and Life Inside the <em>Harry</em> <em>Potter</em> Phenomenon",
-                    "matchLevel": "full",
-                    "fullyHighlighted": false,
-                    "matchedWords": ["harry", "potter"]
-                },
-                "authors": {
-                    "value": "Melissa Anelli, J.K. Rowling",
-                    "matchLevel": "none",
-                    "matchedWords": []
-                },
-                "isbn": {
-                    "value": "1416554955",
-                    "matchLevel": "none",
-                    "matchedWords": []
-                }
-            }
-        },
-        {
-            "title": "The Magical Worlds of Harry Potter: A Treasury of Myths, Legends, and Fascinating Facts",
-            "authors": "David Colbert",
-            "cover": "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png",
-            "averageRating": 3.96,
-            "releaseDate": 2001,
-            "isbn": "042519891X",
-            "language": "eng",
-            "ratingCount": 15145,
-            "objectID": "urbU4gWFSx0BNfrCateD",
-            "_highlightResult": {
-                "title": {
-                    "value": "The Magical Worlds of <em>Harry</em> <em>Potter</em>: A Treasury of Myths, Legends, and Fascinating Facts",
-                    "matchLevel": "full",
-                    "fullyHighlighted": false,
-                    "matchedWords": ["harry", "potter"]
-                },
-                "authors": {
-                    "value": "David Colbert",
-                    "matchLevel": "none",
-                    "matchedWords": []
-                },
-                "isbn": {
-                    "value": "042519891X",
-                    "matchLevel": "none",
-                    "matchedWords": []
-                }
-            }
-        },
-        {
-            "title": "Harry Potter and the Cursed Child, Parts One and Two",
-            "authors": "John Tiffany, Jack Thorne, J.K. Rowling",
-            "cover": "https://images.gr-assets.com/books/1470082995m/29056083.jpg",
-            "averageRating": 3.75,
-            "releaseDate": 2016,
-            "isbn": "751565350",
-            "language": "eng",
-            "ratingCount": 397773,
-            "objectID": "lzjFeP6MeQr7hdgzao37",
-            "_highlightResult": {
-                "title": {
-                    "value": "<em>Harry</em> <em>Potter</em> and the Cursed Child, Parts One and Two",
-                    "matchLevel": "full",
-                    "fullyHighlighted": false,
-                    "matchedWords": ["harry", "potter"]
-                },
-                "authors": {
-                    "value": "John Tiffany, Jack Thorne, J.K. Rowling",
-                    "matchLevel": "none",
-                    "matchedWords": []
-                },
-                "isbn": {
-                    "value": "751565350",
-                    "matchLevel": "none",
-                    "matchedWords": []
-                }
-            }
         }
     ],
-    "nbHits": 14,
+    "nbHits": 36,
     "page": 0,
-    "nbPages": 1,
-    "hitsPerPage": 20,
+    "nbPages": 2,
+    "hitsPerPage": 10,
     "exhaustiveNbHits": true,
-    "query": "Harry Potter",
-    "params": "query=Harry+Potter&page=0",
+    "query": "harry",
+    "params": "query=harry&page=0",
     "processingTimeMS": 1
 }

@@ -57,13 +57,12 @@ export default function Results(props) {
         setInternalActivePage(1);
         onSearch({ query, page: 1 });
     };
-
     return (
         <ResultsContainer>
             <Tabset variant="line" activeTabName={activeTab} onSelect={handleTabChange}>
                 <Tabs results={results} />
             </Tabset>
-            <Content>
+            <Content data-cy={activeTab}>
                 <ResultsContent role="presentation">
                     <RenderIf isTrue={isLoading}>
                         <Spinner />
