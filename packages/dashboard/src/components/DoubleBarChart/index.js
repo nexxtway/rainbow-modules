@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { ThemeContext } from 'styled-components';
 import { Chart, Dataset } from 'react-rainbow-components';
+import { useTheme } from 'react-rainbow-components/libs/hooks';
 import datalabels from 'chartjs-plugin-datalabels';
 import handleData from './helpers/handleData';
 import { Legend, LegendItem } from './legend';
@@ -14,26 +14,14 @@ const datalabelsConf = {
     align: 'top',
     display: 'auto',
 };
-const defaultColors = {
-    rainbow: {
-        palette: {
-            brand: {
-                main: '#01B6F6',
-            },
-            border: {
-                divider: '#D7D9E2',
-            },
-        },
-    },
-};
 
 const DoubleBarChart = (props) => {
     const { titles, data, xLabel, yLabel } = props;
-    const { rainbow } = useContext(ThemeContext) || defaultColors;
+    const theme = useTheme();
     const [labels, [frontDataset, backDataset]] = handleData(data);
     const [frontTitle, backTitle] = titles;
-    const frontColor = rainbow.palette.brand.main;
-    const backColor = rainbow.palette.border.divider;
+    const frontColor = theme.rainbow.palette.brand.main;
+    const backColor = theme.rainbow.palette.border.divider;
     const suggestedMax = Math.max(...frontDataset, ...backDataset) + 1;
     const options = getOptions({ xLabel, yLabel, suggestedMax });
 
