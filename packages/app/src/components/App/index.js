@@ -12,6 +12,7 @@ import ConfirmModal from '../ConfirmModal';
 import { updateAppActions } from '../../actions';
 import getBrowserLocale from '../../helpers/getBrowserLocale';
 import AppNotificationManager from '../AppNotificationManager';
+import Crashes from '../Crashes';
 
 const RainbowFirebaseApp = (props) => {
     const {
@@ -58,35 +59,37 @@ const RainbowFirebaseApp = (props) => {
     }, []);
 
     return (
-        <ReduxContainer reducers={reducers} middlewares={middlewares}>
-            <FirebaseProvider value={firebaseContext}>
-                <I18nContainer
-                    locale={applicationLocale}
-                    messages={translations[applicationLocale]}
-                >
-                    <Application theme={theme} locale={applicationLocale}>
-                        <RenderIf isTrue={!isInitializing}>
-                            <BrowserRouter>{children}</BrowserRouter>
-                        </RenderIf>
-                        <RenderIf isTrue={isLoading}>
-                            <AppSpinner spinner={spinner} />
-                        </RenderIf>
-                        <AppMessage
-                            isVisible={isMessageVisible}
-                            onHideMessage={() => setIsMessageVisible(false)}
-                            // eslint-disable-next-line react/jsx-props-no-spreading
-                            {...messageParams}
-                        />
-                        <ConfirmModal
-                            isOpen={isConfirmModalVisible}
-                            // eslint-disable-next-line react/jsx-props-no-spreading
-                            {...confirmModalParams}
-                        />
-                        <AppNotificationManager />
-                    </Application>
-                </I18nContainer>
-            </FirebaseProvider>
-        </ReduxContainer>
+        <Application theme={theme} locale={applicationLocale}>
+            <Crashes>
+                <ReduxContainer reducers={reducers} middlewares={middlewares}>
+                    <FirebaseProvider value={firebaseContext}>
+                        <I18nContainer
+                            locale={applicationLocale}
+                            messages={translations[applicationLocale]}
+                        >
+                            <RenderIf isTrue={!isInitializing}>
+                                <BrowserRouter>{children}</BrowserRouter>
+                            </RenderIf>
+                            <RenderIf isTrue={isLoading}>
+                                <AppSpinner spinner={spinner} />
+                            </RenderIf>
+                            <AppMessage
+                                isVisible={isMessageVisible}
+                                onHideMessage={() => setIsMessageVisible(false)}
+                                // eslint-disable-next-line react/jsx-props-no-spreading
+                                {...messageParams}
+                            />
+                            <ConfirmModal
+                                isOpen={isConfirmModalVisible}
+                                // eslint-disable-next-line react/jsx-props-no-spreading
+                                {...confirmModalParams}
+                            />
+                            <AppNotificationManager />
+                        </I18nContainer>
+                    </FirebaseProvider>
+                </ReduxContainer>
+            </Crashes>
+        </Application>
     );
 };
 
