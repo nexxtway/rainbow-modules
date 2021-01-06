@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.21.0](https://github.com/nexxtway/rainbow-modules/compare/v0.20.2...v0.21.0) (2021-01-03)
+
+### Bug Fixes
+
+-   fixed multiselect in universal form modal example ([#278](https://github.com/nexxtway/rainbow-modules/issues/278)) ([4e7bb85](https://github.com/nexxtway/rainbow-modules/commit/4e7bb850f1ed88516f97af7865b85891973599ab))
+
+### Features
+
+-   implement useSetDoc in firebase-hooks ([#279](https://github.com/nexxtway/rainbow-modules/issues/279)) ([f9a30af](https://github.com/nexxtway/rainbow-modules/commit/f9a30af9ae5737f9cfbeb686181a6aa87dba0d7f))
+-   updated cypress version ([#280](https://github.com/nexxtway/rainbow-modules/issues/280)) ([3ffa83c](https://github.com/nexxtway/rainbow-modules/commit/3ffa83c5d38b06ac99736f744757e5b6ca17345d))
+
+## [0.20.2](https://github.com/nexxtway/rainbow-modules/compare/v0.20.1...v0.20.2) (2021-01-01)
+
+### Bug Fixes
+
+-   useMutationFlow type in onSuccess prop ([9aeabe0](https://github.com/nexxtway/rainbow-modules/commit/9aeabe0b54ec3ac2e07ebc1cec04e507dfb8ed4a))
+
 ## [0.20.1](https://github.com/nexxtway/rainbow-modules/compare/v0.20.0...v0.20.1) (2020-12-31)
 
 ### Bug Fixes
