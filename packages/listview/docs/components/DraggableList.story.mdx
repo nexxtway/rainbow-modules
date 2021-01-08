@@ -1,0 +1,25 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import DraggableList from '../../src/components/DraggableList';
+import * as stories from '../stories/DraggableList.story.js';
+
+<Meta title="Modules|Listview/Components" component={DraggableList} />
+
+# Overview
+
+`DraggableList` displays a collection of data as a re-orderable list. It is built on top of the [react-beautiful-dnd library](https://github.com/atlassian/react-beautiful-dnd).
+
+### This is a basic example.
+
+#### By default the component will render the value that map the `field` prop value on every object item in the `data`. e.g. If field="name" for the first item will render `data[0].name`.
+
+<Preview>
+    <Story name="DraggableList">{stories.Basic()}</Story>
+</Preview>
+
+### Custom item component.
+
+#### There are use cases where you want to render your custom UI for every item in the list. In that case, you can use the `component` prop that is a Function | Class Component, when internally the draggable component instantiates the component, it will pass down as properties the `value` and entire item object as `row` plus any other prop passed to the DragglableList.
+
+# Component props
+
+<Props of={DraggableList} />
