@@ -68,6 +68,10 @@ import {
     LocationPinFilled,
     Download,
     OpenBookFilled,
+    TextFilled,
+    Upload,
+    OneFilled,
+    List,
 } from '../../../src';
 
 export default [
@@ -416,5 +420,25 @@ export default [
         name: 'columnsFilled',
         category: 'standard',
         icon: ColumnsFilled,
+    },
+    {
+        name: 'textFilled',
+        category: 'standard',
+        icon: TextFilled,
+    },
+    {
+        name: 'upload',
+        category: 'standard',
+        icon: Upload,
+    },
+    {
+        name: 'oneFilled',
+        category: 'standard',
+        icon: OneFilled,
+    },
+    {
+        name: 'list',
+        category: 'standard',
+        icon: List,
     },
 ];
