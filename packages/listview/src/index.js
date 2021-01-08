@@ -5,3 +5,4 @@ export { default as BatchActionsBar } from './components/BatchActionsBar';
 export { default as NavigationButtonColumn } from './components/NavigationButtonColumn';
 export { default as FloatingSearch } from './components/FloatingSearch';
 export { default as FloatingSearchButtonIcon } from './components/FloatingSearchButtonIcon';
+export { default as DraggableList } from './components/DraggableList';
