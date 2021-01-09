@@ -83,7 +83,8 @@
         "redux": "^4.0.5",
         "redux-form": "^8.3.5",
         "redux-thunk": "^2.3.0",
-        "styled-components": "^4.3.2"
+        "styled-components": "^4.3.2",
+        "chartjs-plugin-datalabels": "^0.7.0"
     },
     "husky": {
         "hooks": {
