@@ -1,11 +1,12 @@
 import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
+import copy from 'copy-to-clipboard';
 import { ButtonIcon } from 'react-rainbow-components';
 import InternalTooltip from 'react-rainbow-components/components/InternalTooltip';
 import { useScrollingIntent } from '@rainbow-modules/hooks';
 import { CopyToClipboard } from '@rainbow-modules/icons';
-import { isSupported, copy } from './helpers';
+import { isSupported } from './helpers';
 import messages from './messages';
 
 /** A button with modern approach to copy text to clipboard. Would try to use execCommand with fallback to IE specific clipboardData interface. */

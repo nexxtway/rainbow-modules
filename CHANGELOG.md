@@ -3,6 +3,49 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.22.0](https://github.com/nexxtway/rainbow-modules/compare/v0.21.0...v0.22.0) (2021-01-08)
+
+### Features
+
+-   add columnFilled icon ([#283](https://github.com/nexxtway/rainbow-modules/issues/283)) ([e21074d](https://github.com/nexxtway/rainbow-modules/commit/e21074d9ff0de243dc1a4a37b0ba3b1949dbd2e6))
+-   add DraggableList component to listview module ([#289](https://github.com/nexxtway/rainbow-modules/issues/289)) ([f6a4ee3](https://github.com/nexxtway/rainbow-modules/commit/f6a4ee395c11ccdeb5eed24be01d3912e82a1933))
+-   add new icons ([#285](https://github.com/nexxtway/rainbow-modules/issues/285)) ([887cbd9](https://github.com/nexxtway/rainbow-modules/commit/887cbd98ccf5438463e35a0bd732bc1acf9e3b31))
+
+# [0.21.0](https://github.com/nexxtway/rainbow-modules/compare/v0.20.2...v0.21.0) (2021-01-03)
+
+### Bug Fixes
+
+-   fixed multiselect in universal form modal example ([#278](https://github.com/nexxtway/rainbow-modules/issues/278)) ([4e7bb85](https://github.com/nexxtway/rainbow-modules/commit/4e7bb850f1ed88516f97af7865b85891973599ab))
+
+### Features
+
+-   implement useSetDoc in firebase-hooks ([#279](https://github.com/nexxtway/rainbow-modules/issues/279)) ([f9a30af](https://github.com/nexxtway/rainbow-modules/commit/f9a30af9ae5737f9cfbeb686181a6aa87dba0d7f))
+-   updated cypress version ([#280](https://github.com/nexxtway/rainbow-modules/issues/280)) ([3ffa83c](https://github.com/nexxtway/rainbow-modules/commit/3ffa83c5d38b06ac99736f744757e5b6ca17345d))
+
+## [0.20.2](https://github.com/nexxtway/rainbow-modules/compare/v0.20.1...v0.20.2) (2021-01-01)
+
+### Bug Fixes
+
+-   useMutationFlow type in onSuccess prop ([9aeabe0](https://github.com/nexxtway/rainbow-modules/commit/9aeabe0b54ec3ac2e07ebc1cec04e507dfb8ed4a))
+
+## [0.20.1](https://github.com/nexxtway/rainbow-modules/compare/v0.20.0...v0.20.1) (2020-12-31)
+
+### Bug Fixes
+
+-   add doc to useBatch and fix useMutationFlow ([#277](https://github.com/nexxtway/rainbow-modules/issues/277)) ([b78268d](https://github.com/nexxtway/rainbow-modules/commit/b78268dd37d6910a5e3a924255f726ddd85719b8))
+-   fixed bug in copy to clipboard ([#276](https://github.com/nexxtway/rainbow-modules/issues/276)) ([307c429](https://github.com/nexxtway/rainbow-modules/commit/307c42958a1db8fd92f73079146344e98d09ae6a))
+
+# [0.20.0](https://github.com/nexxtway/rainbow-modules/compare/v0.19.2...v0.20.0) (2020-12-30)
+
+### Bug Fixes
+
+-   fixed universal form modal example ([#271](https://github.com/nexxtway/rainbow-modules/issues/271)) ([4839327](https://github.com/nexxtway/rainbow-modules/commit/483932732669d6457a9c21cb71dafbae50bdf6fd))
+-   universal form modal examples ([#273](https://github.com/nexxtway/rainbow-modules/issues/273)) ([eda9ff0](https://github.com/nexxtway/rainbow-modules/commit/eda9ff0d221f9c83f3db3d9f810e33626c2a2ef6))
+
+### Features
+
+-   add useBatch ([#275](https://github.com/nexxtway/rainbow-modules/issues/275)) ([fe2bfd5](https://github.com/nexxtway/rainbow-modules/commit/fe2bfd50e8147c65c4ac617fb6880ea4b7344141))
+
 ## [0.19.2](https://github.com/nexxtway/rainbow-modules/compare/v0.19.1...v0.19.2) (2020-12-28)
 
 ### Bug Fixes

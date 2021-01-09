@@ -12,8 +12,8 @@ hook behind the scene. The hook will return an object with a `mutate` async func
 
 ```js
 const { mutate, isLoading } = useUpdateDoc();
-const onUpdate = async (values) => {
-    await mutate('/books/JLaSkUit8rIIqqXQvav1', values);
+const onUpdate = async (data) => {
+    await mutate({ path: '/books/JLaSkUit8rIIqqXQvav1', data });
 };
 
 <Button label="Update Book" onClick={onUpdate} isLoading={isLoading} />;

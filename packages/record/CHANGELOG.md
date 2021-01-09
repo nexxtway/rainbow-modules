@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.22.0](https://github.com/nexxtway/rainbow-modules/compare/v0.21.0...v0.22.0) (2021-01-08)
+
+**Note:** Version bump only for package @rainbow-modules/record
+
+# [0.21.0](https://github.com/nexxtway/rainbow-modules/compare/v0.20.2...v0.21.0) (2021-01-03)
+
+**Note:** Version bump only for package @rainbow-modules/record
+
+## [0.20.2](https://github.com/nexxtway/rainbow-modules/compare/v0.20.1...v0.20.2) (2021-01-01)
+
+**Note:** Version bump only for package @rainbow-modules/record
+
+## [0.20.1](https://github.com/nexxtway/rainbow-modules/compare/v0.20.0...v0.20.1) (2020-12-31)
+
+### Bug Fixes
+
+-   fixed bug in copy to clipboard ([#276](https://github.com/nexxtway/rainbow-modules/issues/276)) ([307c429](https://github.com/nexxtway/rainbow-modules/commit/307c42958a1db8fd92f73079146344e98d09ae6a))
+
+# [0.20.0](https://github.com/nexxtway/rainbow-modules/compare/v0.19.2...v0.20.0) (2020-12-30)
+
+**Note:** Version bump only for package @rainbow-modules/record
+
 # [0.19.0](https://github.com/nexxtway/rainbow-modules/compare/v0.18.0...v0.19.0) (2020-12-27)
 
 ### Features

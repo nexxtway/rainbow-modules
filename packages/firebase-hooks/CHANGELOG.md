@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.22.0](https://github.com/nexxtway/rainbow-modules/compare/v0.21.0...v0.22.0) (2021-01-08)
+
+**Note:** Version bump only for package @rainbow-modules/firebase-hooks
+
+# [0.21.0](https://github.com/nexxtway/rainbow-modules/compare/v0.20.2...v0.21.0) (2021-01-03)
+
+### Features
+
+-   implement useSetDoc in firebase-hooks ([#279](https://github.com/nexxtway/rainbow-modules/issues/279)) ([f9a30af](https://github.com/nexxtway/rainbow-modules/commit/f9a30af9ae5737f9cfbeb686181a6aa87dba0d7f))
+
+## [0.20.1](https://github.com/nexxtway/rainbow-modules/compare/v0.20.0...v0.20.1) (2020-12-31)
+
+### Bug Fixes
+
+-   add doc to useBatch and fix useMutationFlow ([#277](https://github.com/nexxtway/rainbow-modules/issues/277)) ([b78268d](https://github.com/nexxtway/rainbow-modules/commit/b78268dd37d6910a5e3a924255f726ddd85719b8))
+
+# [0.20.0](https://github.com/nexxtway/rainbow-modules/compare/v0.19.2...v0.20.0) (2020-12-30)
+
+### Features
+
+-   add useBatch ([#275](https://github.com/nexxtway/rainbow-modules/issues/275)) ([fe2bfd5](https://github.com/nexxtway/rainbow-modules/commit/fe2bfd50e8147c65c4ac617fb6880ea4b7344141))
+
 # [0.19.0](https://github.com/nexxtway/rainbow-modules/compare/v0.18.0...v0.19.0) (2020-12-27)
 
 ### Features

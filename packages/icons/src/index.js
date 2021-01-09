@@ -69,3 +69,8 @@ export { default as LocationPinFilled } from './components/locationPinFilled';
 export { default as LocationPin } from './components/locationPin';
 export { default as OpenBookFilled } from './components/openBookFilled';
 export { default as Download } from './components/download';
+export { default as ColumnsFilled } from './components/columnsFilled';
+export { default as TextFilled } from './components/textFilled';
+export { default as Upload } from './components/upload';
+export { default as OneFilled } from './components/oneFilled';
+export { default as List } from './components/list';

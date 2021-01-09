@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from 'react';
+import React from 'react';
 import { Field } from 'react-final-form';
 import styled from 'styled-components';
 import {
@@ -94,7 +94,7 @@ const Books = () => {
     const onRemove = (_, { id }) => removeBook(`/books/${id}`);
     const { mutate } = useMutationFlow({
         mutation: updateDoc,
-        onSucess: closeModal,
+        onSuccess: closeModal,
         successMessage: 'Book updated sucessfully.',
     });
     const onEdit = (_, book) => {
@@ -132,8 +132,6 @@ const Books = () => {
 };
 
 const Fields = () => {
-    const [value, setValue] = useState([]);
-
     return (
         <div>
             <Field
@@ -159,8 +157,6 @@ const Fields = () => {
                 component={MultiSelect}
                 label="Select categories"
                 placeholder="Select categories"
-                value={value}
-                onChange={setValue}
                 bottomHelpText="You can select several options"
                 variant="chip"
                 className="rainbow-m-bottom_large"
@@ -189,7 +185,7 @@ const App = () => {
     const { mutate: addBook } = useAddDoc('books');
     const { mutate } = useMutationFlow({
         mutation: addBook,
-        onSucess: closeModal,
+        onSuccess: closeModal,
         successMessage: 'Book created successfully.',
     });
     const openCreateBook = () =>

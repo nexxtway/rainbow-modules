@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.22.0](https://github.com/nexxtway/rainbow-modules/compare/v0.21.0...v0.22.0) (2021-01-08)
+
+### Features
+
+-   add columnFilled icon ([#283](https://github.com/nexxtway/rainbow-modules/issues/283)) ([e21074d](https://github.com/nexxtway/rainbow-modules/commit/e21074d9ff0de243dc1a4a37b0ba3b1949dbd2e6))
+-   add new icons ([#285](https://github.com/nexxtway/rainbow-modules/issues/285)) ([887cbd9](https://github.com/nexxtway/rainbow-modules/commit/887cbd98ccf5438463e35a0bd732bc1acf9e3b31))
+
+# [0.21.0](https://github.com/nexxtway/rainbow-modules/compare/v0.20.2...v0.21.0) (2021-01-03)
+
+**Note:** Version bump only for package @rainbow-modules/icons
+
+# [0.20.0](https://github.com/nexxtway/rainbow-modules/compare/v0.19.2...v0.20.0) (2020-12-30)
+
+**Note:** Version bump only for package @rainbow-modules/icons
+
 # [0.19.0](https://github.com/nexxtway/rainbow-modules/compare/v0.18.0...v0.19.0) (2020-12-27)
 
 ### Bug Fixes

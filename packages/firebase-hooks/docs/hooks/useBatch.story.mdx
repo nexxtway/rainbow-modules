@@ -1,0 +1,76 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import * as stories from '../stories/useBatch.story.js';
+
+<Meta title="Modules|firebase-hooks/Hooks" />
+
+# Overview
+
+`useBatch` hook is used for batch operations in firestore like add, set, update or delete a bunch of documents. It will return the basic batch functions: batchAdd, batchSet, batchUpdate, and batchDelete.
+
+### batchAdd example.
+
+```js
+const { batchAdd } = useBatch({
+    collection: 'books',
+});
+
+await batchAdd([
+    { author: 'Axel Rauschmayer', name: 'Speaking Javascript' },
+    { author: 'Kyle Simpson', name: "You don't know JS" },
+]);
+```
+
+### batchSet example.
+
+```js
+const { batchSet } = useBatch({
+    collection: 'books',
+});
+
+await batchSet(
+    [
+        {
+            id: 'JUMdZUwPzD2bWERLaJ4u',
+            data: { author: 'Axel Rauschmayer', name: 'Speaking Javascript' },
+        },
+        {
+            id: 'LsNohzkufhrz92OPRYqZ',
+            data: { author: 'Kyle Simpson', name: "You don't know JS" },
+        },
+    ],
+    { merge: true },
+);
+```
+
+### batchUpdate example.
+
+```js
+const { batchUpdate } = useBatch({
+    collection: 'books',
+});
+
+await batchUpdate([
+    {
+        id: 'JUMdZUwPzD2bWERLaJ4u',
+        data: { author: 'Axel Rauschmayer', name: 'Speaking Javascript' },
+    },
+    {
+        id: 'LsNohzkufhrz92OPRYqZ',
+        data: { author: 'Kyle Simpson', name: "You don't know JS" },
+    },
+]);
+```
+
+### batchDelete example.
+
+```js
+const { batchDelete } = useBatch({
+    collection: 'books',
+});
+
+await batchDelete([{ id: 'JUMdZUwPzD2bWERLaJ4u' }, { id: 'LsNohzkufhrz92OPRYqZ' }]);
+```
+
+<Preview>
+    <Story name="useBatch">{stories.batchOperations()}</Story>
+</Preview>
