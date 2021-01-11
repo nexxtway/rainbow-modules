@@ -63,7 +63,7 @@ export default function Results(props) {
                 <Tabs results={results} />
             </Tabset>
             <Content data-cy={activeTab}>
-                <ResultsContent role="presentation">
+                <ResultsContent role="presentation" data-cy={`page-${internalActivePage}`}>
                     <RenderIf isTrue={isLoading}>
                         <Spinner />
                     </RenderIf>
