@@ -1,0 +1,20 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import DoubleBarChart from '../../src/components/DoubleBarChart';
+import * as stories from '../stories/DoubleBarChart.story.js';
+
+<Meta title="Modules|Dashboard/Components" component={DoubleBarChart} />
+
+# Overview
+
+`DoubleBarChart` component provides a chart with double bars, ideal to show
+information about two related datasets, for example, 'sent' and 'delivered' messages.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="DoubleBarChart">{stories.doubleBarChart()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={DoubleBarChart} />
