@@ -12,7 +12,7 @@ import ConfirmModal from '../ConfirmModal';
 import { updateAppActions } from '../../actions';
 import getBrowserLocale from '../../helpers/getBrowserLocale';
 import AppNotificationManager from '../AppNotificationManager';
-import Crashes from '../Crashes';
+import ErrorBoundary from '../ErrorBoundary';
 
 const RainbowFirebaseApp = (props) => {
     const {
@@ -25,6 +25,8 @@ const RainbowFirebaseApp = (props) => {
         middlewares,
         initialize,
         spinner,
+        errorComponent,
+        onError,
     } = props;
     const firebaseContext = useMemo(() => ({ app }), [app]);
     const [isLoading, setLoading] = useState(false);
@@ -60,7 +62,7 @@ const RainbowFirebaseApp = (props) => {
 
     return (
         <Application theme={theme} locale={applicationLocale}>
-            <Crashes>
+            <ErrorBoundary component={errorComponent} onError={onError}>
                 <ReduxContainer reducers={reducers} middlewares={middlewares}>
                     <FirebaseProvider value={firebaseContext}>
                         <I18nContainer
@@ -88,7 +90,7 @@ const RainbowFirebaseApp = (props) => {
                         </I18nContainer>
                     </FirebaseProvider>
                 </ReduxContainer>
-            </Crashes>
+            </ErrorBoundary>
         </Application>
     );
 };
@@ -112,6 +114,10 @@ RainbowFirebaseApp.propTypes = {
     initialize: PropTypes.func,
     /** The spinner to show when the app is loading. */
     spinner: PropTypes.node,
+    /** A component that is rendered when an error is caught */
+    errorComponent: PropTypes.node,
+    /** A functions that is used to manage the error that is caught */
+    onError: PropTypes.func,
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
 };
 
@@ -124,6 +130,8 @@ RainbowFirebaseApp.defaultProps = {
     reducers: {},
     middlewares: [],
     initialize: undefined,
+    errorComponent: undefined,
+    onError: () => {},
 };
 
 export default RainbowFirebaseApp;

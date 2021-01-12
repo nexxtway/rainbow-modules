@@ -2,7 +2,7 @@
 import React from 'react';
 import RainbowFirebaseApp from '../../src/components/App';
 
-export const DefaultCrashes = () => {
+export const DefaultErrorBoundary = () => {
     return (
         <RainbowFirebaseApp>
             <Error />

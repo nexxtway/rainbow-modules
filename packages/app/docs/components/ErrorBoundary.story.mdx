@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import ErrorBoundary from '../../src/components/ErrorBoundary';
+import * as stories from '../stories/appErrorBoundary.story.js';
+
+<Meta title="Modules|App/Components" component={ErrorBoundary} />
+
+# Overview
+
+`ErrorBoundary` component is used to catch an error in your app and display it in a user friendly way. This functionality is included in `RainbowFirebaseApp`.
+
+### This is an example with the ErrorBoundary component.
+
+<Preview>
+    <Story name="ErrorBoundary">{stories.DefaultErrorBoundary()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={ErrorBoundary} />
