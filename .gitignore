@@ -7,4 +7,5 @@ storybook-static
 .env*
 .vscode/
 cypress/screenshots
+cypress/videos
 .DS_Store
