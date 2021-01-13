@@ -1,6 +1,7 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { BrowserRouter } from 'react-router-dom';
+import styled from 'styled-components';
 import Application from 'react-rainbow-components/components/Application';
 import RenderIf from 'react-rainbow-components/components/RenderIf';
 import { FirebaseProvider } from '@rainbow-modules/firebase-hooks';
@@ -13,6 +14,20 @@ import { updateAppActions } from '../../actions';
 import getBrowserLocale from '../../helpers/getBrowserLocale';
 import AppNotificationManager from '../AppNotificationManager';
 import ErrorBoundary from '../ErrorBoundary';
+import ErrorMessage from '../ErrorBoundary/errorMessage';
+
+const ErrorComponentContainer = styled.div`
+    height: 100vh;
+`;
+
+// eslint-disable-next-line react/prop-types
+const DefaultErrorMessage = ({ errorTrace }) => {
+    return (
+        <ErrorComponentContainer>
+            <ErrorMessage errorTrace={errorTrace} />
+        </ErrorComponentContainer>
+    );
+};
 
 const RainbowFirebaseApp = (props) => {
     const {
@@ -130,7 +145,7 @@ RainbowFirebaseApp.defaultProps = {
     reducers: {},
     middlewares: [],
     initialize: undefined,
-    errorComponent: undefined,
+    errorComponent: DefaultErrorMessage,
     onError: () => {},
 };
 
