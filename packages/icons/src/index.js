@@ -74,3 +74,5 @@ export { default as TextFilled } from './components/textFilled';
 export { default as Upload } from './components/upload';
 export { default as OneFilled } from './components/oneFilled';
 export { default as List } from './components/list';
+export { default as Seat } from './components/seat';
+export { default as FrontCar } from './components/frontCar';
