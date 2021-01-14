@@ -72,6 +72,8 @@ import {
     Upload,
     OneFilled,
     List,
+    FrontCar,
+    Seat,
 } from '../../../src';
 
 export default [
@@ -440,5 +442,15 @@ export default [
         name: 'list',
         category: 'standard',
         icon: List,
+    },
+    {
+        name: 'seat',
+        category: 'standard',
+        icon: Seat,
+    },
+    {
+        name: 'frontCar',
+        category: 'standard',
+        icon: FrontCar,
     },
 ];
