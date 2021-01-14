@@ -16,8 +16,8 @@ describe('withCustomError', () => {
         expect(validitor()).toBe('custom error');
     });
     it('should return function error', () => {
-        const errorMessage = () => 'function error';
-        const validitor = withCustomError(validatorReturnError)(errorMessage);
+        const functionError = () => 'function error';
+        const validitor = withCustomError(validatorReturnError)(functionError);
         expect(validitor()).toBe('function error');
     });
 });
