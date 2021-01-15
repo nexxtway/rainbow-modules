@@ -17,7 +17,7 @@ export const ErrorText = styled.p`
     padding: 30px;
     border-radius: 0.9rem;
     margin-top: 10px;
-    font-family: Menlo-Regular;
+    font-family: Menlo-Regular, sans-serif;
     line-height: 2;
     overflow: auto;
 `;
