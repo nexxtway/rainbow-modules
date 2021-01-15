@@ -92,5 +92,5 @@ export const BasicRecordHeader = () => {
 };
 
 export default {
-    title: 'Modules|Record/Stories/',
+    title: 'Modules/Record/Stories/RecordHeader',
 };

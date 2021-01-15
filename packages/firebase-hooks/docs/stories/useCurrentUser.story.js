@@ -33,7 +33,3 @@ export const gettingCurrentUser = () => {
         </RainbowFirebaseApp>
     );
 };
-
-export default {
-    title: 'Modules|firebase-hooks/Stories',
-};

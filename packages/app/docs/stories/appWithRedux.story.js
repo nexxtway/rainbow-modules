@@ -77,7 +77,3 @@ export const increaseCounter = () => {
         </RainbowFirebaseApp>
     );
 };
-
-export default {
-    title: 'Modules|App/Stories',
-};

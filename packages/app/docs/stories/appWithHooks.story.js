@@ -16,7 +16,3 @@ export const appFirebaseHooks = () => {
         </RainbowFirebaseApp>
     );
 };
-
-export default {
-    title: 'Modules|App/Stories',
-};

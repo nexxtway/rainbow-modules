@@ -1,7 +1,7 @@
 import { Meta } from '@storybook/addon-docs/blocks';
 import { WrapperScrollingIntent } from '../stories';
 
-<Meta title="Modules|Hooks/useScrollingIntent" />
+<Meta title="Modules/Hooks/useScrollingIntent" />
 
 # Overview
 
@@ -16,10 +16,10 @@ useScrollingIntent({ callback, isListening, triggerElementRef, threshold });
 ### Params
 
 | Property          | Description                                     | Type            | Default          |
-| ----------------- | ----------------------------------------------- | --------------- | ---------------- |
+| ----------------- | ----------------------------------------------- | --------------- | ---------------- | --- |
 | callback          | Callback function that trigger on scroll intent | (event) => void |                  |
 | isListening       | Add or remove the event listener                | boolean         | true             |
-| triggerElementRef | Dom ref of the trigger element                  | ElementRef      | () => ElementRef |  |
+| triggerElementRef | Dom ref of the trigger element                  | ElementRef      | () => ElementRef |     |
 | threshold         | Limit in px that will trigger the callback      | number          | 20               |
 
 ### Usage

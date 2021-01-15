@@ -113,5 +113,5 @@ export const navigationButtonColumn = () => {
 };
 
 export default {
-    title: 'Modules|Listview/Stories/',
+    title: 'Modules/Listview/Stories/NavigationButtonColumn',
 };

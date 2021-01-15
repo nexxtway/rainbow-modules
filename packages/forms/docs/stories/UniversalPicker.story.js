@@ -424,5 +424,5 @@ export const BasicRadioPicker = () => {
 };
 
 export default {
-    title: 'Modules|Forms/Stories/UniversalPicker',
+    title: 'Modules/Forms/Stories/UniversalPicker',
 };
