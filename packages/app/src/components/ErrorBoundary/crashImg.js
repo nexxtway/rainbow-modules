@@ -8,6 +8,7 @@ const CrashImg = () => {
             viewBox="0 0 353 201"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
+            style={{ flexShrink: '0' }}
         >
             <title>crash</title>
             <defs>

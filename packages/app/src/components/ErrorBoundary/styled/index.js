@@ -17,6 +17,9 @@ export const ErrorText = styled.p`
     padding: 30px;
     border-radius: 0.9rem;
     margin-top: 10px;
+    font-family: 'Menlo-Regular';
+    line-height: 2;
+    overflow: auto;
 `;
 
 export const Title = styled.h3`
