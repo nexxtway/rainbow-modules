@@ -11,3 +11,5 @@ export interface RainbowFirebaseAppProps {
     spinner?: ReactNode;
     children?: ReactNode;
 }
+
+export default function (props: RainbowFirebaseAppProps): JSX.Element | null;
