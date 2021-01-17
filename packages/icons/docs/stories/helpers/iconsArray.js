@@ -74,6 +74,7 @@ import {
     List,
     FrontCar,
     Seat,
+    Function,
 } from '../../../src';
 
 export default [
@@ -452,5 +453,10 @@ export default [
         name: 'frontCar',
         category: 'standard',
         icon: FrontCar,
+    },
+    {
+        name: 'function',
+        category: 'standard',
+        icon: Function,
     },
 ];
