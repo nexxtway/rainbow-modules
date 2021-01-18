@@ -76,3 +76,4 @@ export { default as OneFilled } from './components/oneFilled';
 export { default as List } from './components/list';
 export { default as Seat } from './components/seat';
 export { default as FrontCar } from './components/frontCar';
+export { default as Function } from './components/function';
