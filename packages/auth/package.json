@@ -12,6 +12,7 @@
         "@rainbow-modules/firebase-hooks": "^0.22.0"
     },
     "peerDependencies": {
+        "react": ">=16.8.0",
         "react-router-dom": ">=5.0.0"
     },
     "publishConfig": {
