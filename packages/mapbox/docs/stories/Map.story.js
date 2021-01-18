@@ -116,5 +116,5 @@ export const mapWithDynamicRoute = () => {
 };
 
 export default {
-    title: 'Modules|Mapbox/Stories/Map',
+    title: 'Modules/Mapbox/Stories/Map',
 };

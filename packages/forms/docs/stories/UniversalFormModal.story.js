@@ -223,5 +223,5 @@ export const Basic = () => (
 );
 
 export default {
-    title: 'Modules|Forms/Stories/UniversalFromModal',
+    title: 'Modules/Forms/Stories/UniversalFromModal',
 };

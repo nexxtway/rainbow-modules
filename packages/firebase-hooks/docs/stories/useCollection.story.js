@@ -44,7 +44,3 @@ export const subcribeToCollectionApplyingQuery = () => {
         </RainbowFirebaseApp>
     );
 };
-
-export default {
-    title: 'Modules|firebase-hooks/Stories',
-};

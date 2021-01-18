@@ -108,5 +108,5 @@ export const arcSpinnerWithChild = () => {
 };
 
 export default {
-    title: 'Modules|App/Stories/Spinners',
+    title: 'Modules/App/Stories/Spinners',
 };

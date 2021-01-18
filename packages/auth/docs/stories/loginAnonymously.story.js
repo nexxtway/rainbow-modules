@@ -41,7 +41,3 @@ export const loginAnonymously = () => {
         </RainbowFirebaseApp>
     );
 };
-
-export default {
-    title: 'Modules|Auth/Stories',
-};

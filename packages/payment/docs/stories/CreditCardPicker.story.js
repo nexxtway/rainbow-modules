@@ -111,5 +111,5 @@ export const CreditCardPickerWithActions = () => {
 };
 
 export default {
-    title: 'Modules|Payment/Stories/CreditCardPicker',
+    title: 'Modules/Payment/Stories/CreditCardPicker',
 };

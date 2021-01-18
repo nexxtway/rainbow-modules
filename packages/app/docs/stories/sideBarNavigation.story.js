@@ -91,7 +91,3 @@ export const sideBarNavigation = () => {
         </RainbowFirebaseApp>
     );
 };
-
-export default {
-    title: 'Modules|App/Stories',
-};

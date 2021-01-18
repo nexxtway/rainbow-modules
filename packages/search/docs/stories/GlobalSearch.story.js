@@ -69,5 +69,5 @@ export const MongoAtlasGlobalSearch = () => {
 };
 
 export default {
-    title: 'Modules|Search/Stories/GlobalSearch',
+    title: 'Modules/Search/Stories/GlobalSearch',
 };

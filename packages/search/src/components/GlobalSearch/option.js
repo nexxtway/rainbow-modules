@@ -7,7 +7,12 @@ import { StyledOption, OptionText, OptionIconContainer } from './styled';
 const Option = (props) => {
     const { icon, label, description, onClick, isActive, onHover } = props;
     return (
-        <StyledOption isActive={isActive} onClick={onClick} onMouseEnter={onHover}>
+        <StyledOption
+            isActive={isActive}
+            onClick={onClick}
+            onMouseEnter={onHover}
+            aria-selected={isActive}
+        >
             <OptionIconContainer>{icon}</OptionIconContainer>
             <OptionText>
                 <LabelText value={label} />

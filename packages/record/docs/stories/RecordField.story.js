@@ -51,5 +51,5 @@ export const BasicRecordField = () => {
 };
 
 export default {
-    title: 'Modules|Record/Stories/',
+    title: 'Modules/Record/Stories/RecordField',
 };

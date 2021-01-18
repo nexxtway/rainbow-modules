@@ -158,5 +158,5 @@ export const showAppLevelNotificationTimeout5s = () => {
 };
 
 export default {
-    title: 'Modules|App/Stories/Notifications',
+    title: 'Modules/App/Stories/Notifications',
 };

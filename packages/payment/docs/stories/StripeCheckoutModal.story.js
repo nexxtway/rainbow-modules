@@ -147,5 +147,5 @@ export const StripeCheckoutModalWithPaymentIntent = () => {
 };
 
 export default {
-    title: 'Modules|Payment/Stories/StripeCheckoutModal',
+    title: 'Modules/Payment/Stories/StripeCheckoutModal',
 };
