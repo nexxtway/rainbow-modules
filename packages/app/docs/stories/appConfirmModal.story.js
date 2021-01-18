@@ -154,5 +154,5 @@ export const showYesNoModalExample = () => {
 };
 
 export default {
-    title: 'Modules|App/Stories/Modals',
+    title: 'Modules/App/Stories/Modals',
 };

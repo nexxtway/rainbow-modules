@@ -33,5 +33,5 @@ export const doubleBarChart = () => {
 };
 
 export default {
-    title: 'Modules|Dashboard/Stories/DoubleBarChart',
+    title: 'Modules/Dashboard/Stories/DoubleBarChart',
 };

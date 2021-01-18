@@ -99,5 +99,5 @@ export const showAppLevelMessageTimeout3s = () => {
 };
 
 export default {
-    title: 'Modules|App/Stories/Messages',
+    title: 'Modules/App/Stories/Messages',
 };

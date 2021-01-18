@@ -13,7 +13,7 @@ describe('SideBarNavigation', () => {
         });
     });
 
-    it('should select an option based on the browser url', () => {
+    it.skip('should select an option based on the browser url', () => {
         cy.window().then((win) => {
             win.history.pushState({}, '', 'billing');
         });

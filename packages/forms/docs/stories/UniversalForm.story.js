@@ -162,5 +162,5 @@ export const Basic = () => {
 };
 
 export default {
-    title: 'Modules|Forms/Stories/UniversalFrom',
+    title: 'Modules/Forms/Stories/UniversalFrom',
 };

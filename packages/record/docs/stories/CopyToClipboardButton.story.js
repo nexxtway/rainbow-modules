@@ -22,5 +22,5 @@ export const BasicCopyToClipboardButton = () => {
 };
 
 export default {
-    title: 'Modules|Record/Stories/',
+    title: 'Modules/Record/Stories/CopyToClipboardButton',
 };

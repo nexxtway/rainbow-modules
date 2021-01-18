@@ -64,5 +64,5 @@ export const BasicRecordPrimaryDetails = () => {
 };
 
 export default {
-    title: 'Modules|Record/Stories/',
+    title: 'Modules/Record/Stories/RecordPrimaryDetails',
 };

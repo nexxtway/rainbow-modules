@@ -18,5 +18,5 @@ export const basicStorageImageGallery = () => {
 };
 
 export default {
-    title: 'Modules|Storage/Stories',
+    title: 'Modules/Storage/Stories',
 };

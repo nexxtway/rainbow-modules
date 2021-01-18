@@ -65,7 +65,3 @@ export const Internationalizations = () => {
         </RainbowFirebaseApp>
     );
 };
-
-export default {
-    title: 'Modules|App/Stories',
-};

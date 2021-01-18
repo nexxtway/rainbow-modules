@@ -109,5 +109,5 @@ export const CustomComponent = () => {
 };
 
 export default {
-    title: 'Modules|Listview/Stories/DraggableList',
+    title: 'Modules/Listview/Stories/DraggableList',
 };

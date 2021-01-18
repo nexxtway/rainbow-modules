@@ -80,7 +80,3 @@ export const batchOperations = () => {
         </RainbowFirebaseApp>
     );
 };
-
-export default {
-    title: 'Modules|firebase-hooks/Stories',
-};
