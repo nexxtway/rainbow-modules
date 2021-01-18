@@ -29,7 +29,7 @@ class ErrorBoundary extends Component {
 ErrorBoundary.propTypes = {
     /** A component that is rendered when an error is caught */
     component: PropTypes.node,
-    /** A functions that is used to manage the error that is caught */
+    /** A function triggered when an error is caught */
     onError: PropTypes.func,
     children: PropTypes.node,
 };

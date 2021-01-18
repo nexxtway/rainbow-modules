@@ -9,7 +9,3 @@ export const DefaultErrorBoundary = () => {
         </RainbowFirebaseApp>
     );
 };
-
-export default {
-    title: 'Modules|App/Stories/',
-};
