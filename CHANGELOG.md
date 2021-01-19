@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.23.0](https://github.com/nexxtway/rainbow-modules/compare/v0.22.0...v0.23.0) (2021-01-19)
+
+### Features
+
+-   add Car and Seat icons ([#292](https://github.com/nexxtway/rainbow-modules/issues/292)) ([aa22eb9](https://github.com/nexxtway/rainbow-modules/commit/aa22eb90df9d5179348d348f7029012b7f532baa))
+-   add function icon ([#295](https://github.com/nexxtway/rainbow-modules/issues/295)) ([4845aba](https://github.com/nexxtway/rainbow-modules/commit/4845aba5759ebd0c0cc273eaf8ce5a4578e8811a))
+-   cypress tests in globalsearch ([#282](https://github.com/nexxtway/rainbow-modules/issues/282)) ([0ee9de7](https://github.com/nexxtway/rainbow-modules/commit/0ee9de7018d73e66099cb667832efb66c0f9b144))
+-   implement `DoubleBarChart` component ([#281](https://github.com/nexxtway/rainbow-modules/issues/281)) ([7864841](https://github.com/nexxtway/rainbow-modules/commit/786484107fb4dbeec5259619a60763dbf1c2a02b)), closes [#266](https://github.com/nexxtway/rainbow-modules/issues/266)
+-   include source maps in the compilation ([#299](https://github.com/nexxtway/rainbow-modules/issues/299)) ([ee4607d](https://github.com/nexxtway/rainbow-modules/commit/ee4607dd5cd03ff3101568a82ca41800053e9be0))
+
 # [0.22.0](https://github.com/nexxtway/rainbow-modules/compare/v0.21.0...v0.22.0) (2021-01-08)
 
 ### Features

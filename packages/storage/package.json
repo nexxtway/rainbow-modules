@@ -1,6 +1,6 @@
 {
     "name": "@rainbow-modules/storage",
-    "version": "0.22.0",
+    "version": "0.23.0",
     "main": "lib/index.js",
     "author": "Nexxtway Team",
     "license": "MIT",
@@ -8,8 +8,8 @@
         "lib"
     ],
     "dependencies": {
-        "@rainbow-modules/firebase-hooks": "^0.22.0",
-        "@rainbow-modules/icons": "^0.22.0"
+        "@rainbow-modules/firebase-hooks": "^0.23.0",
+        "@rainbow-modules/icons": "^0.23.0"
     },
     "peerDependencies": {
         "react": ">=16.8.0",
