@@ -15,6 +15,7 @@ export interface UniversalPickerOptionProps {
     className?: string;
     /** It is an object with custom style applied to the root element. */
     style?: CSSProperties;
+    children?: ReactNode;
 }
 
 export default function (props: UniversalPickerOptionProps): JSX.Element | null;

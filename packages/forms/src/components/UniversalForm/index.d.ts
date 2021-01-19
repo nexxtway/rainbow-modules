@@ -13,6 +13,7 @@ export interface UniversalFormProps {
     id?: string;
     /** The initial values of the form e.g. { name: 'Max', age: 30 } */
     initialValues?: Record<string, unknown>;
+    children?: ReactNode;
 }
 
 export default function (props: UniversalFormProps): JSX.Element | null;

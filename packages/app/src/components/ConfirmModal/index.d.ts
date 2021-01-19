@@ -19,6 +19,7 @@ export interface ConfirmModalProps {
     onCancel?: () => void;
     /** @ignore */
     onConfirm?: (event: MouseEvent<HTMLElement>) => void;
+    children?: ReactNode;
 }
 
 export default function (props: ConfirmModalProps): JSX.Element | null;

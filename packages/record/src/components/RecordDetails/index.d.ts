@@ -6,6 +6,7 @@ export interface RecordDetailsProps {
     /** An object with custom style applied to the outer element. */
     style?: CSSProperties;
     id?: string;
+    children?: ReactNode;
 }
 
 export default function (props: RecordDetailsProps): JSX.Element | null;

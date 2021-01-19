@@ -6,6 +6,7 @@ export interface RecordPrimaryDetailsProps {
     /** An object with custom style applied to the outer element. */
     style?: CSSProperties;
     id?: string;
+    children?: ReactNode;
 }
 
 export default function (props: RecordPrimaryDetailsProps): JSX.Element | null;

@@ -15,6 +15,7 @@ export interface TilePickerProps {
     style?: CSSProperties;
     /** If true then a multiple selection is allowed */
     multiple?: boolean;
+    children?: ReactNode;
 }
 
 export default function (props: TilePickerProps): JSX.Element | null;

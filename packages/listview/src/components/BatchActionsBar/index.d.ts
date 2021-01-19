@@ -13,6 +13,7 @@ export interface BatchActionsBarProps {
     style?: CSSProperties;
     /** Show/Hide the component. */
     isVisible?: boolean;
+    children?: ReactNode;
 }
 
 export default function (props: BatchActionsBarProps): JSX.Element | null;

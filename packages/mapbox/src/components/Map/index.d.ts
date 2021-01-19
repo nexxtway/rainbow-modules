@@ -15,6 +15,7 @@ export interface MapProps {
     center?: Array<number>;
     /** It disable the animation when the center prop changes values */
     disableAnimation?: boolean;
+    children?: ReactNode;
 }
 
 export default function (props: MapProps): JSX.Element | null;

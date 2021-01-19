@@ -17,6 +17,7 @@ export interface RecordHeaderProps {
     tags?: ReactNode;
     /** Specifies whether data is being loaded. The default is false. */
     isLoading?: boolean;
+    children?: ReactNode;
 }
 
 export default function (props: RecordHeaderProps): JSX.Element | null;

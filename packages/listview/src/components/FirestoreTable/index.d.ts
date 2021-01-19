@@ -10,6 +10,7 @@ export interface FirestoreTableProps {
     defaultSortDirection?: 'asc' | 'desc';
     /** The column fieldName that controls the sorting order. */
     sortedBy?: string;
+    children?: ReactNode;
 }
 
 export default function (props: FirestoreTableProps): JSX.Element | null;

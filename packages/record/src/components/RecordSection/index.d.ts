@@ -9,6 +9,7 @@ export interface RecordSectionProps {
     label?: ReactNode;
     /** The actions prop is used to place on the right a group of actions that you want to perform on the RecordSection, you are in charge of displaying these actions in the way you prefer. */
     actions?: ReactNode;
+    children?: ReactNode;
 }
 
 export default function (props: RecordSectionProps): JSX.Element | null;

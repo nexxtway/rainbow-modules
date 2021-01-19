@@ -8,6 +8,7 @@ export interface WhenAuthenticatedProps {
      * object with the same shape of the `to` prop in the react router Redirect component.
      */
     redirect?: string | Record<string, unknown>;
+    children?: ReactNode;
 }
 
 export default function (props: WhenAuthenticatedProps): JSX.Element | null;

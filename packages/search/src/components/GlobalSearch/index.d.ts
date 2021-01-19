@@ -20,6 +20,7 @@ export interface GlobalSearchProps {
     className?: string;
     /** An object with custom style applied to the outer element. */
     style?: CSSProperties;
+    children?: ReactNode;
 }
 
 export default function (props: GlobalSearchProps): JSX.Element | null;
