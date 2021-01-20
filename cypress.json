@@ -2,7 +2,7 @@
     "chromeWebSecurity": false,
     "pageLoadTimeout": 60000,
     "execTimeout": 60000,
-    "video": false,
+    "video": true,
     "defaultCommandTimeout": 60000,
     "baseUrl": "http://localhost:5555"
 }

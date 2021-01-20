@@ -61,5 +61,5 @@ export const withDateBounds = () => {
 };
 
 export default {
-    title: 'Modules|Datetime/Stories',
+    title: 'Modules/Datetime/Stories',
 };

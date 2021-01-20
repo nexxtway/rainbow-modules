@@ -164,7 +164,3 @@ export const appWithReduxMiddleware = () => {
         </RainbowFirebaseApp>
     );
 };
-
-export default {
-    title: 'Modules|App/Stories',
-};

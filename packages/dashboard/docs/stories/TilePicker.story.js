@@ -201,5 +201,5 @@ export const BadgeVariantWithCustomIcon = () => {
 };
 
 export default {
-    title: 'Modules|Dashboard/Stories/TilePicker',
+    title: 'Modules/Dashboard/Stories/TilePicker',
 };

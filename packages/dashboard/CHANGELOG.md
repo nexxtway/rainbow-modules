@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.23.1](https://github.com/nexxtway/rainbow-modules/compare/v0.23.0...v0.23.1) (2021-01-20)
+
+**Note:** Version bump only for package @rainbow-modules/dashboard
+
+# [0.23.0](https://github.com/nexxtway/rainbow-modules/compare/v0.22.0...v0.23.0) (2021-01-19)
+
+### Features
+
+-   implement `DoubleBarChart` component ([#281](https://github.com/nexxtway/rainbow-modules/issues/281)) ([7864841](https://github.com/nexxtway/rainbow-modules/commit/786484107fb4dbeec5259619a60763dbf1c2a02b)), closes [#266](https://github.com/nexxtway/rainbow-modules/issues/266)
+
+# [0.22.0](https://github.com/nexxtway/rainbow-modules/compare/v0.21.0...v0.22.0) (2021-01-08)
+
+**Note:** Version bump only for package @rainbow-modules/dashboard
+
 # [0.21.0](https://github.com/nexxtway/rainbow-modules/compare/v0.20.2...v0.21.0) (2021-01-03)
 
 **Note:** Version bump only for package @rainbow-modules/dashboard

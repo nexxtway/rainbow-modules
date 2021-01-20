@@ -1,6 +1,6 @@
 {
     "name": "@rainbow-modules/hooks",
-    "version": "0.21.0",
+    "version": "0.23.1",
     "main": "lib/index.js",
     "author": "Nexxtway Team",
     "license": "MIT",
@@ -15,7 +15,7 @@
         "access": "public"
     },
     "dependencies": {
-        "@rainbow-modules/app": "^0.21.0",
+        "@rainbow-modules/app": "^0.23.0",
         "styled-components": "^4.3.2"
     }
 }

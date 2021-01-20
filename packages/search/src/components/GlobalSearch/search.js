@@ -37,7 +37,9 @@ const SearchInput = (props) => {
             />
             <ButtonsContainer>
                 <RenderIf isTrue={hasValue}>
-                    <StyledClearButton onMouseDown={handleOnMouseDown}>Clear</StyledClearButton>
+                    <StyledClearButton data-cy="clear-button" onMouseDown={handleOnMouseDown}>
+                        Clear
+                    </StyledClearButton>
                     <StyledDivider />
                 </RenderIf>
                 <ButtonIcon size="small" icon={<Close />} onClick={onRequestClose} />

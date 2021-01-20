@@ -91,7 +91,3 @@ export const simpleFormValidation = () => {
         </RainbowFirebaseApp>
     );
 };
-
-export default {
-    title: 'Modules|App/Stories',
-};

@@ -54,9 +54,9 @@ UniversalFormModal.propTypes = {
     /** The initial values of the form e.g. { name: 'Max', age: 30 } */
     initialValues: PropTypes.object,
     /** The label of the submit button on the form */
-    submitButtonLabel: PropTypes.oneOfType(PropTypes.string, PropTypes.node),
+    submitButtonLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     /** The label of the cancel button on the form */
-    cancelButtonLabel: PropTypes.oneOfType(PropTypes.string, PropTypes.node),
+    cancelButtonLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 };
 
 UniversalFormModal.defaultProps = {

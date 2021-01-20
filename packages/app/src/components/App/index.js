@@ -1,6 +1,7 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { BrowserRouter } from 'react-router-dom';
+import styled from 'styled-components';
 import Application from 'react-rainbow-components/components/Application';
 import RenderIf from 'react-rainbow-components/components/RenderIf';
 import { FirebaseProvider } from '@rainbow-modules/firebase-hooks';
@@ -12,6 +13,21 @@ import ConfirmModal from '../ConfirmModal';
 import { updateAppActions } from '../../actions';
 import getBrowserLocale from '../../helpers/getBrowserLocale';
 import AppNotificationManager from '../AppNotificationManager';
+import ErrorBoundary from '../ErrorBoundary';
+import ErrorMessage from '../ErrorBoundary/errorMessage';
+
+const ErrorComponentContainer = styled.div`
+    height: 100vh;
+`;
+
+// eslint-disable-next-line react/prop-types
+const DefaultErrorMessage = ({ errorTrace }) => {
+    return (
+        <ErrorComponentContainer>
+            <ErrorMessage errorTrace={errorTrace} />
+        </ErrorComponentContainer>
+    );
+};
 
 const RainbowFirebaseApp = (props) => {
     const {
@@ -24,6 +40,8 @@ const RainbowFirebaseApp = (props) => {
         middlewares,
         initialize,
         spinner,
+        errorComponent,
+        onError,
     } = props;
     const firebaseContext = useMemo(() => ({ app }), [app]);
     const [isLoading, setLoading] = useState(false);
@@ -58,35 +76,37 @@ const RainbowFirebaseApp = (props) => {
     }, []);
 
     return (
-        <ReduxContainer reducers={reducers} middlewares={middlewares}>
-            <FirebaseProvider value={firebaseContext}>
-                <I18nContainer
-                    locale={applicationLocale}
-                    messages={translations[applicationLocale]}
-                >
-                    <Application theme={theme} locale={applicationLocale}>
-                        <RenderIf isTrue={!isInitializing}>
-                            <BrowserRouter>{children}</BrowserRouter>
-                        </RenderIf>
-                        <RenderIf isTrue={isLoading}>
-                            <AppSpinner spinner={spinner} />
-                        </RenderIf>
-                        <AppMessage
-                            isVisible={isMessageVisible}
-                            onHideMessage={() => setIsMessageVisible(false)}
-                            // eslint-disable-next-line react/jsx-props-no-spreading
-                            {...messageParams}
-                        />
-                        <ConfirmModal
-                            isOpen={isConfirmModalVisible}
-                            // eslint-disable-next-line react/jsx-props-no-spreading
-                            {...confirmModalParams}
-                        />
-                        <AppNotificationManager />
-                    </Application>
-                </I18nContainer>
-            </FirebaseProvider>
-        </ReduxContainer>
+        <Application theme={theme} locale={applicationLocale}>
+            <ErrorBoundary component={errorComponent} onError={onError}>
+                <ReduxContainer reducers={reducers} middlewares={middlewares}>
+                    <FirebaseProvider value={firebaseContext}>
+                        <I18nContainer
+                            locale={applicationLocale}
+                            messages={translations[applicationLocale]}
+                        >
+                            <RenderIf isTrue={!isInitializing}>
+                                <BrowserRouter>{children}</BrowserRouter>
+                            </RenderIf>
+                            <RenderIf isTrue={isLoading}>
+                                <AppSpinner spinner={spinner} />
+                            </RenderIf>
+                            <AppMessage
+                                isVisible={isMessageVisible}
+                                onHideMessage={() => setIsMessageVisible(false)}
+                                // eslint-disable-next-line react/jsx-props-no-spreading
+                                {...messageParams}
+                            />
+                            <ConfirmModal
+                                isOpen={isConfirmModalVisible}
+                                // eslint-disable-next-line react/jsx-props-no-spreading
+                                {...confirmModalParams}
+                            />
+                            <AppNotificationManager />
+                        </I18nContainer>
+                    </FirebaseProvider>
+                </ReduxContainer>
+            </ErrorBoundary>
+        </Application>
     );
 };
 
@@ -109,6 +129,10 @@ RainbowFirebaseApp.propTypes = {
     initialize: PropTypes.func,
     /** The spinner to show when the app is loading. */
     spinner: PropTypes.node,
+    /** A component that is rendered when an error is caught */
+    errorComponent: PropTypes.node,
+    /** A functions that is used to manage the error that is caught */
+    onError: PropTypes.func,
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
 };
 
@@ -121,6 +145,8 @@ RainbowFirebaseApp.defaultProps = {
     reducers: {},
     middlewares: [],
     initialize: undefined,
+    errorComponent: DefaultErrorMessage,
+    onError: () => {},
 };
 
 export default RainbowFirebaseApp;
