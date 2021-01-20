@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.23.1](https://github.com/nexxtway/rainbow-modules/compare/v0.23.0...v0.23.1) (2021-01-20)
+
+**Note:** Version bump only for package @rainbow-modules/hooks
+
 # [0.23.0](https://github.com/nexxtway/rainbow-modules/compare/v0.22.0...v0.23.0) (2021-01-19)
 
 **Note:** Version bump only for package @rainbow-modules/hooks
