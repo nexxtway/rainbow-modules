@@ -1,0 +1,70 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Modules/Hooks/useConnectModal & useOpenModal" />
+
+# Overview
+
+Modals sometimes are meant to be open from different part of your app. In those cases the pages that want to open the same Modal must share the
+state(open/close) of the modal or maybe more data in more general use cases. The solutions are multiple, we can use App state(Redux) and dispatch an action
+that open the modal or your can use `useConnectModal` hook that will work in combination with `useOpenModal` hook.
+
+## Usage
+
+```js
+const Foo = () => {
+    const connectedProps = useConnectModal('modal-unique-id', { /** intial props values */ });
+    const [openModal] = useOpenModal('modal-unique-id);
+    return (
+        <Container>
+           <Button label="open modal" onClick={openModal} />
+           <Modal
+              title="Title ABC"
+              {...connectedProps} // spread the connectedProps object
+           />
+        </Container>
+    );
+}
+
+const Bar = () => {
+    // You can open that modal from another component
+    // while that component Foo continue to be rendered
+    const [openModal] = useOpenModal('modal-unique-id);
+    return <Button label="open modal" onClick={openModal} />
+}
+```
+
+## Dynamically set prop when open the modal
+
+`openModal` function returned by `useOpenModal` accept props values that are passed into the Modal component.
+
+```js
+const Bar = () => {
+    const [openModal] = useOpenModal('modal-unique-id);
+    const openBarModal = () => {
+        openModal({
+            title: 'Bar',
+            ... // more Modal props
+        });
+    }
+    return <Button label="open modal" onClick={openBarModal} />
+}
+```
+
+## How to close the modal?
+
+`useOpenModal` return as second item in the array a closeModal function.
+
+```js
+const [openModal, closeModal] = useOpenModal('modal-unique-id);
+// by calling the closeModal function that Modal will close and reset to the default props values.
+```
+
+### Default Modal props values
+
+As second argument on `useConnectModal` hook you can pass default values.
+
+```js
+const connectedProps = useConnectModal('modal-unique-id', {
+    title: 'Add User',
+});
+```

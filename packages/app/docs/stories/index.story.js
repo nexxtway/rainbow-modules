@@ -6,3 +6,4 @@ export * from './appWithReduxForm.story';
 export * from './appWithReduxMiddleware.story';
 export * from './appWithRouter.story';
 export * from './sideBarNavigation.story';
+export * from './appErrorBoundary.story';
