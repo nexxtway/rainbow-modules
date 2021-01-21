@@ -14,8 +14,8 @@ describe('useConnectModal', () => {
     });
     it('should return object passed in setProps', async () => {
         const foo = { bar: 'baz', title: 'test' };
-        const { result, waitForNextUpdate } = renderHook(() => useConnectModal('test'));
-        const [_defaultProps, setProps] = store.get('test');
+        const { result } = renderHook(() => useConnectModal('test'));
+        const [, setProps] = store.get('test');
         act(() => {
             setProps(foo);
         });

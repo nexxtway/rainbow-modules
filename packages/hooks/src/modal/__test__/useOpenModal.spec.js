@@ -27,7 +27,7 @@ describe('useOpenModal', () => {
     });
     it('should call setProps with the combination of initialDefaultProps, defaultProps and isOpen false', () => {
         store.set('test', [defaultProps, setProps]);
-        const [_openModal, closeModal] = useOpenModal('test');
+        const [, closeModal] = useOpenModal('test');
         closeModal();
         expect(setProps).toHaveBeenCalledWith(
             expect.objectContaining({ ...initialDefaultProps, ...defaultProps, isOpen: false }),
