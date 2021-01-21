@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { RenderIf } from 'react-rainbow-components';
 import * as formatterValueMap from './helpers/valueFormatter';
+import { Link } from './styled';
 
 const Value = (props) => {
     const {
@@ -29,9 +30,9 @@ const Value = (props) => {
                     />
                 </RenderIf>
                 <RenderIf isTrue={!Component}>
-                    <a href={href} onClick={onClick}>
+                    <Link href={href} onClick={onClick}>
                         {value}
-                    </a>
+                    </Link>
                 </RenderIf>
             </RenderIf>
             <RenderIf isTrue={!isUrl}>
