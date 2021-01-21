@@ -128,5 +128,5 @@ export const TableWithBatchActionsBar = () => {
 };
 
 export default {
-    title: 'Modules|Listview/Stories/BatchActionsBar',
+    title: 'Modules/Listview/Stories/BatchActionsBar',
 };

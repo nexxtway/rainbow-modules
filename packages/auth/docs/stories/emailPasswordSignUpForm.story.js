@@ -49,7 +49,3 @@ export const basicEmailPasswordSignUpForm = () => {
         </RainbowFirebaseApp>
     );
 };
-
-export default {
-    title: 'Modules|Auth/Stories',
-};

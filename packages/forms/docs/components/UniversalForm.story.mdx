@@ -1,0 +1,20 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import UniversalForm from '../../src/components/UniversalForm';
+import * as stories from '../stories/UniversalForm.story.js';
+
+<Meta title="Modules/Forms/Components/UniversalForm" component={UniversalForm} />
+
+# Overview
+
+`UniversalForm` is an abstraction on top of [react-final-form](https://final-form.org/react). It simplify
+the way fo how we want to create form using react.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="UniversalForm">{stories.Basic()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={UniversalForm} />

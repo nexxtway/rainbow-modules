@@ -1,13 +1,12 @@
 /* eslint-disable react/jsx-wrap-multilines */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Modal } from 'react-rainbow-components';
-import { Header, Question, Container, IconContainer, ButtonsContainer, Button } from './styled';
+import { Modal, RenderIf } from 'react-rainbow-components';
+import { Question, ButtonsContainer, Button, Container, IconContainer } from './styled';
 
 const ConfirmModal = (props) => {
     const {
         header,
-        icon,
         question,
         variant,
         isOpen,
@@ -15,12 +14,15 @@ const ConfirmModal = (props) => {
         onConfirm,
         cancelButtonLabel,
         okButtonLabel,
+        icon,
+        children,
     } = props;
 
     return (
         <Modal
             isOpen={isOpen}
             onRequestClose={onCancel}
+            title={header}
             footer={
                 <ButtonsContainer>
                     <Button label={cancelButtonLabel} variant="border" onClick={onCancel} />
@@ -28,13 +30,13 @@ const ConfirmModal = (props) => {
                 </ButtonsContainer>
             }
         >
-            <Container direction="row">
-                <IconContainer>{icon}</IconContainer>
-                <Container direction="column">
-                    <Header>{header}</Header>
+            <RenderIf isTrue={!children}>
+                <Container>
+                    <IconContainer>{icon}</IconContainer>
                     <Question>{question}</Question>
                 </Container>
-            </Container>
+            </RenderIf>
+            {children}
         </Modal>
     );
 };
@@ -58,6 +60,7 @@ ConfirmModal.propTypes = {
     onCancel: PropTypes.func,
     /** @ignore */
     onConfirm: PropTypes.func,
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
 };
 
 ConfirmModal.defaultProps = {
@@ -70,6 +73,7 @@ ConfirmModal.defaultProps = {
     variant: 'brand',
     onCancel: undefined,
     onConfirm: undefined,
+    children: null,
 };
 
 export default ConfirmModal;

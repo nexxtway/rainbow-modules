@@ -23,6 +23,7 @@ export const mapWithRoute = () => {
         <Application>
             <MapBox accessToken={MAPBOX_ACCESS_TOKEN} center={[-103.3291727, 20.607034]} zoom={15}>
                 <Route
+                    disableAnimation
                     waypoints={[
                         [-103.3491727, 20.677034],
                         [-103.301488, 20.526721],
@@ -115,5 +116,5 @@ export const mapWithDynamicRoute = () => {
 };
 
 export default {
-    title: 'Modules|Mapbox/Stories/Map',
+    title: 'Modules/Mapbox/Stories/Map',
 };

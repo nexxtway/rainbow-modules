@@ -1,0 +1,36 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import getCurrentPosition from '../../src/helpers/getCurrentPosition';
+import * as stories from '../stories/getCurrentPosition.story.js';
+
+<Meta title="Modules/Mapbox/Helpers" component={getCurrentPosition} />
+
+# Overview
+
+The `getCurrentPosition` method retrieves the current geographic location of the device. The location is expressed as a set of geographic coordinates together with information about heading and speed. The location information is returned in a Position object.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="Mapbox">{stories.GetUserCurrentPosition()}</Story>
+</Preview>
+
+## Usage:
+
+```js
+try {
+    const position = await getCurrentPosition(geoOptions);
+} catch (error) {
+    // ...
+}
+```
+
+### Params
+
+| Property   | Description                                                                                                                                                                                                                                                   | Type   | Default                                                          |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ---------------------------------------------------------------- |
+| geoOptions | This optional parameter specifies a set of options for retrieving the location information. You can specify (a) Accuracy of the returned location information (b) Timeout for retrieving the location information and (c) Use of cached location information. | Object | { maximumAge: 600000, enableHighAccuracy: true, timeout: 10000 } |
+
+### Return Promise(resolve: GeolocationPosition || reject: GeolocationPositionError)
+
+-   [GeolocationPosition](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPosition)
+-   [GeolocationPositionError](https://developer.mozilla.org/en-US/docs/Web/API/GeolocationPositionError)

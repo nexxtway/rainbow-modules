@@ -1,0 +1,26 @@
+{
+    "name": "@rainbow-modules/search",
+    "version": "0.23.1",
+    "main": "lib/index.js",
+    "author": "Nexxtway Team",
+    "license": "MIT",
+    "files": [
+        "lib"
+    ],
+    "dependencies": {
+        "@rainbow-modules/hooks": "^0.23.1",
+        "@rainbow-modules/icons": "^0.23.0",
+        "styled-components": "^4.3.2"
+    },
+    "peerDependencies": {
+        "react": ">=16.13.1",
+        "react-dom": "^16.13.1",
+        "react-rainbow-components": ">=1.18.1"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "devDependencies": {
+        "algoliasearch": "^4.6.0"
+    }
+}

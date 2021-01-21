@@ -62,7 +62,3 @@ export const basicRouter = () => {
         </RainbowFirebaseApp>
     );
 };
-
-export default {
-    title: 'Modules|App/Stories',
-};

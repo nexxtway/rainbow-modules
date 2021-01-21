@@ -1,0 +1,957 @@
+[
+    {
+        "plot": "Harry Keach has been widowed for two years and works as a demolition crane operator on a demolition crew.",
+        "genres": ["Drama"],
+        "rated": "PG",
+        "title": "Harry & Son",
+        "released": "1984-03-02T00:00:00.000Z",
+        "score": 19.62032699584961,
+        "highlights": [
+            {
+                "path": "plot",
+                "texts": [
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " Keach has been widowed for two years and works as a demolition crane operator on a demolition crew.",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.1636849641799927
+            },
+            {
+                "path": "title",
+                "texts": [
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " & Son",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.3987467288970947
+            }
+        ]
+    },
+    {
+        "plot": "Harry knew Michel in high school; they meet again by accident, Harry inserts himself in Michel's life... and things take a sinister turn.",
+        "genres": ["Comedy", "Drama", "Mystery"],
+        "rated": "R",
+        "title": "With a Friend Like Harry...",
+        "released": "2001-06-15T00:00:00.000Z",
+        "score": 18.576669692993164,
+        "highlights": [
+            {
+                "path": "plot",
+                "texts": [
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " knew Michel in high school; they meet again by accident, ",
+                        "type": "text"
+                    },
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " inserts himself in Michel's life... and things take a sinister turn.",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.1618012189865112
+            },
+            {
+                "path": "title",
+                "texts": [
+                    {
+                        "value": "With a Friend Like ",
+                        "type": "text"
+                    },
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": "...",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.349604606628418
+            }
+        ]
+    },
+    {
+        "plot": "When a mad man calling himself 'the Scorpio Killer' menaces the city, tough as nails San Francisco Police Inspector Harry Callahan is assigned to track down and ferret out the crazed psychopath.",
+        "genres": ["Action", "Crime", "Thriller"],
+        "rated": "R",
+        "title": "Dirty Harry",
+        "released": "1971-12-23T00:00:00.000Z",
+        "score": 17.94736099243164,
+        "highlights": [
+            {
+                "path": "plot",
+                "texts": [
+                    {
+                        "value": "When a mad man calling himself 'the Scorpio Killer' menaces the city, tough as nails San Francisco Police Inspector ",
+                        "type": "text"
+                    },
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " Callahan is assigned to track down and ferret out the crazed psychopath.",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.016929268836975
+            },
+            {
+                "path": "title",
+                "texts": [
+                    {
+                        "value": "Dirty ",
+                        "type": "text"
+                    },
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    }
+                ],
+                "score": 1.3987467288970947
+            }
+        ]
+    },
+    {
+        "plot": "Harry Munter, a sensitive, kind, appealing man in his twenties, lives with his parents. He's an inventor, a bit of a mystic, maybe a genius, and a good son and grandson. He's offered work ...",
+        "genres": ["Drama"],
+        "title": "Harry Munter",
+        "released": "1969-12-20T00:00:00.000Z",
+        "score": 17.742694854736328,
+        "highlights": [
+            {
+                "path": "plot",
+                "texts": [
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " Munter, a sensitive, kind, appealing man in his twenties, lives with his parents. ",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.5133692026138306
+            },
+            {
+                "path": "title",
+                "texts": [
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " Munter",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.3955247402191162
+            }
+        ]
+    },
+    {
+        "plot": "Suffering from writer's block and eagerly awaiting his writing award, Harry Block remembers events from his past and scenes from his best-selling books as characters, real and fictional, come back to haunt him.",
+        "genres": ["Comedy"],
+        "rated": "R",
+        "title": "Deconstructing Harry",
+        "released": "1997-12-12T00:00:00.000Z",
+        "score": 17.742694854736328,
+        "highlights": [
+            {
+                "path": "plot",
+                "texts": [
+                    {
+                        "value": "Suffering from writer's block and eagerly awaiting his writing award, ",
+                        "type": "text"
+                    },
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " Block remembers events from his past and scenes from his best-selling books as characters, real and fictional, come back to haunt him.",
+                        "type": "text"
+                    }
+                ],
+                "score": 0.9952552914619446
+            },
+            {
+                "path": "title",
+                "texts": [
+                    {
+                        "value": "Deconstructing ",
+                        "type": "text"
+                    },
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    }
+                ],
+                "score": 1.3704925775527954
+            }
+        ]
+    },
+    {
+        "plot": "Harry and Sally have known each other for years, and are very good friends, but they fear sex would ruin the friendship.",
+        "genres": ["Comedy", "Drama", "Romance"],
+        "rated": "R",
+        "title": "When Harry Met Sally...",
+        "released": "1989-07-21T00:00:00.000Z",
+        "score": 16.603933334350586,
+        "highlights": [
+            {
+                "path": "plot",
+                "texts": [
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " and Sally have known each other for years, and are very good friends, but they fear sex would ruin the friendship.",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.1351885795593262
+            },
+            {
+                "path": "title",
+                "texts": [
+                    {
+                        "value": "When ",
+                        "type": "text"
+                    },
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " Met Sally...",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.3614295721054077
+            }
+        ]
+    },
+    {
+        "plot": "The trouble with Harry is that he's dead, and everyone seems to have a different idea of what needs to be done with his body...",
+        "genres": ["Mystery"],
+        "rated": "PG",
+        "title": "The Trouble with Harry",
+        "released": "1955-10-03T00:00:00.000Z",
+        "score": 16.196765899658203,
+        "highlights": [
+            {
+                "path": "plot",
+                "texts": [
+                    {
+                        "value": "The trouble with ",
+                        "type": "text"
+                    },
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " is that he's dead, and everyone seems to have a different idea of what needs to be done with his body...",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.1224937438964844
+            },
+            {
+                "path": "title",
+                "texts": [
+                    {
+                        "value": "The Trouble with ",
+                        "type": "text"
+                    },
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    }
+                ],
+                "score": 1.3644318580627441
+            }
+        ]
+    },
+    {
+        "plot": "Set in the late fifties in Denmark the poor junk yard assistant Harry inherits some money. He decides to use the money to hire a butler. The butler isn't too keen on the job at first, but ...",
+        "genres": ["Comedy", "Family"],
+        "title": "Harry og kammertjeneren",
+        "released": "1961-09-08T00:00:00.000Z",
+        "score": 15.99249267578125,
+        "highlights": [
+            {
+                "path": "plot",
+                "texts": [
+                    {
+                        "value": "Set in the late fifties in Denmark the poor junk yard assistant ",
+                        "type": "text"
+                    },
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " inherits some money. ",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.4924148321151733
+            },
+            {
+                "path": "title",
+                "texts": [
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " og kammertjeneren",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.3614295721054077
+            }
+        ]
+    },
+    {
+        "plot": "Harry finds himself mysteriously selected as an under-aged competitor in a dangerous tournament between three schools of magic.",
+        "genres": ["Adventure", "Family", "Fantasy"],
+        "rated": "PG-13",
+        "title": "Harry Potter and the Goblet of Fire",
+        "released": "2005-11-18T00:00:00.000Z",
+        "score": 14.9300537109375,
+        "highlights": [
+            {
+                "path": "plot",
+                "texts": [
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " finds himself mysteriously selected as an under-aged competitor in a dangerous tournament between three schools of magic.",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.1224937438964844
+            },
+            {
+                "path": "title",
+                "texts": [
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " Potter and the Goblet of Fire",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.3267918825149536
+            }
+        ]
+    },
+    {
+        "plot": "HARRY DEAN STANTON: PARTLY FICTION is a mesmerizing, impressionistic portrait of the iconic actor comprised of intimate moments, film clips from some of his 250 films and his own ...",
+        "genres": ["Documentary"],
+        "title": "Harry Dean Stanton: Partly Fiction",
+        "released": "2013-06-16T00:00:00.000Z",
+        "score": 14.847111701965332,
+        "highlights": [
+            {
+                "path": "plot",
+                "texts": [
+                    {
+                        "value": "HARRY",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " DEAN STANTON: PARTLY FICTION is a mesmerizing, impressionistic portrait of the iconic actor comprised of intimate moments, film clips from some of his 250 films and his own ...",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.033981204032898
+            },
+            {
+                "path": "title",
+                "texts": [
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " Dean Stanton: Partly Fiction",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.329585075378418
+            }
+        ]
+    },
+    {
+        "plot": "Harry ignores warnings not to return to Hogwarts, only to find the school plagued by a series of mysterious attacks and a strange voice haunting him.",
+        "genres": ["Adventure", "Family", "Fantasy"],
+        "rated": "PG",
+        "title": "Harry Potter and the Chamber of Secrets",
+        "released": "2002-11-15T00:00:00.000Z",
+        "score": 13.946372985839844,
+        "highlights": [
+            {
+                "path": "plot",
+                "texts": [
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " ignores warnings not to return to Hogwarts, only to find the school plagued by a series of mysterious attacks and a strange voice haunting him.",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.0848498344421387
+            },
+            {
+                "path": "title",
+                "texts": [
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " Potter and the Chamber of Secrets",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.3157795667648315
+            }
+        ]
+    },
+    {
+        "plot": "Harry, Ron and Hermione search for Voldemort's remaining Horcruxes in their effort to destroy the Dark Lord as the final battle rages on at Hogwarts.",
+        "genres": ["Adventure", "Drama", "Fantasy"],
+        "rated": "PG-13",
+        "title": "Harry Potter and the Deathly Hallows: Part 2",
+        "released": "2011-07-15T00:00:00.000Z",
+        "score": 13.599213600158691,
+        "highlights": [
+            {
+                "path": "plot",
+                "texts": [
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": ", Ron and Hermione search for Voldemort's remaining Horcruxes in their effort to destroy the Dark Lord as the final battle rages on at Hogwarts.",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.0848498344421387
+            },
+            {
+                "path": "title",
+                "texts": [
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " Potter and the Deathly Hallows: Part 2",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.3023619651794434
+            }
+        ]
+    },
+    {
+        "plot": "Set back in the 80s when Harry met Lloyd in high school where they cross paths with a mean principal and a bunch of other outcasts much like themselves.",
+        "genres": ["Comedy"],
+        "rated": "PG-13",
+        "title": "Dumb and Dumberer: When Harry Met Lloyd",
+        "released": "2003-06-13T00:00:00.000Z",
+        "score": 13.586578369140625,
+        "highlights": [
+            {
+                "path": "plot",
+                "texts": [
+                    {
+                        "value": "Set back in the 80s when ",
+                        "type": "text"
+                    },
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " met Lloyd in high school where they cross paths with a mean principal and a bunch of other outcasts much like themselves.",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.0799627304077148
+            },
+            {
+                "path": "title",
+                "texts": [
+                    {
+                        "value": "Dumb and Dumberer: When ",
+                        "type": "text"
+                    },
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " Met Lloyd",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.3157795667648315
+            }
+        ]
+    },
+    {
+        "plot": "With their warning about Lord Voldemort's return scoffed at, Harry and Dumbledore are targeted by the Wizard authorities as an authoritarian bureaucrat slowly seizes power at Hogwarts.",
+        "genres": ["Adventure", "Family", "Fantasy"],
+        "rated": "PG-13",
+        "title": "Harry Potter and the Order of the Phoenix",
+        "released": "2007-07-11T00:00:00.000Z",
+        "score": 13.348260879516602,
+        "highlights": [
+            {
+                "path": "plot",
+                "texts": [
+                    {
+                        "value": "With their warning about Lord Voldemort's return scoffed at, ",
+                        "type": "text"
+                    },
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " and Dumbledore are targeted by the Wizard authorities as an authoritarian bureaucrat slowly seizes power at Hogwarts.",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.0310893058776855
+            },
+            {
+                "path": "title",
+                "texts": [
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " Potter and the Order of the Phoenix",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.3103673458099365
+            }
+        ]
+    },
+    {
+        "plot": "As Harry races against time and evil to destroy the Horcruxes, he uncovers the existence of three most powerful objects in the wizarding world: the Deathly Hallows.",
+        "genres": ["Adventure", "Family", "Fantasy"],
+        "rated": "PG-13",
+        "title": "Harry Potter and the Deathly Hallows: Part 1",
+        "released": "2010-11-19T00:00:00.000Z",
+        "score": 13.348260879516602,
+        "highlights": [
+            {
+                "path": "plot",
+                "texts": [
+                    {
+                        "value": "As ",
+                        "type": "text"
+                    },
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " races against time and evil to destroy the Horcruxes, he uncovers the existence of three most powerful objects in the wizarding world: the Deathly Hallows.",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.0609596967697144
+            },
+            {
+                "path": "title",
+                "texts": [
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " Potter and the Deathly Hallows: Part 1",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.3023619651794434
+            }
+        ]
+    },
+    {
+        "plot": "As Harry Potter begins his sixth year at Hogwarts, he discovers an old book marked as \"the property of the Half-Blood Prince\" and begins to learn more about Lord Voldemort's dark past.",
+        "genres": ["Adventure", "Family", "Fantasy"],
+        "rated": "PG",
+        "title": "Harry Potter and the Half-Blood Prince",
+        "released": "2009-07-15T00:00:00.000Z",
+        "score": 13.153337478637695,
+        "highlights": [
+            {
+                "path": "plot",
+                "texts": [
+                    {
+                        "value": "As ",
+                        "type": "text"
+                    },
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " Potter begins his sixth year at Hogwarts, he discovers an old book marked as \"the property of the Half-Blood Prince\" and begins to learn more about Lord Voldemort's dark past.",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.0310893058776855
+            },
+            {
+                "path": "title",
+                "texts": [
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " Potter and the Half-Blood Prince",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.3185091018676758
+            }
+        ]
+    },
+    {
+        "plot": "It's Harry's third year at Hogwarts; not only does he have a new \"Defense Against the Dark Arts\" teacher, but there is also trouble brewing. Convicted murderer Sirius Black has escaped the Wizards' Prison and is coming after Harry.",
+        "genres": ["Adventure", "Family", "Fantasy"],
+        "rated": "PG",
+        "title": "Harry Potter and the Prisoner of Azkaban",
+        "released": "2004-06-04T00:00:00.000Z",
+        "score": 12.586542129516602,
+        "highlights": [
+            {
+                "path": "plot",
+                "texts": [
+                    {
+                        "value": "Convicted murderer Sirius Black has escaped the Wizards' Prison and is coming after ",
+                        "type": "text"
+                    },
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": ".",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.5496770143508911
+            },
+            {
+                "path": "title",
+                "texts": [
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " Potter and the Prisoner of Azkaban",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.313065767288208
+            }
+        ]
+    },
+    {
+        "plot": "A masochistic cop, who hides her predilection from her cop husband, gets involved in pursuing a kidnapper nicknamed Harry for Harry Houdini, who has kidnapped a rich woman and has buried ...",
+        "genres": ["Crime", "Drama", "Thriller"],
+        "rated": "R",
+        "title": "Oxygen",
+        "released": "1999-11-12T00:00:00.000Z",
+        "score": 10.633041381835938,
+        "highlights": [
+            {
+                "path": "plot",
+                "texts": [
+                    {
+                        "value": "A masochistic cop, who hides her predilection from her cop husband, gets involved in pursuing a kidnapper nicknamed ",
+                        "type": "text"
+                    },
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " for ",
+                        "type": "text"
+                    },
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " Houdini, who has kidnapped a rich woman and has buried ...",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.143401026725769
+            }
+        ]
+    },
+    {
+        "plot": "Two brothers, 23 and 16, who are both teen idols, come to terms with their dysfunctional family past and deep affection for each other.",
+        "genres": ["Drama"],
+        "title": "Harry + Max",
+        "released": "2004-01-17T00:00:00.000Z",
+        "score": 10.452938079833984,
+        "highlights": [
+            {
+                "path": "title",
+                "texts": [
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " + Max",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.3987467288970947
+            }
+        ]
+    },
+    {
+        "plot": "An elderly ex-serviceman and widower looks to avenge his best friend's murder by doling out his own form of justice.",
+        "genres": ["Action", "Crime", "Drama"],
+        "rated": "R",
+        "title": "Harry Brown",
+        "released": "2010-05-14T00:00:00.000Z",
+        "score": 10.452938079833984,
+        "highlights": [
+            {
+                "path": "title",
+                "texts": [
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " Brown",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.3987467288970947
+            }
+        ]
+    },
+    {
+        "plot": "An ex-Navy man carrying out the last wish of a dying shipmate renews contact with old friends to break the code of silence around a mysterious, long-buried crime.",
+        "genres": ["Drama"],
+        "rated": "R",
+        "title": "Handsome Harry",
+        "released": "2010-12-06T00:00:00.000Z",
+        "score": 10.452938079833984,
+        "highlights": [
+            {
+                "path": "title",
+                "texts": [
+                    {
+                        "value": "Handsome ",
+                        "type": "text"
+                    },
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    }
+                ],
+                "score": 1.3891443014144897
+            }
+        ]
+    },
+    {
+        "plot": "Young Harry is in love and wants to marry an actress, much to the displeasure of his family. Harry thinks that Bishop Armstrong knows nothing about love so Armstrong tells him the story of ...",
+        "genres": ["Drama", "Romance"],
+        "rated": "APPROVED",
+        "title": "Romance",
+        "released": "1930-08-26T00:00:00.000Z",
+        "score": 10.324592590332031,
+        "highlights": [
+            {
+                "path": "plot",
+                "texts": [
+                    {
+                        "value": "Young ",
+                        "type": "text"
+                    },
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " is in love and wants to marry an actress, much to the displeasure of his family. ",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.0824556350708008
+            },
+            {
+                "path": "plot",
+                "texts": [
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " thinks that Bishop Armstrong knows nothing about love so Armstrong tells him the story of ...",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.0265613794326782
+            }
+        ]
+    },
+    {
+        "plot": "This is the story of Harry and Flint, an unlikely couple. Harry is a shy young gay man who can't seem to fit into his local bar scene. Flint is a crusty, older, and seemingly straight man ...",
+        "genres": ["Comedy", "Romance"],
+        "title": "Madagascar Skin",
+        "released": "1996-01-26T00:00:00.000Z",
+        "score": 10.03353500366211,
+        "highlights": [
+            {
+                "path": "plot",
+                "texts": [
+                    {
+                        "value": "This is the story of ",
+                        "type": "text"
+                    },
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " and Flint, an unlikely couple. ",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.286104440689087
+            },
+            {
+                "path": "plot",
+                "texts": [
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " is a shy young gay man who can't seem to fit into his local bar scene. ",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.14364492893219
+            }
+        ]
+    },
+    {
+        "plot": "Harry and Inez are a dance team at the Wonder Bar. Inez loves Harry, but he is in love with Liane, the wife of a wealthy business man. Al Wonder and the conductor/singer Tommy are in love ...",
+        "genres": ["Crime", "Drama", "Musical"],
+        "rated": "PASSED",
+        "title": "Wonder Bar",
+        "released": "1934-03-31T00:00:00.000Z",
+        "score": 9.940130233764648,
+        "highlights": [
+            {
+                "path": "plot",
+                "texts": [
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " and Inez are a dance team at the Wonder Bar. ",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.3370634317398071
+            },
+            {
+                "path": "plot",
+                "texts": [
+                    {
+                        "value": "Inez loves ",
+                        "type": "text"
+                    },
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": ", but he is in love with Liane, the wife of a wealthy business man. ",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.1073203086853027
+            }
+        ]
+    },
+    {
+        "plot": "When his apartment building is torn down, a retired lifelong New Yorker goes on a cross country odyssey with his beloved cat Tonto.",
+        "genres": ["Adventure", "Comedy", "Drama"],
+        "rated": "R",
+        "title": "Harry and Tonto",
+        "released": "1975-01-15T00:00:00.000Z",
+        "score": 8.989598274230957,
+        "highlights": [
+            {
+                "path": "title",
+                "texts": [
+                    {
+                        "value": "Harry",
+                        "type": "hit"
+                    },
+                    {
+                        "value": " and Tonto",
+                        "type": "text"
+                    }
+                ],
+                "score": 1.3859853744506836
+            }
+        ]
+    }
+]

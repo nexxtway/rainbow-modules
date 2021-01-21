@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
 
 export const Container = styled.div`
     display: flex;
@@ -30,8 +31,8 @@ export const Container = styled.div`
 
 export const Label = styled.span`
     font-size: 12px;
-    color: ${(props) => props.theme.rainbow.palette.text.header};
     line-height: 1.5;
+    color: ${(props) => props.theme.rainbow.palette.text.header};
 
     ${(props) =>
         props.privateVariant === 'horizontal' &&
@@ -47,10 +48,11 @@ export const Label = styled.span`
     `};
 `;
 
-export const Value = styled.span`
+export const ValueContainer = styled.span`
     font-size: 14px;
     color: ${(props) => props.theme.rainbow.palette.text.main};
     line-height: 1.5;
+    position: relative;
 
     ${(props) =>
         props.privateVariant === 'horizontal' &&
@@ -59,4 +61,70 @@ export const Value = styled.span`
             padding-left: 4px;
             line-height: 20px;
     `};
+    ${(props) =>
+        props.icon &&
+        props.iconPosition === 'left' &&
+        `
+        padding-left: 30px;
+    `}
+    ${(props) =>
+        props.type === 'url' &&
+        `
+            > a {
+                color:${props.theme.rainbow.palette.text.main};
+
+                : hover {
+                    color:${props.theme.rainbow.palette.text.main};
+                }
+            }
+    `};
+`;
+
+export const StyledLoadingLabel = styled.div`
+    margin: 7px 0 8px 0;
+    width: ${() => Math.floor(Math.random() * (120 - 92) + 92)}px;
+    ${(props) =>
+        props.privateVariant === 'horizontal' &&
+        `
+        margin: 4px 0 5px 0;
+    `};
+`;
+
+export const StyledLoadingValue = styled.div`
+    width: ${() => Math.floor(Math.random() * (150 - 92) + 92)}px;
+`;
+
+export const IconContainer = attachThemeAttrs(styled.span)`
+    color: ${(props) => props.palette.text.header};
+    height: 100%;
+    width: 22px;
+    top: 0;
+    position: absolute;
+    line-height: 1;
+    border: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        width: 17px !important;
+        height: 17px !important;
+        font-size: 17px !important;
+    }
+
+    :not(button) {
+        pointer-events: none;
+    }
+
+    ${(props) =>
+        props.iconPosition === 'left' &&
+        `
+        left: 0.1rem;
+    `}
+    ${(props) =>
+        props.iconPosition === 'right' &&
+        `
+        right: 0;
+    `}
 `;

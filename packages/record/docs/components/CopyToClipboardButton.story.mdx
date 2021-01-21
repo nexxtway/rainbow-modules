@@ -1,0 +1,24 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import CopyToClipboardButton from '../../src/components/CopyToClipboardButton';
+import * as stories from '../stories/CopyToClipboardButton.story.js';
+
+<Meta title="Modules/Record/Components/CopyToClipboardButton" component={CopyToClipboardButton} />
+
+# Overview
+
+`CopyToClipboardButton` A button with modern approach to copy text to clipboard. Would try to use execCommand with fallback to IE specific clipboardData interface.
+
+### Internationalization FormattedMessage keys
+
+-   CopyToClipboardButton.clickToCopy: text for the tooltip that describes the action of copy to clipboard
+-   CopyToClipboardButton.copied: text for the tooltip that describes that the text was copied to the clipboard
+
+### This is an example with the CopyToClipboardButton.
+
+<Preview>
+    <Story name="CopyToClipboardButton">{stories.BasicCopyToClipboardButton()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={CopyToClipboardButton} />

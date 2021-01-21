@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { LoadingShape } from 'react-rainbow-components';
+import { CubeFilled } from '@rainbow-modules/icons';
 
 export const Container = styled.section`
     display: flex;
@@ -36,6 +38,11 @@ export const IconContainer = styled.div`
     color: ${(props) => props.theme.rainbow.palette.text.disabled};
 `;
 
+export const CubeIcon = styled(CubeFilled)`
+    width: 16px;
+    height: 16px;
+`;
+
 export const Label = styled.h3`
     font-size: 14px;
     color: ${(props) => props.theme.rainbow.palette.text.header};
@@ -64,4 +71,15 @@ export const Body = styled.div`
     height: 100%;
     overflow: auto;
     box-sizing: border-box;
+`;
+
+export const LabelLoadingShape = styled(LoadingShape)`
+    margin: 5px 0 15px;
+    width: 120px;
+`;
+
+export const DescriptionLoadingShape = styled(LoadingShape)`
+    margin: 0 0 6px;
+    width: 220px;
+    height: 25px;
 `;

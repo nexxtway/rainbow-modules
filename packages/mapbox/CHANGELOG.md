@@ -3,6 +3,64 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.23.1](https://github.com/nexxtway/rainbow-modules/compare/v0.23.0...v0.23.1) (2021-01-20)
+
+**Note:** Version bump only for package @rainbow-modules/mapbox
+
+# [0.23.0](https://github.com/nexxtway/rainbow-modules/compare/v0.22.0...v0.23.0) (2021-01-19)
+
+**Note:** Version bump only for package @rainbow-modules/mapbox
+
+# [0.22.0](https://github.com/nexxtway/rainbow-modules/compare/v0.21.0...v0.22.0) (2021-01-08)
+
+**Note:** Version bump only for package @rainbow-modules/mapbox
+
+# [0.21.0](https://github.com/nexxtway/rainbow-modules/compare/v0.20.2...v0.21.0) (2021-01-03)
+
+**Note:** Version bump only for package @rainbow-modules/mapbox
+
+## [0.20.2](https://github.com/nexxtway/rainbow-modules/compare/v0.20.1...v0.20.2) (2021-01-01)
+
+**Note:** Version bump only for package @rainbow-modules/mapbox
+
+## [0.20.1](https://github.com/nexxtway/rainbow-modules/compare/v0.20.0...v0.20.1) (2020-12-31)
+
+**Note:** Version bump only for package @rainbow-modules/mapbox
+
+# [0.20.0](https://github.com/nexxtway/rainbow-modules/compare/v0.19.2...v0.20.0) (2020-12-30)
+
+**Note:** Version bump only for package @rainbow-modules/mapbox
+
+# [0.19.0](https://github.com/nexxtway/rainbow-modules/compare/v0.18.0...v0.19.0) (2020-12-27)
+
+**Note:** Version bump only for package @rainbow-modules/mapbox
+
+# [0.18.0](https://github.com/nexxtway/rainbow-modules/compare/v0.17.0...v0.18.0) (2020-12-24)
+
+**Note:** Version bump only for package @rainbow-modules/mapbox
+
+# [0.17.0](https://github.com/nexxtway/rainbow-modules/compare/v0.16.0...v0.17.0) (2020-12-24)
+
+**Note:** Version bump only for package @rainbow-modules/mapbox
+
+# [0.16.0](https://github.com/nexxtway/rainbow-modules/compare/v0.15.1...v0.16.0) (2020-12-22)
+
+**Note:** Version bump only for package @rainbow-modules/mapbox
+
+## [0.15.1](https://github.com/nexxtway/rainbow-modules/compare/v0.15.0...v0.15.1) (2020-12-18)
+
+**Note:** Version bump only for package @rainbow-modules/mapbox
+
+# [0.15.0](https://github.com/nexxtway/rainbow-modules/compare/v0.14.0...v0.15.0) (2020-12-18)
+
+**Note:** Version bump only for package @rainbow-modules/mapbox
+
+# [0.14.0](https://github.com/nexxtway/rainbow-modules/compare/v0.13.0...v0.14.0) (2020-12-05)
+
+### Bug Fixes
+
+-   map improvements + getCurrentLocation helper ([#228](https://github.com/nexxtway/rainbow-modules/issues/228)) ([25e6866](https://github.com/nexxtway/rainbow-modules/commit/25e6866990a3064efb4a7cbfaa845411ff8054a1))
+
 # [0.13.0](https://github.com/nexxtway/rainbow-modules/compare/v0.12.0...v0.13.0) (2020-11-23)
 
 ### Bug Fixes

@@ -123,5 +123,5 @@ export const differentsColorsTite = () => {
 };
 
 export default {
-    title: 'Modules|Dashboard/Stories/Tile',
+    title: 'Modules/Dashboard/Stories/Tile',
 };

@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Trash, Edit, SettingsFilled } from '@rainbow-modules/icons';
 import { Application, ButtonGroup, ButtonIcon, Badge } from 'react-rainbow-components';
 import RecordHeader from '../../src/components/RecordHeader';
+import RecordField from '../../src/components/RecordField';
+import RecordPrimaryDetails from '../../src/components/RecordPrimaryDetails';
 
 const Container = styled.div`
     background-color: ${(props) => props.theme.rainbow.palette.background.main};
@@ -25,7 +27,26 @@ const Actions = () => {
     );
 };
 
-export const basicRecordHeader = () => {
+const useChangeLoading = () => {
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false);
+        }, 1500);
+    }, []);
+
+    return loading;
+};
+
+// eslint-disable-next-line react/prop-types
+const StatusBadge = ({ value }) => {
+    return <Badge label={value} variant="success" size="small" />;
+};
+
+export const BasicRecordHeader = () => {
+    const loading = useChangeLoading();
+
     return (
         <Application>
             <Container>
@@ -34,12 +55,42 @@ export const basicRecordHeader = () => {
                     description="John Doe"
                     actions={<Actions />}
                     tags={<Badge label="active" />}
-                />
+                    isLoading={loading}
+                >
+                    <RecordPrimaryDetails>
+                        <RecordField label="Organization" isLoading={loading} value="Google" />
+                        <RecordField
+                            label="Date & Time"
+                            isLoading={loading}
+                            value={new Date()}
+                            type="dateTime"
+                        />
+                        <RecordField
+                            label="Web page"
+                            isLoading={loading}
+                            value="https://google.com"
+                            href="https://google.com"
+                            type="url"
+                        />
+                        <RecordField
+                            label="Price"
+                            isLoading={loading}
+                            value={50.5}
+                            type="currency"
+                        />
+                        <RecordField
+                            label="Status"
+                            component={StatusBadge}
+                            isLoading={loading}
+                            value="success"
+                        />
+                    </RecordPrimaryDetails>
+                </RecordHeader>
             </Container>
         </Application>
     );
 };
 
 export default {
-    title: 'Modules|Record/Stories/',
+    title: 'Modules/Record/Stories/RecordHeader',
 };

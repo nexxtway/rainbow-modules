@@ -3,6 +3,161 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.23.1](https://github.com/nexxtway/rainbow-modules/compare/v0.23.0...v0.23.1) (2021-01-20)
+
+**Note:** Version bump only for package root
+
+# [0.23.0](https://github.com/nexxtway/rainbow-modules/compare/v0.22.0...v0.23.0) (2021-01-19)
+
+### Features
+
+-   add Car and Seat icons ([#292](https://github.com/nexxtway/rainbow-modules/issues/292)) ([aa22eb9](https://github.com/nexxtway/rainbow-modules/commit/aa22eb90df9d5179348d348f7029012b7f532baa))
+-   add function icon ([#295](https://github.com/nexxtway/rainbow-modules/issues/295)) ([4845aba](https://github.com/nexxtway/rainbow-modules/commit/4845aba5759ebd0c0cc273eaf8ce5a4578e8811a))
+-   cypress tests in globalsearch ([#282](https://github.com/nexxtway/rainbow-modules/issues/282)) ([0ee9de7](https://github.com/nexxtway/rainbow-modules/commit/0ee9de7018d73e66099cb667832efb66c0f9b144))
+-   implement `DoubleBarChart` component ([#281](https://github.com/nexxtway/rainbow-modules/issues/281)) ([7864841](https://github.com/nexxtway/rainbow-modules/commit/786484107fb4dbeec5259619a60763dbf1c2a02b)), closes [#266](https://github.com/nexxtway/rainbow-modules/issues/266)
+-   include source maps in the compilation ([#299](https://github.com/nexxtway/rainbow-modules/issues/299)) ([ee4607d](https://github.com/nexxtway/rainbow-modules/commit/ee4607dd5cd03ff3101568a82ca41800053e9be0))
+
+# [0.22.0](https://github.com/nexxtway/rainbow-modules/compare/v0.21.0...v0.22.0) (2021-01-08)
+
+### Features
+
+-   add columnFilled icon ([#283](https://github.com/nexxtway/rainbow-modules/issues/283)) ([e21074d](https://github.com/nexxtway/rainbow-modules/commit/e21074d9ff0de243dc1a4a37b0ba3b1949dbd2e6))
+-   add DraggableList component to listview module ([#289](https://github.com/nexxtway/rainbow-modules/issues/289)) ([f6a4ee3](https://github.com/nexxtway/rainbow-modules/commit/f6a4ee395c11ccdeb5eed24be01d3912e82a1933))
+-   add new icons ([#285](https://github.com/nexxtway/rainbow-modules/issues/285)) ([887cbd9](https://github.com/nexxtway/rainbow-modules/commit/887cbd98ccf5438463e35a0bd732bc1acf9e3b31))
+
+# [0.21.0](https://github.com/nexxtway/rainbow-modules/compare/v0.20.2...v0.21.0) (2021-01-03)
+
+### Bug Fixes
+
+-   fixed multiselect in universal form modal example ([#278](https://github.com/nexxtway/rainbow-modules/issues/278)) ([4e7bb85](https://github.com/nexxtway/rainbow-modules/commit/4e7bb850f1ed88516f97af7865b85891973599ab))
+
+### Features
+
+-   implement useSetDoc in firebase-hooks ([#279](https://github.com/nexxtway/rainbow-modules/issues/279)) ([f9a30af](https://github.com/nexxtway/rainbow-modules/commit/f9a30af9ae5737f9cfbeb686181a6aa87dba0d7f))
+-   updated cypress version ([#280](https://github.com/nexxtway/rainbow-modules/issues/280)) ([3ffa83c](https://github.com/nexxtway/rainbow-modules/commit/3ffa83c5d38b06ac99736f744757e5b6ca17345d))
+
+## [0.20.2](https://github.com/nexxtway/rainbow-modules/compare/v0.20.1...v0.20.2) (2021-01-01)
+
+### Bug Fixes
+
+-   useMutationFlow type in onSuccess prop ([9aeabe0](https://github.com/nexxtway/rainbow-modules/commit/9aeabe0b54ec3ac2e07ebc1cec04e507dfb8ed4a))
+
+## [0.20.1](https://github.com/nexxtway/rainbow-modules/compare/v0.20.0...v0.20.1) (2020-12-31)
+
+### Bug Fixes
+
+-   add doc to useBatch and fix useMutationFlow ([#277](https://github.com/nexxtway/rainbow-modules/issues/277)) ([b78268d](https://github.com/nexxtway/rainbow-modules/commit/b78268dd37d6910a5e3a924255f726ddd85719b8))
+-   fixed bug in copy to clipboard ([#276](https://github.com/nexxtway/rainbow-modules/issues/276)) ([307c429](https://github.com/nexxtway/rainbow-modules/commit/307c42958a1db8fd92f73079146344e98d09ae6a))
+
+# [0.20.0](https://github.com/nexxtway/rainbow-modules/compare/v0.19.2...v0.20.0) (2020-12-30)
+
+### Bug Fixes
+
+-   fixed universal form modal example ([#271](https://github.com/nexxtway/rainbow-modules/issues/271)) ([4839327](https://github.com/nexxtway/rainbow-modules/commit/483932732669d6457a9c21cb71dafbae50bdf6fd))
+-   universal form modal examples ([#273](https://github.com/nexxtway/rainbow-modules/issues/273)) ([eda9ff0](https://github.com/nexxtway/rainbow-modules/commit/eda9ff0d221f9c83f3db3d9f810e33626c2a2ef6))
+
+### Features
+
+-   add useBatch ([#275](https://github.com/nexxtway/rainbow-modules/issues/275)) ([fe2bfd5](https://github.com/nexxtway/rainbow-modules/commit/fe2bfd50e8147c65c4ac617fb6880ea4b7344141))
+
+## [0.19.2](https://github.com/nexxtway/rainbow-modules/compare/v0.19.1...v0.19.2) (2020-12-28)
+
+### Bug Fixes
+
+-   cell styles ([#269](https://github.com/nexxtway/rainbow-modules/issues/269)) ([5ad7896](https://github.com/nexxtway/rainbow-modules/commit/5ad7896c7272fce5307b5ceb4835c7e542c267ac))
+-   make search when focus input and has a value ([#272](https://github.com/nexxtway/rainbow-modules/issues/272)) ([5fcddcb](https://github.com/nexxtway/rainbow-modules/commit/5fcddcb8faa89240b064efa11474a9f0c9f5505a))
+
+## [0.19.1](https://github.com/nexxtway/rainbow-modules/compare/v0.19.0...v0.19.1) (2020-12-27)
+
+### Bug Fixes
+
+-   add exports on forms module ([#270](https://github.com/nexxtway/rainbow-modules/issues/270)) ([fed4243](https://github.com/nexxtway/rainbow-modules/commit/fed4243de33a2deb0edc586dc4633344caad0dd3))
+
+# [0.19.0](https://github.com/nexxtway/rainbow-modules/compare/v0.18.0...v0.19.0) (2020-12-27)
+
+### Bug Fixes
+
+-   UniversalForm examples ([#264](https://github.com/nexxtway/rainbow-modules/issues/264)) ([1b604f4](https://github.com/nexxtway/rainbow-modules/commit/1b604f4bf2f97b4121c001e3c5526b7494e54703))
+
+### Features
+
+-   implement `CopyToClipboardButton` component on `@rainbow-modules/record` module ([#246](https://github.com/nexxtway/rainbow-modules/issues/246)) ([9238dcc](https://github.com/nexxtway/rainbow-modules/commit/9238dcce44439935621487d67d4a3b958a25c1f8))
+-   implemented universal form modal example ([#268](https://github.com/nexxtway/rainbow-modules/issues/268)) ([4e128c5](https://github.com/nexxtway/rainbow-modules/commit/4e128c5f9147a21974d952e453c630997b9355fd))
+-   universal forms + more hooks ([#262](https://github.com/nexxtway/rainbow-modules/issues/262)) ([4686a72](https://github.com/nexxtway/rainbow-modules/commit/4686a72c8aab61d2dd802d5d2a96dd8187ccb4b3))
+
+# [0.18.0](https://github.com/nexxtway/rainbow-modules/compare/v0.17.0...v0.18.0) (2020-12-24)
+
+### Features
+
+-   sort hits by score in GlobalSearch ([#260](https://github.com/nexxtway/rainbow-modules/issues/260)) ([86b5762](https://github.com/nexxtway/rainbow-modules/commit/86b57627793202604156a1088e98b6b1e42e0433))
+
+# [0.17.0](https://github.com/nexxtway/rainbow-modules/compare/v0.16.0...v0.17.0) (2020-12-24)
+
+### Bug Fixes
+
+-   check for current query when set results in GlobalSearch ([e5e7241](https://github.com/nexxtway/rainbow-modules/commit/e5e7241532a81600c05cb3020c3006041ec5f276))
+-   global search custom icon ([#258](https://github.com/nexxtway/rainbow-modules/issues/258)) ([1188717](https://github.com/nexxtway/rainbow-modules/commit/1188717d6f01043ba9a23eb37547eb06c3d93d67))
+-   make key reactive in useLocalRecentSearches hook ([e25d8e5](https://github.com/nexxtway/rainbow-modules/commit/e25d8e54ed69ee95760a9ce3d4614ceacc4b3d4d))
+-   skip recent searches that already exists in useLocalRecentSearches ([50f7199](https://github.com/nexxtway/rainbow-modules/commit/50f719972ba36af8749c0193a5bce1fca2596a34))
+-   useDoc initi isLoading in true ([88e5d19](https://github.com/nexxtway/rainbow-modules/commit/88e5d19d239c6199dd381702ef54ae8290a1cef8))
+
+### Features
+
+-   add clear and close buttons to global search ([#255](https://github.com/nexxtway/rainbow-modules/issues/255)) ([3c55312](https://github.com/nexxtway/rainbow-modules/commit/3c55312f39b120df82818157e375c0aa098b1689))
+-   add component prop to SearchEntity ([#259](https://github.com/nexxtway/rainbow-modules/issues/259)) ([dc72cef](https://github.com/nexxtway/rainbow-modules/commit/dc72cef4e98ed46768e678a0407bcfadbbe52d87))
+-   book and download ([#257](https://github.com/nexxtway/rainbow-modules/issues/257)) ([60163af](https://github.com/nexxtway/rainbow-modules/commit/60163af0eab5359fd96584819dd6b6d7a8946cae))
+
+# [0.16.0](https://github.com/nexxtway/rainbow-modules/compare/v0.15.1...v0.16.0) (2020-12-22)
+
+### Bug Fixes
+
+-   `RecordField` with `type="dateTime" crashes when pass a string date or a new Date(string) ([#247](https://github.com/nexxtway/rainbow-modules/issues/247)) ([b6f7f2c](https://github.com/nexxtway/rainbow-modules/commit/b6f7f2c122e8de4f4f6185ff152c1456ab7c9a66))
+
+### Features
+
+-   add locationPin and locationPinFilled icons ([#252](https://github.com/nexxtway/rainbow-modules/issues/252)) ([8473ed2](https://github.com/nexxtway/rainbow-modules/commit/8473ed2829046fcc350808cf769f4b378c44e3a6))
+-   add recents to GlobalSearch ([#254](https://github.com/nexxtway/rainbow-modules/issues/254)) ([247e4e8](https://github.com/nexxtway/rainbow-modules/commit/247e4e8bd8c9d87c4fa533beb7b70043291a99de))
+
+## [0.15.1](https://github.com/nexxtway/rainbow-modules/compare/v0.15.0...v0.15.1) (2020-12-18)
+
+### Bug Fixes
+
+-   search package dependencies ([420db8b](https://github.com/nexxtway/rainbow-modules/commit/420db8b41abdadad3d8ea67127966bd726a933cc))
+
+# [0.15.0](https://github.com/nexxtway/rainbow-modules/compare/v0.14.0...v0.15.0) (2020-12-18)
+
+### Bug Fixes
+
+-   change event names in golbal search ([9301e79](https://github.com/nexxtway/rainbow-modules/commit/9301e79164bacc6b8747bf73a3c5a8e58f68cc1d))
+-   fixed bug in recorddetails ([#242](https://github.com/nexxtway/rainbow-modules/issues/242)) ([6407d7e](https://github.com/nexxtway/rainbow-modules/commit/6407d7e03fe7beefc009175f9a51c3d03c6943ef))
+-   global search results crash when no hits ([23fd6ce](https://github.com/nexxtway/rainbow-modules/commit/23fd6ce806ca0e6c4ade671d5ce484bf86ccaefe))
+-   RecordHeader component ([#241](https://github.com/nexxtway/rainbow-modules/issues/241)) ([759e462](https://github.com/nexxtway/rainbow-modules/commit/759e4622bac7a9162c3a6422c831affef8a576f0))
+
+### Features
+
+-   add copytoclipboard icon ([#234](https://github.com/nexxtway/rainbow-modules/issues/234)) ([eae9dae](https://github.com/nexxtway/rainbow-modules/commit/eae9dae334a2df279f349eceb02df65cb77f08e8))
+-   add facebookCircle, email and CloseFilled icons ([#239](https://github.com/nexxtway/rainbow-modules/issues/239)) ([0652477](https://github.com/nexxtway/rainbow-modules/commit/06524778ca068eba1b045c971e4236ce418330c7))
+-   add Google icon ([#229](https://github.com/nexxtway/rainbow-modules/issues/229)) ([fdb99b1](https://github.com/nexxtway/rainbow-modules/commit/fdb99b1a23158587cbc87e5df0d7da93c93532c2))
+-   add QuestionFilled icon ([#243](https://github.com/nexxtway/rainbow-modules/issues/243)) ([93e9c6c](https://github.com/nexxtway/rainbow-modules/commit/93e9c6cc91a6ef57a8f83f057651134c4b759dc7))
+-   add tab amounts in GlobalSearch ([#245](https://github.com/nexxtway/rainbow-modules/issues/245)) ([cd6debc](https://github.com/nexxtway/rainbow-modules/commit/cd6debc71bd65bdd60d1b62c82983adeb561f813))
+-   added icons users roles lock ([#230](https://github.com/nexxtway/rainbow-modules/issues/230)) ([b04bbdf](https://github.com/nexxtway/rainbow-modules/commit/b04bbdf3d187b1865e58cfd2f74a5859dd81764d))
+-   added more icon ([#233](https://github.com/nexxtway/rainbow-modules/issues/233)) ([dbeb872](https://github.com/nexxtway/rainbow-modules/commit/dbeb872fa805d9bf6344b1c722ae3df0c8e66ba9))
+-   added types in recordfield ([#226](https://github.com/nexxtway/rainbow-modules/issues/226)) ([d3ce70b](https://github.com/nexxtway/rainbow-modules/commit/d3ce70bea315a2c66588e966c4b2290f5efe21c3))
+-   implement global search pagination ([#244](https://github.com/nexxtway/rainbow-modules/issues/244)) ([5da5d67](https://github.com/nexxtway/rainbow-modules/commit/5da5d67d0e117ab68a1e615a7e7b059e8f427cc8))
+-   implement keyboard navigation in GlobalSearch ([#248](https://github.com/nexxtway/rainbow-modules/issues/248)) ([3b56be6](https://github.com/nexxtway/rainbow-modules/commit/3b56be66b74fd89f436f7e3effef67811bee62c7))
+-   search module first commit ([#195](https://github.com/nexxtway/rainbow-modules/issues/195)) ([351cdd7](https://github.com/nexxtway/rainbow-modules/commit/351cdd72d27d14a7cb4ebc16c9dc01cd8a425c0f))
+
+# [0.14.0](https://github.com/nexxtway/rainbow-modules/compare/v0.13.0...v0.14.0) (2020-12-05)
+
+### Bug Fixes
+
+-   map improvements + getCurrentLocation helper ([#228](https://github.com/nexxtway/rainbow-modules/issues/228)) ([25e6866](https://github.com/nexxtway/rainbow-modules/commit/25e6866990a3064efb4a7cbfaa845411ff8054a1))
+
+### Features
+
+-   add children confirm modal ([#225](https://github.com/nexxtway/rainbow-modules/issues/225)) ([5216a14](https://github.com/nexxtway/rainbow-modules/commit/5216a1412714dee9f25eb784e59fd601bfe09bc9))
+-   add loading recordheader recordfield ([#224](https://github.com/nexxtway/rainbow-modules/issues/224)) ([d73263b](https://github.com/nexxtway/rainbow-modules/commit/d73263b6a77fe683b17d7222df5b6ec2e613bcb6))
+
 # [0.13.0](https://github.com/nexxtway/rainbow-modules/compare/v0.12.0...v0.13.0) (2020-11-23)
 
 ### Bug Fixes

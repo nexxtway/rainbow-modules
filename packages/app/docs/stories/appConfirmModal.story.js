@@ -8,7 +8,7 @@ import { confirmModal, showAppMessage } from '../../src/actions';
 const TrashIcon = styled(Trash)`
     width: 60px;
     height: 60px;
-    margin: 12px 12px 20px 0;
+    margin: 0 12px 0 0;
     color: ${(props) => props.theme.rainbow.palette.error.main};
 `;
 
@@ -75,7 +75,7 @@ export const showConfirmModalExample = () => {
         const result = await confirmModal({
             icon: <TrashIcon />,
             variant: 'destructive',
-            header: 'Are you sure you want delete this item?',
+            header: 'Delete Content',
             question: "This item will be deleted immediately. You can't undo this action.",
             okButtonLabel: 'Delete',
         });
@@ -118,7 +118,7 @@ export const showConfirmModalExample = () => {
 export const showYesNoModalExample = () => {
     const handleClick = async () => {
         const result = await confirmModal({
-            header: 'Do you want to continue?',
+            header: 'Join Us!',
             okButtonLabel: 'Yes',
             cancelButtonLabel: 'No',
         });
@@ -154,5 +154,5 @@ export const showYesNoModalExample = () => {
 };
 
 export default {
-    title: 'Modules|App/Stories/Modals',
+    title: 'Modules/App/Stories/Modals',
 };

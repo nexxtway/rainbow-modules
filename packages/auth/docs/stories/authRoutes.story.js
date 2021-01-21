@@ -88,7 +88,3 @@ export const basicEmailPasswordAuthFlow = () => {
         </RainbowFirebaseApp>
     );
 };
-
-export default {
-    title: 'Modules|Auth/Stories',
-};

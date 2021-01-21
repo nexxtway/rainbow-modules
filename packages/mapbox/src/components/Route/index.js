@@ -11,7 +11,7 @@ import finish from './icons/finish';
 const fitBoundsPadding = { top: 350, left: 200, right: 200, bottom: 200 };
 
 export default function Route(props) {
-    const { waypoints, onRenderRoute } = props;
+    const { waypoints, onRenderRoute, disableAnimation } = props;
     const { accessToken, map } = useContext(Map.context);
     const uniqueId = useUniqueIdentifier('mapbox-route');
 
@@ -72,6 +72,7 @@ export default function Route(props) {
 
                     map.fitBounds(waypoints, {
                         padding: fitBoundsPadding,
+                        animate: !disableAnimation,
                     });
 
                     onRenderRoute({
@@ -101,9 +102,11 @@ export default function Route(props) {
 Route.propsTypes = {
     waypoints: PropTypes.array,
     onRenderRoute: PropTypes.func,
+    disableAnimation: PropTypes.bool,
 };
 
 Route.defaultProps = {
     waypoints: [],
     onRenderRoute: () => {},
+    disableAnimation: false,
 };

@@ -82,6 +82,7 @@ const colors = {
 };
 
 const handleIdOnClick = ({ value }) => {
+    // eslint-disable-next-line no-alert
     alert(`Clicked id: ${value}`);
 };
 
@@ -112,5 +113,5 @@ export const navigationButtonColumn = () => {
 };
 
 export default {
-    title: 'Modules|Listview/Stories/',
+    title: 'Modules/Listview/Stories/NavigationButtonColumn',
 };
