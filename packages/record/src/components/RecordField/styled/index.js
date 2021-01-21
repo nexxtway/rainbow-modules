@@ -67,17 +67,15 @@ export const ValueContainer = styled.span`
         `
         padding-left: 30px;
     `}
-    ${(props) =>
-        props.type === 'url' &&
-        `
-            > a {
-                color:${props.theme.rainbow.palette.text.main};
+`;
 
-                : hover {
-                    color:${props.theme.rainbow.palette.text.main};
-                }
-            }
-    `};
+export const Link = styled.a`
+    color: ${(props) => props.theme.rainbow.palette.text.main};
+    text-decoration: underline;
+
+    :hover {
+        color: ${(props) => props.theme.rainbow.palette.text.main};
+    }
 `;
 
 export const StyledLoadingLabel = styled.div`
