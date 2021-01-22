@@ -78,7 +78,6 @@
         "packages/*"
     ],
     "dependencies": {
-        "chartjs-plugin-datalabels": "^0.7.0",
         "firebase": "^8.2.0",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",

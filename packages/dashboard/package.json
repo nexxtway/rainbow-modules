@@ -10,6 +10,7 @@
     "dependencies": {
         "@rainbow-modules/hooks": "^0.24.0",
         "@rainbow-modules/icons": "^0.24.0",
+        "chartjs-plugin-datalabels": "^0.7.0",
         "styled-components": "^4.3.2"
     },
     "peerDependencies": {
