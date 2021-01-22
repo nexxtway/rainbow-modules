@@ -77,3 +77,5 @@ export { default as List } from './components/list';
 export { default as Seat } from './components/seat';
 export { default as FrontCar } from './components/frontCar';
 export { default as Function } from './components/function';
+export { default as Phone } from './components/phone';
+export { default as Envelope } from './components/envelope';

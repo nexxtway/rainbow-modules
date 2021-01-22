@@ -75,6 +75,8 @@ import {
     FrontCar,
     Seat,
     Function,
+    Phone,
+    Envelope,
 } from '../../../src';
 
 export default [
@@ -458,5 +460,15 @@ export default [
         name: 'function',
         category: 'standard',
         icon: Function,
+    },
+    {
+        name: 'phone',
+        category: 'standard',
+        icon: Phone,
+    },
+    {
+        name: 'envelope',
+        category: 'standard',
+        icon: Envelope,
     },
 ];

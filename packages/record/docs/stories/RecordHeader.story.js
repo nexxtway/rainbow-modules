@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import { Trash, Edit, SettingsFilled } from '@rainbow-modules/icons';
 import { Application, ButtonGroup, ButtonIcon, Badge } from 'react-rainbow-components';
@@ -48,46 +49,48 @@ export const BasicRecordHeader = () => {
     const loading = useChangeLoading();
 
     return (
-        <Application>
-            <Container>
-                <RecordHeader
-                    label="CUSTOMER"
-                    description="John Doe"
-                    actions={<Actions />}
-                    tags={<Badge label="active" />}
-                    isLoading={loading}
-                >
-                    <RecordPrimaryDetails>
-                        <RecordField label="Organization" isLoading={loading} value="Google" />
-                        <RecordField
-                            label="Date & Time"
-                            isLoading={loading}
-                            value={new Date()}
-                            type="dateTime"
-                        />
-                        <RecordField
-                            label="Web page"
-                            isLoading={loading}
-                            value="https://google.com"
-                            href="https://google.com"
-                            type="url"
-                        />
-                        <RecordField
-                            label="Price"
-                            isLoading={loading}
-                            value={50.5}
-                            type="currency"
-                        />
-                        <RecordField
-                            label="Status"
-                            component={StatusBadge}
-                            isLoading={loading}
-                            value="success"
-                        />
-                    </RecordPrimaryDetails>
-                </RecordHeader>
-            </Container>
-        </Application>
+        <BrowserRouter>
+            <Application>
+                <Container>
+                    <RecordHeader
+                        label="CUSTOMER"
+                        description="John Doe"
+                        actions={<Actions />}
+                        tags={<Badge label="active" />}
+                        isLoading={loading}
+                    >
+                        <RecordPrimaryDetails>
+                            <RecordField label="Organization" isLoading={loading} value="Google" />
+                            <RecordField
+                                label="Date & Time"
+                                isLoading={loading}
+                                value={new Date()}
+                                type="dateTime"
+                            />
+                            <RecordField
+                                label="Web page"
+                                isLoading={loading}
+                                value="https://google.com"
+                                href="https://google.com"
+                                type="url"
+                            />
+                            <RecordField
+                                label="Price"
+                                isLoading={loading}
+                                value={50.5}
+                                type="currency"
+                            />
+                            <RecordField
+                                label="Status"
+                                component={StatusBadge}
+                                isLoading={loading}
+                                value="success"
+                            />
+                        </RecordPrimaryDetails>
+                    </RecordHeader>
+                </Container>
+            </Application>
+        </BrowserRouter>
     );
 };
 
