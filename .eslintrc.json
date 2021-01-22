@@ -71,7 +71,8 @@
                 "airbnb",
                 "plugin:prettier/recommended",
                 "plugin:cypress/recommended",
-                "plugin:@typescript-eslint/recommended"
+                "plugin:@typescript-eslint/recommended",
+                "plugin:import/typescript"
             ],
             "plugins": [
                 "babel",
@@ -90,7 +91,8 @@
                 "react/jsx-filename-extension": [2, { "extensions": [".tsx"] }],
                 "react/jsx-one-expression-per-line": [1, { "allow": "single-child" }],
                 "no-use-before-define": "off",
-                "@typescript-eslint/no-use-before-define": ["error"]
+                "@typescript-eslint/no-use-before-define": ["error"],
+                "import/extensions": "off"
             }
         }
     ]
