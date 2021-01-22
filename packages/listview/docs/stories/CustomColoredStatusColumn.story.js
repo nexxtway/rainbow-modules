@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Table, Column, Application } from 'react-rainbow-components';
 
@@ -81,6 +81,39 @@ export const customColoredStatusColumn = () => {
                         colors={colors}
                         textTransform="uppercase"
                         component={ColoredStatusColumn}
+                    />
+                </Table>
+            </Container>
+        </Application>
+    );
+};
+
+export const EditableCustomColoredStatusColumn = () => {
+    const [data, setData] = useState(initialData);
+
+    const handleStatusChange = (event) => {
+        const {
+            value,
+            row: { id },
+        } = event;
+        setData((data) => data.map((item) => (item.id === id ? { ...item, status: value } : item)));
+    };
+
+    return (
+        <Application>
+            <Container>
+                <Table data={data} keyField="id" variant="listview">
+                    <Column header="Customer" field="customer" />
+                    <Column header="Email" field="email" />
+                    <Column header="Tracking Number" field="trackingNumber" />
+                    <Column
+                        header="Status"
+                        field="status"
+                        colors={colors}
+                        textTransform="uppercase"
+                        component={ColoredStatusColumn}
+                        onChange={handleStatusChange}
+                        isEditable
                     />
                 </Table>
             </Container>
