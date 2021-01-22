@@ -69,11 +69,13 @@ export const ValueContainer = styled.span`
     `}
 `;
 
-export const Link = styled.a`
+export const StyledLink = styled.a`
     color: ${(props) => props.theme.rainbow.palette.text.main};
     text-decoration: underline;
 
-    :hover {
+    :hover,
+    :active,
+    :visited {
         color: ${(props) => props.theme.rainbow.palette.text.main};
     }
 `;

@@ -17,7 +17,8 @@
     "peerDependencies": {
         "react": ">=16.8.0",
         "react-intl": ">=4.0.0",
-        "react-rainbow-components": ">=1.15.0"
+        "react-rainbow-components": ">=1.15.0",
+        "react-router-dom": ">=5.0.0"
     },
     "publishConfig": {
         "access": "public"

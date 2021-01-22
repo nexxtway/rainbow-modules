@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import { Application } from 'react-rainbow-components';
 import { CubeFilled } from '@rainbow-modules/icons';
@@ -31,22 +32,55 @@ export const BasicRecordField = () => {
     const loading = useChangeLoading();
 
     return (
-        <Application>
-            <Container>
-                <RecordField label="Customer Name" isLoading={loading} value="John Doe" />
-            </Container>
-            <Container>
-                <RecordField label="Customer Name" value="John Doe" icon={<CubeFilled />} />
-            </Container>
-            <Container>
-                <RecordField
-                    label="Customer Name"
-                    value="John Doe"
-                    icon={<CubeFilled />}
-                    iconPosition="right"
-                />
-            </Container>
-        </Application>
+        <BrowserRouter>
+            <Application>
+                <Container>
+                    <RecordField label="Customer Name" isLoading={loading} value="John Doe" />
+                </Container>
+                <Container>
+                    <RecordField
+                        label="Customer Name"
+                        isLoading={loading}
+                        value="John Doe"
+                        icon={<CubeFilled />}
+                    />
+                </Container>
+                <Container>
+                    <RecordField
+                        label="Customer Name"
+                        isLoading={loading}
+                        value="John Doe"
+                        icon={<CubeFilled />}
+                        iconPosition="right"
+                    />
+                </Container>
+                <Container>
+                    <RecordField
+                        label="Customer Name"
+                        value="John Doe"
+                        type="url"
+                        href="/john-doe"
+                    />
+                </Container>
+                <Container>
+                    <RecordField
+                        label="Component"
+                        value="React Router Link"
+                        type="url"
+                        href="https://reactrouter.com/web/api/Link"
+                        target="_blank"
+                    />
+                </Container>
+                <Container>
+                    <RecordField
+                        label="Date & Time"
+                        type="dateTime"
+                        value={new Date()}
+                        component={({ value }) => <span style={{ color: 'purple' }}>{value}</span>}
+                    />
+                </Container>
+            </Application>
+        </BrowserRouter>
     );
 };
 
