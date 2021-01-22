@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.24.0](https://github.com/nexxtway/rainbow-modules/compare/v0.23.1...v0.24.0) (2021-01-22)
+
+### Features
+
+-   add phone and envelope icons ([#304](https://github.com/nexxtway/rainbow-modules/issues/304)) ([4956d80](https://github.com/nexxtway/rainbow-modules/commit/4956d80963c1a4f9c18fbe8f69f8790aafd1218e))
+
 # [0.23.0](https://github.com/nexxtway/rainbow-modules/compare/v0.22.0...v0.23.0) (2021-01-19)
 
 ### Features

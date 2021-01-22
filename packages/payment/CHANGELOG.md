@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.24.0](https://github.com/nexxtway/rainbow-modules/compare/v0.23.1...v0.24.0) (2021-01-22)
+
+### Bug Fixes
+
+-   record field when type url ([#306](https://github.com/nexxtway/rainbow-modules/issues/306)) ([0c6b010](https://github.com/nexxtway/rainbow-modules/commit/0c6b01067a6dbad7802806684bc967928ca21b64))
+
 ## [0.23.1](https://github.com/nexxtway/rainbow-modules/compare/v0.23.0...v0.23.1) (2021-01-20)
 
 **Note:** Version bump only for package @rainbow-modules/payment

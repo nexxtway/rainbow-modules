@@ -1,12 +1,13 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { ButtonIcon } from 'react-rainbow-components';
 import Search from '../search';
 
 describe('<FloatingSearch />', () => {
     it('should render an input type search and a button', () => {
         const component = mount(<Search />);
         const input = component.find('Input');
-        const button = component.find('ButtonIcon');
+        const button = component.find(ButtonIcon);
         expect(input.prop('type')).toBe('search');
         expect(button.exists()).toBe(true);
     });
