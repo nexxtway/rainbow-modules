@@ -1,28 +1,31 @@
 import React, { useCallback, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import InternalOverlay from 'react-rainbow-components/components/InternalOverlay';
+import { RenderIf } from 'react-rainbow-components';
 import { useOutsideClick, useWindowResize } from 'react-rainbow-components/libs/hooks';
-import { Option, RenderIf } from 'react-rainbow-components';
-import { HeaderOption, ColoredOption } from './option';
+import { HeaderOption } from './option';
 import getBackgroundColor from './helpers/getBackgroundColor';
 import getColor from './helpers/getColor';
 import getNormalizedColors from './helpers/getNormalizedColors';
 import useDefaultColors from './hooks/useDefaultColors';
 import resolvePosition from './helpers/resolvePosition';
 import { StyledContainer, StyledDropdown, StyledIndicator } from './styled';
+import Options from './options';
 
 const ColoredStatusColumn = ({ row, value, colors, textTransform, isEditable, onChange }) => {
     const [isOpen, setIsOpen] = useState(false);
     const containerRef = useRef();
+    const dropdownRef = useRef();
 
     const defaultColors = useDefaultColors();
     const map = colors ? getNormalizedColors(colors) : defaultColors;
     const backgroundColor = getBackgroundColor(map[value.toLowerCase()]);
     const color = getColor(map[value.toLowerCase()]);
-    const hasPopup = isEditable ? 'listbox' : null;
+    const ariaHaspopup = isEditable ? 'listbox' : null;
 
     const handleChange = (value) => {
         const { name } = value;
+        setIsOpen(false);
         onChange({
             row,
             value: name,
@@ -45,22 +48,6 @@ const ColoredStatusColumn = ({ row, value, colors, textTransform, isEditable, on
         isOpen,
     );
 
-    const getOptions = () =>
-        Object.keys(map).map((value) => {
-            const color = getColor(map[value.toLowerCase()]);
-            const backgroundColor = getBackgroundColor(map[value.toLowerCase()]);
-            return (
-                <Option
-                    name={value}
-                    label={value}
-                    color={color}
-                    backgroundColor={backgroundColor}
-                    textTransform={textTransform}
-                    component={ColoredOption}
-                />
-            );
-        });
-
     return (
         <StyledContainer
             backgroundColor={backgroundColor}
@@ -68,7 +55,7 @@ const ColoredStatusColumn = ({ row, value, colors, textTransform, isEditable, on
             textTransform={textTransform}
             ref={containerRef}
             onClick={handleContainerClick}
-            aria-haspopup={hasPopup}
+            aria-haspopup={ariaHaspopup}
             aria-expanded={isOpen}
             isEditable
         >
@@ -79,10 +66,15 @@ const ColoredStatusColumn = ({ row, value, colors, textTransform, isEditable, on
                     isVisible={isOpen}
                     positionResolver={positionResolver}
                     triggerElementRef={() => containerRef}
+                    onOpened={() => dropdownRef.current.focus()}
                 >
-                    <StyledDropdown value={{ name: value }} onChange={handleChange}>
+                    <StyledDropdown
+                        value={{ name: value }}
+                        onChange={handleChange}
+                        ref={dropdownRef}
+                    >
                         <HeaderOption />
-                        {getOptions()}
+                        <Options map={map} textTransform={textTransform} />
                     </StyledDropdown>
                 </InternalOverlay>
             </RenderIf>

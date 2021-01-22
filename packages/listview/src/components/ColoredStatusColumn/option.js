@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { RenderIf } from 'react-rainbow-components';
+import darken from 'react-rainbow-components/styles/helpers/color/darken';
 import { StyledColoredOption, StyledHeader, StyledCheckmark } from './styled';
 
-const ColoredOption = ({ label, color, backgroundColor, textTransform, isSelected }) => {
+const ColoredOption = ({ label, color, backgroundColor, textTransform, isActive, isSelected }) => {
+    const finalBackgroundColor = isActive ? darken(backgroundColor) : backgroundColor;
     return (
         <StyledColoredOption
             color={color}
-            backgroundColor={backgroundColor}
+            backgroundColor={finalBackgroundColor}
             textTransform={textTransform}
         >
             <span>{label}</span>
@@ -30,6 +32,7 @@ ColoredOption.propTypes = {
         'initial',
         'inherit',
     ]),
+    isActive: PropTypes.bool,
     isSelected: PropTypes.bool,
 };
 
@@ -38,6 +41,7 @@ ColoredOption.defaultProps = {
     color: undefined,
     backgroundColor: undefined,
     textTransform: 'capitalize',
+    isActive: false,
     isSelected: false,
 };
 
