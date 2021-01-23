@@ -77,6 +77,9 @@ import {
     Function,
     Phone,
     Envelope,
+    InteractiveExamples,
+    YoutubeIcon,
+    MediumIcon,
 } from '../../../src';
 
 export default [
@@ -470,5 +473,20 @@ export default [
         name: 'envelope',
         category: 'standard',
         icon: Envelope,
+    },
+    {
+        name: 'interactiveExamples',
+        category: 'standard',
+        icon: InteractiveExamples,
+    },
+    {
+        name: 'youtubeIcon',
+        category: 'custom',
+        icon: YoutubeIcon,
+    },
+    {
+        name: 'mediumIcon',
+        category: 'custom',
+        icon: MediumIcon,
     },
 ];
