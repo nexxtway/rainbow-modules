@@ -52,13 +52,13 @@ export const StyledCheckmark = styled(CheckmarkIcon)`
 `;
 
 export const StyledDropdown = styled(InternalDropdown)`
-    min-width: 15rem;
+    min-width: 18rem;
 `;
 
 export const StyledColoredOption = styled.div`
     position: relative;
     width: 100%;
-    height: 32px;
+    height: 42px;
     color: ${(props) => props.color};
     background-color: ${(props) => props.backgroundColor};
     margin: 1px 0;
@@ -70,6 +70,8 @@ export const StyledColoredOption = styled.div`
 `;
 
 export const StyledHeader = styled.h3`
-    font-size: 1.5rem;
-    padding: 0 0.75rem;
+    font-size: 1.25rem;
+    padding: 0 0.75rem 0.75rem 0.75rem;
+    color: ${(props) => props.theme.rainbow.palette.text.main};
+    font-family: Lato Bold, Helvetica, sans-serif;
 `;
