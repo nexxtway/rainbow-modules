@@ -26,6 +26,7 @@ export default function RecordField(props) {
         href,
         component,
         onClick,
+        target,
         ...restComponentProps
     } = props;
     const context = useContext(Context);
@@ -63,6 +64,7 @@ export default function RecordField(props) {
                         currency={currency}
                         href={href}
                         onClick={onClick}
+                        target={target}
                         restComponentProps={restComponentProps}
                     />
                 </RenderIf>
@@ -83,7 +85,7 @@ RecordField.propTypes = {
         PropTypes.string,
         PropTypes.node,
         PropTypes.number,
-        PropTypes.object,
+        PropTypes.instanceOf(Date),
     ]),
     /** The type prop specifies the format that the component will have, by default is text. */
     type: PropTypes.oneOf([
@@ -105,14 +107,19 @@ RecordField.propTypes = {
     iconPosition: PropTypes.oneOf(['left', 'right']),
     /** A string that define the type of currency, the default value is USD */
     currency: PropTypes.string,
-    /** A string with the url when the type of the field is url */
+    /** A string with the url to navigate to when type is url. */
     href: PropTypes.string,
-    /** The action triggered when click on the url when the type is url. */
+    /** The action triggered when click on the url when type is url. */
     onClick: PropTypes.func,
     /**
-     * The component class or function that is going to be render if you pass a custom component to the RecordField
+     * The component class or function to customize how the value will be rendered.
      */
     component: PropTypes.func,
+    /** Indicates where to display the linked URL, as the name for a browsing context (a tab, window, or iframe). */
+    target: PropTypes.oneOfType([
+        PropTypes.oneOf(['_blank', '_self', '_parent', '_top']),
+        PropTypes.string,
+    ]),
 };
 
 RecordField.defaultProps = {
@@ -128,4 +135,5 @@ RecordField.defaultProps = {
     href: undefined,
     onClick: () => {},
     component: undefined,
+    target: '_self',
 };

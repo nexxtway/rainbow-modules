@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import { Application, ButtonGroup, ButtonIcon, Badge } from 'react-rainbow-components';
 import { TrashFilled, PencilFilled, SettingsFilled } from '@rainbow-modules/icons';
@@ -60,69 +61,75 @@ export const BasicRecordSection = () => {
     const loading = useChangeLoading();
 
     return (
-        <Application>
-            <Container>
-                <RecordSection label="Identity" actions={<Actions />}>
-                    <RecordContainer>
-                        <RecordDetails>
-                            <RecordField label="Name" value="John Doe" isLoading={loading} />
-                            <RecordField
-                                label="Date & Time"
-                                value={new Date()}
-                                type="dateTime"
-                                isLoading={loading}
-                            />
-                            <RecordField
-                                label="Email"
-                                value="johndoe@mail.com"
-                                isLoading={loading}
-                            />
-                            <RecordField
-                                label="Percent"
-                                value={0.5389}
-                                type="percent"
-                                isLoading={loading}
-                            />
-                            <RecordField
-                                label="Status"
-                                component={StatusBadge}
-                                isLoading={loading}
-                                value="success"
-                            />
-                        </RecordDetails>
-                        <Divider />
-                        <RecordDetails>
-                            <RecordField label="Organization" value="Google" isLoading={loading} />
-                            <RecordField
-                                label="Date"
-                                value={new Date()}
-                                type="date"
-                                isLoading={loading}
-                            />
-                            <RecordField
-                                label="Web page"
-                                value="https://google.com"
-                                href="https://google.com"
-                                type="url"
-                                isLoading={loading}
-                            />
-                            <RecordField
-                                label="Price"
-                                value={50.5}
-                                type="currency"
-                                isLoading={loading}
-                            />
-                            <RecordField
-                                label="Number of workers"
-                                value={1023425}
-                                type="number"
-                                isLoading={loading}
-                            />
-                        </RecordDetails>
-                    </RecordContainer>
-                </RecordSection>
-            </Container>
-        </Application>
+        <BrowserRouter>
+            <Application>
+                <Container>
+                    <RecordSection label="Identity" actions={<Actions />}>
+                        <RecordContainer>
+                            <RecordDetails>
+                                <RecordField label="Name" value="John Doe" isLoading={loading} />
+                                <RecordField
+                                    label="Date & Time"
+                                    value={new Date()}
+                                    type="dateTime"
+                                    isLoading={loading}
+                                />
+                                <RecordField
+                                    label="Email"
+                                    value="johndoe@mail.com"
+                                    isLoading={loading}
+                                />
+                                <RecordField
+                                    label="Percent"
+                                    value={0.5389}
+                                    type="percent"
+                                    isLoading={loading}
+                                />
+                                <RecordField
+                                    label="Status"
+                                    component={StatusBadge}
+                                    isLoading={loading}
+                                    value="success"
+                                />
+                            </RecordDetails>
+                            <Divider />
+                            <RecordDetails>
+                                <RecordField
+                                    label="Organization"
+                                    value="Google"
+                                    isLoading={loading}
+                                />
+                                <RecordField
+                                    label="Date"
+                                    value={new Date()}
+                                    type="date"
+                                    isLoading={loading}
+                                />
+                                <RecordField
+                                    label="Web page"
+                                    value="https://google.com"
+                                    href="https://google.com"
+                                    type="url"
+                                    isLoading={loading}
+                                />
+                                <RecordField
+                                    label="Price"
+                                    value={50.5}
+                                    type="currency"
+                                    isLoading={loading}
+                                />
+                                <RecordField
+                                    label="Number of workers"
+                                    value={1023425}
+                                    type="number"
+                                    isLoading={loading}
+                                />
+                            </RecordDetails>
+                        </RecordContainer>
+                    </RecordSection>
+                </Container>
+            </Application>
+        </BrowserRouter>
     );
 };
 

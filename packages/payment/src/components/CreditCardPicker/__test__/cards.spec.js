@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { ButtonIcon } from 'react-rainbow-components';
 import Cards from '../cards';
 import { StyledLabelCard } from '../styled';
 
@@ -128,14 +129,10 @@ describe('<Cards/>', () => {
     it('should render ButtonIcon component when onRemove is passed', () => {
         const onRemoveFn = jest.fn();
         const component = mount(<Cards options={options} onRemove={onRemoveFn} />);
-        expect(component.find('UniversalPickerOption').at(0).find('ButtonIcon').exists()).toBe(
-            true,
-        );
+        expect(component.find('UniversalPickerOption').at(0).find(ButtonIcon).exists()).toBe(true);
     });
     it('should not render ButtonIcon component when onRemove is not passed', () => {
         const component = mount(<Cards options={options} />);
-        expect(component.find('UniversalPickerOption').at(0).find('ButtonIcon').exists()).toBe(
-            false,
-        );
+        expect(component.find('UniversalPickerOption').at(0).find(ButtonIcon).exists()).toBe(false);
     });
 });

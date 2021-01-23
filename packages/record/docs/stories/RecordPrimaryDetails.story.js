@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import { Application, Badge } from 'react-rainbow-components';
 import RecordField from '../../src/components/RecordField';
@@ -33,33 +34,40 @@ const StatusBadge = ({ value }) => {
 export const BasicRecordPrimaryDetails = () => {
     const loading = useChangeLoading();
     return (
-        <Application>
-            <Container>
-                <RecordPrimaryDetails>
-                    <RecordField label="Organization" value="Google" isLoading={loading} />
-                    <RecordField
-                        label="Date & Time"
-                        value={new Date()}
-                        type="dateTime"
-                        isLoading={loading}
-                    />
-                    <RecordField
-                        label="Web page"
-                        value="https://google.com"
-                        href="https://google.com"
-                        type="url"
-                        isLoading={loading}
-                    />
-                    <RecordField label="Price" value={50.5} type="currency" isLoading={loading} />
-                    <RecordField
-                        label="Status"
-                        component={StatusBadge}
-                        isLoading={loading}
-                        value="success"
-                    />
-                </RecordPrimaryDetails>
-            </Container>
-        </Application>
+        <BrowserRouter>
+            <Application>
+                <Container>
+                    <RecordPrimaryDetails>
+                        <RecordField label="Organization" value="Google" isLoading={loading} />
+                        <RecordField
+                            label="Date & Time"
+                            value={new Date()}
+                            type="dateTime"
+                            isLoading={loading}
+                        />
+                        <RecordField
+                            label="Web page"
+                            value="https://google.com"
+                            href="https://google.com"
+                            type="url"
+                            isLoading={loading}
+                        />
+                        <RecordField
+                            label="Price"
+                            value={50.5}
+                            type="currency"
+                            isLoading={loading}
+                        />
+                        <RecordField
+                            label="Status"
+                            component={StatusBadge}
+                            isLoading={loading}
+                            value="success"
+                        />
+                    </RecordPrimaryDetails>
+                </Container>
+            </Application>
+        </BrowserRouter>
     );
 };
 
