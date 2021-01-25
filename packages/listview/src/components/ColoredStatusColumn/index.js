@@ -11,8 +11,17 @@ import useDefaultColors from './hooks/useDefaultColors';
 import resolvePosition from './helpers/resolvePosition';
 import { StyledContainer, StyledDropdown, StyledIndicator } from './styled';
 import Options from './options';
+import { dropdownHeaderLabel } from './labels';
 
-const ColoredStatusColumn = ({ row, value, colors, textTransform, isEditable, onChange }) => {
+const ColoredStatusColumn = ({
+    row,
+    value,
+    colors,
+    textTransform,
+    isEditable,
+    onChange,
+    dropdownHeader,
+}) => {
     const [isOpen, setIsOpen] = useState(false);
     const containerRef = useRef();
     const dropdownRef = useRef();
@@ -22,6 +31,7 @@ const ColoredStatusColumn = ({ row, value, colors, textTransform, isEditable, on
     const backgroundColor = getBackgroundColor(map[value.toLowerCase()]);
     const color = getColor(map[value.toLowerCase()]);
     const ariaHaspopup = isEditable ? 'listbox' : null;
+    const header = dropdownHeader || dropdownHeaderLabel;
 
     const handleChange = (value) => {
         const { name } = value;
@@ -74,7 +84,7 @@ const ColoredStatusColumn = ({ row, value, colors, textTransform, isEditable, on
                         onChange={handleChange}
                         ref={dropdownRef}
                     >
-                        <HeaderOption />
+                        <HeaderOption>{header}</HeaderOption>
                         <Options map={map} textTransform={textTransform} />
                     </StyledDropdown>
                 </InternalOverlay>
@@ -107,6 +117,8 @@ ColoredStatusColumn.propTypes = {
     isEditable: PropTypes.bool,
     /** The action triggered when a value attribute changes. */
     onChange: PropTypes.func,
+    /** Text or component to show ate the top of the dropdown */
+    dropdownHeader: PropTypes.node,
 };
 
 ColoredStatusColumn.defaultProps = {
@@ -116,6 +128,7 @@ ColoredStatusColumn.defaultProps = {
     row: undefined,
     isEditable: false,
     onChange: () => {},
+    dropdownHeader: null,
 };
 
 export default ColoredStatusColumn;

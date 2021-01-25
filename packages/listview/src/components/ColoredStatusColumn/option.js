@@ -45,8 +45,16 @@ ColoredOption.defaultProps = {
     isSelected: false,
 };
 
-const HeaderOption = () => {
-    return <StyledHeader>Change Status</StyledHeader>;
+const HeaderOption = ({ children }) => {
+    return <StyledHeader>{children}</StyledHeader>;
+};
+
+HeaderOption.propTypes = {
+    children: PropTypes.node,
+};
+
+HeaderOption.defaultProps = {
+    children: null,
 };
 
 export { ColoredOption, HeaderOption };

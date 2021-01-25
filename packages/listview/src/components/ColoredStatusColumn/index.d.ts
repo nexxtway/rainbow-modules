@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 type ColorObject = {
     backgroundColor?: string;
     color?: string;
@@ -23,6 +25,8 @@ export interface ColoredStatusColumnProps {
     isEditable?: boolean;
     /** The action triggered when a value attribute changes. */
     onChange?: (value: ChangeValue) => void;
+    /** Text or component to show ate the top of the dropdown */
+    dropdownHeader: ReactNode;
 }
 
 export default function (props: ColoredStatusColumnProps): JSX.Element | null;
