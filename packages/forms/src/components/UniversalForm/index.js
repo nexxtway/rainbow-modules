@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import { Form } from 'react-final-form';
 
 const UniversalForm = (props) => {
-    const { onSubmit, id, children, initialValues } = props;
+    const { onSubmit, id, children, initialValues, style, className } = props;
     return (
         <Form
+            style={style}
+            className={className}
             onSubmit={onSubmit}
             initialValues={initialValues}
             render={(formProps) => {
@@ -33,6 +35,10 @@ UniversalForm.propTypes = {
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
     /** The initial values of the form e.g. { name: 'Max', age: 30 } */
     initialValues: PropTypes.object,
+    /** The class name of the root element. */
+    className: PropTypes.string,
+    /** It is an object with custom style applied to the root element. */
+    style: PropTypes.object,
 };
 
 UniversalForm.defaultProps = {
@@ -40,6 +46,8 @@ UniversalForm.defaultProps = {
     id: undefined,
     children: null,
     initialValues: {},
+    className: undefined,
+    style: undefined,
 };
 
 export default UniversalForm;
