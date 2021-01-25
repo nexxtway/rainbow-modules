@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Option } from 'react-rainbow-components';
 import darken from 'react-rainbow-components/styles/helpers/color/darken';
 import InternalDropdown from 'react-rainbow-components/components/InternalDropdown';
 import CheckmarkIcon from './checkmark';
@@ -61,6 +62,12 @@ export const StyledCheckmark = styled(CheckmarkIcon)`
 
 export const StyledDropdown = styled(InternalDropdown)`
     min-width: 15rem;
+`;
+
+export const StyledOption = styled(Option)`
+    > [role='option'] {
+        background-color: transparent;
+    }
 `;
 
 export const StyledColoredOption = styled.div`
