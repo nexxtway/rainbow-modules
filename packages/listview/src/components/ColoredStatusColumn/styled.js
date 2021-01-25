@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import darken from 'react-rainbow-components/styles/helpers/color/darken';
 import InternalDropdown from 'react-rainbow-components/components/InternalDropdown';
 import CheckmarkIcon from './checkmark';
 
@@ -12,6 +13,13 @@ export const StyledContainer = styled.div`
     color: ${(props) => props.color};
     background: ${(props) => props.backgroundColor};
     ${(props) => props.isEditable && `cursor: pointer`}
+
+    ${(props) =>
+        props.isOpen &&
+        `
+        background: ${darken(props.backgroundColor)};
+        font-weight: bold;
+        `}
 `;
 
 export const StyledIndicator = styled.span`

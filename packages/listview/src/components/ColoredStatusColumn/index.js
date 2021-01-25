@@ -57,6 +57,7 @@ const ColoredStatusColumn = ({ row, value, colors, textTransform, isEditable, on
             onClick={handleContainerClick}
             aria-haspopup={ariaHaspopup}
             aria-expanded={isOpen}
+            isOpen={isOpen}
             isEditable
         >
             {value}
