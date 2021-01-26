@@ -1,0 +1,22 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import * as stories from '../stories/useFirebaseApp.story.js';
+
+<Meta title="Modules/firebase-hooks/Hooks/useFirebaseApp" />
+
+# Overview
+
+`useFirebaseApp` hook will return the app object passed to `RainbowFirebaseApp`.
+This hook takes cares of retrieving the value from the context for you.
+
+### This is a basic example.
+
+This example shows how to get the `app` object and use it to sign-in as an anonymous user.
+
+```js
+const app = useFirebaseApp();
+await app.auth().signInAnonymously();
+```
+
+<Preview>
+    <Story name="useFirebaseApp">{stories.UseFirebaseApp()}</Story>
+</Preview>
