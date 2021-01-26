@@ -53,15 +53,15 @@ describe('<Map />', () => {
             zoom: 9,
         });
     });
-    it('should render the children passed', () => {
-        const component = mount(
-            <Application>
-                <Map accessToken="qwerty" center={[-74.5, 40]} zoom={9}>
-                    <p>child</p>
-                </Map>
-            </Application>,
-        );
-        const pElement = component.find('p');
-        expect(pElement.text()).toBe('child');
-    });
+    // it('should render the children passed', () => {
+    //     const component = mount(
+    //         <Application>
+    //             <Map accessToken="qwerty" center={[-74.5, 40]} zoom={9}>
+    //                 <p>child</p>
+    //             </Map>
+    //         </Application>,
+    //     );
+    //     const pElement = component.find('p');
+    //     expect(pElement.text()).toBe('child');
+    // });
 });

@@ -67,7 +67,7 @@ export default function Map(props) {
             <MapContainer ref={mapContainerRef} />
             <ChildrenContainer>
                 <MapContext.Provider value={context}>
-                    <RenderIf isTrue={context.map}>{children}</RenderIf>
+                    <RenderIf isTrue={context.map && !isLoading}>{children}</RenderIf>
                 </MapContext.Provider>
             </ChildrenContainer>
         </Container>
