@@ -1,0 +1,24 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import * as stories from '../stories/useDocOnce.story.js';
+
+<Meta title="Modules/firebase-hooks/Hooks/useDocOnce" />
+
+# Overview
+
+`useDocOnce` hook will get a snapshot of a firestore doc by providing the path e.g `/books/id`,
+however, unlike `useDoc`, it WILL NOT subscribe to changes in the doc.
+It will return an tuple with [data, isLoading].
+
+### This is a basic example.
+
+In this example we are subcribing to a `/books/id` doc.
+
+```js
+const [data, isLoading] = useDocOnce({
+    path: '/books/id',
+});
+```
+
+<Preview>
+    <Story name="useDocOnce">{stories.UseDocOnce()}</Story>
+</Preview>
