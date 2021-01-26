@@ -7,7 +7,7 @@
         "build-storybook": "build-storybook",
         "start": "start-storybook -p 5555 -s ./getting-started/assets",
         "dev": "yarn start",
-        "lint:js": "eslint . --ext .js --ignore-pattern lib --ignore-pattern node_modules --ignore-pattern functions",
+        "lint:js": "eslint . --ext .js,.ts,.tsx --ignore-pattern lib --ignore-pattern node_modules --ignore-pattern functions",
         "lint:styles": "stylelint './packages/**/*.js'",
         "lint": "yarn lint:js && yarn lint:styles",
         "test": "jest ./packages --verbose",
@@ -78,7 +78,6 @@
         "packages/*"
     ],
     "dependencies": {
-        "chartjs-plugin-datalabels": "^0.7.0",
         "firebase": "^8.2.0",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",

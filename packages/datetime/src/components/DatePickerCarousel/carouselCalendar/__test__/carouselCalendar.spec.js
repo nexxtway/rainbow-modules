@@ -1,4 +1,5 @@
 import React from 'react';
+import { ButtonIcon } from 'react-rainbow-components';
 import mountWithApplication from '../../../../helpers/mountWithApplication';
 import CarouselCalendar from '../index';
 
@@ -29,14 +30,14 @@ describe('<CarouselCalendar />', () => {
         const date = new Date('2020/10/21');
         const minDate = new Date('2020/10/20');
         const component = mountWithApplication(<CarouselCalendar value={date} minDate={minDate} />);
-        const scrollLeft = component.find('ButtonIcon').at(0);
+        const scrollLeft = component.find(ButtonIcon).at(0);
         expect(scrollLeft.prop('disabled')).toBe(true);
     });
     it('should set to disable the scroll right button when maxDate is equal or below than the last visible date', () => {
         const date = new Date('2020/10/21');
         const maxDate = new Date('2020/10/22');
         const component = mountWithApplication(<CarouselCalendar value={date} maxDate={maxDate} />);
-        const scrollLeft = component.find('ButtonIcon').at(1);
+        const scrollLeft = component.find(ButtonIcon).at(1);
         expect(scrollLeft.prop('disabled')).toBe(true);
     });
     it.skip('should render the right date when value is updated', () => {

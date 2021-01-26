@@ -9,6 +9,8 @@ export interface RainbowFirebaseAppProps {
     middlewares?: Array;
     initialize?: () => void;
     spinner?: ReactNode;
+    errorComponent?: ReactNode;
+    onError?: (error: Error) => void;
     children?: ReactNode;
 }
 

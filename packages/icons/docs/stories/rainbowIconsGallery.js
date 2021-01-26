@@ -32,14 +32,14 @@ const RainbowIconsGallery = (props) => {
             <RenderIf isTrue={!!standards.length}>
                 <StyledCategoryTitle>Standard Icons</StyledCategoryTitle>
                 <StyledCategoryDescription>
-                    Lorem ipsum dolor sit amet, lorem ac viverra augue sit, vel eget, lobortis vel.
+                    These are all our standard icons so far.
                 </StyledCategoryDescription>
                 <StyledIconsGallery>{standards}</StyledIconsGallery>
             </RenderIf>
             <RenderIf isTrue={!!customs.length}>
                 <StyledCategoryTitle>Custom Icons</StyledCategoryTitle>
                 <StyledCategoryDescription>
-                    Lorem ipsum dolor sit amet, lorem ac viverra augue sit, vel eget, lobortis vel.
+                    These are all our custom icons so far.
                 </StyledCategoryDescription>
                 <StyledIconsGallery>{customs}</StyledIconsGallery>
             </RenderIf>

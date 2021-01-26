@@ -75,6 +75,11 @@ import {
     FrontCar,
     Seat,
     Function,
+    Phone,
+    Envelope,
+    InteractiveExamples,
+    YoutubeIcon,
+    MediumIcon,
 } from '../../../src';
 
 export default [
@@ -458,5 +463,30 @@ export default [
         name: 'function',
         category: 'standard',
         icon: Function,
+    },
+    {
+        name: 'phone',
+        category: 'standard',
+        icon: Phone,
+    },
+    {
+        name: 'envelope',
+        category: 'standard',
+        icon: Envelope,
+    },
+    {
+        name: 'interactiveExamples',
+        category: 'standard',
+        icon: InteractiveExamples,
+    },
+    {
+        name: 'youtubeIcon',
+        category: 'custom',
+        icon: YoutubeIcon,
+    },
+    {
+        name: 'mediumIcon',
+        category: 'custom',
+        icon: MediumIcon,
     },
 ];
