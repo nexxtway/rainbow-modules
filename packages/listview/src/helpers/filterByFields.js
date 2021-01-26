@@ -8,21 +8,6 @@ function getWords(query) {
         .filter((word) => !!word);
 }
 
-const filterByFields = (params) => {
-    const { query, data, mapValuesToStringFn = (item) => item.label } = params;
-    if (query) {
-        return data.filter((item) => {
-            const stringToMatch = mapValuesToStringFn(item);
-            const words = getWords(query);
-            return words.every((word) => {
-                const regex = new RegExp(escapeRegExp(word), 'i');
-                return regex.test(stringToMatch);
-            });
-        });
-    }
-    return data;
-};
-
 const getFieldValue = (obj, field) => {
     if (typeof field === 'string') {
         return field.split('.').reduce((acc, item) => {
@@ -34,6 +19,29 @@ const getFieldValue = (obj, field) => {
         }, obj);
     }
     return '';
+};
+
+const mapValuesToString = (obj, fields) => {
+    return fields
+        .map((field) => {
+            return getFieldValue(obj, field);
+        })
+        .join(',');
+};
+
+const filterByFields = (params) => {
+    const { query, data, fields } = params;
+    if (query) {
+        return data.filter((item) => {
+            const stringToMatch = mapValuesToString(item, fields);
+            const words = getWords(query);
+            return words.every((word) => {
+                const regex = new RegExp(escapeRegExp(word), 'i');
+                return regex.test(stringToMatch);
+            });
+        });
+    }
+    return data;
 };
 
 export default filterByFields;
