@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.25.0](https://github.com/nexxtway/rainbow-modules/compare/v0.24.0...v0.25.0) (2021-01-26)
+
+### Features
+
+-   define typescript interfaces on `rainbow-modules` components ([#296](https://github.com/nexxtway/rainbow-modules/issues/296)) ([98002ac](https://github.com/nexxtway/rainbow-modules/commit/98002ac06ee07cd415b66054f730b34561628139)), closes [#250](https://github.com/nexxtway/rainbow-modules/issues/250)
+-   implement editable on `ColoredStatusColumn` component ([#305](https://github.com/nexxtway/rainbow-modules/issues/305)) ([e4cdbb6](https://github.com/nexxtway/rainbow-modules/commit/e4cdbb67b963689dda335a4190cdf8b480fab6c0)), closes [#298](https://github.com/nexxtway/rainbow-modules/issues/298)
+
 # [0.24.0](https://github.com/nexxtway/rainbow-modules/compare/v0.23.1...v0.24.0) (2021-01-22)
 
 ### Bug Fixes
