@@ -1,0 +1,21 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Modules/Hooks/useStorageState" />
+
+# Overview
+
+This hook is like the `useState`, but besides being reactive it store the data in the local storage. It receive a key string value which indicates where to set and get the data in the local storage.
+
+## Usage
+
+```js
+const Foo = () => {
+    const [state, setState] = useStorageState({ key: 'my-unique-key' });
+    return (
+        <div>
+           <h1>{state}</h1/>
+           <Button label="Switch Theme" onClick={state === 'light' ? 'dark' : 'light'} />
+        </div>
+    );
+}
+```
