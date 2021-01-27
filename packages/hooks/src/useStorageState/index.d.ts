@@ -1,6 +1,6 @@
 export interface Options {
     key?: string;
+    defaultValue?: unknown;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default function (opts: Options): [any, (value?: any) => void];
+export default function (opts: Options): [unknown, (value?: unknown) => void];

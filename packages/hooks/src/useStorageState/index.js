@@ -12,9 +12,9 @@ const useLocalData = (key) => {
     return undefined;
 };
 
-const useStorageState = ({ key }) => {
+const useStorageState = ({ key, defaultValue }) => {
     const localData = useLocalData(key);
-    const [persistentState, setState] = useState(localData);
+    const [persistentState, setState] = useState(localData || defaultValue);
 
     const setPersistentState = (newValue) => {
         localStorage.setItem(key, JSON.stringify(newValue));
