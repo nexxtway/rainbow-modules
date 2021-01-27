@@ -32,9 +32,9 @@ const mapValuesToString = (obj, fields) => {
 const filterByFields = (params) => {
     const { query, data, fields } = params;
     if (query) {
+        const words = getWords(query);
         return data.filter((item) => {
             const stringToMatch = mapValuesToString(item, fields);
-            const words = getWords(query);
             return words.every((word) => {
                 const regex = new RegExp(escapeRegExp(word), 'i');
                 return regex.test(stringToMatch);

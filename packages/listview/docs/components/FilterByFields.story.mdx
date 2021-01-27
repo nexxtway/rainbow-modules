@@ -1,0 +1,33 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import * as stories from '../stories/FilterByFields.story.js';
+
+<Meta title="Modules/Listview/Components/FilterByFields" />
+
+# Overview
+
+`FilterByFields` is a helper that implements the functionality of filtering an array of objects from a specific query.
+
+```js
+filterByFields({
+    data:  [{ label: 'some string', obj: {. foo: {. bar: 'other string' } } }, ...],
+    query: 'string',
+    fields: ['label', 'obj.foo.bar', ...],
+});
+```
+
+## filterByFields API
+
+| Property | Description                                               | Type   |
+| -------- | --------------------------------------------------------- | ------ |
+| data     | An array of objects that make up the data to be filtered. | array  |
+| query    | A string by which the data will be filtered               | string |
+| fields   | An array with the data fields where you want to filter    | array  |
+
+<br />
+<br />
+
+### This is an example of how it can be used to filter the rows of a table in a very simple way.
+
+<Preview>
+    <Story name="FilterByFields">{stories.FilterByFieldsExample()}</Story>
+</Preview>

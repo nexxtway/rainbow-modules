@@ -6,3 +6,4 @@ export { default as NavigationButtonColumn } from './components/NavigationButton
 export { default as FloatingSearch } from './components/FloatingSearch';
 export { default as FloatingSearchButtonIcon } from './components/FloatingSearchButtonIcon';
 export { default as DraggableList } from './components/DraggableList';
+export { default as filterByFields } from './helpers/filterByFields';

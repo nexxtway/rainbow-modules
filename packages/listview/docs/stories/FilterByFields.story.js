@@ -76,7 +76,7 @@ export const FilterByFieldsExample = () => {
     const [value, setValue] = useState('');
     const [data, setData] = useState(initialData);
 
-    const handleOnChange = (value) => {
+    const handleChange = (value) => {
         setValue(value);
         const filteredData = filterByFields({
             data: initialData,
@@ -95,7 +95,7 @@ export const FilterByFieldsExample = () => {
                     variant="border-filled"
                     icon={<FilterFilled />}
                     value={value}
-                    onChange={handleOnChange}
+                    onChange={handleChange}
                 />
             </Header>
             <Container>
@@ -111,5 +111,5 @@ export const FilterByFieldsExample = () => {
 };
 
 export default {
-    title: 'Modules/Listview/Stories',
+    title: 'Modules/Listview/Stories/FilterByFields',
 };
