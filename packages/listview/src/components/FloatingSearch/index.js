@@ -14,7 +14,7 @@ const FloatingSearch = (props) => {
         (event) => {
             const triggerHtmlElement = triggerElementRef().current;
             if (
-                event.target !== triggerHtmlElement &&
+                !triggerHtmlElement.contains(event.target) &&
                 event.target.dataset.id !== 'clear-search-value-button'
             ) {
                 onRequestClose(false);
