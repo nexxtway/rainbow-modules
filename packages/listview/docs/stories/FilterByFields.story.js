@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import styled from 'styled-components';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
 import { Table, Column } from 'react-rainbow-components';
@@ -74,16 +74,19 @@ const Title = styled.h1`
 
 export const FilterByFieldsExample = () => {
     const [value, setValue] = useState('');
-    const [data, setData] = useState(initialData);
+
+    const filteredData = useMemo(
+        () =>
+            filterByFields({
+                data: initialData,
+                query: value,
+                fields: ['customer', 'email', 'trackingNumber', 'obj.status'],
+            }),
+        [value],
+    );
 
     const handleChange = (value) => {
         setValue(value);
-        const filteredData = filterByFields({
-            data: initialData,
-            query: value,
-            fields: ['customer', 'email', 'trackingNumber', 'obj.status'],
-        });
-        setData(filteredData);
     };
 
     return (
@@ -99,7 +102,7 @@ export const FilterByFieldsExample = () => {
                 />
             </Header>
             <Container>
-                <Table data={data} keyField="id" variant="listview">
+                <Table data={filteredData} keyField="id" variant="listview">
                     <Column header="Customer" field="customer" />
                     <Column header="Email" field="email" />
                     <Column header="Tracking Number" field="trackingNumber" />
