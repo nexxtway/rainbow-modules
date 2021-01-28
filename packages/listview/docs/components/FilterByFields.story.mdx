@@ -9,7 +9,7 @@ import * as stories from '../stories/FilterByFields.story.js';
 
 ```js
 filterByFields({
-    data:  [{ label: 'some string', obj: {. foo: {. bar: 'other string' } } }, ...],
+    data:  [{ label: 'some string', obj: { foo: { bar: 'other string' } } }, ...],
     query: 'string',
     fields: ['label', 'obj.foo.bar', ...],
 });
