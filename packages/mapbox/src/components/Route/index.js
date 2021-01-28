@@ -95,7 +95,7 @@ export default function Route(props) {
             }
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [waypoints]);
+    }, [JSON.stringify(waypoints)]);
     return null;
 }
 

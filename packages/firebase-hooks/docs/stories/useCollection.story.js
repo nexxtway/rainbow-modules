@@ -8,6 +8,7 @@ const Books = () => {
     const [data, isLoading] = useCollection({
         path: '/books',
     });
+
     return (
         <Table keyField="id" data={data} isLoading={isLoading} variant="listview">
             <Column field="data.name" header="Name" />

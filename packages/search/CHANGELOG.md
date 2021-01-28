@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.25.0](https://github.com/nexxtway/rainbow-modules/compare/v0.24.0...v0.25.0) (2021-01-26)
+
+### Features
+
+-   define typescript interfaces on `rainbow-modules` components ([#296](https://github.com/nexxtway/rainbow-modules/issues/296)) ([98002ac](https://github.com/nexxtway/rainbow-modules/commit/98002ac06ee07cd415b66054f730b34561628139)), closes [#250](https://github.com/nexxtway/rainbow-modules/issues/250)
+
 # [0.24.0](https://github.com/nexxtway/rainbow-modules/compare/v0.23.1...v0.24.0) (2021-01-22)
 
 **Note:** Version bump only for package @rainbow-modules/search

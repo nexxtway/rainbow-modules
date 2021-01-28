@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.25.0](https://github.com/nexxtway/rainbow-modules/compare/v0.24.0...v0.25.0) (2021-01-26)
+
+### Bug Fixes
+
+-   error boundary proptypes ([48ce1b8](https://github.com/nexxtway/rainbow-modules/commit/48ce1b843dac91cfd83b4052c14cad1621535198))
+-   mapbox render route ([#312](https://github.com/nexxtway/rainbow-modules/issues/312)) ([5b6c132](https://github.com/nexxtway/rainbow-modules/commit/5b6c1329fcd2930ebd0bc8a561b9943995280c56))
+-   mapbox tests ([e15795b](https://github.com/nexxtway/rainbow-modules/commit/e15795b67b8d84fb59a78eb7a2cbdb9f68f15c46))
+
+### Features
+
+-   add className and style props ([#309](https://github.com/nexxtway/rainbow-modules/issues/309)) ([da1cf6e](https://github.com/nexxtway/rainbow-modules/commit/da1cf6e588c73c0a202675c170470dbca22c7c67))
+-   define typescript interfaces on `rainbow-modules` components ([#296](https://github.com/nexxtway/rainbow-modules/issues/296)) ([98002ac](https://github.com/nexxtway/rainbow-modules/commit/98002ac06ee07cd415b66054f730b34561628139)), closes [#250](https://github.com/nexxtway/rainbow-modules/issues/250)
+-   implement editable on `ColoredStatusColumn` component ([#305](https://github.com/nexxtway/rainbow-modules/issues/305)) ([e4cdbb6](https://github.com/nexxtway/rainbow-modules/commit/e4cdbb67b963689dda335a4190cdf8b480fab6c0)), closes [#298](https://github.com/nexxtway/rainbow-modules/issues/298)
+-   implement useStorageState hook ([#315](https://github.com/nexxtway/rainbow-modules/issues/315)) ([9819fc6](https://github.com/nexxtway/rainbow-modules/commit/9819fc6e495bed51ed27f00ec26e76a71dd77c56))
+
 # [0.24.0](https://github.com/nexxtway/rainbow-modules/compare/v0.23.1...v0.24.0) (2021-01-22)
 
 ### Bug Fixes

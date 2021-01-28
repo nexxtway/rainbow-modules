@@ -1,0 +1,38 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import * as stories from '../stories/useCollectionOnce.story.js';
+
+<Meta title="Modules/firebase-hooks/Hooks/useCollectionOnce" />
+
+# Overview
+
+`useCollectionOnce` hook will get a snapshot of a Firestore collection
+by providing the path e.g `/books`, however, unlike `useCollection`,
+it WILL NOT subscribe to changes in the collection.
+It will return an tuple with [data, isLoading].
+
+### This is a basic example.
+
+In this example we are getting a snapshot of a `/books` collection and
+rendering the result in a `Table`.
+
+```js
+const [data, isLoading] = useCollectionOnce({
+    path: '/books',
+});
+```
+
+<Preview>
+    <Story name="useCollectionOnce">{stories.UseCollectionOnce()}</Story>
+</Preview>
+
+### How to apply queries
+
+In this example we are getting a snapshot of a `/books` collection and applying a
+query only for `Axel Rauschmayer` as author.
+
+```js
+const [data, isLoading] = useCollectionOnce({
+    path: '/books',
+    query: (query) => query.where('author', '==', 'Axel Rauschmayer'),
+});
+```

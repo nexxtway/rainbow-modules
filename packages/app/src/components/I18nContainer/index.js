@@ -11,7 +11,7 @@ const I18nContainer = ({ locale, messages, children }) => (
 I18nContainer.propTypes = {
     locale: PropTypes.string,
     messages: PropTypes.object,
-    children: PropTypes.object.isRequired,
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]).isRequired,
 };
 
 I18nContainer.defaultProps = {

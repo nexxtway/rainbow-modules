@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.25.0](https://github.com/nexxtway/rainbow-modules/compare/v0.24.0...v0.25.0) (2021-01-26)
+
+### Bug Fixes
+
+-   mapbox render route ([#312](https://github.com/nexxtway/rainbow-modules/issues/312)) ([5b6c132](https://github.com/nexxtway/rainbow-modules/commit/5b6c1329fcd2930ebd0bc8a561b9943995280c56))
+-   mapbox tests ([e15795b](https://github.com/nexxtway/rainbow-modules/commit/e15795b67b8d84fb59a78eb7a2cbdb9f68f15c46))
+
+### Features
+
+-   define typescript interfaces on `rainbow-modules` components ([#296](https://github.com/nexxtway/rainbow-modules/issues/296)) ([98002ac](https://github.com/nexxtway/rainbow-modules/commit/98002ac06ee07cd415b66054f730b34561628139)), closes [#250](https://github.com/nexxtway/rainbow-modules/issues/250)
+
 # [0.24.0](https://github.com/nexxtway/rainbow-modules/compare/v0.23.1...v0.24.0) (2021-01-22)
 
 **Note:** Version bump only for package @rainbow-modules/mapbox
