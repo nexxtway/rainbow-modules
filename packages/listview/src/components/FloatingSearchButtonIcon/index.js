@@ -1,12 +1,10 @@
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { useIntl } from 'react-intl';
-import { Button } from 'react-rainbow-components';
 import { isEmpty } from '@rainbow-modules/validation';
 import { Filter } from '@rainbow-modules/icons';
 import FloatingSearch from '../FloatingSearch';
-import { StyledFilterLabel, StyledCircleFilledIcon } from './styled';
-import messages from './messages';
+import { StyledCircleFilledIcon } from './styled';
+import SearchButton from './searchButton';
 
 const searchStyle = {
     maxWidth: '500px',
@@ -32,9 +30,7 @@ const FloatingSearchButtonIcon = (props) => {
 
     const triggerRef = useRef();
     const [isOpen, setIsOpen] = useState(false);
-    const intl = useIntl();
     const buttonIcon = isEmpty(value) || isOpen ? icon : <StyledCircleFilledIcon />;
-    const filterButton = intl.formatMessage(messages.filterButton);
 
     const toggleOpen = () => {
         setIsOpen(!isOpen);
@@ -46,7 +42,7 @@ const FloatingSearchButtonIcon = (props) => {
 
     return (
         <>
-            <Button
+            <SearchButton
                 assistiveText={assistiveText}
                 className={className}
                 disabled={disabled}
@@ -59,10 +55,9 @@ const FloatingSearchButtonIcon = (props) => {
                 title={title}
                 variant={variant}
                 ref={triggerRef}
-            >
-                {buttonIcon}
-                <StyledFilterLabel>{filterButton}</StyledFilterLabel>
-            </Button>
+                isOpen={isOpen}
+                icon={buttonIcon}
+            />
             <FloatingSearch
                 isVisible={isOpen}
                 triggerElementRef={() => triggerRef.current.htmlElementRef}
