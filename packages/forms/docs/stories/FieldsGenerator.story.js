@@ -1,12 +1,13 @@
 import React from 'react';
-import { Form as FinalForm } from 'react-final-form';
-import { Application, Input, CounterInput, Button, PhoneInput } from 'react-rainbow-components';
+import { Application, CounterInput, Button, PhoneInput } from 'react-rainbow-components';
 import styled from 'styled-components';
 import FieldsGenerator from '../../src/components/FieldsGenerator';
+import UniversalForm from '../../src/components/UniversalForm';
 
-const Form = styled.form`
+const Form = styled(UniversalForm)`
     display: flex;
     flex-direction: column;
+    margin: 80px;
 `;
 
 const StyledButton = styled(Button)`
@@ -33,18 +34,45 @@ const fieldsSchema = [
         label: 'Email',
         name: 'email',
         type: 'email',
-        required: true,
+        required: {
+            errorMessage: 'The email is invalid.',
+        },
         placeholder: 'Type your email',
     },
     {
         label: 'Phone',
         name: 'phone',
         type: 'phone',
+        required: true,
+        isValidPhone: true,
+        isPhoneNumberFrom: ['ca', 'us', 'mx'],
+    },
+    {
+        label: 'Gender',
+        name: 'gender',
+        type: 'select',
+        options: [
+            { label: '-- Select Gender --', value: '' },
+            { value: 'female', label: 'Female' },
+            { value: 'male', label: 'Male' },
+        ],
     },
     {
         label: 'Amount',
         name: 'amount',
         type: 'number',
+        min: {
+            value: 0,
+            errorMessage: "Value can't be less than 0",
+        },
+        max: 10,
+    },
+    {
+        label: 'Notes',
+        name: 'notes',
+        type: 'textarea',
+        minLength: 10,
+        maxLength: 100,
     },
 ];
 
@@ -52,43 +80,40 @@ const types = {
     number: {
         component: CounterInput,
     },
-    text: {
-        component: Input,
-    },
     phone: {
         component: PhoneInput,
     },
 };
 
-const validate = (values) => {
-    const { firstName, lastName, email } = values;
-    const errors = {};
-    if (!firstName) {
-        errors.firstName = 'Looks like you forget to add your first name';
-    }
-    if (!lastName) {
-        errors.lastName = 'Looks like you forget to add your last name';
-    }
-    if (!email) {
-        errors.email = 'Looks like you forget to add your email';
-    }
-
-    return errors;
+const validations = {
+    isValidPhone: (value) => {
+        const number = value ? `${value.countryCode}${value.phone}` : '';
+        const result = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/im.test(number);
+        if (result) {
+            return undefined;
+        }
+        return 'The phone number entered is invalid';
+    },
+    isPhoneNumberFrom: (value, allValues, fieldState, keywordSchema) => {
+        const result = keywordSchema.some((isoCode) => value.isoCode.includes(isoCode));
+        if (result) {
+            return undefined;
+        }
+        return 'The phone number entered must be from Canada, USA or Mexico';
+    },
 };
 
 export const Basic = () => {
     return (
         <Application>
-            <FinalForm onSubmit={(values) => alert(JSON.stringify(values))} validate={validate}>
-                {({ handleSubmit }) => {
-                    return (
-                        <Form onSubmit={handleSubmit} noValidate>
-                            <FieldsGenerator fieldsSchema={fieldsSchema} types={types} />
-                            <StyledButton label="Submit" type="submit" />
-                        </Form>
-                    );
-                }}
-            </FinalForm>
+            <Form onSubmit={(values) => alert(JSON.stringify(values))}>
+                <FieldsGenerator
+                    fieldsSchema={fieldsSchema}
+                    types={types}
+                    validations={validations}
+                />
+                <StyledButton label="Submit" type="submit" />
+            </Form>
         </Application>
     );
 };
