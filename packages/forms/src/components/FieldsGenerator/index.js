@@ -38,9 +38,9 @@ const componentsMap = {
 };
 
 const FieldsGenerator = (props) => {
-    const { fieldsSchema, types, validations } = props;
-    if (Array.isArray(fieldsSchema) && types) {
-        return fieldsSchema.map((field) => {
+    const { schema, types, validations } = props;
+    if (Array.isArray(schema) && types) {
+        return schema.map((field) => {
             const {
                 label,
                 name,
@@ -146,7 +146,7 @@ const numberTypeShape = PropTypes.oneOfType([
 
 FieldsGenerator.propTypes = {
     /** An array with the fields definitions. */
-    fieldsSchema: PropTypes.arrayOf(
+    schema: PropTypes.arrayOf(
         PropTypes.shape({
             label: PropTypes.string.isRequired,
             name: PropTypes.string.isRequired,
@@ -182,7 +182,7 @@ FieldsGenerator.propTypes = {
 };
 
 FieldsGenerator.defaultProps = {
-    fieldsSchema: [],
+    schema: [],
     types: undefined,
     validations: {},
 };
