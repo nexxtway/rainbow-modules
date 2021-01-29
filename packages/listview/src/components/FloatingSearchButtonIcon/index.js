@@ -1,9 +1,12 @@
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
+import { useIntl } from 'react-intl';
 import { Button } from 'react-rainbow-components';
 import { isEmpty } from '@rainbow-modules/validation';
+import { Filter } from '@rainbow-modules/icons';
 import FloatingSearch from '../FloatingSearch';
 import { StyledFilterLabel, StyledCircleFilledIcon } from './styled';
+import messages from './messages';
 
 const searchStyle = {
     maxWidth: '500px',
@@ -15,7 +18,6 @@ const FloatingSearchButtonIcon = (props) => {
         className,
         disabled,
         icon,
-        label,
         id,
         shaded,
         size,
@@ -30,7 +32,9 @@ const FloatingSearchButtonIcon = (props) => {
 
     const triggerRef = useRef();
     const [isOpen, setIsOpen] = useState(false);
+    const intl = useIntl();
     const buttonIcon = isEmpty(value) || isOpen ? icon : <StyledCircleFilledIcon />;
+    const filterButton = intl.formatMessage(messages.filterButton);
 
     const toggleOpen = () => {
         setIsOpen(!isOpen);
@@ -57,7 +61,7 @@ const FloatingSearchButtonIcon = (props) => {
                 ref={triggerRef}
             >
                 {buttonIcon}
-                <StyledFilterLabel>{label}</StyledFilterLabel>
+                <StyledFilterLabel>{filterButton}</StyledFilterLabel>
             </Button>
             <FloatingSearch
                 isVisible={isOpen}
@@ -75,9 +79,7 @@ const FloatingSearchButtonIcon = (props) => {
 FloatingSearchButtonIcon.propTypes = {
     /** The icon to show if it is passed.
      * It must be a svg icon or a font icon. It is a required value. */
-    icon: PropTypes.node.isRequired,
-    /** The label to show if it is passed. defaults to 'Filter' */
-    label: PropTypes.string,
+    icon: PropTypes.node,
     /** The variant changes the appearance of the button. Accepted variants include
      * base, brand, success, destructive, neutral, outline-brand, border, border-filled, inverse and border-inverse.
      * This value defaults to base. */
@@ -126,7 +128,7 @@ FloatingSearchButtonIcon.propTypes = {
 
 FloatingSearchButtonIcon.defaultProps = {
     value: undefined,
-    label: 'Filter',
+    icon: <Filter />,
     variant: 'base',
     size: 'medium',
     shaded: false,

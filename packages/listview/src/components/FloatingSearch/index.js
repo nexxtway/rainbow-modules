@@ -31,9 +31,9 @@ const FloatingSearch = (props) => {
             keepScrollEnabled
         >
             <Search
+                {...rest}
                 ref={searchBoxRef}
                 inputRef={inputRef}
-                {...rest}
                 onRequestClose={onRequestClose}
             />
         </InternalOverlay>

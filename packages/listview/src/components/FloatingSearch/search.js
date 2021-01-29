@@ -15,7 +15,7 @@ import useKeyHandler from './useKeyHandler';
 
 const Search = forwardRef((props, ref) => {
     const { onChange, placeholder, style, className, value, onRequestClose, inputRef } = props;
-    const { keyDownHandler } = useKeyHandler({ onRequestClose });
+    const { keyDownHandler } = useKeyHandler({ value, onChange, onRequestClose });
     const intl = useIntl();
     const hasValue = value && value.length > 0;
     const clearButton = intl.formatMessage(messages.clearButton);

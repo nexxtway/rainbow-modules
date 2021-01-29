@@ -80,7 +80,7 @@ import {
     InteractiveExamples,
     YoutubeIcon,
     MediumIcon,
-    CircleFilled,
+    Filter,
 } from '../../../src';
 
 export default [
@@ -491,8 +491,8 @@ export default [
         icon: MediumIcon,
     },
     {
-        name: 'circleFilled',
+        name: 'filter',
         category: 'standard',
-        icon: CircleFilled,
+        icon: Filter,
     },
 ];
