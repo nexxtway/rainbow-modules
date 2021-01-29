@@ -4,7 +4,6 @@ import { Button } from 'react-rainbow-components';
 import { isEmpty } from '@rainbow-modules/validation';
 import FloatingSearch from '../FloatingSearch';
 import { StyledFilterLabel, StyledCircleFilledIcon } from './styled';
-// import SearchButton from './searchButton';
 
 const searchStyle = {
     maxWidth: '500px',
@@ -16,6 +15,7 @@ const FloatingSearchButtonIcon = (props) => {
         className,
         disabled,
         icon,
+        label,
         id,
         shaded,
         size,
@@ -57,7 +57,7 @@ const FloatingSearchButtonIcon = (props) => {
                 ref={triggerRef}
             >
                 {buttonIcon}
-                <StyledFilterLabel>Filter</StyledFilterLabel>
+                <StyledFilterLabel>{label}</StyledFilterLabel>
             </Button>
             <FloatingSearch
                 isVisible={isOpen}
@@ -75,7 +75,9 @@ const FloatingSearchButtonIcon = (props) => {
 FloatingSearchButtonIcon.propTypes = {
     /** The icon to show if it is passed.
      * It must be a svg icon or a font icon. It is a required value. */
-    icon: PropTypes.node,
+    icon: PropTypes.node.isRequired,
+    /** The label to show if it is passed. defaults to 'Filter' */
+    label: PropTypes.string,
     /** The variant changes the appearance of the button. Accepted variants include
      * base, brand, success, destructive, neutral, outline-brand, border, border-filled, inverse and border-inverse.
      * This value defaults to base. */
@@ -124,7 +126,7 @@ FloatingSearchButtonIcon.propTypes = {
 
 FloatingSearchButtonIcon.defaultProps = {
     value: undefined,
-    icon: null,
+    label: 'Filter',
     variant: 'base',
     size: 'medium',
     shaded: false,
