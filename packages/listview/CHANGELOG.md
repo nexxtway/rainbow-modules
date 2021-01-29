@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.26.0](https://github.com/nexxtway/rainbow-modules/compare/v0.25.0...v0.26.0) (2021-01-29)
+
+### Features
+
+-   implement search funcionality listview ([#313](https://github.com/nexxtway/rainbow-modules/issues/313)) ([1b13852](https://github.com/nexxtway/rainbow-modules/commit/1b138523d6bf998b89c2fa1764e9da176e19b587))
+
 # [0.25.0](https://github.com/nexxtway/rainbow-modules/compare/v0.24.0...v0.25.0) (2021-01-26)
 
 ### Features

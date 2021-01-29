@@ -6,14 +6,18 @@ const UniversalForm = (props) => {
     const { onSubmit, id, children, initialValues, style, className } = props;
     return (
         <Form
-            style={style}
-            className={className}
             onSubmit={onSubmit}
             initialValues={initialValues}
             render={(formProps) => {
                 const { handleSubmit } = formProps;
                 return (
-                    <form onSubmit={handleSubmit} noValidate id={id}>
+                    <form
+                        className={className}
+                        style={style}
+                        onSubmit={handleSubmit}
+                        noValidate
+                        id={id}
+                    >
                         {children}
                     </form>
                 );
