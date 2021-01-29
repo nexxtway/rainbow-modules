@@ -2,6 +2,7 @@ import withCustomError from '../withCustomError';
 
 const validatorReturnUndefined = () => undefined;
 const validatorReturnError = () => 'error';
+
 describe('withCustomError', () => {
     it('should return undefined', () => {
         const validitor = withCustomError(validatorReturnUndefined)();
