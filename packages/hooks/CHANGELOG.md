@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.26.0](https://github.com/nexxtway/rainbow-modules/compare/v0.25.0...v0.26.0) (2021-01-29)
+
+### Features
+
+-   add defaultValue to useStorageState hook ([dc44d5b](https://github.com/nexxtway/rainbow-modules/commit/dc44d5b92f892e8ed5d45e6241f8e0caf6fac457))
+-   add FieldsGenerator component to form module ([#316](https://github.com/nexxtway/rainbow-modules/issues/316)) ([6ae5a08](https://github.com/nexxtway/rainbow-modules/commit/6ae5a0814e5ee0a169f58d34b89270401799e509))
+
 # [0.25.0](https://github.com/nexxtway/rainbow-modules/compare/v0.24.0...v0.25.0) (2021-01-26)
 
 ### Features
