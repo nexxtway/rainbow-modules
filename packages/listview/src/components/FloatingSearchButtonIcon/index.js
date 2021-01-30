@@ -57,6 +57,7 @@ const FloatingSearchButtonIcon = (props) => {
                 ref={triggerRef}
                 isOpen={isOpen}
                 icon={buttonIcon}
+                value={value}
             />
             <FloatingSearch
                 isVisible={isOpen}

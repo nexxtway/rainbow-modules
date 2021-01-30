@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
 import { ButtonIcon, Button } from 'react-rainbow-components';
+import { isEmpty } from '@rainbow-modules/validation';
 import { StyledFilterLabel } from './styled';
 import messages from './messages';
 
@@ -20,11 +21,12 @@ const SearchButton = React.forwardRef((props, ref) => {
         variant,
         onClick,
         isOpen,
+        value,
     } = props;
     const intl = useIntl();
     const filterButton = intl.formatMessage(messages.filterButton);
 
-    if (isOpen) {
+    if (isOpen || !isEmpty(value)) {
         return (
             <Button
                 className={className}
@@ -89,9 +91,11 @@ SearchButton.propTypes = {
     id: PropTypes.string,
     onClick: PropTypes.func,
     isOpen: PropTypes.bool,
+    value: PropTypes.string,
 };
 
 SearchButton.defaultProps = {
+    value: undefined,
     icon: undefined,
     variant: 'base',
     size: 'medium',
