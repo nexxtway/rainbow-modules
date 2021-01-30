@@ -15,7 +15,7 @@ const StyledButton = styled(Button)`
     align-self: flex-end;
 `;
 
-const fieldsSchema = [
+const schema = [
     {
         label: 'First Name',
         name: 'firstName',
@@ -107,11 +107,7 @@ export const Basic = () => {
     return (
         <Application>
             <Form onSubmit={(values) => alert(JSON.stringify(values))}>
-                <FieldsGenerator
-                    fieldsSchema={fieldsSchema}
-                    types={types}
-                    validations={validations}
-                />
+                <FieldsGenerator schema={schema} types={types} validations={validations} />
                 <StyledButton label="Submit" type="submit" />
             </Form>
         </Application>
