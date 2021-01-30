@@ -80,6 +80,7 @@ import {
     InteractiveExamples,
     YoutubeIcon,
     MediumIcon,
+    Filter,
 } from '../../../src';
 
 export default [
@@ -488,5 +489,10 @@ export default [
         name: 'mediumIcon',
         category: 'custom',
         icon: MediumIcon,
+    },
+    {
+        name: 'filter',
+        category: 'standard',
+        icon: Filter,
     },
 ];

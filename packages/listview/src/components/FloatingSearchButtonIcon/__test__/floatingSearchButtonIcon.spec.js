@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { ButtonIcon } from 'react-rainbow-components';
+import { Button, ButtonIcon } from 'react-rainbow-components';
 import FloatingSearchButtonIcon from '..';
 import FloatingSearch from '../../FloatingSearch';
 
@@ -16,6 +16,12 @@ describe('<FloatingSearchButtonIcon />', () => {
         expect(component.find(FloatingSearch).prop('isVisible')).toBe(false);
     });
 
+    it('should render a Button with Filter as label when click on button', () => {
+        const component = mount(<FloatingSearchButtonIcon />);
+        const button = component.find(ButtonIcon);
+        button.simulate('click');
+        expect(component.find(Button).text()).toBe('Filter');
+    });
     it('should render a FloatingSearch when click on button', () => {
         const component = mount(<FloatingSearchButtonIcon />);
         const button = component.find(ButtonIcon);

@@ -82,3 +82,4 @@ export { default as Envelope } from './components/envelope';
 export { default as InteractiveExamples } from './components/interactiveExamples';
 export { default as YoutubeIcon } from './components/youtubeIcon';
 export { default as MediumIcon } from './components/mediumIcon';
+export { default as Filter } from './components/filter';
