@@ -183,7 +183,7 @@ FieldsGenerator.propTypes = {
 
 FieldsGenerator.defaultProps = {
     schema: [],
-    types: undefined,
+    types: {},
     validations: {},
 };
 
