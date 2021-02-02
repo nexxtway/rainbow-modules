@@ -1,5 +1,6 @@
+import React from 'react';
 import styled from 'styled-components';
-import RainbowButtonIcon from 'react-rainbow-components/components/ButtonIcon';
+import { ButtonIcon as RainbowButtonIcon } from 'react-rainbow-components';
 import { Error } from '@rainbow-modules/icons';
 
 function getBackgroundColor(props) {
@@ -53,7 +54,7 @@ export const MessageText = styled.p.attrs(attachProps)`
     flex-grow: 1;
 `;
 
-export const ButtonIcon = styled(RainbowButtonIcon).attrs(attachProps)`
+export const ButtonIcon = styled((props) => <RainbowButtonIcon {...props} />).attrs(attachProps)`
     flex-shrink: 0;
     color: ${(props) => props.getContrastText(props.variantColor)};
 `;
