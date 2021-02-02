@@ -2,6 +2,9 @@ export default function getOptions(options) {
     const { xLabel, yLabel, suggestedMax } = options;
     return {
         maintainAspectRatio: false,
+        legend: {
+            display: false,
+        },
         scales: {
             xAxes: [
                 {
