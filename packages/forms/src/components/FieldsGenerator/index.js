@@ -148,7 +148,7 @@ FieldsGenerator.propTypes = {
     /** An array with the fields definitions. */
     schema: PropTypes.arrayOf(
         PropTypes.shape({
-            label: PropTypes.string.isRequired,
+            label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
             name: PropTypes.string.isRequired,
             type: PropTypes.string,
             required: PropTypes.oneOfType([
@@ -170,7 +170,7 @@ FieldsGenerator.propTypes = {
                     label: PropTypes.string,
                 }),
             ),
-            default: PropTypes.string,
+            default: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         }),
     ),
     /** A map where you assign a component and its props to a field type. You can also pass custom props to the components e.g:

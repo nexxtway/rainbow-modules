@@ -15758,10 +15758,10 @@ react-query@^3.5.5:
     "@babel/runtime" "^7.5.5"
     match-sorter "^6.0.2"
 
-react-rainbow-components@1.22.0-canary.938cdf3:
-  version "1.22.0-canary.938cdf3"
-  resolved "https://registry.yarnpkg.com/react-rainbow-components/-/react-rainbow-components-1.22.0-canary.938cdf3.tgz#c4f179c295f5d04496dfd34ddfc202ac417e1150"
-  integrity sha512-+uEsS4zCar3gxBpqiR/cm8FpAtn5dKkypowb1GJqv3WarywfZF+wbm9OWhTpeR5doYvTFO2xzCMDGbv4uJnAqA==
+react-rainbow-components@^1.24.1:
+  version "1.24.1"
+  resolved "https://registry.yarnpkg.com/react-rainbow-components/-/react-rainbow-components-1.24.1.tgz#492ce96c8cbb843d173ab4a961f11ff7c360fad8"
+  integrity sha512-RCzTLVmrt8faB6EMnD5vvB3U0iEhb7mrHaGD7Ta+LqLBcAwZGGNaF8VGDxR6EoTemkGDmQRNbgpj0zMZg+CUfg==
   dependencies:
     "@rainbow-modules/hooks" "^0.12.0"
     autosize "^4.0.2"
