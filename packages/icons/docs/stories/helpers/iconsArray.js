@@ -81,6 +81,8 @@ import {
     YoutubeIcon,
     MediumIcon,
     Filter,
+    PlaneFilled,
+    Update,
 } from '../../../src';
 
 export default [
@@ -494,5 +496,15 @@ export default [
         name: 'filter',
         category: 'standard',
         icon: Filter,
+    },
+    {
+        name: 'planeFilled',
+        category: 'standard',
+        icon: PlaneFilled,
+    },
+    {
+        name: 'update',
+        category: 'standard',
+        icon: Update,
     },
 ];
