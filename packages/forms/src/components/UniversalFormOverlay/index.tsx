@@ -1,8 +1,7 @@
 import React, { useRef } from 'react';
 import { Button } from 'react-rainbow-components';
 import InternalOverlay from 'react-rainbow-components/components/InternalOverlay';
-import useOutsideClick from '../../../../hooks/src/useOutsideClick';
-import useUniqueIdentifier from '../../../../hooks/src/useUniqueIdentifier';
+import { useOutsideClick, useUniqueIdentifier } from '@rainbow-modules/hooks';
 import UniversalForm from '../UniversalForm';
 import positionResolver from './helpers/positionResolver';
 import { StyledContainer, StyledContent, StyledFooter } from './styled';
