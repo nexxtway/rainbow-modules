@@ -70,7 +70,7 @@ describe('<UniversalFormOverlay />', () => {
         expect(wrapper.find('Button').first().text()).toBe('Discard');
     });
 
-    it('should render submitButtonLabel inside cancel button', () => {
+    it('should render submitButtonLabel inside submit button', () => {
         const wrapper = mount(
             <Application>
                 <UniversalFormOverlay
