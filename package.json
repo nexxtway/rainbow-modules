@@ -13,7 +13,7 @@
         "lint": "yarn lint:js && yarn lint:styles",
         "test": "jest ./packages --verbose",
         "publish-packages": "yarn build && npx lerna publish",
-        "deploy": "yarn build && yarn build-storybook && firebase deploy --only hosting",
+        "deploy": "yarn build-storybook && firebase deploy --only hosting",
         "cypress:open": "cypress open",
         "cypress:run": "cypress run",
         "wait-on-local-server": "wait-on http://localhost:5555"
