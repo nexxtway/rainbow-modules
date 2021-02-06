@@ -27,11 +27,13 @@ const Label = styled.span`
 `;
 
 const Fields = () => {
+    const label = <Label>Name</Label>;
     return (
         <div>
-            <Label>Name</Label>
             <Field
                 name="name"
+                label={label}
+                labelAlignment="left"
                 component={Input}
                 validate={isRequired()}
                 placeholder="Enter the book name"
