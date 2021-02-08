@@ -1,4 +1,5 @@
 import React from 'react';
+import getFormattedDateTime from './helpers/getFormattedDateTime';
 import {
     EmptyMassageContainer,
     WorldImage,
@@ -7,13 +8,14 @@ import {
     DescriptionHighlight,
 } from './styled';
 
-export default function EmptyMessage() {
+// eslint-disable-next-line react/prop-types
+export default function EmptyMessage({ date }) {
     return (
         <EmptyMassageContainer>
             <WorldImage />
             <EmptyTitle>Lost in the skies?</EmptyTitle>
             <EmptyDescription>We have not found any flight for</EmptyDescription>
-            <DescriptionHighlight>July 16, 2020, 12:30 AM</DescriptionHighlight>
+            <DescriptionHighlight>{getFormattedDateTime({ date })}</DescriptionHighlight>
         </EmptyMassageContainer>
     );
 }

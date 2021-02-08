@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
-import { Picklist, Input, Button } from 'react-rainbow-components';
+import { Lookup, Input, Button } from 'react-rainbow-components';
 import { PlaneFilled, Update } from '@rainbow-modules/icons';
 import World from './images/world';
 import PlanePath from './images/planePath';
@@ -17,7 +17,7 @@ export const Row = styled.div`
     width: 100%;
 `;
 
-export const StyledPicklist = styled(Picklist)`
+export const StyledLookup = styled(Lookup)`
     flex-grow: 1;
     margin-right: 12px;
 `;
@@ -218,4 +218,11 @@ export const OutputValueLoadingLarge = styled.div`
     > div > div {
         min-width: 40px;
     }
+`;
+
+export const Error = styled.span`
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    align-self: center;
+    color: ${(props) => props.theme.rainbow.palette.error.main};
 `;
