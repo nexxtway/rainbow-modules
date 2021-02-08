@@ -10,6 +10,7 @@
     "dependencies": {
         "@rainbow-modules/app": "^0.26.0",
         "@rainbow-modules/hooks": "^0.26.0",
+        "@rainbow-modules/listview": "^0.26.0",
         "@rainbow-modules/validation": "^0.26.0",
         "final-form": "^4.20.1",
         "react-final-form": "^6.5.2",
