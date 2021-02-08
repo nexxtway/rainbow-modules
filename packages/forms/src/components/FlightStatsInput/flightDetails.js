@@ -96,6 +96,7 @@ export default function FlightDetails(props) {
                             timeZone: departureAirportTimezone,
                         })}
                     </FlightDate>
+                    <Label>{departureAirportTimezone}</Label>
                 </FlightInfo>
                 <StyledPlane />
                 <FlightInfo>
@@ -106,6 +107,7 @@ export default function FlightDetails(props) {
                             timeZone: arrivalAirportTimezone,
                         })}
                     </FlightDate>
+                    <Label>{arrivalAirportTimezone}</Label>
                 </FlightInfo>
             </Row>
             <Footer>
