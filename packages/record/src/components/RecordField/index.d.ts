@@ -28,6 +28,10 @@ export interface RecordFieldProps {
      * The component class or function that is going to be render if you pass a custom component to the RecordField
      */
     component?: ComponentType;
+    /** A boolean that specifies whether a RecordField is editable or not. Its default value is false.  */
+    isEditable: boolean;
+    /** The action triggered when the value changes. */
+    onChange: (value: ReactNode | Record<string, unknown>) => void;
 }
 
 export default function (props: RecordFieldProps): JSX.Element | null;

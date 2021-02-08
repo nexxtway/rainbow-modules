@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { RenderIf, LoadingShape } from 'react-rainbow-components';
+import { PencilFilled } from '@rainbow-modules/icons';
 import { Context } from '../../context';
 import Value from './value';
 import {
@@ -10,13 +11,17 @@ import {
     StyledLoadingValue,
     StyledLoadingLabel,
     IconContainer,
+    EditIconContainer,
 } from './styled';
+import UniversalFormOverlay from '../../../../forms/src/components/UniversalFormOverlay';
+import Fields from './fields';
 
 export default function RecordField(props) {
     const {
         className,
         style,
         label,
+        name,
         value,
         type,
         isLoading,
@@ -27,49 +32,95 @@ export default function RecordField(props) {
         component,
         onClick,
         target,
+        isEditable,
+        onChange,
         ...restComponentProps
     } = props;
     const context = useContext(Context);
     const { privateVariant } = context || {};
+    const containerRef = useRef();
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleContainerClick = (event) => {
+        if (event.target.tagName !== 'A') setIsOpen(true);
+    };
+
+    const closeForm = () => {
+        setIsOpen(false);
+    };
+
+    const handleSubmit = (values) => {
+        const { [name]: value } = values;
+        closeForm();
+        onChange(value);
+    };
 
     return (
-        <Container className={className} style={style} privateVariant={privateVariant}>
-            <Label privateVariant={privateVariant}>
-                <RenderIf isTrue={isLoading}>
-                    <StyledLoadingLabel privateVariant={privateVariant}>
-                        <LoadingShape />
-                    </StyledLoadingLabel>
-                </RenderIf>
-                <RenderIf isTrue={!isLoading}>{label}</RenderIf>
-            </Label>
-            <ValueContainer
+        <>
+            <Container
+                className={className}
+                style={style}
                 privateVariant={privateVariant}
-                type={type}
-                icon={icon}
-                iconPosition={iconPosition}
+                isEditable={isEditable}
+                ref={containerRef}
+                onClick={handleContainerClick}
             >
-                <RenderIf isTrue={isLoading}>
-                    <StyledLoadingValue>
-                        <LoadingShape />
-                    </StyledLoadingValue>
-                </RenderIf>
-                <RenderIf isTrue={!isLoading}>
-                    <RenderIf isTrue={icon}>
-                        <IconContainer iconPosition={iconPosition}>{icon}</IconContainer>
+                <Label privateVariant={privateVariant}>
+                    <RenderIf isTrue={isLoading}>
+                        <StyledLoadingLabel privateVariant={privateVariant}>
+                            <LoadingShape />
+                        </StyledLoadingLabel>
                     </RenderIf>
-                    <Value
-                        component={component}
-                        type={type}
-                        value={value}
-                        currency={currency}
-                        href={href}
-                        onClick={onClick}
-                        target={target}
-                        restComponentProps={restComponentProps}
-                    />
-                </RenderIf>
-            </ValueContainer>
-        </Container>
+                    <RenderIf isTrue={!isLoading}>{label}</RenderIf>
+                </Label>
+                <ValueContainer
+                    privateVariant={privateVariant}
+                    type={type}
+                    icon={icon}
+                    iconPosition={iconPosition}
+                >
+                    <RenderIf isTrue={isLoading}>
+                        <StyledLoadingValue>
+                            <LoadingShape />
+                        </StyledLoadingValue>
+                    </RenderIf>
+                    <RenderIf isTrue={!isLoading}>
+                        <RenderIf isTrue={icon}>
+                            <IconContainer iconPosition={iconPosition}>{icon}</IconContainer>
+                        </RenderIf>
+                        <Value
+                            component={component}
+                            type={type}
+                            value={value}
+                            currency={currency}
+                            href={href}
+                            onClick={onClick}
+                            target={target}
+                            isEditable={isEditable}
+                            restComponentProps={restComponentProps}
+                        />
+                        <RenderIf isTrue={isEditable}>
+                            <EditIconContainer>
+                                <PencilFilled />
+                            </EditIconContainer>
+                        </RenderIf>
+                    </RenderIf>
+                </ValueContainer>
+            </Container>
+            <RenderIf isTrue={isEditable}>
+                <UniversalFormOverlay
+                    triggerElementRef={containerRef}
+                    isOpen={isOpen}
+                    fields={Fields}
+                    onRequestClose={closeForm}
+                    onSumbit={handleSubmit}
+                    type={type}
+                    label={label}
+                    name={name}
+                    value={value}
+                />
+            </RenderIf>
+        </>
     );
 }
 
@@ -80,6 +131,8 @@ RecordField.propTypes = {
     style: PropTypes.object,
     /** The label of the component. */
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+    /** the name of the field */
+    name: PropTypes.string,
     /** The value of the component. */
     value: PropTypes.oneOfType([
         PropTypes.string,
@@ -120,12 +173,17 @@ RecordField.propTypes = {
         PropTypes.oneOf(['_blank', '_self', '_parent', '_top']),
         PropTypes.string,
     ]),
+    /** A boolean that specifies whether a RecordField is editable or not. Its default value is false.  */
+    isEditable: PropTypes.bool,
+    /** The action triggered when the value changes. */
+    onChange: PropTypes.func,
 };
 
 RecordField.defaultProps = {
     className: undefined,
     style: undefined,
     label: undefined,
+    name: undefined,
     value: undefined,
     type: 'text',
     isLoading: false,
@@ -136,4 +194,6 @@ RecordField.defaultProps = {
     onClick: () => {},
     component: undefined,
     target: '_self',
+    isEditable: false,
+    onChange: () => {},
 };

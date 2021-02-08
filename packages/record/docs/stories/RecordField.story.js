@@ -35,11 +35,17 @@ export const BasicRecordField = () => {
         <BrowserRouter>
             <Application>
                 <Container>
-                    <RecordField label="Customer Name" isLoading={loading} value="John Doe" />
+                    <RecordField
+                        label="Customer Name"
+                        name="name"
+                        isLoading={loading}
+                        value="John Doe"
+                    />
                 </Container>
                 <Container>
                     <RecordField
                         label="Customer Name"
+                        name="name"
                         isLoading={loading}
                         value="John Doe"
                         icon={<CubeFilled />}
@@ -48,6 +54,7 @@ export const BasicRecordField = () => {
                 <Container>
                     <RecordField
                         label="Customer Name"
+                        name="name"
                         isLoading={loading}
                         value="John Doe"
                         icon={<CubeFilled />}
@@ -57,6 +64,7 @@ export const BasicRecordField = () => {
                 <Container>
                     <RecordField
                         label="Customer Name"
+                        name="name"
                         value="John Doe"
                         type="url"
                         href="/john-doe"
@@ -65,6 +73,7 @@ export const BasicRecordField = () => {
                 <Container>
                     <RecordField
                         label="Component"
+                        name="url"
                         value="React Router Link"
                         type="url"
                         href="https://reactrouter.com/web/api/Link"
@@ -74,6 +83,7 @@ export const BasicRecordField = () => {
                 <Container>
                     <RecordField
                         label="Date & Time"
+                        name="datetime"
                         type="dateTime"
                         value={new Date()}
                         component={({ value }) => <span style={{ color: 'purple' }}>{value}</span>}
@@ -81,6 +91,36 @@ export const BasicRecordField = () => {
                 </Container>
             </Application>
         </BrowserRouter>
+    );
+};
+
+export const EditableRecordField = () => {
+    const [name, setName] = useState('John Doe');
+    const [date, setDate] = useState(new Date());
+
+    return (
+        <Application>
+            <Container>
+                <RecordField
+                    label="Customer Name"
+                    name="name"
+                    value={name}
+                    isEditable
+                    onChange={setName}
+                />
+            </Container>
+            <Container>
+                <RecordField
+                    label="Date & Time"
+                    name="datetime"
+                    type="dateTime"
+                    value={date}
+                    component={({ value }) => <span style={{ color: 'purple' }}>{value}</span>}
+                    isEditable
+                    onChange={setDate}
+                />
+            </Container>
+        </Application>
     );
 };
 

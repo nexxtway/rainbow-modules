@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link as RouterLink } from 'react-router-dom';
 import { RenderIf } from 'react-rainbow-components';
 import * as formatterValueMap from './helpers/valueFormatter';
-import { StyledLink } from './styled';
+import { ComponentContainer, StyledLink } from './styled';
 
 const Link = (props) => {
     // eslint-disable-next-line react/prop-types
@@ -35,7 +35,7 @@ const Value = (props) => {
     const RenderedComponent = Component || (() => null);
 
     return (
-        <>
+        <ComponentContainer>
             <RenderIf isTrue={isUrl}>
                 <RenderIf isTrue={Component}>
                     <RenderedComponent
@@ -55,7 +55,7 @@ const Value = (props) => {
                 </RenderIf>
                 <RenderIf isTrue={!Component}>{formattedValue}</RenderIf>
             </RenderIf>
-        </>
+        </ComponentContainer>
     );
 };
 
