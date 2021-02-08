@@ -1,6 +1,7 @@
-import React, { useRef } from 'react';
+import React, { FocusEvent, useRef } from 'react';
 import { Button } from 'react-rainbow-components';
 import InternalOverlay from 'react-rainbow-components/components/InternalOverlay';
+import manageTab from 'react-rainbow-components/libs/manageTab';
 import { useOutsideClick, useUniqueIdentifier } from '@rainbow-modules/hooks';
 import UniversalForm from '../UniversalForm';
 import positionResolver from './helpers/positionResolver';
@@ -21,9 +22,14 @@ const UniversalFormOverlay: React.FC<UniversalFormOverlayProps> = ({
 }: UniversalFormOverlayProps) => {
     const uniqueId = useUniqueIdentifier('form');
     const containerRef = useRef<HTMLElement>();
+    const hasFocus = useRef(false);
     useOutsideClick(
         () => containerRef.current,
-        () => onRequestClose && onRequestClose(),
+        () => {
+            if (hasFocus.current && onRequestClose) {
+                onRequestClose();
+            }
+        },
         isOpen,
     );
 
@@ -33,8 +39,23 @@ const UniversalFormOverlay: React.FC<UniversalFormOverlayProps> = ({
     };
 
     const handleKeyPress = (event: React.KeyboardEvent): void => {
-        if (event.key === 'Escape' && onRequestClose) {
+        if (isOpen && event.key === 'Escape' && onRequestClose) {
             onRequestClose();
+        }
+        if (event.key === 'Tab' && containerRef.current !== undefined) {
+            manageTab(containerRef.current, event);
+        }
+    };
+
+    const handleFocus = (event: FocusEvent) => {
+        if (event.target === containerRef.current || containerRef.current?.contains(event.target)) {
+            hasFocus.current = true;
+        }
+    };
+
+    const handleBlur = (event: FocusEvent) => {
+        if (event.target === containerRef.current || containerRef.current?.contains(event.target)) {
+            hasFocus.current = false;
         }
     };
 
@@ -47,7 +68,13 @@ const UniversalFormOverlay: React.FC<UniversalFormOverlayProps> = ({
             positionResolver={positionResolver}
             render={() => {
                 return (
-                    <StyledContainer ref={containerRef} onKeyDown={handleKeyPress} tabIndex="-1">
+                    <StyledContainer
+                        ref={containerRef}
+                        onKeyDown={handleKeyPress}
+                        onFocus={handleFocus}
+                        onBlur={handleBlur}
+                        tabIndex="-1"
+                    >
                         <StyledContent>
                             <UniversalForm
                                 id={uniqueId}
