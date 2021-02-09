@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.27.0](https://github.com/nexxtway/rainbow-modules/compare/v0.26.0...v0.27.0) (2021-02-08)
+
+### Bug Fixes
+
+-   icon color ([#321](https://github.com/nexxtway/rainbow-modules/issues/321)) ([68cb7ba](https://github.com/nexxtway/rainbow-modules/commit/68cb7ba27399e31d5c996adfe67b5ac8a4ff216f))
+-   improve interaction on `FloatingSearchButtonIcon` component ([#317](https://github.com/nexxtway/rainbow-modules/issues/317)) ([6786f75](https://github.com/nexxtway/rainbow-modules/commit/6786f752410a5ddb411b529b157cecaf7ef5a811))
+
+### Features
+
+-   implement FlightStastsInput ([#324](https://github.com/nexxtway/rainbow-modules/issues/324)) ([3d22f83](https://github.com/nexxtway/rainbow-modules/commit/3d22f83a20458bd804c62c7db6501bdf0d58e1fe))
+
 # [0.26.0](https://github.com/nexxtway/rainbow-modules/compare/v0.25.0...v0.26.0) (2021-01-29)
 
 **Note:** Version bump only for package @rainbow-modules/icons

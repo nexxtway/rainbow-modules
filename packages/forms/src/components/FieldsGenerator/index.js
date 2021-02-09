@@ -38,9 +38,9 @@ const componentsMap = {
 };
 
 const FieldsGenerator = (props) => {
-    const { fieldsSchema, types, validations } = props;
-    if (Array.isArray(fieldsSchema) && types) {
-        return fieldsSchema.map((field) => {
+    const { schema, types, validations } = props;
+    if (Array.isArray(schema) && types) {
+        return schema.map((field) => {
             const {
                 label,
                 name,
@@ -146,9 +146,9 @@ const numberTypeShape = PropTypes.oneOfType([
 
 FieldsGenerator.propTypes = {
     /** An array with the fields definitions. */
-    fieldsSchema: PropTypes.arrayOf(
+    schema: PropTypes.arrayOf(
         PropTypes.shape({
-            label: PropTypes.string.isRequired,
+            label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
             name: PropTypes.string.isRequired,
             type: PropTypes.string,
             required: PropTypes.oneOfType([
@@ -170,7 +170,7 @@ FieldsGenerator.propTypes = {
                     label: PropTypes.string,
                 }),
             ),
-            default: PropTypes.string,
+            default: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         }),
     ),
     /** A map where you assign a component and its props to a field type. You can also pass custom props to the components e.g:
@@ -182,8 +182,8 @@ FieldsGenerator.propTypes = {
 };
 
 FieldsGenerator.defaultProps = {
-    fieldsSchema: [],
-    types: undefined,
+    schema: [],
+    types: {},
     validations: {},
 };
 

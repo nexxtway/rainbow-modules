@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.27.0](https://github.com/nexxtway/rainbow-modules/compare/v0.26.0...v0.27.0) (2021-02-08)
+
+### Bug Fixes
+
+-   improve interaction on `FloatingSearchButtonIcon` component ([#317](https://github.com/nexxtway/rainbow-modules/issues/317)) ([6786f75](https://github.com/nexxtway/rainbow-modules/commit/6786f752410a5ddb411b529b157cecaf7ef5a811))
+
 # [0.26.0](https://github.com/nexxtway/rainbow-modules/compare/v0.25.0...v0.26.0) (2021-01-29)
 
 ### Features

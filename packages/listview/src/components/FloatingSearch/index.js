@@ -1,11 +1,27 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import InternalOverlay from 'react-rainbow-components/components/InternalOverlay';
+import { useOutsideClick } from '@rainbow-modules/hooks';
 import Search from './search';
 
 const FloatingSearch = (props) => {
-    const { isVisible, triggerElementRef, ...rest } = props;
+    const { isVisible, triggerElementRef, onRequestClose, ...rest } = props;
     const inputRef = useRef();
+    const searchBoxRef = useRef();
+
+    useOutsideClick(
+        searchBoxRef,
+        (event) => {
+            const triggerHtmlElement = triggerElementRef().current;
+            if (
+                !triggerHtmlElement.contains(event.target) &&
+                event.target.dataset.id !== 'clear-search-value-button'
+            ) {
+                onRequestClose(false);
+            }
+        },
+        isVisible,
+    );
 
     return (
         <InternalOverlay
@@ -14,7 +30,12 @@ const FloatingSearch = (props) => {
             onOpened={() => inputRef.current.focus()}
             keepScrollEnabled
         >
-            <Search inputRef={inputRef} {...rest} />
+            <Search
+                {...rest}
+                ref={searchBoxRef}
+                inputRef={inputRef}
+                onRequestClose={onRequestClose}
+            />
         </InternalOverlay>
     );
 };

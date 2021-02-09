@@ -1,9 +1,9 @@
-import { ComponentType } from 'react';
+import { ComponentType, ReactNode } from 'react';
 import { FieldState } from 'final-form';
 
 interface NumberKeywordShape {
-    value: number;
-    errorMessage: string;
+    value?: number;
+    errorMessage?: string;
 }
 
 interface Option {
@@ -13,13 +13,13 @@ interface Option {
 
 interface Schema {
     /** The label of the input field. */
-    label: string;
+    label: ReactNode;
     /** The name of the input field. */
     name: string;
     /** The type of the input field. */
     type?: string;
     /** Specifies that the input field must be filled out before submitting the form. */
-    required?: boolean | { errorMessage: string };
+    required?: boolean | { errorMessage?: string };
     /** Text that is displayed when the input field is empty, to prompt the user for a valid entry. */
     placeholder?: string;
     /** Specifies that the input field is disabled. */
@@ -37,7 +37,7 @@ interface Schema {
     /** An array with select options. Only used when pass type select. */
     options?: Array<Option>;
     /** Input field default value. */
-    default?: string;
+    default?: string | number;
     [key: string]: unknown;
 }
 
