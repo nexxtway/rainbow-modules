@@ -40,10 +40,15 @@ export default function RecordField(props) {
     const { privateVariant } = context || {};
     const containerRef = useRef();
     const [isOpen, setIsOpen] = useState(false);
+    const [isHover, setIsHover] = useState(false);
 
     const handleContainerClick = (event) => {
         if (event.target.tagName !== 'A') setIsOpen(true);
     };
+
+    const handleMouseEnter = () => setIsHover(true);
+
+    const handleMouseLeave = () => setIsHover(false);
 
     const closeForm = () => {
         setIsOpen(false);
@@ -64,6 +69,8 @@ export default function RecordField(props) {
                 isEditable={isEditable}
                 ref={containerRef}
                 onClick={handleContainerClick}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
             >
                 <Label privateVariant={privateVariant}>
                     <RenderIf isTrue={isLoading}>
@@ -100,7 +107,7 @@ export default function RecordField(props) {
                             restComponentProps={restComponentProps}
                         />
                         <RenderIf isTrue={isEditable}>
-                            <EditIconContainer>
+                            <EditIconContainer isHover={isHover}>
                                 <PencilFilled />
                             </EditIconContainer>
                         </RenderIf>

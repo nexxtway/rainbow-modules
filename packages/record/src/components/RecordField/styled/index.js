@@ -147,6 +147,8 @@ export const EditIconContainer = attachThemeAttrs(styled.span)`
     margin-left: 0.4rem;
     order: 4;
 
+    ${(props) => props.isHover && `color: ${props.palette.text.header};`}
+
     svg {
         width: 12px !important;
         height: 12px !important;
