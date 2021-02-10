@@ -34,6 +34,7 @@ export default function RecordField(props) {
         target,
         isEditable,
         onChange,
+        isDirty,
         ...restComponentProps
     } = props;
     const context = useContext(Context);
@@ -67,6 +68,7 @@ export default function RecordField(props) {
                 style={style}
                 privateVariant={privateVariant}
                 isEditable={isEditable}
+                isDirty={isDirty}
                 ref={containerRef}
                 onClick={handleContainerClick}
                 onMouseEnter={handleMouseEnter}
@@ -184,6 +186,8 @@ RecordField.propTypes = {
     isEditable: PropTypes.bool,
     /** The action triggered when the value changes. */
     onChange: PropTypes.func,
+    /** When true, indicates that the value as been modified */
+    isDirty: PropTypes.bool,
 };
 
 RecordField.defaultProps = {
@@ -203,4 +207,5 @@ RecordField.defaultProps = {
     target: '_self',
     isEditable: false,
     onChange: () => {},
+    isDirty: false,
 };

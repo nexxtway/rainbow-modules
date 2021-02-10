@@ -97,6 +97,22 @@ export const BasicRecordField = () => {
 export const EditableRecordField = () => {
     const [name, setName] = useState('John Doe');
     const [date, setDate] = useState(new Date());
+    const [isNameDirty, setIsNameDirty] = useState(false);
+    const [isDateDirty, setIsDateDirty] = useState(false);
+
+    const handleNameChange = (value) => {
+        if (name !== value) {
+            setIsNameDirty(true);
+            setName(value);
+        }
+    };
+
+    const handleDateChange = (value) => {
+        if (date !== value) {
+            setIsDateDirty(true);
+            setDate(value);
+        }
+    };
 
     return (
         <Application>
@@ -105,8 +121,9 @@ export const EditableRecordField = () => {
                     label="Customer Name"
                     name="name"
                     value={name}
+                    onChange={handleNameChange}
+                    isDirty={isNameDirty}
                     isEditable
-                    onChange={setName}
                 />
             </Container>
             <Container>
@@ -116,8 +133,9 @@ export const EditableRecordField = () => {
                     type="dateTime"
                     value={date}
                     component={({ value }) => <span style={{ color: 'purple' }}>{value}</span>}
+                    onChange={handleDateChange}
+                    isDirty={isDateDirty}
                     isEditable
-                    onChange={setDate}
                 />
             </Container>
         </Application>

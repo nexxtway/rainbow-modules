@@ -32,6 +32,8 @@ export interface RecordFieldProps {
     isEditable: boolean;
     /** The action triggered when the value changes. */
     onChange: (value: ReactNode | Record<string, unknown>) => void;
+    /** When true, indicates that the value as been modified */
+    isDirty: boolean;
 }
 
 export default function (props: RecordFieldProps): JSX.Element | null;

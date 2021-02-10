@@ -40,6 +40,12 @@ export const Container = styled.div`
                 cursor: pointer;
             }
         `}
+
+    ${(props) =>
+        props.isDirty &&
+        `
+        background-color: #fff9e6;
+        `}
 `;
 
 export const Label = styled.span`
