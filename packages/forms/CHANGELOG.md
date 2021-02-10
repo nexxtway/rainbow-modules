@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.27.0](https://github.com/nexxtway/rainbow-modules/compare/v0.26.0...v0.27.0) (2021-02-08)
+
+### Bug Fixes
+
+-   fields generator chagen fieldsSchema prop to schema ([786a336](https://github.com/nexxtway/rainbow-modules/commit/786a33611d6bbe2c065d833b7c6dd1112eb7fead))
+-   forward ref passed through styled ([#322](https://github.com/nexxtway/rainbow-modules/issues/322)) ([640a7df](https://github.com/nexxtway/rainbow-modules/commit/640a7dfb7beba29b810a783efdcfcffe6725e760))
+-   types default value in FieldsGenerator ([c3a846a](https://github.com/nexxtway/rainbow-modules/commit/c3a846ab4b387f48d276afb24221249e50040a31))
+
+### Features
+
+-   implement FlightStastsInput ([#324](https://github.com/nexxtway/rainbow-modules/issues/324)) ([3d22f83](https://github.com/nexxtway/rainbow-modules/commit/3d22f83a20458bd804c62c7db6501bdf0d58e1fe))
+-   implement UniversalFormOverlay component ([#325](https://github.com/nexxtway/rainbow-modules/issues/325)) ([d4930ee](https://github.com/nexxtway/rainbow-modules/commit/d4930eed890998a2850cd37281b9bdf0236b9b66)), closes [#319](https://github.com/nexxtway/rainbow-modules/issues/319)
+
 # [0.26.0](https://github.com/nexxtway/rainbow-modules/compare/v0.25.0...v0.26.0) (2021-01-29)
 
 ### Features
