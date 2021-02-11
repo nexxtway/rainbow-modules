@@ -8,9 +8,7 @@
         "lib"
     ],
     "scripts": {
-        "clean": "rm -rf ./lib",
-        "compile": "tsc -p tsconfig.build.json",
-        "build": "yarn clean && yarn compile"
+        "build": "tsc -p tsconfig.build.json"
     },
     "dependencies": {
         "@rainbow-modules/app": "^0.27.0",
