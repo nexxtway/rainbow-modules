@@ -3,6 +3,7 @@ import { Input, ButtonIcon } from 'react-rainbow-components';
 import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
 import { replaceAlpha } from 'react-rainbow-components/styles/helpers/color';
 import { MagnifyingGlass, CubeFilled } from '@rainbow-modules/icons';
+import { ZINDEX_GLOBAL_SEARCH } from '../../../styles/zIndex';
 
 export const StyledInput = styled(Input)`
     input {
@@ -24,7 +25,7 @@ export const Backdrop = attachThemeAttrs(styled.section)`
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 1000;
+    z-index: ${ZINDEX_GLOBAL_SEARCH};
     background: ${(props) => replaceAlpha(props.theme.rainbow.palette.background.highlight, 0.3)};
     display: flex;
     justify-content: center;

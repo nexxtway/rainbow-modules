@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { ZINDEX_NOTIFICATION } from '../../styles/zIndex';
 
 export const StyledNotificationContainer = styled.div`
     position: fixed;
     top: 16px;
     right: 0;
     padding-right: 16px;
-    z-index: 10000002;
+    z-index: ${ZINDEX_NOTIFICATION};
     display: flex;
     flex-direction: column;
     overflow: hidden;
