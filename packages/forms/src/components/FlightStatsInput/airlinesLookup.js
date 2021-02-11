@@ -7,7 +7,16 @@ const getNormalizedOption = (airline) => {
     if (airline) {
         const { iata, icao, name } = airline;
         const code = iata || icao;
-        const label = code ? `${code} - ${name}` : name;
+        let label = '';
+        if (code && name) {
+            label = `${code} - ${name}`;
+        }
+        if (code) {
+            label = code;
+        }
+        if (name) {
+            label = name;
+        }
         return {
             label,
             airline,
