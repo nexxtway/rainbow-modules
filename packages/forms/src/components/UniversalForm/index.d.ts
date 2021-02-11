@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { FormApi, SubmissionErrors } from 'final-form';
 
 export interface UniversalFormProps {
