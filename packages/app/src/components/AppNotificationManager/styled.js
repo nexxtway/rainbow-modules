@@ -76,7 +76,7 @@ export const StyledNotification = styled.div`
         transition-property: height, transform, margin-top, z-index;
         transition-duration: 0.2s, 0.4s, 0.4s, 0s;
         transition-delay: 0.4s, 0s, 0s, 0.6s;
-        transform: translateX(100%);
+        transform: translateX(105%);
         height: 0;
         `}
 `;
