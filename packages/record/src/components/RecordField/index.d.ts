@@ -1,4 +1,5 @@
 import { ComponentType, CSSProperties, ReactNode } from 'react';
+import { FieldValidator } from 'final-form';
 
 export interface RecordFieldProps {
     /** A CSS class for the outer element, in addition to the component's base classes. */
@@ -20,20 +21,21 @@ export interface RecordFieldProps {
     iconPosition?: 'left' | 'right';
     /** A string that define the type of currency, the default value is USD */
     currency?: string;
-    /** A string with the url when the type of the field is url */
-    href?: string;
     /** The action triggered when click on the url when the type is url. */
     onClick?: (event: MouseEvent) => void;
     /**
-     * The component class or function that is going to be render if you pass a custom component to the RecordField
+     * The component class or function to customize how the value will be rendered.
      */
     component?: ComponentType;
+    /** The name of the field. */
+    name?: string;
     /** A boolean that specifies whether a RecordField is editable or not. Its default value is false.  */
-    isEditable: boolean;
+    isEditable?: boolean;
     /** The action triggered when the value changes. */
-    onChange: (value: ReactNode | Record<string, unknown>) => void;
-    /** When true, indicates that the value as been modified */
-    isDirty: boolean;
+    onChange?: (value: Record<string, unknown>) => void;
+    /** A function that takes the field value, all the values of the form and the meta data about the field and returns an error
+     * if the value is invalid, or undefined if the value is valid. */
+    validate?: FieldValidator<Record<string, unknown>>;
 }
 
 export default function (props: RecordFieldProps): JSX.Element | null;

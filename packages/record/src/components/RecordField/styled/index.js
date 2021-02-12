@@ -166,3 +166,9 @@ export const FieldLabel = styled.span`
     font-size: 1rem;
     font-weight: bold;
 `;
+
+export const Error = styled.span`
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    color: ${(props) => props.theme.rainbow.palette.error.main};
+`;

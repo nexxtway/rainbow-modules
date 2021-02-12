@@ -1,12 +1,29 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { Field } from 'react-final-form';
+import { Field } from '@rainbow-modules/forms';
 import getComponent from './helpers/getComponent';
 import { FieldLabel } from './styled';
 
-const Fields = ({ label: labelInProps, name, value, placeholder, type }) => {
+const typeMap = {
+    text: 'text',
+    currency: 'number',
+    number: 'number',
+    percent: 'number',
+    url: 'text',
+};
+
+const Fields = ({ label: labelInProps, name, value, placeholder, type, validate }) => {
     const label = <FieldLabel>{labelInProps}</FieldLabel>;
     const Component = getComponent(type);
+    const inputType = typeMap[type] || undefined;
+    const inputRef = useRef();
+
+    useEffect(() => {
+        if (inputRef.current && inputRef.current.focus) {
+            inputRef.current.focus();
+        }
+    }, []);
+
     return (
         <Field
             className="rainbow-m-bottom_large"
@@ -14,9 +31,12 @@ const Fields = ({ label: labelInProps, name, value, placeholder, type }) => {
             name={name}
             initialValue={value}
             labelAlignment="left"
-            type={type}
+            type={inputType}
             placeholder={placeholder}
             component={Component}
+            validate={validate}
+            autoComplete="off"
+            ref={inputRef}
         />
     );
 };
@@ -41,6 +61,7 @@ Fields.propTypes = {
         'url',
     ]),
     placeholder: PropTypes.string,
+    validate: PropTypes.func,
 };
 
 Fields.defaultProps = {
@@ -49,6 +70,7 @@ Fields.defaultProps = {
     value: undefined,
     type: 'text',
     placeholder: undefined,
+    validate: undefined,
 };
 
 export default Fields;

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link as RouterLink } from 'react-router-dom';
@@ -7,12 +8,12 @@ import { ComponentContainer, StyledLink } from './styled';
 
 const Link = (props) => {
     // eslint-disable-next-line react/prop-types
-    const { href, target, onClick, value } = props;
+    const { target, onClick, value } = props;
     const isTargetBlank = target === '_blank';
     const as = isTargetBlank ? 'a' : RouterLink;
     const rel = isTargetBlank ? 'noopener noreferrer' : undefined;
     return (
-        <StyledLink as={as} to={href} href={href} onClick={onClick} target={target} rel={rel}>
+        <StyledLink as={as} to={value} href={value} onClick={onClick} target={target} rel={rel}>
             {value}
         </StyledLink>
     );
@@ -23,7 +24,6 @@ const Value = (props) => {
         type,
         value,
         currency,
-        href,
         onClick,
         component: Component,
         target,
@@ -38,15 +38,10 @@ const Value = (props) => {
         <ComponentContainer>
             <RenderIf isTrue={isUrl}>
                 <RenderIf isTrue={Component}>
-                    <RenderedComponent
-                        {...restComponentProps}
-                        value={value}
-                        href={href}
-                        onClick={onClick}
-                    />
+                    <RenderedComponent {...restComponentProps} value={value} onClick={onClick} />
                 </RenderIf>
                 <RenderIf isTrue={!Component}>
-                    <Link href={href} target={target} onClick={onClick} value={value} />
+                    <Link target={target} onClick={onClick} value={value} />
                 </RenderIf>
             </RenderIf>
             <RenderIf isTrue={!isUrl}>
@@ -71,7 +66,6 @@ Value.propTypes = {
         'url',
     ]),
     currency: PropTypes.string,
-    href: PropTypes.string,
     value: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.node,
@@ -88,7 +82,6 @@ Value.defaultProps = {
     value: undefined,
     type: 'text',
     currency: 'USD',
-    href: undefined,
     onClick: () => {},
     component: undefined,
     restComponentProps: undefined,

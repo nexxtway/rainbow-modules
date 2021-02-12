@@ -1,8 +1,10 @@
+/* eslint-disable no-alert */
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import styled from 'styled-components';
-import { Application } from 'react-rainbow-components';
+import { Application, Button } from 'react-rainbow-components';
 import { CubeFilled } from '@rainbow-modules/icons';
+import { UniversalForm, isRequired } from '@rainbow-modules/forms';
 import RecordField from '../../src/components/RecordField';
 
 const Container = styled.div`
@@ -62,21 +64,14 @@ export const BasicRecordField = () => {
                     />
                 </Container>
                 <Container>
-                    <RecordField
-                        label="Customer Name"
-                        name="name"
-                        value="John Doe"
-                        type="url"
-                        href="/john-doe"
-                    />
+                    <RecordField label="John Doe Url" name="name" type="url" value="/john-doe" />
                 </Container>
                 <Container>
                     <RecordField
-                        label="Component"
+                        label="React Router"
                         name="url"
-                        value="React Router Link"
                         type="url"
-                        href="https://reactrouter.com/web/api/Link"
+                        value="https://reactrouter.com/web/api/Link"
                         target="_blank"
                     />
                 </Container>
@@ -94,49 +89,68 @@ export const BasicRecordField = () => {
     );
 };
 
+const StyledUniversalForm = styled(UniversalForm)`
+    display: flex;
+    flex-direction: column;
+
+    & > div {
+        margin-bottom: 16px;
+    }
+`;
+
+const SubmitButton = styled(Button)`
+    margin-top: 16px;
+    align-self: flex-end;
+`;
+
+const defaultValues = {
+    name: 'John Doe',
+    price: 10,
+    amount: 1,
+    commission: 0.1,
+    date: new Date(),
+    time: '13:30',
+    website: 'https://mywebsite.com',
+};
+
+const FORM_ID = 'records-form';
+
 export const EditableRecordField = () => {
-    const [name, setName] = useState('John Doe');
-    const [date, setDate] = useState(new Date());
-    const [isNameDirty, setIsNameDirty] = useState(false);
-    const [isDateDirty, setIsDateDirty] = useState(false);
-
-    const handleNameChange = (value) => {
-        if (name !== value) {
-            setIsNameDirty(true);
-            setName(value);
-        }
-    };
-
-    const handleDateChange = (value) => {
-        if (date !== value) {
-            setIsDateDirty(true);
-            setDate(value);
-        }
-    };
+    const [initialValues, setInitialValues] = useState(defaultValues);
 
     return (
         <Application>
             <Container>
-                <RecordField
-                    label="Customer Name"
-                    name="name"
-                    value={name}
-                    onChange={handleNameChange}
-                    isDirty={isNameDirty}
-                    isEditable
-                />
-            </Container>
-            <Container>
-                <RecordField
-                    label="Date & Time"
-                    name="datetime"
-                    type="dateTime"
-                    value={date}
-                    component={({ value }) => <span style={{ color: 'purple' }}>{value}</span>}
-                    onChange={handleDateChange}
-                    isDirty={isDateDirty}
-                    isEditable
-                />
+                <StyledUniversalForm
+                    id={FORM_ID}
+                    initialValues={initialValues}
+                    onSubmit={(value) => {
+                        alert(JSON.stringify(value));
+                        setInitialValues(value);
+                    }}
+                    validate={() => ({ price: 'asdas dasdasds' })}
+                >
+                    <RecordField
+                        label="Customer Name"
+                        name="name"
+                        type="text"
+                        isEditable
+                        validate={isRequired()}
+                    />
+                    <RecordField label="Price" name="price" type="currency" isEditable />
+                    <RecordField label="Amount" name="amount" type="number" isEditable />
+                    <RecordField label="Commission" name="commission" type="percent" isEditable />
+                    <RecordField label="Date" name="date" type="date" isEditable />
+                    <RecordField label="Time" name="time" type="time" isEditable />
+                    <RecordField
+                        label="Website"
+                        name="website"
+                        type="url"
+                        isEditable
+                        target="_blank"
+                    />
+                    <SubmitButton label="Submit" type="submit" form={FORM_ID} />
+                </StyledUniversalForm>
             </Container>
         </Application>
     );

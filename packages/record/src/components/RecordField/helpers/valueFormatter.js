@@ -45,14 +45,25 @@ export const date = (value) => {
     return '';
 };
 
+const formatTime = (date) => {
+    return new Intl.DateTimeFormat(undefined, {
+        hour: 'numeric',
+        minute: 'numeric',
+    }).format(date);
+};
+
 export const time = (value) => {
-    const date = initDate(value);
+    let dateValue = value;
+    if (typeof value === 'string') {
+        const [hours, minutes] = value.split(':');
+        const date = new Date();
+        date.setHours(hours);
+        date.setMinutes(minutes);
+        dateValue = date;
+    }
+    const date = initDate(dateValue);
     if (date) {
-        return new Intl.DateTimeFormat(undefined, {
-            hour: 'numeric',
-            minute: 'numeric',
-            second: 'numeric',
-        }).format(date);
+        return formatTime(date);
     }
     return '';
 };

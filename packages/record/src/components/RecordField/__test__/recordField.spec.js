@@ -61,7 +61,7 @@ describe('<RecordField />', () => {
         expect(wrapper.find('UniversalFormOverlay').exists()).toBe(true);
     });
 
-    it('should fire onChage when isEditable is true and form is submitted', () => {
+    it('should fire onChange when isEditable is true and form is submitted', () => {
         const onChangeFn = jest.fn();
         const wrapper = mount(
             <Application>
