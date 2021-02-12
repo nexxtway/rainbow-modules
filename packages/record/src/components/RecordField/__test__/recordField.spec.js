@@ -2,6 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { Application } from 'react-rainbow-components';
 import { BrowserRouter } from 'react-router-dom';
+import { UniversalForm } from '@rainbow-modules/forms';
 import RecordField from '..';
 import Value from '../value';
 import { Container } from '../styled';
@@ -55,28 +56,35 @@ describe('<RecordField />', () => {
     it('should render a UniversalFormOverlay when isEditable is true', () => {
         const wrapper = mount(
             <Application>
-                <RecordField value="Test" isEditable />
+                <UniversalForm>
+                    <RecordField value="Test" isEditable name="test" />
+                </UniversalForm>
             </Application>,
         );
         expect(wrapper.find('UniversalFormOverlay').exists()).toBe(true);
     });
 
     it('should fire onChange when isEditable is true and form is submitted', () => {
-        const onChangeFn = jest.fn();
+        const onSubmitMockFn = jest.fn();
         const wrapper = mount(
             <Application>
-                <RecordField name="test" value="Test" onChange={onChangeFn} isEditable />
+                <UniversalForm initialValues={{ test: 'test value' }} onSubmit={onSubmitMockFn}>
+                    <RecordField name="test" isEditable />
+                </UniversalForm>
             </Application>,
         );
         wrapper.find(Container).simulate('click');
-        wrapper.find('form').simulate('submit');
-        expect(onChangeFn).toHaveBeenCalledTimes(1);
+        wrapper.find('form').at(0).simulate('submit');
+        expect(onSubmitMockFn).toHaveBeenCalledTimes(1);
+        expect(onSubmitMockFn.mock.calls[0][0]).toEqual({ test: 'test value' });
     });
 
     it('should render an input with the correct type', () => {
         const wrapper = mount(
             <Application>
-                <RecordField name="test" value="Test" type="number" isEditable />
+                <UniversalForm>
+                    <RecordField name="test" value="Test" type="number" isEditable />
+                </UniversalForm>
             </Application>,
         );
         wrapper.find(Container).simulate('click');
