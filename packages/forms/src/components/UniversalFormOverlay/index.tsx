@@ -60,6 +60,7 @@ const UniversalFormOverlay: React.FC<UniversalFormOverlayProps> = ({
     };
 
     const Fields: React.ComponentType = fields || (() => null);
+
     return (
         <InternalOverlay
             isVisible={isOpen}
