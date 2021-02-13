@@ -1,8 +1,9 @@
 import { useContext, useEffect, useState } from 'react';
 import Context from '../context';
+import getDocData from '../helpers/getDocData';
 
 export default function useDocOnce(props) {
-    const { path } = props;
+    const { path, flat = false } = props;
     const { app } = useContext(Context);
 
     const [isLoading, setIsLoading] = useState(true);
@@ -14,10 +15,7 @@ export default function useDocOnce(props) {
             ref.get()
                 .then((doc) => {
                     if (doc.exists) {
-                        setData({
-                            id: doc.id,
-                            data: doc.data(),
-                        });
+                        setData(getDocData(doc, flat));
                     } else {
                         setData(null);
                     }
@@ -29,7 +27,7 @@ export default function useDocOnce(props) {
                     console.log(err);
                 });
         }
-    }, [app, path]);
+    }, [app, path, flat]);
 
     return [data, isLoading];
 }
