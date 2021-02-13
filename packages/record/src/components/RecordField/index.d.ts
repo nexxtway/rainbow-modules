@@ -1,5 +1,5 @@
 import { ComponentType, CSSProperties, ReactNode } from 'react';
-import { FieldValidator } from 'final-form';
+import { FieldValidator } from '@rainbow-modules/forms';
 
 export interface RecordFieldProps {
     /** A CSS class for the outer element, in addition to the component's base classes. */

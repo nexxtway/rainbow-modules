@@ -3,7 +3,7 @@ export interface UseCollectionProps {
     query: Record<string, unknown>;
     onlyIds?: boolean;
     flat?: boolean;
-    track?: Array<any>;
+    track?: Array<unknown>;
 }
 
-export default function useCollection(props: UseCollectionProps): [Array<any>, boolean];
+export default function useCollection(props: UseCollectionProps): [Array<unknown>, boolean];

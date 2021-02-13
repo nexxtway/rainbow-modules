@@ -20,7 +20,7 @@ export interface CreditCardpickerProps {
     /** The action triggerd when new card button is clicked. When passed it will show an add new card button. */
     onAdd?: (event: MouseEvent) => void;
     /** The action triggered when the remove card action is confirmed. When passed it will show a remove card button. */
-    onRemove?: (card: any) => void;
+    onRemove?: (card: OptionsObj) => void;
     /** Indicate that the cards are loading when set to true */
     isLoading?: boolean;
     /** An array with the credit card options. */

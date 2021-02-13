@@ -1,14 +1,14 @@
 import { CSSProperties } from 'react';
 
 interface SearchParams {
-    query?: any;
+    query?: string;
 }
 
 export interface GlobalSearchProps {
     /** Event triggerd when select a search (select the first search option). It can be used for store recent searches. */
     onSearch?: (search: SearchParams) => void;
     /** Event triggered when select an option. */
-    onSelect?: (item: any) => void;
+    onSelect?: (item: Record<string, unknown>) => void;
     /** An array with the recent searches. */
     recents?: Array<string>;
     /** The variant changes the appearance of the GlobalSearch input. Accepted variants include default,
