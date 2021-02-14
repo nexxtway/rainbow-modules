@@ -5,16 +5,20 @@ import getData from '../helpers/getData';
 const defaultData = [];
 
 export default function useCollectionOnce(props) {
-    const { path, query, onlyIds = false, flat = false, track = [] } = props;
+    const { path, query, onlyIds = false, flat = false, track = [], disabled = false } = props;
     const { app } = useContext(Context);
 
+    const [isLoading, setIsLoading] = useState(!disabled);
     const [data, setData] = useState(defaultData);
-    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        if (app) {
+        if (app && !disabled) {
             const ref = app.firestore().collection(path);
             const finalQuery = query ? query(ref) : ref;
+
+            if (!isLoading) {
+                setIsLoading(true);
+            }
 
             finalQuery
                 .get()
@@ -29,7 +33,7 @@ export default function useCollectionOnce(props) {
                 });
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [app, path, onlyIds, flat].concat(track));
+    }, [app, path, onlyIds, flat, disabled].concat(track));
 
     return [data, isLoading];
 }
