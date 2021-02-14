@@ -1,23 +1,26 @@
 import { useContext, useEffect, useState } from 'react';
 import Context from '../context';
+import getDocData from '../helpers/getDocData';
 
 export default function useDocOnce(props) {
-    const { path } = props;
+    const { path, flat = false, disabled = false } = props;
     const { app } = useContext(Context);
 
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(!disabled);
     const [data, setData] = useState(null);
 
     useEffect(() => {
-        if (app) {
+        if (app && !disabled) {
             const ref = app.firestore().doc(path);
+
+            if (!isLoading) {
+                setIsLoading(true);
+            }
+
             ref.get()
                 .then((doc) => {
                     if (doc.exists) {
-                        setData({
-                            id: doc.id,
-                            data: doc.data(),
-                        });
+                        setData(getDocData(doc, flat));
                     } else {
                         setData(null);
                     }
@@ -29,7 +32,8 @@ export default function useDocOnce(props) {
                     console.log(err);
                 });
         }
-    }, [app, path]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [app, path, flat, disabled]);
 
     return [data, isLoading];
 }

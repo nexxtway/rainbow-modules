@@ -1,10 +1,3 @@
-type Data = {
-    id?: number;
-    data?: Record<string, unknown>;
-};
+import { UseDocProps } from './useDoc';
 
-export interface UseDocOnceProps {
-    path?: string;
-}
-
-export default function (props: UseDocOnceProps): [Data, boolean];
+export default function (props: UseDocProps): [Data, boolean];
