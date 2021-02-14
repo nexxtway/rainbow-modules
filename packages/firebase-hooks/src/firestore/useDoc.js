@@ -3,15 +3,21 @@ import Context from '../context';
 import getDocData from '../helpers/getDocData';
 
 export default function useDoc(props) {
-    const { path, flat = false } = props;
+    const { path, flat = false, disabled = false } = props;
     const { app } = useContext(Context);
 
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(!disabled);
     const [data, setData] = useState(null);
 
+    // eslint-disable-next-line consistent-return
     useEffect(() => {
-        if (app) {
+        if (app && !disabled) {
             const ref = app.firestore().doc(path);
+
+            if (!isLoading) {
+                setIsLoading(true);
+            }
+
             const unsubscribe = ref.onSnapshot(
                 (doc) => {
                     if (doc.exists) {
@@ -31,7 +37,7 @@ export default function useDoc(props) {
                 return unsubscribe();
             };
         }
-        return null;
-    }, [app, path, flat]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [app, path, flat, disabled]);
     return [data, isLoading];
 }
