@@ -135,7 +135,7 @@ const GlobalSearch = (props) => {
 
 GlobalSearch.propTypes = {
     /** It is used to display content to the right of the footer.
-    * Commonly this prop is used to render the brand of the search engine that power the search. */
+     * Commonly this prop is used to render the brand of the search engine that power the search. */
     searchBy: PropTypes.node,
     /** Event triggerd when select a search (select the first search option). It can be used for store recent searches. */
     onSearch: PropTypes.func,
