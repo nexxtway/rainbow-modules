@@ -39,6 +39,7 @@ const GlobalSearch = (props) => {
         className,
         style,
         recents,
+        searchBy,
         onSearch: globalOnSearch,
     } = props;
     const [isOpen, setOpen] = useState(false);
@@ -126,12 +127,15 @@ const GlobalSearch = (props) => {
                 isLoading={isLoading}
                 recents={recents}
                 globalOnSearch={globalOnSearch}
+                searchBy={searchBy}
             />
         </div>
     );
 };
 
 GlobalSearch.propTypes = {
+    /** Content */
+    searchBy: PropTypes.node,
     /** Event triggerd when select a search (select the first search option). It can be used for store recent searches. */
     onSearch: PropTypes.func,
     /** Event triggered when select an option. */
@@ -159,6 +163,7 @@ GlobalSearch.defaultProps = {
     className: undefined,
     style: undefined,
     children: undefined,
+    searchBy: undefined,
 };
 
 export default GlobalSearch;
