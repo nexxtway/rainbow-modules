@@ -1,4 +1,4 @@
-import { CSSProperties, ElementType } from 'react';
+import { CSSProperties, ElementType, ReactNode } from 'react';
 
 export interface UniversalPickerOptionProps {
     /** Functional component or class that will be rendered with the props:

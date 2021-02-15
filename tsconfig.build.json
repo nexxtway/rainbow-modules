@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "module": "CommonJS",
+        "target": "es5",
+        "declaration": true,
+        "sourceMap": true,
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "moduleResolution": "node",
+        "isolatedModules": true,
+        "jsx": "react",
+        "skipLibCheck": true,
+        "outDir": "./storybook-static"
+    },
+    "exclude": ["node_modules", "lib", "**/__tests__/**/*", "**/__test__/**/*", "**/*.d.ts"],
+    "include": ["packages/**/*"]
+}

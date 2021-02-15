@@ -5,6 +5,8 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    border-radius: 4px;
+    padding: 0.1rem 0.2rem;
 
     ${(props) =>
         props.privateVariant === 'border-vertical' &&
@@ -27,6 +29,23 @@ export const Container = styled.div`
             padding: 4px 0;
             line-height: 20px;
     `};
+
+    ${(props) =>
+        props.isEditable &&
+        `
+            :hover,
+            :active,
+            :focus {
+                background-color: ${props.theme.rainbow.palette.background.disabled};
+                cursor: pointer;
+            }
+        `}
+
+    ${(props) =>
+        props.isDirty &&
+        `
+        background-color: #fff9e6;
+        `}
 `;
 
 export const Label = styled.span`
@@ -53,6 +72,7 @@ export const ValueContainer = styled.span`
     color: ${(props) => props.theme.rainbow.palette.text.main};
     line-height: 1.5;
     position: relative;
+    display: flex;
 
     ${(props) =>
         props.privateVariant === 'horizontal' &&
@@ -61,12 +81,10 @@ export const ValueContainer = styled.span`
             padding-left: 4px;
             line-height: 20px;
     `};
-    ${(props) =>
-        props.icon &&
-        props.iconPosition === 'left' &&
-        `
-        padding-left: 30px;
-    `}
+`;
+
+export const ComponentContainer = styled.div`
+    order: 2;
 `;
 
 export const StyledLink = styled.a`
@@ -98,8 +116,6 @@ export const IconContainer = attachThemeAttrs(styled.span)`
     color: ${(props) => props.palette.text.header};
     height: 100%;
     width: 22px;
-    top: 0;
-    position: absolute;
     line-height: 1;
     border: 0;
     z-index: 2;
@@ -120,11 +136,39 @@ export const IconContainer = attachThemeAttrs(styled.span)`
     ${(props) =>
         props.iconPosition === 'left' &&
         `
-        left: 0.1rem;
+        order: 1;
+        margin-right: 0.4rem;
     `}
     ${(props) =>
         props.iconPosition === 'right' &&
         `
-        right: 0;
+        order: 3;
+        margin-left: 0.4rem;
     `}
+`;
+
+export const EditIconContainer = attachThemeAttrs(styled.span)`
+    color: ${(props) => props.palette.text.disabled};
+    height: 100%;
+    margin-left: 0.4rem;
+    order: 4;
+
+    ${(props) => props.isHover && `color: ${props.palette.text.header};`}
+
+    svg {
+        width: 12px !important;
+        height: 12px !important;
+        font-size: 12px !important;
+    }
+`;
+
+export const FieldLabel = styled.span`
+    font-size: 1rem;
+    font-weight: bold;
+`;
+
+export const Error = styled.span`
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    color: ${(props) => props.theme.rainbow.palette.error.main};
 `;

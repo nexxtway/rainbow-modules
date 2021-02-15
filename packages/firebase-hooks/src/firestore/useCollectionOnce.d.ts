@@ -1,3 +1,3 @@
 import { UseCollectionProps } from './useCollection';
 
-export default function useCollectionOnce(props: UseCollectionProps): [Array<any>, boolean];
+export default function useCollectionOnce(props: UseCollectionProps): [Array<unknown>, boolean];

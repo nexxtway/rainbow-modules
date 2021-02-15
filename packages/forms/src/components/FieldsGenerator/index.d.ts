@@ -52,9 +52,9 @@ interface Types {
 
 interface CustomValidations {
     [key: string]: (
-        value?: unknown,
+        value: unknown,
         allValues: Record<string, unknown>,
-        fieldState: FieldState,
+        fieldState: FieldState<unknown>,
         customValidationKeyword: unknown,
     ) => string | undefined;
 }
