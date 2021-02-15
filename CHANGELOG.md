@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.28.0](https://github.com/nexxtway/rainbow-modules/compare/v0.27.0...v0.28.0) (2021-02-15)
+
+### Bug Fixes
+
+-   airline label for FlightStatsInput ([d121bc2](https://github.com/nexxtway/rainbow-modules/commit/d121bc2ea3238d1bef3ca9a155863cf8250e2b50))
+-   fixed height in colored status column ([#327](https://github.com/nexxtway/rainbow-modules/issues/327)) ([2f81626](https://github.com/nexxtway/rainbow-modules/commit/2f8162676c22eaeb76856f38dc2b03fc8ab3a629))
+-   update z-index on portals ([#328](https://github.com/nexxtway/rainbow-modules/issues/328)) ([dd73a64](https://github.com/nexxtway/rainbow-modules/commit/dd73a645fe7dd211541fbad23ae9d467ea57e549))
+
+### Features
+
+-   add flat and disabled props to firebase hooks ([#329](https://github.com/nexxtway/rainbow-modules/issues/329)) ([e8d51dc](https://github.com/nexxtway/rainbow-modules/commit/e8d51dc7602528a370dd008dff7085fe9e4c5576))
+-   add isEditable prop to RecordField ([#326](https://github.com/nexxtway/rainbow-modules/issues/326)) ([c73e7da](https://github.com/nexxtway/rainbow-modules/commit/c73e7dae41412b60baa99604fa1faf7a053e9788)), closes [#320](https://github.com/nexxtway/rainbow-modules/issues/320)
+
 # [0.27.0](https://github.com/nexxtway/rainbow-modules/compare/v0.26.0...v0.27.0) (2021-02-08)
 
 ### Bug Fixes

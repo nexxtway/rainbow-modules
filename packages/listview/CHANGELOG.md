@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.28.0](https://github.com/nexxtway/rainbow-modules/compare/v0.27.0...v0.28.0) (2021-02-15)
+
+### Bug Fixes
+
+-   fixed height in colored status column ([#327](https://github.com/nexxtway/rainbow-modules/issues/327)) ([2f81626](https://github.com/nexxtway/rainbow-modules/commit/2f8162676c22eaeb76856f38dc2b03fc8ab3a629))
+
+### Features
+
+-   add isEditable prop to RecordField ([#326](https://github.com/nexxtway/rainbow-modules/issues/326)) ([c73e7da](https://github.com/nexxtway/rainbow-modules/commit/c73e7dae41412b60baa99604fa1faf7a053e9788)), closes [#320](https://github.com/nexxtway/rainbow-modules/issues/320)
+
 # [0.27.0](https://github.com/nexxtway/rainbow-modules/compare/v0.26.0...v0.27.0) (2021-02-08)
 
 ### Bug Fixes
