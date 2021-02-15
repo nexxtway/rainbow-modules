@@ -11,7 +11,9 @@
         "moduleResolution": "node",
         "isolatedModules": true,
         "jsx": "react",
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "outDir": "./storybook-static"
     },
-    "exclude": ["node_modules", "lib", "**/__tests__/**/*", "**/__test__/**/*"]
+    "exclude": ["node_modules", "lib", "**/__tests__/**/*", "**/__test__/**/*", "**/*.d.ts"],
+    "include": ["packages/**/*"]
 }
