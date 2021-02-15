@@ -128,7 +128,6 @@ export const EditableRecordField = () => {
                         alert(JSON.stringify(value));
                         setInitialValues(value);
                     }}
-                    validate={() => ({ price: 'asdas dasdasds' })}
                 >
                     <RecordField
                         label="Customer Name"
