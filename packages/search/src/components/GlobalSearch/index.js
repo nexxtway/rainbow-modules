@@ -134,7 +134,7 @@ const GlobalSearch = (props) => {
 };
 
 GlobalSearch.propTypes = {
-    /** Content */
+    /** It is used to display content to the right of the footer.  */
     searchBy: PropTypes.node,
     /** Event triggerd when select a search (select the first search option). It can be used for store recent searches. */
     onSearch: PropTypes.func,
