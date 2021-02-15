@@ -7,7 +7,19 @@ import Options from './options';
 import Recents from './recents';
 import Message from './message';
 import Results from './results';
-import { Backdrop, Container, OptionsContainer, StyledHeader } from './styled';
+import {
+    Backdrop,
+    Container,
+    OptionsContainer,
+    StyledHeader,
+    Footer,
+    ShortcutsContainer,
+    Shortcuts,
+    ShortcutIcon,
+    ShortcutLabel,
+} from './styled';
+import ReturnKey from './icons/returnKey';
+import EscKey from './icons/escKey';
 
 const UP_KEY = 38;
 const DOWN_KEY = 40;
@@ -47,6 +59,7 @@ const SearchContainer = (props) => {
         isLoading,
         recents,
         globalOnSearch,
+        searchBy,
     } = props;
     const backdropRef = useRef();
     const menuRef = useRef();
@@ -228,6 +241,23 @@ const SearchContainer = (props) => {
                             onSelect={handleResultsSelect}
                         />
                     </RenderIf>
+                    <Footer>
+                        <ShortcutsContainer>
+                            <Shortcuts>
+                                <ShortcutIcon />
+                                <ShortcutLabel>to navigate</ShortcutLabel>
+                            </Shortcuts>
+                            <Shortcuts>
+                                <ShortcutIcon as={ReturnKey} />
+                                <ShortcutLabel>to select</ShortcutLabel>
+                            </Shortcuts>
+                            <Shortcuts>
+                                <ShortcutIcon as={EscKey} />
+                                <ShortcutLabel>to close</ShortcutLabel>
+                            </Shortcuts>
+                        </ShortcutsContainer>
+                        {searchBy}
+                    </Footer>
                 </Container>
             </Backdrop>,
             document.body,
