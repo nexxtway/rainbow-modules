@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.29.0](https://github.com/nexxtway/rainbow-modules/compare/v0.28.1...v0.29.0) (2021-02-16)
+
+### Bug Fixes
+
+-   eslint ([5903ef1](https://github.com/nexxtway/rainbow-modules/commit/5903ef100c1748fec3ffcdaf711a25ba5de79a84))
+-   export new field validators ([81daeb2](https://github.com/nexxtway/rainbow-modules/commit/81daeb21f806e9adb4b00d31031c6ace85fc5882))
+-   failing test ([c16bd38](https://github.com/nexxtway/rainbow-modules/commit/c16bd38845ba4739d49f0814efb088a711af870f))
+-   pass value without format to custom component in RecordField ([910e7f5](https://github.com/nexxtway/rainbow-modules/commit/910e7f5f33ee3df102e46de22c3d5059cbd6e1ac))
+
+### Features
+
+-   implement footer on GlobalSearch ([#331](https://github.com/nexxtway/rainbow-modules/issues/331)) ([cb9ab1d](https://github.com/nexxtway/rainbow-modules/commit/cb9ab1d19ab270b8b6afbf0bdce3d4842b3acec8))
+
 ## [0.28.1](https://github.com/nexxtway/rainbow-modules/compare/v0.28.0...v0.28.1) (2021-02-15)
 
 ### Bug Fixes

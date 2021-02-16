@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.29.0](https://github.com/nexxtway/rainbow-modules/compare/v0.28.1...v0.29.0) (2021-02-16)
+
+### Bug Fixes
+
+-   eslint ([5903ef1](https://github.com/nexxtway/rainbow-modules/commit/5903ef100c1748fec3ffcdaf711a25ba5de79a84))
+
+### Features
+
+-   implement footer on GlobalSearch ([#331](https://github.com/nexxtway/rainbow-modules/issues/331)) ([cb9ab1d](https://github.com/nexxtway/rainbow-modules/commit/cb9ab1d19ab270b8b6afbf0bdce3d4842b3acec8))
+
 ## [0.28.1](https://github.com/nexxtway/rainbow-modules/compare/v0.28.0...v0.28.1) (2021-02-15)
 
 **Note:** Version bump only for package @rainbow-modules/search
