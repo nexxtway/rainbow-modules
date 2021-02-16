@@ -39,9 +39,9 @@ describe('<RecordField />', () => {
 
     it('should render a formated date when type is dateTime and value is datetime', () => {
         const values = [
-            { date: '01/01/2020', formated: '1/1/2020, 12:00:00 AM' },
-            { date: '01-01-2020', formated: '1/1/2020, 12:00:00 AM' },
-            { date: new Date('01-01-2020'), formated: '1/1/2020, 12:00:00 AM' },
+            { date: '01/01/2020', formated: '1/1/2020, 12:00 AM' },
+            { date: '01-01-2020', formated: '1/1/2020, 12:00 AM' },
+            { date: new Date('01-01-2020'), formated: '1/1/2020, 12:00 AM' },
         ];
         values.forEach(({ date, formated }) => {
             const wrapper = mount(
