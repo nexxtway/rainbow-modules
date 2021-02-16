@@ -102,4 +102,28 @@ describe('<RecordField />', () => {
         wrapper.find('a').simulate('click');
         expect(wrapper.find('input').exists()).toBe(false);
     });
+
+    it('should render a number formatted', () => {
+        const wrapper = mount(
+            <Application>
+                <RecordField type="number" value={1234} />
+            </Application>,
+        );
+        expect(wrapper.find(Value).text()).toBe('1,234');
+    });
+
+    it('should render the same value passed (not formatted) when pass a custom component', () => {
+        mount(
+            <Application>
+                <RecordField
+                    type="number"
+                    value={1234}
+                    component={({ value }) => {
+                        expect(value).toBe(1234);
+                        return value;
+                    }}
+                />
+            </Application>,
+        );
+    });
 });

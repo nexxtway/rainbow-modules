@@ -46,7 +46,7 @@ const Value = (props) => {
             </RenderIf>
             <RenderIf isTrue={!isUrl}>
                 <RenderIf isTrue={Component}>
-                    <RenderedComponent {...restComponentProps} value={formattedValue} />
+                    <RenderedComponent {...restComponentProps} value={value} />
                 </RenderIf>
                 <RenderIf isTrue={!Component}>{formattedValue}</RenderIf>
             </RenderIf>
