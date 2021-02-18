@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Chart, Dataset, RenderIf } from 'react-rainbow-components';
+import { Chart, Dataset } from 'react-rainbow-components';
 import { useTheme } from 'react-rainbow-components/libs/hooks';
 import datalabels from 'chartjs-plugin-datalabels';
 import { getNormalizedData, getOptions } from './helpers';
