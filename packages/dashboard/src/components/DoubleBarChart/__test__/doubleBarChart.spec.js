@@ -42,18 +42,4 @@ describe('<DoubleBarChart />', () => {
         expect(datasets.at(0).prop('values')).toEqual([50, 75, 95]);
         expect(datasets.at(1).prop('values')).toEqual([75, 90, 100]);
     });
-
-    it('should render a legend with the titles provided', () => {
-        const titles = ['Test 1', 'Test 2'];
-        const data = [
-            { label: '1', values: [50, 75] },
-            { label: '2', values: [75, 90] },
-            { label: '3', values: [95, 100] },
-        ];
-        const wrapper = shallow(<DoubleBarChart titles={titles} data={data} />);
-        const items = wrapper.find('LegendItem');
-        expect(items.length).toBe(2);
-        expect(items.at(0).shallow().text()).toBe('Test 2');
-        expect(items.at(1).shallow().text()).toBe('Test 1');
-    });
 });
