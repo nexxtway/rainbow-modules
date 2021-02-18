@@ -5,6 +5,7 @@ export default function getOptions(options) {
         legend: {
             display: true,
             position: 'top',
+            align: 'start',
         },
         scales: {
             xAxes: [
