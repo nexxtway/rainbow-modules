@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export interface FirestoreTableProps {
     /** The path of the Firestore collection e.g. `/books` */
     collection: string;

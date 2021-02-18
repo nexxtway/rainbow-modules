@@ -3,6 +3,8 @@ import { Input, ButtonIcon } from 'react-rainbow-components';
 import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
 import { replaceAlpha } from 'react-rainbow-components/styles/helpers/color';
 import { MagnifyingGlass, CubeFilled } from '@rainbow-modules/icons';
+import { ZINDEX_GLOBAL_SEARCH } from '../../../styles/zIndex';
+import UpDownKey from '../icons/upDownKey';
 
 export const StyledInput = styled(Input)`
     input {
@@ -24,7 +26,7 @@ export const Backdrop = attachThemeAttrs(styled.section)`
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 1000;
+    z-index: ${ZINDEX_GLOBAL_SEARCH};
     background: ${(props) => replaceAlpha(props.theme.rainbow.palette.background.highlight, 0.3)};
     display: flex;
     justify-content: center;
@@ -176,4 +178,33 @@ export const OptionHeader = styled.li`
 
 export const Bold = styled.b`
     color: ${(props) => props.theme.rainbow.palette.text.main};
+`;
+
+export const Footer = styled.footer`
+    display: flex;
+    justify-content: space-between;
+    background: ${(props) => props.theme.rainbow.palette.background.main};
+    border-top: 1px solid ${(props) => props.theme.rainbow.palette.border.divider};
+    border-radius: 0 0 14px 14px;
+    padding: 12px 16px;
+`;
+
+export const ShortcutsContainer = styled.div`
+    display: flex;
+`;
+
+export const Shortcuts = styled.div`
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+`;
+
+export const ShortcutIcon = styled(UpDownKey)`
+    margin-right: 8px;
+`;
+
+export const ShortcutLabel = styled.span`
+    display: inline-block;
+    font-size: 12px;
+    color: ${(props) => props.theme.rainbow.palette.text.header};
 `;

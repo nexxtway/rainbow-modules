@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import React from 'react';
 import { Application, CounterInput, Button, PhoneInput } from 'react-rainbow-components';
 import styled from 'styled-components';

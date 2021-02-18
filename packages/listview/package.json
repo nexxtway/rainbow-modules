@@ -1,6 +1,6 @@
 {
     "name": "@rainbow-modules/listview",
-    "version": "0.26.0",
+    "version": "0.29.0",
     "main": "lib/index.js",
     "author": "Nexxtway Team",
     "license": "MIT",
@@ -8,10 +8,10 @@
         "lib"
     ],
     "dependencies": {
-        "@rainbow-modules/app": "^0.26.0",
-        "@rainbow-modules/firebase-hooks": "^0.26.0",
-        "@rainbow-modules/icons": "^0.26.0",
-        "@rainbow-modules/validation": "^0.26.0",
+        "@rainbow-modules/app": "^0.29.0",
+        "@rainbow-modules/firebase-hooks": "^0.29.0",
+        "@rainbow-modules/icons": "^0.29.0",
+        "@rainbow-modules/validation": "^0.29.0",
         "react-beautiful-dnd": "^13.0.0",
         "styled-components": "^4.3.2"
     },

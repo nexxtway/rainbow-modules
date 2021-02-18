@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { createPortal } from 'react-dom';
 import styled from 'styled-components';
 import Spinner from 'react-rainbow-components/components/Spinner';
+import { ZINDEX_SPINNER } from '../../styles/zIndex';
 
 const SpinnerContainer = styled.div`
     display: flex;
@@ -18,7 +19,7 @@ const SpinnerContainer = styled.div`
     height: 100%;
     background-color: rgba(239, 241, 245, 0.64);
     backdrop-filter: blur(5px);
-    z-index: 1000000;
+    z-index: ${ZINDEX_SPINNER};
 `;
 
 const AppSpinner = (props) => {

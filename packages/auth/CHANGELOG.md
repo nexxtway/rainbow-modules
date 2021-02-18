@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.29.0](https://github.com/nexxtway/rainbow-modules/compare/v0.28.1...v0.29.0) (2021-02-16)
+
+**Note:** Version bump only for package @rainbow-modules/auth
+
+## [0.28.1](https://github.com/nexxtway/rainbow-modules/compare/v0.28.0...v0.28.1) (2021-02-15)
+
+**Note:** Version bump only for package @rainbow-modules/auth
+
+# [0.28.0](https://github.com/nexxtway/rainbow-modules/compare/v0.27.0...v0.28.0) (2021-02-15)
+
+**Note:** Version bump only for package @rainbow-modules/auth
+
+# [0.27.0](https://github.com/nexxtway/rainbow-modules/compare/v0.26.0...v0.27.0) (2021-02-08)
+
+**Note:** Version bump only for package @rainbow-modules/auth
+
 # [0.26.0](https://github.com/nexxtway/rainbow-modules/compare/v0.25.0...v0.26.0) (2021-01-29)
 
 **Note:** Version bump only for package @rainbow-modules/auth

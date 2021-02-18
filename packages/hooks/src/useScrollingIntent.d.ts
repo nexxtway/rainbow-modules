@@ -1,9 +1,11 @@
-import { Ref, UIEvent } from 'react';
+import { RefObject, UIEvent } from 'react';
+
+type TriggerElementRefFunction = () => RefObject<HTMLElement>;
 
 interface ScrollingIntentParams {
     callback?: (event: UIEvent) => void;
     isListening?: boolean;
-    triggerElementRef?: Ref;
+    triggerElementRef?: RefObject<HTMLElement> | TriggerElementRefFunction;
     threshold?: number;
 }
 

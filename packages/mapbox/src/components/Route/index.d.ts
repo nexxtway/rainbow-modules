@@ -1,11 +1,11 @@
 interface RouteObj {
-    routes?: any;
-    waypoints?: any;
+    routes?: unknown;
+    waypoints?: unknown;
 }
 
 export interface RouteProps {
-    waypoints?: Array<any>;
-    onRenderRoute?: (route: RouteObj) => void;
+    waypoints?: Array<Array<number, number>>;
+    onRenderRoute?: (route: RouteObj | null) => void;
     disableAnimation?: boolean;
 }
 

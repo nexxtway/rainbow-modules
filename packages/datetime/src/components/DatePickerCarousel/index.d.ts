@@ -13,7 +13,7 @@ export interface DatePickerCarouselProps {
      * Valid values are small, medium, and large. */
     formatStyle?: 'small' | 'medium' | 'large';
     /** The action triggered when a value attribute changes. */
-    onChange?: (newValue: any) => void;
+    onChange?: (date: Date) => void;
     /** Text that is displayed when the DatePicker is empty,
      * to prompt the user for a valid entry. */
     placeholder?: string;

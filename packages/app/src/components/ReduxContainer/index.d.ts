@@ -1,6 +1,6 @@
 export interface ReduxContainerProps {
     reducers?: Record<string, unknown>;
-    middlewares?: Array<any>;
+    middlewares?: Array<unknown>;
     children?: ReactNode;
 }
 
