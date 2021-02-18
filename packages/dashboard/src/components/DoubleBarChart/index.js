@@ -4,7 +4,6 @@ import { Chart, Dataset, RenderIf } from 'react-rainbow-components';
 import { useTheme } from 'react-rainbow-components/libs/hooks';
 import datalabels from 'chartjs-plugin-datalabels';
 import { getNormalizedData, getOptions } from './helpers';
-import { Legend, LegendItem } from './legend';
 import { StyledContainer } from './styled';
 
 const plugins = [datalabels];
@@ -23,16 +22,9 @@ const DoubleBarChart = (props) => {
     const backColor = theme.rainbow.palette.border.divider;
     const suggestedMax = Math.max(...frontDataset, ...backDataset) + 1;
     const options = getOptions({ xLabel, yLabel, suggestedMax });
-    const hasTitles = frontTitle && backTitle;
 
     return (
         <StyledContainer>
-            <RenderIf isTrue={hasTitles}>
-                <Legend>
-                    <LegendItem color={backColor}>{backTitle}</LegendItem>
-                    <LegendItem color={frontColor}>{frontTitle}</LegendItem>
-                </Legend>
-            </RenderIf>
             <Chart
                 plugins={plugins}
                 datalabels={datalabelsConf}

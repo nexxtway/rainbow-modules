@@ -3,7 +3,8 @@ export default function getOptions(options) {
     return {
         maintainAspectRatio: false,
         legend: {
-            display: false,
+            display: true,
+            position: 'top',
         },
         scales: {
             xAxes: [
