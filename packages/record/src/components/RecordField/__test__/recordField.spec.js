@@ -39,9 +39,9 @@ describe('<RecordField />', () => {
 
     it('should render a formated date when type is dateTime and value is datetime', () => {
         const values = [
-            { date: '01/01/2020', formated: '1/1/2020, 12:00:00 AM' },
-            { date: '01-01-2020', formated: '1/1/2020, 12:00:00 AM' },
-            { date: new Date('01-01-2020'), formated: '1/1/2020, 12:00:00 AM' },
+            { date: '01/01/2020', formated: '1/1/2020, 12:00 AM' },
+            { date: '01-01-2020', formated: '1/1/2020, 12:00 AM' },
+            { date: new Date('01-01-2020'), formated: '1/1/2020, 12:00 AM' },
         ];
         values.forEach(({ date, formated }) => {
             const wrapper = mount(
@@ -101,5 +101,29 @@ describe('<RecordField />', () => {
         );
         wrapper.find('a').simulate('click');
         expect(wrapper.find('input').exists()).toBe(false);
+    });
+
+    it('should render a number formatted', () => {
+        const wrapper = mount(
+            <Application>
+                <RecordField type="number" value={1234} />
+            </Application>,
+        );
+        expect(wrapper.find(Value).text()).toBe('1,234');
+    });
+
+    it('should render the same value passed (not formatted) when pass a custom component', () => {
+        mount(
+            <Application>
+                <RecordField
+                    type="number"
+                    value={1234}
+                    component={({ value }) => {
+                        expect(value).toBe(1234);
+                        return value;
+                    }}
+                />
+            </Application>,
+        );
     });
 });

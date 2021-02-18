@@ -44,7 +44,13 @@ export const Container = styled.div`
     ${(props) =>
         props.isDirty &&
         `
-        background-color: #fff9e6;
+            background-color: #fff9e6;
+
+            :hover,
+            :active,
+            :focus {
+                background-color: #fcf3d0;
+            }
         `}
 `;
 

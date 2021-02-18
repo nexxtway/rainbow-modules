@@ -5,7 +5,7 @@
         "declaration": true,
         "sourceMap": true,
         "allowJs": true,
-        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
         "strict": true,
         "forceConsistentCasingInFileNames": true,
         "moduleResolution": "node",

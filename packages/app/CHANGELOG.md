@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.29.0](https://github.com/nexxtway/rainbow-modules/compare/v0.28.1...v0.29.0) (2021-02-16)
+
+**Note:** Version bump only for package @rainbow-modules/app
+
+## [0.28.1](https://github.com/nexxtway/rainbow-modules/compare/v0.28.0...v0.28.1) (2021-02-15)
+
+### Bug Fixes
+
+-   add actions to d.ts file in app module ([37aef77](https://github.com/nexxtway/rainbow-modules/commit/37aef7768796098f02c04fecfaeb9535b466d82c))
+
 # [0.28.0](https://github.com/nexxtway/rainbow-modules/compare/v0.27.0...v0.28.0) (2021-02-15)
 
 ### Bug Fixes

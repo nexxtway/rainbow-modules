@@ -31,7 +31,6 @@ export const dateTime = (value) => {
             day: 'numeric',
             hour: 'numeric',
             minute: 'numeric',
-            second: 'numeric',
         }).format(date);
     }
     return '';
