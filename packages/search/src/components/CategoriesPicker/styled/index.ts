@@ -42,17 +42,18 @@ export const StyledOption = styled.div<StyledOptionProps>`
     ${(props) =>
         props.isSelected &&
         `
-        font-family: Lato Bold, Helvetica, sans-serif;
-        background-color: ${props.theme.rainbow.palette.background.highlight};
-        color: ${props.theme.rainbow.palette.text.main};
-        cursor: default;
+            font-family: Lato Bold, Helvetica, sans-serif;
+            background-color: ${props.theme.rainbow.palette.background.highlight};
+            color: ${props.theme.rainbow.palette.text.main};
+            cursor: default;
         `}
 
     ${(props) =>
         props.isHover &&
         `
-        background-color: ${props.theme.rainbow.palette.action.hover};
-        cursor: pointer;
+            background-color: ${props.theme.rainbow.palette.action.hover};
+            cursor: pointer;
+            color: ${props.theme.rainbow.palette.text.main};
         `}
 
     ${(props) =>
@@ -66,10 +67,10 @@ export const StyledOption = styled.div<StyledOptionProps>`
         props.isFocused &&
         props.isSelected &&
         `
-        background-color: ${props.theme.rainbow.palette.action.hover};
-        cursor: pointer;
-        background-color: ${props.theme.rainbow.palette.background.highlight};
-        color: ${props.theme.rainbow.palette.text.main};
+            background-color: ${props.theme.rainbow.palette.action.hover};
+            cursor: pointer;
+            background-color: ${props.theme.rainbow.palette.background.highlight};
+            color: ${props.theme.rainbow.palette.text.main};
         `}
 `;
 
