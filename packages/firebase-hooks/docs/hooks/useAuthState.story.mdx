@@ -1,0 +1,29 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import * as stories from '../stories/useAuthState.story';
+
+<Meta title="Modules/firebase-hooks/Hooks/useAuthState" />
+
+# Overview
+
+`useAuthState` hook will subscribe to changes to the user's sign-in state. It will trigger an update
+on user sign-in or sign-out, and will return a boolean that indicates if the user is
+authenticated or not.
+
+### This is a basic example.
+
+In this example we are subcribing to the sign-in state to know if the user is authenticated.
+
+```js
+const isAuthenticated = useAuthState();
+
+<RenderIf isTrue={isAuthenticated}>
+    <MainPage />
+</RenderIf>
+<RenderIf isTrue={!isAuthenticated}>
+    <LoginPage />
+</RenderIf>
+```
+
+<Preview>
+    <Story name="useAuthState">{stories.UseAuthState()}</Story>
+</Preview>

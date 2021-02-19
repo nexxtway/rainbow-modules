@@ -1,6 +1,8 @@
+import React from 'react';
 import styled from 'styled-components';
-import RainbowButtonIcon from 'react-rainbow-components/components/ButtonIcon';
+import { ButtonIcon as RainbowButtonIcon } from 'react-rainbow-components';
 import { Error } from '@rainbow-modules/icons';
+import { ZINDEX_APP_MESSAGE } from '../../styles/zIndex';
 
 function getBackgroundColor(props) {
     const { palette } = props.theme.rainbow;
@@ -26,7 +28,7 @@ export const Container = styled.article`
     justify-content: center;
     position: fixed;
     top: 0;
-    z-index: 10000001;
+    z-index: ${ZINDEX_APP_MESSAGE};
     transform: translateY(-101%);
     transition: transform 250ms linear, opacity 250ms linear;
     background-color: ${(props) => getBackgroundColor(props)};
@@ -53,7 +55,7 @@ export const MessageText = styled.p.attrs(attachProps)`
     flex-grow: 1;
 `;
 
-export const ButtonIcon = styled(RainbowButtonIcon).attrs(attachProps)`
+export const ButtonIcon = styled((props) => <RainbowButtonIcon {...props} />).attrs(attachProps)`
     flex-shrink: 0;
     color: ${(props) => props.getContrastText(props.variantColor)};
 `;

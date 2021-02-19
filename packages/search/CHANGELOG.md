@@ -3,6 +3,44 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.29.0](https://github.com/nexxtway/rainbow-modules/compare/v0.28.1...v0.29.0) (2021-02-16)
+
+### Bug Fixes
+
+-   eslint ([5903ef1](https://github.com/nexxtway/rainbow-modules/commit/5903ef100c1748fec3ffcdaf711a25ba5de79a84))
+
+### Features
+
+-   implement footer on GlobalSearch ([#331](https://github.com/nexxtway/rainbow-modules/issues/331)) ([cb9ab1d](https://github.com/nexxtway/rainbow-modules/commit/cb9ab1d19ab270b8b6afbf0bdce3d4842b3acec8))
+
+## [0.28.1](https://github.com/nexxtway/rainbow-modules/compare/v0.28.0...v0.28.1) (2021-02-15)
+
+**Note:** Version bump only for package @rainbow-modules/search
+
+# [0.28.0](https://github.com/nexxtway/rainbow-modules/compare/v0.27.0...v0.28.0) (2021-02-15)
+
+### Bug Fixes
+
+-   update z-index on portals ([#328](https://github.com/nexxtway/rainbow-modules/issues/328)) ([dd73a64](https://github.com/nexxtway/rainbow-modules/commit/dd73a645fe7dd211541fbad23ae9d467ea57e549))
+
+### Features
+
+-   add isEditable prop to RecordField ([#326](https://github.com/nexxtway/rainbow-modules/issues/326)) ([c73e7da](https://github.com/nexxtway/rainbow-modules/commit/c73e7dae41412b60baa99604fa1faf7a053e9788)), closes [#320](https://github.com/nexxtway/rainbow-modules/issues/320)
+
+# [0.27.0](https://github.com/nexxtway/rainbow-modules/compare/v0.26.0...v0.27.0) (2021-02-08)
+
+**Note:** Version bump only for package @rainbow-modules/search
+
+# [0.26.0](https://github.com/nexxtway/rainbow-modules/compare/v0.25.0...v0.26.0) (2021-01-29)
+
+**Note:** Version bump only for package @rainbow-modules/search
+
+# [0.25.0](https://github.com/nexxtway/rainbow-modules/compare/v0.24.0...v0.25.0) (2021-01-26)
+
+### Features
+
+-   define typescript interfaces on `rainbow-modules` components ([#296](https://github.com/nexxtway/rainbow-modules/issues/296)) ([98002ac](https://github.com/nexxtway/rainbow-modules/commit/98002ac06ee07cd415b66054f730b34561628139)), closes [#250](https://github.com/nexxtway/rainbow-modules/issues/250)
+
 # [0.24.0](https://github.com/nexxtway/rainbow-modules/compare/v0.23.1...v0.24.0) (2021-01-22)
 
 **Note:** Version bump only for package @rainbow-modules/search

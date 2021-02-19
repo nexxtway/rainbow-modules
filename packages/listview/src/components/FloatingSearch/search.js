@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
 import { ButtonIcon, RenderIf } from 'react-rainbow-components';
@@ -11,9 +11,11 @@ import {
     StyledInput,
 } from './styled';
 import messages from './messages';
+import useKeyHandler from './useKeyHandler';
 
-const Search = (props) => {
+const Search = forwardRef((props, ref) => {
     const { onChange, placeholder, style, className, value, onRequestClose, inputRef } = props;
+    const { keyDownHandler } = useKeyHandler({ value, onChange, onRequestClose });
     const intl = useIntl();
     const hasValue = value && value.length > 0;
     const clearButton = intl.formatMessage(messages.clearButton);
@@ -28,7 +30,7 @@ const Search = (props) => {
     };
 
     return (
-        <StyledContainer style={style} className={className}>
+        <StyledContainer ref={ref} style={style} className={className} onKeyDown={keyDownHandler}>
             <StyledInput
                 placeholder={placeholder}
                 icon={<MagnifyingGlass />}
@@ -39,7 +41,10 @@ const Search = (props) => {
             />
             <ButtonsContainer>
                 <RenderIf isTrue={hasValue}>
-                    <StyledClearButton onMouseDown={handleOnMouseDown}>
+                    <StyledClearButton
+                        data-id="clear-search-value-button"
+                        onMouseDown={handleOnMouseDown}
+                    >
                         {clearButton}
                     </StyledClearButton>
                     <StyledDivider />
@@ -48,7 +53,7 @@ const Search = (props) => {
             </ButtonsContainer>
         </StyledContainer>
     );
-};
+});
 
 export default Search;
 

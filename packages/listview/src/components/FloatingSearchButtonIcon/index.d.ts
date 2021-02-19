@@ -42,7 +42,7 @@ export interface FloatingSearchButtonIconProps {
     /** Text that is displayed when the field is empty, to prompt the user for a valid entry. */
     placeholder?: string;
     /** The action triggered when a value attribute changes. */
-    onChange?: (value: any) => void;
+    onChange?: (value: string) => void;
     /** Specifies the value of an input element. */
     value?: string;
 }

@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.29.0](https://github.com/nexxtway/rainbow-modules/compare/v0.28.1...v0.29.0) (2021-02-16)
+
+**Note:** Version bump only for package @rainbow-modules/datetime
+
+# [0.28.0](https://github.com/nexxtway/rainbow-modules/compare/v0.27.0...v0.28.0) (2021-02-15)
+
+### Features
+
+-   add isEditable prop to RecordField ([#326](https://github.com/nexxtway/rainbow-modules/issues/326)) ([c73e7da](https://github.com/nexxtway/rainbow-modules/commit/c73e7dae41412b60baa99604fa1faf7a053e9788)), closes [#320](https://github.com/nexxtway/rainbow-modules/issues/320)
+
+# [0.27.0](https://github.com/nexxtway/rainbow-modules/compare/v0.26.0...v0.27.0) (2021-02-08)
+
+**Note:** Version bump only for package @rainbow-modules/datetime
+
+# [0.26.0](https://github.com/nexxtway/rainbow-modules/compare/v0.25.0...v0.26.0) (2021-01-29)
+
+**Note:** Version bump only for package @rainbow-modules/datetime
+
+# [0.25.0](https://github.com/nexxtway/rainbow-modules/compare/v0.24.0...v0.25.0) (2021-01-26)
+
+### Features
+
+-   define typescript interfaces on `rainbow-modules` components ([#296](https://github.com/nexxtway/rainbow-modules/issues/296)) ([98002ac](https://github.com/nexxtway/rainbow-modules/commit/98002ac06ee07cd415b66054f730b34561628139)), closes [#250](https://github.com/nexxtway/rainbow-modules/issues/250)
+
 # [0.24.0](https://github.com/nexxtway/rainbow-modules/compare/v0.23.1...v0.24.0) (2021-01-22)
 
 ### Bug Fixes

@@ -8,7 +8,7 @@ export interface FloatingSearchProps {
     /** Ref or function that returns a ref to a DOM element, the DOM element resolved by this ref will be used to positioning the component passed when visible. */
     triggerElementRef: Ref<HTMLElement> | (() => Ref<HTMLElement>);
     /** The action triggered when a value attribute changes. */
-    onChange?: (value: any) => void;
+    onChange?: (value: string) => void;
     /** Text that is displayed when the field is empty, to prompt the user for a valid entry. */
     placeholder?: string;
     /** An object with custom style applied to the outer element. */

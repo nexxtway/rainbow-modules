@@ -130,7 +130,7 @@ RainbowFirebaseApp.propTypes = {
     /** The spinner to show when the app is loading. */
     spinner: PropTypes.node,
     /** A component that is rendered when an error is caught */
-    errorComponent: PropTypes.node,
+    errorComponent: PropTypes.func,
     /** A functions that is used to manage the error that is caught */
     onError: PropTypes.func,
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),

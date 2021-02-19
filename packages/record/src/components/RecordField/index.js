@@ -1,74 +1,33 @@
+/* eslint-disable react/no-unused-prop-types */
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { RenderIf, LoadingShape } from 'react-rainbow-components';
+import { Field } from 'react-final-form';
 import { Context } from '../../context';
-import Value from './value';
-import {
-    Container,
-    Label,
-    ValueContainer,
-    StyledLoadingValue,
-    StyledLoadingLabel,
-    IconContainer,
-} from './styled';
+import EditableRecordField from './editableRecordField';
+import Content from './content';
+import { Container } from './styled';
 
 export default function RecordField(props) {
-    const {
-        className,
-        style,
-        label,
-        value,
-        type,
-        isLoading,
-        icon,
-        iconPosition,
-        currency,
-        href,
-        component,
-        onClick,
-        target,
-        ...restComponentProps
-    } = props;
+    const { className, style, component, name, isEditable, validate } = props;
     const context = useContext(Context);
     const { privateVariant } = context || {};
 
+    if (isEditable) {
+        return (
+            <Field
+                {...props}
+                name={name}
+                component={EditableRecordField}
+                recordComponent={component}
+                recordValidate={validate}
+                privateVariant={privateVariant}
+            />
+        );
+    }
+
     return (
         <Container className={className} style={style} privateVariant={privateVariant}>
-            <Label privateVariant={privateVariant}>
-                <RenderIf isTrue={isLoading}>
-                    <StyledLoadingLabel privateVariant={privateVariant}>
-                        <LoadingShape />
-                    </StyledLoadingLabel>
-                </RenderIf>
-                <RenderIf isTrue={!isLoading}>{label}</RenderIf>
-            </Label>
-            <ValueContainer
-                privateVariant={privateVariant}
-                type={type}
-                icon={icon}
-                iconPosition={iconPosition}
-            >
-                <RenderIf isTrue={isLoading}>
-                    <StyledLoadingValue>
-                        <LoadingShape />
-                    </StyledLoadingValue>
-                </RenderIf>
-                <RenderIf isTrue={!isLoading}>
-                    <RenderIf isTrue={icon}>
-                        <IconContainer iconPosition={iconPosition}>{icon}</IconContainer>
-                    </RenderIf>
-                    <Value
-                        component={component}
-                        type={type}
-                        value={value}
-                        currency={currency}
-                        href={href}
-                        onClick={onClick}
-                        target={target}
-                        restComponentProps={restComponentProps}
-                    />
-                </RenderIf>
-            </ValueContainer>
+            <Content {...props} privateVariant={privateVariant} />
         </Container>
     );
 }
@@ -107,8 +66,6 @@ RecordField.propTypes = {
     iconPosition: PropTypes.oneOf(['left', 'right']),
     /** A string that define the type of currency, the default value is USD */
     currency: PropTypes.string,
-    /** A string with the url to navigate to when type is url. */
-    href: PropTypes.string,
     /** The action triggered when click on the url when type is url. */
     onClick: PropTypes.func,
     /**
@@ -120,6 +77,15 @@ RecordField.propTypes = {
         PropTypes.oneOf(['_blank', '_self', '_parent', '_top']),
         PropTypes.string,
     ]),
+    /** The name of the field. */
+    name: PropTypes.string,
+    /** A boolean that specifies whether a RecordField is editable or not. Its default value is false.  */
+    isEditable: PropTypes.bool,
+    /** The action triggered when the value changes. */
+    onChange: PropTypes.func,
+    /** A function that takes the field value, all the values of the form and the meta data about the field and returns an error
+     * if the value is invalid, or undefined if the value is valid. */
+    validate: PropTypes.func,
 };
 
 RecordField.defaultProps = {
@@ -132,8 +98,11 @@ RecordField.defaultProps = {
     icon: undefined,
     iconPosition: 'left',
     currency: 'USD',
-    href: undefined,
     onClick: () => {},
     component: undefined,
     target: '_self',
+    name: undefined,
+    isEditable: false,
+    onChange: () => {},
+    validate: undefined,
 };

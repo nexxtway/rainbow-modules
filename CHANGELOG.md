@@ -3,6 +3,76 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.29.0](https://github.com/nexxtway/rainbow-modules/compare/v0.28.1...v0.29.0) (2021-02-16)
+
+### Bug Fixes
+
+-   eslint ([5903ef1](https://github.com/nexxtway/rainbow-modules/commit/5903ef100c1748fec3ffcdaf711a25ba5de79a84))
+-   export new field validators ([81daeb2](https://github.com/nexxtway/rainbow-modules/commit/81daeb21f806e9adb4b00d31031c6ace85fc5882))
+-   failing test ([c16bd38](https://github.com/nexxtway/rainbow-modules/commit/c16bd38845ba4739d49f0814efb088a711af870f))
+-   pass value without format to custom component in RecordField ([910e7f5](https://github.com/nexxtway/rainbow-modules/commit/910e7f5f33ee3df102e46de22c3d5059cbd6e1ac))
+
+### Features
+
+-   implement footer on GlobalSearch ([#331](https://github.com/nexxtway/rainbow-modules/issues/331)) ([cb9ab1d](https://github.com/nexxtway/rainbow-modules/commit/cb9ab1d19ab270b8b6afbf0bdce3d4842b3acec8))
+
+## [0.28.1](https://github.com/nexxtway/rainbow-modules/compare/v0.28.0...v0.28.1) (2021-02-15)
+
+### Bug Fixes
+
+-   add actions to d.ts file in app module ([37aef77](https://github.com/nexxtway/rainbow-modules/commit/37aef7768796098f02c04fecfaeb9535b466d82c))
+
+# [0.28.0](https://github.com/nexxtway/rainbow-modules/compare/v0.27.0...v0.28.0) (2021-02-15)
+
+### Bug Fixes
+
+-   airline label for FlightStatsInput ([d121bc2](https://github.com/nexxtway/rainbow-modules/commit/d121bc2ea3238d1bef3ca9a155863cf8250e2b50))
+-   fixed height in colored status column ([#327](https://github.com/nexxtway/rainbow-modules/issues/327)) ([2f81626](https://github.com/nexxtway/rainbow-modules/commit/2f8162676c22eaeb76856f38dc2b03fc8ab3a629))
+-   update z-index on portals ([#328](https://github.com/nexxtway/rainbow-modules/issues/328)) ([dd73a64](https://github.com/nexxtway/rainbow-modules/commit/dd73a645fe7dd211541fbad23ae9d467ea57e549))
+
+### Features
+
+-   add flat and disabled props to firebase hooks ([#329](https://github.com/nexxtway/rainbow-modules/issues/329)) ([e8d51dc](https://github.com/nexxtway/rainbow-modules/commit/e8d51dc7602528a370dd008dff7085fe9e4c5576))
+-   add isEditable prop to RecordField ([#326](https://github.com/nexxtway/rainbow-modules/issues/326)) ([c73e7da](https://github.com/nexxtway/rainbow-modules/commit/c73e7dae41412b60baa99604fa1faf7a053e9788)), closes [#320](https://github.com/nexxtway/rainbow-modules/issues/320)
+
+# [0.27.0](https://github.com/nexxtway/rainbow-modules/compare/v0.26.0...v0.27.0) (2021-02-08)
+
+### Bug Fixes
+
+-   fields generator chagen fieldsSchema prop to schema ([786a336](https://github.com/nexxtway/rainbow-modules/commit/786a33611d6bbe2c065d833b7c6dd1112eb7fead))
+-   forward ref passed through styled ([#322](https://github.com/nexxtway/rainbow-modules/issues/322)) ([640a7df](https://github.com/nexxtway/rainbow-modules/commit/640a7dfb7beba29b810a783efdcfcffe6725e760))
+-   icon color ([#321](https://github.com/nexxtway/rainbow-modules/issues/321)) ([68cb7ba](https://github.com/nexxtway/rainbow-modules/commit/68cb7ba27399e31d5c996adfe67b5ac8a4ff216f))
+-   improve interaction on `FloatingSearchButtonIcon` component ([#317](https://github.com/nexxtway/rainbow-modules/issues/317)) ([6786f75](https://github.com/nexxtway/rainbow-modules/commit/6786f752410a5ddb411b529b157cecaf7ef5a811))
+-   types default value in FieldsGenerator ([c3a846a](https://github.com/nexxtway/rainbow-modules/commit/c3a846ab4b387f48d276afb24221249e50040a31))
+
+### Features
+
+-   implement FlightStastsInput ([#324](https://github.com/nexxtway/rainbow-modules/issues/324)) ([3d22f83](https://github.com/nexxtway/rainbow-modules/commit/3d22f83a20458bd804c62c7db6501bdf0d58e1fe))
+-   implement UniversalFormOverlay component ([#325](https://github.com/nexxtway/rainbow-modules/issues/325)) ([d4930ee](https://github.com/nexxtway/rainbow-modules/commit/d4930eed890998a2850cd37281b9bdf0236b9b66)), closes [#319](https://github.com/nexxtway/rainbow-modules/issues/319)
+
+# [0.26.0](https://github.com/nexxtway/rainbow-modules/compare/v0.25.0...v0.26.0) (2021-01-29)
+
+### Features
+
+-   add defaultValue to useStorageState hook ([dc44d5b](https://github.com/nexxtway/rainbow-modules/commit/dc44d5b92f892e8ed5d45e6241f8e0caf6fac457))
+-   add FieldsGenerator component to form module ([#316](https://github.com/nexxtway/rainbow-modules/issues/316)) ([6ae5a08](https://github.com/nexxtway/rainbow-modules/commit/6ae5a0814e5ee0a169f58d34b89270401799e509))
+-   implement search funcionality listview ([#313](https://github.com/nexxtway/rainbow-modules/issues/313)) ([1b13852](https://github.com/nexxtway/rainbow-modules/commit/1b138523d6bf998b89c2fa1764e9da176e19b587))
+
+# [0.25.0](https://github.com/nexxtway/rainbow-modules/compare/v0.24.0...v0.25.0) (2021-01-26)
+
+### Bug Fixes
+
+-   error boundary proptypes ([48ce1b8](https://github.com/nexxtway/rainbow-modules/commit/48ce1b843dac91cfd83b4052c14cad1621535198))
+-   mapbox render route ([#312](https://github.com/nexxtway/rainbow-modules/issues/312)) ([5b6c132](https://github.com/nexxtway/rainbow-modules/commit/5b6c1329fcd2930ebd0bc8a561b9943995280c56))
+-   mapbox tests ([e15795b](https://github.com/nexxtway/rainbow-modules/commit/e15795b67b8d84fb59a78eb7a2cbdb9f68f15c46))
+
+### Features
+
+-   add className and style props ([#309](https://github.com/nexxtway/rainbow-modules/issues/309)) ([da1cf6e](https://github.com/nexxtway/rainbow-modules/commit/da1cf6e588c73c0a202675c170470dbca22c7c67))
+-   define typescript interfaces on `rainbow-modules` components ([#296](https://github.com/nexxtway/rainbow-modules/issues/296)) ([98002ac](https://github.com/nexxtway/rainbow-modules/commit/98002ac06ee07cd415b66054f730b34561628139)), closes [#250](https://github.com/nexxtway/rainbow-modules/issues/250)
+-   implement editable on `ColoredStatusColumn` component ([#305](https://github.com/nexxtway/rainbow-modules/issues/305)) ([e4cdbb6](https://github.com/nexxtway/rainbow-modules/commit/e4cdbb67b963689dda335a4190cdf8b480fab6c0)), closes [#298](https://github.com/nexxtway/rainbow-modules/issues/298)
+-   implement useStorageState hook ([#315](https://github.com/nexxtway/rainbow-modules/issues/315)) ([9819fc6](https://github.com/nexxtway/rainbow-modules/commit/9819fc6e495bed51ed27f00ec26e76a71dd77c56))
+
 # [0.24.0](https://github.com/nexxtway/rainbow-modules/compare/v0.23.1...v0.24.0) (2021-01-22)
 
 ### Bug Fixes

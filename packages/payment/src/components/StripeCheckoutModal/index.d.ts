@@ -8,7 +8,7 @@ export interface StripeCheckoutModalProps {
     /** Controls whether the modal is opened or not. If true, the modal is open. */
     isOpen?: boolean;
     /** Resolver async function that will return the intent client secret, needed to confirm the intent. */
-    clientSecretResolver?: () => any;
+    clientSecretResolver?: () => Promise<unknown>;
     /** Callback triggered when the intent confirm process succeded. */
     onSuccess?: (result: Record<string, unknown>) => void;
     /** Callback triggered when the component request to close (e.g click close button, press esc key or click outside the modal). */

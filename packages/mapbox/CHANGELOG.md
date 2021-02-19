@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.29.0](https://github.com/nexxtway/rainbow-modules/compare/v0.28.1...v0.29.0) (2021-02-16)
+
+**Note:** Version bump only for package @rainbow-modules/mapbox
+
+## [0.28.1](https://github.com/nexxtway/rainbow-modules/compare/v0.28.0...v0.28.1) (2021-02-15)
+
+**Note:** Version bump only for package @rainbow-modules/mapbox
+
+# [0.28.0](https://github.com/nexxtway/rainbow-modules/compare/v0.27.0...v0.28.0) (2021-02-15)
+
+### Features
+
+-   add isEditable prop to RecordField ([#326](https://github.com/nexxtway/rainbow-modules/issues/326)) ([c73e7da](https://github.com/nexxtway/rainbow-modules/commit/c73e7dae41412b60baa99604fa1faf7a053e9788)), closes [#320](https://github.com/nexxtway/rainbow-modules/issues/320)
+
+# [0.27.0](https://github.com/nexxtway/rainbow-modules/compare/v0.26.0...v0.27.0) (2021-02-08)
+
+**Note:** Version bump only for package @rainbow-modules/mapbox
+
+# [0.26.0](https://github.com/nexxtway/rainbow-modules/compare/v0.25.0...v0.26.0) (2021-01-29)
+
+**Note:** Version bump only for package @rainbow-modules/mapbox
+
+# [0.25.0](https://github.com/nexxtway/rainbow-modules/compare/v0.24.0...v0.25.0) (2021-01-26)
+
+### Bug Fixes
+
+-   mapbox render route ([#312](https://github.com/nexxtway/rainbow-modules/issues/312)) ([5b6c132](https://github.com/nexxtway/rainbow-modules/commit/5b6c1329fcd2930ebd0bc8a561b9943995280c56))
+-   mapbox tests ([e15795b](https://github.com/nexxtway/rainbow-modules/commit/e15795b67b8d84fb59a78eb7a2cbdb9f68f15c46))
+
+### Features
+
+-   define typescript interfaces on `rainbow-modules` components ([#296](https://github.com/nexxtway/rainbow-modules/issues/296)) ([98002ac](https://github.com/nexxtway/rainbow-modules/commit/98002ac06ee07cd415b66054f730b34561628139)), closes [#250](https://github.com/nexxtway/rainbow-modules/issues/250)
+
 # [0.24.0](https://github.com/nexxtway/rainbow-modules/compare/v0.23.1...v0.24.0) (2021-01-22)
 
 **Note:** Version bump only for package @rainbow-modules/mapbox

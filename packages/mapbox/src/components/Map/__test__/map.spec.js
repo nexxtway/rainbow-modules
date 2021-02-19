@@ -1,8 +1,11 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { act } from 'react-dom/test-utils';
 import { Application } from 'react-rainbow-components';
 import mapboxgl from 'mapbox-gl';
-import Map from '../index';
+import Map from '..';
+
+jest.useFakeTimers();
 
 jest.mock('mapbox-gl/dist/mapbox-gl', () => ({
     GeolocateControl: jest.fn(),
@@ -10,7 +13,9 @@ jest.mock('mapbox-gl/dist/mapbox-gl', () => ({
         addControl: jest.fn(),
         on: jest.fn(),
         remove: jest.fn(),
-        once: jest.fn(),
+        once: (eventName, callback) => {
+            setTimeout(callback, 100);
+        },
     })),
     NavigationControl: jest.fn(),
 }));
@@ -40,11 +45,14 @@ describe('<Map />', () => {
         expect(component.find('Spinner').exists()).toBe(true);
     });
     it('should init map with the center passed', () => {
-        mount(
-            <Application>
-                <Map accessToken="qwerty" center={[-74.5, 40]} zoom={9} />
-            </Application>,
-        );
+        act(() => {
+            mount(
+                <Application>
+                    <Map accessToken="qwerty" center={[-74.5, 40]} zoom={9} />
+                </Application>,
+            );
+            jest.runAllTimers();
+        });
         expect(mapboxgl.Map).toBeCalledWith({
             accessToken: 'qwerty',
             center: [-74.5, 40],
@@ -54,13 +62,18 @@ describe('<Map />', () => {
         });
     });
     it('should render the children passed', () => {
-        const component = mount(
-            <Application>
-                <Map accessToken="qwerty" center={[-74.5, 40]} zoom={9}>
-                    <p>child</p>
-                </Map>
-            </Application>,
-        );
+        let component;
+        act(() => {
+            component = mount(
+                <Application>
+                    <Map accessToken="qwerty" center={[-74.5, 40]} zoom={9}>
+                        <p>child</p>
+                    </Map>
+                </Application>,
+            );
+            jest.runAllTimers();
+        });
+        component.update();
         const pElement = component.find('p');
         expect(pElement.text()).toBe('child');
     });

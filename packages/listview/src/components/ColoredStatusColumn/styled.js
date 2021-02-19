@@ -6,6 +6,7 @@ import CheckmarkIcon from './checkmark';
 
 // eslint-disable-next-line import/prefer-default-export
 export const StyledContainer = styled.div`
+    height: 100%;
     position: relative;
     display: flex;
     justify-content: center;

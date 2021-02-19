@@ -3,17 +3,22 @@ import PropTypes from 'prop-types';
 import { Form } from 'react-final-form';
 
 const UniversalForm = (props) => {
-    const { onSubmit, id, children, initialValues, style, className } = props;
+    const { onSubmit, id, children, initialValues, validate, style, className } = props;
     return (
         <Form
-            style={style}
-            className={className}
             onSubmit={onSubmit}
             initialValues={initialValues}
+            validate={validate}
             render={(formProps) => {
                 const { handleSubmit } = formProps;
                 return (
-                    <form onSubmit={handleSubmit} noValidate id={id}>
+                    <form
+                        className={className}
+                        style={style}
+                        onSubmit={handleSubmit}
+                        noValidate
+                        id={id}
+                    >
                         {children}
                     </form>
                 );
@@ -35,6 +40,10 @@ UniversalForm.propTypes = {
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
     /** The initial values of the form e.g. { name: 'Max', age: 30 } */
     initialValues: PropTypes.object,
+    /** Validate function that takes all the values of the form and returns any validation errors or empty object when no errors.
+     * Validation errors must be in the same shape as the values of the form.
+     */
+    validate: PropTypes.func,
     /** The class name of the root element. */
     className: PropTypes.string,
     /** It is an object with custom style applied to the root element. */
@@ -45,7 +54,8 @@ UniversalForm.defaultProps = {
     onSubmit: () => {},
     id: undefined,
     children: null,
-    initialValues: {},
+    initialValues: undefined,
+    validate: undefined,
     className: undefined,
     style: undefined,
 };

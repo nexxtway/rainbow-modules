@@ -16,7 +16,7 @@ export interface DraggableListProps {
      */
     field?: string;
     /** Event triggered when the drag event ends. It send the new data ordered. */
-    onDragEnd?: (newData: Array<any>) => void;
+    onDragEnd?: (newData: Array<unknown>) => void;
     /**
      * The component class or function that is going to be use to render
      * the content of each item. By default the item is

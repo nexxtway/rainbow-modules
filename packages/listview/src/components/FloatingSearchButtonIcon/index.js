@@ -1,7 +1,10 @@
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { ButtonIcon } from 'react-rainbow-components';
+import { isEmpty } from '@rainbow-modules/validation';
+import { Filter } from '@rainbow-modules/icons';
 import FloatingSearch from '../FloatingSearch';
+import { StyledCircleFilledIcon } from './styled';
+import SearchButton from './searchButton';
 
 const searchStyle = {
     maxWidth: '500px',
@@ -27,23 +30,22 @@ const FloatingSearchButtonIcon = (props) => {
 
     const triggerRef = useRef();
     const [isOpen, setIsOpen] = useState(false);
+    const buttonIcon = isEmpty(value) || isOpen ? icon : <StyledCircleFilledIcon />;
 
     const toggleOpen = () => {
         setIsOpen(!isOpen);
     };
 
     const handleCloseSearch = () => {
-        onChange('');
         setIsOpen(false);
     };
 
     return (
         <>
-            <ButtonIcon
+            <SearchButton
                 assistiveText={assistiveText}
                 className={className}
                 disabled={disabled}
-                icon={icon}
                 id={id}
                 onClick={toggleOpen}
                 shaded={shaded}
@@ -53,6 +55,9 @@ const FloatingSearchButtonIcon = (props) => {
                 title={title}
                 variant={variant}
                 ref={triggerRef}
+                isOpen={isOpen}
+                icon={buttonIcon}
+                value={value}
             />
             <FloatingSearch
                 isVisible={isOpen}
@@ -119,7 +124,7 @@ FloatingSearchButtonIcon.propTypes = {
 
 FloatingSearchButtonIcon.defaultProps = {
     value: undefined,
-    icon: null,
+    icon: <Filter />,
     variant: 'base',
     size: 'medium',
     shaded: false,

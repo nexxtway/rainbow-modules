@@ -3,6 +3,43 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.29.0](https://github.com/nexxtway/rainbow-modules/compare/v0.28.1...v0.29.0) (2021-02-16)
+
+**Note:** Version bump only for package @rainbow-modules/listview
+
+## [0.28.1](https://github.com/nexxtway/rainbow-modules/compare/v0.28.0...v0.28.1) (2021-02-15)
+
+**Note:** Version bump only for package @rainbow-modules/listview
+
+# [0.28.0](https://github.com/nexxtway/rainbow-modules/compare/v0.27.0...v0.28.0) (2021-02-15)
+
+### Bug Fixes
+
+-   fixed height in colored status column ([#327](https://github.com/nexxtway/rainbow-modules/issues/327)) ([2f81626](https://github.com/nexxtway/rainbow-modules/commit/2f8162676c22eaeb76856f38dc2b03fc8ab3a629))
+
+### Features
+
+-   add isEditable prop to RecordField ([#326](https://github.com/nexxtway/rainbow-modules/issues/326)) ([c73e7da](https://github.com/nexxtway/rainbow-modules/commit/c73e7dae41412b60baa99604fa1faf7a053e9788)), closes [#320](https://github.com/nexxtway/rainbow-modules/issues/320)
+
+# [0.27.0](https://github.com/nexxtway/rainbow-modules/compare/v0.26.0...v0.27.0) (2021-02-08)
+
+### Bug Fixes
+
+-   improve interaction on `FloatingSearchButtonIcon` component ([#317](https://github.com/nexxtway/rainbow-modules/issues/317)) ([6786f75](https://github.com/nexxtway/rainbow-modules/commit/6786f752410a5ddb411b529b157cecaf7ef5a811))
+
+# [0.26.0](https://github.com/nexxtway/rainbow-modules/compare/v0.25.0...v0.26.0) (2021-01-29)
+
+### Features
+
+-   implement search funcionality listview ([#313](https://github.com/nexxtway/rainbow-modules/issues/313)) ([1b13852](https://github.com/nexxtway/rainbow-modules/commit/1b138523d6bf998b89c2fa1764e9da176e19b587))
+
+# [0.25.0](https://github.com/nexxtway/rainbow-modules/compare/v0.24.0...v0.25.0) (2021-01-26)
+
+### Features
+
+-   define typescript interfaces on `rainbow-modules` components ([#296](https://github.com/nexxtway/rainbow-modules/issues/296)) ([98002ac](https://github.com/nexxtway/rainbow-modules/commit/98002ac06ee07cd415b66054f730b34561628139)), closes [#250](https://github.com/nexxtway/rainbow-modules/issues/250)
+-   implement editable on `ColoredStatusColumn` component ([#305](https://github.com/nexxtway/rainbow-modules/issues/305)) ([e4cdbb6](https://github.com/nexxtway/rainbow-modules/commit/e4cdbb67b963689dda335a4190cdf8b480fab6c0)), closes [#298](https://github.com/nexxtway/rainbow-modules/issues/298)
+
 # [0.24.0](https://github.com/nexxtway/rainbow-modules/compare/v0.23.1...v0.24.0) (2021-01-22)
 
 ### Bug Fixes
