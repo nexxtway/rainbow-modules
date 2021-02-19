@@ -1,0 +1,20 @@
+import { Meta, Story, Preview, Props, ArgsTable } from '@storybook/addon-docs/blocks';
+import { CategoriesPicker } from '../../src/components/CategoriesPicker';
+import * as stories from '../stories/CategoriesPicker.story.js';
+
+<Meta title="Modules/Search/Components/CategoriesPicker" component={CategoriesPicker} />
+
+# Overview
+
+`CategoriesPicker` shows a list of categories that allows to select and deselect its items,
+ideal for use as a filter.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="CategoriesPicker">{stories.BasicCategoriesPicker()}</Story>
+</Preview>
+
+# Component props
+
+<ArgsTable of={CategoriesPicker} />
