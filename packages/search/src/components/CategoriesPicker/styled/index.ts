@@ -18,21 +18,22 @@ export const StyledContainer = styled.div`
 export const StyledLabel = styled.span`
     text-transform: uppercase;
     font-size: 1rem;
-    color: #081832;
+    color: ${(props) => props.theme.rainbow.palette.text.label};
     padding: 0.3rem;
 `;
 
-export const StyledOption = styled.div.attrs((props) => props.theme.rainbow)<StyledOptionProps>`
+export const StyledOption = styled.div<StyledOptionProps>`
     display: flex;
     align-items: center;
     padding: 0.5rem 0.6rem;
     width: 100%;
-    height: 35px;
+    height: 36px;
     box-sizing: border-box;
     border-radius: 8px;
-    background-color; transparent;
-    cursor: pointer;
-    
+    background-color: transparent;
+    color: ${(props) => props.theme.rainbow.palette.text.label};
+    font-size: 0.875rem;
+
     :focus,
     :active {
         outline: none;
@@ -41,21 +42,34 @@ export const StyledOption = styled.div.attrs((props) => props.theme.rainbow)<Sty
     ${(props) =>
         props.isSelected &&
         `
-        font-weight: bold;
-        background-color: #e3e5ed;
+        font-family: Lato Bold, Helvetica, sans-serif;
+        background-color: ${props.theme.rainbow.palette.background.highlight};
+        color: ${props.theme.rainbow.palette.text.main};
         cursor: default;
         `}
 
     ${(props) =>
         props.isHover &&
         `
-        background-color: #e3e5ed;
+        background-color: ${props.theme.rainbow.palette.action.hover};
+        cursor: pointer;
+        `}
+
+    ${(props) =>
+        props.isHover &&
+        `
+        background-color: ${props.theme.rainbow.palette.action.hover};
+        cursor: pointer;
         `}
 
     ${(props) =>
         props.isFocused &&
+        props.isSelected &&
         `
-        box-shadow: ${props.shadows.brand};
+        background-color: ${props.theme.rainbow.palette.action.hover};
+        cursor: pointer;
+        background-color: ${props.theme.rainbow.palette.background.highlight};
+        color: ${props.theme.rainbow.palette.text.main};
         `}
 `;
 
@@ -63,7 +77,7 @@ export const StyledName = styled.span`
     flex-grow: 1;
 `;
 
-export const StyledIconContainer = styled.a.attrs((props) => props.theme.rainbow)<IsSelected>`
+export const StyledIconContainer = styled.a<IsSelected>`
     line-height: 12px;
     border-radius: 50%;
     padding: 0.3rem;
@@ -71,7 +85,7 @@ export const StyledIconContainer = styled.a.attrs((props) => props.theme.rainbow
     :active,
     :focus {
         outline: none;
-        box-shadow: ${(props) => props.shadows.brand};
+        box-shadow: ${(props) => props.theme.rainbow.shadows.brand};
     }
 
     ${(props) => !props.isSelected && 'display: none;'}
