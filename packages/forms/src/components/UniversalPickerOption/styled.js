@@ -3,7 +3,7 @@ import HiddenElement from 'react-rainbow-components/components/Structural/hidden
 import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
 
 export const StyledContainer = styled.span`
-    margin: 0 0.25rem 0.5rem 0.25rem;
+    margin: 0 0.25rem 0.25rem 0.25rem;
 `;
 
 export const StyledLabel = styled.label`
