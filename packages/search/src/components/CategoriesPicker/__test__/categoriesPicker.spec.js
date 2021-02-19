@@ -6,7 +6,11 @@ import CategoriesPicker from '..';
 describe('<CategoriesPicker />', () => {
     it('should render the label passed', () => {
         const label = <h3>Categories</h3>;
-        const wrapper = mount(<CategoriesPicker label={label} />);
+        const wrapper = mount(
+            <Application>
+                <CategoriesPicker label={label} />
+            </Application>,
+        );
         const labelElement = wrapper.find('h3');
         expect(labelElement.exists()).toBe(true);
         expect(labelElement.text()).toBe('Categories');
