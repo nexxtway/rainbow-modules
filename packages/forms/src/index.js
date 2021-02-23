@@ -8,6 +8,7 @@ export { default as FlightStatsInput } from './components/FlightStatsInput';
 export { default as composeValidators } from './helpers/composeValidators';
 export { default as isRequired } from './validators/isRequired';
 export { default as isEmail } from './validators/isEmail';
+export { default as isInteger } from './validators/isInteger';
 export { default as max } from './validators/max';
 export { default as maxLength } from './validators/maxLength';
 export { default as min } from './validators/min';
