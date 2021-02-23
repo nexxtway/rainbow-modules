@@ -135,6 +135,7 @@ export const EditableRecordField = () => {
                         type="text"
                         isEditable
                         validate={isRequired()}
+                        id="id"
                     />
                     <RecordField label="Price" name="price" type="currency" isEditable />
                     <RecordField label="Amount" name="amount" type="number" isEditable />

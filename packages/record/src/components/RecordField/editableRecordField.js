@@ -21,6 +21,7 @@ export default function EditableRecordField(props) {
         onChange,
         privateVariant,
         dirty,
+        id,
     } = reduxFormProps;
     const containerRef = useRef();
     const [isOpen, setIsOpen] = useState(false);
@@ -49,6 +50,7 @@ export default function EditableRecordField(props) {
             <Container
                 className={className}
                 style={style}
+                id={id}
                 privateVariant={privateVariant}
                 isEditable
                 isDirty={dirty}
