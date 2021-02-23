@@ -81,7 +81,11 @@ UniversalPickerOption.propTypes = {
      * This prop that should not be visible in the documentation.
      * @ignore
      */
-    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node,
+        PropTypes.object,
+    ]),
 };
 
 UniversalPickerOption.defaultProps = {

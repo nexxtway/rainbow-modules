@@ -148,7 +148,7 @@ export const showAppLevelNotificationTimeout5s = () => {
                     <Button
                         id="notification-button-timeout"
                         label="Show notification"
-                        variant="primary"
+                        variant="brand"
                         onClick={showNotification}
                     />
                 </ContentCard>

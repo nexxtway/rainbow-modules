@@ -40,7 +40,6 @@ const UniversalFormOverlay: React.FC<UniversalFormOverlayProps> = ({
 
     const handleKeyPress = (event: React.KeyboardEvent): void => {
         if (isOpen && event.key === 'Escape' && onRequestClose) {
-            event.stopPropagation();
             onRequestClose();
         }
         if (event.key === 'Tab' && containerRef.current !== undefined) {
