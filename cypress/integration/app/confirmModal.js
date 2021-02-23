@@ -6,6 +6,7 @@ const MODAL_BUTTON = 'button[data-id=button-element]';
 describe('ConfirmModal', () => {
     beforeEach(() => {
         cy.visit(CONFIRM_MODAL_URL);
+        cy.get(BUTTON_ICON).should('exist');
     });
 
     it('should open and close modal', () => {
