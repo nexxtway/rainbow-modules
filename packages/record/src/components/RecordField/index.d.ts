@@ -5,6 +5,8 @@ export interface RecordFieldProps {
     /** A CSS class for the outer element, in addition to the component's base classes. */
     className?: string;
     /** An object with custom style applied to the outer element. */
+    id?: string;
+    /** The id of the outer element. */
     style?: CSSProperties;
     /** The label of the component. */
     label?: ReactNode;

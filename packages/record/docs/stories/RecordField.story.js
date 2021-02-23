@@ -81,9 +81,7 @@ export const BasicRecordField = () => {
                         name="datetime"
                         type="dateTime"
                         value={new Date()}
-                        component={({ value }) => (
-                            <span style={{ color: 'purple' }}>{value.toString()}</span>
-                        )}
+                        component={({ value }) => <span>{value.toString()}</span>}
                     />
                 </Container>
             </Application>
