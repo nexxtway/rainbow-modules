@@ -8,7 +8,7 @@ import Content from './content';
 import { Container } from './styled';
 
 export default function RecordField(props) {
-    const { className, style, component, name, isEditable, validate } = props;
+    const { className, style, component, name, isEditable, validate, id } = props;
     const context = useContext(Context);
     const { privateVariant } = context || {};
 
@@ -26,7 +26,7 @@ export default function RecordField(props) {
     }
 
     return (
-        <Container className={className} style={style} privateVariant={privateVariant}>
+        <Container className={className} style={style} id={id} privateVariant={privateVariant}>
             <Content {...props} privateVariant={privateVariant} />
         </Container>
     );
@@ -86,6 +86,8 @@ RecordField.propTypes = {
     /** A function that takes the field value, all the values of the form and the meta data about the field and returns an error
      * if the value is invalid, or undefined if the value is valid. */
     validate: PropTypes.func,
+    /** The id of the outer element. */
+    id: PropTypes.string,
 };
 
 RecordField.defaultProps = {
@@ -105,4 +107,5 @@ RecordField.defaultProps = {
     isEditable: false,
     onChange: () => {},
     validate: undefined,
+    id: undefined,
 };
