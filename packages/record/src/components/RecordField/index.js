@@ -21,6 +21,7 @@ export default function RecordField(props) {
                 recordComponent={component}
                 recordValidate={validate}
                 privateVariant={privateVariant}
+                id={id}
             />
         );
     }
