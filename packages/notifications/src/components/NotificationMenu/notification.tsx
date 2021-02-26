@@ -51,7 +51,7 @@ const Notification: React.FC<NotificationProps> = ({
 
     const badgeText = isStringStatus ? intl.formatMessage(messages[status as string]) : null;
     const badge = isStringStatus ? (
-        <StatusBadge size="small" label="Success" status={status}>
+        <StatusBadge size="small" status={status}>
             <StatusIconContainer status={status}>
                 <Icon icon={status as string} />
             </StatusIconContainer>
@@ -88,6 +88,18 @@ const Notification: React.FC<NotificationProps> = ({
             </Content>
         </NotificationContainer>
     );
+};
+
+Notification.defaultProps = {
+    id: undefined,
+    title: undefined,
+    description: undefined,
+    createdAt: undefined,
+    icon: undefined,
+    status: undefined,
+    unread: false,
+    isLoading: false,
+    onClick: undefined,
 };
 
 export default Notification;
