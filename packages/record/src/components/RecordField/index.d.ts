@@ -33,8 +33,6 @@ export interface RecordFieldProps {
     name?: string;
     /** A boolean that specifies whether a RecordField is editable or not. Its default value is false.  */
     isEditable?: boolean;
-    /** The action triggered when the value changes. */
-    onChange?: (value: Record<string, unknown>) => void;
     /** A function that takes the field value, all the values of the form and the meta data about the field and returns an error
      * if the value is invalid, or undefined if the value is valid. */
     validate?: FieldValidator<Record<string, unknown>>;

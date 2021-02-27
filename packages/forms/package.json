@@ -13,9 +13,11 @@
     "dependencies": {
         "@rainbow-modules/app": "^0.29.0",
         "@rainbow-modules/hooks": "^0.29.0",
+        "@rainbow-modules/icons": "^0.29.0",
         "@rainbow-modules/listview": "^0.29.0",
         "@rainbow-modules/validation": "^0.29.0",
         "final-form": "^4.20.1",
+        "lodash": "^4.17.21",
         "react-final-form": "^6.5.2",
         "styled-components": "^4.3.2"
     },
