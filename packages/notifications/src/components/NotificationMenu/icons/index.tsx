@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import React, { ReactElement } from 'react';
-import { Spinner } from 'react-rainbow-components';
 import InfoIcon from './infoIcon';
 import ErrorIcon from './errorIcon';
 import SuccessIcon from './successIcon';

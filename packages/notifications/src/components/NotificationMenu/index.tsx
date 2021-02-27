@@ -1,10 +1,10 @@
 import React, { useRef, useState } from 'react';
 import InternalOverlay from 'react-rainbow-components/components/InternalOverlay';
 import { BadgeOverlay, ButtonIcon, RenderIf } from 'react-rainbow-components';
-import { Star } from '@rainbow-modules/icons';
+import { Bell } from '@rainbow-modules/icons';
 import { useOutsideClick } from '@rainbow-modules/hooks';
 import { ButtonIconHandle, NotificationMenuProps } from './types';
-import { NotificationMenuContainer, StyledIcon, StyledSpinner } from './styled';
+import { NotificationMenuContainer, StyledSpinner } from './styled';
 import Dropdown from './dropdown';
 import positionResolver from './helpers/positionResolver';
 
@@ -21,9 +21,9 @@ const NotificationMenu: React.FC<NotificationMenuProps> = ({
     const dropdownRef = useRef<HTMLElement>(null);
     const inProgress = notifications?.some((value) => value.status === 'inProgress');
     const icon = (
-        <StyledIcon unreads={unreads}>
-            <Star />
-        </StyledIcon>
+        <BadgeOverlay overlap="circle" isHidden={!unreads}>
+            <Bell />
+        </BadgeOverlay>
     );
 
     useOutsideClick(
@@ -43,15 +43,11 @@ const NotificationMenu: React.FC<NotificationMenuProps> = ({
         <NotificationMenuContainer>
             <RenderIf isTrue={inProgress}>
                 <StyledSpinner type="arc" variant="brand">
-                    <BadgeOverlay isHidden={!isLoading}>
-                        <ButtonIcon icon={icon} onClick={handleButtonClick} ref={buttonRef} />
-                    </BadgeOverlay>
+                    <ButtonIcon icon={icon} onClick={handleButtonClick} ref={buttonRef} />
                 </StyledSpinner>
             </RenderIf>
             <RenderIf isTrue={!inProgress}>
-                <BadgeOverlay isHidden={!isLoading}>
-                    <ButtonIcon icon={icon} onClick={handleButtonClick} ref={buttonRef} />
-                </BadgeOverlay>
+                <ButtonIcon icon={icon} onClick={handleButtonClick} ref={buttonRef} />
             </RenderIf>
             <InternalOverlay
                 isVisible={isOpen}

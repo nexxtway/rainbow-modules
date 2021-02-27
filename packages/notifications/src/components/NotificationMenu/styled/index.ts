@@ -11,27 +11,6 @@ export const NotificationMenuContainer = styled.div`
     display: inline-block;
 `;
 
-export const StyledIcon = styled.span<{ unreads?: number | boolean }>`
-    position: relative;
-    line-height: 1rem;
-
-    ::after {
-        ${(props) =>
-            props.unreads &&
-            `
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 8px;
-            height: 8px;
-            background-color: #ff5555;
-            border-radius: 50%;
-            ;
-        `}
-    }
-`;
-
 export const DropdownContainer = styled.div.attrs((props) => props.theme.rainbow)`
     background-color: ${(props) => props.palette.background.main};
     color: ${(props) => props.palette.text.main};
