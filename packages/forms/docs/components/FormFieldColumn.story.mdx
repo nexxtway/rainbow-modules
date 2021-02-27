@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import FormFieldColumn from '../../src/components/FormFieldColumn';
+import * as stories from '../stories/FormFieldColumn.story.js';
+
+<Meta title="Modules/Forms/Components/FormFieldColumn" component={FormFieldColumn} />
+
+# Overview
+
+`FormFieldColumn` is table column component to make the Table editable. Each cell is connected to `final-form` and it must be wrapped with an UniversalForm.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="FormFieldColumn">{stories.Basic()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={FormFieldColumn} />
