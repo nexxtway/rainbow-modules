@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unused-prop-types */
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { Field } from 'react-final-form';
+import { Field } from '@rainbow-modules/forms';
 import { Context } from '../../context';
 import EditableRecordField from './editableRecordField';
 import Content from './content';
@@ -82,8 +82,6 @@ RecordField.propTypes = {
     name: PropTypes.string,
     /** A boolean that specifies whether a RecordField is editable or not. Its default value is false.  */
     isEditable: PropTypes.bool,
-    /** The action triggered when the value changes. */
-    onChange: PropTypes.func,
     /** A function that takes the field value, all the values of the form and the meta data about the field and returns an error
      * if the value is invalid, or undefined if the value is valid. */
     validate: PropTypes.func,
@@ -106,7 +104,6 @@ RecordField.defaultProps = {
     target: '_self',
     name: undefined,
     isEditable: false,
-    onChange: () => {},
     validate: undefined,
     id: undefined,
 };
