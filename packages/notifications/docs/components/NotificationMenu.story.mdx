@@ -1,0 +1,20 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import NotificationMenu from '../../src/components/NotificationMenu';
+import * as stories from '../stories/NotificationMenu.story.js';
+
+<Meta title="Modules/Notifications/Components/NotificationMenu" component={NotificationMenu} />
+
+# Overview
+
+`NotificationMenu` is a button menu containing notifications in a dropdown. You can use the
+`notifications` prop to define the parameters of the notifications you want to show.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="NotificationMenu">{stories.SimpleNotificationMenu()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={NotificationMenu} />
