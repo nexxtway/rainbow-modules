@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { ButtonIcon } from 'react-rainbow-components';
 
-export const EditableContainer = styled(Container)`
+export const EditableContainer = styled.div`
     position: relative;
 
     :hover {
