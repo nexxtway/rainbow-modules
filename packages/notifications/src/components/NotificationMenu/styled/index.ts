@@ -1,14 +1,9 @@
 import styled from 'styled-components';
-import { LoadingShape, ButtonIcon } from 'react-rainbow-components';
-import { ButtonIconProps } from 'react-rainbow-components/components/ButtonIcon';
+import { LoadingShape, Spinner } from 'react-rainbow-components';
 import { NotificationProps, StatusBadgeProps } from '../types';
 
-interface StyledButtonIconProps extends ButtonIconProps {
-    inProgress?: boolean;
-}
-
-export const StyledButtonIcon = styled(ButtonIcon)<StyledButtonIconProps>`
-    ${(props) => props.inProgress && `border: solid 4px ${props.theme.rainbow.palette.brand.main};`}
+export const StyledSpinner = styled(Spinner)`
+    position: relative;
 `;
 
 export const NotificationMenuContainer = styled.div`
@@ -51,7 +46,7 @@ export const Header = styled.div.attrs((props) => props.theme.rainbow)`
     align-items: center;
     padding: 0.6rem;
     border-bottom: solid 1px ${(props) => props.palette.border.disabled};
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: bold;
 `;
 
@@ -119,6 +114,8 @@ export const Title = styled.div.attrs((props) => props.theme.rainbow)<Notificati
     overflow: hidden;
     text-overflow: ellipsis;
     color: ${(props) => props.palette.text.main};
+    font-weight: bold;
+    font-size: 1rem;
 
     ${(props) => props.unread && `font-weight: bold;`}
 `;
@@ -129,13 +126,25 @@ export const CreatedAt = styled.div.attrs((props) => props.theme.rainbow)<Notifi
     text-overflow: ellipsis;
     max-width: 35%;
     color: ${(props) => props.palette.text.label};
+    font-size: 0.875rem;
 
-    ${(props) => props.unread && `font-weight: bold;`}
+    ${(props) =>
+        props.unread &&
+        `
+        font-weight: bold;
+        color: ${props.palette.text.main};
+        `}
 `;
 
 export const Description = styled.div.attrs((props) => props.theme.rainbow)<NotificationProps>`
     color: ${(props) => props.palette.text.label};
-    ${(props) => props.unread && `font-weight: bold;`}
+    font-size: 0.875rem;
+    ${(props) =>
+        props.unread &&
+        `
+        font-weight: bold;
+        color: ${props.palette.text.main};
+        `}
 `;
 
 export const StatusBadge = styled.span.attrs((props) => props.theme.rainbow)<StatusBadgeProps>`
@@ -181,7 +190,6 @@ export const StatusIconContainer = styled.div.attrs((props) => props.theme.rainb
         props.status === 'inProgress' &&
         `
         background-color: ${props.palette.background.main};
-        border: solid 4px ${props.palette.brand.main};
     `}
 `;
 

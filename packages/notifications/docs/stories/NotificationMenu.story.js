@@ -48,11 +48,12 @@ export const SimpleNotificationMenu = () => {
 export const ProgressNotificationMenu = () => {
     const progressNotifications = [
         {
-            title: 'fire-authentication”',
+            title: 'fire-authentication',
             description:
                 'The "fire-authentication” function is still installing, this may take a few minutes.',
             status: 'inProgress',
             createdAt: 'Now',
+            unread: true,
         },
         ...notifications,
     ];
@@ -68,7 +69,7 @@ export const ProgressNotificationMenu = () => {
 export const UnreadNotificationMenu = () => {
     const unreadNotifications = [
         {
-            title: 'fire-authentication”',
+            title: 'fire-authentication',
             description:
                 'The "fire-authentication” function is still installing, this may take a few minutes.',
             status: 'error',

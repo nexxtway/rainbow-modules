@@ -1,9 +1,10 @@
 import React, { useRef, useState } from 'react';
 import InternalOverlay from 'react-rainbow-components/components/InternalOverlay';
+import { BadgeOverlay, ButtonIcon, RenderIf } from 'react-rainbow-components';
 import { Star } from '@rainbow-modules/icons';
 import { useOutsideClick } from '@rainbow-modules/hooks';
 import { ButtonIconHandle, NotificationMenuProps } from './types';
-import { NotificationMenuContainer, StyledIcon, StyledButtonIcon } from './styled';
+import { NotificationMenuContainer, StyledIcon, StyledSpinner } from './styled';
 import Dropdown from './dropdown';
 import positionResolver from './helpers/positionResolver';
 
@@ -40,12 +41,18 @@ const NotificationMenu: React.FC<NotificationMenuProps> = ({
 
     return (
         <NotificationMenuContainer>
-            <StyledButtonIcon
-                icon={icon}
-                inProgress={inProgress}
-                onClick={handleButtonClick}
-                ref={buttonRef}
-            />
+            <RenderIf isTrue={inProgress}>
+                <StyledSpinner type="arc" variant="brand">
+                    <BadgeOverlay isHidden={!isLoading}>
+                        <ButtonIcon icon={icon} onClick={handleButtonClick} ref={buttonRef} />
+                    </BadgeOverlay>
+                </StyledSpinner>
+            </RenderIf>
+            <RenderIf isTrue={!inProgress}>
+                <BadgeOverlay isHidden={!isLoading}>
+                    <ButtonIcon icon={icon} onClick={handleButtonClick} ref={buttonRef} />
+                </BadgeOverlay>
+            </RenderIf>
             <InternalOverlay
                 isVisible={isOpen}
                 triggerElementRef={buttonRef.current?.htmlElementRef}
