@@ -90,6 +90,8 @@ import {
     ChevronLeft,
     ShoppingCartFilled,
     ShoppingCart,
+    Store,
+    StoreFilled,
 } from '../../../src';
 
 export default [
@@ -548,5 +550,15 @@ export default [
         name: 'shoppingCart',
         category: 'standard',
         icon: ShoppingCart,
+    },
+    {
+        name: 'store',
+        category: 'standard',
+        icon: Store,
+    },
+    {
+        name: 'storeFilled',
+        category: 'standard',
+        icon: StoreFilled,
     },
 ];

@@ -91,3 +91,5 @@ export { default as CheckCircleFilled } from './components/checkCircleFilled';
 export { default as ErrorCircleFilled } from './components/errorCircleFilled';
 export { default as ShoppingCartFilled } from './components/shoppingCartFilled';
 export { default as ShoppingCart } from './components/shoppingCart';
+export { default as Store } from './components/store';
+export { default as StoreFilled } from './components/storeFilled';
