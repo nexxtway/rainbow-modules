@@ -1,0 +1,31 @@
+<Meta title="Modules/Validation/isFirestoreDocument" />
+
+# Overview
+
+`isFirestoreDocument` checks if the given value is a valid firestore document path.
+
+```js
+isFirestoreDocument('users/{userId}');
+// returns true
+
+isFirestoreDocument('/users/{userId}/addresses/home');
+// returns true
+
+isFirestoreDocument('/users/{userId}/messages/{messageId}');
+// returns true
+
+isFirestoreDocument('users');
+// returns false
+
+isFirestoreDocument('/users');
+// returns false
+
+isFirestoreDocument('/users/{userId}/addresses');
+// returns false
+
+isFirestoreDocument('users/');
+// returns false
+
+isFirestoreDocument('users/[userId]');
+// returns false
+```
