@@ -17,26 +17,27 @@ const Notifications: React.FC<NotificationsProps> = ({
         );
     }
 
-    const children = notifications ? (
-        notifications.map((props) => {
-            const { id, title, description, createdAt, icon, status, unread } = props;
-            return (
-                <Notification
-                    id={id}
-                    title={title}
-                    description={description}
-                    createdAt={createdAt}
-                    icon={icon}
-                    status={status}
-                    unread={unread}
-                    onClick={onClick}
-                    key={id}
-                />
-            );
-        })
-    ) : (
-        <EmptyMessage />
-    );
+    const children =
+        Array.isArray(notifications) && notifications.length > 0 ? (
+            notifications.map((props) => {
+                const { id, title, description, createdAt, icon, status, unread } = props;
+                return (
+                    <Notification
+                        id={id}
+                        title={title}
+                        description={description}
+                        createdAt={createdAt}
+                        icon={icon}
+                        status={status}
+                        unread={unread}
+                        onClick={onClick}
+                        key={id}
+                    />
+                );
+            })
+        ) : (
+            <EmptyMessage />
+        );
     return <>{children}</>;
 };
 

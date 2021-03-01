@@ -1,6 +1,8 @@
 import React from 'react';
 import { useIntl } from 'react-intl';
-import { LoadingShape } from 'react-rainbow-components';
+import { LoadingShape, RenderIf } from 'react-rainbow-components';
+import getTimeDiff from './helpers/getTimeDiff';
+import normalizeCreatedAt from './helpers/normalizeCreatedAt';
 import Icon from './icons';
 import messages from './messages';
 import {
@@ -23,7 +25,7 @@ const Notification: React.FC<NotificationProps> = ({
     id,
     title,
     description,
-    createdAt,
+    createdAt: createdAtInProps,
     status,
     icon,
     unread,
@@ -61,13 +63,18 @@ const Notification: React.FC<NotificationProps> = ({
         status
     );
 
+    const normalizedCreatedAt = normalizeCreatedAt(createdAtInProps);
+    const createdAt = normalizedCreatedAt
+        ? intl.formatRelativeTime(...getTimeDiff(normalizedCreatedAt))
+        : null;
+
     const handleClick = () => {
         if (onClick) {
             onClick({
                 id,
                 title,
                 description,
-                createdAt,
+                createdAt: createdAtInProps,
                 status,
                 icon,
                 unread,
@@ -81,7 +88,9 @@ const Notification: React.FC<NotificationProps> = ({
             <Content>
                 <TitleContainer>
                     <Title unread={unread}>{title}</Title>
-                    <CreatedAt unread={unread}>{createdAt}</CreatedAt>
+                    <RenderIf isTrue={createdAt}>
+                        <CreatedAt unread={unread}>{createdAt}</CreatedAt>
+                    </RenderIf>
                 </TitleContainer>
                 <Description unread={unread}>{description}</Description>
                 {badge}

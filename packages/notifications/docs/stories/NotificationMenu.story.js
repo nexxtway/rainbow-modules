@@ -9,13 +9,12 @@ const notifications = [
         title: 'Rainbow Components',
         description: 'Lorem ipsum dolor sit amer, adipiscing consectetur',
         status: 'success',
-        createdAt: 'Now',
+        createdAt: Date.now(),
     },
     {
         title: 'Rainbow Modules',
         description: 'Lorem ipsum dolor sit amer, adipiscing consectetur',
         status: 'success',
-        createdAt: '3 minutes ago',
     },
 ];
 
