@@ -16,3 +16,6 @@ export function isNumber(value: any): boolean;
 export function isPhoneNumber(value: string): boolean;
 export function isPromise(value: any): boolean;
 export function isUndefined(value: any): boolean;
+export function isFirestorePath(value: string): boolean;
+export function isFirestoreCollection(value: string): boolean;
+export function isFirestoreDocument(value: string): boolean;

@@ -1,0 +1,31 @@
+<Meta title="Modules/Validation/isFirestorePath" />
+
+# Overview
+
+`isFirestorePath` checks if the given value is a valid firestore path.
+
+```js
+isFirestorePath('users');
+// returns true
+
+isFirestorePath('/users');
+// returns true
+
+isFirestorePath('users/{userId}');
+// returns true
+
+isFirestorePath('/users/{userId}/addresses');
+// returns true
+
+isFirestorePath('/users/{userId}/addresses/home');
+// returns true
+
+isFirestorePath('/{collectionName}/{documentId}');
+// returns true
+
+isFirestorePath('users/');
+// returns false
+
+isFirestorePath('users/[userId]');
+// returns false
+```
