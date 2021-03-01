@@ -22,13 +22,15 @@ const FormFieldColumn = (props) => {
         index,
     };
     const fieldName = typeof name === 'function' ? name(data) : name;
-    const isEditableResult = typeof isEditable === 'function' ? isEditable(data) : isEditable;
+    const isEditableFunction = typeof isEditable === 'function';
+    const isEditableResult = isEditableFunction ? isEditable(data) : isEditable;
 
     return (
         <Field
             name={fieldName}
             component={EditableCell}
             isEditable={isEditableResult}
+            isEditableFunction={isEditableFunction}
             row={row}
             index={index}
             columnComponent={Component}
