@@ -1,0 +1,28 @@
+<Meta title="Modules/Validation/isFirestoreCollection" />
+
+# Overview
+
+`isFirestoreCollection` checks if the given value is a valid firestore collection path.
+
+```js
+isFirestoreCollection('users');
+// returns true
+
+isFirestoreCollection('/users');
+// returns true
+
+isFirestoreCollection('/users/{userId}/addresses');
+// returns true
+
+isFirestoreCollection('users/{userId}');
+// returns false
+
+isFirestoreCollection('/users/{userId}/addresses/home');
+// returns false
+
+isFirestoreCollection('users/');
+// returns false
+
+isFirestoreCollection('users/[userId]');
+// returns false
+```

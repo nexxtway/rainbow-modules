@@ -15,6 +15,7 @@ const EditableCell = (props) => {
         index,
         onChange,
         isEditable,
+        isEditableFunction,
         columnComponent: Component,
         columnValidate: validate,
         type,
@@ -43,7 +44,7 @@ const EditableCell = (props) => {
                 <RenderIf isTrue={isEditable}>
                     <StyledButtonIcon icon={<Edit />} onClick={() => setIsOpen(true)} />
                 </RenderIf>
-                <RenderIf isTrue={!isEditable}>
+                <RenderIf isTrue={!isEditable && isEditableFunction}>
                     <StyledButtonIcon icon={<Lock />} disabled />
                 </RenderIf>
             </EditableContainer>

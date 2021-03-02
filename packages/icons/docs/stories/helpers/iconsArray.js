@@ -83,6 +83,15 @@ import {
     Filter,
     PlaneFilled,
     Update,
+    InfoCircleFilled,
+    CheckCircleFilled,
+    ErrorCircleFilled,
+    ChevronRight,
+    ChevronLeft,
+    ShoppingCartFilled,
+    ShoppingCart,
+    Store,
+    StoreFilled,
 } from '../../../src';
 
 export default [
@@ -506,5 +515,50 @@ export default [
         name: 'update',
         category: 'standard',
         icon: Update,
+    },
+    {
+        name: 'infoCircleFilled',
+        category: 'standard',
+        icon: InfoCircleFilled,
+    },
+    {
+        name: 'checkCircleFilled',
+        category: 'standard',
+        icon: CheckCircleFilled,
+    },
+    {
+        name: 'errorCircleFilled',
+        category: 'standard',
+        icon: ErrorCircleFilled,
+    },
+    {
+        name: 'chevronRight',
+        category: 'standard',
+        icon: ChevronRight,
+    },
+    {
+        name: 'chevronLeft',
+        category: 'standard',
+        icon: ChevronLeft,
+    },
+    {
+        name: 'shoppingCartFilled',
+        category: 'standard',
+        icon: ShoppingCartFilled,
+    },
+    {
+        name: 'shoppingCart',
+        category: 'standard',
+        icon: ShoppingCart,
+    },
+    {
+        name: 'store',
+        category: 'standard',
+        icon: Store,
+    },
+    {
+        name: 'storeFilled',
+        category: 'standard',
+        icon: StoreFilled,
     },
 ];
