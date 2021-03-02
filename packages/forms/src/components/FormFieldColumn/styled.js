@@ -11,6 +11,12 @@ export const EditableContainer = styled.div`
     }
 
     ${(props) =>
+        props.cellAlignment === 'right' &&
+        `
+        padding-right: 8px;
+    `}
+
+    ${(props) =>
         props.isDirty &&
         `
             background-color: #fff9e6;
@@ -30,6 +36,12 @@ export const StyledButtonIcon = styled(ButtonIcon)`
     position: absolute;
     top: 0;
     right: 8px;
+
+    ${(props) =>
+        props.cellAlignment === 'right' &&
+        `
+        left: 8px;
+    `}
 
     ${(props) =>
         props.disabled &&

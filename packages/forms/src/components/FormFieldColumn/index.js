@@ -15,6 +15,7 @@ const FormFieldColumn = (props) => {
         parse,
         format,
         type,
+        cellAlignment,
     } = props;
     const data = {
         row,
@@ -36,6 +37,7 @@ const FormFieldColumn = (props) => {
             columnComponent={Component}
             columnValidate={validate}
             type={type}
+            cellAlignment={cellAlignment}
             parse={parse}
             format={format}
         />
@@ -77,6 +79,11 @@ FormFieldColumn.propTypes = {
     format: PropTypes.func,
     /** Field input type. */
     type: PropTypes.oneOf(['text', 'number']),
+    /** Determines the alignment of the text in each column cell.
+     * Available options are: left, right, center.
+     * This value defaults to `left` when the Table uses the `default` variant and defaults to `center` when uses the `listview` variant.
+     */
+    cellAlignment: PropTypes.oneOf(['left', 'right', 'center']),
 };
 
 FormFieldColumn.defaultProps = {
@@ -89,6 +96,7 @@ FormFieldColumn.defaultProps = {
     parse: undefined,
     format: undefined,
     type: 'text',
+    cellAlignment: undefined,
 };
 
 export default FormFieldColumn;

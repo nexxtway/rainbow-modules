@@ -42,6 +42,11 @@ export interface Props<P> {
     format?: (value: unknown, name: string) => unknown;
     /** Field input type. */
     type?: 'text' | 'number';
+    /** Determines the alignment of the text in each column cell.
+     * Available options are: left, right, center.
+     * This value defaults to `left` when the Table uses the `default` variant and defaults to `center` when uses the `listview` variant.
+     */
+    cellAlignment?: 'left' | 'right' | 'center';
 }
 
 export default function (props: Props): JSX.Element | null;
