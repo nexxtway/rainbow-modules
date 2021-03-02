@@ -3,12 +3,24 @@ import { ButtonIcon } from 'react-rainbow-components';
 
 export const EditableContainer = styled.div`
     position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 32px;
 
     :hover {
         > button {
             display: inline-flex;
         }
     }
+
+    ${(props) =>
+        props.cellAlignment === 'right' &&
+        `
+        padding-right: 8px;
+        padding-left: 32px;
+    `}
 
     ${(props) =>
         props.isDirty &&
@@ -29,7 +41,13 @@ export const StyledButtonIcon = styled(ButtonIcon)`
     height: 100%;
     position: absolute;
     top: 0;
-    right: 8px;
+    right: 0;
+
+    ${(props) =>
+        props.cellAlignment === 'right' &&
+        `
+        left: 0;
+    `}
 
     ${(props) =>
         props.disabled &&

@@ -58,6 +58,7 @@ export const Basic = () => {
                         type="number"
                         isEditable={isEditableColumn}
                         component={FormFieldColumn}
+                        cellAlignment="right"
                         cellComponent={({ value }) => {
                             return (
                                 // eslint-disable-next-line react/style-prop-object
@@ -74,6 +75,7 @@ export const Basic = () => {
                         type="number"
                         isEditable={isEditableColumn}
                         component={FormFieldColumn}
+                        cellAlignment="right"
                         cellComponent={({ value }) => {
                             // eslint-disable-next-line react/style-prop-object
                             return <FormattedNumber value={value / 100} style="percent" />;

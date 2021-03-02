@@ -19,6 +19,7 @@ const EditableCell = (props) => {
         columnComponent: Component,
         columnValidate: validate,
         type,
+        cellAlignment,
         dirty,
     } = useReduxForm(props);
     const containerRef = useRef();
@@ -36,16 +37,20 @@ const EditableCell = (props) => {
 
     return (
         <>
-            <EditableContainer ref={containerRef} isDirty={dirty}>
+            <EditableContainer ref={containerRef} isDirty={dirty} cellAlignment={cellAlignment}>
                 <RenderIf isTrue={Component}>
                     <RenderedComponent value={value} row={row} index={index} dirty={dirty} />
                 </RenderIf>
                 <RenderIf isTrue={!Component}>{value}</RenderIf>
                 <RenderIf isTrue={isEditable}>
-                    <StyledButtonIcon icon={<Edit />} onClick={() => setIsOpen(true)} />
+                    <StyledButtonIcon
+                        cellAlignment={cellAlignment}
+                        icon={<Edit />}
+                        onClick={() => setIsOpen(true)}
+                    />
                 </RenderIf>
                 <RenderIf isTrue={!isEditable && isEditableFunction}>
-                    <StyledButtonIcon icon={<Lock />} disabled />
+                    <StyledButtonIcon cellAlignment={cellAlignment} icon={<Lock />} disabled />
                 </RenderIf>
             </EditableContainer>
             <UniversalFormOverlay
