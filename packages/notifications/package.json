@@ -8,13 +8,13 @@
         "lib"
     ],
     "dependencies": {
-        "firebase": "^8.2.0",
         "styled-components": "^4.3.2",
         "@rainbow-modules/icons": "^0.29.0",
         "@rainbow-modules/hooks": "^0.29.0"
     },
     "devDependencies": {},
     "peerDependencies": {
+        "firebase": "^8.2.0",
         "react": ">=16.8.0",
         "react-rainbow-components": ">=1.15.0",
         "react-intl": "^4.4.0"
