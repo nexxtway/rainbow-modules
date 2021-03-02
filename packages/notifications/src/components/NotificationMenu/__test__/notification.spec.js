@@ -45,11 +45,10 @@ describe('<Notification />', () => {
                 <Notification createdAt={createdAt} />
             </Application>,
         );
-        const createdAtComponent = wrapper.find(CreatedAt);
-        expect(createdAtComponent.find(CreatedAt).exists()).toBe(true);
+        expect(wrapper.find(CreatedAt).exists()).toBe(true);
     });
 
-    it('should render the relative time when createdAt is not passed', () => {
+    it('should not render the relative time when createdAt is not passed', () => {
         const wrapper = mount(
             <Application>
                 <Notification title="Test" />
