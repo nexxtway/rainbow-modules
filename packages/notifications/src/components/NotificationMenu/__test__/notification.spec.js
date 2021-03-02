@@ -38,15 +38,24 @@ describe('<Notification />', () => {
         expect(titleComponent.find('[data-test="title"]').exists()).toBe(true);
     });
 
-    it('should render the passed createdAt', () => {
-        const createdAt = <div data-test="createdAt">Now</div>;
+    it('should render the relative time when createdAt is valid', () => {
+        const createdAt = Date.now();
         const wrapper = mount(
             <Application>
                 <Notification createdAt={createdAt} />
             </Application>,
         );
+        expect(wrapper.find(CreatedAt).exists()).toBe(true);
+    });
+
+    it('should not render the relative time when createdAt is not passed', () => {
+        const wrapper = mount(
+            <Application>
+                <Notification title="Test" />
+            </Application>,
+        );
         const createdAtComponent = wrapper.find(CreatedAt);
-        expect(createdAtComponent.find('[data-test="createdAt"]').exists()).toBe(true);
+        expect(createdAtComponent.find(CreatedAt).exists()).toBe(false);
     });
 
     it('should render the passed description', () => {
