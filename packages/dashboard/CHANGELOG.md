@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.30.0](https://github.com/nexxtway/rainbow-modules/compare/v0.29.0...v0.30.0) (2021-03-03)
+
+### Bug Fixes
+
+-   force disable legend in `DoubleBarChart` component ([#323](https://github.com/nexxtway/rainbow-modules/issues/323)) ([7e498b0](https://github.com/nexxtway/rainbow-modules/commit/7e498b01f438fa6670331237180e349fd6ccef5e))
+
 # [0.29.0](https://github.com/nexxtway/rainbow-modules/compare/v0.28.1...v0.29.0) (2021-02-16)
 
 **Note:** Version bump only for package @rainbow-modules/dashboard

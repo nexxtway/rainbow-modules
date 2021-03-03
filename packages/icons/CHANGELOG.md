@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.30.0](https://github.com/nexxtway/rainbow-modules/compare/v0.29.0...v0.30.0) (2021-03-03)
+
+### Features
+
+-   add some new icons ([#342](https://github.com/nexxtway/rainbow-modules/issues/342)) ([5caf0d5](https://github.com/nexxtway/rainbow-modules/commit/5caf0d58d30b0558a3a82dd4156d5d5f66744cf5))
+-   add store icon ([#343](https://github.com/nexxtway/rainbow-modules/issues/343)) ([e07fc4f](https://github.com/nexxtway/rainbow-modules/commit/e07fc4f23514da5fb1cf17c5dad96085b3acc30d))
+-   implement `NotificationMenu` component ([#340](https://github.com/nexxtway/rainbow-modules/issues/340)) ([7b45884](https://github.com/nexxtway/rainbow-modules/commit/7b4588441f04287835cfe0ae40dae34e3d6b4b07)), closes [#336](https://github.com/nexxtway/rainbow-modules/issues/336)
+
 # [0.29.0](https://github.com/nexxtway/rainbow-modules/compare/v0.28.1...v0.29.0) (2021-02-16)
 
 **Note:** Version bump only for package @rainbow-modules/icons
