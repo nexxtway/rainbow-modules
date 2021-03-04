@@ -87,3 +87,5 @@ export { default as ShoppingCart } from './components/shoppingCart';
 export { default as Function } from './components/function';
 export { default as Store } from './components/store';
 export { default as StoreFilled } from './components/storeFilled';
+export { default as Billing } from './components/billing';
+export { default as InfoBorder } from './components/infoBorder';
