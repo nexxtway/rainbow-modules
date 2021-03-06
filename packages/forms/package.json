@@ -17,6 +17,7 @@
         "@rainbow-modules/listview": "^0.29.0",
         "@rainbow-modules/validation": "^0.29.0",
         "final-form": "^4.20.1",
+        "jsoneditor": "^9.2.0",
         "lodash": "^4.17.21",
         "react-final-form": "^6.5.2",
         "styled-components": "^4.3.2"
@@ -27,5 +28,8 @@
     },
     "publishConfig": {
         "access": "public"
+    },
+    "devDependencies": {
+        "@types/jsoneditor": "^8.6.0"
     }
 }

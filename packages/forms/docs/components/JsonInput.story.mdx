@@ -1,0 +1,20 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import JsonInput from '../../src/components/JsonInput';
+import * as stories from '../stories/JsonInput.story.js';
+
+<Meta title="Modules/Forms/Components/JsonInput" component={JsonInput} />
+
+# Overview
+
+`JsonInput` is an advanced JSON code editor with formatting, syntax highlighting and parsing. It integrates
+with [react-final-form](https://final-form.org/react).
+
+### This is a basic example.
+
+<Preview>
+    <Story name="JsonInput">{stories.BasicJsonInput()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={JsonInput} />
