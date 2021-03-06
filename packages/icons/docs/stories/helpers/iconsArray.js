@@ -92,6 +92,8 @@ import {
     ShoppingCart,
     Store,
     StoreFilled,
+    Billing,
+    InfoBorder,
 } from '../../../src';
 
 export default [
@@ -314,6 +316,16 @@ export default [
         name: 'github',
         category: 'standard',
         icon: Github,
+    },
+    {
+        name: 'billing',
+        category: 'standard',
+        icon: Billing,
+    },
+    {
+        name: 'infoBorder',
+        category: 'standard',
+        icon: InfoBorder,
     },
     {
         name: 'newCard',

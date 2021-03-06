@@ -15,6 +15,7 @@ const FormFieldColumn = (props) => {
         parse,
         format,
         type,
+        cellAlignment,
     } = props;
     const data = {
         row,
@@ -22,18 +23,21 @@ const FormFieldColumn = (props) => {
         index,
     };
     const fieldName = typeof name === 'function' ? name(data) : name;
-    const isEditableResult = typeof isEditable === 'function' ? isEditable(data) : isEditable;
+    const isEditableFunction = typeof isEditable === 'function';
+    const isEditableResult = isEditableFunction ? isEditable(data) : isEditable;
 
     return (
         <Field
             name={fieldName}
             component={EditableCell}
             isEditable={isEditableResult}
+            isEditableFunction={isEditableFunction}
             row={row}
             index={index}
             columnComponent={Component}
             columnValidate={validate}
             type={type}
+            cellAlignment={cellAlignment}
             parse={parse}
             format={format}
         />
@@ -75,6 +79,11 @@ FormFieldColumn.propTypes = {
     format: PropTypes.func,
     /** Field input type. */
     type: PropTypes.oneOf(['text', 'number']),
+    /** Determines the alignment of the text in each column cell.
+     * Available options are: left, right, center.
+     * This value defaults to `left` when the Table uses the `default` variant and defaults to `center` when uses the `listview` variant.
+     */
+    cellAlignment: PropTypes.oneOf(['left', 'right', 'center']),
 };
 
 FormFieldColumn.defaultProps = {
@@ -87,6 +96,7 @@ FormFieldColumn.defaultProps = {
     parse: undefined,
     format: undefined,
     type: 'text',
+    cellAlignment: undefined,
 };
 
 export default FormFieldColumn;

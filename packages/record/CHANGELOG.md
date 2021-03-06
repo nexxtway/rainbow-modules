@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.30.0](https://github.com/nexxtway/rainbow-modules/compare/v0.29.0...v0.30.0) (2021-03-03)
+
+### Bug Fixes
+
+-   hover styles on RecordField editable ([#333](https://github.com/nexxtway/rainbow-modules/issues/333)) ([2d79b74](https://github.com/nexxtway/rainbow-modules/commit/2d79b748782d8bd499f5e6417675cb43b21265c7))
+-   stop propagation when press esc in UniversalFormOverlay ([#335](https://github.com/nexxtway/rainbow-modules/issues/335)) ([49c80e9](https://github.com/nexxtway/rainbow-modules/commit/49c80e979f961693f600b310b3d055c512392c0b))
+
+### Features
+
+-   add ed prop to the RecordField editable ([#339](https://github.com/nexxtway/rainbow-modules/issues/339)) ([6c10c33](https://github.com/nexxtway/rainbow-modules/commit/6c10c33e7dc98fd7c5757187d2e0928304b380aa))
+-   add id to record field ([#338](https://github.com/nexxtway/rainbow-modules/issues/338)) ([a069eb8](https://github.com/nexxtway/rainbow-modules/commit/a069eb8b858af374ca0330a5d1da8405a37b7a09))
+-   implement FormFieldColumn ([#341](https://github.com/nexxtway/rainbow-modules/issues/341)) ([be63591](https://github.com/nexxtway/rainbow-modules/commit/be635911105ff8e9960479853a3cd7698fc0b988))
+
 # [0.29.0](https://github.com/nexxtway/rainbow-modules/compare/v0.28.1...v0.29.0) (2021-02-16)
 
 ### Bug Fixes

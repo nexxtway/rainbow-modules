@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.30.0](https://github.com/nexxtway/rainbow-modules/compare/v0.29.0...v0.30.0) (2021-03-03)
+
+### Bug Fixes
+
+-   export isInteger in index ([b7021df](https://github.com/nexxtway/rainbow-modules/commit/b7021df8f8acf035ab50db41c842529fcc8f0329))
+-   isRequired form validator ([#337](https://github.com/nexxtway/rainbow-modules/issues/337)) ([814f658](https://github.com/nexxtway/rainbow-modules/commit/814f658b2fe14407975f3c08a1fdeb007833908a))
+-   paddings in FormFieldColumn ([2e413ed](https://github.com/nexxtway/rainbow-modules/commit/2e413ed771db27211cc2e7465a63b4b7d1d019ee))
+-   show lock icon only when isEditable is a function that returns false in FormFieldColumn ([0a31651](https://github.com/nexxtway/rainbow-modules/commit/0a3165171a8ddf52ce2422291c1bfd4b2dbe4a88))
+-   stop propagation when press esc in UniversalFormOverlay ([#335](https://github.com/nexxtway/rainbow-modules/issues/335)) ([49c80e9](https://github.com/nexxtway/rainbow-modules/commit/49c80e979f961693f600b310b3d055c512392c0b))
+
+### Features
+
+-   add cellAlignment prop to FormFieldColumn ([14417a0](https://github.com/nexxtway/rainbow-modules/commit/14417a0ba51dc3901fa3089f3964bc01af88696b))
+-   add isInteger field form validator ([57f25a1](https://github.com/nexxtway/rainbow-modules/commit/57f25a172d1b35d15917e8eba5222b34aee72dd2))
+-   implement FormFieldColumn ([#341](https://github.com/nexxtway/rainbow-modules/issues/341)) ([be63591](https://github.com/nexxtway/rainbow-modules/commit/be635911105ff8e9960479853a3cd7698fc0b988))
+-   implement-CategoriesPicker ([#334](https://github.com/nexxtway/rainbow-modules/issues/334)) ([a79bbc2](https://github.com/nexxtway/rainbow-modules/commit/a79bbc2b9fe7a35189f063d125e635bd4ad5038d)), closes [#330](https://github.com/nexxtway/rainbow-modules/issues/330)
+
 # [0.29.0](https://github.com/nexxtway/rainbow-modules/compare/v0.28.1...v0.29.0) (2021-02-16)
 
 ### Bug Fixes

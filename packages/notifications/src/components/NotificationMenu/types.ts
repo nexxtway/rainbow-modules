@@ -1,5 +1,6 @@
 import { ReactElement, ReactNode, RefObject } from 'react';
 import { BadgeProps } from 'react-rainbow-components/components/Badge';
+import firebase from 'firebase';
 
 type Status = 'success' | 'error' | 'warning' | 'inProgress' | ReactNode;
 
@@ -19,7 +20,7 @@ export interface Notification {
     title?: string;
     description?: string;
     status?: Status;
-    createdAt?: string;
+    createdAt?: number | Date | firebase.firestore.Timestamp;
     icon?: ReactNode | string;
     unread?: boolean;
 }
@@ -59,5 +60,27 @@ export interface IconProps {
 
 export interface Position {
     top: number;
-    left: number;
+    left: Unit;
 }
+
+export declare type Unit =
+    | 'second'
+    | 'minute'
+    | 'hour'
+    | 'day'
+    | 'week'
+    | 'month'
+    | 'quarter'
+    | 'year';
+
+export declare type Units =
+    | 'seconds'
+    | 'minutes'
+    | 'hours'
+    | 'days'
+    | 'weeks'
+    | 'months'
+    | 'quarters'
+    | 'years';
+
+export type FormattableUnit = Unit | Units;

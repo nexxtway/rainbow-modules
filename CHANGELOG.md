@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.30.0](https://github.com/nexxtway/rainbow-modules/compare/v0.29.0...v0.30.0) (2021-03-03)
+
+### Bug Fixes
+
+-   export isInteger in index ([b7021df](https://github.com/nexxtway/rainbow-modules/commit/b7021df8f8acf035ab50db41c842529fcc8f0329))
+-   force disable legend in `DoubleBarChart` component ([#323](https://github.com/nexxtway/rainbow-modules/issues/323)) ([7e498b0](https://github.com/nexxtway/rainbow-modules/commit/7e498b01f438fa6670331237180e349fd6ccef5e))
+-   hover styles on RecordField editable ([#333](https://github.com/nexxtway/rainbow-modules/issues/333)) ([2d79b74](https://github.com/nexxtway/rainbow-modules/commit/2d79b748782d8bd499f5e6417675cb43b21265c7))
+-   improve NotificationMenu component ([#345](https://github.com/nexxtway/rainbow-modules/issues/345)) ([e17d434](https://github.com/nexxtway/rainbow-modules/commit/e17d4349bcde51a5c1b1c6d6607cddbda925cb4c))
+-   isRequired form validator ([#337](https://github.com/nexxtway/rainbow-modules/issues/337)) ([814f658](https://github.com/nexxtway/rainbow-modules/commit/814f658b2fe14407975f3c08a1fdeb007833908a))
+-   paddings in FormFieldColumn ([2e413ed](https://github.com/nexxtway/rainbow-modules/commit/2e413ed771db27211cc2e7465a63b4b7d1d019ee))
+-   show lock icon only when isEditable is a function that returns false in FormFieldColumn ([0a31651](https://github.com/nexxtway/rainbow-modules/commit/0a3165171a8ddf52ce2422291c1bfd4b2dbe4a88))
+-   stop propagation when press esc in UniversalFormOverlay ([#335](https://github.com/nexxtway/rainbow-modules/issues/335)) ([49c80e9](https://github.com/nexxtway/rainbow-modules/commit/49c80e979f961693f600b310b3d055c512392c0b))
+
+### Features
+
+-   add cellAlignment prop to FormFieldColumn ([14417a0](https://github.com/nexxtway/rainbow-modules/commit/14417a0ba51dc3901fa3089f3964bc01af88696b))
+-   add ed prop to the RecordField editable ([#339](https://github.com/nexxtway/rainbow-modules/issues/339)) ([6c10c33](https://github.com/nexxtway/rainbow-modules/commit/6c10c33e7dc98fd7c5757187d2e0928304b380aa))
+-   add firestore path validators ([#344](https://github.com/nexxtway/rainbow-modules/issues/344)) ([884b677](https://github.com/nexxtway/rainbow-modules/commit/884b6773e13c67e162b7ca7c7dbff13fca39dcee))
+-   add id to record field ([#338](https://github.com/nexxtway/rainbow-modules/issues/338)) ([a069eb8](https://github.com/nexxtway/rainbow-modules/commit/a069eb8b858af374ca0330a5d1da8405a37b7a09))
+-   add isInteger field form validator ([57f25a1](https://github.com/nexxtway/rainbow-modules/commit/57f25a172d1b35d15917e8eba5222b34aee72dd2))
+-   add some new icons ([#342](https://github.com/nexxtway/rainbow-modules/issues/342)) ([5caf0d5](https://github.com/nexxtway/rainbow-modules/commit/5caf0d58d30b0558a3a82dd4156d5d5f66744cf5))
+-   add store icon ([#343](https://github.com/nexxtway/rainbow-modules/issues/343)) ([e07fc4f](https://github.com/nexxtway/rainbow-modules/commit/e07fc4f23514da5fb1cf17c5dad96085b3acc30d))
+-   implement `NotificationMenu` component ([#340](https://github.com/nexxtway/rainbow-modules/issues/340)) ([7b45884](https://github.com/nexxtway/rainbow-modules/commit/7b4588441f04287835cfe0ae40dae34e3d6b4b07)), closes [#336](https://github.com/nexxtway/rainbow-modules/issues/336)
+-   implement FormFieldColumn ([#341](https://github.com/nexxtway/rainbow-modules/issues/341)) ([be63591](https://github.com/nexxtway/rainbow-modules/commit/be635911105ff8e9960479853a3cd7698fc0b988))
+-   implement-CategoriesPicker ([#334](https://github.com/nexxtway/rainbow-modules/issues/334)) ([a79bbc2](https://github.com/nexxtway/rainbow-modules/commit/a79bbc2b9fe7a35189f063d125e635bd4ad5038d)), closes [#330](https://github.com/nexxtway/rainbow-modules/issues/330)
+
 # [0.29.0](https://github.com/nexxtway/rainbow-modules/compare/v0.28.1...v0.29.0) (2021-02-16)
 
 ### Bug Fixes

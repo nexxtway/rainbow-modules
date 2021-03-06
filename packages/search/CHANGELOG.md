@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.30.0](https://github.com/nexxtway/rainbow-modules/compare/v0.29.0...v0.30.0) (2021-03-03)
+
+### Features
+
+-   implement-CategoriesPicker ([#334](https://github.com/nexxtway/rainbow-modules/issues/334)) ([a79bbc2](https://github.com/nexxtway/rainbow-modules/commit/a79bbc2b9fe7a35189f063d125e635bd4ad5038d)), closes [#330](https://github.com/nexxtway/rainbow-modules/issues/330)
+
 # [0.29.0](https://github.com/nexxtway/rainbow-modules/compare/v0.28.1...v0.29.0) (2021-02-16)
 
 ### Bug Fixes
