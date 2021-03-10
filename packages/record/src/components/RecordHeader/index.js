@@ -38,7 +38,7 @@ export default function RecordHeader(props) {
                             <LabelLoadingShape />
                         </RenderIf>
                         <RenderIf isTrue={!isLoading}>
-                            <RenderIf isTrue={icon}>
+                            <RenderIf isTrue={icon && label}>
                                 <IconContainer>{icon}</IconContainer>
                             </RenderIf>
                             <Label>{label}</Label>
