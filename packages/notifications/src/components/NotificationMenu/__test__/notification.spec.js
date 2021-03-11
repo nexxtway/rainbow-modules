@@ -1,11 +1,14 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { Application } from 'react-rainbow-components';
+import {
+    InfoCircleFilled,
+    CloseCircleFilled,
+    CheckCircleFilled,
+    ErrorCircleFilled,
+} from '@rainbow-modules/icons';
 import Notification from '../notification';
 import { CreatedAt, Description, StatusBadge, Title } from '../styled';
-import SuccessIcon from '../icons/successIcon';
-import WarningIcon from '../icons/warningIcon';
-import ErrorIcon from '../icons/errorIcon';
 
 describe('<Notification />', () => {
     it('should render LoadingShape when isLoading is true', () => {
@@ -80,9 +83,15 @@ describe('<Notification />', () => {
     });
 
     it('should render the correct status badge', () => {
-        const status = ['inProgress', 'success', 'warning', 'error'];
-        const expectedIcon = [null, SuccessIcon, WarningIcon, ErrorIcon];
-        const expectedText = ['In progress', 'Success', 'Warning', 'Error'];
+        const status = ['inProgress', 'success', 'warning', 'error', 'info'];
+        const expectedIcon = [
+            null,
+            CheckCircleFilled,
+            ErrorCircleFilled,
+            CloseCircleFilled,
+            InfoCircleFilled,
+        ];
+        const expectedText = ['In progress', 'Success', 'Warning', 'Error', 'Info'];
 
         status.forEach((value, index) => {
             const wrapper = mount(

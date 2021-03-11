@@ -1,10 +1,15 @@
 import { defineMessages, MessageDescriptor } from 'react-intl';
 
-const messages = defineMessages<MessageDescriptor, Record<string, MessageDescriptor>>({
+export default defineMessages<MessageDescriptor, Record<string, MessageDescriptor>>({
     unread: {
         id: 'NotificationMenu.unread',
         defaultMessage: 'Unread',
         description: 'Text shown after the number of unread notifications in title',
+    },
+    info: {
+        id: 'NotificationMenu.infoStatus',
+        defaultMessage: 'Info',
+        description: 'Text shown on the status badge when status is info',
     },
     success: {
         id: 'NotificationMenu.successStatus',
@@ -27,5 +32,3 @@ const messages = defineMessages<MessageDescriptor, Record<string, MessageDescrip
         description: 'Text shown on the status badge when status is inProgress',
     },
 });
-
-export default messages;
