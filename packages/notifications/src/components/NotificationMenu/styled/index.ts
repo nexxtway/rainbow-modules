@@ -67,12 +67,13 @@ export const NotificationContainer = styled.li.attrs((props) => props.theme.rain
             !props.hasIcon &&
             `
             position: absolute;
-            top: 1.5rem;
+            top: 1.75rem;
             left: 7px;
             content: '';
             display: block;
             width: 8px;
             height: 8px;
+            box-shadow: 0 0 0 1px ${props.palette.border.disabled};
             border-radius: 50%;
             background-color: ${props.palette.brand.main};
             `}
