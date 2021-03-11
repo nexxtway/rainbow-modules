@@ -46,7 +46,7 @@ export const Notifications = styled.ul`
 export const NotificationContainer = styled.li.attrs((props) => props.theme.rainbow)`
     position: relative;
     display: flex;
-    padding: 16px 12px 14px 16px;
+    padding: 20px 12px 14px 16px;
     background-color: ${(props) => props.palette.background.secondary};
     cursor: pointer;
 
