@@ -1,14 +1,19 @@
 import styled from 'styled-components';
 import { LoadingShape, Spinner } from 'react-rainbow-components';
+import { CloseCircleFilled } from '@rainbow-modules/icons';
 import { NotificationProps, StatusBadgeProps } from '../types';
 
 export const StyledSpinner = styled(Spinner)`
     position: relative;
+    z-index: 1;
+    top: unset;
+    left: unset;
+    transform: unset;
 `;
 
 export const NotificationMenuContainer = styled.div`
     position: relative;
-    display: inline-block;
+    display: block;
 `;
 
 export const DropdownContainer = styled.div.attrs((props) => props.theme.rainbow)`
@@ -23,7 +28,7 @@ export const Header = styled.div.attrs((props) => props.theme.rainbow)`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.6rem;
+    padding: 0.6rem 1rem;
     border-bottom: solid 1px ${(props) => props.palette.border.disabled};
     font-size: 1.25rem;
     font-weight: bold;
@@ -45,7 +50,11 @@ export const NotificationContainer = styled.li.attrs((props) => props.theme.rain
     background-color: ${(props) => props.palette.background.secondary};
     cursor: pointer;
 
-    ${(props) => props.isLoading && `background-color: ${props.palette.background.main};`}
+    :hover {
+        background-color: ${(props) => props.palette.background.highlight};
+    }
+
+    ${(props) => props.isLoading && `background-color: transparent`}
 
     :not(:last-of-type) {
         border-bottom: solid 1px ${(props) => props.palette.border.divider};
@@ -83,7 +92,6 @@ export const TitleContainer = styled.div<{ isLoading?: boolean }>`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 0.2rem;
 
     ${(props) => props.isLoading && `margin-bottom: 0.6rem;`}
 `;
@@ -95,8 +103,9 @@ export const Title = styled.div.attrs((props) => props.theme.rainbow)<Notificati
     color: ${(props) => props.palette.text.main};
     font-weight: bold;
     font-size: 1rem;
+    margin-bottom: 0.2rem;
 
-    ${(props) => props.unread && `font-weight: bold;`}
+    ${(props) => props.unread && `font-family: Lato Bold, Helvetica, sans-serif;`}
 `;
 
 export const CreatedAt = styled.div.attrs((props) => props.theme.rainbow)<NotificationProps>`
@@ -110,7 +119,7 @@ export const CreatedAt = styled.div.attrs((props) => props.theme.rainbow)<Notifi
     ${(props) =>
         props.unread &&
         `
-        font-weight: bold;
+        font-family: Lato Bold, Helvetica, sans-serif;
         color: ${props.palette.text.main};
         `}
 `;
@@ -118,10 +127,12 @@ export const CreatedAt = styled.div.attrs((props) => props.theme.rainbow)<Notifi
 export const Description = styled.div.attrs((props) => props.theme.rainbow)<NotificationProps>`
     color: ${(props) => props.palette.text.label};
     font-size: 0.875rem;
+    margin-bottom: 0.3rem;
+
     ${(props) =>
         props.unread &&
         `
-        font-weight: bold;
+        font-family: Lato Bold, Helvetica, sans-serif;
         color: ${props.palette.text.main};
         `}
 `;
@@ -131,44 +142,40 @@ export const StatusBadge = styled.span.attrs((props) => props.theme.rainbow)<Sta
     align-items: center;
     text-transform: uppercase;
     color: ${(props) => props.palette.success.main};
-    background-color: ${(props) => props.palette.background.secondary};
+    background-color: transparent;
     padding: 0;
     margin-top: 4px;
 
     ${(props) => props.status === 'error' && `color: ${props.palette.error.main}`}
     ${(props) => props.status === 'warning' && `color: ${props.palette.warning.main}`}
     ${(props) => props.status === 'inProgress' && `color: ${props.palette.brand.main}`}
+    ${(props) => props.status === 'info' && `color: ${props.palette.brand.main}`}
 `;
 
-export const StatusIconContainer = styled.div.attrs((props) => props.theme.rainbow)`
-    display: flex;
-    align-items: center;
-    justify-content: center;
+export const StatusIcon = styled(CloseCircleFilled).attrs((props) => props.theme.rainbow)`
     width: 16px;
     height: 16px;
-    padding: 2px;
-    border-radius: 50%;
     margin-right: 0.4rem;
-    background-color: ${(props) => props.palette.brand.main};
+
     ${(props) =>
         props.status === 'success' &&
         `
-        background-color: ${props.palette.success.main};
+        color: ${props.palette.success.main};
     `}
     ${(props) =>
         props.status === 'warning' &&
         `
-        background-color: ${props.palette.warning.main};
+        color: ${props.palette.warning.main};
     `}
     ${(props) =>
         props.status === 'error' &&
         `
-        background-color: ${props.palette.error.main};
+        color: ${props.palette.error.main};
     `}
     ${(props) =>
-        props.status === 'inProgress' &&
+        props.status === 'info' &&
         `
-        background-color: ${props.palette.background.main};
+        color: ${props.palette.brand.main};
     `}
 `;
 

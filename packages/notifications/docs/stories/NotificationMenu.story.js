@@ -6,21 +6,32 @@ import { NotificationMenu } from '../../src';
 
 const notifications = [
     {
+        id: '1234',
         title: 'Rainbow Components',
         description: 'Lorem ipsum dolor sit amer, adipiscing consectetur',
         status: 'success',
         createdAt: Date.now(),
     },
     {
+        id: '5678',
+        title: 'Rainbow Components',
+        description: 'Lorem ipsum dolor sit amer, adipiscing consectetur',
+        status: 'warning',
+        createdAt: Date.now(),
+    },
+    {
+        id: '3456',
         title: 'Rainbow Modules',
         description: 'Lorem ipsum dolor sit amer, adipiscing consectetur',
-        status: 'success',
+        status: 'info',
     },
 ];
 
 const Container = styled.div`
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 24px;
 `;
 
 const FooterContainer = styled.div`
@@ -59,7 +70,11 @@ export const ProgressNotificationMenu = () => {
     return (
         <RainbowFirebaseApp>
             <Container>
-                <NotificationMenu notifications={progressNotifications} footer={<Footer />} />
+                <NotificationMenu
+                    notifications={progressNotifications}
+                    footer={<Footer />}
+                    className="rainbow-m-horizontal_medium"
+                />
             </Container>
         </RainbowFirebaseApp>
     );
