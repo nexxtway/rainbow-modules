@@ -8,7 +8,8 @@ const notifications = [
     {
         id: '1234',
         title: 'Rainbow Components',
-        description: 'Lorem ipsum dolor sit amer, adipiscing consectetur',
+        description:
+            'Lorem ipsum dolor sit amer, adipiscing consectetur.Lorem ipsum dolor sit amer, adipiscing consectetur',
         status: 'success',
         createdAt: Date.now(),
     },
