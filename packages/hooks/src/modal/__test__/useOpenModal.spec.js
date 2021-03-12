@@ -1,3 +1,4 @@
+import { renderHook } from '@testing-library/react-hooks';
 import store, { initialDefaultProps } from '../store';
 import useOpenModal from '../useOpenModal';
 
@@ -12,14 +13,16 @@ describe('useOpenModal', () => {
         setProps.mockClear();
     });
     it('should not call setProps when the store does not have defined the key', () => {
-        const [openModal, closeModal] = useOpenModal('test');
+        const { result } = renderHook(() => useOpenModal('test'));
+        const [openModal, closeModal] = result.current;
         openModal();
         closeModal();
         expect(setProps).toBeCalledTimes(0);
     });
     it('should call setProps with the combination of initialDefaultProps, defaultProps and isOpen true', () => {
         store.set('test', [defaultProps, setProps]);
-        const [openModal] = useOpenModal('test');
+        const { result } = renderHook(() => useOpenModal('test'));
+        const [openModal] = result.current;
         openModal();
         expect(setProps).toHaveBeenCalledWith(
             expect.objectContaining({ ...initialDefaultProps, ...defaultProps, isOpen: true }),
@@ -27,7 +30,8 @@ describe('useOpenModal', () => {
     });
     it('should call setProps with the combination of initialDefaultProps, defaultProps and isOpen false', () => {
         store.set('test', [defaultProps, setProps]);
-        const [, closeModal] = useOpenModal('test');
+        const { result } = renderHook(() => useOpenModal('test'));
+        const [, closeModal] = result.current;
         closeModal();
         expect(setProps).toHaveBeenCalledWith(
             expect.objectContaining({ ...initialDefaultProps, ...defaultProps, isOpen: false }),
@@ -35,7 +39,8 @@ describe('useOpenModal', () => {
     });
     it('should call setProps with the combination of initialDefaultProps, defaultProps and isOpen false when call onRequestClose', () => {
         store.set('test', [defaultProps, setProps]);
-        const [openModal] = useOpenModal('test');
+        const { result } = renderHook(() => useOpenModal('test'));
+        const [openModal] = result.current;
         openModal();
         const { onRequestClose } = props;
         onRequestClose();
