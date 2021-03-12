@@ -68,7 +68,7 @@ export const NotificationContainer = styled.li.attrs((props) => props.theme.rain
             `
             position: absolute;
             top: 1.75rem;
-            left: 7px;
+            left: 10px;
             content: '';
             display: block;
             width: 8px;
@@ -85,7 +85,7 @@ export const Content = styled.div.attrs((props) => props.theme.rainbow)`
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    margin-left: 6px;
+    margin-left: 12px;
 `;
 
 export const TitleContainer = styled.div<{ isLoading?: boolean }>`
