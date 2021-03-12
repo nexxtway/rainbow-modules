@@ -40,6 +40,10 @@ const FooterContainer = styled.div`
     text-align: right;
 `;
 
+const StyledAvatar = styled(Avatar)`
+    flex-shrink: 0;
+`;
+
 const Footer = () => (
     <FooterContainer>
         <Button label="See All Activities" variant="base" size="small" />
@@ -112,7 +116,7 @@ export const NotificationMenuWithIcons = () => {
         const initial = title[0];
         return {
             ...value,
-            icon: <Avatar initials={initial} title={title} />,
+            icon: <StyledAvatar initials={initial} title={title} />,
         };
     });
     return (
