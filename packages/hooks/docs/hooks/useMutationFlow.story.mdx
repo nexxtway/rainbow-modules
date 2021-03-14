@@ -65,12 +65,34 @@ const { mutate } = useMutationFlow({
 });
 ```
 
+### Use messages instead of notifications
+
+```js
+const { mutate } = useMutationFlow({
+    mutation: saveBook,
+    type: 'message',
+});
+```
+
+### Use message for errors and notification when success:
+
+```js
+const { mutate } = useMutationFlow({
+    mutation: saveBook,
+    type: {
+        success: 'notification',
+        error: 'message',
+    },
+});
+```
+
 ## useMutationFlow API
 
-| Property       | Description                                      | Type               | Default                                   |
-| -------------- | ------------------------------------------------ | ------------------ | ----------------------------------------- |
-| mutation       | The async function that perform the server call. | async () => {}     | undefined                                 |
-| successMessage | The success message on the Notification          | String or Function | 'The mutation was executed successfully.' |
-| errorMessage   | The error message on the Notification            | String or Function | 'There was an error, Please try again.'   |
-| onSuccess      | Callback on the success                          | (res) => {}        | undefined                                 |
-| onError        | Callback on the error                            | (error) => {}      | undefined                                 |
+| Property       | Description                                                      | Type                                                                              | Default                                 |
+| -------------- | ---------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------- |
+| mutation       | The async function that perform the server call.                 | async () => {}                                                                    | undefined                               |
+| successMessage | The success message on the Notification                          | String or Function                                                                | The mutation was executed successfully. |
+| errorMessage   | The error message on the Notification                            | String or Function                                                                | There was an error, Please try again.   |
+| onSuccess      | Callback on the success                                          | (res) => {}                                                                       | undefined                               |
+| onError        | Callback on the error                                            | (error) => {}                                                                     | undefined                               |
+| type           | Indicate how show feedback to the user (notification or message) | String: notification or message <br /> Object: { success: String, error: String } | notification                            |

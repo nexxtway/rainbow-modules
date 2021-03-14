@@ -1,4 +1,10 @@
-import { showAppSpinner, hideAppSpinner, showAppNotification } from '@rainbow-modules/app';
+import { useCallback } from 'react';
+import {
+    showAppSpinner,
+    hideAppSpinner,
+    showAppNotification,
+    showAppMessage,
+} from '@rainbow-modules/app';
 
 const defaults = {
     success: {
@@ -6,12 +12,16 @@ const defaults = {
         description: 'The mutation was executed successfully.',
         icon: 'success',
         timeout: 3000,
+        message: 'The mutation was executed successfully.',
+        variant: 'success',
     },
     error: {
         title: 'Error!',
         description: 'There was an error, Please try again.',
         icon: 'error',
         timeout: 3000,
+        message: 'There was an error, Please try again.',
+        variant: 'error',
     },
 };
 
@@ -40,6 +50,31 @@ const resolveMessage = (message, results, mode) => {
     return defaults.error;
 };
 
+const typeActionMap = {
+    notification: showAppNotification,
+    message: showAppMessage,
+};
+
+const resolveFeedbackActionFn = (type) => {
+    let successAction;
+    let errorAction;
+    if (typeof type === 'string') {
+        const actionFn = typeActionMap[type] || showAppNotification;
+        successAction = actionFn;
+        errorAction = actionFn;
+    } else if (typeof type === 'object') {
+        successAction = typeActionMap[type.success] || showAppNotification;
+        errorAction = typeActionMap[type.error] || showAppNotification;
+    } else {
+        successAction = showAppNotification;
+        errorAction = showAppNotification;
+    }
+    return {
+        successAction,
+        errorAction,
+    };
+};
+
 const useMutationFlow = (opts) => {
     const {
         mutation = async () => {},
@@ -47,20 +82,25 @@ const useMutationFlow = (opts) => {
         errorMessage = defaults.error.description,
         onSuccess = () => {},
         onError = () => {},
+        type = 'notification',
     } = opts;
-    const mutate = async (...args) => {
+    const { successAction, errorAction } = resolveFeedbackActionFn(type);
+
+    const mutate = useCallback(async (...args) => {
         showAppSpinner();
         try {
             const res = await mutation(...args);
             onSuccess(res);
             hideAppSpinner();
-            showAppNotification(resolveMessage(successMessage, res, 'success'));
+            successAction(resolveMessage(successMessage, res, 'success'));
         } catch (error) {
             onError(error);
             hideAppSpinner();
-            showAppNotification(resolveMessage(errorMessage, error, 'error'));
+            errorAction(resolveMessage(errorMessage, error, 'error'));
         }
-    };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     return { mutate };
 };
 
