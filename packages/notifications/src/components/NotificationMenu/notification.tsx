@@ -9,7 +9,6 @@ import {
     Content,
     CreatedAt,
     Description,
-    StatusIconContainer,
     NotificationContainer,
     StatusBadge,
     Title,
@@ -54,9 +53,7 @@ const Notification: React.FC<NotificationProps> = ({
     const badgeText = isStringStatus ? intl.formatMessage(messages[status as string]) : null;
     const badge = isStringStatus ? (
         <StatusBadge size="small" status={status}>
-            <StatusIconContainer status={status}>
-                <Icon icon={status as string} />
-            </StatusIconContainer>
+            <Icon icon={status as string} />
             {badgeText}
         </StatusBadge>
     ) : (

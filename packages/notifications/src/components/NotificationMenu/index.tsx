@@ -15,6 +15,8 @@ const NotificationMenu: React.FC<NotificationMenuProps> = ({
     isLoading,
     notifications,
     onClick,
+    className,
+    style,
 }: NotificationMenuProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const buttonRef = useRef<ButtonIconHandle>();
@@ -40,7 +42,7 @@ const NotificationMenu: React.FC<NotificationMenuProps> = ({
     };
 
     return (
-        <NotificationMenuContainer>
+        <NotificationMenuContainer className={className} style={style}>
             <RenderIf isTrue={inProgress}>
                 <StyledSpinner type="arc" variant="brand">
                     <ButtonIcon icon={icon} onClick={handleButtonClick} ref={buttonRef} />
@@ -75,6 +77,8 @@ NotificationMenu.defaultProps = {
     isLoading: false,
     unreads: false,
     notifications: [],
+    className: undefined,
+    style: undefined,
 };
 
 export default NotificationMenu;

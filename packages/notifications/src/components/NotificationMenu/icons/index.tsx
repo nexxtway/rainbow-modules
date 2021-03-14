@@ -1,18 +1,27 @@
 /* eslint-disable react/prop-types */
 import React, { ReactElement } from 'react';
-import InfoIcon from './infoIcon';
-import ErrorIcon from './errorIcon';
-import SuccessIcon from './successIcon';
-import WarningIcon from './warningIcon';
+import {
+    InfoCircleFilled,
+    CloseCircleFilled,
+    CheckCircleFilled,
+    ErrorCircleFilled,
+} from '@rainbow-modules/icons';
 import { IconProps } from '../types';
-import { StyledSpinner } from '../styled';
+import { StyledSpinner, StatusIcon } from '../styled';
 
 const iconMap: Record<string, () => ReactElement> = {
-    info: () => <InfoIcon />,
-    error: () => <ErrorIcon />,
-    warning: () => <WarningIcon />,
-    success: () => <SuccessIcon />,
-    inProgress: () => <StyledSpinner type="arc" size="xx-small" variant="brand" />,
+    info: () => <StatusIcon status="info" as={InfoCircleFilled} />,
+    error: () => <StatusIcon status="error" as={CloseCircleFilled} />,
+    warning: () => <StatusIcon status="warning" as={ErrorCircleFilled} />,
+    success: () => <StatusIcon status="success" as={CheckCircleFilled} />,
+    inProgress: () => (
+        <StyledSpinner
+            type="arc"
+            size="xx-small"
+            variant="brand"
+            className="rainbow-m-right_x-small"
+        />
+    ),
 };
 
 const VariantIcon: React.FC<{ icon: string }> = ({ icon }: { icon: string }) => {

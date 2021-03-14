@@ -6,26 +6,42 @@ import { NotificationMenu } from '../../src';
 
 const notifications = [
     {
+        id: '1234',
         title: 'Rainbow Components',
-        description: 'Lorem ipsum dolor sit amer, adipiscing consectetur',
+        description:
+            'Lorem ipsum dolor sit amer, adipiscing consectetur.Lorem ipsum dolor sit amer, adipiscing consectetur',
         status: 'success',
         createdAt: Date.now(),
     },
     {
+        id: '5678',
+        title: 'Rainbow Components',
+        description: 'Lorem ipsum dolor sit amer, adipiscing consectetur',
+        status: 'warning',
+        createdAt: Date.now(),
+    },
+    {
+        id: '3456',
         title: 'Rainbow Modules',
         description: 'Lorem ipsum dolor sit amer, adipiscing consectetur',
-        status: 'success',
+        status: 'info',
     },
 ];
 
 const Container = styled.div`
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 24px;
 `;
 
 const FooterContainer = styled.div`
     display: block;
     text-align: right;
+`;
+
+const StyledAvatar = styled(Avatar)`
+    flex-shrink: 0;
 `;
 
 const Footer = () => (
@@ -59,7 +75,11 @@ export const ProgressNotificationMenu = () => {
     return (
         <RainbowFirebaseApp>
             <Container>
-                <NotificationMenu notifications={progressNotifications} footer={<Footer />} />
+                <NotificationMenu
+                    notifications={progressNotifications}
+                    footer={<Footer />}
+                    className="rainbow-m-horizontal_medium"
+                />
             </Container>
         </RainbowFirebaseApp>
     );
@@ -96,7 +116,7 @@ export const NotificationMenuWithIcons = () => {
         const initial = title[0];
         return {
             ...value,
-            icon: <Avatar initials={initial} title={title} />,
+            icon: <StyledAvatar initials={initial} title={title} />,
         };
     });
     return (

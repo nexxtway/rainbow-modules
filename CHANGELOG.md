@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.31.0](https://github.com/nexxtway/rainbow-modules/compare/v0.30.0...v0.31.0) (2021-03-06)
+
+### Features
+
+-   added icons billing and info border ([#346](https://github.com/nexxtway/rainbow-modules/issues/346)) ([89c4974](https://github.com/nexxtway/rainbow-modules/commit/89c4974833ba92f1df0d0fb932728e588305fe5a))
+-   implement JsonInput component ([#347](https://github.com/nexxtway/rainbow-modules/issues/347)) ([8de69de](https://github.com/nexxtway/rainbow-modules/commit/8de69de2268d39b6a1ca80eff0bde6c9578738cc))
+
 # [0.30.0](https://github.com/nexxtway/rainbow-modules/compare/v0.29.0...v0.30.0) (2021-03-03)
 
 ### Bug Fixes

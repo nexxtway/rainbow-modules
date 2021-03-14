@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode, RefObject } from 'react';
+import { ReactElement, ReactNode, RefObject, CSSProperties } from 'react';
 import { BadgeProps } from 'react-rainbow-components/components/Badge';
 import firebase from 'firebase';
 
@@ -52,6 +52,8 @@ export interface NotificationMenuProps {
     unreads?: number | boolean;
     notifications?: Array<NotificationProps>;
     onClick?: () => void;
+    className?: string;
+    style?: CSSProperties;
 }
 
 export interface IconProps {

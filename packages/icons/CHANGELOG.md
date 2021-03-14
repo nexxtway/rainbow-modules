@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.31.0](https://github.com/nexxtway/rainbow-modules/compare/v0.30.0...v0.31.0) (2021-03-06)
+
+### Features
+
+-   added icons billing and info border ([#346](https://github.com/nexxtway/rainbow-modules/issues/346)) ([89c4974](https://github.com/nexxtway/rainbow-modules/commit/89c4974833ba92f1df0d0fb932728e588305fe5a))
+
 # [0.30.0](https://github.com/nexxtway/rainbow-modules/compare/v0.29.0...v0.30.0) (2021-03-03)
 
 ### Features
