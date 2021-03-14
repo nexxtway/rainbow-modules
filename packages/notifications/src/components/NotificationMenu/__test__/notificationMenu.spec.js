@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { RainbowFirebaseApp } from '@rainbow-modules/app';
+import { Application } from 'react-rainbow-components';
 import NotificationMenu from '..';
 import Dropdown from '../dropdown';
 
@@ -24,9 +24,9 @@ describe('<NotificationMenu />', () => {
 
     it('should render a dropdown when button is clicked', () => {
         const wrapper = mount(
-            <RainbowFirebaseApp>
+            <Application>
                 <NotificationMenu />
-            </RainbowFirebaseApp>,
+            </Application>,
         );
         wrapper.find('button').simulate('click');
         expect(wrapper.find(Dropdown).exists()).toBe(true);
