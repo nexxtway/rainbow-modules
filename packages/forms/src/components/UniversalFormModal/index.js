@@ -14,6 +14,7 @@ const UniversalFormModal = (props) => {
         initialValues,
         submitButtonLabel,
         cancelButtonLabel,
+        onOpened,
         ...rest
     } = props;
     const uniqueId = useUniqueIdentifier();
@@ -28,7 +29,13 @@ const UniversalFormModal = (props) => {
         </div>
     );
     return (
-        <Modal title={title} isOpen={isOpen} footer={footer} onRequestClose={onRequestClose}>
+        <Modal
+            title={title}
+            isOpen={isOpen}
+            footer={footer}
+            onRequestClose={onRequestClose}
+            onOpened={onOpened}
+        >
             <UniversalForm onSubmit={onSubmit} id={uniqueId} initialValues={initialValues}>
                 <Fields {...rest} />
             </UniversalForm>
@@ -47,6 +54,8 @@ UniversalFormModal.propTypes = {
      * the values of the form already validated.
      */
     onSubmit: PropTypes.func,
+    /** A callback triggered when the modal is opened. This is useful for example to set focus to an element inside the modal content after it is opened. */
+    onOpened: PropTypes.func,
     /**
      * Component Class or Function with the fields of your form. Use Field component of react-final-form.
      */
@@ -64,6 +73,7 @@ UniversalFormModal.defaultProps = {
     isOpen: false,
     onRequestClose: () => {},
     onSubmit: () => {},
+    onOpened: () => {},
     fields: () => null,
     initialValues: {},
     submitButtonLabel: 'Submit',
