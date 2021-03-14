@@ -30,6 +30,7 @@ const resolveMessage = (message, results, mode) => {
         return {
             ...defaults[mode],
             description: message,
+            message,
         };
     }
     if (typeof message === 'function') {
@@ -38,6 +39,7 @@ const resolveMessage = (message, results, mode) => {
             return {
                 ...defaults[mode],
                 description: notification,
+                message: notification,
             };
         }
         if (typeof notification === 'object') {
