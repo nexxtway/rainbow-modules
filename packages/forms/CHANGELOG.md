@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.32.0](https://github.com/nexxtway/rainbow-modules/compare/v0.31.0...v0.32.0) (2021-03-15)
+
+### Bug Fixes
+
+-   fixed universal form module ([#356](https://github.com/nexxtway/rainbow-modules/issues/356)) ([7c83e31](https://github.com/nexxtway/rainbow-modules/commit/7c83e31c81176eb98d9cff8e4e8726797169ee0a))
+
 # [0.31.0](https://github.com/nexxtway/rainbow-modules/compare/v0.30.0...v0.31.0) (2021-03-06)
 
 ### Features

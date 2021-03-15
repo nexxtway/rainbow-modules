@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.32.0](https://github.com/nexxtway/rainbow-modules/compare/v0.31.0...v0.32.0) (2021-03-15)
+
+### Bug Fixes
+
+-   user Icon ([#358](https://github.com/nexxtway/rainbow-modules/issues/358)) ([87ea7df](https://github.com/nexxtway/rainbow-modules/commit/87ea7df4b779461a19d8974a7feb19075f2cd52d))
+
 # [0.31.0](https://github.com/nexxtway/rainbow-modules/compare/v0.30.0...v0.31.0) (2021-03-06)
 
 ### Features

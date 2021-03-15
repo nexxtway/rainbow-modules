@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.32.0](https://github.com/nexxtway/rainbow-modules/compare/v0.31.0...v0.32.0) (2021-03-15)
+
+### Bug Fixes
+
+-   improve useOpenModal with useCallback ([#352](https://github.com/nexxtway/rainbow-modules/issues/352)) ([d536269](https://github.com/nexxtway/rainbow-modules/commit/d5362692ae67d968ebdb569e74ce6047a0090090))
+-   update useOpenModal tests ([#355](https://github.com/nexxtway/rainbow-modules/issues/355)) ([c403279](https://github.com/nexxtway/rainbow-modules/commit/c403279508eb96e61a1f50e2a6f52795dae4a8b1))
+-   useMutationFlow to show success and error message as function when type message ([e189513](https://github.com/nexxtway/rainbow-modules/commit/e1895131a1cd73aa1c5855e08f73627943965d42))
+
+### Features
+
+-   use mutation flow message feedback ([#357](https://github.com/nexxtway/rainbow-modules/issues/357)) ([a10fd58](https://github.com/nexxtway/rainbow-modules/commit/a10fd58954e547ec67ec98bdb872576bb6c780e0))
+
 # [0.31.0](https://github.com/nexxtway/rainbow-modules/compare/v0.30.0...v0.31.0) (2021-03-06)
 
 **Note:** Version bump only for package @rainbow-modules/hooks

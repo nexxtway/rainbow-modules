@@ -1,6 +1,6 @@
 {
     "name": "@rainbow-modules/datetime",
-    "version": "0.31.0",
+    "version": "0.32.0",
     "main": "lib/index.js",
     "author": "Nexxtway Team",
     "license": "MIT",
