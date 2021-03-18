@@ -41,6 +41,13 @@ const NotificationMenu: React.FC<NotificationMenuProps> = ({
         setIsOpen(!isOpen);
     };
 
+    const handleItemClick = () => {
+        setIsOpen(!isOpen);
+        if (onClick) {
+            onClick();
+        }
+    };
+
     return (
         <NotificationMenuContainer className={className} style={style}>
             <RenderIf isTrue={inProgress}>
@@ -62,7 +69,7 @@ const NotificationMenu: React.FC<NotificationMenuProps> = ({
                         notifications={notifications}
                         unreads={unreads}
                         isLoading={isLoading}
-                        onClick={onClick}
+                        onClick={handleItemClick}
                         ref={dropdownRef}
                     />
                 )}
