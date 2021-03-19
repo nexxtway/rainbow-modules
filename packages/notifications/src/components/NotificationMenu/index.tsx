@@ -3,7 +3,11 @@ import InternalOverlay from 'react-rainbow-components/components/InternalOverlay
 import { BadgeOverlay, ButtonIcon, RenderIf } from 'react-rainbow-components';
 import { Bell } from '@rainbow-modules/icons';
 import { useOutsideClick } from '@rainbow-modules/hooks';
-import { ButtonIconHandle, NotificationMenuProps } from './types';
+import {
+    ButtonIconHandle,
+    NotificationMenuProps,
+    Notification as NotificationInterface,
+} from './types';
 import { NotificationMenuContainer, StyledSpinner } from './styled';
 import Dropdown from './dropdown';
 import positionResolver from './helpers/positionResolver';
@@ -41,10 +45,10 @@ const NotificationMenu: React.FC<NotificationMenuProps> = ({
         setIsOpen(!isOpen);
     };
 
-    const handleItemClick = () => {
+    const handleItemClick = (notification: NotificationInterface) => {
         setIsOpen(!isOpen);
         if (onClick) {
-            onClick();
+            onClick(notification);
         }
     };
 
