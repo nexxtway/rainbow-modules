@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { Avatar, Button } from 'react-rainbow-components';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
@@ -44,17 +44,26 @@ const StyledAvatar = styled(Avatar)`
     flex-shrink: 0;
 `;
 
-const Footer = () => (
+// eslint-disable-next-line react/prop-types
+const Footer = ({ onClick }) => (
     <FooterContainer>
-        <Button label="See All Activities" variant="base" size="small" />
+        <Button label="See All Activities" variant="base" size="small" onClick={onClick} />
     </FooterContainer>
 );
 
 export const SimpleNotificationMenu = () => {
+    const menuRef = useRef();
+    const handleSeeAll = () => {
+        menuRef.current.close();
+    };
     return (
         <RainbowFirebaseApp>
             <Container>
-                <NotificationMenu notifications={notifications} footer={<Footer />} />
+                <NotificationMenu
+                    ref={menuRef}
+                    notifications={notifications}
+                    footer={<Footer onClick={handleSeeAll} />}
+                />
             </Container>
         </RainbowFirebaseApp>
     );
