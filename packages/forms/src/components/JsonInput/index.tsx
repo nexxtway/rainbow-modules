@@ -68,14 +68,16 @@ const JsonInput: React.FC<JsonInputProps> = (props: JsonInputProps) => {
 
     useEffect(() => setEditorValue(value as Value), [value]);
 
-    const fireOnChange = () => {
+    const fireOnChange = (format = false) => {
         if (typeof onChange === 'function' && editorRef.current) {
             try {
-                onChange(editorRef.current.get());
+                const newValue = format
+                    ? JSON.stringify(editorRef.current.get(), null, 2)
+                    : editorRef.current.getText();
+                onChange(newValue);
             } catch (e) {
                 // eslint-disable-next-line no-console
                 console.error(e);
-                onChange(editorRef.current.getText());
             }
         }
     };
@@ -87,7 +89,7 @@ const JsonInput: React.FC<JsonInputProps> = (props: JsonInputProps) => {
 
     const handleBlur = (event: React.FocusEvent<HTMLDivElement>) => {
         setIsFocused(false);
-        fireOnChange();
+        fireOnChange(true);
         if (typeof onBlur === 'function') onBlur(event);
     };
 
@@ -95,7 +97,7 @@ const JsonInput: React.FC<JsonInputProps> = (props: JsonInputProps) => {
         if (editorRef.current) editorRef.current.focus();
     };
 
-    const handleKeyDown = debounce(fireOnChange, 1000);
+    const handleKeyDown = debounce(() => fireOnChange(), 1000);
 
     const getLabelId = () => (label ? labelId : undefined);
     const getErrorMessageId = () => (error ? errorMessageId : undefined);
