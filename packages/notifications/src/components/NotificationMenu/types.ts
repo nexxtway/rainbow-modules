@@ -51,7 +51,7 @@ export interface NotificationMenuProps {
     isLoading?: boolean;
     unreads?: number | boolean;
     notifications?: Array<NotificationProps>;
-    onClick?: () => void;
+    onClick?: (notification: Notification) => void;
     className?: string;
     style?: CSSProperties;
 }

@@ -3,6 +3,23 @@ import { mount } from 'enzyme';
 import { Application } from 'react-rainbow-components';
 import NotificationMenu from '..';
 import Dropdown from '../dropdown';
+import Notification from '../notification';
+
+const notifications = [
+    {
+        id: '5678',
+        title: 'Rainbow Components',
+        description: 'Lorem ipsum dolor sit amer, adipiscing consectetur',
+        status: 'warning',
+        createdAt: Date.now(),
+    },
+    {
+        id: '3456',
+        title: 'Rainbow Modules',
+        description: 'Lorem ipsum dolor sit amer, adipiscing consectetur',
+        status: 'info',
+    },
+];
 
 describe('<NotificationMenu />', () => {
     beforeEach(() => {
@@ -30,5 +47,16 @@ describe('<NotificationMenu />', () => {
         );
         wrapper.find('button').simulate('click');
         expect(wrapper.find(Dropdown).exists()).toBe(true);
+    });
+
+    it('should close menu when a notification is clicked', () => {
+        const wrapper = mount(
+            <Application>
+                <NotificationMenu notifications={notifications} />
+            </Application>,
+        );
+        wrapper.find('button').simulate('click');
+        wrapper.find(Notification).at(0).simulate('click');
+        expect(wrapper.find(Dropdown).exists()).toBe(false);
     });
 });
