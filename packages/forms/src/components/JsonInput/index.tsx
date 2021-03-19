@@ -9,6 +9,7 @@ import JSONEditor from 'jsoneditor';
 import 'jsoneditor/dist/jsoneditor.css';
 import { CodeEditor, CodeEditorContainer, JsonInputContainer, ErrorText } from './styled';
 import { JsonInputProps, Value } from './types';
+import debounce from './debounce';
 
 const JsonInput: React.FC<JsonInputProps> = (props: JsonInputProps) => {
     const {
@@ -40,6 +41,8 @@ const JsonInput: React.FC<JsonInputProps> = (props: JsonInputProps) => {
         if (editorRef.current) {
             if (!newValue) {
                 editorRef.current.update({});
+            } else if (typeof newValue === 'string') {
+                editorRef.current.updateText(newValue);
             } else {
                 editorRef.current.update(newValue);
             }
@@ -65,6 +68,20 @@ const JsonInput: React.FC<JsonInputProps> = (props: JsonInputProps) => {
 
     useEffect(() => setEditorValue(value as Value), [value]);
 
+    const fireOnChange = (format = false) => {
+        if (typeof onChange === 'function' && editorRef.current) {
+            try {
+                const newValue = format
+                    ? JSON.stringify(editorRef.current.get(), null, 2)
+                    : editorRef.current.getText();
+                onChange(newValue);
+            } catch (e) {
+                // eslint-disable-next-line no-console
+                console.error(e);
+            }
+        }
+    };
+
     const handleFocus = (event: React.FocusEvent<HTMLDivElement>) => {
         setIsFocused(true);
         if (typeof onFocus === 'function') onFocus(event);
@@ -72,19 +89,15 @@ const JsonInput: React.FC<JsonInputProps> = (props: JsonInputProps) => {
 
     const handleBlur = (event: React.FocusEvent<HTMLDivElement>) => {
         setIsFocused(false);
-        if (typeof onChange === 'function' && editorRef.current) {
-            try {
-                onChange(editorRef.current.get());
-            } catch (e) {
-                console.error(e);
-            }
-        }
+        fireOnChange(true);
         if (typeof onBlur === 'function') onBlur(event);
     };
 
     const handleLabelClick = () => {
         if (editorRef.current) editorRef.current.focus();
     };
+
+    const handleKeyDown = debounce(() => fireOnChange(), 1000);
 
     const getLabelId = () => (label ? labelId : undefined);
     const getErrorMessageId = () => (error ? errorMessageId : undefined);
@@ -112,6 +125,7 @@ const JsonInput: React.FC<JsonInputProps> = (props: JsonInputProps) => {
                     readOnly={readOnly}
                     onFocus={handleFocus}
                     onBlur={handleBlur}
+                    onKeyDown={handleKeyDown}
                     aria-labelledby={getLabelId()}
                     aria-readonly={readOnly}
                     aria-required={required}

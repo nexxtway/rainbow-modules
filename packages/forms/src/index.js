@@ -6,6 +6,7 @@ export { default as UniversalFormOverlay } from './components/UniversalFormOverl
 export { default as FieldsGenerator } from './components/FieldsGenerator';
 export { default as FlightStatsInput } from './components/FlightStatsInput';
 export { default as FormFieldColumn } from './components/FormFieldColumn';
+export { default as JsonInput } from './components/JsonInput';
 export { default as composeValidators } from './helpers/composeValidators';
 export { default as isRequired } from './validators/isRequired';
 export { default as isEmail } from './validators/isEmail';

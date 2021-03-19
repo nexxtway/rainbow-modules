@@ -59,6 +59,6 @@ describe('<JsonInput />', () => {
         );
         wrapper.find('[role="textbox"]').first().simulate('blur');
         expect(onChangeFn).toHaveBeenCalledTimes(1);
-        expect(onChangeFn).toHaveBeenCalledWith({ test: true });
+        expect(onChangeFn).toHaveBeenCalledWith(JSON.stringify({ test: true }, null, 2));
     });
 });
