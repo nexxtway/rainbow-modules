@@ -55,7 +55,9 @@ export interface NotificationMenuProps {
     className?: string;
     style?: CSSProperties;
 }
-
+export interface NotificationMenuHandles {
+    close(): void;
+}
 export interface IconProps {
     icon?: string | ReactElement;
 }
