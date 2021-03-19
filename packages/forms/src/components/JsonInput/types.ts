@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { LabelAlignment } from 'react-rainbow-components/components/types';
 
-export type Value = Record<string, unknown>;
+export type Value = string | Record<string, unknown>;
 
 export interface JsonInputProps {
     className?: string;
