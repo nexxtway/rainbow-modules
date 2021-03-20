@@ -91,14 +91,20 @@ const useMutationFlow = (opts) => {
     const mutate = useCallback(async (...args) => {
         showAppSpinner();
         try {
+            const showAction = successMessage !== null;
             const res = await mutation(...args);
             onSuccess(res);
             hideAppSpinner();
-            successAction(resolveMessage(successMessage, res, 'success'));
+            if (showAction) {
+                successAction(resolveMessage(successMessage, res, 'success'));
+            }
         } catch (error) {
+            const showAction = errorMessage !== null;
             onError(error);
             hideAppSpinner();
-            errorAction(resolveMessage(errorMessage, error, 'error'));
+            if (showAction) {
+                errorAction(resolveMessage(errorMessage, error, 'error'));
+            }
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
