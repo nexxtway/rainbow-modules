@@ -15,6 +15,9 @@ describe('isFirestoreDocumentPath', () => {
     });
     it('shoud return false', () => {
         [
+            undefined,
+            '',
+            null,
             '/users',
             '/users/{username}/addresses',
             'users/{username}/addresses',
