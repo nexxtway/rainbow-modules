@@ -94,6 +94,8 @@ import {
     StoreFilled,
     Billing,
     InfoBorder,
+    KeyBorder,
+    KeyFilled,
 } from '../../../src';
 
 export default [
@@ -572,5 +574,15 @@ export default [
         name: 'storeFilled',
         category: 'standard',
         icon: StoreFilled,
+    },
+    {
+        name: 'keyBorder',
+        category: 'standard',
+        icon: KeyBorder,
+    },
+    {
+        name: 'keyFilled',
+        category: 'standard',
+        icon: KeyFilled,
     },
 ];
