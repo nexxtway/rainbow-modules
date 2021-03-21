@@ -95,3 +95,5 @@ export { default as Store } from './components/store';
 export { default as StoreFilled } from './components/storeFilled';
 export { default as Billing } from './components/billing';
 export { default as InfoBorder } from './components/infoBorder';
+export { default as KeyBorder } from './components/keyBorder';
+export { default as KeyFilled } from './components/keyFilled';
