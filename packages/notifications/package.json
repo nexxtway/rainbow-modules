@@ -1,6 +1,6 @@
 {
     "name": "@rainbow-modules/notifications",
-    "version": "0.32.0",
+    "version": "0.33.0",
     "main": "lib/index.js",
     "author": "Nexxtway Team",
     "license": "MIT",
@@ -8,8 +8,8 @@
         "lib"
     ],
     "dependencies": {
-        "@rainbow-modules/hooks": "^0.32.0",
-        "@rainbow-modules/icons": "^0.32.0",
+        "@rainbow-modules/hooks": "^0.33.0",
+        "@rainbow-modules/icons": "^0.33.0",
         "styled-components": "^4.3.2"
     },
     "peerDependencies": {

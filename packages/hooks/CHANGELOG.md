@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.33.0](https://github.com/nexxtway/rainbow-modules/compare/v0.32.0...v0.33.0) (2021-03-24)
+
+### Bug Fixes
+
+-   improved use unique identifier hook ([#366](https://github.com/nexxtway/rainbow-modules/issues/366)) ([914b710](https://github.com/nexxtway/rainbow-modules/commit/914b71044d1b4e2a907d7fc9594f6860d54f9111))
+
+### Features
+
+-   useMutationFlow hide success and error notification ([#364](https://github.com/nexxtway/rainbow-modules/issues/364)) ([0efd174](https://github.com/nexxtway/rainbow-modules/commit/0efd1745de4a422b53e38ef16f60f73ef41f47ae))
+
 # [0.32.0](https://github.com/nexxtway/rainbow-modules/compare/v0.31.0...v0.32.0) (2021-03-15)
 
 ### Bug Fixes
