@@ -1,9 +1,8 @@
 import { useMemo } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
-let idCounter = 0;
 export default function useUniqueIdentifier(prefix) {
     return useMemo(() => {
-        idCounter += 1;
-        return prefix ? `${prefix}-${idCounter}` : String(idCounter);
+        return `${prefix}-${uuidv4()}`;
     }, [prefix]);
 }
