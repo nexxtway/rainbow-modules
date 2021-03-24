@@ -1,9 +1,8 @@
 import { useMemo } from 'react';
+import { nanoid } from 'nanoid';
 
-let idCounter = 0;
 export default function useUniqueIdentifier(prefix) {
     return useMemo(() => {
-        idCounter += 1;
-        return prefix ? `${prefix}-${idCounter}` : String(idCounter);
+        return prefix ? `${prefix}-${nanoid(5)}` : nanoid(5);
     }, [prefix]);
 }

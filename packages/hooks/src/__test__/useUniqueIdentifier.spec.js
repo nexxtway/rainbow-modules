@@ -3,10 +3,13 @@ import useUniqueIdentifier from '../useUniqueIdentifier';
 
 describe('useUniqueIdentifier', () => {
     it('should return unique identifier', async () => {
-        const identifiers = Array.from(Array(3));
-        identifiers.forEach((_value, index) => {
+        const ids = [];
+        // eslint-disable-next-line no-plusplus
+        for (let index = 0; index < 5; index++) {
             const { result } = renderHook(() => useUniqueIdentifier('test'));
-            expect(result.current).toBe(`test-${index + 1}`);
-        });
+            ids.push(result.current);
+        }
+        const uniqueIds = [...new Set(ids)];
+        expect(uniqueIds.length).toBe(5);
     });
 });
