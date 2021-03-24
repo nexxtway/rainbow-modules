@@ -14,7 +14,6 @@ const InfoBorder = (props) => {
             className={className}
             style={style}
         >
-            <title>info-border</title>
             <g id="billing" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="functions/billing"
