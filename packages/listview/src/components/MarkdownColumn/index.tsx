@@ -10,7 +10,7 @@ const MarkdownColumn: React.FC<MarkdownColumnProps> = ({
 }: MarkdownColumnProps) => {
     return (
         <Container className={className} style={style}>
-            <MarkdownOutput value={value} />
+            <MarkdownOutput value={value} variant="inline" />
         </Container>
     );
 };

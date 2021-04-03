@@ -27,8 +27,8 @@ export const BasicMarkdownColumn = () => {
     return (
         <Application>
             <Table data={initialData} keyField="id" variant="listview">
-                <Column header="Customer" field="customer" />
-                <Column header="Status" field="markdown" component={MarkdownColumn} />
+                <Column header="Object" field="customer" />
+                <Column header="Example" field="markdown" component={MarkdownColumn} />
             </Table>
         </Application>
     );
