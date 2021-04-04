@@ -89,7 +89,7 @@ const Notification: React.FC<NotificationProps> = ({
                         <CreatedAt unread={unread}>{createdAt}</CreatedAt>
                     </RenderIf>
                 </TitleContainer>
-                <Description unread={unread}>{description}</Description>
+                <Description unread={unread} value={description} variant="inline" />
                 {badge}
             </Content>
         </NotificationContainer>
