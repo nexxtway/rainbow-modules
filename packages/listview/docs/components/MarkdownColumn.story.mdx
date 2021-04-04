@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import MarkdownColumn from '../../src/components/MarkdownColumn';
+import * as stories from '../stories/MarkdownColumn.story.js';
+
+<Meta title="Modules/Listview/Components/MarkdownColumn" component={MarkdownColumn} />
+
+# Overview
+
+`MarkdownColumn` is a column that renders the markdown text passed as value.
+
+### This is an example with the MarkdownColumn.
+
+<Preview>
+    <Story name="MarkdownColumn">{stories.BasicMarkdownColumn()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={MarkdownColumn} />
