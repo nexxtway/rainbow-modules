@@ -1,7 +1,6 @@
 import React from 'react';
-import { MarkdownOutput } from 'react-rainbow-components';
 import { MarkdownColumnProps } from './types';
-import { Container } from './styled';
+import { Container, StyledMarkdownOutput } from './styled';
 
 const MarkdownColumn: React.FC<MarkdownColumnProps> = ({
     className,
@@ -10,7 +9,7 @@ const MarkdownColumn: React.FC<MarkdownColumnProps> = ({
 }: MarkdownColumnProps) => {
     return (
         <Container className={className} style={style}>
-            <MarkdownOutput value={value} variant="inline" />
+            <StyledMarkdownOutput value={value} variant="inline" />
         </Container>
     );
 };
