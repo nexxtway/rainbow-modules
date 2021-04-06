@@ -7,3 +7,4 @@ export { default as FloatingSearch } from './components/FloatingSearch';
 export { default as FloatingSearchButtonIcon } from './components/FloatingSearchButtonIcon';
 export { default as DraggableList } from './components/DraggableList';
 export { default as filterByFields } from './helpers/filterByFields';
+export { default as MarkdownColumn } from './components/MarkdownColumn';
