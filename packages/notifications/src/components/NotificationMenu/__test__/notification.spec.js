@@ -62,14 +62,14 @@ describe('<Notification />', () => {
     });
 
     it('should render the passed description', () => {
-        const description = <div data-test="description">Description</div>;
+        const description = 'Description test';
         const wrapper = mount(
             <Application>
                 <Notification description={description} />
             </Application>,
         );
         const descriptionComponent = wrapper.find(Description);
-        expect(descriptionComponent.find('[data-test="description"]').exists()).toBe(true);
+        expect(descriptionComponent.text()).toBe('Description test');
     });
 
     it('should render the passed status', () => {

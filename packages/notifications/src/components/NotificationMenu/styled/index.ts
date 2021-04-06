@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { LoadingShape, Spinner } from 'react-rainbow-components';
+import { LoadingShape, MarkdownOutput, Spinner } from 'react-rainbow-components';
 import { CloseCircleFilled } from '@rainbow-modules/icons';
 import { NotificationProps, StatusBadgeProps } from '../types';
 
@@ -126,9 +126,11 @@ export const CreatedAt = styled.div.attrs((props) => props.theme.rainbow)<Notifi
         `}
 `;
 
-export const Description = styled.div.attrs((props) => props.theme.rainbow)<NotificationProps>`
+export const Description = styled(MarkdownOutput).attrs(
+    (props) => props.theme.rainbow,
+)<NotificationProps>`
     color: ${(props) => props.palette.text.label};
-    font-size: 14px;
+    font-size: 0.875rem;
     margin-bottom: 4px;
     opacity: 0.9;
     line-height: 1.5;
