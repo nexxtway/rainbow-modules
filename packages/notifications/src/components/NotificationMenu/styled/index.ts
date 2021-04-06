@@ -130,14 +130,10 @@ export const Description = styled(MarkdownOutput).attrs(
     (props) => props.theme.rainbow,
 )<NotificationProps>`
     color: ${(props) => props.palette.text.label};
-    font-size: 14px;
+    font-size: 0.875rem;
     margin-bottom: 4px;
     opacity: 0.9;
     line-height: 1.5;
-
-    p {
-        font-size: 14px;
-    }
 
     ${(props) =>
         props.unread &&
