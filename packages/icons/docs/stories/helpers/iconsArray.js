@@ -96,6 +96,7 @@ import {
     InfoBorder,
     KeyBorder,
     KeyFilled,
+    Disabled,
 } from '../../../src';
 
 export default [
@@ -584,5 +585,10 @@ export default [
         name: 'keyFilled',
         category: 'standard',
         icon: KeyFilled,
+    },
+    {
+        name: 'Disabled',
+        category: 'standard',
+        icon: Disabled,
     },
 ];
