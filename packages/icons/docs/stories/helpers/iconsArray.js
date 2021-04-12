@@ -97,6 +97,7 @@ import {
     KeyBorder,
     KeyFilled,
     Disabled,
+    Open,
 } from '../../../src';
 
 export default [
@@ -590,5 +591,10 @@ export default [
         name: 'Disabled',
         category: 'standard',
         icon: Disabled,
+    },
+    {
+        name: 'Open',
+        category: 'standard',
+        icon: Open,
     },
 ];

@@ -98,3 +98,4 @@ export { default as InfoBorder } from './components/infoBorder';
 export { default as KeyBorder } from './components/keyBorder';
 export { default as KeyFilled } from './components/keyFilled';
 export { default as Disabled } from './components/disabled';
+export { default as Open } from './components/open';
