@@ -13,6 +13,10 @@ export const showAppMessage = (params) => {
     AppActions.setIsMessageVisible(true);
 };
 
+export const hideAppMessage = () => {
+    AppActions.setIsMessageVisible(false);
+};
+
 export const showAppNotification = (notification) => {
     AppActions.addNotification(notification);
 };

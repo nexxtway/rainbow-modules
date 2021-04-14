@@ -11,6 +11,8 @@ type AppMessagepParams = {
 };
 export function showAppMessage(params: AppMessagepParams): void;
 
+export function hideAppMessage(): void;
+
 type AppNotificationParams = {
     title: string;
     description: string;
