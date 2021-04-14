@@ -4,6 +4,7 @@ import {
     hideAppSpinner,
     showAppNotification,
     showAppMessage,
+    hideAppMessage,
 } from '@rainbow-modules/app';
 
 const defaults = {
@@ -89,6 +90,7 @@ const useMutationFlow = (opts) => {
     const { successAction, errorAction } = resolveFeedbackActionFn(type);
 
     const mutate = useCallback(async (...args) => {
+        hideAppMessage();
         showAppSpinner();
         try {
             const showAction = successMessage !== null;
