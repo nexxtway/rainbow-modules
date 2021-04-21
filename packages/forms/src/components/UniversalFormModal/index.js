@@ -15,6 +15,7 @@ const UniversalFormModal = (props) => {
         submitButtonLabel,
         cancelButtonLabel,
         onOpened,
+        disableSubmit,
         ...rest
     } = props;
     const uniqueId = useUniqueIdentifier();
@@ -23,7 +24,13 @@ const UniversalFormModal = (props) => {
             <Button className="rainbow-m-right_large" variant="neutral" onClick={onRequestClose}>
                 {cancelButtonLabel}
             </Button>
-            <Button label="Save" variant="brand" type="submit" form={uniqueId}>
+            <Button
+                disabled={disableSubmit}
+                label="Save"
+                variant="brand"
+                type="submit"
+                form={uniqueId}
+            >
                 {submitButtonLabel}
             </Button>
         </div>
@@ -66,6 +73,8 @@ UniversalFormModal.propTypes = {
     submitButtonLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     /** The label of the cancel button on the form */
     cancelButtonLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+    /** disable submit button */
+    disableSubmit: PropTypes.bool,
 };
 
 UniversalFormModal.defaultProps = {
@@ -78,6 +87,7 @@ UniversalFormModal.defaultProps = {
     initialValues: {},
     submitButtonLabel: 'Submit',
     cancelButtonLabel: 'Cancel',
+    disableSubmit: false,
 };
 
 export default UniversalFormModal;
