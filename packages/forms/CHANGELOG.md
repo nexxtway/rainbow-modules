@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.34.0](https://github.com/nexxtway/rainbow-modules/compare/v0.33.0...v0.34.0) (2021-04-23)
+
+### Features
+
+-   add disableSubmit prop to UniversalFormModal component ([#374](https://github.com/nexxtway/rainbow-modules/issues/374)) ([8204d48](https://github.com/nexxtway/rainbow-modules/commit/8204d48d0f6c9b66e0440c1b741a6d94dfa08a26))
+
 # [0.33.0](https://github.com/nexxtway/rainbow-modules/compare/v0.32.0...v0.33.0) (2021-03-24)
 
 ### Bug Fixes

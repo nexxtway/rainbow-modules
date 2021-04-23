@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.34.0](https://github.com/nexxtway/rainbow-modules/compare/v0.33.0...v0.34.0) (2021-04-23)
+
+### Features
+
+-   add `Open` icon and fix `Disabled` icon ([#372](https://github.com/nexxtway/rainbow-modules/issues/372)) ([ea2f388](https://github.com/nexxtway/rainbow-modules/commit/ea2f388bad1b0323be80337940dc884bf4204616))
+-   add icon `Disabled` to package/icons ([#371](https://github.com/nexxtway/rainbow-modules/issues/371)) ([ec5e29f](https://github.com/nexxtway/rainbow-modules/commit/ec5e29f999285dd5fac2dd92e1e0ff816c8c54a1))
+
 # [0.33.0](https://github.com/nexxtway/rainbow-modules/compare/v0.32.0...v0.33.0) (2021-03-24)
 
 ### Bug Fixes

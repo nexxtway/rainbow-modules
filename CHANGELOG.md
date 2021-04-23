@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.34.0](https://github.com/nexxtway/rainbow-modules/compare/v0.33.0...v0.34.0) (2021-04-23)
+
+### Bug Fixes
+
+-   improve MarkdownColumn ([#370](https://github.com/nexxtway/rainbow-modules/issues/370)) ([8bc1925](https://github.com/nexxtway/rainbow-modules/commit/8bc1925b2110e8296cfa2e2b5969cac2fd9dd4ff))
+
+### Features
+
+-   add `Open` icon and fix `Disabled` icon ([#372](https://github.com/nexxtway/rainbow-modules/issues/372)) ([ea2f388](https://github.com/nexxtway/rainbow-modules/commit/ea2f388bad1b0323be80337940dc884bf4204616))
+-   add disableSubmit prop to UniversalFormModal component ([#374](https://github.com/nexxtway/rainbow-modules/issues/374)) ([8204d48](https://github.com/nexxtway/rainbow-modules/commit/8204d48d0f6c9b66e0440c1b741a6d94dfa08a26))
+-   add hideAppMessage action ([#373](https://github.com/nexxtway/rainbow-modules/issues/373)) ([4019be4](https://github.com/nexxtway/rainbow-modules/commit/4019be4fc849fd07bee085961063de268bd87235))
+-   add icon `Disabled` to package/icons ([#371](https://github.com/nexxtway/rainbow-modules/issues/371)) ([ec5e29f](https://github.com/nexxtway/rainbow-modules/commit/ec5e29f999285dd5fac2dd92e1e0ff816c8c54a1))
+-   add Markdown to the notification description ([#369](https://github.com/nexxtway/rainbow-modules/issues/369)) ([c05ee19](https://github.com/nexxtway/rainbow-modules/commit/c05ee1963de4e2e33e00148a9011cc15a6700499))
+-   implement MarkdownColumn component ([#367](https://github.com/nexxtway/rainbow-modules/issues/367)) ([497c981](https://github.com/nexxtway/rainbow-modules/commit/497c9817d3b7a77a8698d75f466eba3130d0ff60))
+
 # [0.33.0](https://github.com/nexxtway/rainbow-modules/compare/v0.32.0...v0.33.0) (2021-03-24)
 
 ### Bug Fixes

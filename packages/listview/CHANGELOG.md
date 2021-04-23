@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.34.0](https://github.com/nexxtway/rainbow-modules/compare/v0.33.0...v0.34.0) (2021-04-23)
+
+### Bug Fixes
+
+-   improve MarkdownColumn ([#370](https://github.com/nexxtway/rainbow-modules/issues/370)) ([8bc1925](https://github.com/nexxtway/rainbow-modules/commit/8bc1925b2110e8296cfa2e2b5969cac2fd9dd4ff))
+
+### Features
+
+-   implement MarkdownColumn component ([#367](https://github.com/nexxtway/rainbow-modules/issues/367)) ([497c981](https://github.com/nexxtway/rainbow-modules/commit/497c9817d3b7a77a8698d75f466eba3130d0ff60))
+
 # [0.33.0](https://github.com/nexxtway/rainbow-modules/compare/v0.32.0...v0.33.0) (2021-03-24)
 
 **Note:** Version bump only for package @rainbow-modules/listview

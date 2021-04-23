@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.34.0](https://github.com/nexxtway/rainbow-modules/compare/v0.33.0...v0.34.0) (2021-04-23)
+
+### Features
+
+-   add Markdown to the notification description ([#369](https://github.com/nexxtway/rainbow-modules/issues/369)) ([c05ee19](https://github.com/nexxtway/rainbow-modules/commit/c05ee1963de4e2e33e00148a9011cc15a6700499))
+
 # [0.33.0](https://github.com/nexxtway/rainbow-modules/compare/v0.32.0...v0.33.0) (2021-03-24)
 
 ### Bug Fixes
