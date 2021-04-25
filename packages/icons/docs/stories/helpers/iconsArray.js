@@ -99,7 +99,7 @@ import {
     Disabled,
     Open,
     PullRequest,
-    Fx,
+    FunctionSymbol,
     Document,
 } from '../../../src';
 
@@ -601,17 +601,17 @@ export default [
         icon: Open,
     },
     {
-        name: 'PullRequest',
+        name: 'pullRequest',
         category: 'standard',
         icon: PullRequest,
     },
     {
-        name: 'Fx',
+        name: 'functionSymbol',
         category: 'standard',
-        icon: Fx,
+        icon: FunctionSymbol,
     },
     {
-        name: 'Document',
+        name: 'document',
         category: 'standard',
         icon: Document,
     },

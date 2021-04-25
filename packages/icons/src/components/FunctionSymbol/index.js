@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Fx = (props) => {
+const FunctionSymbol = (props) => {
     const { className, style } = props;
     return (
         <svg
@@ -26,13 +26,13 @@ const Fx = (props) => {
     );
 };
 
-Fx.propTypes = {
+FunctionSymbol.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
 };
-Fx.defaultProps = {
+FunctionSymbol.defaultProps = {
     className: undefined,
     style: undefined,
 };
 
-export default Fx;
+export default FunctionSymbol;
