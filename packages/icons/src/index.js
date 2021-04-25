@@ -99,3 +99,6 @@ export { default as KeyBorder } from './components/keyBorder';
 export { default as KeyFilled } from './components/keyFilled';
 export { default as Disabled } from './components/disabled';
 export { default as Open } from './components/open';
+export { default as PullRequest } from './components/pullRequest';
+export { default as Fx } from './components/fx';
+export { default as Document } from './components/document';
