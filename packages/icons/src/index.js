@@ -100,5 +100,5 @@ export { default as KeyFilled } from './components/keyFilled';
 export { default as Disabled } from './components/disabled';
 export { default as Open } from './components/open';
 export { default as PullRequest } from './components/pullRequest';
-export { default as FunctionSymbol } from './components/FunctionSymbol';
+export { default as FunctionSymbol } from './components/functionSymbol';
 export { default as Document } from './components/document';
