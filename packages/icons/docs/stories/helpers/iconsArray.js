@@ -98,6 +98,9 @@ import {
     KeyFilled,
     Disabled,
     Open,
+    PullRequest,
+    FunctionSymbol,
+    Document,
 } from '../../../src';
 
 export default [
@@ -596,5 +599,20 @@ export default [
         name: 'Open',
         category: 'standard',
         icon: Open,
+    },
+    {
+        name: 'pullRequest',
+        category: 'standard',
+        icon: PullRequest,
+    },
+    {
+        name: 'functionSymbol',
+        category: 'standard',
+        icon: FunctionSymbol,
+    },
+    {
+        name: 'document',
+        category: 'standard',
+        icon: Document,
     },
 ];
