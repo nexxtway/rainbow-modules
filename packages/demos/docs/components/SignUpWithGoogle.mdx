@@ -1,0 +1,21 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import SignUpWithGoogle from '../../src/components/SignUpWithGoogle';
+import * as stories from '../stories/SignUpWithGoogle.story.js';
+
+<Meta title="Modules/Demos/Components/SignUpWithGoogle" component={SignUpWithGoogle} />
+
+# Overview
+
+`SignUpWithGoogle` component is a fully functional Firebase 'google' sign up page.
+
+This component MUST be used under a properly configured `RainbowFirebaseApp` component
+
+### This is a basic example.
+
+<Preview>
+    <Story name="SignUpWithGoogle">{stories.Basic()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={SignUpWithGoogle} />

@@ -6,6 +6,7 @@ export {
     showAppSpinner,
     hideAppSpinner,
     showAppMessage,
+    hideAppMessage,
     confirmModal,
     showAppNotification,
 } from './actions';
