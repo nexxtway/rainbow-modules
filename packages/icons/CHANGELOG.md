@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.35.0](https://github.com/nexxtway/rainbow-modules/compare/v0.34.0...v0.35.0) (2021-05-02)
+
+### Features
+
+-   added pullrequest fx document icons ([#375](https://github.com/nexxtway/rainbow-modules/issues/375)) ([1fb4a2b](https://github.com/nexxtway/rainbow-modules/commit/1fb4a2b41a8bba2d1697cf1455a13ad51fde2be7))
+
 # [0.34.0](https://github.com/nexxtway/rainbow-modules/compare/v0.33.0...v0.34.0) (2021-04-23)
 
 ### Features
