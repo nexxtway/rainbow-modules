@@ -1,5 +1,5 @@
 {
-    "name": "@rainbow-modules/notifications",
+    "name": "@rainbow-modules/demos",
     "version": "0.34.0",
     "main": "lib/index.js",
     "author": "Nexxtway Team",
@@ -8,15 +8,16 @@
         "lib"
     ],
     "dependencies": {
-        "@rainbow-modules/hooks": "^0.34.0",
+        "@rainbow-modules/app": "^0.34.0",
+        "@rainbow-modules/auth": "^0.34.0",
+        "@rainbow-modules/firebase-hooks": "^0.34.0",
         "@rainbow-modules/icons": "^0.34.0",
         "styled-components": "^4.3.2"
     },
     "peerDependencies": {
         "firebase": ">=8.2.0",
         "react": ">=16.8.0",
-        "react-intl": "^4.4.0",
-        "react-rainbow-components": ">=1.15.0"
+        "react-rainbow-components": ">=1.25.0"
     },
     "publishConfig": {
         "access": "public"

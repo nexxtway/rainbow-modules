@@ -27,6 +27,7 @@ module.exports = {
                 __dirname,
                 '../packages/dashboard/src/index.js',
             ),
+            '@rainbow-modules/demos': path.join(__dirname, '../packages/demos/src/index.js'),
             '@rainbow-modules/icons': path.join(__dirname, '../packages/icons/src/index.js'),
             '@rainbow-modules/firebase-hooks': path.join(
                 __dirname,
