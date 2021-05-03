@@ -1,6 +1,6 @@
 {
     "name": "@rainbow-modules/demos",
-    "version": "0.35.1",
+    "version": "0.35.2",
     "main": "lib/index.js",
     "author": "Nexxtway Team",
     "license": "MIT",

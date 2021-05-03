@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.35.2](https://github.com/nexxtway/rainbow-modules/compare/v0.35.1...v0.35.2) (2021-05-03)
+
+### Bug Fixes
+
+-   add style and className to SignUpWithGoogle component ([69415e4](https://github.com/nexxtway/rainbow-modules/commit/69415e42c4059ff9117775eb8734277395417231))
+
 ## [0.35.1](https://github.com/nexxtway/rainbow-modules/compare/v0.35.0...v0.35.1) (2021-05-03)
 
 ### Bug Fixes
