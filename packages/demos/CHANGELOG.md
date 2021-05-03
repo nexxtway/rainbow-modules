@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.35.1](https://github.com/nexxtway/rainbow-modules/compare/v0.35.0...v0.35.1) (2021-05-03)
+
+### Bug Fixes
+
+-   remove background in SignUpWithGoogle ([ff27c86](https://github.com/nexxtway/rainbow-modules/commit/ff27c8623b7c7b5667930a0199268cdc3b62c54e))
+
 # [0.35.0](https://github.com/nexxtway/rainbow-modules/compare/v0.34.0...v0.35.0) (2021-05-02)
 
 ### Features
