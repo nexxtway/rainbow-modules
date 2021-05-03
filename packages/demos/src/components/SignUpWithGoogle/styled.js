@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Button } from 'react-rainbow-components';
 import { Google } from '@rainbow-modules/icons';
-import background from './images/background.svg';
 
 export const Container = styled.div`
     color: ${(props) => props.theme.rainbow.palette.background.secondary};
@@ -11,10 +10,6 @@ export const Container = styled.div`
     justify-content: center;
     height: 100vh;
     width: 100%;
-    background-image: url(${background});
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
 `;
 
 export const HeaderContainer = styled.div`
