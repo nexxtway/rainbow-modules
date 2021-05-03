@@ -14,7 +14,8 @@ const Header = ({ content }) => {
     return content;
 };
 
-const SignUpWithGoogle = ({ header, children }) => {
+const SignUpWithGoogle = (props) => {
+    const { className, style, header, children } = props;
     const [isLoading, setLoading] = useState(false);
     const app = useFirebaseApp();
 
@@ -36,7 +37,7 @@ const SignUpWithGoogle = ({ header, children }) => {
     return (
         <>
             <WhenNoAuthenticated path="/" redirect="/app">
-                <Container>
+                <Container className={className} style={style}>
                     <RenderIf isTrue={header}>
                         <HeaderContainer>
                             <Header content={header} />
@@ -61,6 +62,10 @@ const SignUpWithGoogle = ({ header, children }) => {
 };
 
 SignUpWithGoogle.propTypes = {
+    /** A CSS class for the outer element, in addition to the component's base classes. */
+    className: PropTypes.string,
+    /** An object with custom style applied to the outer element. */
+    style: PropTypes.object,
     /** The header can include text or a component,
      * and is displayed at the top of the component. */
     header: PropTypes.node,
@@ -69,6 +74,8 @@ SignUpWithGoogle.propTypes = {
 };
 
 SignUpWithGoogle.defaultProps = {
+    className: undefined,
+    style: undefined,
     header: undefined,
     children: undefined,
 };
