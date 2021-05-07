@@ -47,6 +47,7 @@ const RainbowFirebaseApp = (props) => {
     const [isLoading, setLoading] = useState(false);
     const [isMessageVisible, setIsMessageVisible] = useState(false);
     const [isConfirmModalVisible, setIsConfirmModalVisible] = useState(false);
+    const [spinnerParams, setSpinnerParams] = useState({});
     const [messageParams, setMessageParams] = useState({});
     const [confirmModalParams, setConfirmModalParams] = useState({});
     const [isInitializing, setIsInitializing] = useState(true);
@@ -56,6 +57,7 @@ const RainbowFirebaseApp = (props) => {
         updateAppActions({
             setLoading,
             setIsMessageVisible,
+            setSpinnerParams,
             setMessageParams,
             setIsConfirmModalVisible,
             setConfirmModalParams,
@@ -88,7 +90,11 @@ const RainbowFirebaseApp = (props) => {
                                 <BrowserRouter>{children}</BrowserRouter>
                             </RenderIf>
                             <RenderIf isTrue={isLoading}>
-                                <AppSpinner spinner={spinner} />
+                                <AppSpinner
+                                    spinner={spinner}
+                                    // eslint-disable-next-line react/jsx-props-no-spreading
+                                    {...spinnerParams}
+                                />
                             </RenderIf>
                             <AppMessage
                                 isVisible={isMessageVisible}

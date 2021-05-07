@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { createPortal } from 'react-dom';
 import styled from 'styled-components';
-import Spinner from 'react-rainbow-components/components/Spinner';
+import { RenderIf, Spinner } from 'react-rainbow-components';
 import { ZINDEX_SPINNER } from '../../styles/zIndex';
+import SpinnerMessage from './message';
 
 const SpinnerContainer = styled.div`
     display: flex;
@@ -23,16 +24,24 @@ const SpinnerContainer = styled.div`
 `;
 
 const AppSpinner = (props) => {
-    const { spinner } = props;
+    const { spinner, message } = props;
     if (spinner) {
         return createPortal(
-            <SpinnerContainer data-cy="app-spinner">{spinner}</SpinnerContainer>,
+            <SpinnerContainer data-cy="app-spinner">
+                {spinner}
+                <RenderIf isTrue={!!message}>
+                    <SpinnerMessage message={message} />
+                </RenderIf>
+            </SpinnerContainer>,
             document.body,
         );
     }
     return createPortal(
         <SpinnerContainer data-cy="app-spinner">
             <Spinner />
+            <RenderIf isTrue={!!message}>
+                <SpinnerMessage message={message} />
+            </RenderIf>
         </SpinnerContainer>,
         document.body,
     );
@@ -41,6 +50,8 @@ const AppSpinner = (props) => {
 AppSpinner.propTypes = {
     /** The spinner to show when the app is loading. */
     spinner: PropTypes.node,
+    /** The label for the spinner. */
+    message: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 };
 
 export default AppSpinner;
