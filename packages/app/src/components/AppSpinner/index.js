@@ -37,12 +37,9 @@ const StyledSpinner = styled(Spinner)`
 `;
 
 const AppSpinner = (props) => {
-    const { spinner, message, ...rest } = props;
+    const { spinner, message } = props;
     if (spinner) {
-        const extendedUserSpinner = React.cloneElement(spinner, {
-            message,
-            ...rest,
-        });
+        const extendedUserSpinner = React.cloneElement(spinner, { message });
 
         return createPortal(
             <SpinnerContainer data-cy="app-spinner">{extendedUserSpinner}</SpinnerContainer>,
@@ -64,7 +61,7 @@ AppSpinner.propTypes = {
     /** The spinner to show when the app is loading. */
     spinner: PropTypes.node,
     /** The label for the spinner. */
-    message: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+    message: PropTypes.node,
 };
 
 export default AppSpinner;
