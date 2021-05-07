@@ -6,8 +6,8 @@ import app from '../../../../firebase';
 import RainbowFirebaseApp from '../../src/components/App';
 import { showAppSpinner, hideAppSpinner } from '../../src/actions';
 
-const show = () => {
-    showAppSpinner();
+const show = (message) => {
+    showAppSpinner({ message });
     setTimeout(() => {
         hideAppSpinner();
     }, 3000);
@@ -77,6 +77,27 @@ export const circleSpinner = () => {
                     your application in a snap. Give it a hack and let us know what you think.
                 </Description>
                 <Button variant="brand" label="Show Spinner" id="spinner-button" onClick={show} />
+            </Container>
+        </RainbowFirebaseApp>
+    );
+};
+
+export const spinnerWithMessage = () => {
+    return (
+        <RainbowFirebaseApp app={app}>
+            <Container>
+                <Logo />
+                <Title>rainbow-modules</Title>
+                <Description>
+                    React Rainbow is a collection of components that will reliably help you build
+                    your application in a snap. Give it a hack and let us know what you think.
+                </Description>
+                <Button
+                    variant="brand"
+                    label="Show Spinner"
+                    id="spinner-button"
+                    onClick={() => show('Loading...')}
+                />
             </Container>
         </RainbowFirebaseApp>
     );
