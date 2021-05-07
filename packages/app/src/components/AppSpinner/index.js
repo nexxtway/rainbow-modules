@@ -24,15 +24,15 @@ const SpinnerContainer = styled.div`
 `;
 
 const AppSpinner = (props) => {
-    const { spinner, message } = props;
+    const { spinner, message, ...rest } = props;
     if (spinner) {
+        const extendedUserSpinner = React.cloneElement(spinner, {
+            message,
+            ...rest,
+        });
+
         return createPortal(
-            <SpinnerContainer data-cy="app-spinner">
-                {spinner}
-                <RenderIf isTrue={!!message}>
-                    <SpinnerMessage message={message} />
-                </RenderIf>
-            </SpinnerContainer>,
+            <SpinnerContainer data-cy="app-spinner">{extendedUserSpinner}</SpinnerContainer>,
             document.body,
         );
     }
