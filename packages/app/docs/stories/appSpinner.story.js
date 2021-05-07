@@ -76,7 +76,12 @@ export const circleSpinner = () => {
                     React Rainbow is a collection of components that will reliably help you build
                     your application in a snap. Give it a hack and let us know what you think.
                 </Description>
-                <Button variant="brand" label="Show Spinner" id="spinner-button" onClick={show} />
+                <Button
+                    variant="brand"
+                    label="Show Spinner"
+                    id="spinner-button"
+                    onClick={() => show()}
+                />
             </Container>
         </RainbowFirebaseApp>
     );
@@ -122,7 +127,12 @@ export const arcSpinnerWithChild = () => {
                     React Rainbow is a collection of components that will reliably help you build
                     your application in a snap. Give it a hack and let us know what you think.
                 </Description>
-                <Button variant="brand" label="Show Spinner" id="spinner-button" onClick={show} />
+                <Button
+                    variant="brand"
+                    label="Show Spinner"
+                    id="spinner-button"
+                    onClick={() => show()}
+                />
             </Container>
         </RainbowFirebaseApp>
     );
