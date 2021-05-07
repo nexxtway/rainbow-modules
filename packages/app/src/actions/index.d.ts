@@ -1,6 +1,9 @@
 import { ReactNode } from 'react';
 
-export function showAppSpinner(): void;
+type AppMessagepParams = {
+    message?: ReactNode;
+};
+export function showAppSpinner(params: AppSpinnerParams): void;
 export function hideAppSpinner(): void;
 
 type AppMessagepParams = {
