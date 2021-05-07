@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { createPortal } from 'react-dom';
 import styled from 'styled-components';
-import { RenderIf, Spinner } from 'react-rainbow-components';
-import { ZINDEX_SPINNER } from '../../styles/zIndex';
+import RenderIf from 'react-rainbow-components/components/RenderIf';
+import Spinner from 'react-rainbow-components/components/Spinner';
 import SpinnerMessage from './message';
+import { ZINDEX_SPINNER } from '../../styles/zIndex';
 
 const SpinnerContainer = styled.div`
     display: flex;
