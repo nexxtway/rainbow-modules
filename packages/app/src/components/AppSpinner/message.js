@@ -17,7 +17,7 @@ export default function SpinnerMessage({ message }) {
 }
 
 SpinnerMessage.propTypes = {
-    message: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+    message: PropTypes.node,
 };
 
 SpinnerMessage.defaultProps = {
