@@ -48,7 +48,7 @@ const { mutate } = useMutationFlow({
 const bookName = 'How to use react-rainbow';
 const { mutate } = useMutationFlow({
     mutation: saveBook,
-    loadingMessage: (
+    submitSpinnerMessage: (
         <div>
             Adding book <b>{`"${bookName}"`}</b> to your collection.`
         </div>
@@ -105,7 +105,7 @@ const { mutate } = useMutationFlow({
 | Property       | Description                                                      | Type                                                                              | Default                                 |
 | -------------- | ---------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------- |
 | mutation       | The async function that perform the server call.                 | async () => {}                                                                    | undefined                               |
-| loadingMessage | The message on the loading spinner                               | String or Node                                                                | undefined |
+| submitSpinnerMessage | The message on the spinner when submitting                               | String or Node                                                                | undefined |
 | successMessage | The success message on the Notification                          | String or Function                                                                | The mutation was executed successfully. |
 | errorMessage   | The error message on the Notification                            | String or Function                                                                | There was an error, Please try again.   |
 | onSuccess      | Callback on the success                                          | (res) => {}                                                                       | undefined                               |
