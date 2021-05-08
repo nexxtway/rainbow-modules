@@ -81,6 +81,7 @@ const resolveFeedbackActionFn = (type) => {
 const useMutationFlow = (opts) => {
     const {
         mutation = async () => {},
+        submitSpinnerMessage,
         successMessage = defaults.success.description,
         errorMessage = defaults.error.description,
         onSuccess = () => {},
@@ -91,7 +92,7 @@ const useMutationFlow = (opts) => {
 
     const mutate = useCallback(async (...args) => {
         hideAppMessage();
-        showAppSpinner();
+        showAppSpinner({ message: submitSpinnerMessage });
         try {
             const showAction = successMessage !== null;
             const res = await mutation(...args);
