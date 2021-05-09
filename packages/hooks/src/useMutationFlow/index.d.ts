@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 type feedbackType = 'notification' | 'message';
 
 interface Type {
@@ -7,6 +9,7 @@ interface Type {
 
 export interface MutationOptions {
     mutation?: (unknow) => void;
+    submitSpinnerMessage?: ReactNode;
     successMessage?: string | ((unknow) => void) | null;
     errorMessage?: string | ((unknow) => void) | null;
     onSuccess?: () => void;
