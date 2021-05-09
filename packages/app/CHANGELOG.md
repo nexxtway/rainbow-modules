@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.36.0](https://github.com/nexxtway/rainbow-modules/compare/v0.35.2...v0.36.0) (2021-05-09)
+
+### Features
+
+-   add message support to app spinner ([#377](https://github.com/nexxtway/rainbow-modules/issues/377)) ([f77ad25](https://github.com/nexxtway/rainbow-modules/commit/f77ad25d5eda31c63a900a6f5426f63ca4d10332))
+
 # [0.35.0](https://github.com/nexxtway/rainbow-modules/compare/v0.34.0...v0.35.0) (2021-05-02)
 
 ### Features

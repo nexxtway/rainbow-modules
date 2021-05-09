@@ -1,6 +1,6 @@
 {
     "name": "@rainbow-modules/record",
-    "version": "0.35.0",
+    "version": "0.36.0",
     "main": "lib/index.js",
     "author": "Nexxtway Team",
     "license": "MIT",
@@ -8,10 +8,10 @@
         "lib"
     ],
     "dependencies": {
-        "@rainbow-modules/forms": "^0.35.0",
-        "@rainbow-modules/hooks": "^0.35.0",
-        "@rainbow-modules/icons": "^0.35.0",
-        "@rainbow-modules/validation": "^0.35.0",
+        "@rainbow-modules/forms": "^0.36.0",
+        "@rainbow-modules/hooks": "^0.36.0",
+        "@rainbow-modules/icons": "^0.36.0",
+        "@rainbow-modules/validation": "^0.36.0",
         "copy-to-clipboard": "^3.3.1",
         "styled-components": "^4.3.2"
     },

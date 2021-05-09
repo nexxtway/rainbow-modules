@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.36.0](https://github.com/nexxtway/rainbow-modules/compare/v0.35.2...v0.36.0) (2021-05-09)
+
+### Bug Fixes
+
+-   index.d.ts in useMutationFlow hook ([#380](https://github.com/nexxtway/rainbow-modules/issues/380)) ([c917d02](https://github.com/nexxtway/rainbow-modules/commit/c917d02189b75560d6d43a96d285454b1156683e))
+
+### Features
+
+-   add loadingMessage prop to useMutationFlow hook ([#379](https://github.com/nexxtway/rainbow-modules/issues/379)) ([8bc3f38](https://github.com/nexxtway/rainbow-modules/commit/8bc3f3888c32fb2f559c0ac49aa812950cc2a155))
+
 # [0.35.0](https://github.com/nexxtway/rainbow-modules/compare/v0.34.0...v0.35.0) (2021-05-02)
 
 **Note:** Version bump only for package @rainbow-modules/hooks
