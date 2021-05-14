@@ -101,6 +101,9 @@ import {
     PullRequest,
     FunctionSymbol,
     Document,
+    Apps,
+    AppsBorder,
+    Docs,
 } from '../../../src';
 
 export default [
@@ -614,5 +617,20 @@ export default [
         name: 'document',
         category: 'standard',
         icon: Document,
+    },
+    {
+        name: 'apps',
+        category: 'standard',
+        icon: Apps,
+    },
+    {
+        name: 'appsBorder',
+        category: 'standard',
+        icon: AppsBorder,
+    },
+    {
+        name: 'docs',
+        category: 'standard',
+        icon: Docs,
     },
 ];

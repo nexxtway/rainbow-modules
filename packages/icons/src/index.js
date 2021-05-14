@@ -102,3 +102,6 @@ export { default as Open } from './components/open';
 export { default as PullRequest } from './components/pullRequest';
 export { default as FunctionSymbol } from './components/functionSymbol';
 export { default as Document } from './components/document';
+export { default as Apps } from './components/apps';
+export { default as AppsBorder } from './components/appsBorder';
+export { default as Docs } from './components/docs';
