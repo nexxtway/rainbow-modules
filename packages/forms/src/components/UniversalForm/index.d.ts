@@ -14,6 +14,10 @@ export interface UniversalFormProps {
     id?: string;
     /** The initial values of the form e.g. { name: 'Max', age: 30 } */
     initialValues?: Record<string, unknown>;
+    /** If true, only unmodified values will be overritten when initializing the form with new values.
+     * This allows the user to continue to edit a record after the form is reinitialized.
+     * Defaults to false. */
+    keepDirtyOnReinitialize?: boolean;
     /** Validate function that takes all the values of the form and returns any validation errors or empty object when no errors.
      * Validation errors must be in the same shape as the values of the form.
      */
