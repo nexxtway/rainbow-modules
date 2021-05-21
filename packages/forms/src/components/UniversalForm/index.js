@@ -3,11 +3,21 @@ import PropTypes from 'prop-types';
 import { Form } from 'react-final-form';
 
 const UniversalForm = (props) => {
-    const { onSubmit, id, children, initialValues, validate, style, className } = props;
+    const {
+        onSubmit,
+        id,
+        children,
+        initialValues,
+        validate,
+        style,
+        className,
+        keepDirtyOnReinitialize,
+    } = props;
     return (
         <Form
             onSubmit={onSubmit}
             initialValues={initialValues}
+            keepDirtyOnReinitialize={keepDirtyOnReinitialize}
             validate={validate}
             render={(formProps) => {
                 const { handleSubmit } = formProps;
@@ -48,6 +58,10 @@ UniversalForm.propTypes = {
     className: PropTypes.string,
     /** It is an object with custom style applied to the root element. */
     style: PropTypes.object,
+    /** If true, only unmodified values will be overritten when initializing the form with new values.
+     * This allows the user to continue to edit a record after the form is reinitialized.
+     * Defaults to false. */
+    keepDirtyOnReinitialize: PropTypes.bool,
 };
 
 UniversalForm.defaultProps = {
@@ -58,6 +72,7 @@ UniversalForm.defaultProps = {
     validate: undefined,
     className: undefined,
     style: undefined,
+    keepDirtyOnReinitialize: false,
 };
 
 export default UniversalForm;

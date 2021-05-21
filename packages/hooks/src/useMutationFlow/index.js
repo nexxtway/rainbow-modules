@@ -96,15 +96,15 @@ const useMutationFlow = (opts) => {
         try {
             const showAction = successMessage !== null;
             const res = await mutation(...args);
-            onSuccess(res);
             hideAppSpinner();
+            onSuccess(res);
             if (showAction) {
                 successAction(resolveMessage(successMessage, res, 'success'));
             }
         } catch (error) {
             const showAction = errorMessage !== null;
-            onError(error);
             hideAppSpinner();
+            onError(error);
             if (showAction) {
                 errorAction(resolveMessage(errorMessage, error, 'error'));
             }
