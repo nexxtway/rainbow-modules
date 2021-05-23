@@ -57,6 +57,7 @@ import {
     Roles,
     UsersFilled,
     Users,
+    User,
     More,
     CopyToClipboard,
     FacebookCircle,
@@ -104,6 +105,9 @@ import {
     Apps,
     AppsBorder,
     Docs,
+    TwitterCircle,
+    Microsoft,
+    Yahoo,
 } from '../../../src';
 
 export default [
@@ -221,6 +225,11 @@ export default [
         name: 'rolesFilled',
         category: 'standard',
         icon: RolesFilled,
+    },
+    {
+        name: 'user',
+        category: 'standard',
+        icon: User,
     },
     {
         name: 'users',
@@ -632,5 +641,20 @@ export default [
         name: 'docs',
         category: 'standard',
         icon: Docs,
+    },
+    {
+        name: 'twitterCircle',
+        category: 'custom',
+        icon: TwitterCircle,
+    },
+    {
+        name: 'microsoft',
+        category: 'custom',
+        icon: Microsoft,
+    },
+    {
+        name: 'yahoo',
+        category: 'custom',
+        icon: Yahoo,
     },
 ];
