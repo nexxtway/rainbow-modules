@@ -9,7 +9,7 @@ import getColor from './helpers/getColor';
 import getNormalizedColors from './helpers/getNormalizedColors';
 import useDefaultColors from './hooks/useDefaultColors';
 import resolvePosition from './helpers/resolvePosition';
-import { StyledContainer, StyledDropdown, StyledIndicator } from './styled';
+import { StyledContainer, StyledDropdown, StyledIndicator, StyledValue } from './styled';
 import Options from './options';
 import { dropdownHeaderLabel } from './labels';
 
@@ -70,7 +70,7 @@ const ColoredStatusColumn = ({
             isOpen={isOpen}
             isEditable
         >
-            {value}
+            <StyledValue>{value}</StyledValue>
             <RenderIf isTrue={isEditable}>
                 <StyledIndicator color={color} />
                 <InternalOverlay
