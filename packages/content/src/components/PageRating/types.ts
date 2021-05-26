@@ -4,7 +4,8 @@ export type LabelAlignments = 'center' | 'left' | 'right' | 'inlineLeft' | 'inli
 
 export type Values = 'happy' | 'neutral' | 'sad';
 
-export interface IconProps {
+export interface OptionProps {
+    name?: string;
     value?: string | number;
     isSelected?: boolean;
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
