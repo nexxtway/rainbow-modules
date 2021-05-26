@@ -1,4 +1,4 @@
-import { ChangeEvent, ReactNode } from 'react';
+import { ChangeEvent, CSSProperties, ReactNode } from 'react';
 
 export type LabelAlignments = 'center' | 'left' | 'right' | 'inlineLeft' | 'inlineRight';
 
@@ -14,7 +14,7 @@ export interface OptionProps {
 
 export interface PageRatingProps {
     className?: string;
-    style?: Record<string, unknown>;
+    style?: CSSProperties;
     label?: string;
     labelAlignment?: LabelAlignments;
     value?: Values;
