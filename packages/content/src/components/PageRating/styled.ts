@@ -52,7 +52,7 @@ export const StyledInput = styled.input`
     display: none;
 `;
 
-export const StyledLabel = styled.label<{ isSelected?: boolean }>`
+export const StyledLabel = styled.label<{ isSelected?: boolean; selectedColor?: string }>`
     position: relative;
     display: inline-flex;
     margin: 0 4px;
@@ -79,7 +79,7 @@ export const StyledLabel = styled.label<{ isSelected?: boolean }>`
     ${(props) =>
         props.isSelected &&
         `
-    color: #ffca28;
+    color: ${props.selectedColor};
     transform: scale(1.15);
     `}
 

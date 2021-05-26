@@ -5,11 +5,12 @@ import { OptionProps } from './types';
 const Option: React.FC<OptionProps> = ({
     name,
     isSelected,
+    selectedColor,
     value,
     onChange,
     children,
 }: OptionProps) => (
-    <StyledLabel isSelected={isSelected}>
+    <StyledLabel isSelected={isSelected} selectedColor={selectedColor}>
         <StyledInput
             type="radio"
             name={name}

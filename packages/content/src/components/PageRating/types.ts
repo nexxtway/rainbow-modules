@@ -8,6 +8,7 @@ export interface OptionProps {
     name?: string;
     value?: string | number;
     isSelected?: boolean;
+    selectedColor?: string;
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
     children?: ReactNode;
 }

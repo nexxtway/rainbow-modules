@@ -29,6 +29,7 @@ const PageRating: React.FC<PageRatingProps> = ({
                     name={name}
                     value="sad"
                     isSelected={value === 'sad'}
+                    selectedColor="#f2707a"
                     onChange={handleChange}
                 >
                     <SadIcon />
@@ -37,6 +38,7 @@ const PageRating: React.FC<PageRatingProps> = ({
                     name={name}
                     value="neutral"
                     isSelected={value === 'neutral'}
+                    selectedColor="#ffca28"
                     onChange={handleChange}
                 >
                     <NormalIcon />
@@ -45,6 +47,7 @@ const PageRating: React.FC<PageRatingProps> = ({
                     name={name}
                     value="happy"
                     isSelected={value === 'happy'}
+                    selectedColor="#7bbe91"
                     onChange={handleChange}
                 >
                     <SmilingIcon />
