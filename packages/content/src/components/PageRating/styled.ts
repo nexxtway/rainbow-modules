@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { LabelAlignments } from './types';
 
-export const StyledContainer = styled.div<{ labelAlignment?: LabelAlignments }>`
+export const StyledContainer = styled.fieldset<{ labelAlignment?: LabelAlignments }>`
     display: inline-flex;
     flex-direction: column;
     align-items: center;
@@ -31,7 +31,7 @@ export const StyledContainer = styled.div<{ labelAlignment?: LabelAlignments }>`
     `}
 `;
 
-export const StyledLegend = styled.h3`
+export const StyledLegend = styled.legend`
     text-transform: uppercase;
     font-family: Lato;
     font-size: 0.875rem;
