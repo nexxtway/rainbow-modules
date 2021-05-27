@@ -1,0 +1,21 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import PageRating from '../../src/components/PageRating';
+import * as stories from '../stories/PageRating.story.js';
+
+<Meta title="Modules/Content/Components/PageRating" component={PageRating} />
+
+# Overview
+
+`PageRating` component shows a radio group that allows the user to give feedback about
+the current page. Based on the user selection the component will call `onChange` with one of this
+values: 'happy', 'neutral', or 'sad'.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="PageRating">{stories.SimplePageRating()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={PageRating} />
