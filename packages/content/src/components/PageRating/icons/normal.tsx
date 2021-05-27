@@ -7,10 +7,11 @@ const NormalIcon: React.FC = () => {
                 <g fillRule="nonzero">
                     <g transform="translate(-298 -224) translate(298.656 224)">
                         <circle cx="20" cy="20" r="20" fill="currentColor" />
-                        <circle cx="12.5" cy="15" r="2.5" fill="#6B737B" />
-                        <circle cx="27.5" cy="15" r="2.5" fill="#6B737B" />
+                        <circle cx="12.5" cy="15" r="2.5" fill="#000" fillOpacity="0.6" />
+                        <circle cx="27.5" cy="15" r="2.5" fill="#000" fillOpacity="0.6" />
                         <path
-                            fill="#6B737B"
+                            fill="#000"
+                            fillOpacity="0.6"
                             d="M26.25 30h-12.5c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25h12.5c.69 0 1.25.56 1.25 1.25S26.94 30 26.25 30z"
                         />
                     </g>
