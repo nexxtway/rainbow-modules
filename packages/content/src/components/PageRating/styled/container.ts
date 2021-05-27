@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { LabelAlignments } from '../types';
 
-const StyledContainer = styled.fieldset<{ labelAlignment?: LabelAlignments }>`
+const StyledContainer = styled.div<{ labelAlignment?: LabelAlignments }>`
     display: inline-flex;
     flex-direction: column;
     align-items: center;
@@ -14,7 +14,7 @@ const StyledContainer = styled.fieldset<{ labelAlignment?: LabelAlignments }>`
         `
         flex-direction: row;
         align-items: center;
-        > h3 {
+        > span {
             margin-bottom: 0;
             margin-right: 14px;
         }
@@ -24,7 +24,7 @@ const StyledContainer = styled.fieldset<{ labelAlignment?: LabelAlignments }>`
         `
         flex-direction: row-reverse;
         align-items: center;
-        > h3 {
+        > span {
             margin-bottom: 0;
             margin-left: 14px;
         }

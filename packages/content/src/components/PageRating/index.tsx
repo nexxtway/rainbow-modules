@@ -14,6 +14,7 @@ const PageRating: React.FC<PageRatingProps> = ({
     onChange,
 }: PageRatingProps) => {
     const name = useUniqueIdentifier('pageRating');
+    const legendId = useUniqueIdentifier('legend');
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         if (event.target.checked && onChange !== undefined) {
@@ -22,8 +23,14 @@ const PageRating: React.FC<PageRatingProps> = ({
     };
 
     return (
-        <StyledContainer className={className} style={style} labelAlignment={labelAlignment}>
-            <StyledLegend>{label}</StyledLegend>
+        <StyledContainer
+            className={className}
+            style={style}
+            labelAlignment={labelAlignment}
+            role="group"
+            aria-labelledby={legendId}
+        >
+            <StyledLegend id={legendId}>{label}</StyledLegend>
             <StyledOptionsContainer>
                 <SadOption
                     name={name}
