@@ -5,10 +5,11 @@ export type LabelAlignments = 'center' | 'left' | 'right' | 'inlineLeft' | 'inli
 export type Values = 'happy' | 'neutral' | 'sad';
 
 export interface OptionProps {
+    className?: string;
+    style?: CSSProperties;
     name?: string;
     value?: string | number;
     isSelected?: boolean;
-    selectedColor?: string;
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
     children?: ReactNode;
 }

@@ -3,14 +3,15 @@ import { StyledInput, StyledLabel } from './styled';
 import { OptionProps } from './types';
 
 const Option: React.FC<OptionProps> = ({
+    className,
+    style,
     name,
     isSelected,
-    selectedColor,
     value,
     onChange,
     children,
 }: OptionProps) => (
-    <StyledLabel isSelected={isSelected} selectedColor={selectedColor}>
+    <StyledLabel className={className} style={style} isSelected={isSelected}>
         <StyledInput
             type="radio"
             name={name}

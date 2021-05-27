@@ -2,7 +2,7 @@ import React, { ChangeEvent } from 'react';
 import { useUniqueIdentifier } from '@rainbow-modules/hooks';
 import { PageRatingProps, Values } from './types';
 import { StyledContainer, StyledLegend, StyledOptionsContainer } from './styled';
-import Option from './option';
+import { SadOption, NeutralOption, HappyOption } from './styled/options';
 import { SadIcon, SmilingIcon, NormalIcon } from './icons';
 
 const PageRating: React.FC<PageRatingProps> = ({
@@ -25,33 +25,30 @@ const PageRating: React.FC<PageRatingProps> = ({
         <StyledContainer className={className} style={style} labelAlignment={labelAlignment}>
             <StyledLegend>{label}</StyledLegend>
             <StyledOptionsContainer>
-                <Option
+                <SadOption
                     name={name}
                     value="sad"
                     isSelected={value === 'sad'}
-                    selectedColor="#f2707a"
                     onChange={handleChange}
                 >
                     <SadIcon />
-                </Option>
-                <Option
+                </SadOption>
+                <NeutralOption
                     name={name}
                     value="neutral"
                     isSelected={value === 'neutral'}
-                    selectedColor="#ffca28"
                     onChange={handleChange}
                 >
                     <NormalIcon />
-                </Option>
-                <Option
+                </NeutralOption>
+                <HappyOption
                     name={name}
                     value="happy"
                     isSelected={value === 'happy'}
-                    selectedColor="#7bbe91"
                     onChange={handleChange}
                 >
                     <SmilingIcon />
-                </Option>
+                </HappyOption>
             </StyledOptionsContainer>
         </StyledContainer>
     );
