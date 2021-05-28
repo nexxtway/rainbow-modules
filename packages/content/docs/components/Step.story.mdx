@@ -1,0 +1,20 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Step from '../../src/components/Step';
+import * as stories from '../stories/Step.story.js';
+
+<Meta title="Modules/Content/Components/Step" component={Step} />
+
+# Overview
+
+`Step` component allows to describe a single step of a process using a header,
+description and body.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="Step">{stories.SimpleStep()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={Step} />
