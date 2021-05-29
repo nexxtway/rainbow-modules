@@ -9,12 +9,14 @@ export const StyledContainer = styled.div<{ isVisible?: boolean }>`
     width: 100%;
     min-height: 60px;
     background-color: ${(props) => props.theme.rainbow.palette.background.main};
-    border-bottom: 1px solid ${(props) => props.theme.rainbow.palette.border.main};
+    border-bottom: 1px solid ${(props) => props.theme.rainbow.palette.border.disabled};
     transition-property: transform;
     transition-duration: 200ms;
     will-change: transform;
     transform: translateY(-100%);
     z-index: ${ZINDEX_TOP_BAR};
+    box-shadow: 0 1px 0 rgba(27, 31, 35, 0.04);
+    padding: 1rem 0;
 
     ${(props) =>
         props.isVisible &&

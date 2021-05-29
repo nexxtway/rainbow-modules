@@ -9,7 +9,7 @@ const StyledTopBarContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1em;
+    padding: 0 1em;
 `;
 
 export const SimpleFloatingTopBar = () => {
