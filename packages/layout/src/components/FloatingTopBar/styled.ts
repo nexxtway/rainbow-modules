@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 import { ZINDEX_TOP_BAR } from '../../styles/zIndex';
 
-export const StyledContainer = styled.div<{ isOpen?: boolean }>`
+export const StyledContainer = styled.div<{ isVisible?: boolean }>`
     position: fixed;
     top: 0;
     left: 0;
@@ -17,7 +17,7 @@ export const StyledContainer = styled.div<{ isOpen?: boolean }>`
     z-index: ${ZINDEX_TOP_BAR};
 
     ${(props) =>
-        props.isOpen &&
+        props.isVisible &&
         `
         transform: translateY(0);
         `}

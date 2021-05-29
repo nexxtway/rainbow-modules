@@ -5,10 +5,10 @@ import { StyledContainer } from './styled';
 const FloatingTopBar: React.FC<FloatingTopBarProps> = ({
     className,
     style,
-    isOpen,
+    isVisible,
     children,
 }: FloatingTopBarProps) => (
-    <StyledContainer className={className} style={style} isOpen={isOpen}>
+    <StyledContainer className={className} style={style} isVisible={isVisible}>
         {children}
     </StyledContainer>
 );

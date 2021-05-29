@@ -13,17 +13,17 @@ const StyledTopBarContainer = styled.div`
 `;
 
 export const SimpleFloatingTopBar = () => {
-    const [isOpen, setIsOpen] = useState();
+    const [isVisible, setIsVisible] = useState();
     return (
         <Application>
-            <FloatingTopBar isOpen={isOpen}>
+            <FloatingTopBar isVisible={isVisible}>
                 <StyledTopBarContainer>
                     <h1>Hello from Rainbow Modules</h1>
                     <Button
                         id="hide-bar-button"
                         label="Hide FloatingTopBar"
                         variant="brand"
-                        onClick={() => setIsOpen(false)}
+                        onClick={() => setIsVisible(false)}
                     />
                 </StyledTopBarContainer>
             </FloatingTopBar>
@@ -31,7 +31,7 @@ export const SimpleFloatingTopBar = () => {
                 id="show-bar-button"
                 label="Show FloatingTopBar"
                 variant="brand"
-                onClick={() => setIsOpen(true)}
+                onClick={() => setIsVisible(true)}
             />
         </Application>
     );

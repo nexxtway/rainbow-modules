@@ -7,7 +7,7 @@ describe('<FloatingTopBar />', () => {
     it('should render the children passed', () => {
         const component = mount(
             <Application>
-                <FloatingTopBar isOpen>
+                <FloatingTopBar isVisible>
                     <p data-test>Test</p>
                 </FloatingTopBar>
             </Application>,
