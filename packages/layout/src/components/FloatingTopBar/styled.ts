@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { ZINDEX_TOP_BAR } from '../../styles/zIndex';
 
 export const StyledContainer = styled.div<{ isVisible?: boolean }>`
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
