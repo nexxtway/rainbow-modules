@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Application, Button } from 'react-rainbow-components';
 import styled from 'styled-components';
-import FloatingTopBar from '../../src/components/FloatingTopBar';
+import FloatingBar from '../../src/components/FloatingBar';
 
 const StyledTopBarContainer = styled.div`
     width: 100%;
@@ -12,24 +12,24 @@ const StyledTopBarContainer = styled.div`
     padding: 0 1em;
 `;
 
-export const SimpleFloatingTopBar = () => {
+export const SimpleFloatingBar = () => {
     const [isVisible, setIsVisible] = useState();
     return (
         <Application>
-            <FloatingTopBar isVisible={isVisible}>
+            <FloatingBar isVisible={isVisible}>
                 <StyledTopBarContainer>
                     <h1>Hello from Rainbow Modules</h1>
                     <Button
                         id="hide-bar-button"
-                        label="Hide FloatingTopBar"
+                        label="Hide FloatingBar"
                         variant="brand"
                         onClick={() => setIsVisible(false)}
                     />
                 </StyledTopBarContainer>
-            </FloatingTopBar>
+            </FloatingBar>
             <Button
                 id="show-bar-button"
-                label="Show FloatingTopBar"
+                label="Show FloatingBar"
                 variant="brand"
                 onClick={() => setIsVisible(true)}
             />
@@ -38,5 +38,5 @@ export const SimpleFloatingTopBar = () => {
 };
 
 export default {
-    title: 'Modules/Layout/Stories/FloatingTopBar',
+    title: 'Modules/Layout/Stories/FloatingBar',
 };

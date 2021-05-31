@@ -1,13 +1,13 @@
 import React from 'react';
-import { FloatingTopBarProps } from './types';
+import { FloatingBarProps } from './types';
 import { StyledContainer } from './styled';
 
-const FloatingTopBar: React.FC<FloatingTopBarProps> = ({
+const FloatingBar: React.FC<FloatingBarProps> = ({
     className,
     style,
     isVisible,
     children,
-}: FloatingTopBarProps) => {
+}: FloatingBarProps) => {
     return (
         <StyledContainer className={className} style={style} isVisible={isVisible}>
             {children}
@@ -15,4 +15,4 @@ const FloatingTopBar: React.FC<FloatingTopBarProps> = ({
     );
 };
 
-export default FloatingTopBar;
+export default FloatingBar;

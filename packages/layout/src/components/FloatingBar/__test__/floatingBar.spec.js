@@ -1,15 +1,15 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import { Application } from 'react-rainbow-components';
-import FloatingTopBar from '..';
+import FloatingBar from '..';
 
-describe('<FloatingTopBar />', () => {
+describe('<FloatingBar />', () => {
     it('should render the children passed', () => {
         const component = mount(
             <Application>
-                <FloatingTopBar isVisible>
+                <FloatingBar isVisible>
                     <p data-test>Test</p>
-                </FloatingTopBar>
+                </FloatingBar>
             </Application>,
         );
         expect(component.find('[data-test=true]').exists()).toBe(true);

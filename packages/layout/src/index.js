@@ -1,2 +1,2 @@
 /* eslint-disable import/prefer-default-export */
-export { default as FloatingTopBar } from './components/FloatingTopBar';
+export { default as FloatingBar } from './components/FloatingBar';

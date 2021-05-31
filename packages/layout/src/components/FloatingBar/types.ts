@@ -4,7 +4,7 @@ export interface ContainerProps {
     isVisible?: boolean;
 }
 
-export interface FloatingTopBarProps {
+export interface FloatingBarProps {
     className?: string;
     style?: CSSProperties;
     isVisible?: boolean;
