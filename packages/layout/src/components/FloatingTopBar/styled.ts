@@ -3,12 +3,9 @@ import styled from 'styled-components';
 import { ZINDEX_TOP_BAR } from '../../styles/zIndex';
 import { ContainerProps } from './types';
 
-export const StyledContainer = styled.div.attrs<ContainerProps>((props: ContainerProps) => ({
-    style: {
-        top: `${props.top}px`,
-    },
-}))<ContainerProps>`
+export const StyledContainer = styled.div<ContainerProps>`
     position: absolute;
+    top: 0;
     left: 0;
     right: 0;
     min-height: 60px;
