@@ -36,7 +36,7 @@ CodeBlock.defaultProps = {
     label: undefined,
     value: undefined,
     language: undefined,
-    showLineNumbers: true,
+    showLineNumbers: false,
 };
 
 export default CodeBlock;
