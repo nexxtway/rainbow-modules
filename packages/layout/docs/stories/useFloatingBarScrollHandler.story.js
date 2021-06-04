@@ -1,8 +1,8 @@
 import React from 'react';
 import { Application } from 'react-rainbow-components';
 import styled from 'styled-components';
-import { useFloatingBarScrollHandler } from '../../src';
-import FloatingBar from '../../../layout/src/components/FloatingBar';
+import FloatingBar from '../../src/components/FloatingBar';
+import useFloatingBarScrollHandler from '../../src/hooks/useFloatingBarScrollHandler';
 
 const Container = styled.div`
     position: relative;
@@ -47,5 +47,5 @@ export const UseFloatingBarScrollHandler = () => {
 };
 
 export default {
-    title: 'Modules/Hooks/Stories',
+    title: 'Modules/Layout/Stories',
 };
