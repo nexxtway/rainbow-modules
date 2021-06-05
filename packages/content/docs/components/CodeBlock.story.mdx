@@ -1,0 +1,20 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import CodeBlock from '../../src/components/CodeBlock';
+import * as stories from '../stories/CodeBlock.story.js';
+
+<Meta title="Modules/Content/Components/CodeBlock" component={CodeBlock} />
+
+# Overview
+
+`CodeBlock` component shows a snippet of code with syntax highlighting and a button to copy the code
+to clipboard.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="CodeBlock">{stories.CodeBlockExample()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={CodeBlock} />

@@ -9,7 +9,9 @@
     ],
     "dependencies": {
         "styled-components": "^4.3.2",
-        "@rainbow-modules/hooks": "^0.36.0"
+        "@rainbow-modules/hooks": "^0.36.0",
+        "@rainbow-modules/record": "^0.36.0",
+        "react-syntax-highlighter": "^15.4.3"
     },
     "peerDependencies": {
         "react": ">=16.8.0",
