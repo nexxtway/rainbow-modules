@@ -11,6 +11,7 @@ export const StyledContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 0;
     text-transform: ${(props) => props.textTransform};
     color: ${(props) => props.color};
     background: ${(props) => props.backgroundColor};
@@ -22,6 +23,13 @@ export const StyledContainer = styled.div`
         background: ${darken(props.backgroundColor)};
         font-weight: bold;
         `}
+`;
+
+export const StyledValue = styled.span`
+    margin-left: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 `;
 
 export const StyledIndicator = styled.span`

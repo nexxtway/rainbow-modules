@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import FloatingBar from '../../src/components/FloatingBar';
+import * as stories from '../stories/FloatingBar.story.js';
+
+<Meta title="Modules/Layout/Components/FloatingBar" component={FloatingBar} />
+
+# Overview
+
+`FloatingBar` component is a fixed top bar that animates into view when `isOpen` prop is true.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="FloatingBar">{stories.SimpleFloatingBar()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={FloatingBar} />

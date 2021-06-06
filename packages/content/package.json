@@ -1,0 +1,23 @@
+{
+    "name": "@rainbow-modules/content",
+    "version": "0.36.0",
+    "main": "lib/index.js",
+    "author": "Nexxtway Team",
+    "license": "MIT",
+    "files": [
+        "lib"
+    ],
+    "dependencies": {
+        "styled-components": "^4.3.2",
+        "@rainbow-modules/hooks": "^0.36.0",
+        "@rainbow-modules/record": "^0.36.0",
+        "react-syntax-highlighter": "^15.4.3"
+    },
+    "peerDependencies": {
+        "react": ">=16.8.0",
+        "react-rainbow-components": ">=1.15.0"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}
