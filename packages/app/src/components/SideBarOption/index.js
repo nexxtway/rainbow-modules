@@ -4,7 +4,7 @@ import SidebarItem from 'react-rainbow-components/components/SidebarItem';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 
 const SideBarOption = (props) => {
-    const { className, style, icon, selectedIcon, name, label, path, exact } = props;
+    const { className, style, icon, selectedIcon, name, label, path, exact, tooltip } = props;
     const history = useHistory();
     const match = useRouteMatch(path);
     const isSelected = match && (!exact || match.isExact);
@@ -23,6 +23,7 @@ const SideBarOption = (props) => {
             name={name}
             label={label}
             onClick={handleClick}
+            tooltip={tooltip}
         />
     );
 };
@@ -44,6 +45,8 @@ SideBarOption.propTypes = {
     path: PropTypes.string,
     /** When true, will only match if the path matches the location.pathname exactly */
     exact: PropTypes.bool,
+    /** A tooltip to show on hover the item. */
+    tooltip: PropTypes.string,
 };
 
 SideBarOption.defaultProps = {
@@ -55,6 +58,7 @@ SideBarOption.defaultProps = {
     label: undefined,
     path: undefined,
     exact: false,
+    tooltip: undefined,
 };
 
 export default SideBarOption;
