@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.37.0](https://github.com/nexxtway/rainbow-modules/compare/v0.36.0...v0.37.0) (2021-06-07)
+
+### Features
+
+-   add prop `keepDirtyOnReinitialize` to `UniversalForm` component ([#383](https://github.com/nexxtway/rainbow-modules/issues/383)) ([dbc6f64](https://github.com/nexxtway/rainbow-modules/commit/dbc6f6463ea73bbf2eb57af0181c1dddfadf56f3))
+
 # [0.36.0](https://github.com/nexxtway/rainbow-modules/compare/v0.35.2...v0.36.0) (2021-05-09)
 
 ### Bug Fixes

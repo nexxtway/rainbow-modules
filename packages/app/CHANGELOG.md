@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.37.0](https://github.com/nexxtway/rainbow-modules/compare/v0.36.0...v0.37.0) (2021-06-07)
+
+### Bug Fixes
+
+-   index.d.ts in app actions ([#381](https://github.com/nexxtway/rainbow-modules/issues/381)) ([e9c49ee](https://github.com/nexxtway/rainbow-modules/commit/e9c49ee05a2f435df45cf1006dbe778d5428c5d2))
+
+### Features
+
+-   add tooltip sidebar ([#391](https://github.com/nexxtway/rainbow-modules/issues/391)) ([fc6fe85](https://github.com/nexxtway/rainbow-modules/commit/fc6fe85dd0d4cf67770ba5e48c239df2432d1c1e))
+
 # [0.36.0](https://github.com/nexxtway/rainbow-modules/compare/v0.35.2...v0.36.0) (2021-05-09)
 
 ### Features
