@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.37.0](https://github.com/nexxtway/rainbow-modules/compare/v0.36.0...v0.37.0) (2021-06-07)
+
+### Bug Fixes
+
+-   fixed coloredstatuscolumn text too long ([#385](https://github.com/nexxtway/rainbow-modules/issues/385)) ([abb1097](https://github.com/nexxtway/rainbow-modules/commit/abb1097764e1287416e25109911864d1ca837b85))
+-   index.d.ts in app actions ([#381](https://github.com/nexxtway/rainbow-modules/issues/381)) ([e9c49ee](https://github.com/nexxtway/rainbow-modules/commit/e9c49ee05a2f435df45cf1006dbe778d5428c5d2))
+
+### Features
+
+-   add apps icons ([#382](https://github.com/nexxtway/rainbow-modules/issues/382)) ([f70eb34](https://github.com/nexxtway/rainbow-modules/commit/f70eb34675058e1282a36341b03900eb9533fdce))
+-   add prop `keepDirtyOnReinitialize` to `UniversalForm` component ([#383](https://github.com/nexxtway/rainbow-modules/issues/383)) ([dbc6f64](https://github.com/nexxtway/rainbow-modules/commit/dbc6f6463ea73bbf2eb57af0181c1dddfadf56f3))
+-   add tooltip sidebar ([#391](https://github.com/nexxtway/rainbow-modules/issues/391)) ([fc6fe85](https://github.com/nexxtway/rainbow-modules/commit/fc6fe85dd0d4cf67770ba5e48c239df2432d1c1e))
+-   added new icons ([#384](https://github.com/nexxtway/rainbow-modules/issues/384)) ([9d9a4d0](https://github.com/nexxtway/rainbow-modules/commit/9d9a4d08ba3849edee853e9c62b8e4ab2fd1cb7d))
+-   implement CodeBlock component ([#390](https://github.com/nexxtway/rainbow-modules/issues/390)) ([1e69b5b](https://github.com/nexxtway/rainbow-modules/commit/1e69b5beccb15ea42d962af26ebf5e2ce1583b6b))
+-   implement FloatingTopBar component ([#388](https://github.com/nexxtway/rainbow-modules/issues/388)) ([4d2f470](https://github.com/nexxtway/rainbow-modules/commit/4d2f47054105368103b12cbceb4f96962fb969ff))
+-   implement PageRating component ([#386](https://github.com/nexxtway/rainbow-modules/issues/386)) ([1661ebe](https://github.com/nexxtway/rainbow-modules/commit/1661ebedec716049f2854f7682b575d929f3b2e6))
+-   implement Step component ([#387](https://github.com/nexxtway/rainbow-modules/issues/387)) ([44bcac3](https://github.com/nexxtway/rainbow-modules/commit/44bcac36108a302e23ac274070da1c720e959fcf))
+-   implement useFloatingBarScrollHandler ([#389](https://github.com/nexxtway/rainbow-modules/issues/389)) ([3f3c84b](https://github.com/nexxtway/rainbow-modules/commit/3f3c84b978ff41f3c18a78eea421832afc47ecf1))
+
 # [0.36.0](https://github.com/nexxtway/rainbow-modules/compare/v0.35.2...v0.36.0) (2021-05-09)
 
 ### Bug Fixes

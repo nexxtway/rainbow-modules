@@ -17,6 +17,8 @@ export interface SideBarOptionProps {
     path?: string;
     /** When true, will only match if the path matches the location.pathname exactly */
     exact?: boolean;
-}
 
+    /** A tooltip to show on hover the item. */
+    tooltip?: string;
+}
 export default function (props: SideBarOptionProps): JSX.Element | null;

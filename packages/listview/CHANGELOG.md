@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.37.0](https://github.com/nexxtway/rainbow-modules/compare/v0.36.0...v0.37.0) (2021-06-07)
+
+### Bug Fixes
+
+-   fixed coloredstatuscolumn text too long ([#385](https://github.com/nexxtway/rainbow-modules/issues/385)) ([abb1097](https://github.com/nexxtway/rainbow-modules/commit/abb1097764e1287416e25109911864d1ca837b85))
+
 # [0.36.0](https://github.com/nexxtway/rainbow-modules/compare/v0.35.2...v0.36.0) (2021-05-09)
 
 **Note:** Version bump only for package @rainbow-modules/listview
