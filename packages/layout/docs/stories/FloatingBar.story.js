@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Application, Button, ButtonGroup, ButtonIcon, Badge } from 'react-rainbow-components';
-import { BrowserRouter } from 'react-router-dom';
 import styled from 'styled-components';
+import { RainbowFirebaseApp } from '@rainbow-modules/app';
 import { Trash, Edit, SettingsFilled, CubeFilled } from '@rainbow-modules/icons';
 import {
     RecordHeader,
@@ -111,85 +111,75 @@ export const FloatingBarWithScrollHandler = () => {
     const [isVisible, handleScroll] = useFloatingBarScrollHandler({ scrollTop: 50 });
 
     return (
-        <BrowserRouter>
-            <Application>
-                <OuterContainer>
-                    <FloatingBar isVisible={isVisible}>
-                        <StyledTopBarContainer>
-                            <TopBarContent>
+        <RainbowFirebaseApp>
+            <OuterContainer>
+                <FloatingBar isVisible={isVisible}>
+                    <StyledTopBarContainer>
+                        <TopBarContent>
+                            <RecordField label="Customer" icon={<CubeFilled />} value="John Doe" />
+                            <Actions />
+                        </TopBarContent>
+                    </StyledTopBarContainer>
+                </FloatingBar>
+                <Container onScroll={handleScroll}>
+                    <Content>
+                        <RecordHeader
+                            label="CUSTOMER"
+                            description="John Doe"
+                            actions={<Actions />}
+                            tags={<Badge label="active" />}
+                        >
+                            <RecordPrimaryDetails>
+                                <RecordField label="Organization" value="Google" />
                                 <RecordField
-                                    label="Customer"
-                                    icon={<CubeFilled />}
-                                    value="John Doe"
+                                    label="Date & Time"
+                                    value={new Date()}
+                                    type="dateTime"
                                 />
-                                <Actions />
-                            </TopBarContent>
-                        </StyledTopBarContainer>
-                    </FloatingBar>
-                    <Container onScroll={handleScroll}>
-                        <Content>
-                            <RecordHeader
-                                label="CUSTOMER"
-                                description="John Doe"
-                                actions={<Actions />}
-                                tags={<Badge label="active" />}
-                            >
-                                <RecordPrimaryDetails>
-                                    <RecordField label="Organization" value="Google" />
+                                <RecordField
+                                    label="Web page"
+                                    value="https://google.com"
+                                    href="https://google.com"
+                                    type="url"
+                                />
+                                <RecordField label="Price" value={50.5} type="currency" />
+                                <RecordField
+                                    label="Status"
+                                    component={StatusBadge}
+                                    value="success"
+                                />
+                            </RecordPrimaryDetails>
+                        </RecordHeader>
+                        <RecordSection label="Details">
+                            <RecordContainer>
+                                <RecordDetails>
+                                    <RecordField label="Id" value="1q2w3e4r5t6y7u8i" />
                                     <RecordField
-                                        label="Date & Time"
+                                        label="Date of creation"
                                         value={new Date()}
                                         type="dateTime"
                                     />
-                                    <RecordField
-                                        label="Web page"
-                                        value="https://google.com"
-                                        href="https://google.com"
-                                        type="url"
-                                    />
-                                    <RecordField label="Price" value={50.5} type="currency" />
+                                    <RecordField label="Email" value="johndoe@mail.com" />
+                                    <RecordField label="Type" value="Custom" />
+                                    <RecordField label="Business type" value="Company" />
+                                    <RecordField label="Business name" value="Google" />
+                                </RecordDetails>
+                                <Divider />
+                                <RecordDetails>
+                                    <RecordField label="Products amount" value="124" />
+                                    <RecordField label="Value" value={120345760} type="currency" />
                                     <RecordField
                                         label="Status"
+                                        value="Active"
                                         component={StatusBadge}
-                                        value="success"
                                     />
-                                </RecordPrimaryDetails>
-                            </RecordHeader>
-                            <RecordSection label="Details">
-                                <RecordContainer>
-                                    <RecordDetails>
-                                        <RecordField label="Id" value="1q2w3e4r5t6y7u8i" />
-                                        <RecordField
-                                            label="Date of creation"
-                                            value={new Date()}
-                                            type="dateTime"
-                                        />
-                                        <RecordField label="Email" value="johndoe@mail.com" />
-                                        <RecordField label="Type" value="Custom" />
-                                        <RecordField label="Business type" value="Company" />
-                                        <RecordField label="Business name" value="Google" />
-                                    </RecordDetails>
-                                    <Divider />
-                                    <RecordDetails>
-                                        <RecordField label="Products amount" value="124" />
-                                        <RecordField
-                                            label="Value"
-                                            value={120345760}
-                                            type="currency"
-                                        />
-                                        <RecordField
-                                            label="Status"
-                                            value="Active"
-                                            component={StatusBadge}
-                                        />
-                                    </RecordDetails>
-                                </RecordContainer>
-                            </RecordSection>
-                        </Content>
-                    </Container>
-                </OuterContainer>
-            </Application>
-        </BrowserRouter>
+                                </RecordDetails>
+                            </RecordContainer>
+                        </RecordSection>
+                    </Content>
+                </Container>
+            </OuterContainer>
+        </RainbowFirebaseApp>
     );
 };
 
