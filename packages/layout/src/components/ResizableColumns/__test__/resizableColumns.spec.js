@@ -11,7 +11,7 @@ describe('<ResizableColumn />', () => {
     it('should set the initial width of the left column when value is positive', () => {
         const component = mount(
             <Application>
-                <ResizableColumn initialDividerWidth={100} />
+                <ResizableColumn initialDividerPosition={100} />
             </Application>,
         );
         jest.runAllTimers();
@@ -22,7 +22,7 @@ describe('<ResizableColumn />', () => {
     it('should set the initial width of the right column when value is negative', () => {
         const component = mount(
             <Application>
-                <ResizableColumn initialDividerWidth={-100} />
+                <ResizableColumn initialDividerPosition={-100} />
             </Application>,
         );
         jest.runAllTimers();
@@ -38,7 +38,7 @@ describe('<ResizableColumn />', () => {
         const resizeFn = jest.fn();
         const component = mount(
             <Application>
-                <ResizableColumn initialDividerWidth={-100} onResize={resizeFn} />
+                <ResizableColumn initialDividerPosition={-100} onResize={resizeFn} />
             </Application>,
         );
         component.find(StyledSeparator).simulate('mousedown');
@@ -55,7 +55,7 @@ describe('<ResizableColumn />', () => {
         });
         const component = mount(
             <Application>
-                <ResizableColumn initialDividerWidth={50} />
+                <ResizableColumn initialDividerPosition={50} />
             </Application>,
         );
         jest.runAllTimers();

@@ -5,7 +5,7 @@ import getMinWidth from './helpers/getMinWidth';
 import shouldMove from './helpers/shouldMove';
 
 const ResizableColumns: React.FC<ResizableColumnsProps> = ({
-    initialDividerWidth,
+    initialDividerPosition,
     hideDivider,
     leftColumn,
     rightColumn,
@@ -32,15 +32,15 @@ const ResizableColumns: React.FC<ResizableColumnsProps> = ({
 
     const handleMouseMove = useCallback(
         (event: MouseEvent) => {
-            if (isResizing && cursorX.current && initialDividerWidth) {
-                if (initialDividerWidth >= 0) {
+            if (isResizing && cursorX.current && initialDividerPosition) {
+                if (initialDividerPosition >= 0) {
                     const dx = cursorX.current - event.pageX;
                     cursorX.current = event.pageX;
                     if (shouldMove(dx, cursorX.current, separatorRef.current)) {
                         setColumnWidth(leftColumnRef, getColumnWidth(leftColumnRef) - dx);
                         setOffset(getColumnWidth(leftColumnRef));
                     }
-                } else if (initialDividerWidth < 0 && rightColumnRef.current) {
+                } else if (initialDividerPosition < 0 && rightColumnRef.current) {
                     const dx = cursorX.current - event.pageX;
                     cursorX.current = event.pageX;
                     if (shouldMove(dx, cursorX.current, separatorRef.current)) {
@@ -50,22 +50,22 @@ const ResizableColumns: React.FC<ResizableColumnsProps> = ({
                 }
             }
         },
-        [initialDividerWidth, isResizing],
+        [initialDividerPosition, isResizing],
     );
 
     const handleMouseUp = useCallback(() => {
         cursorX.current = undefined;
         setIsResizing(false);
-        let dividerWidth;
-        if (initialDividerWidth && initialDividerWidth >= 0 && leftColumnRef.current) {
-            dividerWidth = parseInt(getComputedStyle(leftColumnRef.current).width, 10);
-        } else if (initialDividerWidth && initialDividerWidth < 0 && rightColumnRef.current) {
-            dividerWidth = parseInt(getComputedStyle(rightColumnRef.current).width, 10) * -1;
+        let dividerPosition;
+        if (initialDividerPosition && initialDividerPosition >= 0 && leftColumnRef.current) {
+            dividerPosition = parseInt(getComputedStyle(leftColumnRef.current).width, 10);
+        } else if (initialDividerPosition && initialDividerPosition < 0 && rightColumnRef.current) {
+            dividerPosition = parseInt(getComputedStyle(rightColumnRef.current).width, 10) * -1;
         }
         return onResize?.({
-            dividerWidth,
+            dividerPosition,
         });
-    }, [initialDividerWidth, onResize]);
+    }, [initialDividerPosition, onResize]);
 
     const handleMouseDown = (event: React.MouseEvent) => {
         cursorX.current = event.pageX;
@@ -73,13 +73,13 @@ const ResizableColumns: React.FC<ResizableColumnsProps> = ({
     };
 
     useEffect(() => {
-        if (initialDividerWidth && initialDividerWidth >= 0 && leftColumnRef.current) {
-            setColumnWidth(leftColumnRef, initialDividerWidth);
-            setOffset(initialDividerWidth);
-        } else if (initialDividerWidth && initialDividerWidth < 0 && rightColumnRef.current) {
-            setColumnWidth(rightColumnRef, Math.abs(initialDividerWidth));
+        if (initialDividerPosition && initialDividerPosition >= 0 && leftColumnRef.current) {
+            setColumnWidth(leftColumnRef, initialDividerPosition);
+            setOffset(initialDividerPosition);
+        } else if (initialDividerPosition && initialDividerPosition < 0 && rightColumnRef.current) {
+            setColumnWidth(rightColumnRef, Math.abs(initialDividerPosition));
         }
-    }, [initialDividerWidth]);
+    }, [initialDividerPosition]);
 
     useEffect(() => {
         if (isResizing) {
@@ -97,7 +97,7 @@ const ResizableColumns: React.FC<ResizableColumnsProps> = ({
     return (
         <StyledContainer isResizing={isResizing}>
             <StyledLeftColumn
-                initialDividerWidth={initialDividerWidth}
+                initialDividerPosition={initialDividerPosition}
                 minWidth={getMinWidth(minLeftWidth ?? {})}
                 ref={leftColumnRef}
             >
@@ -111,7 +111,7 @@ const ResizableColumns: React.FC<ResizableColumnsProps> = ({
                 ref={separatorRef}
             />
             <StyledRightColumn
-                initialDividerWidth={initialDividerWidth}
+                initialDividerPosition={initialDividerPosition}
                 minWidth={getMinWidth(minRightWidth ?? {})}
                 ref={rightColumnRef}
             >
@@ -122,7 +122,7 @@ const ResizableColumns: React.FC<ResizableColumnsProps> = ({
 };
 
 ResizableColumns.defaultProps = {
-    initialDividerWidth: undefined,
+    initialDividerPosition: undefined,
     hideDivider: false,
     leftColumn: undefined,
     rightColumn: undefined,

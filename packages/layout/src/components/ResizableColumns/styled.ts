@@ -18,8 +18,8 @@ export const StyledContainer = styled.div<ContainerProps>`
 export const StyledLeftColumn = styled.div<ColumnProps>`
     min-width: ${(props) => props.minWidth};
     ${(props) =>
-        props.initialDividerWidth &&
-        props.initialDividerWidth < 0 &&
+        props.initialDividerPosition &&
+        props.initialDividerPosition < 0 &&
         `
         flex: 1;
     `}
@@ -71,8 +71,8 @@ export const StyledDivider = styled.div.attrs<DividerProps>((props) => ({
 export const StyledRightColumn = styled.div<ColumnProps>`
     min-width: ${(props) => props.minWidth};
     ${(props) =>
-        props.initialDividerWidth &&
-        props.initialDividerWidth >= 0 &&
+        props.initialDividerPosition &&
+        props.initialDividerPosition >= 0 &&
         `
         flex: 1;
     `}

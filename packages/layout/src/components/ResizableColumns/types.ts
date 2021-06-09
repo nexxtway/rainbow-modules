@@ -13,7 +13,7 @@ export interface DividerProps {
 export interface ColumnProps {
     columnWidth?: number;
     minWidth?: string;
-    initialDividerWidth?: number;
+    initialDividerPosition?: number;
 }
 
 export type Width = {
@@ -22,17 +22,17 @@ export type Width = {
 };
 
 type OnResizeParams = {
-    dividerWidth?: number;
+    dividerPosition?: number;
 };
 
 export interface ResizableColumnsProps {
     /**
-     * Sets the initial width for the main column.
+     * The initial divider position.
      *
-     * By default the main column is the left one. Pass a value less than zero to set the right column
-     * as the main one.
+     * When passing a positive number it specifies the position from the left, and when the number
+     * is less than zero then it specifies the position from the right.
      */
-    initialDividerWidth?: number;
+    initialDividerPosition?: number;
     /**
      * When true, hides the divider until the pointer is over.
      */
@@ -58,5 +58,5 @@ export interface ResizableColumnsProps {
      *
      * Useful to store the size of the columns.
      */
-    onResize?: ({ dividerWidth }: OnResizeParams) => void;
+    onResize?: ({ dividerPosition }: OnResizeParams) => void;
 }

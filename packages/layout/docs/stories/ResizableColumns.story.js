@@ -85,7 +85,7 @@ export const ResizableColumnExample = () => {
         <Application>
             <StyledContainer>
                 <ResizableColumns
-                    initialDividerWidth={250}
+                    initialDividerPosition={250}
                     leftColumn={<LeftColumn />}
                     minLeftWidth={{ px: 100 }}
                     rightColumn={<RightColumn />}
