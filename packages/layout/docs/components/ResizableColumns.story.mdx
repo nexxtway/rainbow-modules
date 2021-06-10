@@ -1,0 +1,20 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import ResizableColumns from '../../src/components/ResizableColumns';
+import * as stories from '../stories/ResizableColumns.story.js';
+
+<Meta title="Modules/Layout/Components/ResizableColumns" component={ResizableColumns} />
+
+# Overview
+
+`ResizableColumns` component renders the content passed in two columns and allows the user to adjust the width of
+the columns.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="ResizableColumns">{stories.ResizableColumnExample()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={ResizableColumns} />
