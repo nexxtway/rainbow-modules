@@ -8,6 +8,7 @@ const context = React.createContext<Context>({
     onClick: () => {},
     registerSection: () => {},
     unregisterSection: () => {},
+    setIsResizing: () => {},
 });
 export const { Provider, Consumer } = context;
 export default context;
