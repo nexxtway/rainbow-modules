@@ -4,7 +4,8 @@ export function getChildAccordionSectionNodes(ref: HTMLElement): Array<Element> 
     return Array.from(ref.querySelectorAll('[data-id="stacked-accordion-section"]'));
 }
 
-function getRefIndex(nodes: Array<HTMLElement>, ref: HTMLElement) {
+function getRefIndex(nodes: Array<Element>, ref: HTMLElement | null) {
+    if (!ref) return 0;
     return nodes.indexOf(ref);
 }
 
