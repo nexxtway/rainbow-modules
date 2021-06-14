@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import CountryPicker from '../../src/components/CountryPicker';
+import * as stories from '../stories/CountryPicker.story.js';
+
+<Meta title="Modules/Forms/Components/CountryPicker" component={CountryPicker} />
+
+# Overview
+
+`CountryPicker` is a Picklist with all the countries. You can use it to select a country, then you get its iso code.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="CountryPicker">{stories.Basic()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={CountryPicker} />
