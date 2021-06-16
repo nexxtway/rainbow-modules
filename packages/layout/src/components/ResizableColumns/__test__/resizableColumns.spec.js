@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import { Application } from 'react-rainbow-components';
 import { act } from 'react-dom/test-utils';
 import ResizableColumn from '..';
-import { StyledSeparator } from '../styled';
+import { StyledDivider } from '../styled';
 
 jest.useFakeTimers();
 
@@ -41,7 +41,7 @@ describe('<ResizableColumn />', () => {
                 <ResizableColumn initialDividerPosition={-100} onResize={resizeFn} />
             </Application>,
         );
-        component.find(StyledSeparator).simulate('mousedown');
+        component.find(StyledDivider).simulate('mousedown');
         act(() => {
             map.mouseup();
         });
@@ -60,7 +60,7 @@ describe('<ResizableColumn />', () => {
         );
         jest.runAllTimers();
         const column = component.find(ResizableColumn).find('div').get(1);
-        component.find(StyledSeparator).simulate('mousedown', { pageX: 90 });
+        component.find(StyledDivider).simulate('mousedown', { pageX: 90 });
         act(() => {
             map.mousemove({ pageX: 100 });
             map.mouseup();
