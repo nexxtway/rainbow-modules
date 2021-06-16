@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Application, Button, ButtonGroup, ButtonIcon, Badge } from 'react-rainbow-components';
+import React from 'react';
+import { ButtonGroup, ButtonIcon, Badge } from 'react-rainbow-components';
 import styled from 'styled-components';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
 import { Trash, Edit, SettingsFilled, CubeFilled } from '@rainbow-modules/icons';
@@ -80,48 +80,21 @@ const StatusBadge = ({ value }) => {
     return <Badge label={value} variant="success" size="small" />;
 };
 
-export const SimpleFloatingBar = () => {
-    const [isVisible, setIsVisible] = useState();
-    return (
-        <Application>
-            <FloatingBar isVisible={isVisible}>
-                <StyledTopBarContainer>
-                    <TopBarContent>
-                        <h1>Hello from Rainbow Modules</h1>
-                        <Button
-                            id="hide-bar-button"
-                            label="Hide FloatingBar"
-                            variant="brand"
-                            onClick={() => setIsVisible(false)}
-                        />
-                    </TopBarContent>
-                </StyledTopBarContainer>
-            </FloatingBar>
-            <Button
-                id="show-bar-button"
-                label="Show FloatingBar"
-                variant="brand"
-                onClick={() => setIsVisible(true)}
-            />
-        </Application>
-    );
-};
-
-export const FloatingBarWithScrollHandler = () => {
+export const FloatingBarExample = () => {
     const [isVisible, handleScroll] = useFloatingBarScrollHandler({ scrollTop: 50 });
 
     return (
         <RainbowFirebaseApp>
             <OuterContainer>
                 <FloatingBar isVisible={isVisible}>
-                    <StyledTopBarContainer>
+                    <StyledTopBarContainer data-cy="topbar-container">
                         <TopBarContent>
                             <RecordField label="Customer" icon={<CubeFilled />} value="John Doe" />
                             <Actions />
                         </TopBarContent>
                     </StyledTopBarContainer>
                 </FloatingBar>
-                <Container onScroll={handleScroll}>
+                <Container onScroll={handleScroll} data-cy="scrollable">
                     <Content>
                         <RecordHeader
                             label="CUSTOMER"
