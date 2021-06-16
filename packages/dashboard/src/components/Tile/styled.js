@@ -34,6 +34,7 @@ const CssContent = css`
     border-radius: 14px;
     box-shadow: ${(props) => props.theme.rainbow.shadows.shadow_4};
     border: solid 1px rgba(227, 229, 237, 0.25);
+    box-sizing: border-box;
 `;
 
 export const StyledContainer = styled.div`
@@ -50,6 +51,12 @@ export const StyledContainer = styled.div`
         `
         min-width: auto;
         width: auto;
+    `}
+
+    ${(props) =>
+        props.variant === 'flat' &&
+        `
+        min-width: 120px;
     `}
 `;
 
@@ -86,6 +93,14 @@ export const StyledContent = styled.div`
     `};
 
     ${(props) =>
+        props.variant === 'flat' &&
+        `
+        border-radius: 8px;
+        box-shadow: 0 0 0 0 transparent;
+        border: solid 1px ${(props) => props.theme.rainbow.palette.border.main};
+    `}
+
+    ${(props) =>
         props.isPicker &&
         `
         position: relative;
@@ -116,7 +131,7 @@ export const StyledContent = styled.div`
 `;
 
 export const StyledLabelText = styled.h2`
-    font-size: 14px;
+    font-size: 12px;
     color: ${resolveColor};
     opacity: 0.7;
 
@@ -130,7 +145,7 @@ export const StyledLabelText = styled.h2`
 `;
 
 export const StyledValue = styled.h1`
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 800;
     color: ${resolveColor};
     background: ${resolveBackgroundColor};
