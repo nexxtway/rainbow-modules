@@ -5,7 +5,7 @@ import Tile from '../../src/components/Tile';
 
 const StyledContainer = styled.div`
     padding: 10px;
-    background-color: #f4f6f9;
+    background-color: #fff;
     display: flex;
     flex-wrap: wrap;
 `;
@@ -115,6 +115,51 @@ export const differentsColorsTite = () => {
                     value={8}
                     color="#ffffff"
                     backgroundColor="#f2707a"
+                    style={tileStyle}
+                />
+            </StyledContainer>
+        </Application>
+    );
+};
+
+export const variantFlat = () => {
+    const tileStyle = { marginBottom: 10, marginRight: 5, marginLeft: 5 };
+    return (
+        <Application>
+            <StyledContainer>
+                <Tile
+                    name="completed"
+                    label="Completed"
+                    value={12}
+                    variant="flat"
+                    style={tileStyle}
+                />
+                <Tile
+                    name="inProgress"
+                    label="InProgress"
+                    value={66}
+                    variant="flat"
+                    style={tileStyle}
+                />
+                <Tile
+                    name="assigned"
+                    label="Assigned"
+                    value={32}
+                    variant="flat"
+                    style={tileStyle}
+                />
+                <Tile
+                    name="unassigned"
+                    label="Unassigned"
+                    value={23}
+                    variant="flat"
+                    style={tileStyle}
+                />
+                <Tile
+                    name="cancelled"
+                    label="Cancelled"
+                    value={8}
+                    variant="flat"
                     style={tileStyle}
                 />
             </StyledContainer>
