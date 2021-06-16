@@ -15,8 +15,14 @@ export interface Section {
 }
 
 export interface StackedAccordionProps {
+    /** A CSS class for the outer element, in addition to the component's base classes. */
     className?: string;
+    /** An object with custom style applied for the outer element. */
     style?: CSSProperties;
+    /** It contain the name of the StackedAccordionSection that is expanded.
+     * It must match the name of the StackedAccordionSection. */
     activeSectionNames?: Array<string>;
-    onActiveSectionsChange?: (activeSectionNames: Array<string>) => void;
+    /** Action fired when an StackedAccordionSection is selected.
+     * Receives an array with the active section names as parameter. */
+    onToggleSection?: (activeSectionNames: Array<string>) => void;
 }

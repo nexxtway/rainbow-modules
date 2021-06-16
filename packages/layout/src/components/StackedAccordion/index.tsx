@@ -5,8 +5,10 @@ import { StyledContainer } from './styled';
 import { getChildAccordionSectionNodes, insertSectionOrderly } from './utils';
 
 const StackedAccordion: React.FC<StackedAccordionProps> = ({
+    className,
+    style,
     activeSectionNames,
-    onActiveSectionsChange,
+    onToggleSection,
     children,
 }: React.PropsWithChildren<StackedAccordionProps>) => {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -38,11 +40,11 @@ const StackedAccordion: React.FC<StackedAccordionProps> = ({
         if (isSectionActive(name)) {
             const newSections = activeSections?.filter((value) => value !== name) ?? [];
             setActiveSections(newSections);
-            if (onActiveSectionsChange) onActiveSectionsChange(newSections);
+            if (onToggleSection) onToggleSection(newSections);
         } else {
             const newSections = [...(activeSections ?? []), name];
             setActiveSections(newSections);
-            if (onActiveSectionsChange) onActiveSectionsChange(newSections);
+            if (onToggleSection) onToggleSection(newSections);
         }
     };
 
@@ -56,7 +58,12 @@ const StackedAccordion: React.FC<StackedAccordionProps> = ({
     };
 
     return (
-        <StyledContainer isResizing={isResizing} ref={containerRef}>
+        <StyledContainer
+            className={className}
+            style={style}
+            isResizing={isResizing}
+            ref={containerRef}
+        >
             <Provider value={contextValue}>{children}</Provider>
         </StyledContainer>
     );

@@ -27,12 +27,17 @@ export interface UseResizeProps {
 }
 
 export interface StackedAccordionSectionProps {
+    /** A CSS class for the outer element, in addition to the component's base classes. */
     className?: string;
+    /** An object with custom style applied for the outer element. */
     style?: CSSProperties;
+    /** The name is used to determine which StackedAccordionSection was clicked.
+     * If `name` is not passed it will be generated. */
     name?: string;
+    /** The text to be displayed as the StackedAccordionSection's label. */
     label?: ReactNode;
     defaultHeight?: number;
-    /** Specifies that the AccordionSection element should be disabled.
+    /** Specifies that the StackedAccordionSection element should be disabled.
      * This value defaults to false. */
     disabled?: boolean;
 }
