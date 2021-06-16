@@ -34,7 +34,6 @@ const CssContent = css`
     border-radius: 14px;
     box-shadow: ${(props) => props.theme.rainbow.shadows.shadow_4};
     border: solid 1px rgba(227, 229, 237, 0.25);
-    box-sizing: border-box;
 `;
 
 export const StyledContainer = styled.div`
