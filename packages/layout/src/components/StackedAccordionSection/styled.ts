@@ -2,9 +2,12 @@ import styled from 'styled-components';
 import { ContentProps, IsExpandedProps } from './types';
 
 export const StyledSection = styled.div<IsExpandedProps>`
-    border-top: solid 1px ${(props) => props.theme.rainbow.palette.border.divider};
     min-height: 1.5rem;
     position: relative;
+
+    &:not(:first-child) {
+        border-top: solid 1px ${(props) => props.theme.rainbow.palette.border.divider};
+    }
 
     &:last-child {
         border-bottom: solid 1px ${(props) => props.theme.rainbow.palette.border.divider};
