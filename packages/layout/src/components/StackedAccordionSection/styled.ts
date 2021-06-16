@@ -61,8 +61,7 @@ export const StyledSectionContent = styled.div<ContentProps>`
 `;
 
 export const StyledArrowIcon = styled.svg<IsExpandedProps>`
-    transform: rotate(-90deg);
-    fill: ${(props) => props.theme.rainbow.palette.text.header};
+    color: ${(props) => props.theme.rainbow.palette.brand.main};
     transition: transform 0.15s linear;
     vertical-align: middle;
     width: 1rem;
@@ -75,7 +74,7 @@ export const StyledArrowIcon = styled.svg<IsExpandedProps>`
     ${(props) =>
         props.isExpanded &&
         `
-            transform: rotate(0deg);
+            transform: rotate(90deg);
             transition: transform 0.15s linear;
         `};
 `;
