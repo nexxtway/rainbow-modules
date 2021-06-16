@@ -7,7 +7,7 @@ import {
     StyledSectionHeader,
     StyledResizeBar,
 } from './styled';
-import { StackedAccordionSectionProps } from './types';
+import { StackedAccordionSectionProps, MoveProps } from './types';
 import context from '../StackedAccordion/context';
 import { Context } from '../StackedAccordion/types';
 import RightArrow from './rightArrow';
@@ -22,6 +22,7 @@ const StackedAccordionSection: React.FC<StackedAccordionSectionProps> = ({
     disabled,
     children,
 }: React.PropsWithChildren<StackedAccordionSectionProps>) => {
+    const [isScrolled, setIsScrolled] = useState<boolean>(false);
     const uniqueName = useUniqueIdentifier('section');
     const buttonId = useUniqueIdentifier('accordion-button');
     const sectionRef = useRef<HTMLDivElement>(null);
@@ -38,7 +39,7 @@ const StackedAccordionSection: React.FC<StackedAccordionSectionProps> = ({
         registerSection,
         unregisterSection,
         onClick,
-        setIsResizing,
+        setIsResizing: privateSetIsResizing,
     } = useContext<Context>(context);
 
     const getCurrentName = () => name || uniqueName;
@@ -59,15 +60,18 @@ const StackedAccordionSection: React.FC<StackedAccordionSectionProps> = ({
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [name, uniqueName]);
 
-    const onResizeStart = useCallback(() => setIsResizing(true), [setIsResizing]);
-    const onResizeEnd = useCallback(() => setIsResizing(false), [setIsResizing]);
+    const onResizeStart = useCallback(() => {
+        privateSetIsResizing(true);
+    }, [privateSetIsResizing]);
+    const onResizeEnd = useCallback(() => {
+        privateSetIsResizing(false);
+    }, [privateSetIsResizing]);
 
     const handleResize = useCallback(
-        (dx: number, dy: number, clientX, clientY) => {
+        ({ dy, clientY }: MoveProps) => {
             if (!shouldMove(dy, clientY, resizeHandlerNode, true)) return;
             if (sectionRef.current) {
                 if (sectionIndex < 0) return;
-
                 if (dy > 0) {
                     // move up
                     const prevResizableSection = [...sections]
@@ -107,7 +111,6 @@ const StackedAccordionSection: React.FC<StackedAccordionSectionProps> = ({
                 } else {
                     // move down
                     if (sectionIndex < 1) return;
-
                     const nextResizableSection = sections.slice(sectionIndex).find((section) => {
                         if (section.ref.current) {
                             const {
@@ -151,7 +154,7 @@ const StackedAccordionSection: React.FC<StackedAccordionSectionProps> = ({
         [sections, activeSectionNames, sectionIndex, resizeHandlerNode],
     );
 
-    useResize({
+    const [isResizing, onMouseDown] = useResize({
         handlerElement: resizeHandlerNode,
         onMove: handleResize,
         onResizeStart,
@@ -162,12 +165,23 @@ const StackedAccordionSection: React.FC<StackedAccordionSectionProps> = ({
         if (onClick) onClick(getCurrentName());
     };
 
+    const handleScroll = (event: React.UIEvent<HTMLDivElement>) => {
+        const { scrollTop } = event.currentTarget;
+        if (isScrolled && scrollTop === 0) setIsScrolled(false);
+        if (!isScrolled && scrollTop > 0) setIsScrolled(true);
+    };
+
     const isExpanded = activeSectionNames?.some((value) => value === getCurrentName());
 
     return (
         <StyledSection className={className} style={style} isExpanded={isExpanded} ref={sectionRef}>
             <RenderIf isTrue={sectionIndex > 0 && isExpanded}>
-                <StyledResizeBar ref={resizeHandlerRef} />
+                <StyledResizeBar
+                    isResizing={isResizing}
+                    ref={resizeHandlerRef}
+                    data-resizes={getCurrentName()}
+                    onMouseDown={onMouseDown}
+                />
             </RenderIf>
             <h3>
                 <StyledSectionHeader
@@ -182,14 +196,17 @@ const StackedAccordionSection: React.FC<StackedAccordionSectionProps> = ({
                     {label}
                 </StyledSectionHeader>
             </h3>
-            <StyledSectionContent
-                id={getCurrentName()}
-                role="region"
-                aria-labelledby={buttonId}
-                isExpanded={isExpanded}
-            >
-                {children}
-            </StyledSectionContent>
+            <RenderIf isTrue={isExpanded}>
+                <StyledSectionContent
+                    id={getCurrentName()}
+                    role="region"
+                    aria-labelledby={buttonId}
+                    isScrolled={isScrolled}
+                    onScroll={handleScroll}
+                >
+                    {children}
+                </StyledSectionContent>
+            </RenderIf>
         </StyledSection>
     );
 };

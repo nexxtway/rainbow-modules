@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { IsExpandedProps } from './types';
+import { ContentProps, IsExpandedProps } from './types';
 
 export const StyledSection = styled.div<IsExpandedProps>`
     border-top: solid 1px ${(props) => props.theme.rainbow.palette.border.divider};
@@ -37,22 +37,23 @@ export const StyledSectionHeader = styled.button`
     text-transform: uppercase;
 `;
 
-export const StyledSectionContent = styled.div<IsExpandedProps>`
+export const StyledSectionContent = styled.div<ContentProps>`
     position: absolute;
     top: 1.5rem;
     bottom: 0;
     left: 0;
     right: 0;
-    overflow: hidden;
-    height: 0;
+    overflow: auto;
+    height: auto;
+    padding: 0.5rem;
     box-sizing: border-box;
+    transition-property: box-shadow;
+    transition-duration: 250ms;
 
     ${(props) =>
-        props.isExpanded &&
+        props.isScrolled &&
         `
-        overflow: auto;
-        height: auto;
-        padding: 0.5rem;
+        box-shadow: inset 1px 5px 6px -7px
     `}
 `;
 
@@ -76,7 +77,7 @@ export const StyledArrowIcon = styled.svg<IsExpandedProps>`
         `};
 `;
 
-export const StyledResizeBar = styled.div`
+export const StyledResizeBar = styled.div<{ isResizing: boolean }>`
     position: absolute;
     top: 0;
     left: 0;
@@ -84,4 +85,16 @@ export const StyledResizeBar = styled.div`
     cursor: row-resize;
     z-index: 1;
     height: 2px;
+    transition-property: background-color;
+    transition-duration: 250ms;
+
+    :hover {
+        background-color: ${(props) => props.theme.rainbow.palette.brand.main};
+    }
+
+    ${(props) =>
+        props.isResizing &&
+        `
+    background-color: ${props.theme.rainbow.palette.brand.main};
+    `}
 `;

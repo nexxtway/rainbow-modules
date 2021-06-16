@@ -4,6 +4,24 @@ export interface IsExpandedProps {
     isExpanded?: boolean;
 }
 
+export interface ContentProps {
+    isScrolled?: boolean;
+}
+
+export interface MoveProps {
+    dx: number;
+    dy: number;
+    clientX: number;
+    clientY: number;
+}
+
+export interface UseResizeProps {
+    handlerElement?: HTMLElement;
+    onMove: (params: MoveProps) => void;
+    onResizeStart?: (event: React.MouseEvent) => void;
+    onResizeEnd?: (event: MouseEvent) => void;
+}
+
 export interface StackedAccordionSectionProps {
     className?: string;
     style?: CSSProperties;
