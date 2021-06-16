@@ -1,11 +1,12 @@
 import React from 'react';
 import { StyledArrowIcon } from './styled';
-import { IsExpandedProps } from './types';
+import { ArrowIconProps } from './types';
 
-const RightArrow: React.FC<IsExpandedProps> = ({ isExpanded }: IsExpandedProps) => {
+const RightArrow: React.FC<ArrowIconProps> = ({ isExpanded, isDisabled }: ArrowIconProps) => {
     return (
         <StyledArrowIcon
             isExpanded={isExpanded}
+            isDisabled={isDisabled}
             width="6px"
             height="10px"
             viewBox="0 0 6 10"

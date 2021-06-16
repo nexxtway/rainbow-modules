@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ContentProps, IsExpandedProps } from './types';
+import { ArrowIconProps, ContentProps, IsExpandedProps } from './types';
 
 export const StyledSection = styled.div<IsExpandedProps>`
     min-height: 1.5rem;
@@ -38,6 +38,12 @@ export const StyledSectionHeader = styled.button`
     font-size: 0.875rem;
     font-weight: bold;
     text-transform: uppercase;
+
+    ${(props) =>
+        props.disabled &&
+        `
+                color: ${props.theme.rainbow.palette.text.disabled};
+            `};
 `;
 
 export const StyledSectionContent = styled.div<ContentProps>`
@@ -60,7 +66,7 @@ export const StyledSectionContent = styled.div<ContentProps>`
     `}
 `;
 
-export const StyledArrowIcon = styled.svg<IsExpandedProps>`
+export const StyledArrowIcon = styled.svg<ArrowIconProps>`
     color: ${(props) => props.theme.rainbow.palette.brand.main};
     transition: transform 0.15s linear;
     vertical-align: middle;
@@ -77,6 +83,12 @@ export const StyledArrowIcon = styled.svg<IsExpandedProps>`
             transform: rotate(90deg);
             transition: transform 0.15s linear;
         `};
+
+    ${(props) =>
+        props.isDisabled &&
+        `
+                color: ${props.theme.rainbow.palette.text.disabled};
+            `};
 `;
 
 export const StyledResizeBar = styled.div<{ isResizing: boolean }>`

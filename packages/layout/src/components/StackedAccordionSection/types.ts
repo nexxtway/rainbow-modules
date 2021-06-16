@@ -8,6 +8,10 @@ export interface ContentProps {
     isScrolled?: boolean;
 }
 
+export interface ArrowIconProps extends IsExpandedProps {
+    isDisabled?: boolean;
+}
+
 export interface MoveProps {
     dx: number;
     dy: number;

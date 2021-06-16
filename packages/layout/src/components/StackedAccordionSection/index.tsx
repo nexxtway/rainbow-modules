@@ -192,7 +192,7 @@ const StackedAccordionSection: React.FC<StackedAccordionSectionProps> = ({
                     aria-disabled={disabled}
                     onClick={handleClick}
                 >
-                    <RightArrow isExpanded={isExpanded} />
+                    <RightArrow isExpanded={isExpanded} isDisabled={disabled} />
                     {label}
                 </StyledSectionHeader>
             </h3>
