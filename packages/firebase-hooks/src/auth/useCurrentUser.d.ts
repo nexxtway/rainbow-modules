@@ -1,1 +1,3 @@
-export default function (): Record<string, unknown> | null;
+import firebase from 'firebase';
+
+export default function (): firebase.User | null;
