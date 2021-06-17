@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { CSSProperties, ReactNode } from 'react';
 
 export interface ContainerProps {
     isResizing?: boolean;
@@ -26,6 +26,10 @@ type OnResizeParams = {
 };
 
 export interface ResizableColumnsProps {
+    /** A CSS class for the outer element, in addition to the component's base classes. */
+    className?: string;
+    /** An object with custom style applied for the outer element. */
+    style?: CSSProperties;
     /**
      * The initial divider position.
      *

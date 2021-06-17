@@ -33,7 +33,6 @@ const CssContent = css`
     padding: 10px 15px 6px 15px;
     border-radius: 14px;
     box-shadow: ${(props) => props.theme.rainbow.shadows.shadow_4};
-    border: solid 1px rgba(227, 229, 237, 0.25);
 `;
 
 export const StyledContainer = styled.div`
@@ -50,6 +49,12 @@ export const StyledContainer = styled.div`
         `
         min-width: auto;
         width: auto;
+    `}
+
+    ${(props) =>
+        props.variant === 'flat' &&
+        `
+        min-width: 120px;
     `}
 `;
 
@@ -71,6 +76,7 @@ export const StyledInput = styled(HiddenElement)`
 export const StyledContent = styled.div`
     ${CssContent};
     background: ${resolveBackgroundColor};
+    border: 1px solid rgba(227, 229, 237, 0.25);
 
     ${(props) =>
         props.variant === 'badge' &&
@@ -81,9 +87,17 @@ export const StyledContent = styled.div`
         padding: 0 0 0 16px;
         border-radius: 64px;
         box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.05);
-        border: solid 1px transparent;
+        border: 1px solid transparent;
         background: ${props.theme.rainbow.palette.background.main};
     `};
+
+    ${(props) =>
+        props.variant === 'flat' &&
+        `
+        border-radius: 8px;
+        box-shadow: 0 0 0 0 transparent;
+        border: 1px solid ${props.theme.rainbow.palette.border.disabled};
+    `}
 
     ${(props) =>
         props.isPicker &&
@@ -116,7 +130,7 @@ export const StyledContent = styled.div`
 `;
 
 export const StyledLabelText = styled.h2`
-    font-size: 14px;
+    font-size: 12px;
     color: ${resolveColor};
     opacity: 0.7;
 
@@ -130,7 +144,7 @@ export const StyledLabelText = styled.h2`
 `;
 
 export const StyledValue = styled.h1`
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 800;
     color: ${resolveColor};
     background: ${resolveBackgroundColor};

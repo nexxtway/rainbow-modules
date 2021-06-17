@@ -5,6 +5,8 @@ import getMinWidth from './helpers/getMinWidth';
 import shouldMove from './helpers/shouldMove';
 
 const ResizableColumns: React.FC<ResizableColumnsProps> = ({
+    className,
+    style,
     initialDividerPosition,
     hideDivider,
     leftColumn,
@@ -95,7 +97,7 @@ const ResizableColumns: React.FC<ResizableColumnsProps> = ({
     }, [handleMouseMove, handleMouseUp, isResizing]);
 
     return (
-        <StyledContainer isResizing={isResizing}>
+        <StyledContainer className={className} style={style} isResizing={isResizing}>
             <StyledLeftColumn
                 initialDividerPosition={initialDividerPosition}
                 minWidth={getMinWidth(minLeftWidth ?? {})}
