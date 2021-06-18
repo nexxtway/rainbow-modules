@@ -99,7 +99,7 @@ export default function Tile(props) {
 
 Tile.propTypes = {
     /** Text label of the element. */
-    label: PropTypes.string,
+    label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     /** The value of the element. */
     value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     /** The color of the text. */
@@ -107,7 +107,7 @@ Tile.propTypes = {
     /** The background color of the element. */
     backgroundColor: PropTypes.string,
     /** The variant changes the appearance of the Tile. Accepted variants include default and badge. */
-    variant: PropTypes.oneOf(['default', 'badge']),
+    variant: PropTypes.oneOf(['default', 'badge', 'flat']),
     /** It is a unique value that identifies the tile option. */
     name: PropTypes.string,
     /** The id of the outer element. */
