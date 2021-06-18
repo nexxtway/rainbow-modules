@@ -1,0 +1,20 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import StackedAccordion from '../../src/components/StackedAccordion';
+import * as stories from '../stories/StackedAccordion.story.js';
+
+<Meta title="Modules/Layout/Components/StackedAccordion" component={StackedAccordion} />
+
+# Overview
+
+`StackedAccordion` component renders an accordion with resizable sections. By default open sections will
+share the available space evenly.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="StackedAccordion">{stories.BasicStackedAccordion()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={StackedAccordion} />
