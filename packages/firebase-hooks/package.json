@@ -8,13 +8,13 @@
         "lib"
     ],
     "peerDependencies": {
-        "react": ">=16.8.0"
+        "react": ">=16.8.0",
+        "firebase": "^8.2.0"
     },
     "publishConfig": {
         "access": "public"
     },
     "dependencies": {
-        "react-query": "^3.5.5",
-        "firebase": "^8.2.0"
+        "react-query": "^3.5.5"
     }
 }
