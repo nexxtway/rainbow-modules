@@ -109,3 +109,4 @@ export { default as Docs } from './components/docs';
 export { default as TwitterCircle } from './components/twitterCircle';
 export { default as Microsoft } from './components/microsoft';
 export { default as Yahoo } from './components/yahoo';
+export { default as Copy } from './components/copy';
