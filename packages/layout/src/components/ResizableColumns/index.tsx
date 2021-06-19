@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { ResizableColumnsProps } from './types';
 import { StyledContainer, StyledLeftColumn, StyledRightColumn, StyledDivider } from './styled';
 import getMinWidth from './helpers/getMinWidth';
-import shouldMove from './helpers/shouldMove';
+import shouldMove from '../../helpers/shouldMove';
 
 const ResizableColumns: React.FC<ResizableColumnsProps> = ({
     className,

@@ -12,7 +12,7 @@ import context from '../StackedAccordion/context';
 import { Context } from '../StackedAccordion/types';
 import RightArrow from './rightArrow';
 import { useResize } from './hooks/useResize';
-import shouldMove from '../ResizableColumns/helpers/shouldMove';
+import shouldMove from '../../helpers/shouldMove';
 
 const StackedAccordionSection: React.FC<StackedAccordionSectionProps> = ({
     className,

@@ -6,7 +6,7 @@ import StackedAccordionSection from '..';
 import { Provider } from '../../StackedAccordion/context';
 import { StyledResizeBar } from '../styled';
 
-jest.mock('../../ResizableColumns/helpers/shouldMove', () => ({
+jest.mock('../../../helpers/shouldMove', () => ({
     __esModule: true,
     default: () => true,
 }));
