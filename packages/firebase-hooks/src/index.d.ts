@@ -11,3 +11,4 @@ export { default as useRemoveDoc } from './firestore/useRemoveDoc';
 export { default as useUpdateDoc } from './firestore/useUpdateDoc';
 export { default as useSetDoc } from './firestore/useSetDoc';
 export { default as useBatch } from './firestore/useBatch/index';
+export { default as useUserClaims } from './auth/useUserClaims';
