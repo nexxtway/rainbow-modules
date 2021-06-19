@@ -1,0 +1,13 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import * as stories from '../stories/useUserClaims.story';
+
+<Meta title="Modules/firebase-hooks/Hooks/useUserClaims" />
+
+# Overview
+
+`useUserClaims` hook will return the claims of the current user. This makes easier working with access
+control on your app. See https://firebase.google.com/docs/auth/admin/custom-claims.
+
+<Preview>
+    <Story name="useUserClaims">{stories.gettingUserClaims()}</Story>
+</Preview>
