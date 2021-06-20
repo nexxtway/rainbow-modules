@@ -5,7 +5,7 @@ import copy from 'copy-to-clipboard';
 import { ButtonIcon } from 'react-rainbow-components';
 import InternalTooltip from 'react-rainbow-components/components/InternalTooltip';
 import { useScrollingIntent } from '@rainbow-modules/hooks';
-import { CopyToClipboard } from '@rainbow-modules/icons';
+import { Copy } from '@rainbow-modules/icons';
 import { isSupported } from './helpers';
 import messages from './messages';
 
@@ -69,7 +69,7 @@ export default function CopyToClipboardButton(props) {
                 id={id}
                 className={className}
                 style={style}
-                icon={<CopyToClipboard />}
+                icon={<Copy />}
                 onClick={handleClick}
                 onMouseEnter={() => setVisible(true)}
                 onMouseLeave={hideTooltip}
