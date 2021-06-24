@@ -1,0 +1,20 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import LinkButton from '../../src/components/LinkButton';
+import * as stories from '../stories/LinkButton.story.js';
+
+<Meta title="Modules/Misc/Components/LinkButton" component={LinkButton} />
+
+# Overview
+
+`LinkButton` renders a _react-router_ `Link` with `Button` styles. If target is '\_blank' then a regular anchor element
+with `Button` styles is rendered.
+
+### This is an example with the RecordDetails.
+
+<Preview>
+    <Story name="LinkButton">{stories.BasicLinkButton()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={LinkButton} />
