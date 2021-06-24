@@ -108,6 +108,9 @@ import {
     TwitterCircle,
     Microsoft,
     Yahoo,
+    Copy,
+    Bell,
+    ChevronDown,
 } from '../../../src';
 
 export default [
@@ -573,6 +576,11 @@ export default [
         icon: ChevronLeft,
     },
     {
+        name: 'chevronDown',
+        category: 'standard',
+        icon: ChevronDown,
+    },
+    {
         name: 'shoppingCartFilled',
         category: 'standard',
         icon: ShoppingCartFilled,
@@ -656,5 +664,15 @@ export default [
         name: 'yahoo',
         category: 'custom',
         icon: Yahoo,
+    },
+    {
+        name: 'copy',
+        category: 'standard',
+        icon: Copy,
+    },
+    {
+        name: 'bell',
+        category: 'standard',
+        icon: Bell,
     },
 ];

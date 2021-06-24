@@ -78,7 +78,7 @@ export { default as OneFilled } from './components/oneFilled';
 export { default as List } from './components/list';
 export { default as Seat } from './components/seat';
 export { default as FrontCar } from './components/frontCar';
-export { default as Upadte } from './components/update';
+export { default as Update } from './components/update';
 export { default as PlaneFilled } from './components/planeFilled';
 export { default as InfoCircleFilled } from './components/infoCircleFilled';
 export { default as CheckCircleFilled } from './components/checkCircleFilled';
