@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 
 export interface CopyButtonProps {
     value?: string;
@@ -8,6 +8,8 @@ export interface CopyButtonProps {
 }
 
 export interface CodeBlockProps {
+    className?: string;
+    style?: CSSProperties;
     language?: string;
     label?: string;
     value?: string;

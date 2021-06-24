@@ -8,6 +8,8 @@ import CopyButton from './copyButton';
 import CopiedMessage from './copiedMessage';
 
 const CodeBlock: React.FC<CodeBlockProps> = ({
+    className,
+    style,
     label,
     value,
     language,
@@ -35,7 +37,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
     );
 
     return (
-        <StyledContainer>
+        <StyledContainer className={className} style={style}>
             <RenderIf isTrue={!hideHeader}>
                 <StyledHeader>
                     <StyledLabel>{label}</StyledLabel>
