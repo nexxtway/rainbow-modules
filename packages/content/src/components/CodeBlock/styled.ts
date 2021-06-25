@@ -22,6 +22,7 @@ export const StyledLabel = styled.h3`
 `;
 
 export const StyledContent = styled.div`
+    position: relative;
     padding: 0.5rem;
     background-color: ${(props) => props.theme.rainbow.palette.background.disabled};
 `;
@@ -35,4 +36,36 @@ export const StyledPre = styled.pre`
         color: ${(props) => props.theme.rainbow.palette.text.disabled};
         font-weight: bold;
     }
+`;
+
+export const StyledCopyButton = styled.div<{ hideHeader?: boolean }>`
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > svg {
+        color: ${(props) => props.theme.rainbow.palette.success.dark};
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    ${(props) =>
+        props.hideHeader &&
+        `
+    position: absolute;
+    top: 2px;
+    right: 2px;    
+    `}
+`;
+
+export const StyledCopiedMessage = styled.div`
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 6px 12px;
+    border-radius: 14px;
+    color: ${(props) => props.theme.rainbow.palette.success.dark};
+    background-color: ${(props) => props.theme.rainbow.palette.background.main};
 `;
