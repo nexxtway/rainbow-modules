@@ -18,7 +18,7 @@ import {
     ShortcutIcon,
     ShortcutLabel,
 } from './styled';
-import ReturnKey from './icons/returnKey';
+import ReturnKey from '../../icons/returnKey';
 import EscKey from './icons/escKey';
 
 const UP_KEY = 38;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { RenderIf } from 'react-rainbow-components';
 import { Close } from '@rainbow-modules/icons';
+import ReturnKey from '../../icons/returnKey';
 import { StyledTrailing, Divider, StyledTrailingMessage, StyledButtonIcon } from './styled';
 import { TrailingProps } from './types';
 
@@ -17,7 +18,10 @@ const Trailing = React.forwardRef<HTMLDivElement, TrailingProps>(
                     <Divider />
                 </RenderIf>
                 <RenderIf isTrue={shouldRenderMessage}>
-                    <StyledTrailingMessage>Enter to search</StyledTrailingMessage>
+                    <StyledTrailingMessage>
+                        <ReturnKey />
+                        &nbsp; to search
+                    </StyledTrailingMessage>
                 </RenderIf>
             </StyledTrailing>
         );
