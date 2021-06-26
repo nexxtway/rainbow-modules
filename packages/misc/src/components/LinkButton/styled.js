@@ -16,7 +16,7 @@ export const StyledLink = attachThemeAttrs(
     styled(({ className, style, children, to, target }) => {
         const As = target === '_blank' ? 'a' : Link;
         return (
-            <As className={className} style={style} to={to} href={to}>
+            <As className={className} style={style} to={to} href={to} target={target}>
                 {children}
             </As>
         );
