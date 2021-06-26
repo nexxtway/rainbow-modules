@@ -1,13 +1,14 @@
 import { CSSProperties } from 'react';
 import { ButtonIconVariant } from 'react-rainbow-components/components/types';
-import { LinkProps } from 'react-router-dom';
 
 export interface ButtonProps {
-    className: string;
-    style: CSSProperties;
+    className?: string;
+    style?: CSSProperties;
     variant?: ButtonIconVariant;
     shaded?: boolean;
     size?: 'small' | 'medium' | 'large';
+    to?: string;
+    target?: string;
 }
 
-export type LinkButtonProps = React.PropsWithChildren<ButtonProps & LinkProps>;
+export type LinkButtonProps = React.PropsWithChildren<ButtonProps>;

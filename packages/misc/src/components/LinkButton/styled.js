@@ -13,10 +13,13 @@ import { Link } from 'react-router-dom';
 
 // eslint-disable-next-line import/prefer-default-export
 export const StyledLink = attachThemeAttrs(
-    styled(({ theme, palette, shadows, inverse, variant, ...rest }) => {
-        const As = rest.target === '_blank' ? 'a' : Link;
-        // eslint-disable-next-line jsx-a11y/anchor-has-content
-        return <As {...rest} />;
+    styled(({ className, style, children, to, target }) => {
+        const As = target === '_blank' ? 'a' : Link;
+        return (
+            <As className={className} style={style} to={to} href={to}>
+                {children}
+            </As>
+        );
     }),
 ).attrs((props) => {
     if (props.palette.isDark) {
