@@ -26,17 +26,18 @@ const InputSearch: React.FC<InputSearchProps> = ({
         }
     }, [paddingRight, value]);
 
+    const clear = () => {
+        if (onChange) onChange('');
+        if (inputRef.current) inputRef.current.focus();
+    };
+
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (onChange) onChange(event.target.value);
     };
 
     const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if (onSearch && event.key === 'Enter') onSearch(value);
-    };
-
-    const clear = () => {
-        if (onChange) onChange('');
-        if (inputRef.current) inputRef.current.focus();
+        if (event.key === 'Escape') clear();
     };
 
     return (
