@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { MagnifyingGlass } from '@rainbow-modules/icons';
 import { InputComponent, InputSearchProps } from './types';
 import { StyledContainer, StyledInput } from './styled';
@@ -17,14 +17,6 @@ const InputSearch: React.FC<InputSearchProps> = ({
 }: InputSearchProps) => {
     const trailingRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<InputComponent>(null);
-    const [paddingRight, setPaddingRight] = useState<number>();
-
-    useLayoutEffect(() => {
-        if (trailingRef.current) {
-            const { width } = trailingRef.current.getBoundingClientRect();
-            if (paddingRight !== width) setPaddingRight(width);
-        }
-    }, [paddingRight, value]);
 
     const clear = () => {
         if (onChange) onChange('');
@@ -39,6 +31,8 @@ const InputSearch: React.FC<InputSearchProps> = ({
         if (onSearch && event.key === 'Enter') onSearch(value);
         if (event.key === 'Escape') clear();
     };
+
+    const paddingRight = variant === 'default' ? '8rem' : '2.5rem';
 
     return (
         <StyledContainer className={className} style={style}>

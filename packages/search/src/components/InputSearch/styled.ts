@@ -5,9 +5,9 @@ export const StyledContainer = styled.div`
     position: relative;
 `;
 
-export const StyledInput = styled(Input)<{ paddingRight?: number }>`
+export const StyledInput = styled(Input)<{ paddingRight?: string }>`
     && input {
-        padding-right: ${(props) => props.paddingRight}px;
+        padding-right: ${(props) => props.paddingRight};
     }
 `;
 

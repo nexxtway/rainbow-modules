@@ -1,6 +1,6 @@
 import { CSSProperties, ReactNode } from 'react';
 
-type Variant = 'default' | 'realtime';
+export type Variant = 'default' | 'realtime';
 
 export interface InputComponent {
     focus: () => void;
