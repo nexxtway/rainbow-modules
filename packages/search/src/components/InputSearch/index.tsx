@@ -37,6 +37,7 @@ const InputSearch: React.FC<InputSearchProps> = ({
     return (
         <StyledContainer className={className} style={style}>
             <StyledInput
+                type="search"
                 name={name}
                 icon={<MagnifyingGlass />}
                 paddingRight={paddingRight}
