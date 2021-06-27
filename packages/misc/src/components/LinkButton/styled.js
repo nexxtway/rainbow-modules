@@ -14,9 +14,11 @@ import { Link } from 'react-router-dom';
 // eslint-disable-next-line import/prefer-default-export
 export const StyledLink = attachThemeAttrs(
     styled(({ className, style, children, to, target }) => {
-        const As = target === '_blank' ? 'a' : Link;
+        const isTargetBlank = target === '_blank';
+        const As = isTargetBlank ? 'a' : Link;
+        const rel = isTargetBlank ? 'noopener noreferrer' : undefined;
         return (
-            <As className={className} style={style} to={to} href={to} target={target}>
+            <As className={className} style={style} to={to} href={to} target={target} rel={rel}>
                 {children}
             </As>
         );
