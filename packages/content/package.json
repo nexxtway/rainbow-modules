@@ -10,11 +10,13 @@
     "dependencies": {
         "@rainbow-modules/hooks": "^0.37.0",
         "@rainbow-modules/record": "^0.37.0",
+        "@rainbow-modules/icons": "^0.37.0",
         "react-syntax-highlighter": "^15.4.3",
         "styled-components": "^4.3.2"
     },
     "peerDependencies": {
         "react": ">=16.8.0",
+        "react-intl": ">=4.0.0",
         "react-rainbow-components": ">=1.15.0"
     },
     "publishConfig": {
