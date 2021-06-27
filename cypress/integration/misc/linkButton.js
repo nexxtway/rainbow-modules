@@ -1,5 +1,5 @@
 const FLOATING_TOP_BAR_URL =
-    'http://localhost:5555/iframe.html?id=modules-misc-stories-linkbutton--basic-link-button';
+    '/iframe.html?id=modules-misc-stories-linkbutton--link-button-variants';
 
 describe('<LinkButton />', () => {
     beforeEach(() => {
@@ -7,7 +7,7 @@ describe('<LinkButton />', () => {
     });
 
     it('should navigate when a Link is clicked', () => {
-        cy.get('a').contains('Neutral').click();
+        cy.get('a').contains('Button Neutral').click();
         cy.get('[data-cy="neutral"]').should('exist');
     });
 
