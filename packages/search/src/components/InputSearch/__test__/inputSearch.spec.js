@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import { Application } from 'react-rainbow-components';
 import InputSearch from '..';
 
-describe('<Trailing />', () => {
+describe('<InputSearch />', () => {
     it('should fire onChange event', () => {
         const changeFn = jest.fn();
         const component = mount(
