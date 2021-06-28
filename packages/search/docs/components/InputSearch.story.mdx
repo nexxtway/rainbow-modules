@@ -1,0 +1,20 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import InputSearch from '../../src/components/InputSearch';
+import * as stories from '../stories/InputSearch.story.js';
+
+<Meta title="Modules/Search/Components/InputSearch" component={InputSearch} />
+
+# Overview
+
+`InputSearch` provides a text input with search functions, including a clear button and a message to
+indicate keyboard shortcut for search. When `Enter` key is pressed `onSearch` callback is executed.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="InputSearch">{stories.BasicInputSearch()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={InputSearch} />
