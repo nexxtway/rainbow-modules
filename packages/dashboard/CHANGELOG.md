@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.38.0](https://github.com/nexxtway/rainbow-modules/compare/v0.37.0...v0.38.0) (2021-06-29)
+
+### Bug Fixes
+
+-   tile border-color ([#401](https://github.com/nexxtway/rainbow-modules/issues/401)) ([440ec70](https://github.com/nexxtway/rainbow-modules/commit/440ec709d464243c562857adbb0e2d0c47db3f53))
+-   tile styles ([#399](https://github.com/nexxtway/rainbow-modules/issues/399)) ([edabd62](https://github.com/nexxtway/rainbow-modules/commit/edabd62f21e97d0288b01763fd20a2ce3d91c9a2))
+
 # [0.37.0](https://github.com/nexxtway/rainbow-modules/compare/v0.36.0...v0.37.0) (2021-06-07)
 
 **Note:** Version bump only for package @rainbow-modules/dashboard

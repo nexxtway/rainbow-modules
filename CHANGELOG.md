@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.38.0](https://github.com/nexxtway/rainbow-modules/compare/v0.37.0...v0.38.0) (2021-06-29)
+
+### Bug Fixes
+
+-   add `className` and `style` props to ResizableColumns ([#397](https://github.com/nexxtway/rainbow-modules/issues/397)) ([ba39886](https://github.com/nexxtway/rainbow-modules/commit/ba39886344801a33497b4366379d1aef9c2ec72a))
+-   add missing dependency to 'content' package ([#406](https://github.com/nexxtway/rainbow-modules/issues/406)) ([93d4ee2](https://github.com/nexxtway/rainbow-modules/commit/93d4ee2039a95dbab769c00f99d02709ff638028))
+-   fix ResizableColumns tests ([#394](https://github.com/nexxtway/rainbow-modules/issues/394)) ([701da19](https://github.com/nexxtway/rainbow-modules/commit/701da19ed54231bcbc010d4bf18b697623de0702))
+-   improve `CodeBlock` component ([#403](https://github.com/nexxtway/rainbow-modules/issues/403)) ([debe451](https://github.com/nexxtway/rainbow-modules/commit/debe4517b785112eac2af4f1cb7e34d7f707d1d1))
+-   move `shouldMove` function to package helpers ([#402](https://github.com/nexxtway/rainbow-modules/issues/402)) ([0535b02](https://github.com/nexxtway/rainbow-modules/commit/0535b02375ac307cb04787ae5b52027c7f1b261d))
+-   tile border-color ([#401](https://github.com/nexxtway/rainbow-modules/issues/401)) ([440ec70](https://github.com/nexxtway/rainbow-modules/commit/440ec709d464243c562857adbb0e2d0c47db3f53))
+-   tile styles ([#399](https://github.com/nexxtway/rainbow-modules/issues/399)) ([edabd62](https://github.com/nexxtway/rainbow-modules/commit/edabd62f21e97d0288b01763fd20a2ce3d91c9a2))
+
+### Features
+
+-   add CountryPicker ([#396](https://github.com/nexxtway/rainbow-modules/issues/396)) ([f8501c2](https://github.com/nexxtway/rainbow-modules/commit/f8501c29f4a649b495696300698edbaecf3d6980))
+-   implement `InputSearch` component ([#405](https://github.com/nexxtway/rainbow-modules/issues/405)) ([406ed4d](https://github.com/nexxtway/rainbow-modules/commit/406ed4da2e23c85caeff9c412888d626e73bc1bd))
+-   implement `LinkButton` component ([#404](https://github.com/nexxtway/rainbow-modules/issues/404)) ([bec5239](https://github.com/nexxtway/rainbow-modules/commit/bec5239231ef19b16a8859d4f9d5a34fb3a2059e))
+-   implement `useUserClaims` hook ([#400](https://github.com/nexxtway/rainbow-modules/issues/400)) ([88009ae](https://github.com/nexxtway/rainbow-modules/commit/88009aec4d8a2380c924a19399d614c9ebffab6a))
+-   implement FloatingBar example ([#393](https://github.com/nexxtway/rainbow-modules/issues/393)) ([d39ab24](https://github.com/nexxtway/rainbow-modules/commit/d39ab2482e76606d89cd3232b6c05c7fbddfe942))
+-   implement ResizableColumns component ([#392](https://github.com/nexxtway/rainbow-modules/issues/392)) ([985644e](https://github.com/nexxtway/rainbow-modules/commit/985644e70db24aad78e15b05a2c666f2d600c316))
+-   implement StackedAccordion component ([#395](https://github.com/nexxtway/rainbow-modules/issues/395)) ([184d7cc](https://github.com/nexxtway/rainbow-modules/commit/184d7cc17011cd5eb63e78d15217564f25113af1))
+
 # [0.37.0](https://github.com/nexxtway/rainbow-modules/compare/v0.36.0...v0.37.0) (2021-06-07)
 
 ### Bug Fixes

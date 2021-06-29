@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.38.0](https://github.com/nexxtway/rainbow-modules/compare/v0.37.0...v0.38.0) (2021-06-29)
+
+### Features
+
+-   implement `useUserClaims` hook ([#400](https://github.com/nexxtway/rainbow-modules/issues/400)) ([88009ae](https://github.com/nexxtway/rainbow-modules/commit/88009aec4d8a2380c924a19399d614c9ebffab6a))
+
 # [0.37.0](https://github.com/nexxtway/rainbow-modules/compare/v0.36.0...v0.37.0) (2021-06-07)
 
 **Note:** Version bump only for package @rainbow-modules/firebase-hooks

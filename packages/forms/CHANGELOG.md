@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.38.0](https://github.com/nexxtway/rainbow-modules/compare/v0.37.0...v0.38.0) (2021-06-29)
+
+### Features
+
+-   add CountryPicker ([#396](https://github.com/nexxtway/rainbow-modules/issues/396)) ([f8501c2](https://github.com/nexxtway/rainbow-modules/commit/f8501c29f4a649b495696300698edbaecf3d6980))
+
 # [0.37.0](https://github.com/nexxtway/rainbow-modules/compare/v0.36.0...v0.37.0) (2021-06-07)
 
 ### Features

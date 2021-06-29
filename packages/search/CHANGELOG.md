@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.38.0](https://github.com/nexxtway/rainbow-modules/compare/v0.37.0...v0.38.0) (2021-06-29)
+
+### Features
+
+-   implement `InputSearch` component ([#405](https://github.com/nexxtway/rainbow-modules/issues/405)) ([406ed4d](https://github.com/nexxtway/rainbow-modules/commit/406ed4da2e23c85caeff9c412888d626e73bc1bd))
+
 # [0.37.0](https://github.com/nexxtway/rainbow-modules/compare/v0.36.0...v0.37.0) (2021-06-07)
 
 **Note:** Version bump only for package @rainbow-modules/search

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.38.0](https://github.com/nexxtway/rainbow-modules/compare/v0.37.0...v0.38.0) (2021-06-29)
+
+### Bug Fixes
+
+-   improve `CodeBlock` component ([#403](https://github.com/nexxtway/rainbow-modules/issues/403)) ([debe451](https://github.com/nexxtway/rainbow-modules/commit/debe4517b785112eac2af4f1cb7e34d7f707d1d1))
+
 # [0.37.0](https://github.com/nexxtway/rainbow-modules/compare/v0.36.0...v0.37.0) (2021-06-07)
 
 ### Features
