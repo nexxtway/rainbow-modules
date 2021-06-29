@@ -36,6 +36,7 @@ export const StyledSectionHeader = styled.button`
     width: 100%;
     height: 1.5rem;
     font-size: 0.875rem;
+    line-height: 1.75rem;
     font-weight: bold;
     text-transform: uppercase;
 
@@ -54,7 +55,7 @@ export const StyledSectionContent = styled.div<ContentProps>`
     right: 0;
     overflow: auto;
     height: auto;
-    padding: 0.5rem;
+    padding: 0;
     box-sizing: border-box;
     transition-property: box-shadow;
     transition-duration: 250ms;
