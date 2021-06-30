@@ -12,6 +12,7 @@ const InputSearch: React.FC<InputSearchProps> = ({
     name,
     value,
     variant,
+    placeholder,
     onChange,
     onSearch,
 }: InputSearchProps) => {
@@ -47,6 +48,7 @@ const InputSearch: React.FC<InputSearchProps> = ({
                 onChange={handleChange}
                 onKeyDown={handleKeyDown}
                 ref={inputRef}
+                placeholder={placeholder}
             />
             <Trailing value={value} variant={variant} onClear={clear} ref={trailingRef} />
         </StyledContainer>
@@ -60,6 +62,7 @@ InputSearch.defaultProps = {
     readOnly: false,
     value: undefined,
     name: undefined,
+    placeholder: undefined,
     variant: 'default',
 };
 

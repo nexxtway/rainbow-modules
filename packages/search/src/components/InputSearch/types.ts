@@ -21,6 +21,7 @@ export interface InputSearchProps {
     name?: string;
     variant?: Variant;
     value?: string;
+    placeholder?: string;
     disabled?: boolean;
     readOnly?: boolean;
     onChange?: (value: string | undefined) => void;
