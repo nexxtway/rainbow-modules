@@ -104,3 +104,8 @@ export { default as TwitterCircle } from './components/twitterCircle';
 export { default as Microsoft } from './components/microsoft';
 export { default as Yahoo } from './components/yahoo';
 export { default as Copy } from './components/copy';
+
+// File icons
+export { default as JavascriptFile } from './components/javascriptFile';
+export { default as SvgFile } from './components/svgFile';
+export { default as JsonFile } from './components/jsonFile';
