@@ -51,6 +51,10 @@ export interface SourceTreeProps extends TreeProps {
     icon?: ReactNode;
 }
 
+export interface ActionButtonProps {
+    tooltip?: string;
+}
+
 export interface SourceFilePreviewProps {
     isLoading?: boolean;
     language?: string;

@@ -1,15 +1,15 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { Tree } from 'react-rainbow-components';
+import { RenderIf, Tree } from 'react-rainbow-components';
 import { Download as DownloadIcon } from '@rainbow-modules/icons';
+import { OnResizeParams } from 'layout/src/components/ResizableColumns/types';
+import { useIntl } from 'react-intl';
 import { CodeViewerProps, DataItem, SelectValue } from './types';
 import {
     Container,
     Title,
     Content,
     ControlBar,
-    ActionButton,
-    SpinnerIcon,
     LeftColumn,
     RightColumn,
     StyledResizableColumns,
@@ -19,8 +19,8 @@ import SourceTree from './sourceTree';
 import SourceFilePreview from './sourceFilePreview';
 import generateTreeNode from './helpers/generateTreeNode';
 import getIconForFolder from './helpers/getIconForFolder';
-
-const map = new Map();
+import ActionButton from './actionButton';
+import messages from './messages';
 
 const renderComponent = (componentJsx: React.ReactElement, isFullScreenMode: boolean) => {
     if (isFullScreenMode) {
@@ -36,6 +36,9 @@ const CodeViewer: React.FC<CodeViewerProps> = ({
     onFileSelect,
     onDownload,
 }: CodeViewerProps) => {
+    const intl = useIntl();
+
+    const [initialDividerPosition, setIinitialDividerPosition] = useState(250);
     const [isFullScreen, setIsFullScreen] = useState(false);
     const [isSourceTreeVisible, setSourceTreeVisible] = useState(true);
     const [isLoadingTree, setIsLoadingTree] = useState(true);
@@ -47,6 +50,8 @@ const CodeViewer: React.FC<CodeViewerProps> = ({
     const selectedNodeName = selectedNode && selectedNode?.name;
     const selectedFilename = selectedNode && selectedNode?.label;
 
+    const handleColumnResize = ({ dividerPosition }: OnResizeParams) =>
+        setIinitialDividerPosition(dividerPosition ?? 250);
     const toggleFullScreen = () => setIsFullScreen(!isFullScreen);
     const toggleSourceTree = () => setSourceTreeVisible(!isSourceTreeVisible);
 
@@ -137,35 +142,36 @@ const CodeViewer: React.FC<CodeViewerProps> = ({
             <Content>
                 <ControlBar>
                     <ActionButton
-                        name="source code explorer"
-                        title="Toggle Source explorer"
+                        tooltip={intl.formatMessage(messages.toggleSourceExplorer)}
                         onClick={toggleSourceTree}
                     >
                         <SourceTreeToggleIcon />
                     </ActionButton>
                     <ActionButton
-                        name="fullscreen mode"
-                        title="Toggle fullscreen mode"
+                        tooltip={intl.formatMessage(messages.toggleFullscreen)}
                         onClick={toggleFullScreen}
                     >
                         <FullScreenToggleIcon />
                     </ActionButton>
                     <ActionButton
-                        name="download"
-                        title="Download full source code"
+                        tooltip={intl.formatMessage(messages.downloadSourceCode)}
                         onClick={onDownload}
                     >
                         <DownloadIcon />
                     </ActionButton>
                 </ControlBar>
-                <StyledResizableColumns
-                    initialDividerPosition={250}
-                    leftColumn={leftColumn}
-                    minLeftWidth={{ px: 150 }}
-                    rightColumn={rightColumn}
-                    minRightWidth={{ percent: 25 }}
-                    hideDivider
-                />
+                <RenderIf isTrue={isSourceTreeVisible}>
+                    <StyledResizableColumns
+                        initialDividerPosition={initialDividerPosition}
+                        leftColumn={leftColumn}
+                        minLeftWidth={{ px: 150 }}
+                        rightColumn={rightColumn}
+                        minRightWidth={{ percent: 25 }}
+                        onResize={handleColumnResize}
+                        hideDivider
+                    />
+                </RenderIf>
+                <RenderIf isTrue={!isSourceTreeVisible}>{rightColumn}</RenderIf>
             </Content>
         </Container>,
         isFullScreen,

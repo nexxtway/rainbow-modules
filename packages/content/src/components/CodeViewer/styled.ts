@@ -157,7 +157,7 @@ export const StyledSpinner = styled(Spinner)`
     transform: unset;
 `;
 
-export const ActionButton = styled.button`
+export const StyledActionButton = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;

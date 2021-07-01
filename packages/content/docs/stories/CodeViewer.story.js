@@ -1,7 +1,7 @@
 import React from 'react';
-import { Application } from 'react-rainbow-components';
-import { RainbowLogo } from '@rainbow-modules/icons';
 import styled from 'styled-components';
+import { RainbowFirebaseApp } from '@rainbow-modules/app';
+import { RainbowLogo } from '@rainbow-modules/icons';
 import CodeViewer from '../../src/components/CodeViewer';
 
 const dir = {
@@ -96,7 +96,7 @@ export const CodeViewerExample = () => {
     };
 
     return (
-        <Application>
+        <RainbowFirebaseApp>
             <Container>
                 <CodeViewer
                     icon={<RainbowLogo />}
@@ -105,7 +105,7 @@ export const CodeViewerExample = () => {
                     onFileSelect={onFileSelect}
                 />
             </Container>
-        </Application>
+        </RainbowFirebaseApp>
     );
 };
 
