@@ -14,6 +14,8 @@ const InputSearch: React.FC<InputSearchProps> = ({
     variant,
     onChange,
     onSearch,
+    placeholder,
+    autoComplete,
 }: InputSearchProps) => {
     const trailingRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<InputComponent>(null);
@@ -47,6 +49,8 @@ const InputSearch: React.FC<InputSearchProps> = ({
                 onChange={handleChange}
                 onKeyDown={handleKeyDown}
                 ref={inputRef}
+                placeholder={placeholder}
+                autoComplete={autoComplete}
             />
             <Trailing value={value} variant={variant} onClear={clear} ref={trailingRef} />
         </StyledContainer>
@@ -61,6 +65,8 @@ InputSearch.defaultProps = {
     value: undefined,
     name: undefined,
     variant: 'default',
+    placeholder: undefined,
+    autoComplete: 'off',
 };
 
 export default InputSearch;
