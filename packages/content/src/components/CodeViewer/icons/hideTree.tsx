@@ -1,6 +1,7 @@
 import React from 'react';
+import { BaseProps } from '../types';
 
-const HideTree: React.FC = ({ className, style }) => {
+const HideTree: React.FC<BaseProps> = ({ className, style }: BaseProps) => {
     return (
         <svg
             className={className}

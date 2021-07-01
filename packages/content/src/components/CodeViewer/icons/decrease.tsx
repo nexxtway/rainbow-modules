@@ -1,6 +1,7 @@
 import React from 'react';
+import { BaseProps } from '../types';
 
-const Decrease: React.FC = ({ className, style }) => {
+const Decrease: React.FC<BaseProps> = ({ className, style }: BaseProps) => {
     return (
         <svg
             className={className}

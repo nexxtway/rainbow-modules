@@ -1,6 +1,7 @@
 import React from 'react';
+import { BaseProps } from '../types';
 
-const ShowTree: React.FC = ({ className, style }) => {
+const ShowTree: React.FC<BaseProps> = ({ className, style }: BaseProps) => {
     return (
         <svg
             className={className}

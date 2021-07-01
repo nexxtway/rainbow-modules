@@ -50,6 +50,18 @@ const dir = {
             fileName: 'config.json',
             type: 'file',
         },
+        {
+            fileName: 'package.json',
+            type: 'file',
+        },
+        {
+            fileName: 'yarn.lock',
+            type: 'file',
+        },
+        {
+            fileName: 'readme.md',
+            type: 'file',
+        },
     ],
 };
 

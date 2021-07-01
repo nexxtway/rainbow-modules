@@ -115,3 +115,6 @@ export { default as Copy } from './components/copy';
 export { default as JavascriptFile } from './components/javascriptFile';
 export { default as SvgFile } from './components/svgFile';
 export { default as JsonFile } from './components/jsonFile';
+export { default as YarnLockFile } from './components/yarnLockFile';
+export { default as ReadmeFile } from './components/readmeFile';
+export { default as NodeFile } from './components/nodeFile';

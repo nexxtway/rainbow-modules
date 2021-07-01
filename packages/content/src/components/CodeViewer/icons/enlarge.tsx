@@ -1,6 +1,7 @@
 import React from 'react';
+import { BaseProps } from '../types';
 
-const Enlarge: React.FC = ({ className, style }) => {
+const Enlarge: React.FC<BaseProps> = ({ className, style }: BaseProps) => {
     return (
         <svg
             className={className}
