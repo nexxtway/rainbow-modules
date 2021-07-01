@@ -65,7 +65,7 @@ InputSearch.defaultProps = {
     style: undefined,
     disabled: false,
     readOnly: false,
-    value: undefined,
+    value: '',
     name: undefined,
     variant: 'default',
     placeholder: undefined,
