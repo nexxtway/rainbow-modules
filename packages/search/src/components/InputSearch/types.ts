@@ -25,4 +25,6 @@ export interface InputSearchProps {
     readOnly?: boolean;
     onChange?: (value: string | undefined) => void;
     onSearch?: (value: string | undefined) => void;
+    placeholder?: string;
+    autoComplete?: string;
 }
