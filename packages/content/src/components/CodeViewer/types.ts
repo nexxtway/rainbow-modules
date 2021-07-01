@@ -65,6 +65,6 @@ export interface CodeViewerProps {
     icon?: ReactNode;
     name?: ReactNode;
     onFolderExpand?: (args: { folderPath?: string }) => Promise<FolderExpandReturnValue>;
-    onFileSelect?: (args: SelectValue) => Promise<FileContent>;
+    onFileSelect?: (args: { filePath?: string }) => Promise<FileContent>;
     onDownload?: () => void;
 }

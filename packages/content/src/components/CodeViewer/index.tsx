@@ -55,18 +55,12 @@ const CodeViewer: React.FC<CodeViewerProps> = ({
     const toggleFullScreen = () => setIsFullScreen(!isFullScreen);
     const toggleSourceTree = () => setSourceTreeVisible(!isSourceTreeVisible);
 
-    const updateNodeChild = (nodePath: number[], child: DataItem) => {
-        const newData = [...treeData];
-        newData[nodePath] = child;
-        setTreeData(newData);
-    };
-
     const handleNodeExpand = async ({ nodePath }: SelectValue) => {
         if (!onFolderExpand) return;
         const child: DataItem = Tree.getNode(treeData, nodePath);
         if (!child.isExpanded && child.children?.length === 0) {
             child.isLoading = !child.isLoading;
-            updateNodeChild(nodePath, child);
+            setTreeData([...treeData]);
             const { path } = child;
             const { files } = await onFolderExpand({ folderPath: path });
             child.children = files.map((entry) => generateTreeNode({ ...entry, path }));
@@ -76,12 +70,12 @@ const CodeViewer: React.FC<CodeViewerProps> = ({
             child.isExpanded = !child.isExpanded;
         }
         child.icon = getIconForFolder(child.isExpanded);
-        updateNodeChild(nodePath, child);
+        setTreeData([...treeData]);
     };
 
     const onSelectFile = async (node: SelectValue) => {
         const { name: nodeName, nodePath } = node;
-        const child = Tree.getNode(treeData, nodePath);
+        const child: DataItem = Tree.getNode(treeData, nodePath);
         if (Array.isArray(child.children)) {
             handleNodeExpand(node);
             return;
@@ -90,7 +84,8 @@ const CodeViewer: React.FC<CodeViewerProps> = ({
         if (!onFileSelect) return;
         setSelectedNode({ name: nodeName, nodePath, ...child });
         setIsLoadingContent(true);
-        const { content: fileContent } = await onFileSelect(child);
+        const { path } = child;
+        const { content: fileContent } = await onFileSelect({ filePath: path });
         setContent(fileContent);
         setIsLoadingContent(false);
     };
