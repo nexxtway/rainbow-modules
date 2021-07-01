@@ -114,6 +114,21 @@ const CodeViewer: React.FC<CodeViewerProps> = ({
         loadRootFolder();
     }, [loadRootFolder]);
 
+    useEffect(() => {
+        const handler = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                setIsFullScreen(false);
+            }
+        };
+        if (isFullScreen) {
+            window.addEventListener('keydown', handler);
+        }
+
+        return () => {
+            window.removeEventListener('keydown', handler);
+        };
+    }, [isFullScreen]);
+
     const SourceTreeToggleIcon = isSourceTreeVisible ? HideTree : ShowTree;
     const FullScreenToggleIcon = isFullScreen ? Decrease : Enlarge;
 
