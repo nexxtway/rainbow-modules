@@ -38,6 +38,7 @@ const InputSearch: React.FC<InputSearchProps> = ({
     };
 
     const paddingRight = variant === 'default' ? '8rem' : '2.5rem';
+    const inputValue = valueInProps || value;
 
     return (
         <StyledContainer className={className} style={style}>
@@ -46,7 +47,7 @@ const InputSearch: React.FC<InputSearchProps> = ({
                 name={name}
                 icon={<MagnifyingGlass />}
                 paddingRight={paddingRight}
-                value={value}
+                value={inputValue}
                 disabled={disabled}
                 readOnly={readOnly}
                 onChange={handleChange}
