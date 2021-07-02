@@ -1,9 +1,11 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import { useIntl } from 'react-intl';
 import { RainbowThemeContainer } from 'react-rainbow-components';
 import Loader from './loader';
 import { TreeContainer, FunctionInfo, FunctionName, StyledTree } from './styled';
 import { SourceTreeProps } from './types';
+import messages from './messages';
 
 const theme = {
     rainbow: {
@@ -20,10 +22,11 @@ const SourceTree: React.FC<SourceTreeProps> = ({
     icon,
     ...rest
 }: SourceTreeProps) => {
+    const intl = useIntl();
     if (isLoading) {
         return (
             <TreeContainer>
-                <Loader message="Loading source tree" />
+                <Loader message={intl.formatMessage(messages.loadingSourceTree)} />
             </TreeContainer>
         );
     }

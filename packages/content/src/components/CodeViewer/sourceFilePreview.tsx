@@ -1,8 +1,10 @@
 import React from 'react';
+import { useIntl } from 'react-intl';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import Loader from './loader';
 import Message from './message';
+import messages from './messages';
 import { SourceFilePreviewProps } from './types';
 
 const componentStyles = {
@@ -29,10 +31,11 @@ const SourceFilePreview: React.FC<SourceFilePreviewProps> = ({
     isLoading,
     content,
 }: SourceFilePreviewProps) => {
+    const intl = useIntl();
     const showSource = Boolean(!isLoading && !!content && typeof content === 'string');
     const showNoPreviewAvailable = !isLoading && !!content && !showSource;
 
-    if (isLoading) return <Loader message="Loading content" />;
+    if (isLoading) return <Loader message={intl.formatMessage(messages.loadingContent)} />;
 
     if (showNoPreviewAvailable) return <Message text="Preview not available" />;
 

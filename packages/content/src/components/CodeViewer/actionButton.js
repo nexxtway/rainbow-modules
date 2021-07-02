@@ -18,6 +18,7 @@ const ActionButton = ({ tooltip, children, onClick }) => {
                 onMouseEnter={onMouseEnter}
                 onMouseLeave={onMouseLeave}
                 onClick={onClick}
+                disabled={!onClick}
                 ref={triggerRef}
             >
                 {children}

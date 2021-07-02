@@ -13,6 +13,14 @@ const messages = defineMessages({
         id: 'CodeViewer.downloadSourceCode',
         defaultMessage: 'Download source code',
     },
+    loadingContent: {
+        id: 'CodeViewer.loadingContent',
+        defaultMessage: 'Loading content',
+    },
+    loadingSourceTree: {
+        id: 'CodeViewer.loadingSourceTree',
+        defaultMessage: 'Loading source tree',
+    },
 });
 
 export default messages;

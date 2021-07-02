@@ -163,12 +163,14 @@ const CodeViewer: React.FC<CodeViewerProps> = ({
                     >
                         <FullScreenToggleIcon />
                     </ActionButton>
-                    <ActionButton
-                        tooltip={intl.formatMessage(messages.downloadSourceCode)}
-                        onClick={onDownload}
-                    >
-                        <DownloadIcon />
-                    </ActionButton>
+                    <RenderIf isTrue={onDownload}>
+                        <ActionButton
+                            tooltip={intl.formatMessage(messages.downloadSourceCode)}
+                            onClick={onDownload}
+                        >
+                            <DownloadIcon />
+                        </ActionButton>
+                    </RenderIf>
                 </ControlBar>
                 <RenderIf isTrue={isSourceTreeVisible}>
                     <StyledResizableColumns
