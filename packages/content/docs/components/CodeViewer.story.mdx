@@ -1,0 +1,24 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import CodeViewer from '../../src/components/CodeViewer';
+import * as stories from '../stories/CodeViewer.story.js';
+
+<Meta title="Modules/Content/Components/CodeViewer" component={CodeViewer} />
+
+# Overview
+
+`CodeViewer` component provides a code explorer that renders a file tree on the left and the selected
+file content on the right. The files are obtained from the return value of the function passed as
+`onFolderExpand` prop and the file content from the function passed as `onFileSelect` prop.
+
+When first rendered, the component will call `onFolderExpand` with `{ folderPath: '/' }` to get the
+files of the root folder.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="CodeViewer">{stories.CodeViewerExample()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={CodeViewer} />

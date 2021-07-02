@@ -62,9 +62,14 @@ export interface SourceFilePreviewProps {
 }
 
 export interface CodeViewerProps {
+    /** An icon to render on top of the files tree. */
     icon?: ReactNode;
+    /** A folder or project name that will be visible on top of the files tree. */
     name?: ReactNode;
+    /** A function returning a Promise that resolves with an object of type `FolderExpandReturnValue`. */
     onFolderExpand?: (args: { folderPath?: string }) => Promise<FolderExpandReturnValue>;
+    /** A function returning a Promise that resolves with the content of the selected file. */
     onFileSelect?: (args: { filePath?: string }) => Promise<FileContent>;
+    /** A function that triggers the download of the source code. */
     onDownload?: () => void;
 }
