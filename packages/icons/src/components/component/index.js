@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Component = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             className={className}
@@ -15,6 +15,7 @@ const Component = (props) => {
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
         >
+            <title>{title}</title>
             <g id="modules" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="rainbow-GlobalSearch-results"
@@ -75,10 +76,12 @@ const Component = (props) => {
 Component.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 Component.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default Component;

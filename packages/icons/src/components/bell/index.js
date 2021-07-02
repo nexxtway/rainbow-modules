@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Bell = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg className={className} style={style} width="20px" height="24px" viewBox="0 0 20 24">
+            <title>{title}</title>
             <g id="modules" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="functions/installed"
@@ -31,11 +32,13 @@ const Bell = (props) => {
 Bell.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 Bell.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default Bell;

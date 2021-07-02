@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const KeyFilled = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             className={className}
@@ -12,6 +12,7 @@ const KeyFilled = (props) => {
             height="22px"
             viewBox="0 0 40 22"
         >
+            <title>{title}</title>
             <g id="secrets" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="secrets/api-disabled"
@@ -32,11 +33,13 @@ const KeyFilled = (props) => {
 KeyFilled.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 KeyFilled.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default KeyFilled;

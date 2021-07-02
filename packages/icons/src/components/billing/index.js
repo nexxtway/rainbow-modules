@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Billing = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             width="21px"
@@ -13,7 +13,7 @@ const Billing = (props) => {
             className={className}
             style={style}
         >
-            <title>billing</title>
+            <title>{title}</title>
             <g id="billing" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="functions/select-billing"
@@ -34,11 +34,13 @@ const Billing = (props) => {
 Billing.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 Billing.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default Billing;

@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Avatar = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg className={className} style={style} width="54px" height="54px" viewBox="0 0 54 54">
+            <title>{title}</title>
             <defs>
                 <circle id="path-1" cx="26.5410608" cy="26.5410608" r="26.5410608" />
             </defs>
@@ -51,11 +52,13 @@ const Avatar = (props) => {
 Avatar.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 Avatar.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default Avatar;

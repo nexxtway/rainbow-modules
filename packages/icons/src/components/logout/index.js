@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Logout = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             width="20px"
@@ -13,6 +13,7 @@ const Logout = (props) => {
             className={className}
             style={style}
         >
+            <title>{title}</title>
             <g id="modules" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g id="logout" fill="currentColor" fillRule="nonzero">
                     <path
@@ -32,10 +33,12 @@ const Logout = (props) => {
 Logout.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 Logout.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default Logout;

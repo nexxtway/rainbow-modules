@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const MagnifyingGlass = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             className={className}
@@ -12,6 +12,7 @@ const MagnifyingGlass = (props) => {
             height="20px"
             viewBox="0 0 20 20"
         >
+            <title>{title}</title>
             <g id="modules" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="rainbow-GlobalSearch-typing"
@@ -34,10 +35,12 @@ const MagnifyingGlass = (props) => {
 MagnifyingGlass.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 MagnifyingGlass.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default MagnifyingGlass;

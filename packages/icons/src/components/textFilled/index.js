@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const TextFilled = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg className={className} style={style} width="328px" height="376px" viewBox="0 0 328 376">
+            <title>{title}</title>
             <g
                 id="column-customization"
                 stroke="none"
@@ -26,10 +27,12 @@ const TextFilled = (props) => {
 TextFilled.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 TextFilled.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default TextFilled;

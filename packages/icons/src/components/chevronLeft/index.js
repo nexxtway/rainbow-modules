@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ChevronLeft = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             className={className}
@@ -12,6 +12,7 @@ const ChevronLeft = (props) => {
             height="14px"
             viewBox="0 0 8 14"
         >
+            <title>{title}</title>
             <g transform="translate(-301.000000, -285.000000)">
                 <g transform="translate(-83.000000, 268.000000)">
                     <g transform="translate(368.000000, 3.000000)">
@@ -28,11 +29,13 @@ const ChevronLeft = (props) => {
 ChevronLeft.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 ChevronLeft.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default ChevronLeft;

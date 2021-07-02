@@ -1,3 +1,3 @@
-import { BaseProps } from '../../types';
+import { IconProps } from '../../types';
 
-export default function (props: BaseProps): JSX.Element | null;
+export default function (props: IconProps): JSX.Element | null;

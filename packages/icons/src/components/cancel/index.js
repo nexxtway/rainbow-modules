@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Cancel = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg className={className} style={style} width="100px" height="100px" viewBox="0 0 100 100">
+            <title>{title}</title>
             <g id="modules" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g id="cancel" fillRule="nonzero">
                     <circle
@@ -33,11 +34,13 @@ const Cancel = (props) => {
 Cancel.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 Cancel.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default Cancel;

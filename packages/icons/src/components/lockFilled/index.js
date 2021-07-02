@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const LockFilled = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             className={className}
@@ -13,6 +13,7 @@ const LockFilled = (props) => {
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
         >
+            <title>{title}</title>
             <g id="modules" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g id="filled" fill="currentColor" fillRule="nonzero">
                     <path
@@ -34,9 +35,11 @@ export default LockFilled;
 LockFilled.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 LockFilled.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };

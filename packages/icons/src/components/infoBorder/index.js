@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const InfoBorder = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
 
     return (
         <svg
@@ -14,6 +14,7 @@ const InfoBorder = (props) => {
             className={className}
             style={style}
         >
+            <title>{title}</title>
             <g id="billing" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="functions/billing"
@@ -36,11 +37,13 @@ const InfoBorder = (props) => {
 InfoBorder.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 InfoBorder.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default InfoBorder;

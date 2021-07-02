@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Seat = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg width="17px" height="11px" viewBox="0 0 17 11" className={className} style={style}>
+            <title>{title}</title>
             <g id="MVP" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="dispatch/assign-driver"
@@ -29,10 +30,12 @@ const Seat = (props) => {
 Seat.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 Seat.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default Seat;

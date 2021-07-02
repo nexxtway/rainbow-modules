@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Microsoft = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -12,6 +12,7 @@ const Microsoft = (props) => {
             className={className}
             style={style}
         >
+            <title>{title}</title>
             <g fill="none" fillRule="evenodd">
                 <g fillRule="nonzero">
                     <g>
@@ -45,11 +46,13 @@ const Microsoft = (props) => {
 Microsoft.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 Microsoft.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default Microsoft;
