@@ -20,6 +20,7 @@ const ActionButton = ({ tooltip, children, onClick }) => {
                 onClick={onClick}
                 disabled={!onClick}
                 ref={triggerRef}
+                aria-label={tooltip}
             >
                 {children}
             </StyledActionButton>

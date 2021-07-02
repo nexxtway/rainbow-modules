@@ -21,6 +21,10 @@ const messages = defineMessages({
         id: 'CodeViewer.loadingSourceTree',
         defaultMessage: 'Loading source tree',
     },
+    previewNotAvailable: {
+        id: 'CodeViewer.previewNotAvailable',
+        defaultMessage: 'Preview not available',
+    },
 });
 
 export default messages;
