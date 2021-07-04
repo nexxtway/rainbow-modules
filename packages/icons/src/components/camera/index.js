@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Camera = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             width="16px"
@@ -13,6 +13,7 @@ const Camera = (props) => {
             className={className}
             style={style}
         >
+            <title>{title}</title>
             <g id="components" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="Components-Drawer-Open-with-title"
@@ -33,11 +34,13 @@ const Camera = (props) => {
 Camera.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 Camera.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default Camera;

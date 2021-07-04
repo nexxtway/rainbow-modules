@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Checkmark = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg className={className} style={style} width="100px" height="100px" viewBox="0 0 100 100">
+            <title>{title}</title>
             <g id="modules" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g id="checkmark" fillRule="nonzero">
                     <circle
@@ -34,11 +35,13 @@ const Checkmark = (props) => {
 Checkmark.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 Checkmark.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default Checkmark;

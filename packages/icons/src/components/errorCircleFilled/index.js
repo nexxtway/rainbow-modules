@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ErrorCircleFilled = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
 
     return (
         <svg className={className} style={style} width="28px" height="28px" viewBox="0 0 28 28">
+            <title>{title}</title>
             <g id="notifications" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="notifications/see-all-activities-show-details"
@@ -25,11 +26,13 @@ const ErrorCircleFilled = (props) => {
 ErrorCircleFilled.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 ErrorCircleFilled.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default ErrorCircleFilled;

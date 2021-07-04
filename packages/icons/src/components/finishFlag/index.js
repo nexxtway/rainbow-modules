@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const FinishFlag = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             className={className}
@@ -15,6 +15,7 @@ const FinishFlag = (props) => {
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
         >
+            <title>{title}</title>
             <g id="Page-1" fill="none" fillRule="evenodd">
                 <g
                     id="037---Waypoint-FinishFlag"
@@ -39,10 +40,12 @@ const FinishFlag = (props) => {
 FinishFlag.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 FinishFlag.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default FinishFlag;

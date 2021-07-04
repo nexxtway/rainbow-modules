@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Phone = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
 
     return (
         <svg className={className} style={style} width="18px" height="13px" viewBox="0 0 18 13">
+            <title>{title}</title>
             <g id="edit-rides" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="dispatch/rides-customerInfo"
@@ -48,11 +49,13 @@ const Phone = (props) => {
 Phone.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 Phone.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default Phone;

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Login = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             width="20px"
@@ -13,6 +13,7 @@ const Login = (props) => {
             className={className}
             style={style}
         >
+            <title>{title}</title>
             <g id="modules" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g id="login" fill="currentColor" fillRule="nonzero">
                     <path
@@ -33,10 +34,12 @@ const Login = (props) => {
 Login.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 Login.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default Login;

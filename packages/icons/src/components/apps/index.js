@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Apps = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg className={className} style={style} width="24px" height="24px" viewBox="0 0 24 24">
+            <title>{title}</title>
             <g id="new-layout" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="new-layout/projects"
@@ -27,11 +28,13 @@ const Apps = (props) => {
 Apps.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 Apps.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default Apps;

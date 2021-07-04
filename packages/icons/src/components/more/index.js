@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const More = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
 
     return (
         <svg
@@ -14,6 +14,7 @@ const More = (props) => {
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
         >
+            <title>{title}</title>
             <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="auth/users-details-copy"
@@ -36,11 +37,13 @@ const More = (props) => {
 More.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 More.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default More;

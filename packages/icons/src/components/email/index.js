@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Email = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             className={className}
@@ -15,6 +15,7 @@ const Email = (props) => {
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
         >
+            <title>{title}</title>
             <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="auth/users-details-loading-metadata"
@@ -39,10 +40,12 @@ const Email = (props) => {
 Email.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 Email.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default Email;

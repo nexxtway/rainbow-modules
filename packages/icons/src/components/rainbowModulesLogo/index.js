@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const RainbowModulesLogo = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg className={className} style={style} width="67px" height="64px" viewBox="0 0 67 64">
+            <title>{title}</title>
             <g id="modules" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="rainbow-modules-getting-started-overview"
@@ -169,11 +170,13 @@ const RainbowModulesLogo = (props) => {
 RainbowModulesLogo.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 RainbowModulesLogo.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default RainbowModulesLogo;

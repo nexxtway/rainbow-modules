@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const List = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             className={className}
@@ -12,6 +12,7 @@ const List = (props) => {
             height="352px"
             viewBox="0 0 461 352"
         >
+            <title>{title}</title>
             <g
                 id="column-customization"
                 stroke="none"
@@ -33,11 +34,13 @@ const List = (props) => {
 List.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 List.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default List;

@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const AppsBorder = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg className={className} style={style} width="24px" height="25px" viewBox="0 0 24 25">
+            <title>{title}</title>
             <g id="new-layout" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="new-layout/marketplace"
@@ -25,11 +26,13 @@ const AppsBorder = (props) => {
 AppsBorder.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 AppsBorder.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default AppsBorder;

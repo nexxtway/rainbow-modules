@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const HomeFilled = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
 
     return (
         <svg className={className} style={style} width="32px" height="32px" viewBox="0 0 32 32">
+            <title>{title}</title>
             <g id="modules" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g id="homeFilled" fill="currentColor" fillRule="nonzero">
                     <path
@@ -21,11 +22,13 @@ const HomeFilled = (props) => {
 HomeFilled.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 HomeFilled.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default HomeFilled;

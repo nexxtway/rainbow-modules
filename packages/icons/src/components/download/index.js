@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Download = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             className={className}
@@ -12,6 +12,7 @@ const Download = (props) => {
             height="18px"
             viewBox="0 0 18 18"
         >
+            <title>{title}</title>
             <g id="Transactions" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="transactions/normal-user"
@@ -34,10 +35,12 @@ const Download = (props) => {
 Download.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 Download.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default Download;

@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Upload = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg className={className} style={style} width="20px" height="18px" viewBox="0 0 494 459">
+            <title>{title}</title>
             <g
                 id="column-customization"
                 stroke="none"
@@ -26,10 +27,12 @@ const Upload = (props) => {
 Upload.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 Upload.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default Upload;

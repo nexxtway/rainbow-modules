@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const SearchIcon = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             className={className}
@@ -14,7 +14,7 @@ const SearchIcon = (props) => {
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
         >
-            <title>search</title>
+            <title>{title}</title>
             <g id="layout" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g id="results" transform="translate(-1029.000000, -169.000000)" fillRule="nonzero">
                     <g id="Group-8" transform="translate(375.000000, 156.000000)">
@@ -61,11 +61,13 @@ const SearchIcon = (props) => {
 SearchIcon.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 SearchIcon.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default SearchIcon;

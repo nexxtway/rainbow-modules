@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const PlaneFilled = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             className={className}
@@ -13,6 +13,7 @@ const PlaneFilled = (props) => {
             viewBox="0 0 20 20"
             version="1.1"
         >
+            <title>{title}</title>
             <g id="custom-fields" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="dispatch/rides-show-custom-Fields-show-fight-info"
@@ -41,10 +42,12 @@ const PlaneFilled = (props) => {
 PlaneFilled.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 PlaneFilled.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default PlaneFilled;
