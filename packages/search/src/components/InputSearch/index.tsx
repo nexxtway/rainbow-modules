@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { MagnifyingGlass } from '@rainbow-modules/icons';
 import { InputComponent, InputSearchProps } from './types';
 import { StyledContainer, StyledInput } from './styled';
@@ -10,22 +10,25 @@ const InputSearch: React.FC<InputSearchProps> = ({
     disabled,
     readOnly,
     name,
-    value,
+    value: valueInProps,
     variant,
     onChange,
     onSearch,
     placeholder,
     autoComplete,
 }: InputSearchProps) => {
+    const [value, setValue] = useState(valueInProps);
     const trailingRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<InputComponent>(null);
 
     const clear = () => {
+        setValue('');
         if (onChange) onChange('');
         if (inputRef.current) inputRef.current.focus();
     };
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setValue(event.target.value);
         if (onChange) onChange(event.target.value);
     };
 
@@ -35,6 +38,7 @@ const InputSearch: React.FC<InputSearchProps> = ({
     };
 
     const paddingRight = variant === 'default' ? '8rem' : '2.5rem';
+    const inputValue = valueInProps || value;
 
     return (
         <StyledContainer className={className} style={style}>
@@ -43,7 +47,7 @@ const InputSearch: React.FC<InputSearchProps> = ({
                 name={name}
                 icon={<MagnifyingGlass />}
                 paddingRight={paddingRight}
-                value={value}
+                value={inputValue}
                 disabled={disabled}
                 readOnly={readOnly}
                 onChange={handleChange}
@@ -62,7 +66,7 @@ InputSearch.defaultProps = {
     style: undefined,
     disabled: false,
     readOnly: false,
-    value: undefined,
+    value: '',
     name: undefined,
     variant: 'default',
     placeholder: undefined,
