@@ -1,8 +1,8 @@
 import React from 'react';
-import { BaseProps } from '../../types';
+import { IconProps } from '../../types';
 
-const SvgFile: React.FC<BaseProps> = (props: BaseProps) => {
-    const { className, style } = props;
+const SvgFile: React.FC<IconProps> = (props: IconProps) => {
+    const { className, style, title } = props;
     return (
         <svg
             className={className}
@@ -15,6 +15,7 @@ const SvgFile: React.FC<BaseProps> = (props: BaseProps) => {
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
         >
+            <title>{title}</title>
             <g id="marketplace" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="marketplace/functions-source-code/download"
@@ -34,6 +35,7 @@ const SvgFile: React.FC<BaseProps> = (props: BaseProps) => {
 SvgFile.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default SvgFile;
