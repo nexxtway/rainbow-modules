@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const FunctionSymbol = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -12,6 +12,7 @@ const FunctionSymbol = (props) => {
             className={className}
             style={style}
         >
+            <title>{title}</title>
             <g fill="none" fillRule="evenodd">
                 <g fill="currentColor">
                     <g>
@@ -29,10 +30,12 @@ const FunctionSymbol = (props) => {
 FunctionSymbol.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 FunctionSymbol.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default FunctionSymbol;

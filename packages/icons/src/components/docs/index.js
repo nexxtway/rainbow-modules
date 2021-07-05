@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Docs = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg className={className} style={style} width="22px" height="20px" viewBox="0 0 22 20">
+            <title>{title}</title>
             <g id="new-layout" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="new-layout/projects"
@@ -24,11 +25,13 @@ const Docs = (props) => {
 Docs.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 Docs.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default Docs;

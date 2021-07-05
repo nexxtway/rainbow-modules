@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Github = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             className={className}
@@ -15,7 +15,7 @@ const Github = (props) => {
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
         >
-            <title>github</title>
+            <title>{title}</title>
             <g id="Page-1" stroke="none" strokeWidth="1" fillRule="evenodd">
                 <g id="main" transform="translate(-1360.000000, -28.000000)">
                     <path
@@ -31,11 +31,13 @@ const Github = (props) => {
 Github.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 Github.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default Github;

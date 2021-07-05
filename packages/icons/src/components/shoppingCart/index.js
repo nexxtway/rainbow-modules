@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ShoppingCart = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
 
     return (
         <svg className={className} style={style} width="41px" height="37px" viewBox="0 0 41 37">
+            <title>{title}</title>
             <g id="functions" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="functions/installed-function-details-docs"
@@ -25,11 +26,13 @@ const ShoppingCart = (props) => {
 ShoppingCart.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 ShoppingCart.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default ShoppingCart;

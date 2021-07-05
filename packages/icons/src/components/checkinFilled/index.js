@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const CheckinFilled = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             className={className}
@@ -15,6 +15,7 @@ const CheckinFilled = (props) => {
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
         >
+            <title>{title}</title>
             <g>
                 <path
                     d="M255.999,0C152.786,0,68.817,85.478,68.817,190.545c0,58.77,29.724,130.103,88.349,212.017
@@ -31,10 +32,12 @@ const CheckinFilled = (props) => {
 CheckinFilled.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 CheckinFilled.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default CheckinFilled;

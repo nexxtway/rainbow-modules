@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const KeyBorder = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             className={className}
@@ -12,6 +12,7 @@ const KeyBorder = (props) => {
             height="22px"
             viewBox="0 0 40 22"
         >
+            <title>{title}</title>
             <g id="marketplace" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     transform="translate(-33.000000, -509.000000)"
@@ -34,11 +35,13 @@ const KeyBorder = (props) => {
 KeyBorder.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 KeyBorder.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default KeyBorder;

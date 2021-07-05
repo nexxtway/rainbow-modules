@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const StoreFilled = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg width="48px" height="38px" viewBox="0 0 48 38" className={className} style={style}>
+            <title>{title}</title>
             <g id="marketplace" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="marketplace-copy-7"
@@ -25,10 +26,12 @@ const StoreFilled = (props) => {
 StoreFilled.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 StoreFilled.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default StoreFilled;

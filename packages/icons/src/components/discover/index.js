@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Discover = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             className={className}
@@ -14,7 +14,7 @@ const Discover = (props) => {
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
         >
-            <title>discover</title>
+            <title>{title}</title>
             <g id="modules" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="rainbow-UniversalPicker-"
@@ -81,11 +81,13 @@ const Discover = (props) => {
 Discover.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 Discover.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default Discover;

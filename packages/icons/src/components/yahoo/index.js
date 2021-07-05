@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Yahoo = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -12,6 +12,7 @@ const Yahoo = (props) => {
             className={className}
             style={style}
         >
+            <title>{title}</title>
             <g fill="none" fillRule="evenodd">
                 <g fillRule="nonzero">
                     <g>
@@ -35,11 +36,13 @@ const Yahoo = (props) => {
 Yahoo.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 Yahoo.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default Yahoo;

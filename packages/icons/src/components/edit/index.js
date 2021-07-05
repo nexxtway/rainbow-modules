@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Edit = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             width="14px"
@@ -13,7 +13,7 @@ const Edit = (props) => {
             className={className}
             style={style}
         >
-            <title>Shape</title>
+            <title>{title}</title>
             <g id="components" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="Components-Table-with-InlineEdit-DesignGuidelines"
@@ -40,10 +40,12 @@ const Edit = (props) => {
 Edit.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 Edit.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default Edit;
