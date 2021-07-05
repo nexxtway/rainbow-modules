@@ -111,6 +111,12 @@ import {
     Copy,
     Bell,
     ChevronDown,
+    JavascriptFile,
+    JsonFile,
+    NodeFile,
+    ReadmeFile,
+    SvgFile,
+    YarnLockFile,
 } from '../../../src';
 
 export default [
@@ -674,5 +680,35 @@ export default [
         name: 'bell',
         category: 'standard',
         icon: Bell,
+    },
+    {
+        name: 'javascriptFile',
+        category: 'custom',
+        icon: JavascriptFile,
+    },
+    {
+        name: 'jsonFile',
+        category: 'custom',
+        icon: JsonFile,
+    },
+    {
+        name: 'nodeFile',
+        category: 'custom',
+        icon: NodeFile,
+    },
+    {
+        name: 'readmeFile',
+        category: 'custom',
+        icon: ReadmeFile,
+    },
+    {
+        name: 'svgFile',
+        category: 'custom',
+        icon: SvgFile,
+    },
+    {
+        name: 'yarn',
+        category: 'custom',
+        icon: YarnLockFile,
     },
 ];

@@ -21,7 +21,7 @@ export type Width = {
     percent?: number;
 };
 
-type OnResizeParams = {
+export type OnResizeParams = {
     dividerPosition?: number;
 };
 
