@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { RenderIf, Tree } from 'react-rainbow-components';
 import { Download as DownloadIcon } from '@rainbow-modules/icons';
-import { OnResizeParams } from 'layout/src/components/ResizableColumns/types';
+import { OnResizeParams } from '@rainbow-modules/layout/src/components/ResizableColumns/types';
 import { useIntl } from 'react-intl';
 import { CodeViewerProps, DataItem, SelectValue } from './types';
 import {
