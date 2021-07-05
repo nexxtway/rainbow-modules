@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default function YouTubeIcon(props) {
-    const { className, style } = props;
+    const { className, style, title } = props;
 
     return (
         <svg className={className} style={style} width="40px" height="29px" viewBox="0 0 40 29">
+            <title>{title}</title>
             <g id="demo" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g id="youtube" transform="translate(0.000279, 0.055929)" fillRule="nonzero">
                     <path
@@ -27,9 +28,11 @@ export default function YouTubeIcon(props) {
 YouTubeIcon.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 YouTubeIcon.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };

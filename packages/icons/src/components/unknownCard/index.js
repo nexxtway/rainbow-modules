@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const UnknownCard = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             className={className}
@@ -14,7 +14,7 @@ const UnknownCard = (props) => {
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
         >
-            <title>unknown</title>
+            <title>{title}</title>
             <g id="modules" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="rainbow-UniversalPicker-"
@@ -47,11 +47,13 @@ const UnknownCard = (props) => {
 UnknownCard.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 UnknownCard.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default UnknownCard;

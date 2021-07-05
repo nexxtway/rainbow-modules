@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Error = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             className={className}
@@ -15,7 +15,7 @@ const Error = (props) => {
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
         >
-            <title>error</title>
+            <title>{title}</title>
             <g id="pages" stroke="none" strokwidth="1" fillRule="evenodd">
                 <g
                     id="react-rainbow-custom-work-form-error-V1"
@@ -36,10 +36,12 @@ const Error = (props) => {
 Error.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 Error.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default Error;

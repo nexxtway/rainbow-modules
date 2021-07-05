@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const TwitterCircle = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -12,6 +12,7 @@ const TwitterCircle = (props) => {
             className={className}
             style={style}
         >
+            <title>{title}</title>
             <g fill="none" fillRule="evenodd">
                 <g fillRule="nonzero">
                     <g>
@@ -35,11 +36,13 @@ const TwitterCircle = (props) => {
 TwitterCircle.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 TwitterCircle.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default TwitterCircle;

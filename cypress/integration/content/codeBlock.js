@@ -20,6 +20,6 @@ describe('<CodeBlock />', () => {
         });
 
         cy.get('button[data-id="button-icon-element"]').click();
-        cy.get('svg > title', { timeout: 1000 }).contains('done').should('exist');
+        cy.get('div > svg', { timeout: 1000 }).should('exist');
     });
 });

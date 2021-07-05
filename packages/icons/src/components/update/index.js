@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Update = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg className={className} style={style} width="13px" height="12px" viewBox="0 0 13 12">
+            <title>{title}</title>
             <g id="custom-fields" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="dispatch/rides-show-custom-Fields-show-fight-info"
@@ -29,10 +30,12 @@ const Update = (props) => {
 Update.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 Update.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default Update;

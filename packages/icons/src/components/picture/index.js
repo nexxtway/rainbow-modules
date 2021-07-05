@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Picture = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             className={className}
@@ -15,7 +15,7 @@ const Picture = (props) => {
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
         >
-            <title>picture</title>
+            <title>{title}</title>
             <g id="Campaigns" stroke="none" strokeWidth="1" fillRule="evenodd">
                 <g
                     id="new-campaign-with-upload-image-gallery"
@@ -34,10 +34,12 @@ const Picture = (props) => {
 Picture.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 Picture.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default Picture;

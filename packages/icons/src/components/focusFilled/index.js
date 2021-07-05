@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const FocusFilled = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg className={className} style={style} width="20px" height="20px" viewBox="0 0 20 20">
+            <title>{title}</title>
             <g id="Variant-3" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="dispatch/new-ride-V-2-1-Copy-3"
@@ -31,11 +32,13 @@ const FocusFilled = (props) => {
 FocusFilled.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 FocusFilled.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default FocusFilled;

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const CopyToClipboard = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
 
     return (
         <svg
@@ -14,7 +14,7 @@ const CopyToClipboard = (props) => {
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
         >
-            <title>copy_to_clipboard</title>
+            <title>{title}</title>
             <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="auth/users-details-copy"
@@ -55,11 +55,13 @@ const CopyToClipboard = (props) => {
 CopyToClipboard.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 CopyToClipboard.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default CopyToClipboard;

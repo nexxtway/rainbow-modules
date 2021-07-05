@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const LocationPinFilled = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             className={className}
@@ -12,6 +12,7 @@ const LocationPinFilled = (props) => {
             height="30px"
             viewBox="0 0 28 30"
         >
+            <title>{title}</title>
             <g id="Variant-3" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="dispatch/rides-calendar-with-rides-completed-and-assigned"
@@ -34,11 +35,13 @@ const LocationPinFilled = (props) => {
 LocationPinFilled.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 LocationPinFilled.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default LocationPinFilled;

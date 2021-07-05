@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const InteractiveExamples = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
 
     return (
         <svg
@@ -14,6 +14,7 @@ const InteractiveExamples = (props) => {
             className={className}
             style={style}
         >
+            <title>{title}</title>
             <g id="pages" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="rainbow-GlobalSearch-interactive-examples-results"
@@ -36,11 +37,13 @@ const InteractiveExamples = (props) => {
 InteractiveExamples.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 InteractiveExamples.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
 
 export default InteractiveExamples;

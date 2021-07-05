@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const User = (props) => {
-    const { className, style } = props;
+    const { className, style, title } = props;
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -12,6 +12,7 @@ const User = (props) => {
             className={className}
             style={style}
         >
+            <title>{title}</title>
             <g fill="none" fillRule="evenodd">
                 <g fill="currentColor">
                     <path
@@ -29,9 +30,11 @@ export default User;
 User.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
+    title: PropTypes.string,
 };
 
 User.defaultProps = {
     className: undefined,
     style: undefined,
+    title: undefined,
 };
