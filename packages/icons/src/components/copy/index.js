@@ -19,7 +19,7 @@ const CopyToClipboard = (props) => {
                 <g
                     id="authentication-search/tipyng"
                     transform="translate(-1350.000000, -257.000000)"
-                    fill="#8592A0"
+                    fill="currentColor"
                     fillRule="nonzero"
                 >
                     <g id="Group-4" transform="translate(281.023824, 220.000000)">
