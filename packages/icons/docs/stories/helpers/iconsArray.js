@@ -117,6 +117,7 @@ import {
     ReadmeFile,
     SvgFile,
     YarnLockFile,
+    Tag,
 } from '../../../src';
 
 export default [
@@ -675,6 +676,11 @@ export default [
         name: 'copy',
         category: 'standard',
         icon: Copy,
+    },
+    {
+        name: 'tag',
+        category: 'standard',
+        icon: Tag,
     },
     {
         name: 'bell',
