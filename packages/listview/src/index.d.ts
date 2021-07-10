@@ -8,3 +8,4 @@ export { default as FloatingSearchButtonIcon } from './components/FloatingSearch
 export { default as DraggableList } from './components/DraggableList';
 export { default as filterByFields } from './helpers/filterByFields';
 export { default as MarkdownColumn } from './components/MarkdownColumn';
+export { default as VirtualizedTable, useTableDataSource } from './components/VirtualizedTable';
