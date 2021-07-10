@@ -9,6 +9,13 @@ const Container = styled.div`
     height: 300px;
 `;
 
+const ButtonsContainer = styled.div`
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+`;
+
 export const BasicVirtualizedTable = () => {
     const data = useTableDataSource(dataTable);
     const [isLoading, setIsLoading] = useState(true);
@@ -51,13 +58,13 @@ export const BasicVirtualizedTable = () => {
     return (
         <Application>
             <Container>
-                <div>
+                <ButtonsContainer>
                     <Button label="Insert items" onClick={insertItems} />
                     <Button label="Delete items" onClick={deleteItems} />
-                </div>
+                </ButtonsContainer>
                 <VirtualizedTable
                     data={data}
-                    columns={columnNames}
+                    dataKeys={columnNames}
                     isLoading={isLoading}
                     isLoadingBottom={isLoadingBottom}
                     isLoadingTop={isLoadingTop}
@@ -76,7 +83,7 @@ export const EmptyVirtualizedTable = () => {
     return (
         <Application>
             <Container>
-                <VirtualizedTable data={[]} columns={columnNames} />
+                <VirtualizedTable data={[]} dataKeys={columnNames} />
             </Container>
         </Application>
     );
