@@ -1,19 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { Application, Button } from 'react-rainbow-components';
+import { Application } from 'react-rainbow-components';
 import VirtualizedTable, { useTableDataSource } from '../../src/components/VirtualizedTable';
 import { dataTable } from './data/batchActionsBar';
 
 const Container = styled.div`
     position: relative;
     height: 300px;
-`;
-
-const ButtonsContainer = styled.div`
-    padding: 1rem;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
 `;
 
 export const BasicVirtualizedTable = () => {
@@ -27,27 +20,19 @@ export const BasicVirtualizedTable = () => {
         setTimeout(() => setIsLoading(false), 3000);
     }, []);
 
-    const insertItems = () => {
-        data.insert([...dataTable], 5);
-    };
-
-    const deleteItems = () => {
-        data.delete(3, 5);
-    };
-
     const onLoadMore = useCallback(
         ({ direction }) => {
             if (direction === 'bottom') {
                 setIsLoadingBottom(true);
                 setTimeout(() => {
-                    data.push([...dataTable]);
+                    data.push({ data: [...dataTable] });
                     setIsLoadingBottom(false);
                 }, 3000);
             }
             if (direction === 'top') {
                 setIsLoadingTop(true);
                 setTimeout(() => {
-                    data.unshift([...dataTable]);
+                    data.unshift({ data: [...dataTable] });
                     setIsLoadingTop(false);
                 }, 3000);
             }
@@ -58,10 +43,6 @@ export const BasicVirtualizedTable = () => {
     return (
         <Application>
             <Container>
-                <ButtonsContainer>
-                    <Button label="Insert items" onClick={insertItems} />
-                    <Button label="Delete items" onClick={deleteItems} />
-                </ButtonsContainer>
                 <VirtualizedTable
                     data={data}
                     dataKeys={columnNames}

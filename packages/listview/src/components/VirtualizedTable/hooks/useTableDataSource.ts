@@ -1,24 +1,25 @@
 import React, { useRef } from 'react';
 import { Data, CallbackFn, DataObject } from '../types';
 
-const useTableDataSource = (initialData: Data = []): DataObject | null => {
+const useTableDataSource = (initialData: Data[] = []): DataObject | null => {
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     const onChangeCallback = useRef<CallbackFn>(() => {});
-    const data: React.RefObject<DataObject> = useRef({
+    const dataRef: React.RefObject<DataObject> = useRef({
         initialData,
-        push: (newData: Data) => onChangeCallback.current({ data: newData, event: 'push' }),
-        unshift: (newData: Data) => onChangeCallback.current({ data: newData, event: 'unshift' }),
-        update: (newData: Data) => onChangeCallback.current({ data: newData, event: 'update' }),
-        insert: (newData: Data, index: number) =>
-            onChangeCallback.current({ data: newData, event: 'insert', index }),
-        delete: (index: number, deleteCount: number) =>
-            onChangeCallback.current({ data: [], event: 'delete', index, deleteCount }),
+        push: ({ data }) => onChangeCallback.current({ data, event: 'push' }),
+        unshift: ({ data }) => onChangeCallback.current({ data, event: 'unshift' }),
+        set: ({ data }) => onChangeCallback.current({ data, event: 'set' }),
+        updateById: ({ id, data }) => onChangeCallback.current({ data, id, event: 'updateById' }),
+        updateByIndex: ({ index, data }) =>
+            onChangeCallback.current({ data, index, event: 'updateByIndex' }),
+        deleteById: ({ id }) => onChangeCallback.current({ id, event: 'deleteById' }),
+        deleteByIndex: ({ index }) => onChangeCallback.current({ index, event: 'deleteByIndex' }),
         onChange: (callback: CallbackFn) => {
             onChangeCallback.current = callback;
         },
     });
 
-    return data.current;
+    return dataRef.current;
 };
 
 export default useTableDataSource;

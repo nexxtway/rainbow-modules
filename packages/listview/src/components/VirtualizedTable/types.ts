@@ -2,31 +2,44 @@ interface LoadMoreArgs {
     direction?: 'top' | 'bottom';
 }
 
-export type Data = Array<Record<string, unknown>>;
+export type Data = Record<string, unknown>;
 
-export type CallbackFnArgs = {
-    event: string;
-    data: Array<Record<string, unknown>>;
-    index?: number;
-    deleteCount?: number;
-};
+interface DataArrayArgs {
+    data: Data[];
+}
 
-export type CallbackFn = (args: CallbackFnArgs) => void;
+interface DataArgs {
+    data: Data;
+}
+
+interface IdArgs {
+    id: string | number;
+}
+
+interface IndexArgs {
+    index: number;
+}
 
 export interface DataObject {
-    initialData: Data;
-    push: (data: Data) => void;
-    unshift: (data: Data) => void;
-    update: (data: Data) => void;
-    insert: (data: Data, index: number) => void;
-    delete: (index: number, deleteCount: number) => void;
+    initialData: Data[];
+    push: (args: DataArrayArgs) => void;
+    unshift: (args: DataArrayArgs) => void;
+    set: (args: DataArrayArgs) => void;
+    updateById: (args: DataArgs & IdArgs) => void;
+    updateByIndex: (args: DataArgs & IndexArgs) => void;
+    deleteById: (args: IdArgs) => void;
+    deleteByIndex: (args: IndexArgs) => void;
     onChange: (callback: CallbackFn) => void;
 }
 
-export interface OperationResult {
-    data: Data;
-    position?: number;
+export interface CallbackFnArgs {
+    event: string;
+    data?: Data | Data[];
+    id?: string | number;
+    index?: number;
 }
+
+export type CallbackFn = (args: CallbackFnArgs) => void;
 
 export interface ColumnsProps {
     columns: string[];

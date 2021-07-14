@@ -22,7 +22,7 @@ describe('useDataHandler', () => {
         } = renderHook(() => useTableDataSource([{ name: 'Test' }]));
         const dataHandler = renderHook(() => useDataHandler(data));
         act(() => {
-            data.push([{ name: 'Test 2' }]);
+            data.push({ data: [{ name: 'Test 2' }] });
         });
         const [currentData] = dataHandler.result.current;
         expect(currentData).toEqual([{ name: 'Test' }, { name: 'Test 2' }]);
@@ -34,7 +34,7 @@ describe('useDataHandler', () => {
         } = renderHook(() => useTableDataSource([{ name: 'Test' }]));
         const dataHandler = renderHook(() => useDataHandler(data));
         act(() => {
-            data.unshift([{ name: 'Test 2' }]);
+            data.unshift({ data: [{ name: 'Test 2' }] });
         });
         const [currentData] = dataHandler.result.current;
         expect(currentData).toEqual([{ name: 'Test 2' }, { name: 'Test' }]);
@@ -46,35 +46,57 @@ describe('useDataHandler', () => {
         } = renderHook(() => useTableDataSource([{ name: 'Test' }]));
         const dataHandler = renderHook(() => useDataHandler(data));
         act(() => {
-            data.update([{ name: 'Test 2' }]);
+            data.set({ data: [{ name: 'Test 2' }] });
         });
         const [currentData] = dataHandler.result.current;
         expect(currentData).toEqual([{ name: 'Test 2' }]);
     });
 
-    it('should insert the new data on the correct position', () => {
+    it('should update the item with the passed id', () => {
         const {
             result: { current: data },
-        } = renderHook(() => useTableDataSource([{ name: 'Test 0' }, { name: 'Test 2' }]));
+        } = renderHook(() => useTableDataSource([{ id: 'test', name: 'Test' }]));
         const dataHandler = renderHook(() => useDataHandler(data));
         act(() => {
-            data.insert([{ name: 'Test 1' }], 1);
+            data.updateById({ id: 'test', data: { name: 'Updated test' } });
         });
         const [currentData] = dataHandler.result.current;
-        expect(currentData).toEqual([{ name: 'Test 0' }, { name: 'Test 1' }, { name: 'Test 2' }]);
+        expect(currentData).toEqual([{ name: 'Updated test' }]);
     });
 
-    it('should remove the data in the provided range', () => {
+    it('should update the item in the passed position', () => {
         const {
             result: { current: data },
-        } = renderHook(() =>
-            useTableDataSource([{ name: 'Test 0' }, { name: 'Test 1' }, { name: 'Test 2' }]),
-        );
+        } = renderHook(() => useTableDataSource([{ name: 'Test' }]));
         const dataHandler = renderHook(() => useDataHandler(data));
         act(() => {
-            data.delete(1, 2);
+            data.updateByIndex({ index: 0, data: { name: 'Updated test' } });
         });
         const [currentData] = dataHandler.result.current;
-        expect(currentData).toEqual([{ name: 'Test 0' }]);
+        expect(currentData).toEqual([{ name: 'Updated test' }]);
+    });
+
+    it('should remove the item with the passed id', () => {
+        const {
+            result: { current: data },
+        } = renderHook(() => useTableDataSource([{ id: 'test', name: 'Test' }]));
+        const dataHandler = renderHook(() => useDataHandler(data));
+        act(() => {
+            data.deleteById({ id: 'test' });
+        });
+        const [currentData] = dataHandler.result.current;
+        expect(currentData).toEqual([]);
+    });
+
+    it('should remove the item in the passed index', () => {
+        const {
+            result: { current: data },
+        } = renderHook(() => useTableDataSource([{ name: 'Test' }]));
+        const dataHandler = renderHook(() => useDataHandler(data));
+        act(() => {
+            data.deleteByIndex({ index: 0 });
+        });
+        const [currentData] = dataHandler.result.current;
+        expect(currentData).toEqual([]);
     });
 });
