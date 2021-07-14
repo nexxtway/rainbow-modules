@@ -12,12 +12,15 @@ import * as stories from '../stories/VirtualizedTable.story.js';
 ### How to use
 
 First you will need to obtain the data object using `useTableDataSource` hook. Then render a `VirtualizedTable`
-passing the data object and the keys you want to show as columns on the table:
+passing the data object and the fields you want to show as columns on the table:
 
 ```jsx
 const data = useTableDataSource();
 
-<VirtualizedTable data={data} columns={['id', 'name']} />;
+<VirtualizedTable data={data}>
+    <Column field="id" />
+    <Column field="name" />
+</VirtualizedTable>;
 ```
 
 > Note that you can provide the initial data by passing it as an argument to `useTableDataSource` hook.

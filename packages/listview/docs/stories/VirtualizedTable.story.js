@@ -1,7 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Application } from 'react-rainbow-components';
-import VirtualizedTable, { useTableDataSource } from '../../src/components/VirtualizedTable';
+import VirtualizedTable, {
+    useTableDataSource,
+    Column,
+} from '../../src/components/VirtualizedTable';
 import { dataTable } from './data/batchActionsBar';
 
 const Container = styled.div`
@@ -14,7 +17,6 @@ export const BasicVirtualizedTable = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [isLoadingBottom, setIsLoadingBottom] = useState(false);
     const [isLoadingTop, setIsLoadingTop] = useState(false);
-    const columnNames = ['name', 'company', 'status'];
 
     useEffect(() => {
         setTimeout(() => setIsLoading(false), 3000);
@@ -45,26 +47,31 @@ export const BasicVirtualizedTable = () => {
             <Container>
                 <VirtualizedTable
                     data={data}
-                    dataKeys={columnNames}
                     isLoading={isLoading}
                     isLoadingBottom={isLoadingBottom}
                     isLoadingTop={isLoadingTop}
                     onLoadMore={onLoadMore}
                     enableInfinityScrollBottom
                     enableInfinityScrollTop
-                />
+                >
+                    <Column field="name" />
+                    <Column field="company" />
+                    <Column field="status" label="Current status" />
+                </VirtualizedTable>
             </Container>
         </Application>
     );
 };
 
 export const EmptyVirtualizedTable = () => {
-    const columnNames = ['name', 'company', 'status'];
-
     return (
         <Application>
             <Container>
-                <VirtualizedTable data={[]} dataKeys={columnNames} />
+                <VirtualizedTable data={[]}>
+                    <Column field="name" />
+                    <Column field="company" />
+                    <Column field="status" />
+                </VirtualizedTable>
             </Container>
         </Application>
     );

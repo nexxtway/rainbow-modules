@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 interface LoadMoreArgs {
     direction?: 'top' | 'bottom';
 }
@@ -41,8 +43,14 @@ export interface CallbackFnArgs {
 
 export type CallbackFn = (args: CallbackFnArgs) => void;
 
-export interface ColumnsProps {
-    columns: string[];
+export interface ColumnProps {
+    field?: string;
+    label?: string;
+}
+
+export interface Context {
+    registerColumn: (props: ColumnProps) => void;
+    unregisterColumn: (props: ColumnProps) => void;
 }
 
 export interface VirtualizedTableProps {
@@ -67,4 +75,5 @@ export interface VirtualizedTableProps {
     isLoadingTop?: boolean;
     /** Specifies that a loading indicator should be shown on the bottom row. */
     isLoadingBottom?: boolean;
+    children?: ReactNode;
 }

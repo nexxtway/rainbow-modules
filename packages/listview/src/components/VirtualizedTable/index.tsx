@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { LoadingShape } from 'react-rainbow-components';
 import {
     AutoSizer,
@@ -29,17 +29,17 @@ import {
     StyledEmptyDescription,
     StyledEmptyIcon,
 } from './styled';
-import { VirtualizedTableProps } from './types';
+import { ColumnProps, VirtualizedTableProps } from './types';
 
 const VirtualizedTable = ({
     data: dataInProps,
-    dataKeys,
     isLoading,
     isLoadingBottom,
     isLoadingTop,
     enableInfinityScrollBottom,
     enableInfinityScrollTop,
     onLoadMore,
+    children,
 }: VirtualizedTableProps): React.ReactElement | null => {
     const [data, itemPosition, prevStartIndex, prevStopIndex] = useDataHandler(dataInProps);
 
@@ -50,10 +50,14 @@ const VirtualizedTable = ({
     );
     const rowCount = isLoading ? 4 : dataLength + extraRows;
 
-    const headerRowRenderer = ({ className, style, columns }: TableHeaderRowProps) => {
+    const headerRowRenderer = ({
+        className,
+        style,
+        columns: headerColumns,
+    }: TableHeaderRowProps) => {
         return (
             <StyledRowHeader className={className} style={style} role="row">
-                {columns}
+                {headerColumns}
             </StyledRowHeader>
         );
     };
@@ -110,11 +114,11 @@ const VirtualizedTable = ({
     };
 
     const rowRenderer = (info: TableRowProps) => {
-        const { className, style, key, columns } = info;
+        const { className, style, key, columns: rowColumns } = info;
 
         return (
             <StyledRow className={className} style={style} key={key} role="row">
-                {columns}
+                {rowColumns}
             </StyledRow>
         );
     };
@@ -154,6 +158,26 @@ const VirtualizedTable = ({
         prevStopIndex.current = stopIndex;
     };
 
+    const columns = React.Children.map(children, (child) => {
+        const {
+            props: { field, label },
+        } = child as ReactElement<ColumnProps>;
+
+        if (!field) return null;
+
+        return (
+            <Column
+                key={field}
+                label={label ?? field}
+                dataKey={field}
+                width={100}
+                headerRenderer={headerRenderer}
+                cellRenderer={cellRenderer}
+                flexGrow={1}
+            />
+        );
+    });
+
     return (
         <AutoSizer>
             {({ width, height }) => (
@@ -171,17 +195,7 @@ const VirtualizedTable = ({
                     scrollToIndex={itemPosition}
                     scrollToAlignment="start"
                 >
-                    {dataKeys?.map((key) => (
-                        <Column
-                            key={key}
-                            label={key}
-                            dataKey={key}
-                            width={100}
-                            headerRenderer={headerRenderer}
-                            cellRenderer={cellRenderer}
-                            flexGrow={1}
-                        />
-                    ))}
+                    {columns}
                 </Table>
             )}
         </AutoSizer>
@@ -189,4 +203,5 @@ const VirtualizedTable = ({
 };
 
 export default VirtualizedTable;
+export { default as Column } from './column';
 export { default as useTableDataSource } from './hooks/useTableDataSource';

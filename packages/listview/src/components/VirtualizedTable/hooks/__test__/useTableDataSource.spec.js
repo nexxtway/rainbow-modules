@@ -27,8 +27,34 @@ describe('useTableDataSource', () => {
                 name: 'Test 2',
             },
         ];
-        const actions = ['push', 'unshift', 'update', 'insert', 'delete'];
-        const args = [[newData], [newData], [newData], [newData, 1], [1, 1]];
+        const actions = [
+            'push',
+            'unshift',
+            'set',
+            'updateById',
+            'updateByIndex',
+            'deleteById',
+            'deleteByIndex',
+        ];
+        const args = [
+            { data: newData },
+            { data: newData },
+            { data: newData },
+            {
+                id: 'test',
+                data: {
+                    name: 'Test 2',
+                },
+            },
+            {
+                index: 0,
+                data: {
+                    name: 'Test 2',
+                },
+            },
+            { id: 'test' },
+            { index: 0 },
+        ];
         const expectedArgs = [
             {
                 event: 'push',
@@ -39,23 +65,34 @@ describe('useTableDataSource', () => {
                 data: newData,
             },
             {
-                event: 'update',
+                event: 'set',
                 data: newData,
             },
             {
-                event: 'insert',
-                data: newData,
-                index: 1,
+                event: 'updateById',
+                data: {
+                    name: 'Test 2',
+                },
+                id: 'test',
             },
             {
-                event: 'delete',
-                data: [],
-                index: 1,
-                deleteCount: 1,
+                event: 'updateByIndex',
+                data: {
+                    name: 'Test 2',
+                },
+                index: 0,
+            },
+            {
+                event: 'deleteById',
+                id: 'test',
+            },
+            {
+                event: 'deleteByIndex',
+                index: 0,
             },
         ];
         actions.forEach((action, index) => {
-            result.current[action](...args[index]);
+            result.current[action](args[index]);
             expect(onChangeFn).toHaveBeenCalledWith(expectedArgs[index]);
             onChangeFn.mockClear();
         });

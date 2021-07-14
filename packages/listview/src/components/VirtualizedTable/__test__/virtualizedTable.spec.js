@@ -1,7 +1,7 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import { Application, LoadingShape } from 'react-rainbow-components';
-import VirtualizedTable from '..';
+import VirtualizedTable, { Column } from '..';
 import { StyledEmptyContainer, StyledRow } from '../styled';
 
 describe('<VirtualizedTable />', () => {
@@ -18,7 +18,9 @@ describe('<VirtualizedTable />', () => {
         };
         const component = mount(
             <Application>
-                <VirtualizedTable data={data} dataKeys={['name']} />
+                <VirtualizedTable data={data}>
+                    <Column field="name" />
+                </VirtualizedTable>
             </Application>,
         );
         expect(component.find(StyledRow).length).toBe(2);
@@ -29,7 +31,9 @@ describe('<VirtualizedTable />', () => {
     it('should render a LoadingShape when isLoading is true', () => {
         const component = mount(
             <Application>
-                <VirtualizedTable isLoading data={[]} dataKeys={['name']} />
+                <VirtualizedTable isLoading data={[]}>
+                    <Column field="name" />
+                </VirtualizedTable>
             </Application>,
         );
         expect(component.find(LoadingShape).exists()).toBe(true);
