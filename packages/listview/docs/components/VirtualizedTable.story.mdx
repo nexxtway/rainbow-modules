@@ -1,0 +1,36 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import VirtualizedTable from '../../src/components/VirtualizedTable';
+import * as stories from '../stories/VirtualizedTable.story.js';
+
+<Meta title="Modules/Listview/Components/VirtualizedTable" component={VirtualizedTable} />
+
+# Overview
+
+`VirtualizedTable` efficiently renders large amount of data on a table. It also provides the
+`useTableDataSource` hook to help managing the displayed data.
+
+### How to use
+
+First you will need to obtain the data object using `useTableDataSource` hook. Then render a `VirtualizedTable`
+passing the data object and the fields you want to show as columns on the table:
+
+```jsx
+const data = useTableDataSource();
+
+<VirtualizedTable data={data}>
+    <Column field="id" />
+    <Column field="name" />
+</VirtualizedTable>;
+```
+
+> Note that you can provide the initial data by passing it as an argument to `useTableDataSource` hook.
+
+### This is an example with the VirtualizedTable.
+
+<Preview>
+    <Story name="VirtualizedTable">{stories.BasicVirtualizedTable()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={VirtualizedTable} />
