@@ -24,6 +24,7 @@ const InputSearch: React.FC<InputSearchProps> = ({
     const clear = () => {
         setValue('');
         if (onChange) onChange('');
+        if (variant === 'default' && onSearch) onSearch('');
         if (inputRef.current) inputRef.current.focus();
     };
 
