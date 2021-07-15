@@ -26,6 +26,17 @@ describe('<InputSearch />', () => {
         expect(searchFn).toHaveBeenCalledWith('Test');
     });
 
+    it('should fire onSearch event when cleared', () => {
+        const searchFn = jest.fn();
+        const component = mount(
+            <Application>
+                <InputSearch value="Test" onSearch={searchFn} />
+            </Application>,
+        );
+        component.find('input').simulate('keydown', { key: 'Escape' });
+        expect(searchFn).toHaveBeenCalled();
+    });
+
     it('should clear value when clear button is clicked', () => {
         const changeFn = jest.fn();
         const component = mount(
