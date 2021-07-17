@@ -108,7 +108,12 @@ export const Basic = () => {
     return (
         <Application>
             <Form onSubmit={(values) => alert(JSON.stringify(values))}>
-                <FieldsGenerator schema={schema} types={types} validations={validations} />
+                <FieldsGenerator
+                    schema={schema}
+                    types={types}
+                    validations={validations}
+                    labelAlignment="left"
+                />
                 <StyledButton label="Submit" type="submit" />
             </Form>
         </Application>

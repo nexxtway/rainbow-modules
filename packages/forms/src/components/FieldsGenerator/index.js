@@ -38,7 +38,7 @@ const componentsMap = {
 };
 
 const FieldsGenerator = (props) => {
-    const { schema, types, validations } = props;
+    const { schema, types, validations, labelAlignment } = props;
     if (Array.isArray(schema) && types) {
         return schema.map((field) => {
             const {
@@ -101,6 +101,7 @@ const FieldsGenerator = (props) => {
                             maxLength={maxLengthValue}
                             minLength={minLengthValue}
                             defaultValue={defaultValue}
+                            labelAlignment={labelAlignment}
                         />
                     </Container>
                 );
@@ -128,6 +129,7 @@ const FieldsGenerator = (props) => {
                         minLength={minLengthValue}
                         options={selectOptions}
                         defaultValue={defaultValue}
+                        labelAlignment={labelAlignment}
                     />
                 </Container>
             );
@@ -179,12 +181,16 @@ FieldsGenerator.propTypes = {
     types: PropTypes.object,
     /** An object with the custom validations. e.g: { isEmail: (value) => \regex\.test(value) } */
     validations: PropTypes.object,
+    /** Describes the position of the Fields label. Options include left, center and right.
+     * This value defaults to center. */
+    labelAlignment: PropTypes.oneOf(['left', 'center', 'right']),
 };
 
 FieldsGenerator.defaultProps = {
     schema: [],
     types: {},
     validations: {},
+    labelAlignment: 'center',
 };
 
 export default FieldsGenerator;
