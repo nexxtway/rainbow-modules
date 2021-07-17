@@ -70,7 +70,7 @@ export interface Props {
     validations?: CustomValidations;
     /** Describes the position of the Fields label. Options include left, center and right.
      * This value defaults to center. */
-    labelAlignment?: string;
+    labelAlignment?: 'left' | 'center' | 'right';
 }
 
 export default function (props: Props): JSX.Element | null;
