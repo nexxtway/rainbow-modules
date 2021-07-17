@@ -68,6 +68,9 @@ export interface Props {
     types?: Types;
     /** An object with the custom validations. e.g: { isEmail: (value) => \regex\.test(value) } */
     validations?: CustomValidations;
+    /** Describes the position of the Fields label. Options include left, center and right.
+     * This value defaults to center. */
+    labelAlignment?: 'left' | 'center' | 'right';
 }
 
 export default function (props: Props): JSX.Element | null;
