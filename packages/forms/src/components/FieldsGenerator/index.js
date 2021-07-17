@@ -190,7 +190,7 @@ FieldsGenerator.defaultProps = {
     schema: [],
     types: {},
     validations: {},
-    labelAlignment: undefined,
+    labelAlignment: 'center',
 };
 
 export default FieldsGenerator;
