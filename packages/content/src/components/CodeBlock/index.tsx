@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { LightAsync as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { xcode } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import { RenderIf } from 'react-rainbow-components';
@@ -63,11 +64,24 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
     );
 };
 
+CodeBlock.propTypes = {
+    className: PropTypes.string,
+    style: PropTypes.object,
+    language: PropTypes.string,
+    label: PropTypes.string,
+    value: PropTypes.string,
+    showLineNumbers: PropTypes.bool,
+    hideHeader: PropTypes.bool,
+};
+
 CodeBlock.defaultProps = {
+    className: undefined,
+    style: undefined,
     label: undefined,
     value: undefined,
     language: undefined,
     showLineNumbers: false,
+    hideHeader: false,
 };
 
 export default CodeBlock;

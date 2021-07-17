@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 import { MagnifyingGlass } from '@rainbow-modules/icons';
 import { InputComponent, InputSearchProps } from './types';
 import { StyledContainer, StyledInput } from './styled';
@@ -61,6 +62,20 @@ const InputSearch: React.FC<InputSearchProps> = ({
     );
 };
 
+InputSearch.propTypes = {
+    className: PropTypes.string,
+    style: PropTypes.object,
+    name: PropTypes.string,
+    variant: PropTypes.oneOf(['default', 'realtime']),
+    value: PropTypes.string,
+    disabled: PropTypes.bool,
+    readOnly: PropTypes.bool,
+    onChange: PropTypes.func,
+    onSearch: PropTypes.func,
+    placeholder: PropTypes.string,
+    autoComplete: PropTypes.string,
+};
+
 InputSearch.defaultProps = {
     className: undefined,
     style: undefined,
@@ -71,6 +86,8 @@ InputSearch.defaultProps = {
     variant: 'default',
     placeholder: undefined,
     autoComplete: 'off',
+    onChange: undefined,
+    onSearch: undefined,
 };
 
 export default InputSearch;

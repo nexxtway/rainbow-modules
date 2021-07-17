@@ -36,7 +36,6 @@ export interface StackedAccordionSectionProps {
     name?: string;
     /** The text to be displayed as the StackedAccordionSection's label. */
     label?: ReactNode;
-    defaultHeight?: number;
     /** Specifies that the StackedAccordionSection element should be disabled.
      * This value defaults to false. */
     disabled?: boolean;

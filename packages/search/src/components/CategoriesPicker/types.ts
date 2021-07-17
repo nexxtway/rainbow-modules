@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { CSSProperties, ReactNode } from 'react';
 
 export interface CategoriesPickerProps {
     /**
@@ -12,7 +12,7 @@ export interface CategoriesPickerProps {
     /**
      * An object with custom style applied for the outer element.
      */
-    style?: Record<string, unknown>;
+    style?: CSSProperties;
     /**
      * The name of CategoriesPicker.
      */

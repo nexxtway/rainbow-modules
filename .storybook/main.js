@@ -58,7 +58,7 @@ module.exports = {
     typescript: {
         check: true,
         checkOptions: {},
-        reactDocgen: 'none',
+        reactDocgen: 'react-docgen',
     },
     reactOptions: {
         fastRefresh: true,

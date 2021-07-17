@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StyledLink } from './styled';
 import { LinkButtonProps } from './types';
 
@@ -25,9 +26,36 @@ const LinkButton: React.FC<LinkButtonProps> = ({
     </StyledLink>
 );
 
+LinkButton.propTypes = {
+    className: PropTypes.string,
+    style: PropTypes.object,
+    variant: PropTypes.oneOf([
+        'base',
+        'neutral',
+        'brand',
+        'outline-brand',
+        'destructive',
+        'success',
+        'border',
+        'border-filled',
+        'border-inverse',
+        'inverse',
+    ]),
+    shaded: PropTypes.bool,
+    size: PropTypes.oneOf(['small', 'medium', 'large']),
+    to: PropTypes.string,
+    target: PropTypes.string,
+    children: PropTypes.node,
+};
+
 LinkButton.defaultProps = {
     className: undefined,
     style: undefined,
+    variant: 'base',
+    shaded: false,
+    size: 'medium',
+    to: undefined,
+    target: undefined,
     children: null,
 };
 

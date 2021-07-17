@@ -1,5 +1,6 @@
 import { ComponentType, ReactNode, RefObject } from 'react';
 
+type InitialValues = Record<string, unknown>;
 export interface UniversalFormOverlayProps {
     /**
      * Ref or function that returns a ref to a DOM element, the DOM element resolved by
@@ -33,7 +34,8 @@ export interface UniversalFormOverlayProps {
     /**
      * The initial values of the form e.g. { name: 'Max', age: 30 }.
      */
-    initialValues?: Record<string, unknown>;
+    // eslint-disable-next-line @typescript-eslint/ban-types
+    initialValues?: InitialValues;
     /**
      * The label of the submit button on the form.
      */
