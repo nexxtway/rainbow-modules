@@ -1,11 +1,11 @@
-import React, { ReactNode } from 'react';
+import React, { CSSProperties, ReactNode } from 'react';
 import { LabelAlignment } from 'react-rainbow-components/components/types';
 
 export type Value = string | Record<string, unknown>;
 
 export interface JsonInputProps {
     className?: string;
-    style?: Record<string, unknown>;
+    style?: CSSProperties;
     id?: string;
     value?: Value;
     label?: ReactNode;

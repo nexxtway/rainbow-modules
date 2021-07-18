@@ -1,4 +1,5 @@
 import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 import { useUniqueIdentifier } from '@rainbow-modules/hooks';
 import { RenderIf } from 'react-rainbow-components';
 import {
@@ -209,6 +210,22 @@ const StackedAccordionSection: React.FC<StackedAccordionSectionProps> = ({
             </RenderIf>
         </StyledSection>
     );
+};
+
+StackedAccordionSection.propTypes = {
+    className: PropTypes.string,
+    style: PropTypes.object,
+    name: PropTypes.string,
+    label: PropTypes.node,
+    disabled: PropTypes.bool,
+};
+
+StackedAccordionSection.defaultProps = {
+    className: undefined,
+    style: undefined,
+    name: undefined,
+    label: undefined,
+    disabled: false,
 };
 
 export default StackedAccordionSection;

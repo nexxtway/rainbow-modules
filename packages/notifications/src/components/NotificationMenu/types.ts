@@ -26,8 +26,8 @@ export interface Notification {
 }
 
 export interface NotificationProps extends Notification {
-    onClick?: (notification: Notification) => void;
-    isLoading?: boolean;
+    onClick?: ((notification: Notification) => void) | null;
+    isLoading?: boolean | null;
 }
 
 export interface NotificationsProps {

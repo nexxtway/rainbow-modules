@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { createPortal } from 'react-dom';
 import { RenderIf, Tree } from 'react-rainbow-components';
 import { Download as DownloadIcon } from '@rainbow-modules/icons';
@@ -188,6 +189,22 @@ const CodeViewer: React.FC<CodeViewerProps> = ({
         </Container>,
         isFullScreen,
     );
+};
+
+CodeViewer.propTypes = {
+    icon: PropTypes.node,
+    name: PropTypes.node,
+    onFolderExpand: PropTypes.func,
+    onFileSelect: PropTypes.func,
+    onDownload: PropTypes.func,
+};
+
+CodeViewer.defaultProps = {
+    icon: undefined,
+    name: undefined,
+    onFolderExpand: undefined,
+    onFileSelect: undefined,
+    onDownload: undefined,
 };
 
 export default CodeViewer;

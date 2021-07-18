@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 import { ResizableColumnsProps } from './types';
 import { StyledContainer, StyledLeftColumn, StyledRightColumn, StyledDivider } from './styled';
 import getMinWidth from './helpers/getMinWidth';
@@ -123,7 +124,55 @@ const ResizableColumns: React.FC<ResizableColumnsProps> = ({
     );
 };
 
+ResizableColumns.propTypes = {
+    /** A CSS class for the outer element, in addition to the component's base classes. */
+    className: PropTypes.string,
+    /** An object with custom style applied for the outer element. */
+    style: PropTypes.object,
+    /**
+     * The initial divider position.
+     *
+     * When passing a positive number it specifies the position from the left, and when the number
+     * is less than zero then it specifies the position from the right.
+     */
+    initialDividerPosition: PropTypes.number,
+    /**
+     * When true, hides the divider until the pointer is over.
+     */
+    hideDivider: PropTypes.bool,
+    /**
+     * The content to render on the left column.
+     */
+    leftColumn: PropTypes.node,
+    /**
+     * The content to render on the right column.
+     */
+    rightColumn: PropTypes.node,
+    /**
+     * The minimum width of the left column.
+     */
+    minLeftWidth: PropTypes.shape({
+        px: PropTypes.number,
+        percent: PropTypes.number,
+    }),
+    /**
+     * The minimum width of the right column.
+     */
+    minRightWidth: PropTypes.shape({
+        px: PropTypes.number,
+        percent: PropTypes.number,
+    }),
+    /**
+     * Function to invoke when the user finishes resizing.
+     *
+     * Useful to store the size of the columns.
+     */
+    onResize: PropTypes.func,
+};
+
 ResizableColumns.defaultProps = {
+    className: undefined,
+    style: undefined,
     initialDividerPosition: undefined,
     hideDivider: false,
     leftColumn: undefined,

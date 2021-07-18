@@ -1,4 +1,5 @@
 import React, { useImperativeHandle, useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 import InternalOverlay from 'react-rainbow-components/components/InternalOverlay';
 import { BadgeOverlay, ButtonIcon, RenderIf } from 'react-rainbow-components';
 import { Bell } from '@rainbow-modules/icons';
@@ -84,6 +85,22 @@ const NotificationMenu: React.ForwardRefExoticComponent<NotificationMenuProps> =
     );
 });
 
+NotificationMenu.propTypes = {
+    className: PropTypes.string,
+    style: PropTypes.object,
+    label: PropTypes.node,
+    footer: PropTypes.node,
+    isLoading: PropTypes.bool,
+    unreads: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]),
+    notifications: PropTypes.arrayOf(
+        PropTypes.shape({
+            onClick: PropTypes.func,
+            isLoading: PropTypes.bool,
+        }).isRequired,
+    ),
+    onClick: PropTypes.func,
+};
+
 NotificationMenu.defaultProps = {
     label: 'Notifications',
     footer: null,
@@ -92,6 +109,7 @@ NotificationMenu.defaultProps = {
     notifications: [],
     className: undefined,
     style: undefined,
+    onClick: undefined,
 };
 
 export default NotificationMenu;

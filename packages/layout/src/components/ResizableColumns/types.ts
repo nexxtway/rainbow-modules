@@ -17,8 +17,8 @@ export interface ColumnProps {
 }
 
 export type Width = {
-    px?: number;
-    percent?: number;
+    px?: number | null;
+    percent?: number | null;
 };
 
 export type OnResizeParams = {

@@ -19,7 +19,8 @@
         "react": ">=16.8.0",
         "react-intl": ">=4.0.0",
         "react-dom": "^16.13.1",
-        "react-rainbow-components": ">=1.15.0"
+        "react-rainbow-components": ">=1.15.0",
+        "prop-types": "^15.7.2"
     },
     "devDependencies": {
         "@types/react-dom": "^16.9"

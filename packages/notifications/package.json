@@ -16,7 +16,8 @@
         "firebase": ">=8.2.0",
         "react": ">=16.8.0",
         "react-intl": "^4.4.0",
-        "react-rainbow-components": ">=1.15.0"
+        "react-rainbow-components": ">=1.15.0",
+        "prop-types": "^15.7.2"
     },
     "publishConfig": {
         "access": "public"

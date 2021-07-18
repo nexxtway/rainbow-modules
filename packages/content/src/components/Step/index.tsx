@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
     StyledContainer,
     StyledNumber,
@@ -26,6 +27,24 @@ const Step: React.FC<StepProps> = ({
             </StyledStepContent>
         </StyledContainer>
     );
+};
+
+Step.propTypes = {
+    className: PropTypes.string,
+    style: PropTypes.object,
+    number: PropTypes.number,
+    header: PropTypes.node,
+    description: PropTypes.node,
+    children: PropTypes.node,
+};
+
+Step.defaultProps = {
+    className: undefined,
+    style: undefined,
+    number: undefined,
+    header: undefined,
+    description: undefined,
+    children: undefined,
 };
 
 export default Step;

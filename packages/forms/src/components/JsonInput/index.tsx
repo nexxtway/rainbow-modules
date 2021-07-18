@@ -1,6 +1,8 @@
+/* eslint-disable react/no-unused-prop-types */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useEffect, useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 import Label from 'react-rainbow-components/components/Input/label';
 import useReduxForm from 'react-rainbow-components/libs/hooks/useReduxForm';
 import { RenderIf } from 'react-rainbow-components';
@@ -138,6 +140,40 @@ const JsonInput: React.FC<JsonInputProps> = (props: JsonInputProps) => {
             </RenderIf>
         </JsonInputContainer>
     );
+};
+
+JsonInput.propTypes = {
+    className: PropTypes.string,
+    style: PropTypes.object,
+    id: PropTypes.string,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.objectOf(PropTypes.any)]),
+    label: PropTypes.node,
+    labelAlignment: PropTypes.oneOf(['left', 'center', 'right']),
+    hideLabel: PropTypes.bool,
+    required: PropTypes.bool,
+    disabled: PropTypes.bool,
+    readOnly: PropTypes.bool,
+    error: PropTypes.node,
+    onChange: PropTypes.func,
+    onFocus: PropTypes.func,
+    onBlur: PropTypes.func,
+};
+
+JsonInput.defaultProps = {
+    className: undefined,
+    style: undefined,
+    id: undefined,
+    value: undefined,
+    label: undefined,
+    labelAlignment: 'left',
+    hideLabel: false,
+    required: false,
+    disabled: false,
+    readOnly: false,
+    error: undefined,
+    onChange: undefined,
+    onFocus: undefined,
+    onBlur: undefined,
 };
 
 export default JsonInput;

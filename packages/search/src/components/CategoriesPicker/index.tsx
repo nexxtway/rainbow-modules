@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { UniversalPicker } from '@rainbow-modules/forms';
 import { CategoriesPickerProps } from './types';
 import { StyledContainer, StyledLabel } from './styled';
@@ -34,6 +35,45 @@ export const CategoriesPicker: React.FunctionComponent<CategoriesPickerProps> = 
             </UniversalPicker>
         </StyledContainer>
     );
+};
+
+CategoriesPicker.propTypes = {
+    /**
+     * The ID of the container element
+     */
+    id: PropTypes.string,
+    /**
+     * A CSS class for the outer element, in addition to the component's base classes.
+     */
+    className: PropTypes.string,
+    /**
+     * An object with custom style applied for the outer element.
+     */
+    style: PropTypes.object,
+    /**
+     * The name of CategoriesPicker.
+     */
+    name: PropTypes.string,
+    /**
+     * The value of the element.
+     */
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string.isRequired)]),
+    /**
+     * An array containing the category names to show.
+     */
+    options: PropTypes.arrayOf(PropTypes.string.isRequired),
+    /**
+     * When true, multiple categories can be selected at the same time.
+     */
+    multiple: PropTypes.bool,
+    /**
+     * The title at the top of the CategoriesPicker component.
+     */
+    label: PropTypes.node,
+    /**
+     * The action triggered when the value changes.
+     */
+    onChange: PropTypes.func,
 };
 
 CategoriesPicker.defaultProps = {

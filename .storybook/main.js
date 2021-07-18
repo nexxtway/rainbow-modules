@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-    stories: ['../getting-started/*.story.@(js|mdx)', '../packages/**/*.story.@(js|mdx)'],
+    stories: ['../getting-started/*.story.@(js|mdx)', '../packages/**/docs/**/*.story.@(js|mdx)'],
     addons: [
         {
             name: '@storybook/addon-storysource',
@@ -58,11 +58,7 @@ module.exports = {
     typescript: {
         check: true,
         checkOptions: {},
-        reactDocgen: 'react-docgen-typescript',
-        reactDocgenTypescriptOptions: {
-            shouldExtractLiteralValuesFromEnum: true,
-            propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
-        },
+        reactDocgen: 'react-docgen',
     },
     reactOptions: {
         fastRefresh: true,

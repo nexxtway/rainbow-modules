@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 import { Provider } from './context';
 import { Section, StackedAccordionProps, Context } from './types';
 import { StyledContainer } from './styled';
@@ -67,6 +68,20 @@ const StackedAccordion: React.FC<StackedAccordionProps> = ({
             <Provider value={contextValue}>{children}</Provider>
         </StyledContainer>
     );
+};
+
+StackedAccordion.propTypes = {
+    className: PropTypes.string,
+    style: PropTypes.object,
+    activeSectionNames: PropTypes.arrayOf(PropTypes.string.isRequired),
+    onToggleSection: PropTypes.func,
+};
+
+StackedAccordion.defaultProps = {
+    className: undefined,
+    style: undefined,
+    activeSectionNames: undefined,
+    onToggleSection: undefined,
 };
 
 export default StackedAccordion;

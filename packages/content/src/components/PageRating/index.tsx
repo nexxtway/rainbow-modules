@@ -1,4 +1,5 @@
 import React, { ChangeEvent } from 'react';
+import PropTypes from 'prop-types';
 import { useUniqueIdentifier } from '@rainbow-modules/hooks';
 import { PageRatingProps, Values } from './types';
 import { StyledContainer, StyledLegend, StyledOptionsContainer } from './styled';
@@ -59,6 +60,24 @@ const PageRating: React.FC<PageRatingProps> = ({
             </StyledOptionsContainer>
         </StyledContainer>
     );
+};
+
+PageRating.propTypes = {
+    className: PropTypes.string,
+    style: PropTypes.object,
+    label: PropTypes.string,
+    labelAlignment: PropTypes.oneOf(['center', 'left', 'right', 'inlineLeft', 'inlineRight']),
+    value: PropTypes.oneOf(['happy', 'neutral', 'sad']),
+    onChange: PropTypes.func,
+};
+
+PageRating.defaultProps = {
+    className: undefined,
+    style: undefined,
+    label: undefined,
+    labelAlignment: 'center',
+    value: undefined,
+    onChange: undefined,
 };
 
 export default PageRating;
