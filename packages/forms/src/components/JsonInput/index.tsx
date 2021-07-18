@@ -146,7 +146,7 @@ JsonInput.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
     id: PropTypes.string,
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.objectOf(PropTypes.any)]),
     label: PropTypes.node,
     labelAlignment: PropTypes.oneOf(['left', 'center', 'right']),
     hideLabel: PropTypes.bool,
