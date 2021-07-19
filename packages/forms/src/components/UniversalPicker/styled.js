@@ -11,6 +11,8 @@ export const StyledContainer = styled.fieldset`
     margin: 0;
     padding: 0;
     border: 0;
+    position: relative;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,6 +24,7 @@ export const StyledLabel = attachThemeAttrs(styled.legend)`
     padding: 0 1rem;
     color: ${(props) => props.palette.text.label};
     line-height: 1.5;
+    display: inline-block;
     margin-bottom: 0.25rem;
     text-align: ${(props) => labelAlignmentMap[props.labelAlignment] || labelAlignmentMap.center};
 `;
@@ -31,6 +34,7 @@ export const StyledOptionsContainer = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
+    position: relative;
 
     ${(props) =>
         props.direction === 'vertical' &&
