@@ -15,4 +15,5 @@ export interface CodeBlockProps {
     value?: string;
     showLineNumbers?: boolean;
     hideHeader?: boolean;
+    theme?: 'light' | 'dark';
 }

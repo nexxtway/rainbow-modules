@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
+import { ThemeContext } from 'styled-components';
 import { LightAsync as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { xcode } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
-import { RenderIf } from 'react-rainbow-components';
+import { xcode, atomOneDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import { RainbowThemeContainer, RenderIf } from 'react-rainbow-components';
 import { CodeBlockProps } from './types';
 import { StyledContainer, StyledHeader, StyledLabel, StyledContent, StyledPre } from './styled';
 import CopyButton from './copyButton';
@@ -16,7 +17,9 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
     language,
     showLineNumbers,
     hideHeader,
+    theme,
 }: CodeBlockProps) => {
+    const originalTheme = useContext(ThemeContext);
     const [showCopiedMessage, setShowCopiedMessage] = useState<boolean>();
 
     const handleClick = () => {
@@ -37,30 +40,44 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
         />
     );
 
+    const highlighterTheme = theme === 'dark' ? atomOneDark : xcode;
+    const containerTheme =
+        theme === 'dark'
+            ? {
+                  rainbow: {
+                      palette: {
+                          mainBackground: '#272c35',
+                      },
+                  },
+              }
+            : originalTheme;
+
     return (
-        <StyledContainer className={className} style={style}>
-            <RenderIf isTrue={!hideHeader}>
-                <StyledHeader>
-                    <StyledLabel>{label}</StyledLabel>
-                    {copyButton}
-                </StyledHeader>
-            </RenderIf>
-            <StyledContent>
-                <RenderIf isTrue={hideHeader}>{copyButton}</RenderIf>
-                <SyntaxHighlighter
-                    language={language}
-                    style={xcode}
-                    showLineNumbers={showLineNumbers}
-                    PreTag={StyledPre}
-                    wrapLongLines
-                >
-                    {value}
-                </SyntaxHighlighter>
-                <RenderIf isTrue={showCopiedMessage}>
-                    <CopiedMessage />
+        <RainbowThemeContainer theme={containerTheme}>
+            <StyledContainer className={className} style={style}>
+                <RenderIf isTrue={!hideHeader}>
+                    <StyledHeader>
+                        <StyledLabel>{label}</StyledLabel>
+                        {copyButton}
+                    </StyledHeader>
                 </RenderIf>
-            </StyledContent>
-        </StyledContainer>
+                <StyledContent>
+                    <RenderIf isTrue={hideHeader}>{copyButton}</RenderIf>
+                    <SyntaxHighlighter
+                        language={language}
+                        style={highlighterTheme}
+                        showLineNumbers={showLineNumbers}
+                        PreTag={StyledPre}
+                        wrapLongLines
+                    >
+                        {value}
+                    </SyntaxHighlighter>
+                    <RenderIf isTrue={showCopiedMessage}>
+                        <CopiedMessage />
+                    </RenderIf>
+                </StyledContent>
+            </StyledContainer>
+        </RainbowThemeContainer>
     );
 };
 
