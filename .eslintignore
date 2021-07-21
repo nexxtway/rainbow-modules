@@ -1,3 +1,4 @@
 .jest-cache
 .jest-coverage
 storybook-static
+packages/cypress/pageObjects
