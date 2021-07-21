@@ -20,6 +20,14 @@ export const CodeBlockExample = () => {
     );
 };
 
+export const DarkCodeBlockExample = () => {
+    return (
+        <RainbowFirebaseApp>
+            <CodeBlock label="JavaScript" language="javascript" value={code} theme="dark" />
+        </RainbowFirebaseApp>
+    );
+};
+
 export default {
     title: 'Modules/Content/Stories/CodeBlock',
 };
