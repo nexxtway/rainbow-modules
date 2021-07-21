@@ -1,6 +1,6 @@
 {
     "name": "@rainbow-modules/layout",
-    "version": "0.38.0",
+    "version": "0.39.0",
     "main": "lib/index.js",
     "author": "Nexxtway Team",
     "license": "MIT",
@@ -8,13 +8,13 @@
         "lib"
     ],
     "dependencies": {
-        "@rainbow-modules/hooks": "^0.38.0",
+        "@rainbow-modules/hooks": "^0.39.0",
         "styled-components": "^4.3.2"
     },
     "peerDependencies": {
+        "prop-types": "^15.7.2",
         "react": ">=16.8.0",
-        "react-rainbow-components": ">=1.15.0",
-        "prop-types": "^15.7.2"
+        "react-rainbow-components": ">=1.15.0"
     },
     "publishConfig": {
         "access": "public"

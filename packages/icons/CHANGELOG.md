@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.39.0](https://github.com/nexxtway/rainbow-modules/compare/v0.38.0...v0.39.0) (2021-07-21)
+
+### Features
+
+-   add `title` prop to icons ([#412](https://github.com/nexxtway/rainbow-modules/issues/412)) ([2f473cc](https://github.com/nexxtway/rainbow-modules/commit/2f473cc3f00a36ffd72e939dfbb8ce2659ea74d5))
+-   added tag icon ([#414](https://github.com/nexxtway/rainbow-modules/issues/414)) ([aaaca5c](https://github.com/nexxtway/rainbow-modules/commit/aaaca5c814168f6a08d8d1a66a4822d78df4d951))
+-   implement `CodeViewer` component ([#409](https://github.com/nexxtway/rainbow-modules/issues/409)) ([0c3df52](https://github.com/nexxtway/rainbow-modules/commit/0c3df529be559ca3750cb1b5a82e5504924e04fc))
+
 # [0.38.0](https://github.com/nexxtway/rainbow-modules/compare/v0.37.0...v0.38.0) (2021-06-29)
 
 ### Bug Fixes

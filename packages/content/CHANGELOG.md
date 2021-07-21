@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.39.0](https://github.com/nexxtway/rainbow-modules/compare/v0.38.0...v0.39.0) (2021-07-21)
+
+### Bug Fixes
+
+-   improve development performance ([#418](https://github.com/nexxtway/rainbow-modules/issues/418)) ([3b5a67e](https://github.com/nexxtway/rainbow-modules/commit/3b5a67ecd9ac483ff6f7540ec2b74dd5eb0e950f))
+
+### Features
+
+-   add theme prop to `CodeBlock` component ([#419](https://github.com/nexxtway/rainbow-modules/issues/419)) ([3b42a7f](https://github.com/nexxtway/rainbow-modules/commit/3b42a7f78caf4435d6514b965ba2d9b50a54cd91))
+-   implement `CodeViewer` component ([#409](https://github.com/nexxtway/rainbow-modules/issues/409)) ([0c3df52](https://github.com/nexxtway/rainbow-modules/commit/0c3df529be559ca3750cb1b5a82e5504924e04fc))
+
 # [0.38.0](https://github.com/nexxtway/rainbow-modules/compare/v0.37.0...v0.38.0) (2021-06-29)
 
 ### Bug Fixes

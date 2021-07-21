@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.39.0](https://github.com/nexxtway/rainbow-modules/compare/v0.38.0...v0.39.0) (2021-07-21)
+
+### Bug Fixes
+
+-   accordion padding ([#407](https://github.com/nexxtway/rainbow-modules/issues/407)) ([1646d08](https://github.com/nexxtway/rainbow-modules/commit/1646d08e7a46b247880496018ad4d22326562d4d))
+-   add props to inputSearchg ([#410](https://github.com/nexxtway/rainbow-modules/issues/410)) ([ed8c09d](https://github.com/nexxtway/rainbow-modules/commit/ed8c09dae5e7e2c1ce3b7a0b287b5e87905fe57b))
+-   added labelalignment to fieldsgenerator ([#417](https://github.com/nexxtway/rainbow-modules/issues/417)) ([deb146b](https://github.com/nexxtway/rainbow-modules/commit/deb146bf62f13fa7c70c5c5df6e8767978ef682e))
+-   fix CodeBlock integration tests ([#413](https://github.com/nexxtway/rainbow-modules/issues/413)) ([c6f6778](https://github.com/nexxtway/rainbow-modules/commit/c6f6778097b183ba4a5652d147c92cef1d4ddf11))
+-   hidden input position in UniversalPicker ([#420](https://github.com/nexxtway/rainbow-modules/issues/420)) ([456cc1a](https://github.com/nexxtway/rainbow-modules/commit/456cc1a477a251ed021ecf56492e0e4a08ddcf61))
+-   improve `InputSearch` component ([#411](https://github.com/nexxtway/rainbow-modules/issues/411)) ([0738145](https://github.com/nexxtway/rainbow-modules/commit/07381457d7824a0358105b8f83f39cccef1f9a25))
+-   improve development performance ([#418](https://github.com/nexxtway/rainbow-modules/issues/418)) ([3b5a67e](https://github.com/nexxtway/rainbow-modules/commit/3b5a67ecd9ac483ff6f7540ec2b74dd5eb0e950f))
+-   invoke onSearch when InputSearch is cleared ([#416](https://github.com/nexxtway/rainbow-modules/issues/416)) ([2b4ba13](https://github.com/nexxtway/rainbow-modules/commit/2b4ba13e684b8c1534c2baf6f26c4af2562cd9c3))
+
+### Features
+
+-   add `title` prop to icons ([#412](https://github.com/nexxtway/rainbow-modules/issues/412)) ([2f473cc](https://github.com/nexxtway/rainbow-modules/commit/2f473cc3f00a36ffd72e939dfbb8ce2659ea74d5))
+-   add theme prop to `CodeBlock` component ([#419](https://github.com/nexxtway/rainbow-modules/issues/419)) ([3b42a7f](https://github.com/nexxtway/rainbow-modules/commit/3b42a7f78caf4435d6514b965ba2d9b50a54cd91))
+-   added tag icon ([#414](https://github.com/nexxtway/rainbow-modules/issues/414)) ([aaaca5c](https://github.com/nexxtway/rainbow-modules/commit/aaaca5c814168f6a08d8d1a66a4822d78df4d951))
+-   implement `CodeViewer` component ([#409](https://github.com/nexxtway/rainbow-modules/issues/409)) ([0c3df52](https://github.com/nexxtway/rainbow-modules/commit/0c3df529be559ca3750cb1b5a82e5504924e04fc))
+-   implement `VirtualizedTable` component ([#415](https://github.com/nexxtway/rainbow-modules/issues/415)) ([a03fff1](https://github.com/nexxtway/rainbow-modules/commit/a03fff1cbef43a4828891cd615d19ef80dc17e3f))
+-   implement Cypress page objects ([#421](https://github.com/nexxtway/rainbow-modules/issues/421)) ([892a9f0](https://github.com/nexxtway/rainbow-modules/commit/892a9f0ac63f98d76b93301134132695ee37de16))
+-   implement Input and Button page objects ([bfd21f1](https://github.com/nexxtway/rainbow-modules/commit/bfd21f1a6aa4c7e9caea47f1adeb4f3a9f22f497))
+
 # [0.38.0](https://github.com/nexxtway/rainbow-modules/compare/v0.37.0...v0.38.0) (2021-06-29)
 
 ### Bug Fixes

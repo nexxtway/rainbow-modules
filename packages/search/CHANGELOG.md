@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.39.0](https://github.com/nexxtway/rainbow-modules/compare/v0.38.0...v0.39.0) (2021-07-21)
+
+### Bug Fixes
+
+-   add props to inputSearchg ([#410](https://github.com/nexxtway/rainbow-modules/issues/410)) ([ed8c09d](https://github.com/nexxtway/rainbow-modules/commit/ed8c09dae5e7e2c1ce3b7a0b287b5e87905fe57b))
+-   improve `InputSearch` component ([#411](https://github.com/nexxtway/rainbow-modules/issues/411)) ([0738145](https://github.com/nexxtway/rainbow-modules/commit/07381457d7824a0358105b8f83f39cccef1f9a25))
+-   improve development performance ([#418](https://github.com/nexxtway/rainbow-modules/issues/418)) ([3b5a67e](https://github.com/nexxtway/rainbow-modules/commit/3b5a67ecd9ac483ff6f7540ec2b74dd5eb0e950f))
+-   invoke onSearch when InputSearch is cleared ([#416](https://github.com/nexxtway/rainbow-modules/issues/416)) ([2b4ba13](https://github.com/nexxtway/rainbow-modules/commit/2b4ba13e684b8c1534c2baf6f26c4af2562cd9c3))
+
 # [0.38.0](https://github.com/nexxtway/rainbow-modules/compare/v0.37.0...v0.38.0) (2021-06-29)
 
 ### Features
