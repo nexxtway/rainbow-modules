@@ -1,12 +1,16 @@
 {
     "name": "@rainbow-modules/cypress",
     "version": "0.39.0",
-    "main": "lib/index.js",
+    "main": "pageObjects/index.js",
     "author": "Nexxtway Team",
     "license": "MIT",
     "files": [
-        "lib"
+        "pageObjects"
     ],
+    "scripts": {
+        "clean": "rm -rf ./pageObjects",
+        "build": "tsc -p tsconfig.build.json"
+    },
     "devDependencies": {
         "cypress": "^6.2.1"
     },
