@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import HiddenElement from 'react-rainbow-components/components/Structural/hiddenElement';
 import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
 
-export const StyledContainer = styled.span`
+export const StyledContainer = styled.div`
+    position: relative;
     margin: 0 0.25rem 0.25rem 0.25rem;
 `;
 
