@@ -1,0 +1,16 @@
+{
+    "name": "@rainbow-modules/cypress",
+    "version": "0.38.0",
+    "main": "lib/index.js",
+    "author": "Nexxtway Team",
+    "license": "MIT",
+    "files": [
+        "lib"
+    ],
+    "devDependencies": {
+        "cypress": "^6.2.1"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}
