@@ -89,6 +89,7 @@ CodeBlock.propTypes = {
     value: PropTypes.string,
     showLineNumbers: PropTypes.bool,
     hideHeader: PropTypes.bool,
+    theme: PropTypes.oneOf(['light', 'dark']),
 };
 
 CodeBlock.defaultProps = {
@@ -99,6 +100,7 @@ CodeBlock.defaultProps = {
     language: undefined,
     showLineNumbers: false,
     hideHeader: false,
+    theme: 'light',
 };
 
 export default CodeBlock;
