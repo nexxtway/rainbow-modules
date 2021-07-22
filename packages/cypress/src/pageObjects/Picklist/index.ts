@@ -1,26 +1,40 @@
 /// <reference types="cypress" />
 
-import InternalDropdownPageObject from '../InternalDropdown';
-import { BasePageObject } from '../basePage';
+export interface IPicklistPageObject {
+    input: Cypress.Chainable<JQuery<HTMLInputElement>>;
+    click: () => Cypress.Chainable<JQuery<HTMLElement>>;
+    focus: () => Cypress.Chainable<JQuery<HTMLElement>>;
+}
 
 /**
  * Page object to perform operations on Picklist
+ * @type {IPicklistPageObject}
  */
-class PicklistPageObject extends BasePageObject {
+class PicklistPageObject implements IPicklistPageObject {
+    private rootElement: string;
+
+    /**
+     * Constructs a new instance of this class
+     * @param rootElement The root element for the page object.
+     */
+    constructor(rootElement: string) {
+        this.rootElement = rootElement;
+    }
+
     /**
      * Gets the input element.
      * @method
      */
-    getInput = (): Cypress.Chainable<JQuery<HTMLInputElement>> => {
-        return this.rootElement.get('input[type="text"]');
-    };
+    get input(): Cypress.Chainable<JQuery<HTMLInputElement>> {
+        return cy.get(this.rootElement).find('input[type="text"]');
+    }
 
     /**
-     * Clicks the input element.
+     * Click on the input element.
      * @method
      */
     click = (): Cypress.Chainable<JQuery<HTMLElement>> => {
-        return this.getInput().click();
+        return this.input.click();
     };
 
     /**
@@ -28,18 +42,7 @@ class PicklistPageObject extends BasePageObject {
      * @method
      */
     focus = (): Cypress.Chainable<JQuery<HTMLElement>> => {
-        return this.getInput().focus();
-    };
-
-    /**
-     * Open the dropdown menu. Return a reference to
-     * a new `InternalDropdownPageObject` wraping the menu.
-     */
-    open = (): InternalDropdownPageObject => {
-        this.getInput().click();
-        return new InternalDropdownPageObject(
-            this.rootElement.get('div[role="combobox"][aria-expanded]'),
-        );
+        return this.input.focus();
     };
 }
 
