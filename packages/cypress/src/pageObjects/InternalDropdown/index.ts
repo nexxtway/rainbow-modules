@@ -1,21 +1,45 @@
 /// <reference types="cypress" />
 
-import { BasePageObject } from '../basePage';
 import OptionPageObject from '../Option';
+
+export interface IInternalDropdownPageObject {
+    enterScrollUpArrow: () => Cypress.Chainable<JQuery<HTMLElement>>;
+    leaveScrollUpArrow: () => Cypress.Chainable<JQuery<HTMLElement>>;
+    enterScrollDownArrow: () => Cypress.Chainable<JQuery<HTMLElement>>;
+    leaveScrollDownArrow: () => Cypress.Chainable<JQuery<HTMLElement>>;
+    getArrowUp: () => Cypress.Chainable<JQuery<HTMLElement>>;
+    getArrowDown: () => Cypress.Chainable<JQuery<HTMLElement>>;
+    clickSearch: () => Cypress.Chainable<JQuery<HTMLElement>>;
+    setSearchQuery: (value: string) => Cypress.Chainable<JQuery<HTMLElement>>;
+    getOptionsLength: () => number;
+    getOption: (index: number) => OptionPageObject;
+}
 
 /**
  * Page object to perform operations on InternalDropdown
+ * @type {IInternalDropdownPageObject}
  */
-class InternalDropdownPageObject extends BasePageObject {
+class InternalDropdownPageObject implements IInternalDropdownPageObject {
+    private rootElement: string;
+
+    /**
+     * Constructs a new instance of this class
+     * @param rootElement The root element for the page object.
+     */
+    constructor(rootElement: string) {
+        this.rootElement = rootElement;
+    }
+
     /**
      * Simulate `mouseenter` event on the scroll up arrow.
      * @method
      */
     enterScrollUpArrow = (): Cypress.Chainable<JQuery<HTMLElement>> => {
-        return this.rootElement
-            .get('[data-id="internal-dropdown-arrow-up"]')
+        return cy
+            .get(this.rootElement)
+            .find('[data-id="internal-dropdown-arrow-up"]')
             .scrollIntoView()
-            .trigger('mouseenter');
+            .trigger('mouseover');
     };
 
     /**
@@ -23,10 +47,11 @@ class InternalDropdownPageObject extends BasePageObject {
      * @method
      */
     leaveScrollUpArrow = (): Cypress.Chainable<JQuery<HTMLElement>> => {
-        return this.rootElement
-            .get('[data-id="internal-dropdown-arrow-up"]')
+        return cy
+            .get(this.rootElement)
+            .find('[data-id="internal-dropdown-arrow-up"]')
             .scrollIntoView()
-            .trigger('mouseleave');
+            .trigger('mouseout');
     };
 
     /**
@@ -34,10 +59,11 @@ class InternalDropdownPageObject extends BasePageObject {
      * @method
      */
     enterScrollDownArrow = (): Cypress.Chainable<JQuery<HTMLElement>> => {
-        return this.rootElement
-            .get('[data-id="internal-dropdown-arrow-down"]')
+        return cy
+            .get(this.rootElement)
+            .find('[data-id="internal-dropdown-arrow-down"]')
             .scrollIntoView()
-            .trigger('mouseenter');
+            .trigger('mouseover');
     };
 
     /**
@@ -45,10 +71,11 @@ class InternalDropdownPageObject extends BasePageObject {
      * @method
      */
     leaveScrollDownArrow = (): Cypress.Chainable<JQuery<HTMLElement>> => {
-        return this.rootElement
-            .get('[data-id="internal-dropdown-arrow-down"]')
+        return cy
+            .get(this.rootElement)
+            .find('[data-id="internal-dropdown-arrow-down"]')
             .scrollIntoView()
-            .trigger('mouseleave');
+            .trigger('mouseout');
     };
 
     /**
@@ -56,7 +83,7 @@ class InternalDropdownPageObject extends BasePageObject {
      * @method
      */
     getArrowUp = (): Cypress.Chainable<JQuery<HTMLElement>> => {
-        return this.rootElement.get('[data-id="internal-dropdown-arrow-up"]');
+        return cy.get(this.rootElement).get('[data-id="internal-dropdown-arrow-up"]');
     };
 
     /**
@@ -64,7 +91,7 @@ class InternalDropdownPageObject extends BasePageObject {
      * @method
      */
     getArrowDown = (): Cypress.Chainable<JQuery<HTMLElement>> => {
-        return this.rootElement.get('[data-id="internal-dropdown-arrow-down"]');
+        return cy.get(this.rootElement).get('[data-id="internal-dropdown-arrow-down"]');
     };
 
     /**
@@ -72,7 +99,7 @@ class InternalDropdownPageObject extends BasePageObject {
      * @method
      */
     clickSearch = (): Cypress.Chainable<JQuery<HTMLElement>> => {
-        return this.rootElement.get('input[type="search"]').click();
+        return cy.get(this.rootElement).get('input[type="search"]').click();
     };
 
     /**
@@ -81,7 +108,7 @@ class InternalDropdownPageObject extends BasePageObject {
      * @param {string} value - The value to type in the input element.
      */
     setSearchQuery = (value: string): Cypress.Chainable<JQuery<HTMLElement>> => {
-        return this.rootElement.get('input[type="search"]').type(value);
+        return cy.get(this.rootElement).get('input[type="search"]').type(value);
     };
 
     /**
@@ -90,7 +117,7 @@ class InternalDropdownPageObject extends BasePageObject {
      * @returns {number}
      */
     getOptionsLength = (): number => {
-        return this.rootElement.$$('li[role="presentation"]').length;
+        return cy.get(this.rootElement).$$('li[role="presentation"]').length;
     };
 
     /**
@@ -98,14 +125,12 @@ class InternalDropdownPageObject extends BasePageObject {
      * provided index.
      * @method
      * @param {number} index - The index of the option to return.
+     * @returns {OptionPageObject} The new Option page object
      */
-    getOption = (index: number): OptionPageObject | null => {
-        const activeOptions = this.rootElement.$$('li[role="presentation"]');
-        const option = activeOptions[index];
-        if (option) {
-            return new OptionPageObject(cy.wrap(option));
-        }
-        return null;
+    getOption = (index: number): OptionPageObject => {
+        return new OptionPageObject(
+            `${this.rootElement} li[role="presentation"]:nth-child(${index})`,
+        );
     };
 }
 
