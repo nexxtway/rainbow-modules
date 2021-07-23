@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'react-final-form';
-import Input from 'react-rainbow-components/components/Input';
-import Textarea from 'react-rainbow-components/components/Textarea';
-import Select from 'react-rainbow-components/components/Select';
+import { Input, Textarea, Select, CheckboxToggle } from 'react-rainbow-components';
 import styled from 'styled-components';
 import resolveValidation from './helpers/resolveValidation';
 import getNumberValue from './helpers/getNumberValue';
 import getSelectOptions from './helpers/getSelectOptions';
+import getLabelAlignment from './helpers/getLabelAlignment';
 
 const fieldTypes = [
     'text',
@@ -35,6 +34,7 @@ const componentsMap = {
     number: Input,
     textarea: Textarea,
     select: Select,
+    boolean: CheckboxToggle,
 };
 
 const FieldsGenerator = (props) => {
@@ -129,7 +129,7 @@ const FieldsGenerator = (props) => {
                         minLength={minLengthValue}
                         options={selectOptions}
                         defaultValue={defaultValue}
-                        labelAlignment={labelAlignment}
+                        labelAlignment={getLabelAlignment(labelAlignment, type)}
                     />
                 </Container>
             );
