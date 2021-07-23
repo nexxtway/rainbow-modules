@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.39.3](https://github.com/nexxtway/rainbow-modules/compare/v0.39.2...v0.39.3) (2021-07-23)
+
+### Bug Fixes
+
+-   add UniversalPicker page object ([#425](https://github.com/nexxtway/rainbow-modules/issues/425)) ([95f63ad](https://github.com/nexxtway/rainbow-modules/commit/95f63ad578271f63469da43fc65fb258066cdadf))
+
 ## [0.39.2](https://github.com/nexxtway/rainbow-modules/compare/v0.39.1...v0.39.2) (2021-07-23)
 
 ### Bug Fixes
