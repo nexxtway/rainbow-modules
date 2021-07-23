@@ -22,7 +22,7 @@ class Button implements IButton {
      * Gets the button element.
      */
     get button(): Cypress.Chainable<JQuery<HTMLButtonElement>> {
-        return cy.get(this.rootElement).find('button');
+        return cy.get(this.rootElement);
     }
 }
 
