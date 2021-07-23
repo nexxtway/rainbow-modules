@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.39.2](https://github.com/nexxtway/rainbow-modules/compare/v0.39.1...v0.39.2) (2021-07-23)
+
+### Bug Fixes
+
+-   add PhoneInput page object ([#424](https://github.com/nexxtway/rainbow-modules/issues/424)) ([52da693](https://github.com/nexxtway/rainbow-modules/commit/52da6936cb9de11eb618840cf1b40aa331f90d3e))
+-   improve cypress pageObjects ([#423](https://github.com/nexxtway/rainbow-modules/issues/423)) ([b85902d](https://github.com/nexxtway/rainbow-modules/commit/b85902d55bd268863207988ad1a5c61717658dd3))
+
 ## [0.39.1](https://github.com/nexxtway/rainbow-modules/compare/v0.39.0...v0.39.1) (2021-07-21)
 
 ### Bug Fixes
