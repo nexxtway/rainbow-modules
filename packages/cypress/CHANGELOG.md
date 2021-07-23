@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.39.4](https://github.com/nexxtway/rainbow-modules/compare/v0.39.3...v0.39.4) (2021-07-23)
+
+### Bug Fixes
+
+-   button page object ([7690790](https://github.com/nexxtway/rainbow-modules/commit/76907902cb36e0c863a7d9f8859b601c028d693b))
+
 ## [0.39.3](https://github.com/nexxtway/rainbow-modules/compare/v0.39.2...v0.39.3) (2021-07-23)
 
 ### Bug Fixes
