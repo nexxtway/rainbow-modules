@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'react-final-form';
-import { Input, Textarea, Select, CheckboxToggle } from 'react-rainbow-components';
-import styled from 'styled-components';
+import { Input, Textarea, Select } from 'react-rainbow-components';
+import { Container, StyledCheckboxToggle } from './styled';
 import resolveValidation from './helpers/resolveValidation';
 import getNumberValue from './helpers/getNumberValue';
 import getSelectOptions from './helpers/getSelectOptions';
@@ -25,16 +25,12 @@ const fieldTypes = [
     'color',
 ];
 
-const Container = styled.div`
-    margin-bottom: 1rem;
-`;
-
 const componentsMap = {
     text: Input,
     number: Input,
     textarea: Textarea,
     select: Select,
-    boolean: CheckboxToggle,
+    boolean: StyledCheckboxToggle,
 };
 
 const FieldsGenerator = (props) => {
