@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import Row from '../Row';
+import Row from './row';
 
 export interface ITable {
     getRow: (rowIndex: number) => Row;
