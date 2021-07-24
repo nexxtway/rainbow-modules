@@ -5,3 +5,6 @@ export { default as Option } from './Option';
 export { default as PhoneInput } from './PhoneInput';
 export { default as Picklist } from './Picklist';
 export { default as UniversalPicker } from './UniversalPicker';
+export { default as Table } from './Table';
+export { default as Row } from './Row';
+export { default as ButtonMenu } from './ButtonMenu';
