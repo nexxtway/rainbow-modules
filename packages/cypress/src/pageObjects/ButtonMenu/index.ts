@@ -5,7 +5,7 @@ export interface IButtonMenu {
 }
 
 /**
- * Page object to perform operations on Table
+ * Page object to perform operations on a ButtonMenu
  * @type {IButtonMenu}
  */
 class ButtonMenu implements IButtonMenu {
