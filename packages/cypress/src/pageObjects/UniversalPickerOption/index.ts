@@ -2,6 +2,9 @@
 
 export interface IUniversalPickerOption {
     click: () => void;
+    check: () => void;
+    uncheck: () => void;
+    isChecked: boolean;
 }
 
 /**
@@ -25,6 +28,26 @@ class UniversalPickerOption implements IUniversalPickerOption {
      */
     click(): void {
         cy.get(this.rootElement).scrollIntoView().click();
+    }
+
+    /**
+     * Check the option
+     * @method
+     */
+    check(): void {
+        cy.get(this.rootElement).find('input').check({ force: true });
+    }
+
+    /**
+     * Uncheck the option
+     * @method
+     */
+    uncheck(): void {
+        cy.get(this.rootElement).find('input').uncheck({ force: true });
+    }
+
+    get isChecked(): boolean {
+        return Cypress.$(`${this.rootElement} input`).prop('checked');
     }
 }
 

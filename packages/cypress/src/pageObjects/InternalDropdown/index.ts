@@ -3,6 +3,7 @@
 import OptionPageObject from '../Option';
 
 export interface IInternalDropdown {
+    options: OptionPageObject[];
     enterScrollUpArrow: () => void;
     leaveScrollUpArrow: () => void;
     enterScrollDownArrow: () => void;
@@ -11,8 +12,6 @@ export interface IInternalDropdown {
     getArrowDown: () => Cypress.Chainable<JQuery<HTMLElement>>;
     clickSearch: () => void;
     setSearchQuery: (value: string) => void;
-    getOptionsLength: () => number;
-    getOption: (index: number) => OptionPageObject;
 }
 
 /**
@@ -28,6 +27,20 @@ class InternalDropdownPageObject implements IInternalDropdown {
      */
     constructor(rootElement: string) {
         this.rootElement = rootElement;
+    }
+
+    /**
+     * Array of OptionPageObject where each item wraps an option
+     */
+    get options(): OptionPageObject[] {
+        const { length } = Cypress.$(`${this.rootElement} li[role="presentation"]`);
+        return Array.from(
+            { length },
+            (_v, i) =>
+                new OptionPageObject(
+                    `${this.rootElement} li[role="presentation"]:nth-child(${i + 1})`,
+                ),
+        );
     }
 
     /**
@@ -105,28 +118,6 @@ class InternalDropdownPageObject implements IInternalDropdown {
      */
     setSearchQuery = (value: string): void => {
         cy.get(this.rootElement).get('input[type="search"]').type(value);
-    };
-
-    /**
-     * Get the number of registered options.
-     * @method
-     * @returns {number}
-     */
-    getOptionsLength = (): number => {
-        return cy.get(this.rootElement).$$('li[role="presentation"]').length;
-    };
-
-    /**
-     * Returns a new OptionPageObject wraping the option in the
-     * provided index.
-     * @method
-     * @param {number} index - The index of the option to return.
-     * @returns {OptionPageObject} The new Option page object
-     */
-    getOption = (index: number): OptionPageObject => {
-        return new OptionPageObject(
-            `${this.rootElement} li[role="presentation"]:nth-child(${index})`,
-        );
     };
 }
 

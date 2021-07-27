@@ -4,8 +4,8 @@ import CountryOption from './option';
 
 export interface IPhoneInput {
     input: Cypress.Chainable<JQuery<HTMLInputElement>>;
+    options: CountryOption[];
     search(value: string): void;
-    getOption(index: number): CountryOption;
 }
 
 /**
@@ -32,6 +32,20 @@ class PhoneInput implements IPhoneInput {
     }
 
     /**
+     * Array of CountryOption page objects where each item wraps a country option
+     */
+    get options(): CountryOption[] {
+        const { length } = Cypress.$(`${this.rootElement} ul[role="listbox"] li[role="option"]`);
+        return Array.from(
+            { length },
+            (_v, i) =>
+                new CountryOption(
+                    `${this.rootElement} ul[role="listbox"] li[role="option"]:nth-child(${i + 1})`,
+                ),
+        );
+    }
+
+    /**
      * Search for countries.
      * @method
      */
@@ -39,19 +53,6 @@ class PhoneInput implements IPhoneInput {
         cy.get(this.rootElement).find('button[type="button"]').click();
         cy.get(this.rootElement).find('input[type="text"]').type(value);
     }
-
-    /**
-     * Returns a new country option page object wraping the item at the
-     * provided index.
-     * @method
-     * @param {number} index - The index of the option to return.
-     * @returns {CountryOption} The new Option page object
-     */
-    getOption = (index: number): CountryOption => {
-        return new CountryOption(
-            `${this.rootElement} ul[role="listbox"] li[role="option"]:nth-child(${index})`,
-        );
-    };
 }
 
 export default PhoneInput;
