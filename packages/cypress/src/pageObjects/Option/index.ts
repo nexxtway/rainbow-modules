@@ -1,15 +1,15 @@
 /// <reference types="cypress" />
 
-export interface IOptionPageObject {
-    click: () => Cypress.Chainable<JQuery<HTMLElement>>;
-    hover: () => Cypress.Chainable<JQuery<HTMLElement>>;
+export interface IOption {
+    click: () => void;
+    hover: () => void;
 }
 
 /**
  * Page object to perform operations on Option
- * @type {IOptionPageObject}
+ * @type {IOption}
  */
-class OptionPageObject implements IOptionPageObject {
+class OptionPageObject implements IOption {
     private rootElement: string;
 
     /**
@@ -22,16 +22,18 @@ class OptionPageObject implements IOptionPageObject {
 
     /**
      * Clicks the option
+     * @method
      */
-    click = (): Cypress.Chainable<JQuery<HTMLElement>> => {
-        return cy.get(this.rootElement).scrollIntoView().click();
+    click = (): void => {
+        cy.get(this.rootElement).scrollIntoView().click();
     };
 
     /**
-     * It moves the pointer over the Option
+     * Trigger `mouseover` event on the option
+     * @method
      */
-    hover = (): Cypress.Chainable<JQuery<HTMLElement>> => {
-        return cy.get(this.rootElement).scrollIntoView().trigger('mouseover');
+    hover = (): void => {
+        cy.get(this.rootElement).scrollIntoView().trigger('mouseover');
     };
 }
 

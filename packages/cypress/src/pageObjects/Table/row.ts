@@ -3,13 +3,13 @@
 import ButtonMenu from '../ButtonMenu';
 
 export interface IRow {
-    check: () => Cypress.Chainable<JQuery<HTMLElement>>;
-    uncheck: () => Cypress.Chainable<JQuery<HTMLElement>>;
+    check: () => void;
+    uncheck: () => void;
     getButtonMenu: (actionColumnIndex: number) => ButtonMenu;
 }
 
 /**
- * Page object to perform operations on Table
+ * Page object to perform operations on a Row
  * @type {IRow}
  */
 class Row implements IRow {
@@ -25,28 +25,27 @@ class Row implements IRow {
 
     /**
      * Check this row
-     * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
+     * @method
      */
-    check = (): Cypress.Chainable<JQuery<HTMLElement>> => {
-        return cy
-            .get(this.rootElement)
+    check = (): void => {
+        cy.get(this.rootElement)
             .find('input[type="checkbox"], input[type="radio"]')
             .check({ force: true });
     };
 
     /**
      * Uncheck this row
-     * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
+     * @method
      */
-    uncheck = (): Cypress.Chainable<JQuery<HTMLElement>> => {
-        return cy
-            .get(this.rootElement)
+    uncheck = (): void => {
+        cy.get(this.rootElement)
             .find('input[type="checkbox"], input[type="radio"]')
             .uncheck({ force: true });
     };
 
     /**
      * Get a new ButtonMenu page object wrapping this row actions
+     * @method
      * @param actionColumnIndex The index of the actions column
      * @returns {ButtonMenu}
      */

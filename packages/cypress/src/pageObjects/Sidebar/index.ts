@@ -3,7 +3,7 @@
 import SidebarItem from '../SidebarItem';
 
 export interface ISidebar {
-    getOption: (index: number) => SidebarItem;
+    items: SidebarItem[];
 }
 
 /**
@@ -22,17 +22,18 @@ class Sidebar implements ISidebar {
     }
 
     /**
-     * Returns a new SidebarItem page object wraping the item in the
-     * provided index.
-     * @method
-     * @param {number} index - The index of the option to return, starting at 1.
-     * @returns {SidebarItem} The new Option page object
+     * Array of SidebarItem page objects where each item wraps a sidebar item
      */
-    getOption = (index: number): SidebarItem => {
-        return new SidebarItem(
-            `${this.rootElement} li[data-id="sidebar-item-li"]:nth-of-type(${index})`,
+    get items(): SidebarItem[] {
+        const { length } = Cypress.$(`${this.rootElement} li[data-id="sidebar-item-li"]`);
+        return Array.from(
+            { length },
+            (_v, i) =>
+                new SidebarItem(
+                    `${this.rootElement} li[data-id="sidebar-item-li"]:nth-of-type(${i + 1})`,
+                ),
         );
-    };
+    }
 }
 
 export default Sidebar;

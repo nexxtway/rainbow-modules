@@ -22,6 +22,7 @@ class Input implements IInput {
 
     /**
      * Gets the input element.
+     * @returns {Cypress.Chainable<JQuery<HTMLInputElement>>}
      */
     get input(): Cypress.Chainable<JQuery<HTMLInputElement>> {
         return cy.get(this.rootElement).find('input');
@@ -37,6 +38,7 @@ class Input implements IInput {
 
     /**
      * Check the input when type is `checkbox` or `radio`
+     * @method
      */
     check(): void {
         // TODO: verify if it is already checked before check it

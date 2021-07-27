@@ -2,10 +2,13 @@
 
 export interface IUniversalPickerOption {
     click: () => void;
+    check: () => void;
+    uncheck: () => void;
+    isChecked: boolean;
 }
 
 /**
- * Page object to perform operations on a country option
+ * Page object to perform operations on a universal picker option
  * @type {IUniversalPickerOption}
  */
 class UniversalPickerOption implements IUniversalPickerOption {
@@ -20,10 +23,31 @@ class UniversalPickerOption implements IUniversalPickerOption {
     }
 
     /**
-     * Clicks the country option
+     * Clicks the option
+     * @method
      */
     click(): void {
         cy.get(this.rootElement).scrollIntoView().click();
+    }
+
+    /**
+     * Check the option
+     * @method
+     */
+    check(): void {
+        cy.get(this.rootElement).find('input').check({ force: true });
+    }
+
+    /**
+     * Uncheck the option
+     * @method
+     */
+    uncheck(): void {
+        cy.get(this.rootElement).find('input').uncheck({ force: true });
+    }
+
+    get isChecked(): boolean {
+        return Cypress.$(`${this.rootElement} input`).prop('checked');
     }
 }
 
