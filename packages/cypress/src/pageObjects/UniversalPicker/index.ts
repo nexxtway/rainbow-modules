@@ -3,7 +3,7 @@
 import UniversalPickerOption from '../UniversalPickerOption';
 
 export interface IUniversalPicker {
-    getOption(index: number): UniversalPickerOption;
+    select(index: number): void;
 }
 
 /**
@@ -23,15 +23,20 @@ class UniversalPicker implements IUniversalPicker {
     }
 
     /**
-     * Returns a new country option page object wraping the item at the
+     * Select the option at the
      * provided index.
      * @method
-     * @param {number} index - The index of the option to return.
-     * @returns {UniversalPickerOption} The new Option page object
+     * @param {number} index - The index of the option to select.
      */
-    getOption = (index: number): UniversalPickerOption => {
-        return new UniversalPickerOption(`${this.rootElement} div:nth-child(${index}) > label`);
-    };
+    select(index: number): void {
+        // TODO: check if it is already selected before select
+        const option = new UniversalPickerOption(
+            `${this.rootElement} div[data-id="universal-picker-option"]:nth-child(${
+                index + 1
+            }) > label`,
+        );
+        option.click();
+    }
 }
 
 export default UniversalPicker;

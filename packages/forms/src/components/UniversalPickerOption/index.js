@@ -31,7 +31,12 @@ export default function UniversalPickerOption(props) {
     const Item = component || DefaultItem;
 
     return (
-        <StyledContainer className={className} style={style} id={id}>
+        <StyledContainer
+            className={className}
+            style={style}
+            id={id}
+            data-id="universal-picker-option"
+        >
             <StyledInput
                 as="input"
                 type={type}

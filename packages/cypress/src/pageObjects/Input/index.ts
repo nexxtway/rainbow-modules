@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 export interface IInput {
     input: Cypress.Chainable<JQuery<HTMLInputElement>>;
+    check(): void;
 }
 
 /**
@@ -23,6 +24,14 @@ class Input implements IInput {
      */
     get input(): Cypress.Chainable<JQuery<HTMLInputElement>> {
         return cy.get(this.rootElement).find('input');
+    }
+
+    /**
+     * Check the input when type is `checkbox` or `radio`
+     */
+    check(): void {
+        // TODO: verify if it is already checked before check it
+        cy.get(this.rootElement).find('label').click('left');
     }
 }
 
