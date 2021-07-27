@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.40.0](https://github.com/nexxtway/rainbow-modules/compare/v0.39.4...v0.40.0) (2021-07-27)
+
+### Bug Fixes
+
+-   add Lookup page object ([#428](https://github.com/nexxtway/rainbow-modules/issues/428)) ([7158eb1](https://github.com/nexxtway/rainbow-modules/commit/7158eb14e9fd7e97b22581e942211cb3a400bf68))
+-   add select option to UniversalPicker ([a234b18](https://github.com/nexxtway/rainbow-modules/commit/a234b18c7d94dbff1ee7156e16ce9ce110e6556e))
+-   add Sidebar page object ([#429](https://github.com/nexxtway/rainbow-modules/issues/429)) ([9bfb2c6](https://github.com/nexxtway/rainbow-modules/commit/9bfb2c662be50f8af521d5e320fe5f8b5aa0aa49))
+-   add Table page object ([#427](https://github.com/nexxtway/rainbow-modules/issues/427)) ([26f715e](https://github.com/nexxtway/rainbow-modules/commit/26f715e1c77b9f42211f7562a289045f1ed9addc))
+
 ## [0.39.4](https://github.com/nexxtway/rainbow-modules/compare/v0.39.3...v0.39.4) (2021-07-23)
 
 ### Bug Fixes

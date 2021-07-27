@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.40.0](https://github.com/nexxtway/rainbow-modules/compare/v0.39.4...v0.40.0) (2021-07-27)
+
+### Bug Fixes
+
+-   add select option to UniversalPicker ([a234b18](https://github.com/nexxtway/rainbow-modules/commit/a234b18c7d94dbff1ee7156e16ce9ce110e6556e))
+
+### Features
+
+-   add boolean type to `FieldsGenerator` schema ([#426](https://github.com/nexxtway/rainbow-modules/issues/426)) ([746600f](https://github.com/nexxtway/rainbow-modules/commit/746600fa024c286097e4e727c9e4dab1078b177c))
+
 # [0.39.0](https://github.com/nexxtway/rainbow-modules/compare/v0.38.0...v0.39.0) (2021-07-21)
 
 ### Bug Fixes

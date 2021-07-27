@@ -1,6 +1,6 @@
 {
     "name": "@rainbow-modules/search",
-    "version": "0.39.0",
+    "version": "0.40.0",
     "main": "lib/index.js",
     "author": "Nexxtway Team",
     "license": "MIT",
@@ -8,9 +8,9 @@
         "lib"
     ],
     "dependencies": {
-        "@rainbow-modules/forms": "^0.39.0",
-        "@rainbow-modules/hooks": "^0.39.0",
-        "@rainbow-modules/icons": "^0.39.0",
+        "@rainbow-modules/forms": "^0.40.0",
+        "@rainbow-modules/hooks": "^0.40.0",
+        "@rainbow-modules/icons": "^0.40.0",
         "styled-components": "^4.3.2"
     },
     "peerDependencies": {
