@@ -21,6 +21,7 @@ class CountryOption implements ICountryOption {
 
     /**
      * Clicks the country option
+     * @method
      */
     click(): void {
         cy.get(this.rootElement).scrollIntoView().click();

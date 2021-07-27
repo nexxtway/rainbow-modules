@@ -20,10 +20,16 @@ class Lookup implements ILookup {
         this.rootElement = rootElement;
     }
 
+    /**
+     * Get the input of this Lookup
+     */
     get input(): Cypress.Chainable<JQuery<HTMLInputElement>> {
         return cy.get(this.rootElement).find('input');
     }
 
+    /**
+     * Get the clear button of this Lookup
+     */
     get clearButton(): Cypress.Chainable<JQuery<HTMLButtonElement>> {
         return cy.get(this.rootElement).find('button');
     }

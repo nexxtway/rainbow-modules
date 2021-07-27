@@ -2,24 +2,24 @@
 
 import OptionPageObject from '../Option';
 
-export interface IInternalDropdownPageObject {
-    enterScrollUpArrow: () => Cypress.Chainable<JQuery<HTMLElement>>;
-    leaveScrollUpArrow: () => Cypress.Chainable<JQuery<HTMLElement>>;
-    enterScrollDownArrow: () => Cypress.Chainable<JQuery<HTMLElement>>;
-    leaveScrollDownArrow: () => Cypress.Chainable<JQuery<HTMLElement>>;
+export interface IInternalDropdown {
+    enterScrollUpArrow: () => void;
+    leaveScrollUpArrow: () => void;
+    enterScrollDownArrow: () => void;
+    leaveScrollDownArrow: () => void;
     getArrowUp: () => Cypress.Chainable<JQuery<HTMLElement>>;
     getArrowDown: () => Cypress.Chainable<JQuery<HTMLElement>>;
-    clickSearch: () => Cypress.Chainable<JQuery<HTMLElement>>;
-    setSearchQuery: (value: string) => Cypress.Chainable<JQuery<HTMLElement>>;
+    clickSearch: () => void;
+    setSearchQuery: (value: string) => void;
     getOptionsLength: () => number;
     getOption: (index: number) => OptionPageObject;
 }
 
 /**
  * Page object to perform operations on InternalDropdown
- * @type {IInternalDropdownPageObject}
+ * @type {IInternalDropdown}
  */
-class InternalDropdownPageObject implements IInternalDropdownPageObject {
+class InternalDropdownPageObject implements IInternalDropdown {
     private rootElement: string;
 
     /**
@@ -34,9 +34,8 @@ class InternalDropdownPageObject implements IInternalDropdownPageObject {
      * Simulate `mouseenter` event on the scroll up arrow.
      * @method
      */
-    enterScrollUpArrow = (): Cypress.Chainable<JQuery<HTMLElement>> => {
-        return cy
-            .get(this.rootElement)
+    enterScrollUpArrow = (): void => {
+        cy.get(this.rootElement)
             .find('[data-id="internal-dropdown-arrow-up"]')
             .scrollIntoView()
             .trigger('mouseover');
@@ -46,9 +45,8 @@ class InternalDropdownPageObject implements IInternalDropdownPageObject {
      * Simulate `mouseleave` event on the scroll up arrow.
      * @method
      */
-    leaveScrollUpArrow = (): Cypress.Chainable<JQuery<HTMLElement>> => {
-        return cy
-            .get(this.rootElement)
+    leaveScrollUpArrow = (): void => {
+        cy.get(this.rootElement)
             .find('[data-id="internal-dropdown-arrow-up"]')
             .scrollIntoView()
             .trigger('mouseout');
@@ -58,9 +56,8 @@ class InternalDropdownPageObject implements IInternalDropdownPageObject {
      * Simulate `mouseenter` event on the scroll down arrow.
      * @method
      */
-    enterScrollDownArrow = (): Cypress.Chainable<JQuery<HTMLElement>> => {
-        return cy
-            .get(this.rootElement)
+    enterScrollDownArrow = (): void => {
+        cy.get(this.rootElement)
             .find('[data-id="internal-dropdown-arrow-down"]')
             .scrollIntoView()
             .trigger('mouseover');
@@ -70,9 +67,8 @@ class InternalDropdownPageObject implements IInternalDropdownPageObject {
      * Simulate `mouseleave` event on the scroll down arrow.
      * @method
      */
-    leaveScrollDownArrow = (): Cypress.Chainable<JQuery<HTMLElement>> => {
-        return cy
-            .get(this.rootElement)
+    leaveScrollDownArrow = (): void => {
+        cy.get(this.rootElement)
             .find('[data-id="internal-dropdown-arrow-down"]')
             .scrollIntoView()
             .trigger('mouseout');
@@ -98,8 +94,8 @@ class InternalDropdownPageObject implements IInternalDropdownPageObject {
      * Click the search input element.
      * @method
      */
-    clickSearch = (): Cypress.Chainable<JQuery<HTMLElement>> => {
-        return cy.get(this.rootElement).get('input[type="search"]').click();
+    clickSearch = (): void => {
+        cy.get(this.rootElement).get('input[type="search"]').click();
     };
 
     /**
@@ -107,8 +103,8 @@ class InternalDropdownPageObject implements IInternalDropdownPageObject {
      * @method
      * @param {string} value - The value to type in the input element.
      */
-    setSearchQuery = (value: string): Cypress.Chainable<JQuery<HTMLElement>> => {
-        return cy.get(this.rootElement).get('input[type="search"]').type(value);
+    setSearchQuery = (value: string): void => {
+        cy.get(this.rootElement).get('input[type="search"]').type(value);
     };
 
     /**

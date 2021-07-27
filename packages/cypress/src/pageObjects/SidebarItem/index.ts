@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
 
 export interface ISidebarItem {
-    click: () => Cypress.Chainable<JQuery<HTMLElement>>;
-    hover: () => Cypress.Chainable<JQuery<HTMLElement>>;
+    click: () => void;
+    hover: () => void;
 }
 
 /**
@@ -20,13 +20,20 @@ class SidebarItem implements ISidebarItem {
         this.rootElement = rootElement;
     }
 
-    click = (): Cypress.Chainable<JQuery<HTMLElement>> => {
-        return cy.get(this.rootElement).find('[data-id="sidebar-item-clickable-element"]').click();
+    /**
+     * Click the item
+     * @method
+     */
+    click = (): void => {
+        cy.get(this.rootElement).find('[data-id="sidebar-item-clickable-element"]').click();
     };
 
-    hover = (): Cypress.Chainable<JQuery<HTMLElement>> => {
-        return cy
-            .get(this.rootElement)
+    /**
+     * Trigger `mouseover` event on the item
+     * @method
+     */
+    hover = (): void => {
+        cy.get(this.rootElement)
             .find('[data-id="sidebar-item-clickable-element"]')
             .trigger('mouseover');
     };

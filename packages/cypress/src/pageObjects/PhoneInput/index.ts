@@ -25,6 +25,7 @@ class PhoneInput implements IPhoneInput {
 
     /**
      * Gets the input element.
+     * @returns {Cypress.Chainable<JQuery<HTMLInputElement>>}
      */
     get input(): Cypress.Chainable<JQuery<HTMLInputElement>> {
         return cy.get(this.rootElement).find('input[type="tel"]');

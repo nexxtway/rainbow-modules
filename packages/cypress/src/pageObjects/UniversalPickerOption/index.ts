@@ -5,7 +5,7 @@ export interface IUniversalPickerOption {
 }
 
 /**
- * Page object to perform operations on a country option
+ * Page object to perform operations on a universal picker option
  * @type {IUniversalPickerOption}
  */
 class UniversalPickerOption implements IUniversalPickerOption {
@@ -20,7 +20,8 @@ class UniversalPickerOption implements IUniversalPickerOption {
     }
 
     /**
-     * Clicks the country option
+     * Clicks the option
+     * @method
      */
     click(): void {
         cy.get(this.rootElement).scrollIntoView().click();

@@ -1,16 +1,16 @@
 /// <reference types="cypress" />
 
-export interface IPicklistPageObject {
+export interface IPicklist {
     input: Cypress.Chainable<JQuery<HTMLInputElement>>;
-    click: () => Cypress.Chainable<JQuery<HTMLElement>>;
-    focus: () => Cypress.Chainable<JQuery<HTMLElement>>;
+    click: () => void;
+    focus: () => void;
 }
 
 /**
  * Page object to perform operations on Picklist
- * @type {IPicklistPageObject}
+ * @type {IPicklist}
  */
-class PicklistPageObject implements IPicklistPageObject {
+class PicklistPageObject implements IPicklist {
     private rootElement: string;
 
     /**
@@ -22,8 +22,8 @@ class PicklistPageObject implements IPicklistPageObject {
     }
 
     /**
-     * Gets the input element.
-     * @method
+     * Gets the input element
+     * @returns {Cypress.Chainable<JQuery<HTMLInputElement>>}
      */
     get input(): Cypress.Chainable<JQuery<HTMLInputElement>> {
         return cy.get(this.rootElement).find('input[type="text"]');
@@ -33,16 +33,16 @@ class PicklistPageObject implements IPicklistPageObject {
      * Click on the input element.
      * @method
      */
-    click = (): Cypress.Chainable<JQuery<HTMLElement>> => {
-        return this.input.click();
+    click = (): void => {
+        this.input.click();
     };
 
     /**
      * Set focus on the input element.
      * @method
      */
-    focus = (): Cypress.Chainable<JQuery<HTMLElement>> => {
-        return this.input.focus();
+    focus = (): void => {
+        this.input.focus();
     };
 }
 
