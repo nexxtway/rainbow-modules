@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.40.1](https://github.com/nexxtway/rainbow-modules/compare/v0.40.0...v0.40.1) (2021-07-27)
+
+### Bug Fixes
+
+-   add shouldHaveError to Input page object ([3e4d58c](https://github.com/nexxtway/rainbow-modules/commit/3e4d58c99c0d2cf38c4e7012ce1cde8912a567a6))
+
 # [0.40.0](https://github.com/nexxtway/rainbow-modules/compare/v0.39.4...v0.40.0) (2021-07-27)
 
 ### Bug Fixes
