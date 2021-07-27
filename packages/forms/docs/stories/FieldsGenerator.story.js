@@ -75,6 +75,12 @@ const schema = [
         minLength: 10,
         maxLength: 100,
     },
+    {
+        label: 'Active',
+        name: 'avtive',
+        type: 'boolean',
+        default: true,
+    },
 ];
 
 const types = {

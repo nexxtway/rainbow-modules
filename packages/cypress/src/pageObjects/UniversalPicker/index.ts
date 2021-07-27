@@ -7,7 +7,7 @@ export interface IUniversalPicker {
 }
 
 /**
- * Page object to perform operations on Picklist
+ * Page object to perform operations on UniversalPicker
  * @type {IUniversalPicker}
  */
 
