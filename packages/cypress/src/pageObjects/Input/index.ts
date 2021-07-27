@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 export interface IInput {
     input: Cypress.Chainable<JQuery<HTMLInputElement>>;
+    shouldHaveError(error: string): void;
     check(): void;
 }
 
@@ -24,6 +25,14 @@ class Input implements IInput {
      */
     get input(): Cypress.Chainable<JQuery<HTMLInputElement>> {
         return cy.get(this.rootElement).find('input');
+    }
+
+    /**
+     * Asserts if the error passed exists in the input
+     * @param {string} error - The error text, that must match the current error to pass the assertion
+     */
+    shouldHaveError(error: string): void {
+        cy.get(`${this.rootElement} > div[id^="error-message-"]`).should('have.text', error);
     }
 
     /**
