@@ -51,6 +51,7 @@ const FieldsGenerator = (props) => {
                 minLength,
                 options,
                 default: defaultValue,
+                props: schemaProps,
                 ...rest
             } = field;
             const minValue = getNumberValue(min);
@@ -83,6 +84,7 @@ const FieldsGenerator = (props) => {
                     <Container key={name}>
                         <Field
                             {...componentProps}
+                            {...schemaProps}
                             component={Component}
                             name={name}
                             validate={validate}

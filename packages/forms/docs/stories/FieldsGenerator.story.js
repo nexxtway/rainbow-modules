@@ -1,9 +1,54 @@
 /* eslint-disable no-alert */
 import React from 'react';
-import { Application, CounterInput, Button, PhoneInput } from 'react-rainbow-components';
+import {
+    Application,
+    CounterInput,
+    Button,
+    PhoneInput,
+    Picklist,
+    Option,
+} from 'react-rainbow-components';
+import { useReduxForm } from 'react-rainbow-components/libs/hooks';
 import styled from 'styled-components';
 import FieldsGenerator from '../../src/components/FieldsGenerator';
 import UniversalForm from '../../src/components/UniversalForm';
+
+const SelectInput = (props) => {
+    const {
+        value: { value },
+        onChange,
+        label,
+        className,
+        labelAlignment,
+        options,
+        required,
+        error,
+    } = useReduxForm(props);
+    console.log(options);
+
+    const newValue = {
+        label: value,
+        name: value,
+    };
+
+    const handleChange = ({ name }) => onChange({ value: name, type: 'select' });
+
+    return (
+        <Picklist
+            required={required}
+            error={error}
+            onChange={handleChange}
+            value={newValue}
+            label={label}
+            labelAlignment={labelAlignment}
+            className={className}
+        >
+            {options.map((item) => (
+                <Option key={item} name={item} label={item} />
+            ))}
+        </Picklist>
+    );
+};
 
 const Form = styled(UniversalForm)`
     display: flex;
@@ -59,6 +104,14 @@ const schema = [
         ],
     },
     {
+        label: 'My custom select',
+        name: 'myCustomSelect',
+        type: 'customSelect',
+        props: {
+            options: ['option1', 'option2', 'option3'],
+        },
+    },
+    {
         label: 'Amount',
         name: 'amount',
         type: 'number',
@@ -89,6 +142,9 @@ const types = {
     },
     phone: {
         component: PhoneInput,
+    },
+    customSelect: {
+        component: SelectInput,
     },
 };
 
