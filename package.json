@@ -17,7 +17,8 @@
         "deploy": "yarn build-storybook && firebase deploy --only hosting",
         "cypress:open": "cypress open",
         "cypress:run": "cypress run",
-        "wait-on-local-server": "wait-on http://localhost:5555/iframe.html"
+        "wait-on-local-server": "wait-on http://localhost:5555/iframe.html",
+        "build:doc": "lerna run build:doc"
     },
     "devDependencies": {
         "@babel/cli": "^7.8.4",
@@ -61,6 +62,8 @@
         "jest-haste-map": "^25.3.0",
         "jest-resolve": "^25.3.0",
         "jest-styled-components": "^7.0.2",
+        "jsdoc-babel": "^0.5.0",
+        "jsdoc-to-markdown": "^7.0.1",
         "lerna": "^3.20.2",
         "prettier": "^2.0.4",
         "pretty-quick": "^2.0.1",

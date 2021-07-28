@@ -9,7 +9,8 @@
     ],
     "scripts": {
         "clean": "rm -rf ./pageObjects",
-        "build": "tsc -p tsconfig.build.json"
+        "build": "tsc -p tsconfig.build.json",
+        "build:doc": "node ../../scripts/generateDocs.js src/pageObjects"
     },
     "devDependencies": {
         "cypress": "^6.2.1"
