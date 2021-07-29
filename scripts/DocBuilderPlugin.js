@@ -28,6 +28,9 @@ class DocBuilderPlugin {
                 packages.forEach(({ name, srcPath, outputPath, templatePath, partials }) => {
                     const packagePath = path.join(rootPath, 'packages', name);
                     const outputDir = path.join(packagePath, outputPath);
+                    if (!fs.existsSync(outputDir)) {
+                        fs.mkdirSync(outputDir, { recursive: true });
+                    }
                     const templateFile = path.join(packagePath, templatePath);
 
                     /* get template data */
