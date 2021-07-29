@@ -17,8 +17,7 @@
         "deploy": "yarn build-storybook && firebase deploy --only hosting",
         "cypress:open": "cypress open",
         "cypress:run": "cypress run",
-        "wait-on-local-server": "wait-on http://localhost:5555/iframe.html",
-        "build:doc": "lerna run build:doc"
+        "wait-on-local-server": "wait-on http://localhost:5555/iframe.html"
     },
     "devDependencies": {
         "@babel/cli": "^7.8.4",
