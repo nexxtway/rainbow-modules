@@ -61,6 +61,8 @@
         "jest-haste-map": "^25.3.0",
         "jest-resolve": "^25.3.0",
         "jest-styled-components": "^7.0.2",
+        "jsdoc-babel": "^0.5.0",
+        "jsdoc-to-markdown": "^7.0.1",
         "lerna": "^3.20.2",
         "prettier": "^2.0.4",
         "pretty-quick": "^2.0.1",

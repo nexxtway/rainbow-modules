@@ -1,4 +1,5 @@
 const path = require('path');
+const DocBuilderPlugin = require('../scripts/DocBuilderPlugin');
 
 module.exports = {
     stories: ['../getting-started/*.story.@(js|mdx)', '../packages/**/docs/**/*.story.@(js|mdx)'],
@@ -19,7 +20,21 @@ module.exports = {
         '@storybook/addon-viewport/register',
     ],
     webpackFinal: async (config) => {
-        config.devtool = 'inline-source-map';
+        config.devtool = false;
+        config.plugins = [
+            ...config.plugins,
+            new DocBuilderPlugin({
+                packages: [
+                    {
+                        name: 'cypress',
+                        srcPath: 'src/pageObjects',
+                        outputPath: 'docs/pageObjects',
+                        templatePath: 'template.hbs',
+                        partials: 'handlebars/partials/*.hbs',
+                    },
+                ],
+            }),
+        ];
         config.resolve.alias = {
             '@rainbow-modules/app': path.join(__dirname, '../packages/app/src/index.js'),
             '@rainbow-modules/auth': path.join(__dirname, '../packages/auth/src/index.js'),
