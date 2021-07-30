@@ -5,17 +5,22 @@ export interface IPicklist {
     click: () => void;
     focus: () => void;
 }
-
 /**
- * Page object to perform operations on Picklist
- * @type {IPicklist}
+ * The Picklist page object allows to perform actions on the Picklist component
+ * of `react-rainbow-components` library.
+ * @class
+ * @implements {IPicklist}
  */
-class PicklistPageObject implements IPicklist {
+class Picklist implements IPicklist {
     private rootElement: string;
 
     /**
-     * Constructs a new instance of this class
-     * @param rootElement The root element for the page object.
+     * Constructs a new instance of this page object
+     * @param rootElement The selector for the root element of the Picklist.
+     * @example
+     * import { Picklist } from '@rainbow-modules/cypress/pageObjects';
+     *
+     * const picklist = new Picklist('#picklist-selector');
      */
     constructor(rootElement: string) {
         this.rootElement = rootElement;
@@ -23,27 +28,41 @@ class PicklistPageObject implements IPicklist {
 
     /**
      * Gets the input element
-     * @returns {Cypress.Chainable<JQuery<HTMLInputElement>>}
+     * @member {Cypress.Chainable<JQuery<HTMLInputElement>>}
+     * @example
+     * // How to get the Picklist dropdown using the input
+     * picklist.click();
+     * // We need to get the `aria-controls` attribute of the input
+     * picklist.input.then($input => {
+     *      const ariaControls = $input.attr('aria-controls');
+     *      // Use the `aria-controls` value to create a new InternalDropdown page object
+     *      const dropdown = new InternalDropdown(`#${ariaControls}`);
+     *      // You can use the InternalDropdown page object here
+     * })
      */
     get input(): Cypress.Chainable<JQuery<HTMLInputElement>> {
         return cy.get(this.rootElement).find('input[type="text"]');
     }
 
     /**
-     * Click on the input element.
+     * Click the input element. Shortcut for `picklist.input.click()`.
      * @method
+     * @example
+     * picklist.click();
      */
-    click = (): void => {
+    click(): void {
         this.input.click();
-    };
+    }
 
     /**
-     * Set focus on the input element.
+     * Focus the input element. Shortcut for `picklist.input.focus()`.
      * @method
+     * @example
+     * picklist.focus();
      */
-    focus = (): void => {
+    focus(): void {
         this.input.focus();
-    };
+    }
 }
 
-export default PicklistPageObject;
+export default Picklist;
