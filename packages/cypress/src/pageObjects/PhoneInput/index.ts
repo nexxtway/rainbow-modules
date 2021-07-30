@@ -13,6 +13,7 @@ export interface IPhoneInput {
  * of `react-rainbow-components` library.
  * @class
  * @implements {IPhoneInput}
+ * @type {PhoneInput}
  */
 class PhoneInput implements IPhoneInput {
     private rootElement: string;

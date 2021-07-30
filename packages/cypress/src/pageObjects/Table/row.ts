@@ -16,6 +16,7 @@ export interface IRow {
  * Use `Table.getRow` instead.
  * @class
  * @implements {IRow}
+ * @type {Row}
  */
 class Row implements IRow {
     private rootElement: string;

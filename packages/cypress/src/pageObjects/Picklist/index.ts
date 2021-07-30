@@ -10,6 +10,7 @@ export interface IPicklist {
  * of `react-rainbow-components` library.
  * @class
  * @implements {IPicklist}
+ * @type {Picklist}
  */
 class Picklist implements IPicklist {
     private rootElement: string;

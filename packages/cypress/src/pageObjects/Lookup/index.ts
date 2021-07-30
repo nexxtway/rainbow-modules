@@ -10,6 +10,7 @@ export interface ILookup {
  * of `react-rainbow-components` library.
  * @class
  * @implements {ILookup}
+ * @type {Lookup}
  */
 class Lookup implements ILookup {
     private rootElement: string;

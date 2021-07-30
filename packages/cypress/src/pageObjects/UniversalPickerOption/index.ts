@@ -14,7 +14,8 @@ export interface IUniversalPickerOption {
  * You will almost never need to use this page object directly.
  * Use `UniversalPicker.options` instead.
  * @class
- * @implements {IRow}
+ * @implements {UniversalPickerOption}
+ * @type {UniversalPickerOption}
  */
 class UniversalPickerOption implements IUniversalPickerOption {
     private rootElement: string;

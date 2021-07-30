@@ -12,6 +12,7 @@ export interface IUniversalPicker {
  * of `@rainbow-modules/forms` library.
  * @class
  * @implements {IUniversalPicker}
+ * @type {UniversalPicker}
  */
 
 class UniversalPicker implements IUniversalPicker {

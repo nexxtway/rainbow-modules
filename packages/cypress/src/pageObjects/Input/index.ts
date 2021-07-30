@@ -10,6 +10,7 @@ export interface IInput {
  * of `react-rainbow-components` library.
  * @class
  * @implements {IInput}
+ * @type {Input}
  */
 class Input implements IInput {
     private rootElement: string;

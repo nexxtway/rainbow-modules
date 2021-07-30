@@ -11,7 +11,8 @@ export interface ISidebarItem {
  *
  * You will almost never need to use this page object directly. Use `Sidebar.items` instead.
  * @class
- * @implements {ISidebar}
+ * @implements {ISidebarItem}
+ * @type {SidebarItem}
  */
 class SidebarItem implements ISidebarItem {
     private rootElement: string;

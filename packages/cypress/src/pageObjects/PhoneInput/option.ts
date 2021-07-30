@@ -12,6 +12,7 @@ export interface ICountryOption {
  * Use `PhoneInput.options` instead.
  * @class
  * @implements {ICountryOption}
+ * @type {CountryOption}
  */
 class CountryOption implements ICountryOption {
     private rootElement: string;

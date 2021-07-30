@@ -13,6 +13,7 @@ export interface IOption {
  * use the corresponding `options` property of other page objects, i.e `InternalDropdown`
  * @class
  * @implements {IOption}
+ * @type {Option}
  */
 class Option implements IOption {
     private rootElement: string;

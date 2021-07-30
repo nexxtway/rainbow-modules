@@ -15,6 +15,7 @@ export interface ITable {
  * of `react-rainbow-components` library.
  * @class
  * @implements {ITable}
+ * @type {Table}
  */
 class Table implements ITable {
     private rootElement: string;

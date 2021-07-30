@@ -9,6 +9,7 @@ export interface IButtonMenu {
  * of `react-rainbow-components` library.
  * @class
  * @implements {IButtonMenu}
+ * @type {ButtonMenu}
  */
 class ButtonMenu implements IButtonMenu {
     private rootElement: string;

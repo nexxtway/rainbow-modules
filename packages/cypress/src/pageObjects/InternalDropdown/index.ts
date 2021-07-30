@@ -19,6 +19,7 @@ export interface IInternalDropdown {
  * of `react-rainbow-components` library.
  * @class
  * @implements {IInternalDropdown}
+ * @type {InternalDropdown}
  */
 class InternalDropdown implements IInternalDropdown {
     private rootElement: string;

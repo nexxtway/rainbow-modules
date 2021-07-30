@@ -7,7 +7,8 @@ export interface IButton {
  * The Button page object allows to perform actions on the Button component
  * of `react-rainbow-components` library.
  * @class
- * @implements {IButtonMenu}
+ * @implements {IButton}
+ * @type {Button}
  */
 class Button implements IButton {
     private rootElement: string;

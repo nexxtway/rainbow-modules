@@ -11,6 +11,7 @@ export interface ISidebar {
  * of `react-rainbow-components` library.
  * @class
  * @implements {ISidebar}
+ * @type {Sidebar}
  */
 class Sidebar implements ISidebar {
     private rootElement: string;
