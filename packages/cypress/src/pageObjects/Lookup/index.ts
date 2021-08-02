@@ -6,22 +6,33 @@ export interface ILookup {
 }
 
 /**
- * Page object to represent a Lookup.
- * @type {ILookup}
+ * The Lookup page object allows to perform actions on the Lookup component
+ * of `react-rainbow-components` library.
+ * @class
+ * @implements {ILookup}
+ * @type {Lookup}
  */
 class Lookup implements ILookup {
     private rootElement: string;
 
     /**
-     * Constructs a new instance of this class
-     * @param rootElement The root element for the page object.
+     * Constructs a new instance of this page object
+     * @param rootElement The selector for the root element of the Lookup.
+     * @example
+     * import { Lookup } from '@rainbow-modules/cypress/pageObjects';
+     *
+     * const lookup = new Lookup('#lookup-selector');
      */
     constructor(rootElement: string) {
         this.rootElement = rootElement;
     }
 
     /**
-     * Get the input of this Lookup
+     * The input element of this Lookup
+     * @member {Cypress.Chainable<JQuery<HTMLInputElement>>}
+     * @example
+     * // Type something in the Lookup
+     * lookup.input.type('rainbow')
      */
     get input(): Cypress.Chainable<JQuery<HTMLInputElement>> {
         return cy.get(this.rootElement).find('input');
@@ -29,6 +40,10 @@ class Lookup implements ILookup {
 
     /**
      * Get the clear button of this Lookup
+     * @member {Cypress.Chainable<JQuery<HTMLInputElement>>}
+     * @example
+     * // Clear the Lookup value
+     * lookup.clearButton.click();
      */
     get clearButton(): Cypress.Chainable<JQuery<HTMLButtonElement>> {
         return cy.get(this.rootElement).find('button');

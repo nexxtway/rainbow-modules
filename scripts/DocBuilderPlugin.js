@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const jsdoc2md = require('jsdoc-to-markdown');
 const fs = require('fs');
 const path = require('path');
@@ -33,28 +34,36 @@ class DocBuilderPlugin {
                     }
                     const templateFile = path.join(packagePath, templatePath);
 
-                    /* get template data */
-                    const templateData = jsdoc2md.getTemplateDataSync({
-                        files: glob.sync(`${packagePath}/${srcPath}/**/index.+(ts|js)`),
-                        configure: configFile,
-                    });
-
-                    /* reduce templateData to an array of class names */
-                    const classNames = templateData.reduce((classNames, identifier) => {
-                        if (identifier.kind === 'class') classNames.push(identifier.name);
-                        return classNames;
-                    }, []);
-
-                    /* create a documentation file for each class */
-                    classNames.forEach((className) => {
-                        const output = jsdoc2md.renderSync({
-                            data: templateData,
-                            name: className,
-                            template: fs.readFileSync(templateFile, 'utf8'),
-                            partial: `${packagePath}/${partials}`,
+                    try {
+                        /* get template data */
+                        const templateData = jsdoc2md.getTemplateDataSync({
+                            files: glob.sync(`${packagePath}/${srcPath}/**/*.+(ts|js)`),
+                            configure: configFile,
                         });
-                        fs.writeFileSync(path.resolve(outputDir, `${className}.story.mdx`), output);
-                    });
+
+                        /* reduce templateData to an array of class names */
+                        const classNames = templateData.reduce((classNames, identifier) => {
+                            if (identifier.kind === 'class') classNames.push(identifier.name);
+                            return classNames;
+                        }, []);
+
+                        /* create a documentation file for each class */
+                        classNames.forEach((className) => {
+                            const output = jsdoc2md.renderSync({
+                                data: templateData,
+                                name: className,
+                                template: fs.readFileSync(templateFile, 'utf8'),
+                                partial: `${packagePath}/${partials}`,
+                            });
+                            fs.writeFileSync(
+                                path.resolve(outputDir, `${className}.story.mdx`),
+                                output,
+                            );
+                        });
+                    } catch (e) {
+                        console.error('Could not parse docs.');
+                        console.error(e);
+                    }
                 });
                 this.shouldBuild = false;
             });
