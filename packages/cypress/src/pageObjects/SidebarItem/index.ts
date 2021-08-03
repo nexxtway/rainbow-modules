@@ -20,11 +20,6 @@ class SidebarItem implements ISidebarItem {
     /**
      * Constructs a new instance of this page object
      * @param rootElement The selector for the root element of the SidebarItem.
-     * @example
-     * import { Sidebar } from '@rainbow-modules/cypress/pageObjects';
-     *
-     * const sidebar = new Sidebar('#sidebar-selector');
-     * // Use sidebar.items[index] to get a SidebarItem
      */
     constructor(rootElement: string) {
         this.rootElement = rootElement;
@@ -33,8 +28,6 @@ class SidebarItem implements ISidebarItem {
     /**
      * Click the item
      * @method
-     * @example
-     * sidebar.items[1].click()
      */
     click(): void {
         cy.get(this.rootElement).find('[data-id="sidebar-item-clickable-element"]').click();
@@ -43,8 +36,6 @@ class SidebarItem implements ISidebarItem {
     /**
      * Trigger `mouseover` event on the item
      * @method
-     * @example
-     * sidebar.items[1].hover()
      */
     hover(): void {
         cy.get(this.rootElement)

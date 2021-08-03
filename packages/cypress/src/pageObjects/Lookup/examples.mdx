@@ -1,0 +1,30 @@
+-   ##### How to type something in the Lookup
+
+```js
+import { Lookup } from '@rainbow-modules/cypress/pageObjects';
+
+const lookup = new Lookup('#lookup-selector');
+lookup.input.type('rainbow');
+```
+
+-   ##### How to clear the Lookup value
+
+```js
+import { Lookup } from '@rainbow-modules/cypress/pageObjects';
+
+const lookup = new Lookup('#lookup-selector');
+lookup.clearButton.click();
+```
+
+-   ##### How to pick an option
+
+```js
+import { Lookup } from '@rainbow-modules/cypress/pageObjects';
+
+const lookup = new Lookup('#lookup-selector');
+lookup.input.click().then(($input) => {
+    const ariaControls = $input.attr('aria-controls');
+    const dropdown = new InternalDropdown(`#${ariaControls}`);
+    dropdown.options[0].click();
+});
+```

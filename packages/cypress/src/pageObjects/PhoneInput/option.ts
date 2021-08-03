@@ -20,11 +20,6 @@ class CountryOption implements ICountryOption {
     /**
      * Constructs a new instance of this page object
      * @param rootElement The selector for the root element of the CountryOption.
-     * @example
-     * import { PhoneInput } from '@rainbow-modules/cypress/pageObjects';
-     *
-     * const phoneInput = new phoneInput('#phoneinput-selector');
-     * // use phoneInput.options[index]
      */
     constructor(rootElement: string) {
         this.rootElement = rootElement;
@@ -33,8 +28,6 @@ class CountryOption implements ICountryOption {
     /**
      * Clicks the option
      * @method
-     * @example
-     * phoneInput.options[0].click();
      */
     click(): void {
         cy.get(this.rootElement).scrollIntoView().click();

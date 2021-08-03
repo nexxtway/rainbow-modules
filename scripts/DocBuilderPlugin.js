@@ -49,11 +49,13 @@ class DocBuilderPlugin {
 
                         /* create a documentation file for each class */
                         classNames.forEach((className) => {
+                            const examplesPath = `${packagePath}/${srcPath}/${className}/examples.mdx`;
                             const output = jsdoc2md.renderSync({
                                 data: templateData,
                                 name: className,
                                 template: fs.readFileSync(templateFile, 'utf8'),
                                 partial: `${packagePath}/${partials}`,
+                                hasExamples: fs.existsSync(examplesPath),
                             });
                             fs.writeFileSync(
                                 path.resolve(outputDir, `${className}.story.mdx`),

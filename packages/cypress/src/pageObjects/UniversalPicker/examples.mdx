@@ -1,0 +1,17 @@
+-   ##### How to click an option
+
+```js
+import { UniversalPicker } from '@rainbow-modules/cypress/pageObjects';
+
+const universalPicker = new UniversalPicker('#universalpicker-selector');
+universalPicker.options[0].click();
+```
+
+-   ##### How to select an option
+
+```js
+import { UniversalPicker } from '@rainbow-modules/cypress/pageObjects';
+
+const universalPicker = new UniversalPicker('#universalpicker-selector');
+universalPicker.select(0);
+```

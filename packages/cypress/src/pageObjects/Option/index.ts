@@ -21,10 +21,6 @@ class Option implements IOption {
     /**
      * Constructs a new instance of this page object
      * @param rootElement The selector for the root element of the Option.
-     * @example
-     * import { Option } from '@rainbow-modules/cypress/pageObjects';
-     *
-     * const option = new Option('#option-selector');
      */
     constructor(rootElement: string) {
         this.rootElement = rootElement;
@@ -33,8 +29,6 @@ class Option implements IOption {
     /**
      * Clicks the option
      * @method
-     * @example
-     * option.click();
      */
     click(): void {
         cy.get(this.rootElement).scrollIntoView().click();
@@ -43,8 +37,6 @@ class Option implements IOption {
     /**
      * Trigger `mouseover` event on the option
      * @method
-     * @example
-     * option.hover();
      */
     hover(): void {
         cy.get(this.rootElement).scrollIntoView().trigger('mouseover');
