@@ -1,0 +1,19 @@
+-   ##### How to click an option
+
+```js
+import { InternalDropdown } from '@rainbow-modules/cypress/pageObjects';
+
+const dropdown = new InternalDropdown('#dropdown-selector');
+dropdown.options[1].click();
+```
+
+-   ##### How to filter options
+
+This will fail if search is not enabled on the dropdown
+
+```js
+import { InternalDropdown } from '@rainbow-modules/cypress/pageObjects';
+
+const dropdown = new InternalDropdown('#dropdown-selector');
+dropdown.setSearchQuery('rainbow');
+```

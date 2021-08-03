@@ -24,11 +24,6 @@ class Row implements IRow {
     /**
      * Constructs a new instance of this page object
      * @param rootElement The selector for the root element of the Row.
-     * @example
-     * import { Table } from '@rainbow-modules/cypress/pageObjects';
-     *
-     * const table = new Table('#table-selector');
-     * const row = table.getRow(1);
      */
     constructor(rootElement: string) {
         this.rootElement = rootElement;
@@ -39,8 +34,6 @@ class Row implements IRow {
      *
      * Fails if the checkbox column is not present.
      * @method
-     * @example
-     * row.check();
      */
     check(): void {
         cy.get(this.rootElement)
@@ -53,8 +46,6 @@ class Row implements IRow {
      *
      * Fails if the checkbox column is not present.
      * @method
-     * @example
-     * row.uncheck();
      */
     uncheck(): void {
         cy.get(this.rootElement)
@@ -67,8 +58,6 @@ class Row implements IRow {
      * @method
      * @param actionColumnNumber The number of the actions column, starting at 1
      * @returns {ButtonMenu}
-     * @example
-     * row.getButtonMenu().button.click();
      */
     getButtonMenu(actionColumnNumber: number): ButtonMenu {
         return new ButtonMenu(`${this.rootElement} td:nth-child(${actionColumnNumber}) > div`);

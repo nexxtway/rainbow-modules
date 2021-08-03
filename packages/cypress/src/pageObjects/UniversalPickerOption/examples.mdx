@@ -1,0 +1,28 @@
+-   ##### How to get an option
+
+```js
+import { UniversalPicker } from '@rainbow-modules/cypress/pageObjects';
+
+const universalPicker = new UniversalPicker('#universalpicker-selector');
+const option = universalPicker.options[0];
+```
+
+-   ##### How to check and uncheck an option
+
+```js
+import { UniversalPicker } from '@rainbow-modules/cypress/pageObjects';
+
+const universalPicker = new UniversalPicker('#universalpicker-selector');
+universalPicker.options[0].check();
+universalPicker.options[0].uncheck();
+```
+
+-   ##### How to test if an option is checked with cypress
+
+```js
+import { UniversalPicker } from '@rainbow-modules/cypress/pageObjects';
+
+const universalPicker = new UniversalPicker('#universalpicker-selector');
+universalPicker.options[0].check();
+expect(universalPicker.options[0].isChecked).to.be.true;
+```

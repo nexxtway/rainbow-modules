@@ -21,10 +21,6 @@ class PhoneInput implements IPhoneInput {
     /**
      * Constructs a new instance of this page object
      * @param rootElement The selector for the root element of the PhoneInput.
-     * @example
-     * import { PhoneInput } from '@rainbow-modules/cypress/pageObjects';
-     *
-     * const phoneInput = new phoneInput('#phoneinput-selector');
      */
     constructor(rootElement: string) {
         this.rootElement = rootElement;
@@ -33,9 +29,6 @@ class PhoneInput implements IPhoneInput {
     /**
      * The input element of the PhoneInput
      * @member {Cypress.Chainable<JQuery<HTMLInputElement>>}
-     * @example
-     * // Type something in the Lookup
-     * phoneInput.input.type('+1-212-456-7890');
      */
     get input(): Cypress.Chainable<JQuery<HTMLInputElement>> {
         return cy.get(this.rootElement).find('input[type="tel"]');
@@ -44,9 +37,6 @@ class PhoneInput implements IPhoneInput {
     /**
      * Array of CountryOption page objects where each item wraps a country option
      * @member {CountryOption[]}
-     * @example
-     * // Click an option
-     * phoneInput.options[2].click();
      */
     get options(): CountryOption[] {
         const { length } = Cypress.$(`${this.rootElement} ul[role="listbox"] li[role="option"]`);
@@ -63,8 +53,6 @@ class PhoneInput implements IPhoneInput {
      * Search for countries.
      * @method
      * @param {string} value - The search query
-     * @example
-     * phoneInput.search('Mexico')
      */
     search(value: string): void {
         cy.get(this.rootElement).find('button[type="button"]').click();

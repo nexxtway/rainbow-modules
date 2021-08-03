@@ -1,0 +1,30 @@
+-   ##### How to manipulate the input value
+
+```js
+import { Input } from '@rainbow-modules/cypress/pageObjects';
+
+const inputPageObject = new Input('#input-selector');
+// Write some text on the input
+inputPageObject.input.type('Hello world!');
+// Clear the value of an input or textarea
+inputPageObject.input.clear();
+```
+
+-   ##### How to test the error message
+
+```js
+import { Input } from '@rainbow-modules/cypress/pageObjects';
+
+const inputPageObject = new Input('#input-selector');
+// The test will fail if there is no error or if the error text is different to the provided string
+inputPageObject.shouldHaveError('This field is required');
+```
+
+-   ##### How to check the input if it is of type `checkbox` or `radio`
+
+```js
+import { Input } from '@rainbow-modules/cypress/pageObjects';
+
+const inputPageObject = new Input('#input-selector');
+inputPageObject.check();
+```

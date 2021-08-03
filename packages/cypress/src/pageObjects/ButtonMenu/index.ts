@@ -17,10 +17,6 @@ class ButtonMenu implements IButtonMenu {
     /**
      * Constructs a new instance of this page object
      * @param rootElement The selector for the root element of the ButtonMenu.
-     * @example
-     * import { ButtonMenu } from '@rainbow-modules/cypress/pageObjects';
-     *
-     * const buttonMenu = new ButtonMenu('#buttonmenu-selector');
      */
     constructor(rootElement: string) {
         this.rootElement = rootElement;
@@ -29,8 +25,6 @@ class ButtonMenu implements IButtonMenu {
     /**
      * Gets the button element of this ButtonMenu.
      * @member {Cypress.Chainable<JQuery<HTMLButtonElement>>}
-     * @example
-     * buttonMenu.button.click();
      */
     get button(): Cypress.Chainable<JQuery<HTMLButtonElement>> {
         return cy.get(this.rootElement).find('button');

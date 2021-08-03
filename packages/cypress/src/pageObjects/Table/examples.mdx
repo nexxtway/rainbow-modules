@@ -1,0 +1,39 @@
+-   ##### How to get a row
+
+```js
+import { Table } from '@rainbow-modules/cypress/pageObjects';
+
+const table = new Table('#table-selector');
+const row = table.getRow(1); // row number starts at 1
+```
+
+-   ##### How to check and uncheck a row
+
+```js
+import { Table } from '@rainbow-modules/cypress/pageObjects';
+
+const table = new Table('#table-selector');
+table.getRow(1).check(); // or table.checkRow(1)
+table.uncheckRow(1); // or table.getRow(1).uncheck();
+```
+
+-   ##### How to click the header of a column, i.e trigger ordering
+
+```js
+import { Table } from '@rainbow-modules/cypress/pageObjects';
+
+const table = new Table('#table-selector');
+table.clickHeader(1);
+```
+
+-   ##### How to open the button menu of the actions column
+
+To open the button menu you must call the `getButtonMenu` function of the row.
+This function expects the column number (starting at 1) of the actions column.
+
+```js
+import { Table } from '@rainbow-modules/cypress/pageObjects';
+
+const table = new Table('#table-selector');
+table.getRow(1).getButtonMenu(5).click();
+```

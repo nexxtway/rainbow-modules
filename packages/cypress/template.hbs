@@ -1,4 +1,7 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Preview, Props, Description } from '@storybook/addon-docs/blocks';
+{{#if options.hasExamples}}
+import Examples from '../../src/pageObjects/{{options.name}}/examples.mdx'
+{{/if}}
 
 <Meta title="Modules/Cypress/PageObjects/{{options.name}}" />
 
@@ -6,3 +9,8 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 {{>main}}
 {{/class}}
 
+{{#if options.hasExamples}}
+# Examples
+
+<Examples />
+{{/if}}

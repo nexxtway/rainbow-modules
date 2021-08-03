@@ -23,10 +23,6 @@ class Table implements ITable {
     /**
      * Constructs a new instance of this page object
      * @param rootElement The selector for the root element of the Table.
-     * @example
-     * import { Table } from '@rainbow-modules/cypress/pageObjects';
-     *
-     * const table = new Table('#table-selector');
      */
     constructor(rootElement: string) {
         this.rootElement = rootElement;
@@ -37,8 +33,6 @@ class Table implements ITable {
      * @method
      * @param rowNumber The number of the desired row, starting at 1
      * @returns {Row}
-     * @example
-     * table.getRow(1).check();
      */
     getRow(rowNumber: number): Row {
         return new Row(`${this.rootElement} tbody tr:nth-child(${rowNumber})`);
@@ -50,8 +44,6 @@ class Table implements ITable {
      * Fails if the checkbox column is not present.
      * @method
      * @param rowNumber The number of the desired row, starting at 1
-     * @example
-     * table.checkRow(1);
      */
     checkRow(rowNumber: number): void {
         this.getRow(rowNumber).check();
@@ -63,8 +55,6 @@ class Table implements ITable {
      * Fails if the checkbox column is not present.
      * @method
      * @param rowNumber The number of the desired row, starting at 1
-     * @example
-     * table.uncheckRow(1);
      */
     uncheckRow(rowNumber: number): void {
         this.getRow(rowNumber).uncheck();
@@ -75,8 +65,6 @@ class Table implements ITable {
      *
      * Fails if the checkbox column is not present.
      * @method
-     * @example
-     * table.checkAll(1);
      */
     checkAll(): void {
         cy.get(this.rootElement).find(`thead > tr input`).check();
@@ -87,8 +75,6 @@ class Table implements ITable {
      *
      * Fails if the checkbox column is not present.
      * @method
-     * @example
-     * table.uncheckAll(1);
      */
     uncheckAll(): void {
         cy.get(this.rootElement).find(`thead > tr input`).uncheck();
@@ -98,8 +84,6 @@ class Table implements ITable {
      * Click the header of the column given by `columnNumber`.
      * @method
      * @param columnNumber The number of the column to click, starting at 1
-     * @example
-     * table.clickHeader(1);
      */
     clickHeader(columnNumber: number): void {
         cy.get(this.rootElement)

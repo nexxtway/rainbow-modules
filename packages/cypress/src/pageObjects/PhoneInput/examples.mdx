@@ -1,0 +1,26 @@
+-   ##### How to type something in the input
+
+```js
+import { PhoneInput } from '@rainbow-modules/cypress/pageObjects';
+
+const phoneInput = new phoneInput('#phoneinput-selector');
+phoneInput.input.type('+1-212-456-7890');
+```
+
+-   ##### How to select an option
+
+```js
+import { PhoneInput } from '@rainbow-modules/cypress/pageObjects';
+
+const phoneInput = new phoneInput('#phoneinput-selector');
+phoneInput.options[2].click();
+```
+
+-   ##### How to search a country
+
+```js
+import { PhoneInput } from '@rainbow-modules/cypress/pageObjects';
+
+const phoneInput = new phoneInput('#phoneinput-selector');
+phoneInput.search('Mexico');
+```
