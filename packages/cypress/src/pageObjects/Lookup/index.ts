@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 
+import { InternalDropdown, Option } from '..';
+
 export interface ILookup {
     input: Cypress.Chainable<JQuery<HTMLInputElement>>;
     clearButton: Cypress.Chainable<JQuery<HTMLButtonElement>>;
@@ -37,6 +39,16 @@ class Lookup implements ILookup {
      */
     get clearButton(): Cypress.Chainable<JQuery<HTMLButtonElement>> {
         return cy.get(this.rootElement).find('button');
+    }
+
+    /**
+     * Array of Option page objects where each item wraps an option of the Lookup
+     * @member {Option[]}
+     */
+    get options(): Option[] {
+        const ariaControls = Cypress.$(`${this.rootElement} input`).attr('aria-controls');
+        const dropdown = new InternalDropdown(`#${ariaControls}`);
+        return dropdown.options;
     }
 }
 

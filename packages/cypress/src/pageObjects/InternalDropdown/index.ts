@@ -1,9 +1,9 @@
 /// <reference types="cypress" />
 
-import OptionPageObject from '../Option';
+import Option from '../Option';
 
 export interface IInternalDropdown {
-    options: OptionPageObject[];
+    options: Option[];
     enterScrollUpArrow: () => void;
     leaveScrollUpArrow: () => void;
     enterScrollDownArrow: () => void;
@@ -40,14 +40,12 @@ class InternalDropdown implements IInternalDropdown {
      * Array of `Option` page objects where each item wraps an option of this dropdown
      * @member {Option[]}
      */
-    get options(): OptionPageObject[] {
+    get options(): Option[] {
         const { length } = Cypress.$(`${this.rootElement} li[role="presentation"]`);
         return Array.from(
             { length },
             (_v, i) =>
-                new OptionPageObject(
-                    `${this.rootElement} li[role="presentation"]:nth-child(${i + 1})`,
-                ),
+                new Option(`${this.rootElement} li[role="presentation"]:nth-child(${i + 1})`),
         );
     }
 
