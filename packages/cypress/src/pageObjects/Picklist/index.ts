@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 
-import { InternalDropdown, Option } from '..';
+import InternalDropdown from '../InternalDropdown';
+import Option from '../Option';
 
 export interface IPicklist {
     input: Cypress.Chainable<JQuery<HTMLInputElement>>;
