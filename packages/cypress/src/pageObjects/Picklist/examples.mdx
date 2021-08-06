@@ -13,13 +13,7 @@ picklist.click();
 import { Picklist } from '@rainbow-modules/cypress/pageObjects';
 
 const picklist = new Picklist('#picklist-selector');
-picklist.click();
-// We need to get the `aria-controls` attribute of the input
-picklist.input.then(($input) => {
-    const ariaControls = $input.attr('aria-controls');
-    // Use the `aria-controls` value to create a new InternalDropdown page object
-    const dropdown = new InternalDropdown(`#${ariaControls}`);
-    // You can use the InternalDropdown page object here
-    dropdown.options[1].click();
+picklist.input.click().then(() => {
+    picklist.options[0].click();
 });
 ```
