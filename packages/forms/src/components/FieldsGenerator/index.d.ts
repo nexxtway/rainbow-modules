@@ -30,6 +30,8 @@ interface Schema {
     max?: number | NumberKeywordShape;
     /** Specifies the maximum value allowed in the input field. */
     min?: number | NumberKeywordShape;
+    /** Specifies the interval between legal numbers allowed in the input field. */
+    step?: number | NumberKeywordShape;
     /** The maximum number of characters allowed in the input field. */
     maxLength?: number | NumberKeywordShape;
     /** The minimum number of characters allowed in the input field. */

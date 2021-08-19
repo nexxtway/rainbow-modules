@@ -47,6 +47,7 @@ const FieldsGenerator = (props) => {
                 readOnly,
                 min,
                 max,
+                step,
                 maxLength,
                 minLength,
                 options,
@@ -56,6 +57,7 @@ const FieldsGenerator = (props) => {
             } = field;
             const minValue = getNumberValue(min);
             const maxValue = getNumberValue(max);
+            const stepValue = getNumberValue(step);
             const maxLengthValue = getNumberValue(maxLength);
             const minLengthValue = getNumberValue(minLength);
 
@@ -66,6 +68,7 @@ const FieldsGenerator = (props) => {
                     ...field,
                     minValue,
                     maxValue,
+                    stepValue,
                     maxLengthValue,
                     minLengthValue,
                 },
@@ -96,6 +99,7 @@ const FieldsGenerator = (props) => {
                             readOnly={readOnly}
                             max={maxValue}
                             min={minValue}
+                            step={stepValue}
                             maxLength={maxLengthValue}
                             minLength={minLengthValue}
                             defaultValue={defaultValue}
@@ -123,6 +127,7 @@ const FieldsGenerator = (props) => {
                         readOnly={readOnly}
                         max={maxValue}
                         min={minValue}
+                        step={stepValue}
                         maxLength={maxLengthValue}
                         minLength={minLengthValue}
                         options={selectOptions}
@@ -162,6 +167,7 @@ FieldsGenerator.propTypes = {
             readOnly: PropTypes.bool,
             max: numberTypeShape,
             min: numberTypeShape,
+            step: numberTypeShape,
             maxLength: numberTypeShape,
             minLength: numberTypeShape,
             options: PropTypes.arrayOf(
