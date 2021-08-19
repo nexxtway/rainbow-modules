@@ -24,7 +24,6 @@ const SelectInput = (props) => {
         required,
         error,
     } = useReduxForm(props);
-    console.log(options);
 
     const newValue = {
         label: value,
