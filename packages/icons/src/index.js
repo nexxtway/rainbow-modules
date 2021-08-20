@@ -111,6 +111,7 @@ export { default as Microsoft } from './components/microsoft';
 export { default as Yahoo } from './components/yahoo';
 export { default as Copy } from './components/copy';
 export { default as Tag } from './components/tag';
+export { default as DocumentPath } from './components/documentPath';
 
 // File icons
 export { default as JavascriptFile } from './components/javascriptFile';

@@ -118,6 +118,7 @@ import {
     SvgFile,
     YarnLockFile,
     Tag,
+    DocumentPath,
 } from '../../../src';
 
 export default [
@@ -686,6 +687,11 @@ export default [
         name: 'bell',
         category: 'standard',
         icon: Bell,
+    },
+    {
+        name: 'documentPath',
+        category: 'standard',
+        icon: DocumentPath,
     },
     {
         name: 'javascriptFile',
