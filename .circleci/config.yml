@@ -36,6 +36,7 @@ jobs:
                       fi
 
             - run: yarn cypress install
+            - run: yarn cypress:run-ct
             - run:
                   command: yarn dev
                   background: true

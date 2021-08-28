@@ -4,5 +4,10 @@
     "execTimeout": 60000,
     "video": true,
     "defaultCommandTimeout": 60000,
-    "baseUrl": "http://localhost:5555"
+    "baseUrl": "http://localhost:5555",
+    "component": {
+        "testFiles": "cypress/components/**/*.spec.{js,ts,jsx,tsx}",
+        "componentFolder": ".",
+        "ignoreTestFiles": "**/node_modules/**"
+    }
 }
