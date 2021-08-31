@@ -21,7 +21,6 @@ module.exports = (on, config) => {
     // `config` is the resolved Cypress config
     if (config.testingType === 'component') {
         const { startDevServer } = require('@cypress/webpack-dev-server');
-
         // Your project's Webpack configuration
         const webpackConfig = require('./webpack.config');
 
