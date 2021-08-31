@@ -1,6 +1,6 @@
 const GLOBAL_SEARCH_URL =
     '/iframe.html?id=modules-search-stories-globalsearch--mongo-atlas-global-search';
-const MONGO_ATLAS_URL = 'https://express-atlas-search.herokuapp.com/movies/search';
+const MONGO_ATLAS_URL = /^https:\/\/express-atlas-search.herokuapp.com\/.*/;
 const SEARCH_INPUT = 'input[type="search"]';
 const CLOSE_BUTTON = 'button[type="button"]';
 const CLEAR_BUTTON = '[data-cy=clear-button]';
