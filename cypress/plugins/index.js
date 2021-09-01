@@ -24,7 +24,6 @@ module.exports = (on, config) => {
 
         // Your project's Webpack configuration
         const webpackConfig = require('./webpack.config');
-
         on('dev-server:start', (options) => startDevServer({ options, webpackConfig }));
     }
 
