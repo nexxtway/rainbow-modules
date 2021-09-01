@@ -1,0 +1,26 @@
+-   ##### How to click an option
+
+```js
+import { CategoriesPicker } from '@rainbow-modules/cypress/pageObjects';
+
+const categoriesPicker = new CategoriesPicker('#categoriespicker-selector');
+categoriesPicker.options[0].click();
+```
+
+-   ##### How to select an option
+
+```js
+import { CategoriesPicker } from '@rainbow-modules/cypress/pageObjects';
+
+const categoriesPicker = new CategoriesPicker('#categoriespicker-selector');
+categoriesPicker.picker.select(0);
+```
+
+-   ##### How to deselect an option by clicking the remove icon
+
+```js
+import { CategoriesPicker } from '@rainbow-modules/cypress/pageObjects';
+
+const categoriesPicker = new CategoriesPicker('#categoriespicker-selector');
+categoriesPicker.options[0].clickCloseButton();
+```
