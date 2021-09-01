@@ -1,4 +1,5 @@
 module.exports = {
+    testMatch: ['**/__tests__/**/*.spec.[jt]s?(x)', '**/__test__/**/*.spec.[jt]s?(x)'],
     cacheDirectory: '.jest-cache',
     coverageDirectory: '.jest-coverage',
     collectCoverage: true,
