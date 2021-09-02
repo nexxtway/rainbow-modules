@@ -1,5 +1,6 @@
 export { default as Button } from './Button';
 export { default as ButtonMenu } from './ButtonMenu';
+export { default as CategoriesPicker } from './CategoriesPicker';
 export { default as Input } from './Input';
 export { default as InternalDropdown } from './InternalDropdown';
 export { default as Lookup } from './Lookup';

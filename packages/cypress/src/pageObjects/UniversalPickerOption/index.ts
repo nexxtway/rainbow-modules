@@ -18,7 +18,7 @@ export interface IUniversalPickerOption {
  * @type {UniversalPickerOption}
  */
 class UniversalPickerOption implements IUniversalPickerOption {
-    private rootElement: string;
+    protected rootElement: string;
 
     /**
      * Constructs a new instance of this page object
