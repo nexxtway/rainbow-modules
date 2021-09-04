@@ -59,6 +59,18 @@ class Picklist implements IPicklist {
         const dropdown = new InternalDropdown(`#${ariaControls}`);
         return dropdown.options;
     }
+
+    /**
+     * Assert that an option exists.
+     *
+     * Useful when the options are loaded asynchronously and want to wait for them to load.
+     * @method
+     */
+    waitForOption(index: number): Cypress.Chainable<JQuery<HTMLElement>> {
+        const ariaControls = Cypress.$(`${this.rootElement} input`).attr('aria-controls');
+        const dropdown = new InternalDropdown(`#${ariaControls}`);
+        return dropdown.waitForOption(index);
+    }
 }
 
 export default Picklist;

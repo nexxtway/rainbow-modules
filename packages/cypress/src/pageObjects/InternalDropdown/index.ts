@@ -50,6 +50,18 @@ class InternalDropdown implements IInternalDropdown {
     }
 
     /**
+     * Assert that an option exists.
+     *
+     * Useful when the options are loaded asynchronously and want to wait for them to load.
+     * @method
+     */
+    waitForOption(index: number): Cypress.Chainable<JQuery<HTMLElement>> {
+        return cy
+            .get(`${this.rootElement} li[role="presentation"]:nth-child(${index + 1})`)
+            .should('exist');
+    }
+
+    /**
      * Simulate `mouseenter` event on the scroll up arrow.
      * @method
      */

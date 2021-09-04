@@ -17,3 +17,14 @@ picklist.input.click().then(() => {
     picklist.options[0].click();
 });
 ```
+
+-   ##### How to wait for an option to exist
+
+```js
+import { Picklist } from '@rainbow-modules/cypress/pageObjects';
+
+const picklist = new Picklist('#picklist-selector');
+picklist.waitForOption(1).then(() => {
+    picklist.options[1].click();
+});
+```
