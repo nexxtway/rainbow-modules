@@ -1,0 +1,35 @@
+-   ##### How to check if the app message is visible
+
+```js
+import { AppMessage } from '@rainbow-modules/cypress/pageObjects';
+
+const appMessage = new AppMessage('[data-cy="app-message"]');
+appMessage.shouldBeVisible();
+```
+
+-   ##### How to check if the app message is not visible
+
+```js
+import { AppMessage } from '@rainbow-modules/cypress/pageObjects';
+
+const appMessage = new AppMessage('[data-cy="app-message"]');
+appMessage.shouldBeHidden();
+```
+
+-   ##### How to check the app message
+
+```js
+import { AppMessage } from '@rainbow-modules/cypress/pageObjects';
+
+const appMessage = new AppMessage('[data-cy="app-message"]');
+appMessage.shouldHaveMessage(APP_MESSAGE);
+```
+
+-   ##### How to hide the app message
+
+```js
+import { AppMessage } from '@rainbow-modules/cypress/pageObjects';
+
+const appMessage = new AppMessage('[data-cy="app-message"]');
+appMessage.closeButton.click();
+```

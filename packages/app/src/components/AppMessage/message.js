@@ -27,10 +27,12 @@ const Message = (props) => {
     };
 
     return (
-        <Container isVisible={isVisible} variant={variant}>
+        <Container isVisible={isVisible} variant={variant} data-cy="app-message">
             <MessageContainer>
                 <MessageIcon variant={variant} as={iconMap[variant]} />
-                <MessageText variant={variant}>{message}</MessageText>
+                <MessageText variant={variant} data-cy="app-message-text">
+                    {message}
+                </MessageText>
                 <ButtonIcon size="medium" icon={<Close />} onClick={hideMessage} />
             </MessageContainer>
         </Container>
