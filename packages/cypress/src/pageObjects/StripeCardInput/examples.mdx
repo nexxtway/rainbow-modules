@@ -1,0 +1,33 @@
+-   ##### How to fill the card info
+
+```js
+import { StripeCardInput } from '@rainbow-modules/cypress/pageObjects';
+
+const stripeCardInput = new StripeCardInput('#stripecardinput-selector');
+// Type the card number
+stripeCardInput.numberInput.type('4242424242424242');
+// Type the expiry date
+stripe.expiryInput.type('0929');
+// Type the CVC number
+stripe.cvcInput.type('123');
+// Type the postal code
+stripe.postalCodeInput.type('31200');
+```
+
+-   ##### How to test the error message
+
+```js
+import { StripeCardInput } from '@rainbow-modules/cypress/pageObjects';
+
+const stripeCardInput = new StripeCardInput('#stripecardinput-selector');
+stripeCardInput.shouldHaveError('Error message');
+```
+
+-   ##### How to clear the input
+
+```js
+import { StripeCardInput } from '@rainbow-modules/cypress/pageObjects';
+
+const stripeCardInput = new StripeCardInput('#stripecardinput-selector');
+stripeCardInput.clear();
+```

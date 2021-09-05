@@ -9,6 +9,7 @@ export { default as PhoneInput } from './PhoneInput';
 export { default as Picklist } from './Picklist';
 export { default as Sidebar } from './Sidebar';
 export { default as SidebarItem } from './SidebarItem';
+export { default as StripeCardInput } from './StripeCardInput';
 export { default as Table } from './Table';
 export { default as UniversalPicker } from './UniversalPicker';
 export { default as UniversalPickerOption } from './UniversalPickerOption';
