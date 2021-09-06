@@ -1,10 +1,4 @@
 /// <reference types="cypress" />
-
-const NUMBER_INPUT_SELECTOR = 'input[data-elements-stable-field-name="cardNumber"]';
-const EXPIRY_INPUT_SELECTOR = 'input[data-elements-stable-field-name="cardExpiry"]';
-const CVC_INPUT_SELECTOR = 'input[data-elements-stable-field-name="cardCvc"]';
-const POSTAL_CODE_INPUT_SELECTOR = 'input[data-elements-stable-field-name="postalCode"]';
-
 export interface IStripeCardInput {
     numberInput: Cypress.Chainable<JQuery<HTMLInputElement>>;
     expiryInput: Cypress.Chainable<JQuery<HTMLInputElement>>;
@@ -53,7 +47,7 @@ class StripeCardInput implements IStripeCardInput {
      * @member {Cypress.Chainable<JQuery<HTMLInputElement>>}
      */
     get numberInput(): Cypress.Chainable<JQuery<HTMLInputElement>> {
-        return this.iframe.find(NUMBER_INPUT_SELECTOR);
+        return this.iframe.find('input[data-elements-stable-field-name="cardNumber"]');
     }
 
     /**
@@ -61,7 +55,7 @@ class StripeCardInput implements IStripeCardInput {
      * @member {Cypress.Chainable<JQuery<HTMLInputElement>>}
      */
     get expiryInput(): Cypress.Chainable<JQuery<HTMLInputElement>> {
-        return this.iframe.find(EXPIRY_INPUT_SELECTOR);
+        return this.iframe.find('input[data-elements-stable-field-name="cardExpiry"]');
     }
 
     /**
@@ -69,7 +63,7 @@ class StripeCardInput implements IStripeCardInput {
      * @member {Cypress.Chainable<JQuery<HTMLInputElement>>}
      */
     get cvcInput(): Cypress.Chainable<JQuery<HTMLInputElement>> {
-        return this.iframe.find(CVC_INPUT_SELECTOR);
+        return this.iframe.find('input[data-elements-stable-field-name="cardCvc"]');
     }
 
     /**
@@ -77,7 +71,7 @@ class StripeCardInput implements IStripeCardInput {
      * @member {Cypress.Chainable<JQuery<HTMLInputElement>>}
      */
     get postalCodeInput(): Cypress.Chainable<JQuery<HTMLInputElement>> {
-        return this.iframe.find(POSTAL_CODE_INPUT_SELECTOR);
+        return this.iframe.find('input[data-elements-stable-field-name="postalCode"]');
     }
 
     /**
