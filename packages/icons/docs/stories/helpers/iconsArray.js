@@ -119,9 +119,15 @@ import {
     YarnLockFile,
     Tag,
     DocumentPath,
+    Link,
 } from '../../../src';
 
 export default [
+    {
+        name: 'link',
+        category: 'standard',
+        icon: Link,
+    },
     {
         name: 'arrowLeft',
         category: 'standard',
