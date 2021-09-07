@@ -4,7 +4,7 @@
 import { AppMessage } from '@rainbow-modules/cypress/pageObjects';
 
 const appMessage = new AppMessage('[data-cy="app-message"]');
-appMessage.shouldBeVisible();
+appMessage.expect('visible', true);
 ```
 
 -   ##### How to check if the app message is not visible
@@ -13,7 +13,7 @@ appMessage.shouldBeVisible();
 import { AppMessage } from '@rainbow-modules/cypress/pageObjects';
 
 const appMessage = new AppMessage('[data-cy="app-message"]');
-appMessage.shouldBeHidden();
+appMessage.expect('visible', false);
 ```
 
 -   ##### How to check the app message
@@ -22,7 +22,7 @@ appMessage.shouldBeHidden();
 import { AppMessage } from '@rainbow-modules/cypress/pageObjects';
 
 const appMessage = new AppMessage('[data-cy="app-message"]');
-appMessage.shouldHaveMessage(APP_MESSAGE);
+appMessage.expect('message', APP_MESSAGE);
 ```
 
 -   ##### How to hide the app message

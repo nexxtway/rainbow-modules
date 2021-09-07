@@ -1,9 +1,28 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /// <reference types="cypress" />
+
+import { AssertMap } from '../types';
+
+/**
+ * @interface Chainer
+ * @template Subject
+ */
+interface Chainer {
+    /**
+     * Asserts if the visibility of the app message match the provided value
+     * @param visible {boolean} - Whether the app message should be visible or not
+     */
+    (chainer: 'visible', visible: boolean): void;
+    /**
+     * Asserts if the message of the app message match the provided value
+     * @param message {string} - The message to match
+     */
+    (chainer: 'message', message: string): void;
+}
+
 export interface IAppMessage {
-    shouldHaveMessage(message: string): Cypress.Chainable<JQuery<HTMLElement>>;
-    shouldBeVisible(): Cypress.Chainable<JQuery<HTMLElement>>;
-    shouldBeHidden(): Cypress.Chainable<JQuery<HTMLElement>>;
     closeButton: Cypress.Chainable<JQuery<HTMLButtonElement>>;
+    expect: Chainer;
 }
 
 /**
@@ -25,37 +44,6 @@ class AppMessage implements IAppMessage {
     }
 
     /**
-     * Asserts if the message passed is the current app message
-     * @method
-     * @param {string} error - The message text, that must match the current app message
-     * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
-     */
-    shouldHaveMessage(message: string): Cypress.Chainable<JQuery<HTMLElement>> {
-        return cy
-            .get(`${this.rootElement}`)
-            .find('[data-cy="app-message-text"]')
-            .should('have.text', message);
-    }
-
-    /**
-     * Asserts if this app message is visible
-     * @method
-     * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
-     */
-    shouldBeVisible(): Cypress.Chainable<JQuery<HTMLElement>> {
-        return cy.get(this.rootElement).should('exist').should('be.visible');
-    }
-
-    /**
-     * Asserts if this app message is not visible
-     * @method
-     * @returns {Cypress.Chainable<JQuery<HTMLElement>>}
-     */
-    shouldBeHidden(): Cypress.Chainable<JQuery<HTMLElement>> {
-        return cy.get(this.rootElement).should('not.exist');
-    }
-
-    /**
      * Get the close button of the app message
      * @method
      * @returns {Cypress.Chainable<JQuery<HTMLButtonElement>>}
@@ -65,6 +53,32 @@ class AppMessage implements IAppMessage {
             .get(this.rootElement)
             .find<HTMLButtonElement>('button[data-id="button-icon-element"]')
             .first();
+    }
+
+    /**
+     * A map with all the assertions.
+     * @private
+     */
+    private assertMap: AssertMap = {
+        visible: (_: string, visible: boolean) => {
+            if (visible) {
+                cy.get(this.rootElement).should('exist').should('be.visible');
+            } else {
+                cy.get(this.rootElement).should('not.exist');
+            }
+        },
+        message: (_: string, message: string) => {
+            cy.get(`${this.rootElement}`)
+                .find('[data-cy="app-message-text"]')
+                .should('have.text', message);
+        },
+    };
+
+    /**
+     * Execute an assertion on this page object
+     */
+    get expect(): Chainer {
+        return (chainer: string, ...params: any[]) => this.assertMap[chainer](chainer, ...params);
     }
 }
 
