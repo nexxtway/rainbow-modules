@@ -23,7 +23,7 @@ describe('AppMessage', () => {
         cy.get('button').click();
         const appMessage = new AppMessage('[data-cy="app-message"]');
         appMessage.expect('visible', true);
-        appMessage.closeButton.click();
+        appMessage.close();
         appMessage.expect('visible', false);
     });
 });

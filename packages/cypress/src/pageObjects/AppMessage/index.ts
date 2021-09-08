@@ -21,7 +21,7 @@ interface Chainer {
 }
 
 export interface IAppMessage {
-    closeButton: Cypress.Chainable<JQuery<HTMLButtonElement>>;
+    close: () => void;
     expect: Chainer;
 }
 
@@ -44,15 +44,14 @@ class AppMessage implements IAppMessage {
     }
 
     /**
-     * Get the close button of the app message
+     * Close the app message
      * @method
-     * @returns {Cypress.Chainable<JQuery<HTMLButtonElement>>}
      */
-    get closeButton(): Cypress.Chainable<JQuery<HTMLButtonElement>> {
-        return cy
-            .get(this.rootElement)
+    close(): void {
+        cy.get(this.rootElement)
             .find<HTMLButtonElement>('button[data-id="button-icon-element"]')
-            .first();
+            .first()
+            .click();
     }
 
     /**
