@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import { AppMessage } from '../../../packages/cypress/src/pageObjects';
+import { RainbowFirebaseApp } from '../../../packages/cypress/src/pageObjects';
 
 const APP_MESSAGE_URL =
     'iframe.html?id=modules-app-stories-messages--show-app-level-message&viewMode=story';
@@ -14,17 +14,17 @@ describe('AppMessage', () => {
 
     it('should show an app message', () => {
         cy.get('button').click();
-        const appMessage = new AppMessage('[data-cy="app-message"]');
-        appMessage.expect('visible', true);
-        appMessage.expect('message', APP_MESSAGE);
+        const app = new RainbowFirebaseApp();
+        app.message.expect('visible', true);
+        app.message.expect('message', APP_MESSAGE);
     });
 
     it('should hide the message when the close button is clicked', () => {
         cy.get('button').click();
-        const appMessage = new AppMessage('[data-cy="app-message"]');
-        appMessage.expect('visible', true);
-        appMessage.close();
-        appMessage.expect('visible', false);
+        const app = new RainbowFirebaseApp();
+        app.message.expect('visible', true);
+        app.message.close();
+        app.message.expect('visible', false);
     });
 });
 
@@ -35,11 +35,11 @@ describe('AppMessage with timeout', () => {
 
     it('should be hidden after the timeout', () => {
         cy.get('button').click();
-        const appMessage = new AppMessage('[data-cy="app-message"]');
-        appMessage.expect('visible', true);
+        const app = new RainbowFirebaseApp();
+        app.message.expect('visible', true);
         // We can wait this time here since this is the app message timeout
         // eslint-disable-next-line cypress/no-unnecessary-waiting
         cy.wait(3000);
-        appMessage.expect('visible', false);
+        app.message.expect('visible', false);
     });
 });

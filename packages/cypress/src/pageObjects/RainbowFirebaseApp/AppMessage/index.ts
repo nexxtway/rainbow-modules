@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /// <reference types="cypress" />
 
-import { AssertMap } from '../types';
+import { AssertMap } from '../../types';
 
 /**
  * @interface Chainer
