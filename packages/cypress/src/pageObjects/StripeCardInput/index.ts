@@ -3,7 +3,7 @@ export interface IStripeCardInput {
     numberInput: Cypress.Chainable<JQuery<HTMLInputElement>>;
     expiryInput: Cypress.Chainable<JQuery<HTMLInputElement>>;
     cvcInput: Cypress.Chainable<JQuery<HTMLInputElement>>;
-    postalCodeInput: Cypress.Chainable<JQuery<HTMLInputElement>>;
+    zipInput: Cypress.Chainable<JQuery<HTMLInputElement>>;
     shouldHaveError(error: string): void;
     clear(): void;
 }
@@ -70,7 +70,7 @@ class StripeCardInput implements IStripeCardInput {
      * Gets the postal code input
      * @member {Cypress.Chainable<JQuery<HTMLInputElement>>}
      */
-    get postalCodeInput(): Cypress.Chainable<JQuery<HTMLInputElement>> {
+    get zipInput(): Cypress.Chainable<JQuery<HTMLInputElement>> {
         return this.iframe.find('input[data-elements-stable-field-name="postalCode"]');
     }
 
@@ -91,7 +91,7 @@ class StripeCardInput implements IStripeCardInput {
         this.numberInput.clear();
         this.expiryInput.clear();
         this.cvcInput.clear();
-        this.postalCodeInput.clear();
+        this.zipInput.clear();
     }
 }
 
