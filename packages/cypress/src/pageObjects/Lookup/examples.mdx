@@ -22,7 +22,7 @@ lookup.clearButton.click();
 import { Lookup } from '@rainbow-modules/cypress/pageObjects';
 
 const lookup = new Lookup('#lookup-selector');
-lookup.input.click().then(() => {
-    lookup.options[0].click();
-});
+lookup.input.click();
+const options = await lookup.options;
+lookup.options[0].click();
 ```

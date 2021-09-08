@@ -24,7 +24,6 @@ picklist.input.click().then(() => {
 import { Picklist } from '@rainbow-modules/cypress/pageObjects';
 
 const picklist = new Picklist('#picklist-selector');
-picklist.waitForOption(1).then(() => {
-    picklist.options[1].click();
-});
+const options = await picklist.options;
+picklist.options[1].click();
 ```

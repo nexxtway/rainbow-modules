@@ -3,7 +3,7 @@
 import Option from '../Option';
 
 export interface IInternalDropdown {
-    options: Option[];
+    options: Promise<Option[]>;
     enterScrollUpArrow: () => void;
     leaveScrollUpArrow: () => void;
     enterScrollDownArrow: () => void;
@@ -38,27 +38,27 @@ class InternalDropdown implements IInternalDropdown {
 
     /**
      * Array of `Option` page objects where each item wraps an option of this dropdown
-     * @member {Option[]}
+     * @member {Promise<Option[]>}
      */
-    get options(): Option[] {
-        const { length } = Cypress.$(`${this.rootElement} li[role="presentation"]`);
-        return Array.from(
-            { length },
-            (_v, i) =>
-                new Option(`${this.rootElement} li[role="presentation"]:nth-child(${i + 1})`),
-        );
-    }
-
-    /**
-     * Assert that an option exists.
-     *
-     * Useful when the options are loaded asynchronously and want to wait for them to load.
-     * @method
-     */
-    waitForOption(index: number): Cypress.Chainable<JQuery<HTMLElement>> {
-        return cy
-            .get(`${this.rootElement} li[role="presentation"]:nth-child(${index + 1})`)
-            .should('exist');
+    get options(): Promise<Option[]> {
+        return new Promise((resolve, reject) => {
+            const timeout = setTimeout(() => {
+                reject();
+            }, Cypress.config().defaultCommandTimeout + 1000);
+            cy.get(`${this.rootElement} li[role="presentatio"]`).then(() => {
+                clearTimeout(timeout);
+                const { length } = Cypress.$(`${this.rootElement} li[role="presentation"]`);
+                resolve(
+                    Array.from(
+                        { length },
+                        (_v, i) =>
+                            new Option(
+                                `${this.rootElement} li[role="presentation"]:nth-child(${i + 1})`,
+                            ),
+                    ),
+                );
+            });
+        });
     }
 
     /**

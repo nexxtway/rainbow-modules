@@ -6,6 +6,7 @@ import Option from '../Option';
 export interface ILookup {
     input: Cypress.Chainable<JQuery<HTMLInputElement>>;
     clearButton: Cypress.Chainable<JQuery<HTMLButtonElement>>;
+    options: Promise<Option[]>;
 }
 
 /**
@@ -44,9 +45,9 @@ class Lookup implements ILookup {
 
     /**
      * Array of Option page objects where each item wraps an option of the Lookup
-     * @member {Option[]}
+     * @member {Promise<Option[]>}
      */
-    get options(): Option[] {
+    get options(): Promise<Option[]> {
         const ariaControls = Cypress.$(`${this.rootElement} input`).attr('aria-controls');
         const dropdown = new InternalDropdown(`#${ariaControls}`);
         return dropdown.options;
