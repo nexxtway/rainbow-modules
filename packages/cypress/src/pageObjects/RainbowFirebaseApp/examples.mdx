@@ -1,0 +1,35 @@
+-   ##### How to check if the app message is visible
+
+```js
+import { RainbowFirebaseApp } from '@rainbow-modules/cypress/pageObjects';
+
+const app = new RainbowFirebaseApp();
+app.message.expect('visible', true);
+```
+
+-   ##### How to check if the app message is not visible
+
+```js
+import { RainbowFirebaseApp } from '@rainbow-modules/cypress/pageObjects';
+
+const app = new RainbowFirebaseApp();
+app.message.expect('visible', false);
+```
+
+-   ##### How to check the app message
+
+```js
+import { RainbowFirebaseApp } from '@rainbow-modules/cypress/pageObjects';
+
+const app = new RainbowFirebaseApp();
+app.message.expect('message', APP_MESSAGE);
+```
+
+-   ##### How to hide the app message
+
+```js
+import { RainbowFirebaseApp } from '@rainbow-modules/cypress/pageObjects';
+
+const app = new RainbowFirebaseApp();
+app.message.closeButton.click();
+```
