@@ -7,6 +7,7 @@ export { default as Lookup } from './Lookup';
 export { default as Option } from './Option';
 export { default as PhoneInput } from './PhoneInput';
 export { default as Picklist } from './Picklist';
+export { default as RainbowFirebaseApp } from './RainbowFirebaseApp';
 export { default as Sidebar } from './Sidebar';
 export { default as SidebarItem } from './SidebarItem';
 export { default as StripeCardInput } from './StripeCardInput';
