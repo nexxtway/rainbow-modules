@@ -1,10 +1,24 @@
 /// <reference types="cypress" />
+import { AssertMap } from '../types';
+
+/**
+ * @interface Chainer
+ * @template Subject
+ */
+interface Chainer {
+    /**
+     * Asserts if the error passed exists in the input
+     * @param visible {boolean} - Whether the app message should be visible or not
+     */
+    (chainer: 'error', error: string): void;
+}
+
 export interface IStripeCardInput {
     numberInput: Cypress.Chainable<JQuery<HTMLInputElement>>;
     expiryInput: Cypress.Chainable<JQuery<HTMLInputElement>>;
     cvcInput: Cypress.Chainable<JQuery<HTMLInputElement>>;
     zipInput: Cypress.Chainable<JQuery<HTMLInputElement>>;
-    shouldHaveError(error: string): void;
+    expect: Chainer;
     clear(): void;
 }
 
@@ -17,6 +31,16 @@ export interface IStripeCardInput {
  */
 class StripeCardInput implements IStripeCardInput {
     private rootElement: string;
+
+    /**
+     * A map with all the assertions.
+     * @private
+     */
+    private assertMap: AssertMap = {
+        error: (_: string, error: string) => {
+            cy.get(`${this.rootElement} > div[id^="error-message-"]`).should('have.text', error);
+        },
+    };
 
     /**
      * Constructs a new instance of this page object
@@ -75,12 +99,11 @@ class StripeCardInput implements IStripeCardInput {
     }
 
     /**
-     * Asserts if the error passed exists in the input
+     * Execute an assertion on this page object
      * @method
-     * @param {string} error - The error text, that must match the current error to pass the assertion
      */
-    shouldHaveError(error: string): void {
-        cy.get(`${this.rootElement} > div[id^="error-message-"]`).should('have.text', error);
+    get expect(): Chainer {
+        return (chainer: string, ...params: any[]) => this.assertMap[chainer](chainer, ...params);
     }
 
     /**

@@ -10,8 +10,8 @@ stripeCardInput.numberInput.type('4242424242424242');
 stripe.expiryInput.type('0929');
 // Type the CVC number
 stripe.cvcInput.type('123');
-// Type the postal code
-stripe.postalCodeInput.type('31200');
+// Type the zip code
+stripe.zipInput.type('31200');
 ```
 
 -   ##### How to test the error message
@@ -20,7 +20,7 @@ stripe.postalCodeInput.type('31200');
 import { StripeCardInput } from '@rainbow-modules/cypress/pageObjects';
 
 const stripeCardInput = new StripeCardInput('#stripecardinput-selector');
-stripeCardInput.shouldHaveError('Error message');
+stripeCardInput.expect('error', 'Error message');
 ```
 
 -   ##### How to clear the input
