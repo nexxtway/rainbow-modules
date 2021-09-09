@@ -4,15 +4,6 @@
 import { InternalDropdown } from '@rainbow-modules/cypress/pageObjects';
 
 const dropdown = new InternalDropdown('#dropdown-selector');
-dropdown.options[1].click();
-```
-
--   ##### How to wait for an option to exist
-
-```js
-import { InternalDropdown } from '@rainbow-modules/cypress/pageObjects';
-
-const dropdown = new InternalDropdown('#dropdown-selector');
 const options = await dropdown.options;
 dropdown.options[1].click();
 ```
