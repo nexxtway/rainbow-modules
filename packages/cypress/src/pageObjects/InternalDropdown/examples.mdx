@@ -4,6 +4,7 @@
 import { InternalDropdown } from '@rainbow-modules/cypress/pageObjects';
 
 const dropdown = new InternalDropdown('#dropdown-selector');
+const options = await dropdown.options;
 dropdown.options[1].click();
 ```
 

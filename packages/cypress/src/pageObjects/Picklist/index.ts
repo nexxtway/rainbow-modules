@@ -5,6 +5,7 @@ import Option from '../Option';
 
 export interface IPicklist {
     input: Cypress.Chainable<JQuery<HTMLInputElement>>;
+    options: Promise<Option[]>;
     click: () => void;
     focus: () => void;
 }
@@ -52,9 +53,9 @@ class Picklist implements IPicklist {
 
     /**
      * Array of Option page objects where each item wraps an option of the Picklist
-     * @member {Option[]}
+     * @member {Promise<Option[]>}
      */
-    get options(): Option[] {
+    get options(): Promise<Option[]> {
         const ariaControls = Cypress.$(`${this.rootElement} input`).attr('aria-controls');
         const dropdown = new InternalDropdown(`#${ariaControls}`);
         return dropdown.options;
