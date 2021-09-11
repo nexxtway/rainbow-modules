@@ -6,7 +6,7 @@ import Option from '../Option';
 export interface ILookup {
     input: Cypress.Chainable<JQuery<HTMLInputElement>>;
     clearButton: Cypress.Chainable<JQuery<HTMLButtonElement>>;
-    options: Promise<Option[]>;
+    getOption: (index: number) => Option;
 }
 
 /**
@@ -44,13 +44,15 @@ class Lookup implements ILookup {
     }
 
     /**
-     * Array of Option page objects where each item wraps an option of the Lookup
-     * @member {Promise<Option[]>}
+     * Get an Option page object wrapping the `index + 1` option
+     * @method
+     * @param {number} index - The option index, starting at 0 for the first option
+     * @returns {Option}
      */
-    get options(): Promise<Option[]> {
+    getOption(index: number): Option {
         const ariaControls = Cypress.$(`${this.rootElement} input`).attr('aria-controls');
         const dropdown = new InternalDropdown(`#${ariaControls}`);
-        return dropdown.options;
+        return dropdown.getOption(index);
     }
 }
 

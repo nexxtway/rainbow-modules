@@ -3,7 +3,7 @@
 import Option from '../Option';
 
 export interface IInternalDropdown {
-    options: Promise<Option[]>;
+    getOption: (index: number) => Option;
     enterScrollUpArrow: () => void;
     leaveScrollUpArrow: () => void;
     enterScrollDownArrow: () => void;
@@ -27,38 +27,19 @@ class InternalDropdown implements IInternalDropdown {
     /**
      * Constructs a new instance of this page object
      * @param rootElement The selector for the root element of the InternalDropdown.
-     * @example
-     * import { InternalDropdown } from '@rainbow-modules/cypress/pageObjects';
-     *
-     * const dropdown = new InternalDropdown('#dropdown-selector');
      */
     constructor(rootElement: string) {
         this.rootElement = rootElement;
     }
 
     /**
-     * Array of `Option` page objects where each item wraps an option of this dropdown
-     * @member {Promise<Option[]>}
+     * Get an Option page object wrapping the `index + 1` option
+     * @method
+     * @param {number} index - The option index, starting at 0 for the first option
+     * @returns {Option}
      */
-    get options(): Promise<Option[]> {
-        return new Promise((resolve, reject) => {
-            const timeout = setTimeout(() => {
-                reject();
-            }, Cypress.config().defaultCommandTimeout + 1000);
-            cy.get(`${this.rootElement} li[role="presentatio"]`).then(() => {
-                clearTimeout(timeout);
-                const { length } = Cypress.$(`${this.rootElement} li[role="presentation"]`);
-                resolve(
-                    Array.from(
-                        { length },
-                        (_v, i) =>
-                            new Option(
-                                `${this.rootElement} li[role="presentation"]:nth-child(${i + 1})`,
-                            ),
-                    ),
-                );
-            });
-        });
+    getOption(index: number): Option {
+        return new Option(`${this.rootElement} li[role="presentation"]:nth-child(${index + 1})`);
     }
 
     /**
