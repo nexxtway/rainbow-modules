@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.41.0](https://github.com/nexxtway/rainbow-modules/compare/v0.40.1...v0.41.0) (2021-09-11)
+
+### Bug Fixes
+
+-   add options getter to Picklist and Lookup page objects ([#435](https://github.com/nexxtway/rainbow-modules/issues/435)) ([14277e8](https://github.com/nexxtway/rainbow-modules/commit/14277e8aed7709ecbb55678524f57e4b5983deec))
+-   implement `getOption` in dropdown page object ([#444](https://github.com/nexxtway/rainbow-modules/issues/444)) ([dd39ec5](https://github.com/nexxtway/rainbow-modules/commit/dd39ec5daa75d3a874766180301138d883f87493))
+-   improve page objects ([#430](https://github.com/nexxtway/rainbow-modules/issues/430)) ([362f4dc](https://github.com/nexxtway/rainbow-modules/commit/362f4dc55ad2d5be6e4e8a325ef8cd720714b7b2))
+-   improve Picklist page object ([#440](https://github.com/nexxtway/rainbow-modules/issues/440)) ([eb1d4ef](https://github.com/nexxtway/rainbow-modules/commit/eb1d4ef47bf175caaf6a082febecc824928fa996))
+-   put the example docs outside the pageObject file ([#434](https://github.com/nexxtway/rainbow-modules/issues/434)) ([74adb6e](https://github.com/nexxtway/rainbow-modules/commit/74adb6e71aaa40cc659b8ed2e4032266e3f7f6a4))
+
+### Features
+
+-   implement AppMessage page object ([#441](https://github.com/nexxtway/rainbow-modules/issues/441)) ([aeb8154](https://github.com/nexxtway/rainbow-modules/commit/aeb815447b8bd0493d756f27b1c31490a87e2794))
+-   implement CategoriesPicker page object ([#439](https://github.com/nexxtway/rainbow-modules/issues/439)) ([ba1dd7a](https://github.com/nexxtway/rainbow-modules/commit/ba1dd7aed040152bf6d9c4ad4fe97b6a06b31f8b))
+-   implement StripeCardInput page object ([#442](https://github.com/nexxtway/rainbow-modules/issues/442)) ([d68c104](https://github.com/nexxtway/rainbow-modules/commit/d68c104cddf80aecb8f779df8d10e16ef0f86cb1))
+-   set up page object doc generation ([#432](https://github.com/nexxtway/rainbow-modules/issues/432)) ([3e017de](https://github.com/nexxtway/rainbow-modules/commit/3e017dedab78a98deb00ca12179efcdf4653db10))
+
 ## [0.40.1](https://github.com/nexxtway/rainbow-modules/compare/v0.40.0...v0.40.1) (2021-07-27)
 
 ### Bug Fixes

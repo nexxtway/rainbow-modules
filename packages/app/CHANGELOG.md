@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.41.0](https://github.com/nexxtway/rainbow-modules/compare/v0.40.1...v0.41.0) (2021-09-11)
+
+### Features
+
+-   implement AppMessage page object ([#441](https://github.com/nexxtway/rainbow-modules/issues/441)) ([aeb8154](https://github.com/nexxtway/rainbow-modules/commit/aeb815447b8bd0493d756f27b1c31490a87e2794))
+
 # [0.40.0](https://github.com/nexxtway/rainbow-modules/compare/v0.39.4...v0.40.0) (2021-07-27)
 
 **Note:** Version bump only for package @rainbow-modules/app

@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.41.0](https://github.com/nexxtway/rainbow-modules/compare/v0.40.1...v0.41.0) (2021-09-11)
+
+**Note:** Version bump only for package @rainbow-modules/record
+
 # [0.40.0](https://github.com/nexxtway/rainbow-modules/compare/v0.39.4...v0.40.0) (2021-07-27)
 
 **Note:** Version bump only for package @rainbow-modules/record

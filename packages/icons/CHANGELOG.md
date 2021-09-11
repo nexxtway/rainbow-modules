@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.41.0](https://github.com/nexxtway/rainbow-modules/compare/v0.40.1...v0.41.0) (2021-09-11)
+
+### Features
+
+-   added document path icon ([#437](https://github.com/nexxtway/rainbow-modules/issues/437)) ([a81dffa](https://github.com/nexxtway/rainbow-modules/commit/a81dffad49cefd98076bc7824b234d172263773f))
+-   added link icon ([#443](https://github.com/nexxtway/rainbow-modules/issues/443)) ([c7a0c9e](https://github.com/nexxtway/rainbow-modules/commit/c7a0c9eb3401bd43b6cdfdd8a94832c4b7554740))
+
 # [0.40.0](https://github.com/nexxtway/rainbow-modules/compare/v0.39.4...v0.40.0) (2021-07-27)
 
 **Note:** Version bump only for package @rainbow-modules/icons
