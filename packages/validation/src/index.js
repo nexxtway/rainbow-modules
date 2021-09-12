@@ -18,3 +18,4 @@ export { default as isInteger } from './isInteger';
 export { default as isFirestorePath } from './isFirestorePath';
 export { default as isFirestoreCollection } from './isFirestoreCollection';
 export { default as isFirestoreDocument } from './isFirestoreDocument';
+export { default as isUrl } from './isUrl';
