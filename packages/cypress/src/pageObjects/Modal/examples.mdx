@@ -1,0 +1,40 @@
+-   ##### How to check if the modal is open
+
+```js
+import { Modal } from '@rainbow-modules/cypress/pageObjects';
+
+const modal = new Modal('#modal-selector');
+modal.expect('visible', true);
+```
+
+-   ##### How to check the modal title
+
+```js
+import { Modal } from '@rainbow-modules/cypress/pageObjects';
+
+const modal = new Modal('#modal-selector');
+modal.expect('title', 'My title');
+```
+
+-   ##### How to close the modal
+
+```js
+import { Modal } from '@rainbow-modules/cypress/pageObjects';
+
+const modal = new Modal('#modal-selector');
+modal.close();
+```
+
+-   ##### How to get the modal sections
+
+```js
+import { Modal } from '@rainbow-modules/cypress/pageObjects';
+
+const modal = new Modal('#modal-selector');
+// Get the header
+modal.header.should('exist');
+// Get the content
+modal.content.should('exist');
+// Get the footer
+modal.footer.should('exist');
+```
