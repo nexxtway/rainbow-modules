@@ -26,6 +26,7 @@ function getErrors(showErrors, cardholderName, stripeCard) {
 
 export default function StripeCheckoutModal(props) {
     const {
+        id,
         className,
         style,
         clientSecretResolver,
@@ -131,6 +132,7 @@ export default function StripeCheckoutModal(props) {
 
     return (
         <ModalContainer
+            id={id}
             title={title}
             className={className}
             style={style}
@@ -202,6 +204,8 @@ StripeCheckoutModal.propTypes = {
     className: PropTypes.string,
     /** An object with custom style applied to the outer element. */
     style: PropTypes.object,
+    /** The id of the outer element. */
+    id: PropTypes.string,
 };
 
 StripeCheckoutModal.defaultProps = {
@@ -212,4 +216,5 @@ StripeCheckoutModal.defaultProps = {
     onCancel: () => {},
     className: undefined,
     style: undefined,
+    id: undefined,
 };
