@@ -3,7 +3,7 @@
 ```js
 import { Modal } from '@rainbow-modules/cypress/pageObjects';
 
-const modal = new Picklist('#modal-selector');
+const modal = new Modal('#modal-selector');
 modal.expect('visible', true);
 ```
 
@@ -12,7 +12,7 @@ modal.expect('visible', true);
 ```js
 import { Modal } from '@rainbow-modules/cypress/pageObjects';
 
-const modal = new Picklist('#modal-selector');
+const modal = new Modal('#modal-selector');
 modal.expect('title', 'My title');
 ```
 
@@ -21,7 +21,7 @@ modal.expect('title', 'My title');
 ```js
 import { Modal } from '@rainbow-modules/cypress/pageObjects';
 
-const modal = new Picklist('#modal-selector');
+const modal = new Modal('#modal-selector');
 modal.close();
 ```
 
@@ -30,7 +30,7 @@ modal.close();
 ```js
 import { Modal } from '@rainbow-modules/cypress/pageObjects';
 
-const modal = new Picklist('#modal-selector');
+const modal = new Modal('#modal-selector');
 // Get the header
 modal.header.should('exist');
 // Get the content
