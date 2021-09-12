@@ -3320,6 +3320,11 @@
   resolved "https://registry.yarnpkg.com/@rainbow-modules/hooks/-/hooks-0.12.0.tgz#d1293691aff4d94202b694d5004254fb25900824"
   integrity sha512-ndpr7Hazm+np5wYwPPGKsxFMKwFyfxiYQTy/cMo/nQyi7orcYR8myU2/qsHcNJXLPA4UQl6s1la3rQnVIQ4NFA==
 
+"@rainbow-modules/validation@^0.41.1-canary.4":
+  version "0.41.1-canary.4"
+  resolved "https://registry.yarnpkg.com/@rainbow-modules/validation/-/validation-0.41.1-canary.4.tgz#0e83e531b6960a712bcd2d501ce6547d6a79aec8"
+  integrity sha512-UlDQQAjUUSqzwinzZgeZDrHNyafu0+uHBICQINjmG0xWWZUfK+wNikF/Q2LR9Y1kPC9ktOEZeQo7hGGhBmpFdQ==
+
 "@reach/router@^1.3.3":
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/@reach/router/-/router-1.3.4.tgz#d2574b19370a70c80480ed91f3da840136d10f8c"

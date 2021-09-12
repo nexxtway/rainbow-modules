@@ -15,7 +15,7 @@
         "@rainbow-modules/hooks": "^0.41.0",
         "@rainbow-modules/icons": "^0.41.0",
         "@rainbow-modules/listview": "^0.41.0",
-        "@rainbow-modules/validation": "^0.41.0",
+        "@rainbow-modules/validation": "^0.41.1-canary.4",
         "final-form": "^4.20.1",
         "jsoneditor": "^9.2.0",
         "lodash": "^4.17.21",
