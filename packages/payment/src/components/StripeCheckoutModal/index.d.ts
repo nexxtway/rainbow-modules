@@ -17,6 +17,8 @@ export interface StripeCheckoutModalProps {
     className?: string;
     /** An object with custom style applied to the outer element. */
     style?: CSSProperties;
+    /** The id of the outer element */
+    id?: string;
 }
 
 export default function (props: StripeCheckoutModalProps): JSX.Element | null;
