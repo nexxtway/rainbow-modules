@@ -1,0 +1,40 @@
+<Meta title="Modules/Validation/isUrl" />
+
+# Overview
+
+`isUrl` checks if the provided URL is a valid URL. The following are some test examples:
+
+```js
+isUrl('http://www.google-com.123.com');
+// returns true
+
+isUrl('https://www.google-com.com');
+// returns true
+
+isUrl('http://google-com.com');
+// returns true
+
+isUrl('http://google.com');
+// returns true
+
+isUrl('http://www.google-com.123');
+// returns false
+
+isUrl('google.com');
+// returns false
+
+isUrl('http://www.gfh.');
+// returns false
+
+isUrl('http://www.gfh.c');
+// returns false
+
+isUrl('http://www.gfh:800000');
+// returns false
+
+isUrl('www.google.com ');
+// returns false
+
+isUrl('http://google');
+// returns false
+```
