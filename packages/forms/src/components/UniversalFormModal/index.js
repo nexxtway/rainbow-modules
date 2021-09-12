@@ -6,6 +6,7 @@ import UniversalForm from '../UniversalForm';
 
 const UniversalFormModal = (props) => {
     const {
+        id,
         isOpen,
         onRequestClose,
         fields: Fields,
@@ -37,6 +38,7 @@ const UniversalFormModal = (props) => {
     );
     return (
         <Modal
+            id={id}
             title={title}
             isOpen={isOpen}
             footer={footer}
@@ -75,6 +77,8 @@ UniversalFormModal.propTypes = {
     cancelButtonLabel: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     /** disable submit button */
     disableSubmit: PropTypes.bool,
+    /** The id of the outer element. */
+    id: PropTypes.string,
 };
 
 UniversalFormModal.defaultProps = {
@@ -88,6 +92,7 @@ UniversalFormModal.defaultProps = {
     submitButtonLabel: 'Submit',
     cancelButtonLabel: 'Cancel',
     disableSubmit: false,
+    id: undefined,
 };
 
 export default UniversalFormModal;

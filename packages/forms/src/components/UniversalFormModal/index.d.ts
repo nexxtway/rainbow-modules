@@ -26,6 +26,8 @@ export interface UniversalFormModalProps {
     submitButtonLabel?: ReactNode;
     /** The label of the cancel button on the form */
     cancelButtonLabel?: ReactNode;
+    /** The id of the outer element. */
+    id?: string;
 }
 
 export default function (props: UniversalFormModalProps): JSX.Element | null;
