@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.42.0](https://github.com/nexxtway/rainbow-modules/compare/v0.41.0...v0.42.0) (2021-09-12)
+
+### Bug Fixes
+
+-   export-is-url-validation ([#449](https://github.com/nexxtway/rainbow-modules/issues/449)) ([7778df1](https://github.com/nexxtway/rainbow-modules/commit/7778df1b1be8943aef5914b95a18768ba0bd59db))
+
+### Features
+
+-   implemented is url validation ([#446](https://github.com/nexxtway/rainbow-modules/issues/446)) ([4ab80bb](https://github.com/nexxtway/rainbow-modules/commit/4ab80bbad35c8d9d256ea9e32c3a8e64bc4b3079))
+
 # [0.41.0](https://github.com/nexxtway/rainbow-modules/compare/v0.40.1...v0.41.0) (2021-09-11)
 
 **Note:** Version bump only for package @rainbow-modules/validation

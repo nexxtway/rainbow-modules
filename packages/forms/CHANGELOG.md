@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.42.0](https://github.com/nexxtway/rainbow-modules/compare/v0.41.0...v0.42.0) (2021-09-12)
+
+### Bug Fixes
+
+-   add `id` prop to UniversalFormModal component ([#448](https://github.com/nexxtway/rainbow-modules/issues/448)) ([20d5427](https://github.com/nexxtway/rainbow-modules/commit/20d5427b6834947c92b86a123ca6e0261f89a03c))
+
 # [0.41.0](https://github.com/nexxtway/rainbow-modules/compare/v0.40.1...v0.41.0) (2021-09-11)
 
 ### Bug Fixes

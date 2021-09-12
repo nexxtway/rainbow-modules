@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.42.0](https://github.com/nexxtway/rainbow-modules/compare/v0.41.0...v0.42.0) (2021-09-12)
+
+### Bug Fixes
+
+-   add `id` prop to StripeCheckoutModal component ([#447](https://github.com/nexxtway/rainbow-modules/issues/447)) ([fbec780](https://github.com/nexxtway/rainbow-modules/commit/fbec7801424e08ce45c2b896348119405d05e782))
+-   add `id` prop to UniversalFormModal component ([#448](https://github.com/nexxtway/rainbow-modules/issues/448)) ([20d5427](https://github.com/nexxtway/rainbow-modules/commit/20d5427b6834947c92b86a123ca6e0261f89a03c))
+-   export-is-url-validation ([#449](https://github.com/nexxtway/rainbow-modules/issues/449)) ([7778df1](https://github.com/nexxtway/rainbow-modules/commit/7778df1b1be8943aef5914b95a18768ba0bd59db))
+
+### Features
+
+-   implement Modal page object ([#445](https://github.com/nexxtway/rainbow-modules/issues/445)) ([7d4b87d](https://github.com/nexxtway/rainbow-modules/commit/7d4b87d69c30bbea8dd7413efb876c0826278db1))
+-   implemented is url validation ([#446](https://github.com/nexxtway/rainbow-modules/issues/446)) ([4ab80bb](https://github.com/nexxtway/rainbow-modules/commit/4ab80bbad35c8d9d256ea9e32c3a8e64bc4b3079))
+
 # [0.41.0](https://github.com/nexxtway/rainbow-modules/compare/v0.40.1...v0.41.0) (2021-09-11)
 
 ### Bug Fixes

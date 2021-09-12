@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.42.0](https://github.com/nexxtway/rainbow-modules/compare/v0.41.0...v0.42.0) (2021-09-12)
+
+### Bug Fixes
+
+-   add `id` prop to StripeCheckoutModal component ([#447](https://github.com/nexxtway/rainbow-modules/issues/447)) ([fbec780](https://github.com/nexxtway/rainbow-modules/commit/fbec7801424e08ce45c2b896348119405d05e782))
+
 # [0.41.0](https://github.com/nexxtway/rainbow-modules/compare/v0.40.1...v0.41.0) (2021-09-11)
 
 **Note:** Version bump only for package @rainbow-modules/payment
