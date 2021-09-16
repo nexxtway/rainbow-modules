@@ -17,7 +17,7 @@ import { Input } from '@rainbow-modules/cypress/pageObjects';
 
 const inputPageObject = new Input('#input-selector');
 // The test will fail if there is no error or if the error text is different to the provided string
-inputPageObject.shouldHaveError('This field is required');
+inputPageObject.expect('error', 'This field is required');
 ```
 
 -   ##### How to check the input if it is of type `checkbox` or `radio`

@@ -1,7 +1,22 @@
 /// <reference types="cypress" />
+
+import { AssertMap } from '../types';
+
+/**
+ * @interface Chainer
+ * @template Subject
+ */
+interface Chainer {
+    /**
+     * Asserts if the error passed exists in the input
+     * @param visible {boolean} - Whether the app message should be visible or not
+     */
+    (chainer: 'error', error: string): void;
+}
+
 export interface IInput {
     input: Cypress.Chainable<JQuery<HTMLInputElement>>;
-    shouldHaveError(error: string): void;
+    expect: Chainer;
     check(): void;
 }
 
@@ -14,6 +29,16 @@ export interface IInput {
  */
 class Input implements IInput {
     private rootElement: string;
+
+    /**
+     * A map with all the assertions.
+     * @private
+     */
+    private assertMap: AssertMap = {
+        error: (_: string, error: string) => {
+            cy.get(`${this.rootElement} > div[id^="error-message-"]`).should('have.text', error);
+        },
+    };
 
     /**
      * Constructs a new instance of this page object
@@ -32,15 +57,6 @@ class Input implements IInput {
     }
 
     /**
-     * Asserts if the error passed exists in the input
-     * @method
-     * @param {string} error - The error text, that must match the current error to pass the assertion
-     */
-    shouldHaveError(error: string): void {
-        cy.get(`${this.rootElement} > div[id^="error-message-"]`).should('have.text', error);
-    }
-
-    /**
      * Check the input when type is `checkbox` or `radio`
      *
      * Same as `inputPageObject.input.check()`
@@ -49,6 +65,14 @@ class Input implements IInput {
     check(): void {
         // TODO: verify if it is already checked before check it
         cy.get(this.rootElement).find('label').click('left');
+    }
+
+    /**
+     * Execute an assertion on this page object
+     * @method
+     */
+    get expect(): Chainer {
+        return (chainer: string, ...params: any[]) => this.assertMap[chainer](chainer, ...params);
     }
 }
 
