@@ -27,7 +27,12 @@ const Message = (props) => {
     };
 
     return (
-        <Container isVisible={isVisible} variant={variant} data-cy="app-message">
+        <Container
+            isVisible={isVisible}
+            variant={variant}
+            data-cy="app-message"
+            data-variant={variant}
+        >
             <MessageContainer>
                 <MessageIcon variant={variant} as={iconMap[variant]} />
                 <MessageText variant={variant} data-cy="app-message-text">

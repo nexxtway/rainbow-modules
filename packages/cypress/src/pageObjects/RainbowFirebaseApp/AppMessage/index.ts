@@ -18,6 +18,11 @@ interface Chainer {
      * @param message {string} - The message to match
      */
     (chainer: 'message', message: string): void;
+    /**
+     * Asserts if the variant of the app message match the provided value
+     * @param message {string} - The message to match
+     */
+    (chainer: 'variant', variant: string): void;
 }
 
 export interface IAppMessage {
@@ -70,6 +75,9 @@ class AppMessage implements IAppMessage {
             cy.get(`${this.rootElement}`)
                 .find('[data-cy="app-message-text"]')
                 .should('have.text', message);
+        },
+        variant: (_: string, variant: string) => {
+            cy.get(`${this.rootElement}`).should('have.attr', 'data-variant', variant);
         },
     };
 
