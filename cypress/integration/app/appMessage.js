@@ -16,6 +16,7 @@ describe('AppMessage', () => {
         cy.get('button').click();
         const app = new RainbowFirebaseApp();
         app.message.expect('visible', true);
+        app.message.expect('variant', 'error');
         app.message.expect('message', APP_MESSAGE);
     });
 
@@ -37,6 +38,7 @@ describe('AppMessage with timeout', () => {
         cy.get('button').click();
         const app = new RainbowFirebaseApp();
         app.message.expect('visible', true);
+        app.message.expect('variant', 'success');
         // We can wait this time here since this is the app message timeout
         // eslint-disable-next-line cypress/no-unnecessary-waiting
         cy.wait(3000);
