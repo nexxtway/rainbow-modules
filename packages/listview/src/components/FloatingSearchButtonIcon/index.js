@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { isEmpty } from '@rainbow-modules/validation';
 import { Filter } from '@rainbow-modules/icons';
+import { useUniqueIdentifier } from '@rainbow-modules/hooks';
 import FloatingSearch from '../FloatingSearch';
 import { StyledCircleFilledIcon } from './styled';
 import SearchButton from './searchButton';
@@ -31,6 +32,7 @@ const FloatingSearchButtonIcon = (props) => {
     const triggerRef = useRef();
     const [isOpen, setIsOpen] = useState(false);
     const buttonIcon = isEmpty(value) || isOpen ? icon : <StyledCircleFilledIcon />;
+    const floatingSearchId = useUniqueIdentifier('floating-search');
 
     const toggleOpen = () => {
         setIsOpen(!isOpen);
@@ -58,8 +60,10 @@ const FloatingSearchButtonIcon = (props) => {
                 isOpen={isOpen}
                 icon={buttonIcon}
                 value={value}
+                ariaControls={floatingSearchId}
             />
             <FloatingSearch
+                id={floatingSearchId}
                 isVisible={isOpen}
                 triggerElementRef={() => triggerRef.current.htmlElementRef}
                 placeholder={placeholder}

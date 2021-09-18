@@ -22,6 +22,7 @@ const SearchButton = React.forwardRef((props, ref) => {
         onClick,
         isOpen,
         value,
+        ariaControls,
     } = props;
     const intl = useIntl();
     const filterButton = intl.formatMessage(messages.filterButton);
@@ -40,6 +41,7 @@ const SearchButton = React.forwardRef((props, ref) => {
                 title={title}
                 variant={variant}
                 ref={ref}
+                ariaControls={ariaControls}
             >
                 {icon}
                 <StyledFilterLabel>{filterButton}</StyledFilterLabel>
@@ -62,6 +64,7 @@ const SearchButton = React.forwardRef((props, ref) => {
             title={title}
             variant={variant}
             ref={ref}
+            ariaControls={ariaControls}
         />
     );
 });
@@ -92,6 +95,7 @@ SearchButton.propTypes = {
     onClick: PropTypes.func,
     isOpen: PropTypes.bool,
     value: PropTypes.string,
+    ariaControls: PropTypes.string,
 };
 
 SearchButton.defaultProps = {
@@ -109,6 +113,7 @@ SearchButton.defaultProps = {
     id: undefined,
     onClick: () => {},
     isOpen: false,
+    ariaControls: undefined,
 };
 
 export default SearchButton;

@@ -17,6 +17,8 @@ export interface FloatingSearchProps {
     onRequestClose?: () => void;
     /** A CSS class for the FloatingSearch in addition to the component's base classes. */
     className?: string;
+    /** The id of the outer element. */
+    id: string;
 }
 
 export default function (props: FloatingSearchProps): JSX.Element | null;

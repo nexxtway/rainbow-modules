@@ -57,6 +57,8 @@ FloatingSearch.propTypes = {
     onRequestClose: PropTypes.func,
     /** A CSS class for the FloatingSearch in addition to the component's base classes. */
     className: PropTypes.string,
+    /** The id of the outer element. */
+    id: PropTypes.string,
 };
 
 FloatingSearch.defaultProps = {
@@ -67,6 +69,7 @@ FloatingSearch.defaultProps = {
     onChange: () => {},
     onRequestClose: () => {},
     style: undefined,
+    id: undefined,
 };
 
 export default FloatingSearch;

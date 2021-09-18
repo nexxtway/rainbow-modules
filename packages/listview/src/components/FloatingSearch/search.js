@@ -14,7 +14,7 @@ import messages from './messages';
 import useKeyHandler from './useKeyHandler';
 
 const Search = forwardRef((props, ref) => {
-    const { onChange, placeholder, style, className, value, onRequestClose, inputRef } = props;
+    const { id, onChange, placeholder, style, className, value, onRequestClose, inputRef } = props;
     const { keyDownHandler } = useKeyHandler({ value, onChange, onRequestClose });
     const intl = useIntl();
     const hasValue = value && value.length > 0;
@@ -30,7 +30,13 @@ const Search = forwardRef((props, ref) => {
     };
 
     return (
-        <StyledContainer ref={ref} style={style} className={className} onKeyDown={keyDownHandler}>
+        <StyledContainer
+            id={id}
+            ref={ref}
+            style={style}
+            className={className}
+            onKeyDown={keyDownHandler}
+        >
             <StyledInput
                 placeholder={placeholder}
                 icon={<MagnifyingGlass />}
@@ -49,7 +55,12 @@ const Search = forwardRef((props, ref) => {
                     </StyledClearButton>
                     <StyledDivider />
                 </RenderIf>
-                <ButtonIcon size="small" icon={<Close />} onClick={onRequestClose} />
+                <ButtonIcon
+                    id="close-search-button"
+                    size="small"
+                    icon={<Close />}
+                    onClick={onRequestClose}
+                />
             </ButtonsContainer>
         </StyledContainer>
     );
@@ -65,6 +76,7 @@ Search.propTypes = {
     onRequestClose: PropTypes.func,
     className: PropTypes.string,
     inputRef: PropTypes.shape({ current: PropTypes.object }),
+    id: PropTypes.string,
 };
 
 Search.defaultProps = {
@@ -75,4 +87,5 @@ Search.defaultProps = {
     onRequestClose: () => {},
     style: undefined,
     inputRef: undefined,
+    id: undefined,
 };
