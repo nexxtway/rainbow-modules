@@ -43,7 +43,7 @@ class FloatingSearch implements IFloatingSearch {
      * Close this FloatingSearch by clicking the close button
      */
     close(): void {
-        cy.get(this.rootElement).find('#close-search-button').click();
+        cy.get(this.rootElement).find('[data-id="button-icon-element"]').click();
     }
 }
 

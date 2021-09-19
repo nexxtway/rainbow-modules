@@ -55,12 +55,7 @@ const Search = forwardRef((props, ref) => {
                     </StyledClearButton>
                     <StyledDivider />
                 </RenderIf>
-                <ButtonIcon
-                    id="close-search-button"
-                    size="small"
-                    icon={<Close />}
-                    onClick={onRequestClose}
-                />
+                <ButtonIcon size="small" icon={<Close />} onClick={onRequestClose} />
             </ButtonsContainer>
         </StyledContainer>
     );
