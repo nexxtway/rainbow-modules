@@ -46,6 +46,7 @@ import {
     Component,
     CubeFilled,
     SettingsFilled,
+    Settings,
     Login,
     Logout,
     TrashFilled,
@@ -332,6 +333,11 @@ export default [
         name: 'settingsFilled',
         category: 'standard',
         icon: SettingsFilled,
+    },
+    {
+        name: 'settings',
+        category: 'standard',
+        icon: Settings,
     },
     {
         name: 'more',
