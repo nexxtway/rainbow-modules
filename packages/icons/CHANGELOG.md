@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.43.0](https://github.com/nexxtway/rainbow-modules/compare/v0.42.0...v0.43.0) (2021-09-20)
+
+### Features
+
+-   add settings icon ([#455](https://github.com/nexxtway/rainbow-modules/issues/455)) ([ccc8169](https://github.com/nexxtway/rainbow-modules/commit/ccc8169d9abbfe43ada0c900ff71df1dd4e582b9))
+
 # [0.42.0](https://github.com/nexxtway/rainbow-modules/compare/v0.41.0...v0.42.0) (2021-09-12)
 
 **Note:** Version bump only for package @rainbow-modules/icons

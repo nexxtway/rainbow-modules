@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.43.0](https://github.com/nexxtway/rainbow-modules/compare/v0.42.0...v0.43.0) (2021-09-20)
+
+### Features
+
+-   added is url to form validators ([#450](https://github.com/nexxtway/rainbow-modules/issues/450)) ([f3dbbf1](https://github.com/nexxtway/rainbow-modules/commit/f3dbbf1c6898005ac1cfdcc5e716e36a6c18b46e))
+
 # [0.42.0](https://github.com/nexxtway/rainbow-modules/compare/v0.41.0...v0.42.0) (2021-09-12)
 
 ### Bug Fixes

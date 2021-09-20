@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.43.0](https://github.com/nexxtway/rainbow-modules/compare/v0.42.0...v0.43.0) (2021-09-20)
+
+### Features
+
+-   add `variant` assertion to AppMessage page object ([#453](https://github.com/nexxtway/rainbow-modules/issues/453)) ([045bca6](https://github.com/nexxtway/rainbow-modules/commit/045bca64ff00bd9e2b38c0514e8db5abe2cf1589))
+
 # [0.42.0](https://github.com/nexxtway/rainbow-modules/compare/v0.41.0...v0.42.0) (2021-09-12)
 
 **Note:** Version bump only for package @rainbow-modules/app

@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.43.0](https://github.com/nexxtway/rainbow-modules/compare/v0.42.0...v0.43.0) (2021-09-20)
+
+### Bug Fixes
+
+-   implement expect api on Input page object ([#452](https://github.com/nexxtway/rainbow-modules/issues/452)) ([e279ed1](https://github.com/nexxtway/rainbow-modules/commit/e279ed173a7b79bc9f91f949e554b8ca56630296))
+
+### Features
+
+-   add `variant` assertion to AppMessage page object ([#453](https://github.com/nexxtway/rainbow-modules/issues/453)) ([045bca6](https://github.com/nexxtway/rainbow-modules/commit/045bca64ff00bd9e2b38c0514e8db5abe2cf1589))
+-   add settings icon ([#455](https://github.com/nexxtway/rainbow-modules/issues/455)) ([ccc8169](https://github.com/nexxtway/rainbow-modules/commit/ccc8169d9abbfe43ada0c900ff71df1dd4e582b9))
+-   added is url to form validators ([#450](https://github.com/nexxtway/rainbow-modules/issues/450)) ([f3dbbf1](https://github.com/nexxtway/rainbow-modules/commit/f3dbbf1c6898005ac1cfdcc5e716e36a6c18b46e))
+-   implement FloatingSearch page object ([#454](https://github.com/nexxtway/rainbow-modules/issues/454)) ([de05889](https://github.com/nexxtway/rainbow-modules/commit/de05889efaf98ae557d5c39047d6e21df00c318c))
+
 # [0.42.0](https://github.com/nexxtway/rainbow-modules/compare/v0.41.0...v0.42.0) (2021-09-12)
 
 ### Bug Fixes

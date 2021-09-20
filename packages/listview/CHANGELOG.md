@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.43.0](https://github.com/nexxtway/rainbow-modules/compare/v0.42.0...v0.43.0) (2021-09-20)
+
+### Features
+
+-   implement FloatingSearch page object ([#454](https://github.com/nexxtway/rainbow-modules/issues/454)) ([de05889](https://github.com/nexxtway/rainbow-modules/commit/de05889efaf98ae557d5c39047d6e21df00c318c))
+
 # [0.42.0](https://github.com/nexxtway/rainbow-modules/compare/v0.41.0...v0.42.0) (2021-09-12)
 
 **Note:** Version bump only for package @rainbow-modules/listview
