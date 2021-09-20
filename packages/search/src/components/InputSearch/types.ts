@@ -16,6 +16,7 @@ export interface TrailingProps {
 }
 
 export interface InputSearchProps {
+    id?: string;
     className?: string;
     style?: CSSProperties;
     name?: string;

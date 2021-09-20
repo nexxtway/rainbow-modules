@@ -6,6 +6,7 @@ import { StyledContainer, StyledInput } from './styled';
 import Trailing from './trailing';
 
 const InputSearch: React.FC<InputSearchProps> = ({
+    id,
     className,
     style,
     disabled,
@@ -43,7 +44,7 @@ const InputSearch: React.FC<InputSearchProps> = ({
     const inputValue = valueInProps || value;
 
     return (
-        <StyledContainer className={className} style={style}>
+        <StyledContainer id={id} className={className} style={style}>
             <StyledInput
                 type="search"
                 name={name}
@@ -64,6 +65,7 @@ const InputSearch: React.FC<InputSearchProps> = ({
 };
 
 InputSearch.propTypes = {
+    id: PropTypes.string,
     className: PropTypes.string,
     style: PropTypes.object,
     name: PropTypes.string,
@@ -78,6 +80,7 @@ InputSearch.propTypes = {
 };
 
 InputSearch.defaultProps = {
+    id: undefined,
     className: undefined,
     style: undefined,
     disabled: false,
