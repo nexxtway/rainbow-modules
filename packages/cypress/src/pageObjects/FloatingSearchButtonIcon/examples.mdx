@@ -1,0 +1,17 @@
+-   ##### How to open the floating search
+
+```js
+import { FloatingSearchButtonIcon } from '@rainbow-modules/cypress/pageObjects';
+
+const floatingSearchButton = new FloatingSearchButtonIcon('#floating-search-selector');
+floatingSearchButton.click();
+```
+
+-   ##### How to get the related floating search
+
+```js
+import { FloatingSearchButtonIcon } from '@rainbow-modules/cypress/pageObjects';
+
+const floatingSearchButton = new FloatingSearchButtonIcon('#floating-search-selector');
+const { floatingSearch } = floatingSearchButton;
+```
