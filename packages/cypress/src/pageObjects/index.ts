@@ -4,6 +4,7 @@ export { default as CategoriesPicker } from './CategoriesPicker';
 export { default as FloatingSearch } from './FloatingSearch';
 export { default as FloatingSearchButtonIcon } from './FloatingSearchButtonIcon';
 export { default as Input } from './Input';
+export { default as InputSearch } from './InputSearch';
 export { default as InternalDropdown } from './InternalDropdown';
 export { default as Lookup } from './Lookup';
 export { default as Modal } from './Modal';

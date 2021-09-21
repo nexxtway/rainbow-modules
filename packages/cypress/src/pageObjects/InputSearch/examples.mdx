@@ -1,0 +1,27 @@
+-   ##### How to type a search query
+
+```js
+import { InputSearch } from '@rainbow-modules/cypress/pageObjects';
+
+const inputSearch = new InputSearch('#input-search-selector');
+inputSearch.input.type('Hello world!');
+```
+
+-   ##### How to clear the search query
+
+```js
+import { InputSearch } from '@rainbow-modules/cypress/pageObjects';
+
+const inputSearch = new InputSearch('#input-search-selector');
+inputSearch.clear();
+```
+
+-   ##### How to trigger search when realtime is false
+
+```js
+import { InputSearch } from '@rainbow-modules/cypress/pageObjects';
+
+const inputSearch = new InputSearch('#input-search-selector');
+inputSearch.input.type('Hello world!');
+inputSearch.search();
+```
