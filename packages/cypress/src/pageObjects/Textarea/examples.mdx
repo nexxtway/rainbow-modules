@@ -1,0 +1,21 @@
+-   ##### How to manipulate the Textarea value
+
+```js
+import { Textarea } from '@rainbow-modules/cypress/pageObjects';
+
+const textarea = new Textarea('#textarea-selector');
+// Write some text on the textarea
+textarea.input.type('Hello world!');
+// Clear the value of an textarea or textarea
+textarea.input.clear();
+```
+
+-   ##### How to test the error message
+
+```js
+import { Textarea } from '@rainbow-modules/cypress/pageObjects';
+
+const textarea = new Textarea('#textarea-selector');
+// The test will fail if there is no error or if the error text is different to the provided string
+textarea.expect('error', 'This field is required');
+```
