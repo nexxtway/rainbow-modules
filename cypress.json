@@ -8,6 +8,6 @@
     "component": {
         "testFiles": "packages/**/__integration__/*.{js,ts,jsx,tsx}",
         "componentFolder": ".",
-        "ignoreTestFiles": "**/node_modules/**"
+        "ignoreTestFiles": ["**/node_modules/**", "**/lib/**", "*.d.ts"]
     }
 }

@@ -1,5 +1,14 @@
 /// <reference types="cypress" />
+import { AssertMap } from '../types';
 import Row from './row';
+
+interface Chainer {
+    /**
+     * Asserts if the table is loading
+     * @param loading {boolean} - Whether the table should be loading or not
+     */
+    (chainer: 'loading', loading: boolean): void;
+}
 
 export interface ITable {
     getRow: (rowIndex: number) => Row;
@@ -8,6 +17,7 @@ export interface ITable {
     checkAll: () => void;
     uncheckAll: () => void;
     clickHeader: (columnIndex: number) => void;
+    expect: Chainer;
 }
 
 /**
@@ -27,6 +37,22 @@ class Table implements ITable {
     constructor(rootElement: string) {
         this.rootElement = rootElement;
     }
+
+    /**
+     * A map with all the assertions.
+     * @private
+     */
+    private assertMap: AssertMap = {
+        loading: (_: string, loading: boolean) => {
+            if (loading) {
+                cy.get(this.rootElement).find('[data-id="table_body--loading"]').should('exist');
+            } else {
+                cy.get(this.rootElement)
+                    .find('[data-id="table_body--loading"]')
+                    .should('not.exist');
+            }
+        },
+    };
 
     /**
      * Get a new Row page object wrapping the row on the provided position.
@@ -90,6 +116,13 @@ class Table implements ITable {
             .find(`thead > tr > th:nth-child(${columnNumber})`)
             .find('.rainbow-table_header-container')
             .click();
+    }
+
+    /**
+     * Execute an assertion on this page object
+     */
+    get expect(): Chainer {
+        return (chainer: string, ...params: any[]) => this.assertMap[chainer](chainer, ...params);
     }
 }
 

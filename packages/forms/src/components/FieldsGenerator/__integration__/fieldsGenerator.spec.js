@@ -50,7 +50,7 @@ describe('<FieldsGenerator />', () => {
         cy.get('[name="notes"]').type('Rain');
         cy.get('button').click();
         const input = new Input('form div');
-        input.shouldHaveError('The input has less characters than 5');
+        input.expect('error', 'The input has less characters than 5');
         cy.get('[name="notes"]').type('bow Modules');
         cy.get('button').click();
         cy.get('[name="notes"]').should('have.value', 'Rainbow Mo');
@@ -79,10 +79,10 @@ describe('<FieldsGenerator />', () => {
         cy.get('[name="amount"]').type('-1');
         cy.get('button').click();
         const input = new Input('form div');
-        input.shouldHaveError("Value can't be less than 0");
+        input.expect('error', "Value can't be less than 0");
         cy.get('[name="amount"]').clear().type('11');
         cy.get('button').click();
-        input.shouldHaveError('The value is greater than 10');
+        input.expect('error', 'The value is greater than 10');
     });
 
     it('should validate the fields with custom validator', () => {

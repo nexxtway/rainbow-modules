@@ -37,3 +37,12 @@ import { Table } from '@rainbow-modules/cypress/pageObjects';
 const table = new Table('#table-selector');
 table.getRow(1).getButtonMenu(5).click();
 ```
+
+-   ##### How to check if the table is loading
+
+```js
+import { Table } from '@rainbow-modules/cypress/pageObjects';
+
+const table = new Table('#table-selector');
+table.expect('loading', true);
+```
