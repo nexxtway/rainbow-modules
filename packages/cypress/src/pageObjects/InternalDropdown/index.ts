@@ -39,7 +39,7 @@ class InternalDropdown implements IInternalDropdown {
      * @returns {Option}
      */
     getOption(index: number): Option {
-        return new Option(`${this.rootElement} li[role="presentation"]:nth-child(${index + 1})`);
+        return new Option(`${this.rootElement} li:nth-child(${index + 1})`);
     }
 
     /**

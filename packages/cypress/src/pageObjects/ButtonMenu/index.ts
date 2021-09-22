@@ -1,7 +1,11 @@
 /// <reference types="cypress" />
 
+import InternalDropdown from '../InternalDropdown';
+import Option from '../Option';
+
 export interface IButtonMenu {
     button: Cypress.Chainable<JQuery<HTMLButtonElement>>;
+    getOption: (index: number) => Option;
 }
 
 /**
@@ -28,6 +32,18 @@ class ButtonMenu implements IButtonMenu {
      */
     get button(): Cypress.Chainable<JQuery<HTMLButtonElement>> {
         return cy.get(this.rootElement).find('button');
+    }
+
+    /**
+     * Get an Option page object wrapping the `index + 1` option
+     * @method
+     * @param {number} index - The option index, starting at 0 for the first option
+     * @returns {Option}
+     */
+    getOption(index: number): Option {
+        const ariaControls = Cypress.$(`${this.rootElement} button`).attr('aria-controls');
+        const dropdown = new InternalDropdown(`#${ariaControls}`);
+        return dropdown.getOption(index);
     }
 }
 
