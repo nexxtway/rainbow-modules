@@ -22,4 +22,9 @@ export const SimpleStep = () => {
 
 export default {
     title: 'Modules/Content/Stories/Step',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

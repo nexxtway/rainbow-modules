@@ -202,4 +202,9 @@ export const BadgeVariantWithCustomIcon = () => {
 
 export default {
     title: 'Modules/Dashboard/Stories/TilePicker',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

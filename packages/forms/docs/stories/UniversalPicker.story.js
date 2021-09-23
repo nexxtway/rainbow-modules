@@ -425,4 +425,9 @@ export const BasicRadioPicker = () => {
 
 export default {
     title: 'Modules/Forms/Stories/UniversalPicker',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

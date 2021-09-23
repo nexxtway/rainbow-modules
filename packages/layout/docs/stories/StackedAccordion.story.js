@@ -102,4 +102,9 @@ export const BasicStackedAccordion = () => {
 
 export default {
     title: 'Modules/Layout/Stories/StackedAccordion',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

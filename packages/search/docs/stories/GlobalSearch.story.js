@@ -70,4 +70,9 @@ export const MongoAtlasGlobalSearch = () => {
 
 export default {
     title: 'Modules/Search/Stories/GlobalSearch',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

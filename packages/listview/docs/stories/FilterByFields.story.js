@@ -115,4 +115,9 @@ export const FilterByFieldsExample = () => {
 
 export default {
     title: 'Modules/Listview/Stories/FilterByFields',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

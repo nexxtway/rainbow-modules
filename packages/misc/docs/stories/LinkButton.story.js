@@ -126,4 +126,9 @@ export const LinkButtonExample = () => {
 
 export default {
     title: 'Modules/Misc/Stories/LinkButton',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

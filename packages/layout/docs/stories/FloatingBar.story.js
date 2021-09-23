@@ -158,4 +158,9 @@ export const FloatingBarExample = () => {
 
 export default {
     title: 'Modules/Layout/Stories/FloatingBar',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

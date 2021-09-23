@@ -129,4 +129,9 @@ export const TableWithBatchActionsBar = () => {
 
 export default {
     title: 'Modules/Listview/Stories/BatchActionsBar',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

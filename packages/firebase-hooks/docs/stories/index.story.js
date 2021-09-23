@@ -1,5 +1,10 @@
 export default {
     title: 'Modules/firebase-hooks/Stories',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };
 export * from './useFirebaseApp.story';
 export * from './useBatch.story';

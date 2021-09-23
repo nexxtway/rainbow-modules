@@ -112,4 +112,9 @@ export const CreditCardPickerWithActions = () => {
 
 export default {
     title: 'Modules/Payment/Stories/CreditCardPicker',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

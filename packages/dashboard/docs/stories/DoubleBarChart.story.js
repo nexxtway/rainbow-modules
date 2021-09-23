@@ -34,4 +34,9 @@ export const doubleBarChart = () => {
 
 export default {
     title: 'Modules/Dashboard/Stories/DoubleBarChart',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

@@ -28,4 +28,9 @@ export const BasicFloatingSearchButtonIcon = () => {
 
 export default {
     title: 'Modules/Listview/Stories/FloatingSearchButtonIcon',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

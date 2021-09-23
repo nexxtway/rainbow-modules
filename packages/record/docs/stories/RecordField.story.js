@@ -158,4 +158,9 @@ export const EditableRecordField = () => {
 
 export default {
     title: 'Modules/Record/Stories/RecordField',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

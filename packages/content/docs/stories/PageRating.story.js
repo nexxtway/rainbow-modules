@@ -56,4 +56,9 @@ export const PageRatingWithLabelAlignment = () => {
 
 export default {
     title: 'Modules/Content/Stories/PageRating',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

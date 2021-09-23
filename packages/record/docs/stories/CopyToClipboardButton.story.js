@@ -23,4 +23,9 @@ export const BasicCopyToClipboardButton = () => {
 
 export default {
     title: 'Modules/Record/Stories/CopyToClipboardButton',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

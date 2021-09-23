@@ -60,4 +60,9 @@ export const firestoreTableWithSortAndQuery = () => {
 
 export default {
     title: 'Modules/Listview/Stories/FirestoreTable',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

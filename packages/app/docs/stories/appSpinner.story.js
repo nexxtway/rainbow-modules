@@ -140,4 +140,9 @@ export const arcSpinnerWithChild = () => {
 
 export default {
     title: 'Modules/App/Stories/Spinners',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

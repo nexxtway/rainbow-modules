@@ -18,6 +18,7 @@ module.exports = {
         },
         '@storybook/addon-docs',
         '@storybook/addon-viewport/register',
+        './addons/ViewOnGithub/register.js',
     ],
     webpackFinal: async (config) => {
         config.devtool = false;
@@ -68,6 +69,10 @@ module.exports = {
                 },
             ],
         });
+        config.node = {
+            __dirname: true,
+            __filename: true,
+        };
         return config;
     },
     typescript: {

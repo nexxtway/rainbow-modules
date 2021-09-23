@@ -98,4 +98,9 @@ export const ResizableColumnExample = () => {
 
 export default {
     title: 'Modules/Layout/Stories/ResizableColumn',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

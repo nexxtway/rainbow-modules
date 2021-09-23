@@ -139,4 +139,9 @@ export const NotificationMenuWithIcons = () => {
 
 export default {
     title: 'Modules/Notifications/Stories/NotificationMenu',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };
