@@ -109,5 +109,9 @@
             "pre-commit": "pretty-quick --staged",
             "pre-push": "yarn lint && yarn test"
         }
+    },
+    "volta": {
+        "node": "14.16.1",
+        "yarn": "1.22.10"
     }
 }
