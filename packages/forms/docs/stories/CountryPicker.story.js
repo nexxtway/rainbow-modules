@@ -20,4 +20,9 @@ export const Basic = () => {
 
 export default {
     title: 'Modules/Forms/Stories/CountryPicker',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

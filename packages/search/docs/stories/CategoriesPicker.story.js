@@ -25,4 +25,9 @@ export const BasicCategoriesPicker = () => {
 
 export default {
     title: 'Modules/Search/Stories/CategoriesPicker',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

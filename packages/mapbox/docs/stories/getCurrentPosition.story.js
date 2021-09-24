@@ -31,4 +31,9 @@ export const GetUserCurrentPosition = () => {
 
 export default {
     title: 'Modules/Mapbox/Stories/Helpers',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

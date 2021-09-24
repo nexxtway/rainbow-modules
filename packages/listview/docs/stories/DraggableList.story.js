@@ -110,4 +110,9 @@ export const CustomComponent = () => {
 
 export default {
     title: 'Modules/Listview/Stories/DraggableList',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

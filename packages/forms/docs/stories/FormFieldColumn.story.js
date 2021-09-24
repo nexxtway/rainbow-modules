@@ -92,4 +92,9 @@ export const Basic = () => {
 
 export default {
     title: 'Modules/Forms/Stories/FormFieldColumn',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

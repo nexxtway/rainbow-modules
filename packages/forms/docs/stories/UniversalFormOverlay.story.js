@@ -71,4 +71,9 @@ export const BasicUniversalFormOverlay = () => {
 
 export default {
     title: 'Modules/Forms/Stories/UniversalFormOverlay',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

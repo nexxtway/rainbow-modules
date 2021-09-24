@@ -135,4 +135,9 @@ export const BasicRecordSection = () => {
 
 export default {
     title: 'Modules/Record/Stories/RecordSection',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

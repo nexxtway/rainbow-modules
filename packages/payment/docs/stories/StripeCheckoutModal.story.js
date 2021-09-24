@@ -148,4 +148,9 @@ export const StripeCheckoutModalWithPaymentIntent = () => {
 
 export default {
     title: 'Modules/Payment/Stories/StripeCheckoutModal',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

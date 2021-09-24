@@ -5,6 +5,11 @@ import sleep from './helpers/sleep';
 
 export default {
     title: 'Modules/App/Stories/RainbowFirebaseApp',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };
 
 export const appWithInitialize = () => {

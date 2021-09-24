@@ -76,4 +76,9 @@ export const BasicRecordDetails = () => {
 
 export default {
     title: 'Modules/Record/Stories/RecordDetails',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

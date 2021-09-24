@@ -21,4 +21,9 @@ export const Basic = () => {
 
 export default {
     title: 'Modules/Demos/Stories/SignUpWithGoogle',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

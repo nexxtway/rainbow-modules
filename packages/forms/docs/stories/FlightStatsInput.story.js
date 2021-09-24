@@ -116,4 +116,9 @@ export const Basic = () => {
 
 export default {
     title: 'Modules/Forms/Stories/FlightStatsInput',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

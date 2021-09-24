@@ -19,4 +19,9 @@ export const basicStorageImageGallery = () => {
 
 export default {
     title: 'Modules/Storage/Stories',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

@@ -224,4 +224,9 @@ export const Basic = () => (
 
 export default {
     title: 'Modules/Forms/Stories/UniversalFromModal',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

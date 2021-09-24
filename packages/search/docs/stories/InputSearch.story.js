@@ -50,4 +50,9 @@ export const RealtimeInputSearch = () => {
 
 export default {
     title: 'Modules/Search/Stories/InputSearch',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

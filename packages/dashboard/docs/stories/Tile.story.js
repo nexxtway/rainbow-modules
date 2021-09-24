@@ -169,4 +169,9 @@ export const variantFlat = () => {
 
 export default {
     title: 'Modules/Dashboard/Stories/Tile',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

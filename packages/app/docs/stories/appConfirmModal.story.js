@@ -155,4 +155,9 @@ export const showYesNoModalExample = () => {
 
 export default {
     title: 'Modules/App/Stories/Modals',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

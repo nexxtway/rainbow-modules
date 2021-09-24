@@ -48,4 +48,9 @@ export const UseFloatingBarScrollHandler = () => {
 
 export default {
     title: 'Modules/Layout/Stories',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

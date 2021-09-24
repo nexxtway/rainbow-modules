@@ -183,4 +183,9 @@ export const Basic = () => {
 
 export default {
     title: 'Modules/Forms/Stories/FieldsGenerator',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

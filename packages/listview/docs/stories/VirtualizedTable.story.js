@@ -79,4 +79,9 @@ export const EmptyVirtualizedTable = () => {
 
 export default {
     title: 'Modules/Listview/Stories/VirtualizedTable',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

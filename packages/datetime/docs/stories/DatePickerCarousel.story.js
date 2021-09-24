@@ -62,4 +62,9 @@ export const withDateBounds = () => {
 
 export default {
     title: 'Modules/Datetime/Stories',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

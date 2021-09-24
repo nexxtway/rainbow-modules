@@ -30,4 +30,9 @@ export const DarkCodeBlockExample = () => {
 
 export default {
     title: 'Modules/Content/Stories/CodeBlock',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

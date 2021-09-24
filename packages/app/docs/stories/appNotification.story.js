@@ -159,4 +159,9 @@ export const showAppLevelNotificationTimeout5s = () => {
 
 export default {
     title: 'Modules/App/Stories/Notifications',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

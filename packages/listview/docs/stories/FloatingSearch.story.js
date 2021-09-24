@@ -53,4 +53,9 @@ export const BasicFloatingSearch = () => {
 
 export default {
     title: 'Modules/Listview/Stories/FloatingSearch',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

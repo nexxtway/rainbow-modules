@@ -23,4 +23,9 @@ export const UseMutationWithoutSuccessNotification = () => {
 
 export default {
     title: 'Modules/Hooks/Stories',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

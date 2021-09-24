@@ -102,4 +102,9 @@ export const FormJsonInput = () => {
 
 export default {
     title: 'Modules/Forms/Stories/JsonInput',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

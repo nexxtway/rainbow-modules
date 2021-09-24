@@ -96,4 +96,9 @@ export const BasicRecordHeader = () => {
 
 export default {
     title: 'Modules/Record/Stories/RecordHeader',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

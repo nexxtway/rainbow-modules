@@ -114,4 +114,9 @@ export const navigationButtonColumn = () => {
 
 export default {
     title: 'Modules/Listview/Stories/NavigationButtonColumn',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

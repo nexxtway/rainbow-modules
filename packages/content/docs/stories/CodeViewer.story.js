@@ -123,4 +123,9 @@ export const CodeViewerExample = () => {
 
 export default {
     title: 'Modules/Content/Stories/CodeViewer',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };

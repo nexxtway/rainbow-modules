@@ -36,4 +36,9 @@ export const BasicMarkdownColumn = () => {
 
 export default {
     title: 'Modules/Listview/Stories/MarkdownColumn',
+    parameters: {
+        viewOnGithub: {
+            fileName: __filename,
+        },
+    },
 };
