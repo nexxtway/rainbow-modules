@@ -121,6 +121,7 @@ import {
     Tag,
     DocumentPath,
     Link,
+    Caution,
 } from '../../../src';
 
 export default [
@@ -424,6 +425,11 @@ export default [
         name: 'cancel',
         category: 'custom',
         icon: Cancel,
+    },
+    {
+        name: 'caution',
+        category: 'custom',
+        icon: Caution,
     },
     {
         name: 'rainbowLogo',
