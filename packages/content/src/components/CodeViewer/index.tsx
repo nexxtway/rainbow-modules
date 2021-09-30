@@ -22,7 +22,7 @@ import generateTreeNode from './helpers/generateTreeNode';
 import getIconForFolder from './helpers/getIconForFolder';
 import ActionButton from './actionButton';
 import messages from './messages';
-import getLanguageFromContentType from './helpers/getLanguageFromContentType';
+import defaultLanguageResolver from './helpers/getLanguageFromContentType';
 
 const renderComponent = (componentJsx: React.ReactElement, isFullScreenMode: boolean) => {
     if (isFullScreenMode) {
@@ -34,7 +34,7 @@ const renderComponent = (componentJsx: React.ReactElement, isFullScreenMode: boo
 const CodeViewer: React.FC<CodeViewerProps> = ({
     icon,
     name,
-    onDetectLanguage,
+    languageResolver,
     onFolderExpand,
     onFileSelect,
     onDownload,
@@ -58,7 +58,8 @@ const CodeViewer: React.FC<CodeViewerProps> = ({
         setIinitialDividerPosition(dividerPosition ?? 250);
     const toggleFullScreen = () => setIsFullScreen(!isFullScreen);
     const toggleSourceTree = () => setSourceTreeVisible(!isSourceTreeVisible);
-    const detectLanguageFn = onDetectLanguage || getLanguageFromContentType;
+
+    const resolveLanguage = languageResolver || defaultLanguageResolver;
 
     const handleNodeExpand = async ({ nodePath }: SelectValue) => {
         if (!onFolderExpand) return;
@@ -93,7 +94,7 @@ const CodeViewer: React.FC<CodeViewerProps> = ({
         const { content: fileContent, contentType } = await onFileSelect({
             filePath: path,
         });
-        const fileLanguage = await detectLanguageFn({ contentType });
+        const fileLanguage = await resolveLanguage({ contentType });
         setLanguage(fileLanguage);
         setContent(fileContent);
         setIsLoadingContent(false);
@@ -202,7 +203,7 @@ const CodeViewer: React.FC<CodeViewerProps> = ({
 CodeViewer.propTypes = {
     icon: PropTypes.node,
     name: PropTypes.node,
-    onDetectLanguage: PropTypes.func,
+    languageResolver: PropTypes.func,
     onFolderExpand: PropTypes.func,
     onFileSelect: PropTypes.func,
     onDownload: PropTypes.func,
@@ -211,7 +212,7 @@ CodeViewer.propTypes = {
 CodeViewer.defaultProps = {
     icon: undefined,
     name: undefined,
-    onDetectLanguage: undefined,
+    languageResolver: undefined,
     onFolderExpand: undefined,
     onFileSelect: undefined,
     onDownload: undefined,

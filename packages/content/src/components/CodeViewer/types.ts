@@ -67,7 +67,7 @@ export interface CodeViewerProps {
     /** A folder or project name that will be visible on top of the files tree. */
     name?: ReactNode;
     /** A function returning a Promise that resolves with the language for the selected content type`. */
-    onDetectLanguage?: (args: { contentType?: string }) => Promise<string>;
+    languageResolver?: (args: { contentType?: string }) => Promise<string>;
     /** A function returning a Promise that resolves with an object of type `FolderExpandReturnValue`. */
     onFolderExpand?: (args: { folderPath?: string }) => Promise<FolderExpandReturnValue>;
     /** A function returning a Promise that resolves with the content of the selected file. */
