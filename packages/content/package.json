@@ -13,6 +13,7 @@
         "@rainbow-modules/layout": "^0.43.0",
         "@rainbow-modules/record": "^0.43.0",
         "react-syntax-highlighter": "^15.4.3",
+        "react-virtualized": "^9.22.3",
         "styled-components": "^4.3.2"
     },
     "peerDependencies": {
@@ -23,7 +24,8 @@
         "react-rainbow-components": ">=1.15.0"
     },
     "devDependencies": {
-        "@types/react-dom": "^16.9"
+        "@types/react-dom": "^16.9",
+        "@types/react-virtualized": "^9.21.13"
     },
     "publishConfig": {
         "access": "public"
