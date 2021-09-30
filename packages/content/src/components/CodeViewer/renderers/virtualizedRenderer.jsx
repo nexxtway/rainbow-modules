@@ -3,8 +3,13 @@
  * Taken from react-syntax-highlighter-virtualized-render
  */
 import React from 'react';
+import styled from 'styled-components';
 import { AutoSizer, List } from 'react-virtualized';
 import { createElement } from 'react-syntax-highlighter';
+
+const ListContainer = styled.div`
+    height: 100%;
+`;
 
 const rowRenderer = ({ rows, stylesheet, useInlineStyles }) => {
     return ({ index, key, style }) =>
@@ -19,7 +24,7 @@ const rowRenderer = ({ rows, stylesheet, useInlineStyles }) => {
 
 const virtualizedRenderer = ({ overscanRowCount = 10, rowHeight = 15 } = {}) => {
     return ({ rows, stylesheet, useInlineStyles }) => (
-        <div style={{ height: '100%' }}>
+        <ListContainer>
             <AutoSizer>
                 {({ height, width }) => (
                     <List
@@ -32,7 +37,7 @@ const virtualizedRenderer = ({ overscanRowCount = 10, rowHeight = 15 } = {}) => 
                     />
                 )}
             </AutoSizer>
-        </div>
+        </ListContainer>
     );
 };
 
