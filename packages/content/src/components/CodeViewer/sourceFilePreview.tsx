@@ -6,6 +6,7 @@ import Loader from './loader';
 import Message from './message';
 import messages from './messages';
 import { SourceFilePreviewProps } from './types';
+import virtualizedRenderer from './renderers/virtualizedRenderer';
 
 const componentStyles = {
     background: 'none',
@@ -29,6 +30,7 @@ const lineNumberStyle = {
 
 const SourceFilePreview: React.FC<SourceFilePreviewProps> = ({
     isLoading,
+    language,
     content,
 }: SourceFilePreviewProps) => {
     const intl = useIntl();
@@ -43,6 +45,7 @@ const SourceFilePreview: React.FC<SourceFilePreviewProps> = ({
     if (showSource) {
         return (
             <SyntaxHighlighter
+                language={language}
                 useInlineStyles
                 customStyle={componentStyles}
                 startingLineNumber={1}
@@ -51,6 +54,8 @@ const SourceFilePreview: React.FC<SourceFilePreviewProps> = ({
                 wrapLines
                 lineProps={lineProps}
                 lineNumberStyle={lineNumberStyle}
+                renderer={virtualizedRenderer()}
+                showInlineLineNumbers
             >
                 {content}
             </SyntaxHighlighter>
@@ -62,6 +67,7 @@ const SourceFilePreview: React.FC<SourceFilePreviewProps> = ({
 
 SourceFilePreview.defaultProps = {
     isLoading: false,
+    language: undefined,
     content: undefined,
 };
 

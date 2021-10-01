@@ -22,6 +22,7 @@ import generateTreeNode from './helpers/generateTreeNode';
 import getIconForFolder from './helpers/getIconForFolder';
 import ActionButton from './actionButton';
 import messages from './messages';
+import defaultLanguageResolver from './helpers/getLanguageFromContentType';
 
 const renderComponent = (componentJsx: React.ReactElement, isFullScreenMode: boolean) => {
     if (isFullScreenMode) {
@@ -33,6 +34,7 @@ const renderComponent = (componentJsx: React.ReactElement, isFullScreenMode: boo
 const CodeViewer: React.FC<CodeViewerProps> = ({
     icon,
     name,
+    languageResolver,
     onFolderExpand,
     onFileSelect,
     onDownload,
@@ -47,6 +49,7 @@ const CodeViewer: React.FC<CodeViewerProps> = ({
     const [treeData, setTreeData] = useState<DataItem[]>([]);
     const [selectedNode, setSelectedNode] = useState<SelectValue & DataItem>();
     const [content, setContent] = useState<string>();
+    const [language, setLanguage] = useState<string>();
 
     const selectedNodeName = selectedNode && selectedNode?.name;
     const selectedFilename = selectedNode && selectedNode?.label;
@@ -55,6 +58,8 @@ const CodeViewer: React.FC<CodeViewerProps> = ({
         setIinitialDividerPosition(dividerPosition ?? 250);
     const toggleFullScreen = () => setIsFullScreen(!isFullScreen);
     const toggleSourceTree = () => setSourceTreeVisible(!isSourceTreeVisible);
+
+    const resolveLanguage = languageResolver || defaultLanguageResolver;
 
     const handleNodeExpand = async ({ nodePath }: SelectValue) => {
         if (!onFolderExpand) return;
@@ -86,7 +91,11 @@ const CodeViewer: React.FC<CodeViewerProps> = ({
         setSelectedNode({ name: nodeName, nodePath, ...child });
         setIsLoadingContent(true);
         const { path } = child;
-        const { content: fileContent } = await onFileSelect({ filePath: path });
+        const { content: fileContent, contentType } = await onFileSelect({
+            filePath: path,
+        });
+        const fileLanguage = await resolveLanguage({ contentType });
+        setLanguage(fileLanguage);
         setContent(fileContent);
         setIsLoadingContent(false);
     };
@@ -143,7 +152,7 @@ const CodeViewer: React.FC<CodeViewerProps> = ({
     );
     const rightColumn = (
         <RightColumn isLoading={isLoadingContent}>
-            <SourceFilePreview isLoading={isLoadingContent} content={content} />
+            <SourceFilePreview isLoading={isLoadingContent} content={content} language={language} />
         </RightColumn>
     );
 
@@ -194,6 +203,7 @@ const CodeViewer: React.FC<CodeViewerProps> = ({
 CodeViewer.propTypes = {
     icon: PropTypes.node,
     name: PropTypes.node,
+    languageResolver: PropTypes.func,
     onFolderExpand: PropTypes.func,
     onFileSelect: PropTypes.func,
     onDownload: PropTypes.func,
@@ -202,6 +212,7 @@ CodeViewer.propTypes = {
 CodeViewer.defaultProps = {
     icon: undefined,
     name: undefined,
+    languageResolver: undefined,
     onFolderExpand: undefined,
     onFileSelect: undefined,
     onDownload: undefined,

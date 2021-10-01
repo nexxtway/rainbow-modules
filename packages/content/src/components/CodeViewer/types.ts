@@ -66,10 +66,16 @@ export interface CodeViewerProps {
     icon?: ReactNode;
     /** A folder or project name that will be visible on top of the files tree. */
     name?: ReactNode;
+    /** A function returning a Promise that resolves with the language for the selected content type`. */
+    languageResolver?: (args: { contentType?: string }) => Promise<string>;
     /** A function returning a Promise that resolves with an object of type `FolderExpandReturnValue`. */
     onFolderExpand?: (args: { folderPath?: string }) => Promise<FolderExpandReturnValue>;
     /** A function returning a Promise that resolves with the content of the selected file. */
     onFileSelect?: (args: { filePath?: string }) => Promise<FileContent>;
     /** A function that triggers the download of the source code. */
     onDownload?: () => void;
+}
+
+export interface ContentTypeMapper {
+    [id: string]: string;
 }
