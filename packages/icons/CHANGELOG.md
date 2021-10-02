@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.44.0](https://github.com/nexxtway/rainbow-modules/compare/v0.43.0...v0.44.0) (2021-10-02)
+
+### Features
+
+-   added caution icon ([#463](https://github.com/nexxtway/rainbow-modules/issues/463)) ([1158431](https://github.com/nexxtway/rainbow-modules/commit/115843156a1fa421a59338621d9fbb4a5c6e18e1))
+
 # [0.43.0](https://github.com/nexxtway/rainbow-modules/compare/v0.42.0...v0.43.0) (2021-09-20)
 
 ### Features

@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.44.0](https://github.com/nexxtway/rainbow-modules/compare/v0.43.0...v0.44.0) (2021-10-02)
+
+### Features
+
+-   add link to source code on story toolbar ([#461](https://github.com/nexxtway/rainbow-modules/issues/461)) ([38a7496](https://github.com/nexxtway/rainbow-modules/commit/38a749602867f4406617d6bde00be8cd59caf31e))
+-   implement expect api on Table page object ([#458](https://github.com/nexxtway/rainbow-modules/issues/458)) ([0cf498a](https://github.com/nexxtway/rainbow-modules/commit/0cf498acb8242df961a74cdc375a02219c5c7fbc))
+
 # [0.43.0](https://github.com/nexxtway/rainbow-modules/compare/v0.42.0...v0.43.0) (2021-09-20)
 
 ### Features

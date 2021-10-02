@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.44.0](https://github.com/nexxtway/rainbow-modules/compare/v0.43.0...v0.44.0) (2021-10-02)
+
+### Bug Fixes
+
+-   add getOption to ButtonMenu page object ([#459](https://github.com/nexxtway/rainbow-modules/issues/459)) ([d54dd42](https://github.com/nexxtway/rainbow-modules/commit/d54dd4248e3e7852048712fa53ae0bd8e201213b))
+
+### Features
+
+-   implement expect api on Table page object ([#458](https://github.com/nexxtway/rainbow-modules/issues/458)) ([0cf498a](https://github.com/nexxtway/rainbow-modules/commit/0cf498acb8242df961a74cdc375a02219c5c7fbc))
+-   implement InputSearch page object ([#456](https://github.com/nexxtway/rainbow-modules/issues/456)) ([ed3a6ce](https://github.com/nexxtway/rainbow-modules/commit/ed3a6ce6095cf820e17514c46d8094dc3b38f632))
+-   implement Textarea page object ([#457](https://github.com/nexxtway/rainbow-modules/issues/457)) ([5ea3905](https://github.com/nexxtway/rainbow-modules/commit/5ea3905b47344946984a656cf37bed4a3ddd2499))
+
 # [0.43.0](https://github.com/nexxtway/rainbow-modules/compare/v0.42.0...v0.43.0) (2021-09-20)
 
 ### Bug Fixes
