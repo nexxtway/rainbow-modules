@@ -1,4 +1,4 @@
-const composeValidators = (...validators) => (value, allValues, meta) =>
-    validators.reduce((error, validator) => error || validator(value, allValues, meta), undefined);
+const composeValidators = (...validators) => (...rest) =>
+    validators.reduce((error, validator) => error || validator(...rest), undefined);
 
 export default composeValidators;
