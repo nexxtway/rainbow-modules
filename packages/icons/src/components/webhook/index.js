@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Function = (props) => {
+const Webhook = (props) => {
     const { className, style, title } = props;
     return (
         <svg width="24px" height="23px" viewBox="0 0 24 23" className={className} style={style}>
@@ -18,15 +18,15 @@ const Function = (props) => {
     );
 };
 
-Function.propTypes = {
+Webhook.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
     title: PropTypes.string,
 };
-Function.defaultProps = {
+Webhook.defaultProps = {
     className: undefined,
     style: undefined,
     title: undefined,
 };
 
-export default Function;
+export default Webhook;
