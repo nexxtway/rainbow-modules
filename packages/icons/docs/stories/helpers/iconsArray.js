@@ -122,6 +122,7 @@ import {
     DocumentPath,
     Link,
     Caution,
+    Webhook,
 } from '../../../src';
 
 export default [
@@ -740,5 +741,10 @@ export default [
         name: 'yarn',
         category: 'custom',
         icon: YarnLockFile,
+    },
+    {
+        name: 'webhook',
+        category: 'custom',
+        icon: Webhook,
     },
 ];
