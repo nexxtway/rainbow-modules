@@ -117,7 +117,8 @@ const CodeViewer: React.FC<CodeViewerProps> = ({
 
     useEffect(() => {
         loadRootFolder();
-    }, [loadRootFolder]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     useEffect(() => {
         const handler = (event: KeyboardEvent) => {
