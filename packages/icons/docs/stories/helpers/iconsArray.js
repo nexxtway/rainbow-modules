@@ -123,9 +123,21 @@ import {
     Link,
     Caution,
     Webhook,
+    Number,
+    Memory,
 } from '../../../src';
 
 export default [
+    {
+        name: 'memory',
+        category: 'standard',
+        icon: Memory,
+    },
+    {
+        name: 'number',
+        category: 'standard',
+        icon: Number,
+    },
     {
         name: 'link',
         category: 'standard',
