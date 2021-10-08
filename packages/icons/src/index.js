@@ -116,6 +116,8 @@ export { default as DocumentPath } from './components/documentPath';
 export { default as Link } from './components/link';
 export { default as Caution } from './components/caution';
 export { default as Webhook } from './components/webhook';
+export { default as Number } from './components/number';
+export { default as Memory } from './components/memory';
 
 // File icons
 export { default as JavascriptFile } from './components/javascriptFile';
