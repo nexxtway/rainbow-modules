@@ -15,6 +15,7 @@ export const Container = styled.div<{ isFullScreen?: boolean }>`
     overflow: hidden;
     width: 100%;
     height: 100%;
+    min-height: 0;
     border-radius: 8px;
     background: ${EBONY};
     color: white;
@@ -62,6 +63,7 @@ export const LeftColumn = styled.aside<{ isVisible?: boolean }>`
     display: flex;
     flex-direction: row;
     transition: all 100ms linear;
+    background: ${BLACK_RUSSIAN};
     height: 100%;
     overflow: auto;
 
@@ -133,7 +135,6 @@ export const TreeContainer = styled.div`
     height: 100%;
     align-items: stretch;
     justify-content: start;
-    background: ${BLACK_RUSSIAN};
     padding-bottom: 20px;
 `;
 
