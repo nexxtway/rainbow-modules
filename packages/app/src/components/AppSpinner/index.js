@@ -21,9 +21,13 @@ const SpinnerContainer = styled.div`
     right: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(239, 241, 245, 0.8);
-    backdrop-filter: blur(5px);
+    background-color: rgba(239, 241, 245, 0.9);
     z-index: ${ZINDEX_SPINNER};
+    @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+        background-color: rgba(239, 241, 245, 0.8);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
 `;
 
 const StyledSpinner = styled(Spinner)`
