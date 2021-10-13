@@ -145,6 +145,7 @@ export const SpinnerContainer = styled.div`
     flex: 1;
     align-items: center;
     justify-content: center;
+    height: 100%;
 `;
 
 export const StyledSpinner = styled(Spinner)`
@@ -156,6 +157,7 @@ export const StyledSpinner = styled(Spinner)`
     align-self: center;
     box-sizing: border-box;
     transform: unset;
+    z-index: unset;
 `;
 
 export const StyledActionButton = styled.button`
