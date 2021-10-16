@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import IframeModal from '../../src/components/IframeModal';
+import * as stories from '../stories/IframeModal.story.js';
+
+<Meta title="Modules/Micro/Components/IframeModal" component={IframeModal} />
+
+# Overview
+
+`IframeModal` renders a `Modal` with an iframe inside, passing it the provided `src`.
+
+### This is an example with the RecordDetails.
+
+<Preview>
+    <Story name="IframeModal">{stories.BasicIframeModal()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={IframeModal} />
