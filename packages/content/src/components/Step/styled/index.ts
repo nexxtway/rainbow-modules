@@ -11,6 +11,7 @@ export const StyledNumber = styled.div`
     height: 1.5rem;
     display: flex;
     justify-content: center;
+    flex-shrink: 0;
     align-items: center;
     border-radius: 50%;
     font-weight: bold;
@@ -29,8 +30,9 @@ export const StyledHeader = styled.h1`
     display: inline-flex;
     align-items: center;
     font-weight: bold;
-    font-size: 0.875rem;
-    height: 1.5rem;
+    font-size: 1rem;
+    min-height: 1.5rem;
+    margin-bottom: 0.5rem;
 `;
 
 export const StyledDescription = styled.span`
