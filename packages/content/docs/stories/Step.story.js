@@ -11,7 +11,7 @@ export const SimpleStep = () => {
             </Step>
             <Step
                 number={2}
-                header="Step 2"
+                header="This is the second step. It comes after the first step, and before the third one."
                 description="This is the second step. It comes after the first one."
             >
                 After completing the first step, you should do the second one, and that is all.
