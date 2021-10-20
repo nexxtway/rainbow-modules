@@ -80,7 +80,7 @@ export const RightColumn = styled.main<{ isLoading?: boolean }>`
     display: flex;
     width: 100%;
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
     align-items: start;
     justify-content: start;
 
