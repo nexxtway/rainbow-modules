@@ -17,7 +17,12 @@ const FullPageIframe: React.FC<IframeProps> = ({
     return (
         <FullPageContainer id={id}>
             <StyledFullPageIframe className={className} style={style} src={src} title={title} />
-            <CloseButton icon={<Close />} size="x-small" onClick={onRequestClose} />
+            <CloseButton
+                id="modal-close-button"
+                icon={<Close />}
+                size="x-small"
+                onClick={onRequestClose}
+            />
         </FullPageContainer>
     );
 };
