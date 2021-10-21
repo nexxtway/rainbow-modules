@@ -8,7 +8,8 @@
         "lib"
     ],
     "dependencies": {
-        "styled-components": "^4.3.2"
+        "styled-components": "^4.3.2",
+        "@rainbow-modules/icons": "^0.44.0"
     },
     "peerDependencies": {
         "prop-types": "^15.7.2",

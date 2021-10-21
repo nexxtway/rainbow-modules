@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Button, Card as RainbowCard } from 'react-rainbow-components';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
 import { RainbowLogo } from '@rainbow-modules/icons';
-import IframeModal from '../../src/components/IframeModal';
+import Iframe from '../../src/components/Iframe';
 
 const Card = styled(RainbowCard)`
     width: 650px;
@@ -59,7 +59,7 @@ const Container = styled.div`
     padding: 5rem 2rem;
 `;
 
-export const BasicIframeModal = () => {
+export const BasicIframe = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleClick = () => setIsOpen(true);
@@ -84,7 +84,7 @@ export const BasicIframeModal = () => {
                     </div>
                 </Card>
             </Container>
-            <IframeModal
+            <Iframe
                 src="https://react-rainbow.io/"
                 isOpen={isOpen}
                 onRequestClose={() => setIsOpen(false)}
@@ -94,7 +94,7 @@ export const BasicIframeModal = () => {
 };
 
 export default {
-    title: 'Modules/Micro/Stories/IframeModal',
+    title: 'Modules/Micro/Stories/Iframe',
     parameters: {
         viewOnGithub: {
             fileName: __filename,

@@ -1,26 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Modal } from 'react-rainbow-components';
-import { StyledIframe } from './styled';
-import { IframeModalProps } from './types';
+import { IframeProps, Variant } from './types';
+import FullPageIframe from './fullPage';
 
-const IframeModal: React.FC<IframeModalProps> = ({
-    id,
-    className,
-    style,
-    src,
-    isOpen,
-    title,
-    onRequestClose,
-}: IframeModalProps) => {
-    return (
-        <Modal id={id} isOpen={isOpen} size="large" onRequestClose={onRequestClose}>
-            <StyledIframe className={className} style={style} src={src} title={title} />
-        </Modal>
-    );
+const componentMap: Record<Variant, any> = {
+    fullPage: FullPageIframe,
 };
 
-IframeModal.propTypes = {
+const Iframe: React.FC<IframeProps> = ({ variant, ...rest }: IframeProps) => {
+    const Component = componentMap[variant ?? 'fullPage'];
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    return <Component {...rest} />;
+};
+
+Iframe.propTypes = {
     /** The id of the outer element. */
     id: PropTypes.string,
     /** A CSS class for the iframe element, in addition to the component's base classes. */
@@ -33,19 +26,23 @@ IframeModal.propTypes = {
     title: PropTypes.string,
     /** Controls whether the Modal is opened or not. If true, the modal is open. */
     isOpen: PropTypes.bool,
+    /** The variant of the iframe to show */
+    variant: PropTypes.oneOf(['fullPage']),
     /** The action triggered when the component request to close
-     *  (e.g click close button, press esc key or click outside the modal). */
+     *  (e.g click close button). */
     onRequestClose: PropTypes.func,
 };
 
-IframeModal.defaultProps = {
+Iframe.defaultProps = {
     id: undefined,
     className: undefined,
     style: undefined,
     src: undefined,
     title: undefined,
     isOpen: false,
-    onRequestClose: undefined,
+    variant: 'fullPage',
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    onRequestClose: () => {},
 };
 
-export default IframeModal;
+export default Iframe;
