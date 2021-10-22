@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.45.0](https://github.com/nexxtway/rainbow-modules/compare/v0.44.0...v0.45.0) (2021-10-22)
+
+### Bug Fixes
+
+-   avoid reload when repaint container ([#467](https://github.com/nexxtway/rainbow-modules/issues/467)) ([5c2e11a](https://github.com/nexxtway/rainbow-modules/commit/5c2e11a941c18f9f202acdfb89d450ae0227cd4b))
+-   color for default icon for unknown file types ([#466](https://github.com/nexxtway/rainbow-modules/issues/466)) ([8030058](https://github.com/nexxtway/rainbow-modules/commit/80300581cb1da42d7b2e323720b4ab6357f15054))
+-   improve Step styles ([#474](https://github.com/nexxtway/rainbow-modules/issues/474)) ([56df431](https://github.com/nexxtway/rainbow-modules/commit/56df431142ec92fb4b109ea296f9d113b50ac95d))
+-   partial fix for horz scroll in CodeViewer ([#473](https://github.com/nexxtway/rainbow-modules/issues/473)) ([d48e719](https://github.com/nexxtway/rainbow-modules/commit/d48e719f8b0dc8b63368a3f8c19b703004946478))
+
 # [0.44.0](https://github.com/nexxtway/rainbow-modules/compare/v0.43.0...v0.44.0) (2021-10-02)
 
 ### Bug Fixes

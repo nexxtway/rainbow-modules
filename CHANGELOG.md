@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.45.0](https://github.com/nexxtway/rainbow-modules/compare/v0.44.0...v0.45.0) (2021-10-22)
+
+### Bug Fixes
+
+-   avoid reload when repaint container ([#467](https://github.com/nexxtway/rainbow-modules/issues/467)) ([5c2e11a](https://github.com/nexxtway/rainbow-modules/commit/5c2e11a941c18f9f202acdfb89d450ae0227cd4b))
+-   color for default icon for unknown file types ([#466](https://github.com/nexxtway/rainbow-modules/issues/466)) ([8030058](https://github.com/nexxtway/rainbow-modules/commit/80300581cb1da42d7b2e323720b4ab6357f15054))
+-   composeValidators ([d387364](https://github.com/nexxtway/rainbow-modules/commit/d38736449c1d788f17ba7b5640de5234e4ef9208))
+-   improve Step styles ([#474](https://github.com/nexxtway/rainbow-modules/issues/474)) ([56df431](https://github.com/nexxtway/rainbow-modules/commit/56df431142ec92fb4b109ea296f9d113b50ac95d))
+-   partial fix for horz scroll in CodeViewer ([#473](https://github.com/nexxtway/rainbow-modules/issues/473)) ([d48e719](https://github.com/nexxtway/rainbow-modules/commit/d48e719f8b0dc8b63368a3f8c19b703004946478))
+-   useOpenModal return types ([#476](https://github.com/nexxtway/rainbow-modules/issues/476)) ([e8c2db2](https://github.com/nexxtway/rainbow-modules/commit/e8c2db2a1beda823fa1e13aa6539e494212f76e9))
+
+### Features
+
+-   add webhook icon ([#465](https://github.com/nexxtway/rainbow-modules/issues/465)) ([329690a](https://github.com/nexxtway/rainbow-modules/commit/329690ae66d3200d8a83a424d14a0c19fc5f5589))
+-   added number and memory icons ([#468](https://github.com/nexxtway/rainbow-modules/issues/468)) ([15df17a](https://github.com/nexxtway/rainbow-modules/commit/15df17a6265c4d5ff6a5b462dc969584419c44fa))
+-   implement Tabset page object ([#475](https://github.com/nexxtway/rainbow-modules/issues/475)) ([4341090](https://github.com/nexxtway/rainbow-modules/commit/4341090a1b59c2fdf6b8be773662f68301069def))
+
 # [0.44.0](https://github.com/nexxtway/rainbow-modules/compare/v0.43.0...v0.44.0) (2021-10-02)
 
 ### Bug Fixes
