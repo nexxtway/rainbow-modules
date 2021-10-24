@@ -1,0 +1,22 @@
+{
+    "name": "@rainbow-modules/micro",
+    "version": "0.44.0",
+    "main": "lib/index.js",
+    "author": "Nexxtway Team",
+    "license": "MIT",
+    "files": [
+        "lib"
+    ],
+    "dependencies": {
+        "styled-components": "^4.3.2",
+        "@rainbow-modules/icons": "^0.44.0"
+    },
+    "peerDependencies": {
+        "prop-types": "^15.7.2",
+        "react": ">=16.8.0",
+        "react-rainbow-components": ">=1.15.0"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}

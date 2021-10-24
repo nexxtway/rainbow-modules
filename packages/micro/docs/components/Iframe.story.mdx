@@ -1,0 +1,20 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Iframe from '../../src/components/Iframe';
+import * as stories from '../stories/Iframe.story.js';
+
+<Meta title="Modules/Micro/Components/IframeModal" component={Iframe} />
+
+# Overview
+
+`Iframe` component helps to show content from external sources (i.e TypeForm) in your app.
+The component provides multiple variants to show the content.
+
+### This is an example with the RecordDetails.
+
+<Preview>
+    <Story name="Iframe">{stories.BasicIframe()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={Iframe} />
