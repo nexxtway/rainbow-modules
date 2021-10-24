@@ -1,0 +1,17 @@
+-   ##### How to check an option
+
+```js
+import { RadioGroup } from '@rainbow-modules/cypress/pageObjects';
+
+const radioGroup = new RadioGroup('#radioGroup-selector');
+radioGroup.inputs[0].check();
+```
+
+-   ##### How to test the error message
+
+```js
+import { RadioGroup } from '@rainbow-modules/cypress/pageObjects';
+
+const radioGroup = new RadioGroup('#radioGroup-selector');
+radioGroup.expect('error', 'This field is required');
+```
