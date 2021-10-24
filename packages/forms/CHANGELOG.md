@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.45.0](https://github.com/nexxtway/rainbow-modules/compare/v0.44.0...v0.45.0) (2021-10-22)
+
+### Bug Fixes
+
+-   composeValidators ([d387364](https://github.com/nexxtway/rainbow-modules/commit/d38736449c1d788f17ba7b5640de5234e4ef9208))
+
 # [0.44.0](https://github.com/nexxtway/rainbow-modules/compare/v0.43.0...v0.44.0) (2021-10-02)
 
 ### Features

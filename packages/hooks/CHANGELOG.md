@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.45.0](https://github.com/nexxtway/rainbow-modules/compare/v0.44.0...v0.45.0) (2021-10-22)
+
+### Bug Fixes
+
+-   useOpenModal return types ([#476](https://github.com/nexxtway/rainbow-modules/issues/476)) ([e8c2db2](https://github.com/nexxtway/rainbow-modules/commit/e8c2db2a1beda823fa1e13aa6539e494212f76e9))
+
 # [0.44.0](https://github.com/nexxtway/rainbow-modules/compare/v0.43.0...v0.44.0) (2021-10-02)
 
 ### Features

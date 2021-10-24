@@ -16,6 +16,7 @@ export { default as Sidebar } from './Sidebar';
 export { default as SidebarItem } from './SidebarItem';
 export { default as StripeCardInput } from './StripeCardInput';
 export { default as Table } from './Table';
+export { default as Tabset } from './Tabset';
 export { default as Textarea } from './Textarea';
 export { default as UniversalPicker } from './UniversalPicker';
 export { default as UniversalPickerOption } from './UniversalPickerOption';

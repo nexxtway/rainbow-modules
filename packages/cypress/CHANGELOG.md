@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.45.0](https://github.com/nexxtway/rainbow-modules/compare/v0.44.0...v0.45.0) (2021-10-22)
+
+### Features
+
+-   implement Tabset page object ([#475](https://github.com/nexxtway/rainbow-modules/issues/475)) ([4341090](https://github.com/nexxtway/rainbow-modules/commit/4341090a1b59c2fdf6b8be773662f68301069def))
+
 # [0.44.0](https://github.com/nexxtway/rainbow-modules/compare/v0.43.0...v0.44.0) (2021-10-02)
 
 ### Bug Fixes

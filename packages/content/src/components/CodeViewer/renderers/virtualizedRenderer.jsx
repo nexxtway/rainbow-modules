@@ -4,15 +4,26 @@
  */
 import React from 'react';
 import styled from 'styled-components';
-import { AutoSizer, List } from 'react-virtualized';
+import { AutoSizer, Grid } from 'react-virtualized';
 import { createElement } from 'react-syntax-highlighter';
 
 const ListContainer = styled.div`
     height: 100%;
 `;
 
+const gridStyles = {
+    overflow: 'auto',
+};
+
+const gridInnerContainerStyles = {
+    overflow: 'visible',
+    width: 'auto',
+    minWidth: 'max-content',
+    maxWidth: 'auto',
+};
+
 const rowRenderer = ({ rows, stylesheet, useInlineStyles }) => {
-    return ({ index, key, style }) =>
+    return ({ rowIndex: index, key, style }) =>
         createElement({
             node: rows[index],
             stylesheet,
@@ -26,14 +37,18 @@ const virtualizedRenderer = ({ overscanRowCount = 10, rowHeight = 15 } = {}) => 
     return ({ rows, stylesheet, useInlineStyles }) => (
         <ListContainer>
             <AutoSizer>
-                {({ height, width }) => (
-                    <List
-                        height={height}
+                {({ width, height }) => (
+                    <Grid
                         width={width}
+                        height={height}
                         rowHeight={rowHeight}
-                        rowRenderer={rowRenderer({ rows, stylesheet, useInlineStyles })}
+                        columnCount={1}
+                        columnWidth={width}
                         rowCount={rows.length}
+                        cellRenderer={rowRenderer({ rows, stylesheet, useInlineStyles })}
                         overscanRowCount={overscanRowCount}
+                        style={gridStyles}
+                        containerStyle={gridInnerContainerStyles}
                     />
                 )}
             </AutoSizer>

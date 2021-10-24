@@ -13,7 +13,7 @@ that open the modal or your can use `useConnectModal` hook that will work in com
 ```js
 const Foo = () => {
     const connectedProps = useConnectModal('modal-unique-id', { /** intial props values */ });
-    const [openModal] = useOpenModal('modal-unique-id);
+    const [openModal] = useOpenModal('modal-unique-id');
     return (
         <Container>
            <Button label="open modal" onClick={openModal} />
@@ -39,7 +39,7 @@ const Bar = () => {
 
 ```js
 const Bar = () => {
-    const [openModal] = useOpenModal('modal-unique-id);
+    const [openModal] = useOpenModal('modal-unique-id');
     const openBarModal = () => {
         openModal({
             title: 'Bar',
@@ -55,7 +55,7 @@ const Bar = () => {
 `useOpenModal` return as second item in the array a closeModal function.
 
 ```js
-const [openModal, closeModal] = useOpenModal('modal-unique-id);
+const [openModal, closeModal] = useOpenModal('modal-unique-id');
 // by calling the closeModal function that Modal will close and reset to the default props values.
 ```
 
