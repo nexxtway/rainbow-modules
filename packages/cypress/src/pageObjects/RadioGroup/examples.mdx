@@ -15,3 +15,12 @@ import { RadioGroup } from '@rainbow-modules/cypress/pageObjects';
 const radioGroup = new RadioGroup('#radioGroup-selector');
 radioGroup.expect('error', 'This field is required');
 ```
+
+-   ##### How to test the value
+
+```js
+import { RadioGroup } from '@rainbow-modules/cypress/pageObjects';
+
+const radioGroup = new RadioGroup('#radioGroup-selector');
+radioGroup.expect('value', 'radioThree');
+```
