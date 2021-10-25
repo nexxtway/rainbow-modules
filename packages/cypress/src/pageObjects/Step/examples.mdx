@@ -1,0 +1,9 @@
+-   ##### How to test the step title and description
+
+```js
+import { Step } from '@rainbow-modules/cypress/pageObjects';
+
+const step = new Step('#step-selector');
+step.expect('header', 'Header');
+step.expect('description', 'Description');
+```
