@@ -13,6 +13,7 @@ interface Chainer {
      * @param visible {boolean} - Whether the app message should be visible or not
      */
     (chainer: 'error', error: string): void;
+    (chainer: 'value', value: string): void;
 }
 
 export interface IRadioGroup {
@@ -37,6 +38,9 @@ class RadioGroup implements IRadioGroup {
     private assertMap: AssertMap = {
         error: (_: string, error: string) => {
             cy.get(`${this.rootElement} > div[id^="error-message-"]`).should('have.text', error);
+        },
+        value: (_: string, value: string) => {
+            cy.get(`${this.rootElement}`).find(`input[value="${value}"]`).should('be.checked');
         },
     };
 

@@ -13,5 +13,6 @@ describe('<CodeBlock />', () => {
         radioGroup.inputs[0].check();
         radioGroup.inputs[2].check();
         radioGroup.expect('error', 'This field is required');
+        radioGroup.expect('value', 'radioThree');
     });
 });
