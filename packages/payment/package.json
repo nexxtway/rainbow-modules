@@ -1,6 +1,6 @@
 {
     "name": "@rainbow-modules/payment",
-    "version": "0.45.0",
+    "version": "0.46.0",
     "main": "lib/index.js",
     "author": "Nexxtway Team",
     "license": "MIT",
@@ -8,10 +8,10 @@
         "lib"
     ],
     "dependencies": {
-        "@rainbow-modules/app": "^0.45.0",
-        "@rainbow-modules/forms": "^0.45.0",
-        "@rainbow-modules/icons": "^0.45.0",
-        "@rainbow-modules/validation": "^0.45.0",
+        "@rainbow-modules/app": "^0.46.0",
+        "@rainbow-modules/forms": "^0.46.0",
+        "@rainbow-modules/icons": "^0.46.0",
+        "@rainbow-modules/validation": "^0.46.0",
         "styled-components": "^4.3.2"
     },
     "peerDependencies": {
