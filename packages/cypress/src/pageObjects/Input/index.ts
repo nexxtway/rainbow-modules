@@ -17,7 +17,7 @@ interface Chainer {
 export interface IInput {
     input: Cypress.Chainable<JQuery<HTMLInputElement>>;
     expect: Chainer;
-    check(options?: Cypress.CheckOptions): void;
+    check(options?: Cypress.ClickOptions): void;
 }
 
 /**
@@ -62,7 +62,7 @@ class Input implements IInput {
      * Same as `inputPageObject.input.check()`
      * @method
      */
-    check(options: Cypress.CheckOptions): void {
+    check(options: Cypress.ClickOptions): void {
         // TODO: verify if it is already checked before check it
         cy.get(this.rootElement).find('label').click('left', options);
     }
