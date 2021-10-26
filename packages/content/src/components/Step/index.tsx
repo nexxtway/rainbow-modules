@@ -10,6 +10,7 @@ import {
 import { StepProps } from './types';
 
 const Step: React.FC<StepProps> = ({
+    id,
     className,
     style,
     number,
@@ -18,11 +19,11 @@ const Step: React.FC<StepProps> = ({
     children,
 }: StepProps) => {
     return (
-        <StyledContainer className={className} style={style}>
+        <StyledContainer id={id} className={className} style={style}>
             <StyledNumber>{number}</StyledNumber>
             <StyledStepContent>
-                <StyledHeader>{header}</StyledHeader>
-                <StyledDescription>{description}</StyledDescription>
+                <StyledHeader data-cy="step-header">{header}</StyledHeader>
+                <StyledDescription data-cy="step-description">{description}</StyledDescription>
                 {children}
             </StyledStepContent>
         </StyledContainer>
@@ -30,6 +31,7 @@ const Step: React.FC<StepProps> = ({
 };
 
 Step.propTypes = {
+    id: PropTypes.string,
     className: PropTypes.string,
     style: PropTypes.object,
     number: PropTypes.number,
@@ -39,6 +41,7 @@ Step.propTypes = {
 };
 
 Step.defaultProps = {
+    id: undefined,
     className: undefined,
     style: undefined,
     number: undefined,

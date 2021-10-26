@@ -9,12 +9,12 @@ import { AssertMap } from '../types';
 interface Chainer {
     /**
      * Asserts if the title of the modal match the one provided
-     * @param visible {boolean} - Whether the app message should be visible or not
+     * @param title {string} - The title that the modal should have
      */
     (chainer: 'title', title: string): void;
     /**
      * Asserts if the visibility of the modal match the one provided
-     * @param visible {boolean} - Whether the app message should be visible or not
+     * @param visible {boolean} - Whether the modal should be visible or not
      */
     (chainer: 'visible', visible: boolean): void;
 }

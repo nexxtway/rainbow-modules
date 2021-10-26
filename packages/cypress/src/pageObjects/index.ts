@@ -15,6 +15,7 @@ export { default as RadioGroup } from './RadioGroup';
 export { default as RainbowFirebaseApp } from './RainbowFirebaseApp';
 export { default as Sidebar } from './Sidebar';
 export { default as SidebarItem } from './SidebarItem';
+export { default as Step } from './Step';
 export { default as StripeCardInput } from './StripeCardInput';
 export { default as Table } from './Table';
 export { default as Tabset } from './Tabset';
