@@ -9,7 +9,7 @@ import { AssertMap } from '../types';
 interface Chainer {
     /**
      * Asserts if the error passed exists in the Textarea
-     * @param visible {boolean} - Whether the app message should be visible or not
+     * @param error {string}
      */
     (chainer: 'error', error: string): void;
 }
