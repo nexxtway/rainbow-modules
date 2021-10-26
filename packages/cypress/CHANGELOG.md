@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.46.0](https://github.com/nexxtway/rainbow-modules/compare/v0.45.0...v0.46.0) (2021-10-25)
+
+### Features
+
+-   implement RadioGroup page object ([#479](https://github.com/nexxtway/rainbow-modules/issues/479)) ([87b66dc](https://github.com/nexxtway/rainbow-modules/commit/87b66dce6284e053414bc863b9ae153634f2b7dd))
+
 # [0.45.0](https://github.com/nexxtway/rainbow-modules/compare/v0.44.0...v0.45.0) (2021-10-22)
 
 ### Features
