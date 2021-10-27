@@ -1,5 +1,19 @@
 /// <reference types="cypress" />
 
+import { AssertMap } from '../types';
+
+/**
+ * @interface Chainer
+ * @template Subject
+ */
+interface Chainer {
+    /**
+     * Asserts if the tab is active
+     * @param active {boolean}
+     */
+    (chainer: 'active', active: boolean): void;
+}
+
 export interface ITab {
     click: () => void;
 }
@@ -15,6 +29,19 @@ class Tab implements ITab {
     private rootElement: string;
 
     /**
+     * A map with all the assertions.
+     * @private
+     */
+    private assertMap: AssertMap = {
+        active: (_: string, active: boolean) => {
+            const expected = active ? 'true' : 'false';
+            cy.get(`${this.rootElement}`)
+                .find('[role="tab"]')
+                .should('have.attr', 'data-active', expected);
+        },
+    };
+
+    /**
      * Constructs a new instance of this page object
      * @param rootElement The selector for the root element of the Sidebar.
      */
@@ -28,6 +55,14 @@ class Tab implements ITab {
      */
     click(): void {
         cy.get(this.rootElement).find('button').click();
+    }
+
+    /**
+     * Execute an assertion on this page object
+     * @method
+     */
+    get expect(): Chainer {
+        return (chainer: string, ...params: any[]) => this.assertMap[chainer](chainer, ...params);
     }
 }
 
