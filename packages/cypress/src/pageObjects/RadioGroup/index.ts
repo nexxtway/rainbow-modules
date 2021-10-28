@@ -21,7 +21,7 @@ interface Chainer {
 }
 
 export interface IRadioGroup {
-    inputs: Input[];
+    getInput: (index: number) => Input;
     expect: Chainer;
 }
 
@@ -65,15 +65,13 @@ class RadioGroup implements IRadioGroup {
     }
 
     /**
-     * An array of `Input` where each element wraps an option of this radio group.
-     * @member {Input[]}
+     * Get an Input page object wrapping the `index + 1` radio input
+     * @method
+     * @param {number} index - The radio input index, starting at 0 for the first one
+     * @returns {Input}
      */
-    get inputs(): Input[] {
-        const { length } = Cypress.$(`${this.rootElement} [data-id="input-radio_container"]`);
-        return Array.from(
-            { length },
-            (_v, i) => new Input(`${this.rootElement} [data-id="input-radio_container"]:nth(${i})`),
-        );
+    getInput(index: number): Input {
+        return new Input(`${this.rootElement} [data-id="input-radio_container"]:nth(${index})`);
     }
 }
 

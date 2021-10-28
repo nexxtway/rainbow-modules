@@ -1,6 +1,6 @@
 import { Tabset } from '../../../packages/cypress/src/pageObjects';
 
-const TABSET_URL = '/iframe.html?id=modules-cypress-tabset--basic-tabset&viewMode=story';
+const TABSET_URL = '/iframe.html?id=modules-cypress-stories-tabset--basic-tabset&viewMode=story';
 
 describe('<CodeBlock />', () => {
     beforeEach(() => {
