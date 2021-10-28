@@ -106,7 +106,7 @@ export const PopOverIframe = () => {
         <RainbowFirebaseApp>
             <IframeCard onClick={handleClick} />
             <Iframe
-                variant="popOver"
+                variant="popover"
                 src="https://react-rainbow.io/"
                 isOpen={isOpen}
                 onRequestClose={() => setIsOpen(false)}

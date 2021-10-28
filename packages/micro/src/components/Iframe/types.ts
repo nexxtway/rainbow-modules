@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react';
 
-export type Variant = 'fullPage' | 'popOver';
+export type Variant = 'fullPage' | 'popover';
 
 export interface IframeProps {
     id?: string;
