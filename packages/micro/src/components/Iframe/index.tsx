@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { IframeProps, Variant } from './types';
 import FullPageIframe from './fullPage';
-import PopOverIframe from './popOver';
+import PopupIframe from './popup';
 
 const componentMap: Record<Variant, any> = {
     fullPage: FullPageIframe,
-    popover: PopOverIframe,
+    popup: PopupIframe,
 };
 
 const Iframe: React.FC<IframeProps> = ({ variant, ...rest }: IframeProps) => {
@@ -29,7 +29,7 @@ Iframe.propTypes = {
     /** Controls whether the Modal is opened or not. If true, the modal is open. */
     isOpen: PropTypes.bool,
     /** The variant of the iframe to show */
-    variant: PropTypes.oneOf(['fullPage', 'popover']),
+    variant: PropTypes.oneOf(['fullPage', 'popup']),
     /** The action triggered when the component request to close
      *  (e.g click close button). */
     onRequestClose: PropTypes.func,

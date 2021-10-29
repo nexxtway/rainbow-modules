@@ -1,13 +1,9 @@
 import React from 'react';
 import { Close } from '@rainbow-modules/icons';
-import {
-    PopOverCloseButton,
-    PopOverContainer,
-    PopOverIframe as StyledPopOverIframe,
-} from './styled';
+import { PopupCloseButton, PopupContainer, PopupIframe as StyledPopupIframe } from './styled';
 import { IframeProps } from './types';
 
-const PopOverIframe: React.FC<IframeProps> = ({
+const PopupIframe: React.FC<IframeProps> = ({
     id,
     className,
     style,
@@ -19,16 +15,16 @@ const PopOverIframe: React.FC<IframeProps> = ({
     if (!isOpen) return null;
 
     return (
-        <PopOverContainer id={id}>
-            <StyledPopOverIframe className={className} style={style} src={src} title={title} />
-            <PopOverCloseButton
+        <PopupContainer id={id}>
+            <StyledPopupIframe className={className} style={style} src={src} title={title} />
+            <PopupCloseButton
                 id="modal-close-button"
                 icon={<Close />}
                 size="x-small"
                 onClick={onRequestClose}
             />
-        </PopOverContainer>
+        </PopupContainer>
     );
 };
 
-export default PopOverIframe;
+export default PopupIframe;

@@ -22,7 +22,7 @@ export const FullPageIframe = styled(StyledIframe)`
     height: 100vh;
 `;
 
-export const PopOverContainer = styled.div`
+export const PopupContainer = styled.div`
     position: fixed;
     top: 0;
     left: 0;
@@ -35,7 +35,7 @@ export const PopOverContainer = styled.div`
     align-items: center;
 `;
 
-export const PopOverIframe = styled(StyledIframe)`
+export const PopupIframe = styled(StyledIframe)`
     width: 100%;
     height: 88vh;
     background-color: ${(props) => props.theme.rainbow.palette.background.main};
@@ -51,7 +51,7 @@ export const CloseButton = styled(ButtonIcon)`
     right: 1rem;
 `;
 
-export const PopOverCloseButton = styled(CloseButton)`
+export const PopupCloseButton = styled(CloseButton)`
     top: 0.2rem;
     right: 0.2rem;
     background-color: transparent;
