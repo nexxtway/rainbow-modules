@@ -57,7 +57,7 @@ class Tabset implements ITabset {
      * Get a Tab page object wrapping the `index + 1` option
      * @method
      * @param {number} index - The tab index, starting at 0 for the first tab
-     * @returns {Option}
+     * @returns {Tab}
      */
     getTab(index: number): Tab {
         return new Tab(
