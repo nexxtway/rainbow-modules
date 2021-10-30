@@ -118,6 +118,8 @@ export { default as Caution } from './components/caution';
 export { default as Webhook } from './components/webhook';
 export { default as Number } from './components/number';
 export { default as Memory } from './components/memory';
+export { default as UpDirection } from './components/upDirection';
+export { default as ArrowLink } from './components/arrowLink';
 
 // File icons
 export { default as JavascriptFile } from './components/javascriptFile';
