@@ -4,7 +4,16 @@
 import { RadioGroup } from '@rainbow-modules/cypress/pageObjects';
 
 const radioGroup = new RadioGroup('#radioGroup-selector');
-radioGroup.inputs[0].check();
+radioGroup.getInput(0).check();
+```
+
+-   ##### How to check an option scrolling if it is not visible
+
+```js
+import { RadioGroup } from '@rainbow-modules/cypress/pageObjects';
+
+const radioGroup = new RadioGroup('#radioGroup-selector');
+radioGroup.getInput(0).check({ scrollBehavior: 'center' });
 ```
 
 -   ##### How to test the error message

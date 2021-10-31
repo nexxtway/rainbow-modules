@@ -1,7 +1,7 @@
 import { RadioGroup } from '../../../packages/cypress/src/pageObjects';
 
 const RADIO_GROUP_URL =
-    '/iframe.html?id=modules-cypress-radiogroup--basic-radio-group&viewMode=story';
+    '/iframe.html?id=modules-cypress-stories-radiogroup--basic-radio-group&viewMode=story';
 
 describe('<CodeBlock />', () => {
     beforeEach(() => {
@@ -10,8 +10,8 @@ describe('<CodeBlock />', () => {
 
     it('should work', () => {
         const radioGroup = new RadioGroup('#radiogroup');
-        radioGroup.inputs[0].check();
-        radioGroup.inputs[2].check();
+        radioGroup.getInput(0).check();
+        radioGroup.getInput(2).check();
         radioGroup.expect('error', 'This field is required');
         radioGroup.expect('value', 'radioThree');
     });

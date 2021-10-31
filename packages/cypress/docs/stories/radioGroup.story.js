@@ -36,5 +36,5 @@ export const BasicRadioGroup = () => {
 };
 
 export default {
-    title: 'Modules/Cypress/RadioGroup',
+    title: 'Modules/Cypress/Stories/RadioGroup',
 };

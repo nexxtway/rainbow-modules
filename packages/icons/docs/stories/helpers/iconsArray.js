@@ -125,9 +125,16 @@ import {
     Webhook,
     Number,
     Memory,
+    UpDirection,
+    ArrowLink,
 } from '../../../src';
 
 export default [
+    {
+        name: 'upDirection',
+        category: 'standard',
+        icon: UpDirection,
+    },
     {
         name: 'memory',
         category: 'standard',
@@ -142,6 +149,11 @@ export default [
         name: 'link',
         category: 'standard',
         icon: Link,
+    },
+    {
+        name: 'arrowLink',
+        category: 'standard',
+        icon: ArrowLink,
     },
     {
         name: 'arrowLeft',
