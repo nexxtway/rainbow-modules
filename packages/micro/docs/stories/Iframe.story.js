@@ -59,6 +59,27 @@ const Container = styled.div`
     padding: 5rem 2rem;
 `;
 
+// eslint-disable-next-line react/prop-types
+const IframeCard = ({ onClick }) => (
+    <Container>
+        <Card>
+            <IconContainer>
+                <RainbowLogo />
+            </IconContainer>
+            <div>
+                <Header>
+                    <Title>react-rainbow-components</Title>
+                    <Button label="Check it out!" variant="brand" onClick={onClick} />
+                </Header>
+                <Text>
+                    React Rainbow is a collection of components that will reliably help you build
+                    your application in a snap. Give it a hack and let us know what you think.
+                </Text>
+            </div>
+        </Card>
+    </Container>
+);
+
 export const BasicIframe = () => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -66,25 +87,26 @@ export const BasicIframe = () => {
 
     return (
         <RainbowFirebaseApp>
-            <Container>
-                <Card>
-                    <IconContainer>
-                        <RainbowLogo />
-                    </IconContainer>
-                    <div>
-                        <Header>
-                            <Title>react-rainbow-components</Title>
-                            <Button label="Check it out!" variant="brand" onClick={handleClick} />
-                        </Header>
-                        <Text>
-                            React Rainbow is a collection of components that will reliably help you
-                            build your application in a snap. Give it a hack and let us know what
-                            you think.
-                        </Text>
-                    </div>
-                </Card>
-            </Container>
+            <IframeCard onClick={handleClick} />
             <Iframe
+                src="https://react-rainbow.io/"
+                isOpen={isOpen}
+                onRequestClose={() => setIsOpen(false)}
+            />
+        </RainbowFirebaseApp>
+    );
+};
+
+export const PopupIframe = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleClick = () => setIsOpen(true);
+
+    return (
+        <RainbowFirebaseApp>
+            <IframeCard onClick={handleClick} />
+            <Iframe
+                variant="popup"
                 src="https://react-rainbow.io/"
                 isOpen={isOpen}
                 onRequestClose={() => setIsOpen(false)}
