@@ -15,7 +15,8 @@ import { isRequired } from '@rainbow-modules/forms';
 <Field name="name" validate={isRequired()} />;
 ```
 
-It is possible to combine more than one validator on the same field:
+It is possible to combine more than one validator on the same field using the `composeValidators`
+function. The validators run in the order they are passed.
 
 ```jsx
 import { Field } from 'react-final-form';

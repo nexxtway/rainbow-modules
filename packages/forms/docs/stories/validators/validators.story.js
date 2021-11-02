@@ -2,9 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Field } from 'react-final-form';
 import { Input, Button, Textarea } from 'react-rainbow-components';
-import { RainbowFirebaseApp } from '@rainbow-modules/app';
-import UniversalForm from '../../../src/components/UniversalForm';
 import {
+    composeValidators,
     isEmail,
     isInteger,
     isRequired,
@@ -13,7 +12,9 @@ import {
     maxLength,
     min,
     minLength,
-} from '../../../src/validators';
+} from '@rainbow-modules/forms';
+import { RainbowFirebaseApp } from '@rainbow-modules/app';
+import UniversalForm from '../../../src/components/UniversalForm';
 
 const Container = styled.div`
     max-width: 480px;
@@ -183,6 +184,25 @@ export const MinLength = () => (
                 />
             </UniversalForm>
             <StyledButton label="Submit" type="submit" form="minLength" variant="brand" />
+        </Container>
+    </RainbowFirebaseApp>
+);
+
+export const MultipleValidators = () => (
+    <RainbowFirebaseApp>
+        <Container>
+            <UniversalForm id="multipleValidators" onSubmit={onSubmit}>
+                <Field
+                    name="email"
+                    component={Input}
+                    label="Email"
+                    placeholder="Enter your email"
+                    labelAlignment="left"
+                    validate={composeValidators(isRequired(), isEmail())}
+                    className="rainbow-m-bottom_large"
+                />
+            </UniversalForm>
+            <StyledButton label="Submit" type="submit" form="multipleValidators" variant="brand" />
         </Container>
     </RainbowFirebaseApp>
 );
