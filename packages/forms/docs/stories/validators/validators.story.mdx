@@ -1,0 +1,78 @@
+import { Meta, Story, Canvas, Preview } from '@storybook/addon-docs/blocks';
+import * as stories from './validators.story.js';
+
+<Meta title="Modules/Forms/Validators/Validators" />
+
+# Overview
+
+The `@rainbow-modules/forms` provides a set of ready-to-use validators which can be directly
+provided to the `Field` component as in the next example:
+
+```jsx
+import { Field } from 'react-final-form';
+import { isRequired } from '@rainbow-modules/forms';
+
+<Field name="name" validate={isRequired()} />;
+```
+
+It is possible to combine more than one validator on the same field using the `composeValidators`
+function. The validators run in the order they are passed.
+
+```jsx
+import { Field } from 'react-final-form';
+import { composeValidators, isRequired, maxLength } from '@rainbow-modules/forms';
+
+<Field name="name" validate={composeValidators(isRequired(), maxLength(20))} />;
+```
+
+### Available validators
+
+Currently there are eight validators available:
+
+-   **isEmail**: checks if the value is a correctly formatted email address
+
+<Canvas>
+    <Story id="modules-forms-validators-stories--is-email" />
+</Canvas>
+
+-   **isInteger**: checks if the value is a valid integer
+
+<Canvas>
+    <Story id="modules-forms-validators-stories--is-integer" />
+</Canvas>
+
+-   **isRequired**: checks if the value is not empty
+
+<Canvas>
+    <Story id="modules-forms-validators-stories--is-required" />
+</Canvas>
+
+-   **isUrl**: checks if the value is a correctly formatted url
+
+<Canvas>
+    <Story id="modules-forms-validators-stories--is-url" />
+</Canvas>
+
+-   **max**: ensures that the value is smaller than the provided `max`
+
+<Canvas>
+    <Story id="modules-forms-validators-stories--max" />
+</Canvas>
+
+-   **min**: ensures that the value is greater than the provided `min`
+
+<Canvas>
+    <Story id="modules-forms-validators-stories--min" />
+</Canvas>
+
+-   **maxLength**: ensures that the value's length is smaller than the provided `max`
+
+<Canvas>
+    <Story id="modules-forms-validators-stories--max-length" />
+</Canvas>
+
+-   **minLength**: ensures that the value's length is greater than the provided `min`
+
+<Canvas>
+    <Story id="modules-forms-validators-stories--min-length" />
+</Canvas>
