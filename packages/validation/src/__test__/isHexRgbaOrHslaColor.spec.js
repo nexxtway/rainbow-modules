@@ -1,4 +1,4 @@
-const isHexRgbaOrHslaColor = require('../isHexRgbaOrHslaColor');
+import isHexRgbaOrHslaColor from '../isHexRgbaOrHslaColor';
 
 describe('isHexRgbaOrHslaColor()', () => {
     it('should return false', () => {
