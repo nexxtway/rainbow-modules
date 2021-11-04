@@ -11,6 +11,9 @@ export interface IframeProps {
     title?: string;
     variant?: Variant;
     onRequestClose?: () => void;
+}
+
+export interface InternalIframeProps extends IframeProps {
     isLoading?: boolean;
     onLoad?: () => void;
 }

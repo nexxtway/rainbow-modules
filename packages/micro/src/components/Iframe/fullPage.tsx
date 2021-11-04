@@ -8,9 +8,9 @@ import {
     FullPageInnerContainer,
     StyledSpinner,
 } from './styled';
-import { IframeProps } from './types';
+import { InternalIframeProps } from './types';
 
-const FullPageIframe: React.FC<IframeProps> = ({
+const FullPageIframe: React.FC<InternalIframeProps> = ({
     id,
     className,
     style,
@@ -20,7 +20,7 @@ const FullPageIframe: React.FC<IframeProps> = ({
     isLoading,
     onRequestClose,
     onLoad,
-}: IframeProps) => {
+}: InternalIframeProps) => {
     if (!isOpen) return null;
 
     return (

@@ -8,9 +8,9 @@ import {
     StyledSpinner,
     PopupInnerContainer,
 } from './styled';
-import { IframeProps } from './types';
+import { InternalIframeProps } from './types';
 
-const PopupIframe: React.FC<IframeProps> = ({
+const PopupIframe: React.FC<InternalIframeProps> = ({
     id,
     className,
     style,
@@ -20,7 +20,7 @@ const PopupIframe: React.FC<IframeProps> = ({
     isLoading,
     onRequestClose,
     onLoad,
-}: IframeProps) => {
+}: InternalIframeProps) => {
     if (!isOpen) return null;
 
     return (
