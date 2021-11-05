@@ -1,22 +1,44 @@
 import React from 'react';
+import { RenderIf } from 'react-rainbow-components';
 import { Close } from '@rainbow-modules/icons';
-import { CloseButton, FullPageContainer, FullPageIframe as StyledFullPageIframe } from './styled';
-import { IframeProps } from './types';
+import {
+    CloseButton,
+    FullPageContainer,
+    FullPageIframe as StyledFullPageIframe,
+    FullPageInnerContainer,
+    StyledSpinner,
+} from './styled';
+import { InternalIframeProps } from './types';
 
-const FullPageIframe: React.FC<IframeProps> = ({
+const FullPageIframe: React.FC<InternalIframeProps> = ({
     id,
     className,
     style,
     src,
     title,
     isOpen,
+    isLoading,
     onRequestClose,
-}: IframeProps) => {
+    onLoad,
+}: InternalIframeProps) => {
     if (!isOpen) return null;
 
     return (
         <FullPageContainer id={id}>
-            <StyledFullPageIframe className={className} style={style} src={src} title={title} />
+            <FullPageInnerContainer>
+                <RenderIf isTrue={isLoading}>
+                    <StyledSpinner type="arc" variant="brand" />
+                </RenderIf>
+                <StyledFullPageIframe
+                    className={className}
+                    style={style}
+                    src={src}
+                    title={title}
+                    isLoading={isLoading}
+                    onLoad={onLoad}
+                />
+            </FullPageInnerContainer>
+
             <CloseButton
                 id="modal-close-button"
                 icon={<Close />}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { IframeProps, Variant } from './types';
 import FullPageIframe from './fullPage';
@@ -9,10 +9,18 @@ const componentMap: Record<Variant, any> = {
     popup: PopupIframe,
 };
 
-const Iframe: React.FC<IframeProps> = ({ variant, ...rest }: IframeProps) => {
+const Iframe: React.FC<IframeProps> = ({ variant, isOpen, ...rest }: IframeProps) => {
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        if (!isOpen) setIsLoading(true);
+    }, [isOpen]);
+
+    const handleOnLoad = () => setIsLoading(false);
+
     const Component = componentMap[variant ?? 'fullPage'];
     // eslint-disable-next-line react/jsx-props-no-spreading
-    return <Component {...rest} />;
+    return <Component {...rest} isOpen={isOpen} isLoading={isLoading} onLoad={handleOnLoad} />;
 };
 
 Iframe.propTypes = {
