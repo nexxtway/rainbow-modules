@@ -20,3 +20,4 @@ export function isFirestorePath(value: string): boolean;
 export function isFirestoreCollection(value: string): boolean;
 export function isFirestoreDocument(value: string): boolean;
 export function isUrl(value: string): boolean;
+export function isValidColor(value: string): boolean;

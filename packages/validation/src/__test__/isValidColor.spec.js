@@ -1,6 +1,6 @@
-import isHexRgbaOrHslaColor from '../isHexRgbaOrHslaColor';
+import isValidColor from '../isValidColor';
 
-describe('isHexRgbaOrHslaColor()', () => {
+describe('isValidColor()', () => {
     it('should return false', () => {
         [
             null,
@@ -15,7 +15,7 @@ describe('isHexRgbaOrHslaColor()', () => {
             'hsl 255 255',
             'rg(255 255)',
             'rgba(5.1e1, 1.7e2, 5.1e1, 1e2%)',
-        ].forEach((color) => expect(isHexRgbaOrHslaColor(color)).toBe(false));
+        ].forEach((color) => expect(isValidColor(color)).toBe(false));
     });
     it('should return true', () => {
         [
@@ -41,6 +41,6 @@ describe('isHexRgbaOrHslaColor()', () => {
             'hsla(270, 60%, 50%, .15)',
             'hsla(270, 60%, 50%, 15%)',
             'hsla(270 60% 50% / .15)',
-        ].forEach((color) => expect(isHexRgbaOrHslaColor(color)).toBe(true));
+        ].forEach((color) => expect(isValidColor(color)).toBe(true));
     });
 });

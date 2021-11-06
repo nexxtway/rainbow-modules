@@ -1,0 +1,52 @@
+<Meta title="Modules/Validation/isValidColor" />
+
+# Overview
+
+`isValidColor` checks if the given value is a valid color in hex, rgb(a) or hsl(a) format.
+
+```js
+isValidColor('#FF00FF');
+// returns true
+
+isValidColor('#FF0');
+// returns true
+
+isValidColor('#FF0045FF');
+// returns true
+
+isValidColor('#FF0F');
+// returns true
+
+isValidColor('rgb(240, 10, 34)');
+// returns true
+
+isValidColor('rgba(240, 10, 34, 0.1)');
+// returns true
+
+isValidColor('rgba(240 10 34 / .1)');
+// returns true
+
+isValidColor('hsl(23.0, 100%, 34%)');
+// returns true
+
+isValidColor('hsl(23.0, 100%, 34%, .1)');
+// returns true
+
+isValidColor('hsla(270 60% 50% / .15)');
+// returns true
+
+isValidColor('#FF');
+// returns false
+
+isValidColor('#FFFFF');
+// returns false
+
+isValidColor('rgb(100, 100)');
+// returns false
+
+isValidColor('rgba(100, 100, 100)');
+// returns false
+
+isValidColor('hsl(100, 100)');
+// returns false
+```

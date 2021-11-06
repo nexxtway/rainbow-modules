@@ -4,6 +4,6 @@ const colorPatterns = [
     /^(hsl)a?\((\s*?((-?([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-9][0-9]|3[0-5][0-9]|360)(deg)?)|(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-9][0-9]|3[0-9][0-9]|400)gra)|((([0-5])?\.\d+|6\.([0-9]|1[0-9]|2[0-8])|[0-6])rad)|((0?(\.\d+)|1)turn))((\s*,\s*)|(\s+)))(\s*?(0|(([0-9]|[1-9][0-9]|100)%))((\s*,\s*)|(\s+)))(\s*?(0|(([0-9]|[1-9][0-9]|100)%))\s*?\)?)(\s*?(\/?|,?)\s*?((((([0-9]|[1-9][0-9]|100)%)))|(0?(\.\d+)?)|1))?\)$/i,
 ];
 
-export default function isHexRgbaOrHslaColor(value) {
+export default function isValidColor(value) {
     return colorPatterns.some((pattern) => pattern.test(String(value).toLowerCase()));
 }
