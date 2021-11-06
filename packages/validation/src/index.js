@@ -19,3 +19,4 @@ export { default as isFirestorePath } from './isFirestorePath';
 export { default as isFirestoreCollection } from './isFirestoreCollection';
 export { default as isFirestoreDocument } from './isFirestoreDocument';
 export { default as isUrl } from './isUrl';
+export { default as isValidColor } from './isValidColor';
