@@ -10,7 +10,7 @@ const Container = styled.div`
     margin: 2rem;
 `;
 
-export const BasicTabset = () => {
+export const BasicAvatarMenu = () => {
     return (
         <Container>
             <AvatarMenu

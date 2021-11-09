@@ -1,6 +1,6 @@
 import { AvatarMenu } from '../../../packages/cypress/src/pageObjects';
 
-const URL = '/iframe.html?id=modules-cypress-stories-avatarmenu--basic-tabset&viewMode=story';
+const URL = '/iframe.html?id=modules-cypress-stories-avatarmenu--basic-avatar-menu&viewMode=story';
 
 describe('AvatarMenu page object', () => {
     beforeEach(() => {
