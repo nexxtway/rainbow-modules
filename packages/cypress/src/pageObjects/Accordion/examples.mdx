@@ -1,0 +1,26 @@
+-   ##### How to click the section header
+
+```js
+import { Accordion } from '@rainbow-modules/cypress/pageObjects';
+
+const accordion = new Accordion('#accordion-selector');
+accordion.getSection(0).click();
+```
+
+-   ##### How to check if section is active or not
+
+```js
+import { Accordion } from '@rainbow-modules/cypress/pageObjects';
+
+const accordion = new Accordion('#accordion-selector');
+accordion.getSection(0).expect('active', true); // or false
+```
+
+-   ##### How to get the section content
+
+```js
+import { Accordion } from '@rainbow-modules/cypress/pageObjects';
+
+const accordion = new Accordion('#accordion-selector');
+accordion.getSection(0).content.should('exist'); // or false
+```

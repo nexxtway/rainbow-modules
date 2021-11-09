@@ -3,7 +3,7 @@ import { RadioGroup } from '../../../packages/cypress/src/pageObjects';
 const RADIO_GROUP_URL =
     '/iframe.html?id=modules-cypress-stories-radiogroup--basic-radio-group&viewMode=story';
 
-describe('<CodeBlock />', () => {
+describe('RadioGroup page object', () => {
     beforeEach(() => {
         cy.visit(RADIO_GROUP_URL);
     });
