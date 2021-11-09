@@ -40,6 +40,7 @@ class AvatarMenu implements IAvatarMenu {
      * @param {number} index - The option index, starting at 0 for the first option
      * @returns {Option}
      */
+    // eslint-disable-next-line class-methods-use-this
     getOption(index: number): Option {
         const dropdown = new InternalDropdown('[data-id="primitive-menu_dropdown"] > ul');
         return dropdown.getOption(index);

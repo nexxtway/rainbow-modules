@@ -1,4 +1,4 @@
-import { AvatarMenu, ButtonMenu } from '../../../packages/cypress/src/pageObjects';
+import { AvatarMenu } from '../../../packages/cypress/src/pageObjects';
 
 const URL = '/iframe.html?id=modules-cypress-stories-avatarmenu--basic-tabset&viewMode=story';
 
