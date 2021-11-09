@@ -2,7 +2,7 @@ import { Tabset } from '../../../packages/cypress/src/pageObjects';
 
 const TABSET_URL = '/iframe.html?id=modules-cypress-stories-tabset--basic-tabset&viewMode=story';
 
-describe('<CodeBlock />', () => {
+describe('Tabset page object', () => {
     beforeEach(() => {
         cy.visit(TABSET_URL);
     });

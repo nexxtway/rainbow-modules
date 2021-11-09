@@ -2,7 +2,7 @@ import { Step } from '../../../packages/cypress/src/pageObjects';
 
 const STEP_URL = '/iframe.html?id=modules-content-stories-step--simple-step&viewMode=story';
 
-describe('<CodeBlock />', () => {
+describe('Step page object', () => {
     beforeEach(() => {
         cy.visit(STEP_URL);
     });
