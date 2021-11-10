@@ -1,0 +1,37 @@
+-   ##### How to click a node
+
+```js
+import { Tree } from '@rainbow-modules/cypress/pageObjects';
+
+const tree = new Tree('#tree');
+tree.getNode('0').click();
+```
+
+-   ##### How to check if node is selected
+
+```js
+import { Tree } from '@rainbow-modules/cypress/pageObjects';
+
+const tree = new Tree('#tree');
+tree.getNode('0').expect('selected', true);
+```
+
+-   ##### How to expand and collapse a node
+
+```js
+import { Tree } from '@rainbow-modules/cypress/pageObjects';
+
+const tree = new Tree('#tree');
+tree.getNode('0').expand();
+tree.getNode('0').collapse();
+```
+
+-   ##### How to check if node is expanded
+
+```js
+import { Tree } from '@rainbow-modules/cypress/pageObjects';
+
+const tree = new Tree('#tree');
+tree.getNode('0').expect('expanded', true); // should be expanded
+tree.getNode('1').expect('expanded', false); // should be collapsed
+```
