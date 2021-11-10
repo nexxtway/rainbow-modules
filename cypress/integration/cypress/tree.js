@@ -2,7 +2,7 @@ import { Tree } from '../../../packages/cypress/src/pageObjects';
 
 const URL = '/iframe.html?id=modules-cypress-stories-tree--basic-tree&viewMode=story';
 
-describe('Accordion page object', () => {
+describe('Tree page object', () => {
     beforeEach(() => {
         cy.visit(URL);
     });
