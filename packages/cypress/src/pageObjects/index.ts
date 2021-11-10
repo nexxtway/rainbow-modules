@@ -1,4 +1,5 @@
 export { default as Accordion } from './Accordion';
+export { default as AvatarMenu } from './AvatarMenu';
 export { default as Button } from './Button';
 export { default as ButtonMenu } from './ButtonMenu';
 export { default as CategoriesPicker } from './CategoriesPicker';

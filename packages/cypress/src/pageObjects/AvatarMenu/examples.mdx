@@ -1,0 +1,17 @@
+-   ##### How to click the button
+
+```js
+import { AvatarMenu } from '@rainbow-modules/cypress/pageObjects';
+
+const avatarMenu = new AvatarMenu('#avatarmenu-selector');
+avatarMenu.button.click();
+```
+
+-   ##### How to click an option
+
+```js
+import { AvatarMenu } from '@rainbow-modules/cypress/pageObjects';
+
+const avatarMenu = new AvatarMenu('#avatarmenu-selector');
+avatarMenu.getoption(0).click();
+```
