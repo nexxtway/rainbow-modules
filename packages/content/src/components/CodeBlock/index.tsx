@@ -8,6 +8,7 @@ import { CodeBlockProps } from './types';
 import { StyledContainer, StyledHeader, StyledLabel, StyledContent, StyledPre } from './styled';
 import CopyButton from './copyButton';
 import CopiedMessage from './copiedMessage';
+import useCopyToClipboardMessage from '../../hooks/useCopyToClipboardMessage';
 
 const CodeBlock: React.FC<CodeBlockProps> = ({
     className,
@@ -20,23 +21,14 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
     theme,
 }: CodeBlockProps) => {
     const originalTheme = useContext(ThemeContext);
-    const [showCopiedMessage, setShowCopiedMessage] = useState<boolean>();
-
-    const handleClick = () => {
-        if (!showCopiedMessage) {
-            setShowCopiedMessage(true);
-            setTimeout(() => {
-                setShowCopiedMessage(false);
-            }, 3000);
-        }
-    };
+    const [isMessageVisible, showMessage] = useCopyToClipboardMessage();
 
     const copyButton = (
         <CopyButton
             value={value}
             hideHeader={hideHeader}
-            showCopiedMessage={showCopiedMessage}
-            onClick={handleClick}
+            showCopiedMessage={isMessageVisible}
+            onClick={showMessage}
         />
     );
 
@@ -72,7 +64,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
                     >
                         {value}
                     </SyntaxHighlighter>
-                    <RenderIf isTrue={showCopiedMessage}>
+                    <RenderIf isTrue={isMessageVisible}>
                         <CopiedMessage />
                     </RenderIf>
                 </StyledContent>

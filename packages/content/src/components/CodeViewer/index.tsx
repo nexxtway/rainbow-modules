@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { createPortal } from 'react-dom';
-import { RenderIf, Tree } from 'react-rainbow-components';
+import { RainbowThemeContainer, RenderIf, Tree } from 'react-rainbow-components';
 import { Download as DownloadIcon } from '@rainbow-modules/icons';
 import { OnResizeParams } from '@rainbow-modules/layout/src/components/ResizableColumns/types';
 import { useIntl } from 'react-intl';
@@ -14,6 +14,7 @@ import {
     LeftColumn,
     RightColumn,
     StyledResizableColumns,
+    StyledCopiedMessage,
 } from './styled';
 import { ShowTree, HideTree, Enlarge, Decrease } from './icons';
 import SourceTree from './sourceTree';
@@ -23,6 +24,16 @@ import getIconForFolder from './helpers/getIconForFolder';
 import ActionButton from './actionButton';
 import messages from './messages';
 import defaultLanguageResolver from './helpers/getLanguageFromContentType';
+import CopyButton from '../CodeBlock/copyButton';
+import useCopyToClipboardMessage from '../../hooks/useCopyToClipboardMessage';
+
+const lightTheme = {
+    rainbow: {
+        palette: {
+            mainBackground: '#000',
+        },
+    },
+};
 
 const renderComponent = (componentJsx: React.ReactElement, isFullScreenMode: boolean) => {
     if (isFullScreenMode) {
@@ -151,8 +162,24 @@ const CodeViewer: React.FC<CodeViewerProps> = ({
             />
         </LeftColumn>
     );
+
+    const [isMessageVisible, showMessage] = useCopyToClipboardMessage();
+    const shouldRenderCopyButton = !isLoadingTree && !isLoadingContent && content;
     const rightColumn = (
         <RightColumn isLoading={isLoadingContent}>
+            <RenderIf isTrue={shouldRenderCopyButton}>
+                <RainbowThemeContainer theme={lightTheme}>
+                    <CopyButton
+                        value={content}
+                        showCopiedMessage={isMessageVisible}
+                        onClick={showMessage}
+                        hideHeader
+                    />
+                </RainbowThemeContainer>
+            </RenderIf>
+            <RenderIf isTrue={isMessageVisible}>
+                <StyledCopiedMessage />
+            </RenderIf>
             <SourceFilePreview isLoading={isLoadingContent} content={content} language={language} />
         </RightColumn>
     );

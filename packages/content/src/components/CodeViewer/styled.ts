@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Tree, Spinner } from 'react-rainbow-components';
 import { ResizableColumns } from '@rainbow-modules/layout';
+import CopiedMessage from '../CodeBlock/copiedMessage';
 
 const BLACK_RUSSIAN = '#1e2128';
 const EBONY = '#272c35';
@@ -217,4 +218,9 @@ export const SpinnerIcon = styled(Spinner)`
     position: unset;
     z-index: unset;
     transform: translate(0, 0);
+`;
+
+export const StyledCopiedMessage = styled(CopiedMessage)`
+    bottom: 30px;
+    right: 30px;
 `;
