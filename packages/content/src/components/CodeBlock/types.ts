@@ -1,5 +1,10 @@
 import React, { CSSProperties } from 'react';
 
+export interface CopiedMessageProps {
+    className?: string;
+    style?: CSSProperties;
+}
+
 export interface CopyButtonProps {
     value?: string;
     hideHeader?: boolean;

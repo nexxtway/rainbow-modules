@@ -68,4 +68,5 @@ export const StyledCopiedMessage = styled.div`
     border-radius: 14px;
     color: ${(props) => props.theme.rainbow.palette.success.dark};
     background-color: ${(props) => props.theme.rainbow.palette.background.main};
+    z-index: 10;
 `;

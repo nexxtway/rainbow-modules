@@ -14,14 +14,8 @@ const componentStyles = {
     borderRadius: 0,
     boxShadow: 'none',
     margin: 0,
-    padding: '0.5rem 0.6rem',
+    padding: '2.6rem 0.6rem 0.5rem 1.5rem',
     textShadow: 'none',
-};
-
-const lineProps = {
-    style: {
-        cursor: 'default',
-    },
 };
 
 const lineNumberStyle = {
@@ -52,7 +46,6 @@ const SourceFilePreview: React.FC<SourceFilePreviewProps> = ({
                 style={atomOneDark}
                 showLineNumbers
                 wrapLines
-                lineProps={lineProps}
                 lineNumberStyle={lineNumberStyle}
                 renderer={virtualizedRenderer()}
                 showInlineLineNumbers
