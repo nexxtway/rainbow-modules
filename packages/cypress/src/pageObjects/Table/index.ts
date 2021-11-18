@@ -8,6 +8,11 @@ interface Chainer {
      * @param loading {boolean} - Whether the table should be loading or not
      */
     (chainer: 'loading', loading: boolean): void;
+    /**
+     * Asserts the row count of the table
+     * @param count {number} - The row count the table should have
+     */
+    (chainer: 'rows', count: number): void;
 }
 
 export interface ITable {
@@ -52,6 +57,9 @@ class Table implements ITable {
                     .should('not.exist');
             }
         },
+        rows: (_: string, count: number) => {
+            cy.get(this.rootElement).find('tbody > tr').should('have.length', count);
+        },
     };
 
     /**
@@ -93,7 +101,9 @@ class Table implements ITable {
      * @method
      */
     checkAll(): void {
-        cy.get(this.rootElement).find(`thead > tr input`).check();
+        cy.get(this.rootElement)
+            .find(`thead > tr input[type="checkbox"], input[type="radio"]`)
+            .check({ force: true });
     }
 
     /**
@@ -103,7 +113,9 @@ class Table implements ITable {
      * @method
      */
     uncheckAll(): void {
-        cy.get(this.rootElement).find(`thead > tr input`).uncheck();
+        cy.get(this.rootElement)
+            .find(`thead > tr input[type="checkbox"], input[type="radio"]`)
+            .uncheck({ force: true });
     }
 
     /**
