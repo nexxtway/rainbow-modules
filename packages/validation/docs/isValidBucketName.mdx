@@ -1,0 +1,40 @@
+<Meta title="Modules/Validation/isValidBucketName" />
+
+# Overview
+
+`isValidBucketName` checks if the given value is a valid bucket name for Firebase Storage.
+
+```js
+isValidBucketName('some_bucket');
+// returns true
+
+isValidBucketName('some.bucket');
+// returns true
+
+isValidBucketName('some-bucket');
+// returns true
+
+isValidBucketName('some_bucket');
+// returns true
+
+isValidBucketName('some bucket');
+// returns false
+
+isValidBucketName('google-files');
+// returns false
+
+isValidBucketName('my_google_files');
+// returns false
+
+isValidBucketName('go000oogle-files');
+// returns false
+
+isValidBucketName('my_goOOO000ogle_files');
+// returns false
+
+isValidBucketName('goog_files');
+// returns false
+
+isValidBucketName('g000g_files');
+// returns false
+```

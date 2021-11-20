@@ -6,7 +6,7 @@ describe('getSign', () => {
         values.forEach((value) => expect(getSign(value)).toBe(-1));
     });
     it('should return 0', () => {
-        const values = [-0, 0];
+        const values = [-0, 0, null, false, undefined];
         values.forEach((value) => expect(getSign(value)).toBe(0));
     });
     it('should return 1', () => {

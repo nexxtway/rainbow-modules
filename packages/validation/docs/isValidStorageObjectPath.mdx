@@ -1,0 +1,34 @@
+<Meta title="Modules/Validation/isValidStorageObjectPath" />
+
+# Overview
+
+`isValidStorageObjectPath` checks if the given value is a valid bucket name for Firebase Storage.
+
+```js
+isValidStorageObjectPath('/path/to/file');
+// returns true
+
+isValidStorageObjectPath('path/to/{file}');
+// returns true
+
+isValidStorageObjectPath('{path}/to/file');
+// returns true
+
+isValidStorageObjectPath('path/to/file.json');
+// returns true
+
+isValidStorageObjectPath('../some');
+// returns false
+
+isValidStorageObjectPath('/some/..');
+// returns false
+
+isValidStorageObjectPath('some/../file');
+// returns false
+
+isValidStorageObjectPath('./some');
+// returns false
+
+isValidStorageObjectPath('/path/to\n/file');
+// returns false
+```

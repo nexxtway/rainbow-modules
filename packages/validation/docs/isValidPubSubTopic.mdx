@@ -1,0 +1,34 @@
+<Meta title="Modules/Validation/isValidPubSubTopic" />
+
+# Overview
+
+`isValidPubSubTopic` checks if the given value is a valid Google Pub/Sub topic.
+
+```js
+isValidPubSubTopic('my_topic');
+// returns true
+
+isValidPubSubTopic('My_Topic');
+// returns true
+
+isValidPubSubTopic('OtherTopic');
+// returns true
+
+isValidPubSubTopic('A_SIMPLE_TOPIC');
+// returns true
+
+isValidPubSubTopic('goog_event');
+// returns false
+
+isValidPubSubTopic('g00g_event');
+// returns false
+
+isValidPubSubTopic('the_google_event');
+// returns false
+
+isValidPubSubTopic('a.topic');
+// returns false
+
+isValidPubSubTopic('a topic');
+// returns false
+```
