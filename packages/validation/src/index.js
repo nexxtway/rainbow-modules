@@ -20,3 +20,6 @@ export { default as isFirestoreCollection } from './isFirestoreCollection';
 export { default as isFirestoreDocument } from './isFirestoreDocument';
 export { default as isUrl } from './isUrl';
 export { default as isValidColor } from './isValidColor';
+export { default as isValidBucketName } from './isValidBucketName';
+export { default as isValidStorageObjectPath } from './isValidStorageObjectPath';
+export { default as isValidPubSubTopic } from './isValidPubSubTopic';
