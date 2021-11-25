@@ -15,3 +15,12 @@ import { Picklist } from '@rainbow-modules/cypress/pageObjects';
 const picklist = new Picklist('#picklist-selector');
 picklist.getOption(0).click();
 ```
+
+-   ##### How to check if the Picklist is open or closed
+
+```js
+import { Picklist } from '@rainbow-modules/cypress/pageObjects';
+
+const picklist = new Picklist('#picklist-selector');
+picklist.expect('open', true); // or false to check if it is closed
+```
