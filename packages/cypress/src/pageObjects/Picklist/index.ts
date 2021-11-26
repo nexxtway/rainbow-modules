@@ -2,12 +2,24 @@
 
 import InternalDropdown from '../InternalDropdown';
 import Option from '../Option';
+import { AssertMap } from '../types';
+
+/**
+ * @interface Chainer
+ */
+interface Chainer {
+    /**
+     * Asserts if the Picklist is open
+     */
+    (chainer: 'open', open: boolean): void;
+}
 
 export interface IPicklist {
     input: Cypress.Chainable<JQuery<HTMLInputElement>>;
     getOption: (index: number) => Option;
     click: () => void;
     focus: () => void;
+    expect: Chainer;
 }
 /**
  * The Picklist page object allows to perform actions on the Picklist component
@@ -18,6 +30,21 @@ export interface IPicklist {
  */
 class Picklist implements IPicklist {
     private rootElement: string;
+
+    /**
+     * A map with all the assertions.
+     * @private
+     */
+    private assertMap: AssertMap = {
+        open: (_: string, open: boolean) => {
+            const attr = open ? 'true' : 'false';
+            cy.get(`${this.rootElement} div[role="combobox"]`).should(
+                'have.attr',
+                'aria-expanded',
+                attr,
+            );
+        },
+    };
 
     /**
      * Constructs a new instance of this page object
@@ -61,6 +88,14 @@ class Picklist implements IPicklist {
         const ariaControls = Cypress.$(`${this.rootElement} input`).attr('aria-controls');
         const dropdown = new InternalDropdown(`#${ariaControls}`);
         return dropdown.getOption(index);
+    }
+
+    /**
+     * Execute an assertion on this page object
+     * @method
+     */
+    get expect(): Chainer {
+        return (chainer: string, ...params: any[]) => this.assertMap[chainer](chainer, ...params);
     }
 }
 
