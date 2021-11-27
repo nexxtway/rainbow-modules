@@ -13,8 +13,8 @@ This function will construct the function url internally and also will attach th
 
 ```js
 const { fetch, isLoading } = useAuthFetch({
-    functionName: 'myFunctionName',
-    region: 'europe-west1',
+    functionName: 'myFunctionName', // required
+    region: 'europe-west1', // optional, defaults to 'us-central1'
 });
 
 const addRecord = async () => {
