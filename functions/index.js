@@ -1,4 +1,7 @@
+/* eslint-disable camelcase */
 const functions = require('firebase-functions');
+const express = require('express');
+const cors = require('cors');
 
 const { secret_key, customer_id } = functions.config().stripe;
 
@@ -69,3 +72,16 @@ exports.removeCard = functions.https.onCall(async (data) => {
         throw new functions.https.HttpsError('internal', error.message);
     }
 });
+
+const app = express();
+
+app.use(
+    cors({
+        origin: '*',
+    }),
+);
+
+app.get('/helloWorld', (req, res) => res.send({ message: 'Hello World!' }));
+app.post('/customHelloWorld', (req, res) => res.send({ message: `Hello World! ${req.body.name}` }));
+
+exports.expressTestFn = functions.https.onRequest(app);

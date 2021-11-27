@@ -6,6 +6,7 @@ export default {
         },
     },
 };
+export * from './useAuthFetch.story';
 export * from './useFirebaseApp.story';
 export * from './useBatch.story';
 export * from './useCollection.story';

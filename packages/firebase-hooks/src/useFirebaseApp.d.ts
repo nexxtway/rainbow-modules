@@ -1,1 +1,3 @@
-export default function (): Record<string, unknown>;
+import firebase from 'firebase';
+
+export default function (): firebase.app.App;
