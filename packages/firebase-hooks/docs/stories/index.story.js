@@ -14,5 +14,6 @@ export * from './useCollectionOnce.story';
 export * from './useCurrentUser.story';
 export * from './useDoc.story';
 export * from './useDocOnce.story';
+export * from './useHttpAuthMutation.story';
 export * from './useHttpAuthQuery.story';
 export * from './useUserClaims.story';

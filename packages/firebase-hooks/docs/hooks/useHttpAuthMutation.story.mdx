@@ -1,0 +1,28 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import * as stories from '../stories/useHttpAuthMutation.story';
+
+<Meta title="Modules/firebase-hooks/Hooks/useHttpAuthMutation" />
+
+# Overview
+
+`useHttpAuthMutation` hook uses [react-query/useMutation](https://react-query.tanstack.com/guides/mutations)
+hook behind the scene. The hook will return an object with a mutate function, error, isLoading and much more.
+To learn more check [useMutation](https://react-query.tanstack.com/reference/useMutation).
+
+### Usage.
+
+```js
+const { mutate, error, isLoading } = useHttpAuthMutation({
+    functionName: 'myFunctionName', // required
+    pathname: '/users', // required
+    region: 'europe-west1', // optional, defaults to 'us-central1'
+    method: 'POST', // optional, defaults to 'POST'
+    invalidateQueries: 'query-key', // optional, if no passed then the mutation will not invalidate any query
+});
+
+return <Button label="Mutate" onClick={() => mutate({ name: 'John Doe' })} isLoading={isLoading} />;
+```
+
+<Preview>
+    <Story name="useHttpAuthMutation">{stories.UseHttpAuthMutation()}</Story>
+</Preview>
