@@ -6,7 +6,7 @@ interface Params {
     pathname: string;
     region?: string;
     method?: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
-    invalidateQueries?: string | string[];
+    invalidateQueriesOnSuccess?: string | string[];
 }
 
 const useHttpAuthMutation = (
@@ -16,9 +16,11 @@ const useHttpAuthMutation = (
         'mutationFn'
     >,
 ): UseMutationResult<unknown, unknown, Record<string, unknown> | undefined> => {
-    const { functionName, region, pathname, method = 'POST', invalidateQueries } = params;
+    const { functionName, region, pathname, method = 'POST', invalidateQueriesOnSuccess } = params;
     const { fetch } = useAuthFetch({ functionName, region });
     const queryClient = useQueryClient();
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { onSuccess, onError, onSettled, ...configRest } = config; // exclude callback so they can't be used with useHttpAuthMutation, instead use the callbacks in the returned mutation function
     return useMutation<unknown, unknown, Record<string, unknown> | undefined>(
         (body?: Record<string, unknown>) =>
             fetch(pathname, {
@@ -26,15 +28,13 @@ const useHttpAuthMutation = (
                 body,
             }),
         {
-            onSuccess: (...args) => {
-                if (invalidateQueries) {
-                    queryClient.invalidateQueries(invalidateQueries);
+            ...configRest,
+            onSuccess: () => {
+                if (invalidateQueriesOnSuccess) {
+                    return queryClient.invalidateQueries(invalidateQueriesOnSuccess);
                 }
-                if (typeof config?.onSuccess === 'function') {
-                    config.onSuccess(...args);
-                }
+                return Promise.resolve(null);
             },
-            ...config,
         },
     );
 };

@@ -17,10 +17,23 @@ const { mutate, error, isLoading } = useHttpAuthMutation({
     pathname: '/users', // required
     region: 'europe-west1', // optional, defaults to 'us-central1'
     method: 'POST', // optional, defaults to 'POST'
-    invalidateQueries: 'query-key', // optional, if no passed then the mutation will not invalidate any query
+    invalidateQueriesOnSuccess: 'query-key' | ['query-key', 'other-key'], // optional, if no passed then the mutation will not invalidate any query
 });
 
-return <Button label="Mutate" onClick={() => mutate({ name: 'John Doe' })} isLoading={isLoading} />;
+const onMutate = () =>
+    mutate(
+        { name: 'John Doe' },
+        {
+            onSuccess: (result) => {
+                alert(JSON.stringify(result));
+            },
+            onError: (error) => {
+                // show error message
+            },
+        },
+    );
+
+return <Button label="Mutate" onClick={onMutate} isLoading={isLoading} />;
 ```
 
 <Preview>
