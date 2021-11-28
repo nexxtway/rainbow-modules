@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button } from 'react-rainbow-components';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
+import { Button } from 'react-rainbow-components';
 import app from '../../../../firebase';
 import useAuthFetch from '../../src/http/useAuthFetch';
 
