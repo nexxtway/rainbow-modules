@@ -1,0 +1,25 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import * as stories from '../stories/useHttpAuthQuery.story';
+
+<Meta title="Modules/firebase-hooks/Hooks/useHttpAuthQuery" />
+
+# Overview
+
+`useHttpAuthQuery` hook uses [react-query/useQuery](https://react-query.tanstack.com/guides/queries)
+hook behind the scene. The hook will return an object with a data, error, isLoading and much more.
+To learn more check [useQuery](https://react-query.tanstack.com/reference/useQuery).
+
+### Usage.
+
+```js
+const { data, error, isLoading } = useHttpAuthQuery({
+    functionName: 'myFunctionName', // required
+    pathname: '/users', // required
+    region: 'europe-west1', // optional, defaults to 'us-central1'
+    key: 'users', // optional, defaults to [functionName, pathname]
+});
+```
+
+<Preview>
+    <Story name="useHttpAuthQuery">{stories.UseHttpAuthQuery()}</Story>
+</Preview>
