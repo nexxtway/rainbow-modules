@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.47.0](https://github.com/nexxtway/rainbow-modules/compare/v0.46.0...v0.47.0) (2021-11-28)
+
+### Bug Fixes
+
+-   add options param to Input page object ([#481](https://github.com/nexxtway/rainbow-modules/issues/481)) ([b6e2711](https://github.com/nexxtway/rainbow-modules/commit/b6e27117f39e2cbaf860c960ef6f98778227a846))
+-   improve RadioGroup page object ([#484](https://github.com/nexxtway/rainbow-modules/issues/484)) ([3d7b856](https://github.com/nexxtway/rainbow-modules/commit/3d7b85673f4db4e5110010a88cb7c680c44d4a4d))
+-   improve Table page object ([#493](https://github.com/nexxtway/rainbow-modules/issues/493)) ([4a64014](https://github.com/nexxtway/rainbow-modules/commit/4a64014d2134e31feb849f723ef0b461967afbcc))
+
+### Features
+
+-   add `open` assertion to Picklist page object ([#495](https://github.com/nexxtway/rainbow-modules/issues/495)) ([5742a32](https://github.com/nexxtway/rainbow-modules/commit/5742a322569495bc798db43d5c45b27007a01df3))
+-   implement accordion page object ([#489](https://github.com/nexxtway/rainbow-modules/issues/489)) ([15d646a](https://github.com/nexxtway/rainbow-modules/commit/15d646ab86a73ecbed5ec6708b5ea4a40e062b09))
+-   implement AvatarMenu page object ([#490](https://github.com/nexxtway/rainbow-modules/issues/490)) ([43da7e8](https://github.com/nexxtway/rainbow-modules/commit/43da7e8e9d50c44372c901a14ed1d843f4e60f6f))
+-   implement Step page object ([#480](https://github.com/nexxtway/rainbow-modules/issues/480)) ([72b8397](https://github.com/nexxtway/rainbow-modules/commit/72b8397b000c53983c2663a75fd3118c9a2b1881))
+-   implement Tree page object ([#491](https://github.com/nexxtway/rainbow-modules/issues/491)) ([ec1ed9c](https://github.com/nexxtway/rainbow-modules/commit/ec1ed9cd7db575e5624b9eda1f735d48553e2386))
+-   improve Tabset page object ([#482](https://github.com/nexxtway/rainbow-modules/issues/482)) ([66d4011](https://github.com/nexxtway/rainbow-modules/commit/66d40115c9e13e47e09f5d2dd2f60277d7405d63))
+
 # [0.46.0](https://github.com/nexxtway/rainbow-modules/compare/v0.45.0...v0.46.0) (2021-10-25)
 
 ### Features

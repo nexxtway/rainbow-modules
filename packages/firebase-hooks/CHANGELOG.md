@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.47.0](https://github.com/nexxtway/rainbow-modules/compare/v0.46.0...v0.47.0) (2021-11-28)
+
+### Features
+
+-   implement useAuthFetch ([#496](https://github.com/nexxtway/rainbow-modules/issues/496)) ([f209cc1](https://github.com/nexxtway/rainbow-modules/commit/f209cc142c7633e9fab68d25dd4460432869e3fb))
+-   implement useHttpAuthMutation ([#501](https://github.com/nexxtway/rainbow-modules/issues/501)) ([9b9f99f](https://github.com/nexxtway/rainbow-modules/commit/9b9f99f5a32919a8852f95ffcc92728c4c98e4db))
+-   implement useHttpAuthQuery ([#499](https://github.com/nexxtway/rainbow-modules/issues/499)) ([f99a222](https://github.com/nexxtway/rainbow-modules/commit/f99a222c4d8ab84c84222bb4e2365f417cbe81b1))
+
 # [0.46.0](https://github.com/nexxtway/rainbow-modules/compare/v0.45.0...v0.46.0) (2021-10-25)
 
 **Note:** Version bump only for package @rainbow-modules/firebase-hooks

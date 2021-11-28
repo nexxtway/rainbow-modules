@@ -1,6 +1,6 @@
 {
     "name": "@rainbow-modules/cypress",
-    "version": "0.46.0",
+    "version": "0.47.0",
     "main": "pageObjects/index.js",
     "author": "Nexxtway Team",
     "license": "MIT",

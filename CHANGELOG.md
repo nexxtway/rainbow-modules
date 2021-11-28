@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.47.0](https://github.com/nexxtway/rainbow-modules/compare/v0.46.0...v0.47.0) (2021-11-28)
+
+### Bug Fixes
+
+-   add options param to Input page object ([#481](https://github.com/nexxtway/rainbow-modules/issues/481)) ([b6e2711](https://github.com/nexxtway/rainbow-modules/commit/b6e27117f39e2cbaf860c960ef6f98778227a846))
+-   improve RadioGroup page object ([#484](https://github.com/nexxtway/rainbow-modules/issues/484)) ([3d7b856](https://github.com/nexxtway/rainbow-modules/commit/3d7b85673f4db4e5110010a88cb7c680c44d4a4d))
+-   improve Table page object ([#493](https://github.com/nexxtway/rainbow-modules/issues/493)) ([4a64014](https://github.com/nexxtway/rainbow-modules/commit/4a64014d2134e31feb849f723ef0b461967afbcc))
+
+### Features
+
+-   add `open` assertion to Picklist page object ([#495](https://github.com/nexxtway/rainbow-modules/issues/495)) ([5742a32](https://github.com/nexxtway/rainbow-modules/commit/5742a322569495bc798db43d5c45b27007a01df3))
+-   add copy to clipboard button to CodeViewer ([#492](https://github.com/nexxtway/rainbow-modules/issues/492)) ([40e44da](https://github.com/nexxtway/rainbow-modules/commit/40e44dab88c50edd35552c3aa9fcb4d8c1d8f616))
+-   add isValidColor to @rainbow-modules/validation ([#488](https://github.com/nexxtway/rainbow-modules/issues/488)) ([e17e505](https://github.com/nexxtway/rainbow-modules/commit/e17e505751a94ad53fdc6d1a1d56f0e066eeca38))
+-   add spinner and animation when iframe shows ([#487](https://github.com/nexxtway/rainbow-modules/issues/487)) ([808a48d](https://github.com/nexxtway/rainbow-modules/commit/808a48dedbd1bea1903c6dd8e658eb36909ac9ce))
+-   added arrowlink and updirection icons ([#485](https://github.com/nexxtway/rainbow-modules/issues/485)) ([bd4083f](https://github.com/nexxtway/rainbow-modules/commit/bd4083fbb0af334d7a0f8bfc95097a6a96e39578))
+-   implement accordion page object ([#489](https://github.com/nexxtway/rainbow-modules/issues/489)) ([15d646a](https://github.com/nexxtway/rainbow-modules/commit/15d646ab86a73ecbed5ec6708b5ea4a40e062b09))
+-   implement AvatarMenu page object ([#490](https://github.com/nexxtway/rainbow-modules/issues/490)) ([43da7e8](https://github.com/nexxtway/rainbow-modules/commit/43da7e8e9d50c44372c901a14ed1d843f4e60f6f))
+-   implement popup variant on Iframe ([#483](https://github.com/nexxtway/rainbow-modules/issues/483)) ([54c96fa](https://github.com/nexxtway/rainbow-modules/commit/54c96fa3f3eefddf5a4e4c1f55125657dd91373c))
+-   implement Step page object ([#480](https://github.com/nexxtway/rainbow-modules/issues/480)) ([72b8397](https://github.com/nexxtway/rainbow-modules/commit/72b8397b000c53983c2663a75fd3118c9a2b1881))
+-   implement Tree page object ([#491](https://github.com/nexxtway/rainbow-modules/issues/491)) ([ec1ed9c](https://github.com/nexxtway/rainbow-modules/commit/ec1ed9cd7db575e5624b9eda1f735d48553e2386))
+-   implement useAuthFetch ([#496](https://github.com/nexxtway/rainbow-modules/issues/496)) ([f209cc1](https://github.com/nexxtway/rainbow-modules/commit/f209cc142c7633e9fab68d25dd4460432869e3fb))
+-   implement useHttpAuthMutation ([#501](https://github.com/nexxtway/rainbow-modules/issues/501)) ([9b9f99f](https://github.com/nexxtway/rainbow-modules/commit/9b9f99f5a32919a8852f95ffcc92728c4c98e4db))
+-   implement useHttpAuthQuery ([#499](https://github.com/nexxtway/rainbow-modules/issues/499)) ([f99a222](https://github.com/nexxtway/rainbow-modules/commit/f99a222c4d8ab84c84222bb4e2365f417cbe81b1))
+-   improve Tabset page object ([#482](https://github.com/nexxtway/rainbow-modules/issues/482)) ([66d4011](https://github.com/nexxtway/rainbow-modules/commit/66d40115c9e13e47e09f5d2dd2f60277d7405d63))
+
 # [0.46.0](https://github.com/nexxtway/rainbow-modules/compare/v0.45.0...v0.46.0) (2021-10-25)
 
 ### Bug Fixes

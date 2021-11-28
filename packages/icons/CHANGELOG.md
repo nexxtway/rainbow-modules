@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.47.0](https://github.com/nexxtway/rainbow-modules/compare/v0.46.0...v0.47.0) (2021-11-28)
+
+### Features
+
+-   added arrowlink and updirection icons ([#485](https://github.com/nexxtway/rainbow-modules/issues/485)) ([bd4083f](https://github.com/nexxtway/rainbow-modules/commit/bd4083fbb0af334d7a0f8bfc95097a6a96e39578))
+
 # [0.46.0](https://github.com/nexxtway/rainbow-modules/compare/v0.45.0...v0.46.0) (2021-10-25)
 
 **Note:** Version bump only for package @rainbow-modules/icons

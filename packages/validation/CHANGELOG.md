@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.47.0](https://github.com/nexxtway/rainbow-modules/compare/v0.46.0...v0.47.0) (2021-11-28)
+
+### Features
+
+-   add isValidColor to @rainbow-modules/validation ([#488](https://github.com/nexxtway/rainbow-modules/issues/488)) ([e17e505](https://github.com/nexxtway/rainbow-modules/commit/e17e505751a94ad53fdc6d1a1d56f0e066eeca38))
+
 # [0.46.0](https://github.com/nexxtway/rainbow-modules/compare/v0.45.0...v0.46.0) (2021-10-25)
 
 **Note:** Version bump only for package @rainbow-modules/validation

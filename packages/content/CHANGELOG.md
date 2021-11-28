@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.47.0](https://github.com/nexxtway/rainbow-modules/compare/v0.46.0...v0.47.0) (2021-11-28)
+
+### Features
+
+-   add copy to clipboard button to CodeViewer ([#492](https://github.com/nexxtway/rainbow-modules/issues/492)) ([40e44da](https://github.com/nexxtway/rainbow-modules/commit/40e44dab88c50edd35552c3aa9fcb4d8c1d8f616))
+-   implement Step page object ([#480](https://github.com/nexxtway/rainbow-modules/issues/480)) ([72b8397](https://github.com/nexxtway/rainbow-modules/commit/72b8397b000c53983c2663a75fd3118c9a2b1881))
+
 # [0.46.0](https://github.com/nexxtway/rainbow-modules/compare/v0.45.0...v0.46.0) (2021-10-25)
 
 **Note:** Version bump only for package @rainbow-modules/content
