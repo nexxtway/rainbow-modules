@@ -20,13 +20,13 @@ interface FetchConfig {
 
 interface ReturnValue {
     isLoading: boolean;
-    fetch: (pathname: string, config: FetchConfig) => Promise<unknown>;
+    fetchAsync: (pathname: string, config: FetchConfig) => Promise<unknown>;
     [key: string]: unknown;
 }
 
 const DEFAULT_REGION = 'us-central1';
 
-const useAuthFetch = ({ functionName, region }: Params): ReturnValue => {
+const useAuthFetch = ({ functionName, region = DEFAULT_REGION }: Params): ReturnValue => {
     const [isLoading, setLoading] = useState(false);
     const app = useFirebaseApp();
 
@@ -41,7 +41,7 @@ const useAuthFetch = ({ functionName, region }: Params): ReturnValue => {
                 headers.Authorization = `Bearer ${token}`;
             }
             const { projectId } = app.options as { projectId: string };
-            const baseUrl = `https://${region || DEFAULT_REGION}-${projectId}.cloudfunctions.net`;
+            const baseUrl = `https://${region}-${projectId}.cloudfunctions.net`;
             const url = pathJoin(baseUrl, functionName, pathname);
 
             const { body, method = 'GET', ...rest } = config;
@@ -65,7 +65,7 @@ const useAuthFetch = ({ functionName, region }: Params): ReturnValue => {
     );
 
     return {
-        fetch: fetchFn,
+        fetchAsync: fetchFn,
         isLoading,
     };
 };

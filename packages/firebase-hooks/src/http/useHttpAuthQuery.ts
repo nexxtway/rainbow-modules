@@ -14,11 +14,11 @@ const useHttpAuthQuery = (
 ): UseQueryResult => {
     const { functionName, region, pathname, key } = params;
     const queryKey = key || [functionName, pathname];
-    const { fetch } = useAuthFetch({ functionName, region });
+    const { fetchAsync } = useAuthFetch({ functionName, region });
     return useQuery(
         queryKey,
         () =>
-            fetch(pathname, {
+            fetchAsync(pathname, {
                 method: 'GET',
             }),
         config,

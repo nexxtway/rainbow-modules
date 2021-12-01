@@ -5,20 +5,20 @@ import * as stories from '../stories/useAuthFetch.story';
 
 # Overview
 
-`useAuthFetch` hook will return an object with a `fetch` async function and a `isLoading` state.
-The fetch function will use the native fetch API to make a request to a firebase https function.
+`useAuthFetch` hook will return an object with a `fetchAsync` function and a `isLoading` state.
+The fetchAsync function will use the native fetch API to make a request to a firebase https function.
 This function will construct the function url internally and also will attach the firebase user id token to make an authenticated request.
 
 ### Usage.
 
 ```js
-const { fetch, isLoading } = useAuthFetch({
+const { fetchAsync, isLoading } = useAuthFetch({
     functionName: 'myFunctionName', // required
     region: 'europe-west1', // optional, defaults to 'us-central1'
 });
 
 const addRecord = async () => {
-    const result = await fetch('/myFunctionPathName', {
+    const result = await fetchAsync('/myFunctionPathName', {
         body: { name: 'John Doe', age: 30 },
         method: 'POST',
     });
