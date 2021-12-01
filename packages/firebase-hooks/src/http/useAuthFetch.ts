@@ -1,11 +1,16 @@
 import { useState, useCallback } from 'react';
 import useFirebaseApp from '../useFirebaseApp';
 
-const separator = '/';
-const replace = new RegExp(`${separator}{1,}`, 'g');
-
 const pathJoin = (...parts: string[]) => {
-    return parts.join(separator).replace(replace, separator);
+    return parts
+        .map((part, index) => {
+            if (index === 0) {
+                return part.trim().replace(/[/]*$/g, '');
+            }
+            return part.trim().replace(/(^[/]*|[/]*$)/g, '');
+        })
+        .filter((x) => x.length)
+        .join('/');
 };
 
 interface Params {
