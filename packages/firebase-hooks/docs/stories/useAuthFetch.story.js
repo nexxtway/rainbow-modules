@@ -5,10 +5,10 @@ import app from '../../../../firebase';
 import useAuthFetch from '../../src/http/useAuthFetch';
 
 const GetExample = () => {
-    const { fetch, isLoading } = useAuthFetch({ functionName: 'expressTestFn' });
+    const { fetchAsync, isLoading } = useAuthFetch({ functionName: 'expressTestFn' });
 
     const fetchData = async () => {
-        const result = await fetch('helloWorld');
+        const result = await fetchAsync('helloWorld');
         // eslint-disable-next-line no-alert
         alert(JSON.stringify(result));
     };
@@ -25,10 +25,10 @@ export const UseAuthFetch = () => {
 };
 
 const PostExample = () => {
-    const { fetch, isLoading } = useAuthFetch({ functionName: 'expressTestFn' });
+    const { fetchAsync, isLoading } = useAuthFetch({ functionName: 'expressTestFn' });
 
     const fetchData = async () => {
-        const result = await fetch('customHelloWorld', {
+        const result = await fetchAsync('customHelloWorld', {
             method: 'POST',
             body: {
                 name: 'John Doe',
