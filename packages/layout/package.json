@@ -7,6 +7,9 @@
     "files": [
         "lib"
     ],
+    "scripts": {
+        "build": "tsc -p tsconfig.build.json"
+    },
     "dependencies": {
         "@rainbow-modules/hooks": "^0.47.3",
         "styled-components": "^4.3.2"
