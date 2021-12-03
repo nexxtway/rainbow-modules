@@ -36,6 +36,24 @@ const onMutate = () =>
 return <Button label="Mutate" onClick={onMutate} isLoading={isLoading} />;
 ```
 
+### Example with useMutationFlow
+
+```js
+// Note that here you need to use mutateAsync in order to work with the useMutationFlow
+const { mutateAsync, data, error } = useHttpAuthMutation({
+    functionName: 'myFunctionName',
+    pathname: '/users',
+    method: 'POST',
+});
+const { mutate } = useMutationFlow({
+    mutation: mutateAsync,
+});
+
+const onMutate = () => mutate({ name: 'John Doe' }, { onError: (error) => console.log(error) });
+
+return <Button label="Mutate" onClick={onMutate} />;
+```
+
 <Preview>
     <Story name="useHttpAuthMutation">{stories.UseHttpAuthMutation()}</Story>
 </Preview>
