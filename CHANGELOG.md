@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.47.3](https://github.com/nexxtway/rainbow-modules/compare/v0.47.2...v0.47.3) (2021-12-03)
+
+### Bug Fixes
+
+-   add react-query as peer dep in firebase-hooks package ([ebd404a](https://github.com/nexxtway/rainbow-modules/commit/ebd404a9981c0f0805b8cad95ff34103c8d3ea1b))
+
 ## [0.47.2](https://github.com/nexxtway/rainbow-modules/compare/v0.47.1...v0.47.2) (2021-12-03)
 
 ### Bug Fixes
