@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.47.1](https://github.com/nexxtway/rainbow-modules/compare/v0.47.0...v0.47.1) (2021-12-03)
+
+### Bug Fixes
+
+-   change exported method to fetchAsync in useAuthFetch ([#502](https://github.com/nexxtway/rainbow-modules/issues/502)) ([51ee94c](https://github.com/nexxtway/rainbow-modules/commit/51ee94c78ba93ec90efc8581e9e482692fc28722))
+-   pathJoin in useAuthFetch ([#503](https://github.com/nexxtway/rainbow-modules/issues/503)) ([b9ff13d](https://github.com/nexxtway/rainbow-modules/commit/b9ff13d7560276303da09865956d665e4912530f))
+
 # [0.47.0](https://github.com/nexxtway/rainbow-modules/compare/v0.46.0...v0.47.0) (2021-11-28)
 
 ### Features
