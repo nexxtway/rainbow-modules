@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.47.2](https://github.com/nexxtway/rainbow-modules/compare/v0.47.1...v0.47.2) (2021-12-03)
+
+### Bug Fixes
+
+-   useHttpAuthMutation to throw an error when request not success ([#504](https://github.com/nexxtway/rainbow-modules/issues/504)) ([815906e](https://github.com/nexxtway/rainbow-modules/commit/815906e0cb5df1cd365b283448accfdee5e7b53a))
+
 ## [0.47.1](https://github.com/nexxtway/rainbow-modules/compare/v0.47.0...v0.47.1) (2021-12-03)
 
 ### Bug Fixes

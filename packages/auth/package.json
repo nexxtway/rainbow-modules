@@ -1,6 +1,6 @@
 {
     "name": "@rainbow-modules/auth",
-    "version": "0.47.1",
+    "version": "0.47.2",
     "main": "lib/index.js",
     "author": "Nexxtway Team",
     "license": "MIT",
@@ -8,8 +8,8 @@
         "lib"
     ],
     "dependencies": {
-        "@rainbow-modules/app": "^0.47.1",
-        "@rainbow-modules/firebase-hooks": "^0.47.1"
+        "@rainbow-modules/app": "^0.47.2",
+        "@rainbow-modules/firebase-hooks": "^0.47.2"
     },
     "peerDependencies": {
         "react": ">=16.8.0",
