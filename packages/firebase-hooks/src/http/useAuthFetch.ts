@@ -59,7 +59,10 @@ const useAuthFetch = ({ functionName, region = DEFAULT_REGION }: Params): Return
                 });
                 const result = await response.json();
                 setLoading(false);
-                return result;
+                if (response.ok) {
+                    return result;
+                }
+                throw result;
             } catch (error) {
                 setLoading(false);
                 throw error;

@@ -81,6 +81,16 @@ app.use(
     }),
 );
 
+app.use((req, res, next) => {
+    if (Math.random() > 0.5) {
+        return res.status(403).send({
+            code: 'permission-denied',
+            message: `You do not have permissions to excecute this operation.`,
+        });
+    }
+    return next();
+});
+
 app.get('/helloWorld', (req, res) => res.send({ message: 'Hello World!' }));
 app.post('/customHelloWorld', (req, res) => res.send({ message: `Hello World! ${req.body.name}` }));
 
