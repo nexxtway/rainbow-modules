@@ -9,6 +9,7 @@ describe('isFirestoreDocumentPath', () => {
             'users/{username}',
             'users/{username}/addresses/home',
             'users/{username}/addresses/{addressId}',
+            'collection name/document id',
         ].forEach((path) => {
             expect(isFirestoreDocument(path)).toBe(true);
         });
