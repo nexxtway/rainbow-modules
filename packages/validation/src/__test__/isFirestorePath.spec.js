@@ -10,6 +10,7 @@ describe('isFirestorePath', () => {
             '/users/{username}/addresses/home',
             '/{collectionName}/{documentId}',
             '/collection name/document id',
+            '/collection.name/document.id',
             'users',
             'users/{username}',
             'users/{username}/addresses',
@@ -17,6 +18,7 @@ describe('isFirestorePath', () => {
             'users/{username}/addresses/home',
             '{collectionName}/{documentId}',
             'collection name/document id',
+            'collection.name/document.id',
         ].forEach((path) => {
             expect(isFirestorePath(path)).toBe(true);
         });
