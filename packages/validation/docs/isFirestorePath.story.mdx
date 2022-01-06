@@ -23,9 +23,24 @@ isFirestorePath('/users/{userId}/addresses/home');
 isFirestorePath('/{collectionName}/{documentId}');
 // returns true
 
+isFirestorePath('/collection name/document id');
+// returns true
+
+isFirestorePath('/collection.name/document.id');
+// returns true
+
 isFirestorePath('users/');
 // returns false
 
 isFirestorePath('users/[userId]');
+// returns false
+
+isFirestorePath('__.*__');
+// returns false
+
+isFirestorePath('.colection');
+// returns false
+
+isFirestorePath('.colection/.documentId');
 // returns false
 ```

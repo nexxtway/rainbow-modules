@@ -2,11 +2,16 @@ import isFirestoreCollection from '../isFirestoreCollection';
 
 describe('isFirestoreCollection', () => {
     it('shoud return true', () => {
-        ['/users', '/users/{username}/addresses', 'users', 'users/{username}/addresses'].forEach(
-            (path) => {
-                expect(isFirestoreCollection(path)).toBe(true);
-            },
-        );
+        [
+            '/users',
+            '/users/{username}/addresses',
+            '/collection name',
+            'users',
+            'users/{username}/addresses',
+            'collection name',
+        ].forEach((path) => {
+            expect(isFirestoreCollection(path)).toBe(true);
+        });
     });
     it('shoud return false', () => {
         [
