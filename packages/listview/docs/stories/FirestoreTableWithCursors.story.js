@@ -5,7 +5,7 @@ import { RainbowFirebaseApp } from '@rainbow-modules/app';
 import app from '../../../../firebase';
 import FirestoreTableWithCursors from '../../src/components/FirestoreTableWithCursors';
 
-export const basicFirestoreTableWithPageSize = () => {
+export const BasicFirestoreTableWithPageSize = () => {
     return (
         <RainbowFirebaseApp app={app}>
             <FirestoreTableWithCursors collection="books" pageSize={1}>
@@ -16,7 +16,7 @@ export const basicFirestoreTableWithPageSize = () => {
     );
 };
 
-export const basicFirestoreTableWithQuery = () => {
+export const BasicFirestoreTableWithQuery = () => {
     return (
         <RainbowFirebaseApp app={app}>
             <FirestoreTableWithCursors
@@ -30,7 +30,7 @@ export const basicFirestoreTableWithQuery = () => {
     );
 };
 
-export const firestoreTablePassingDownProps = () => {
+export const FirestoreTablePassingDownProps = () => {
     return (
         <RainbowFirebaseApp app={app}>
             <FirestoreTableWithCursors collection="books" showRowNumberColumn variant="listview">
@@ -45,7 +45,7 @@ const StyledSelect = styled(Select)`
     width: 200px;
 `;
 
-export const firestoreTableUsingRefresh = () => {
+export const FirestoreTableUsingRefresh = () => {
     const table = useRef();
     const [author, setAuthor] = useState('Reinier Guerra');
 

@@ -38,7 +38,6 @@ const FirestoreTableWithCursors = forwardRef((props, ref) => {
     }, []);
     const next = async () => {
         unsubscribe.current();
-        setLoading(true);
         unsubscribe.current = collectionRef
             .startAfter(pagesRefs.current[page.current].last)
             .limit(pageSize)
@@ -51,12 +50,10 @@ const FirestoreTableWithCursors = forwardRef((props, ref) => {
                     page.current += 1;
                     setData(getData(querySnapshot.docs));
                 }
-                setLoading(false);
             });
     };
     const previous = async () => {
         unsubscribe.current();
-        setLoading(true);
         unsubscribe.current = collectionRef
             .startAt(pagesRefs.current[page.current - 1].first)
             .limit(pageSize)
@@ -66,13 +63,11 @@ const FirestoreTableWithCursors = forwardRef((props, ref) => {
                     page.current -= 1;
                     setData(getData(querySnapshot.docs));
                 }
-                setLoading(false);
             });
     };
     useImperativeHandle(ref, () => ({
         refresh: () => {
             unsubscribe.current();
-            setLoading(true);
             unsubscribe.current = collectionRef.limit(pageSize).onSnapshot((querySnapshot) => {
                 if (querySnapshot.docs.length > 0) {
                     pagesRefs.current = [
@@ -84,7 +79,6 @@ const FirestoreTableWithCursors = forwardRef((props, ref) => {
                     page.current = 0;
                     setData(getData(querySnapshot.docs));
                 }
-                setLoading(false);
             });
         },
     }));
