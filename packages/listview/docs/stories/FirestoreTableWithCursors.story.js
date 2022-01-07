@@ -53,6 +53,7 @@ export const FirestoreTableUsingRefresh = () => {
         { value: 'Reinier Guerra', label: 'Reinier Guerra' },
         { value: 'Leandro Torres', label: 'Leandro Torres' },
         { value: 'Kyle Simpson', label: 'Kyle Simpson' },
+        { value: 'Tahimi Leon', label: 'Tahimi Leon' },
     ];
     useEffect(() => {
         if (table.current && author) {
