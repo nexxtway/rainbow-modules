@@ -17008,10 +17008,10 @@ react-query@^3.34.0:
     broadcast-channel "^3.4.1"
     match-sorter "^6.0.2"
 
-react-rainbow-components@1.26.0-canary.9bca286:
-  version "1.26.0-canary.9bca286"
-  resolved "https://registry.yarnpkg.com/react-rainbow-components/-/react-rainbow-components-1.26.0-canary.9bca286.tgz#6c4780818ed936eae8aa6a3bc0e70232e0a3757f"
-  integrity sha512-tbOfJ3T1yqcTxbyK1HJwHEYXdwLavdrz2L2oQy3wqm/od8WKJCMhcyYYmU7sLS3Vqwmm+b0AYfljROVjb/l9RA==
+react-rainbow-components@1.29.0-canary.59d39df:
+  version "1.29.0-canary.59d39df"
+  resolved "https://registry.yarnpkg.com/react-rainbow-components/-/react-rainbow-components-1.29.0-canary.59d39df.tgz#dbf184070cd3901546c6c14f493e20509255d4ec"
+  integrity sha512-D9puL5q3bgQKf2ott3M25fVutOhFWloz+861HgKqnCmqJH1Iy4YReTVSD6wekKqJhSmMGmQSZfdu7XT4VKLz2g==
   dependencies:
     "@rainbow-modules/hooks" "^0.12.0"
     autosize "^4.0.2"

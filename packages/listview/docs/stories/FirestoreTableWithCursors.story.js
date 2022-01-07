@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import styled from 'styled-components';
 import { Column, Select } from 'react-rainbow-components';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
 import app from '../../../../firebase';
@@ -18,8 +19,8 @@ export const basicFirestoreTableWithPageSize = () => {
 export const basicFirestoreTableWithQuery = () => {
     return (
         <RainbowFirebaseApp app={app}>
-            <FirestoreTableWithCursors 
-                collection="books" 
+            <FirestoreTableWithCursors
+                collection="books"
                 query={(ref) => ref.where('name', '==', `You don't know JS`)}
             >
                 <Column field="id" header="Id" />
@@ -32,16 +33,17 @@ export const basicFirestoreTableWithQuery = () => {
 export const firestoreTablePassingDownProps = () => {
     return (
         <RainbowFirebaseApp app={app}>
-            <FirestoreTableWithCursors
-                collection="books"
-                showRowNumberColumn
-            >
-                <Column field="id" header="Id" />
+            <FirestoreTableWithCursors collection="books" showRowNumberColumn variant="listview">
+                <Column field="id" header="Id" headerAlignment="left" cellAlignment="left" />
                 <Column field="name" header="Name" />
             </FirestoreTableWithCursors>
         </RainbowFirebaseApp>
     );
 };
+
+const StyledSelect = styled(Select)`
+    width: 200px;
+`;
 
 export const firestoreTableUsingRefresh = () => {
     const table = useRef();
@@ -56,14 +58,15 @@ export const firestoreTableUsingRefresh = () => {
         if (table.current && author) {
             table.current.refresh();
         }
-    }, [author])
+    }, [author]);
     return (
         <div>
-            <Select 
-                label="Filter by Author" 
+            <StyledSelect
+                label="Filter by Author"
+                labelAlignment="left"
                 options={options}
                 value={author}
-                onChange={(e) => setAuthor(e.target.value)} 
+                onChange={(e) => setAuthor(e.target.value)}
             />
             <RainbowFirebaseApp app={app}>
                 <FirestoreTableWithCursors
@@ -79,7 +82,7 @@ export const firestoreTableUsingRefresh = () => {
                     <Column field="author" header="Author" />
                 </FirestoreTableWithCursors>
             </RainbowFirebaseApp>
-        </div>    
+        </div>
     );
 };
 
