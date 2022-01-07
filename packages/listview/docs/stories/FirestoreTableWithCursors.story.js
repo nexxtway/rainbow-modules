@@ -86,6 +86,22 @@ export const FirestoreTableUsingRefresh = () => {
     );
 };
 
+export const FirestoreTableUsingCollectionGroup = () => {
+    return (
+        <RainbowFirebaseApp app={app}>
+            <FirestoreTableWithCursors
+                collection="authors"
+                pageSize={1}
+                isCollectionGroup
+                variant="listview"
+            >
+                <Column field="id" header="Id" headerAlignment="left" cellAlignment="left" />
+                <Column field="name" header="Name" />
+            </FirestoreTableWithCursors>
+        </RainbowFirebaseApp>
+    );
+};
+
 export default {
     title: 'Modules/Listview/Stories/FirestoreTableWithCursors',
     parameters: {
