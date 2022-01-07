@@ -8,14 +8,25 @@ import { Container, Footer } from './styled';
 import getData from './getData';
 
 const FirestoreTableWithCursors = forwardRef((props, ref) => {
-    const { children, collection, pageSize, query, ...rest } = props;
+    const {
+        children,
+        collection,
+        pageSize,
+        query,
+        style,
+        className,
+        isCollectionGroup,
+        ...rest
+    } = props;
     const app = useFirebaseApp();
     const [data, setData] = useState([]);
     const [isLoading, setLoading] = useState(false);
     const unsubscribe = useRef();
     const pagesRefs = useRef([]);
     const page = useRef();
-    const collectionRef = query(app.firestore().collection(collection));
+    const collectionRef = query(
+        app.firestore()[isCollectionGroup ? 'collectionGroup' : 'collection'](collection),
+    );
 
     useEffect(() => {
         (async () => {
@@ -35,6 +46,7 @@ const FirestoreTableWithCursors = forwardRef((props, ref) => {
         return () => {
             unsubscribe.current();
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     const next = async () => {
         unsubscribe.current();
@@ -83,7 +95,7 @@ const FirestoreTableWithCursors = forwardRef((props, ref) => {
         },
     }));
     return (
-        <Container>
+        <Container style={style} className={className}>
             <Table keyField="id" data={data} {...rest} isLoading={isLoading}>
                 {children}
             </Table>
@@ -115,13 +127,22 @@ FirestoreTableWithCursors.propTypes = {
     query: PropTypes.func,
     /** The page size used for the pagination */
     pageSize: PropTypes.number,
+    /** It will fetch the data using a collection group query */
+    isCollectionGroup: PropTypes.bool,
+    /** A CSS class for the outer element, in addition to the component's base classes. */
+    className: PropTypes.string,
+    /** An object with custom style applied for the outer element. */
+    style: PropTypes.object,
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
 };
 
 FirestoreTableWithCursors.defaultProps = {
     query: (ref) => ref,
-    children: [],
     pageSize: 20,
+    isCollectionGroup: false,
+    className: undefined,
+    style: undefined,
+    children: [],
 };
 
 FirestoreTableWithCursors.displayName = 'FirestoreTableWithCursors';
