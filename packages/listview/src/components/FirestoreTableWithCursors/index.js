@@ -31,17 +31,24 @@ const FirestoreTableWithCursors = forwardRef((props, ref) => {
     useEffect(() => {
         (async () => {
             setLoading(true);
-            unsubscribe.current = collectionRef.limit(pageSize).onSnapshot((querySnapshot) => {
-                if (querySnapshot.docs.length > 0) {
-                    pagesRefs.current.push({
-                        first: querySnapshot.docs[0],
-                        last: querySnapshot.docs[querySnapshot.docs.length - 1],
-                    });
-                    page.current = 0;
-                    setData(getData(querySnapshot.docs));
-                }
-                setLoading(false);
-            });
+            unsubscribe.current = collectionRef.limit(pageSize).onSnapshot(
+                (querySnapshot) => {
+                    if (querySnapshot.docs.length > 0) {
+                        pagesRefs.current.push({
+                            first: querySnapshot.docs[0],
+                            last: querySnapshot.docs[querySnapshot.docs.length - 1],
+                        });
+                        page.current = 0;
+                        setData(getData(querySnapshot.docs));
+                    }
+                    setLoading(false);
+                },
+                (err) => {
+                    setLoading(false);
+                    // eslint-disable-next-line no-console
+                    console.log(err);
+                },
+            );
         })();
         return () => {
             unsubscribe.current();
@@ -53,48 +60,67 @@ const FirestoreTableWithCursors = forwardRef((props, ref) => {
         unsubscribe.current = collectionRef
             .startAfter(pagesRefs.current[page.current].last)
             .limit(pageSize)
-            .onSnapshot((querySnapshot) => {
-                if (querySnapshot.docs.length > 0) {
-                    pagesRefs.current.push({
-                        first: querySnapshot.docs[0],
-                        last: querySnapshot.docs[querySnapshot.docs.length - 1],
-                    });
-                    page.current += 1;
-                    setData(getData(querySnapshot.docs));
-                }
-            });
+            .onSnapshot(
+                (querySnapshot) => {
+                    if (querySnapshot.docs.length > 0) {
+                        pagesRefs.current.push({
+                            first: querySnapshot.docs[0],
+                            last: querySnapshot.docs[querySnapshot.docs.length - 1],
+                        });
+                        page.current += 1;
+                        setData(getData(querySnapshot.docs));
+                    }
+                },
+                (err) => {
+                    // eslint-disable-next-line no-console
+                    console.log(err);
+                },
+            );
     };
     const previous = async () => {
         unsubscribe.current();
         unsubscribe.current = collectionRef
             .startAt(pagesRefs.current[page.current - 1].first)
             .limit(pageSize)
-            .onSnapshot((querySnapshot) => {
-                if (querySnapshot.docs.length > 0) {
-                    pagesRefs.current.unshift();
-                    page.current -= 1;
-                    setData(getData(querySnapshot.docs));
-                }
-            });
+            .onSnapshot(
+                (querySnapshot) => {
+                    if (querySnapshot.docs.length > 0) {
+                        pagesRefs.current.unshift();
+                        page.current -= 1;
+                        setData(getData(querySnapshot.docs));
+                    }
+                },
+                (err) => {
+                    // eslint-disable-next-line no-console
+                    console.log(err);
+                },
+            );
     };
     useImperativeHandle(ref, () => ({
         refresh: () => {
             unsubscribe.current();
-            unsubscribe.current = collectionRef.limit(pageSize).onSnapshot((querySnapshot) => {
-                setData([]);
-                setLoading(true);
-                if (querySnapshot.docs.length > 0) {
-                    pagesRefs.current = [
-                        {
-                            first: querySnapshot.docs[0],
-                            last: querySnapshot.docs[querySnapshot.docs.length - 1],
-                        },
-                    ];
-                    page.current = 0;
-                    setData(getData(querySnapshot.docs));
-                }
-                setLoading(false);
-            });
+            setData([]);
+            pagesRefs.current = [];
+            unsubscribe.current = collectionRef.limit(pageSize).onSnapshot(
+                (querySnapshot) => {
+                    if (querySnapshot.docs.length > 0) {
+                        pagesRefs.current = [
+                            {
+                                first: querySnapshot.docs[0],
+                                last: querySnapshot.docs[querySnapshot.docs.length - 1],
+                            },
+                        ];
+                        page.current = 0;
+                        setData(getData(querySnapshot.docs));
+                    }
+                    setLoading(false);
+                },
+                (err) => {
+                    setLoading(false);
+                    // eslint-disable-next-line no-console
+                    console.log(err);
+                },
+            );
         },
     }));
     return (
