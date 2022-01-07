@@ -81,6 +81,8 @@ const FirestoreTableWithCursors = forwardRef((props, ref) => {
         refresh: () => {
             unsubscribe.current();
             unsubscribe.current = collectionRef.limit(pageSize).onSnapshot((querySnapshot) => {
+                setData([]);
+                setLoading(true);
                 if (querySnapshot.docs.length > 0) {
                     pagesRefs.current = [
                         {
@@ -91,6 +93,7 @@ const FirestoreTableWithCursors = forwardRef((props, ref) => {
                     page.current = 0;
                     setData(getData(querySnapshot.docs));
                 }
+                setLoading(false);
             });
         },
     }));
