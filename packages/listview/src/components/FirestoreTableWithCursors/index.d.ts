@@ -5,6 +5,8 @@ export interface FirestoreTableWithCursorsProps {
     collection: string;
     /** Query function for firestore. */
     query?: () => void;
+    /** It will fetch the data using a collection group query */
+    isCollectionGroup: boolean;
     children?: ReactNode;
 }
 

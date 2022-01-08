@@ -53,6 +53,7 @@ export const FirestoreTableUsingRefresh = () => {
         { value: 'Reinier Guerra', label: 'Reinier Guerra' },
         { value: 'Leandro Torres', label: 'Leandro Torres' },
         { value: 'Kyle Simpson', label: 'Kyle Simpson' },
+        { value: 'Tahimi Leon', label: 'Tahimi Leon' },
     ];
     useEffect(() => {
         if (table.current && author) {
@@ -83,6 +84,22 @@ export const FirestoreTableUsingRefresh = () => {
                 </FirestoreTableWithCursors>
             </RainbowFirebaseApp>
         </div>
+    );
+};
+
+export const FirestoreTableUsingCollectionGroup = () => {
+    return (
+        <RainbowFirebaseApp app={app}>
+            <FirestoreTableWithCursors
+                collection="authors"
+                pageSize={1}
+                isCollectionGroup
+                variant="listview"
+            >
+                <Column field="id" header="Id" headerAlignment="left" cellAlignment="left" />
+                <Column field="name" header="Name" />
+            </FirestoreTableWithCursors>
+        </RainbowFirebaseApp>
     );
 };
 
