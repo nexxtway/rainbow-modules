@@ -1,10 +1,9 @@
 import React, { useEffect, useState, useRef, useImperativeHandle, forwardRef } from 'react';
 import { ArrowRight, ArrowLeft } from '@rainbow-modules/icons';
 import ButtonIcon from 'react-rainbow-components/components/ButtonIcon';
-import Table from 'react-rainbow-components/components/Table';
 import { useFirebaseApp } from '@rainbow-modules/firebase-hooks';
 import PropTypes from 'prop-types';
-import { Container, Footer } from './styled';
+import { Container, Footer, StyledTable } from './styled';
 import getData from './getData';
 
 const FirestoreTableWithCursors = forwardRef((props, ref) => {
@@ -125,9 +124,9 @@ const FirestoreTableWithCursors = forwardRef((props, ref) => {
     }));
     return (
         <Container style={style} className={className}>
-            <Table keyField="id" data={data} {...rest} isLoading={isLoading}>
+            <StyledTable keyField="id" data={data} {...rest} isLoading={isLoading}>
                 {children}
-            </Table>
+            </StyledTable>
             <Footer>
                 <ButtonIcon
                     title="previous"
