@@ -17,5 +17,5 @@ export const Footer = styled.footer`
     display: flex;
     justify-content: flex-end;
     width: 100%;
-    padding: 12px;
+    padding: 12px 12px 0 12px;
 `;
