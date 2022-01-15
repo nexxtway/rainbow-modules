@@ -31,3 +31,74 @@ const [data, isLoading] = useCollection({
     query: (query) => query.where('author', '==', 'Axel Rauschmayer'),
 });
 ```
+
+### How to refresh data
+
+It is possible to refresh the data whenever a value changes. To do so you can use the `track` prop. This prop receives an array of values and
+refetches the data with the new parameters.
+
+The following example demonstrates how to achieve this:
+
+```js
+const FilterBooks = () => {
+    const [filterAutor, setFilterAutor] = useState();
+    const [sortedBy, setSortedBy] = useState();
+    const [sortDirection, setSortDirection] = useState();
+
+    const query = (ref) => {
+        let q = ref;
+        if (filterAutor) {
+            q = q.where('author', '==', filterAutor);
+        }
+        if (sortedBy) {
+            q = q.orderBy(sortedBy, sortDirection);
+        }
+        return q;
+    };
+
+    const [data, isLoading] = useCollection({
+        path: '/books',
+        query,
+        track: [filterAutor, sortedBy, sortDirection],
+    });
+
+    const handleChange = (event) => {
+        setFilterAutor(event.target.value);
+    };
+
+    const handleSort = (event, field, nextSortDirection) => {
+        const normalizedField = field.split('.')[1];
+        setSortedBy(normalizedField);
+        setSortDirection(nextSortDirection);
+    };
+
+    return (
+        <>
+            <Select
+                label="Filter by author"
+                value={filterAutor}
+                onChange={handleChange}
+                options={options}
+                labelAlignment="left"
+                style={selectStyles}
+            />
+            <Table
+                keyField="id"
+                data={data}
+                isLoading={isLoading}
+                variant="listview"
+                onSort={handleSort}
+                sortDirection={sortDirection}
+                sortedBy={`data.${sortedBy}`}
+            >
+                <Column field="data.name" header="Name" sortable />
+                <Column field="data.author" header="Author" sortable />
+            </Table>
+        </>
+    );
+};
+```
+
+<Preview>
+    <Story id="modules-firebase-hooks-stories--subcribe-to-collection-track" />
+</Preview>
