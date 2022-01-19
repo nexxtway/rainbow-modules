@@ -2,8 +2,9 @@ import styled from 'styled-components';
 import { ArrowIconProps, ContentProps, IsExpandedProps } from './types';
 
 export const StyledSection = styled.div<IsExpandedProps>`
-    min-height: 1.5rem;
+    min-height: 2rem;
     position: relative;
+    box-sizing: content-box;
 
     &:not(:first-child) {
         border-top: solid 1px ${(props) => props.theme.rainbow.palette.border.divider};
@@ -16,7 +17,7 @@ export const StyledSection = styled.div<IsExpandedProps>`
     ${(props) =>
         !props.isExpanded &&
         `
-        max-height: 1.5rem;        
+        max-height: 2rem;        
     `}
 
     ${(props) =>
@@ -34,7 +35,7 @@ export const StyledSectionHeader = styled.button`
     border: 1px solid transparent;
     background: transparent;
     width: 100%;
-    height: 1.5rem;
+    height: 2rem;
     font-size: 0.875rem;
     line-height: 1.75rem;
     font-weight: bold;
@@ -49,7 +50,7 @@ export const StyledSectionHeader = styled.button`
 
 export const StyledSectionContent = styled.div<ContentProps>`
     position: absolute;
-    top: 1.5rem;
+    top: 2rem;
     bottom: 0;
     left: 0;
     right: 0;

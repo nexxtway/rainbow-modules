@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Application, Tree, Card, Accordion, AccordionSection } from 'react-rainbow-components';
+import {
+    Application,
+    Tree,
+    Card,
+    Accordion,
+    AccordionSection,
+    ButtonIcon,
+} from 'react-rainbow-components';
+import { Plus } from '@rainbow-modules/icons';
 import StackedAccordion from '../../src/components/StackedAccordion';
 import StackedAccordionSection from '../../src/components/StackedAccordionSection';
 
@@ -33,6 +41,20 @@ const Container = styled.div`
     flex-direction: row;
 `;
 
+const SectionHeader = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+`;
+
+const SectionWithButton = () => (
+    <SectionHeader>
+        Other
+        <ButtonIcon icon={<Plus />} variant="neutral" size="small" />
+    </SectionHeader>
+);
+
 export const BasicStackedAccordion = () => {
     const [data, setData] = useState(treeData);
     const [selectedNode, setSelectedNode] = useState();
@@ -63,7 +85,7 @@ export const BasicStackedAccordion = () => {
                             onNodeExpand={expandNode}
                         />
                     </StackedAccordionSection>
-                    <StackedAccordionSection label="Other" name="section-3">
+                    <StackedAccordionSection label={<SectionWithButton />} name="section-3">
                         <Tree
                             data={data}
                             selectedNode={selectedNode}
