@@ -50,7 +50,7 @@ const SectionHeader = styled.div`
 
 const SectionWithButton = () => (
     <SectionHeader>
-        Other
+        Others
         <ButtonIcon icon={<Plus />} variant="neutral" size="small" />
     </SectionHeader>
 );
