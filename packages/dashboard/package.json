@@ -1,6 +1,6 @@
 {
     "name": "@rainbow-modules/dashboard",
-    "version": "0.47.3",
+    "version": "0.48.0",
     "main": "lib/index.js",
     "author": "Nexxtway Team",
     "license": "MIT",
@@ -8,8 +8,8 @@
         "lib"
     ],
     "dependencies": {
-        "@rainbow-modules/hooks": "^0.47.3",
-        "@rainbow-modules/icons": "^0.47.0",
+        "@rainbow-modules/hooks": "^0.48.0",
+        "@rainbow-modules/icons": "^0.48.0",
         "chartjs-plugin-datalabels": "^0.7.0",
         "styled-components": "^4.3.2"
     },

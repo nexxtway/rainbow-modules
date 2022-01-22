@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.48.0](https://github.com/nexxtway/rainbow-modules/compare/v0.47.3...v0.48.0) (2022-01-22)
+
+### Bug Fixes
+
+-   add missing declaration files on modules using TS ([#505](https://github.com/nexxtway/rainbow-modules/issues/505)) ([278f83d](https://github.com/nexxtway/rainbow-modules/commit/278f83d690ec0adb5df9c88e9d17046a052a2a6d))
+
 ## [0.47.3](https://github.com/nexxtway/rainbow-modules/compare/v0.47.2...v0.47.3) (2021-12-03)
 
 **Note:** Version bump only for package @rainbow-modules/search

@@ -1,6 +1,6 @@
 {
     "name": "@rainbow-modules/misc",
-    "version": "0.47.0",
+    "version": "0.48.0",
     "main": "lib/index.js",
     "author": "Nexxtway Team",
     "license": "MIT",

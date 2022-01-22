@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.48.0](https://github.com/nexxtway/rainbow-modules/compare/v0.47.3...v0.48.0) (2022-01-22)
+
+### Bug Fixes
+
+-   add missing declaration files on modules using TS ([#505](https://github.com/nexxtway/rainbow-modules/issues/505)) ([278f83d](https://github.com/nexxtway/rainbow-modules/commit/278f83d690ec0adb5df9c88e9d17046a052a2a6d))
+-   expose table with cursors ([#510](https://github.com/nexxtway/rainbow-modules/issues/510)) ([8bfcd69](https://github.com/nexxtway/rainbow-modules/commit/8bfcd69573be1c0ad863c7484eb878f1befc7624))
+-   set empty refresh ([#512](https://github.com/nexxtway/rainbow-modules/issues/512)) ([f2614a6](https://github.com/nexxtway/rainbow-modules/commit/f2614a62b2e0ebb7602505685838f81edb9e6a0d))
+-   table container styles ([#514](https://github.com/nexxtway/rainbow-modules/issues/514)) ([36d58ee](https://github.com/nexxtway/rainbow-modules/commit/36d58ee02f03219497b25aa869dad70b986364d8))
+
+### Features
+
+-   allow to query collection groups ([#511](https://github.com/nexxtway/rainbow-modules/issues/511)) ([9940bea](https://github.com/nexxtway/rainbow-modules/commit/9940bea30d97e1beca1494640cd59e50b191d7e8))
+-   table with cursors first commit ([#507](https://github.com/nexxtway/rainbow-modules/issues/507)) ([2b59ed6](https://github.com/nexxtway/rainbow-modules/commit/2b59ed62ab527c634cb5f0b61615334d1e12baf2))
+
 ## [0.47.3](https://github.com/nexxtway/rainbow-modules/compare/v0.47.2...v0.47.3) (2021-12-03)
 
 **Note:** Version bump only for package @rainbow-modules/listview
