@@ -59,6 +59,7 @@ import {
     UsersFilled,
     Users,
     User,
+    UserFilled,
     More,
     CopyToClipboard,
     FacebookCircle,
@@ -127,9 +128,27 @@ import {
     Memory,
     UpDirection,
     ArrowLink,
+    Campaign,
+    CampaignFilled,
+    Wireless,
 } from '../../../src';
 
 export default [
+    {
+        name: 'wireless',
+        category: 'standard',
+        icon: Wireless,
+    },
+    {
+        name: 'campaign',
+        category: 'standard',
+        icon: Campaign,
+    },
+    {
+        name: 'campaignFilled',
+        category: 'standard',
+        icon: CampaignFilled,
+    },
     {
         name: 'upDirection',
         category: 'standard',
@@ -274,6 +293,11 @@ export default [
         name: 'user',
         category: 'standard',
         icon: User,
+    },
+    {
+        name: 'userFilled',
+        category: 'standard',
+        icon: UserFilled,
     },
     {
         name: 'users',
