@@ -62,6 +62,7 @@ export { default as Roles } from './components/roles';
 export { default as UsersFilled } from './components/usersFilled';
 export { default as Users } from './components/users';
 export { default as User } from './components/user';
+export { default as UserFilled } from './components/userFilled';
 export { default as More } from './components/more';
 export { default as CopyToClipboard } from './components/copyToClipboard';
 export { default as FacebookCircle } from './components/facebookCircle';
@@ -120,6 +121,9 @@ export { default as Number } from './components/number';
 export { default as Memory } from './components/memory';
 export { default as UpDirection } from './components/upDirection';
 export { default as ArrowLink } from './components/arrowLink';
+export { default as Campaign } from './components/campaign';
+export { default as CampaignFilled } from './components/campaingFilled';
+export { default as Wireless } from './components/wireless';
 
 // File icons
 export { default as JavascriptFile } from './components/javascriptFile';
