@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import ColumnHeaderFilterText from '../../src/components/ColumnHeaderFilterText';
+import * as stories from '../stories/ColumnHeaderFilterText.story.js';
+
+<Meta title="Modules/Listview/Components/ColumnHeaderFilterText" component={ColumnHeaderFilterText} />
+
+# Overview
+
+`ColumnHeaderFilterText` is a component that allows you to perform different actions in groups. For example, the action of removing a group of rows in a table.
+
+### This is a basic example with the colors and status by default.
+
+<Preview>
+    <Story name="ColumnHeaderFilterText">{stories.BasicColumnHeaderFilterText()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={ColumnHeaderFilterText} />
