@@ -61,10 +61,25 @@ function ColumnHeaderFilterText(props) {
 }
 
 ColumnHeaderFilterText.propTypes = {
+    /**
+     * A filter to initialize the component
+     */
     defaultFilters: PropTypes.arrayOf(PropTypes.string),
+    /**
+     * Action triggered when a column is filtered. Receive a string array with the words to filter.
+     */
     onFilter: PropTypes.func,
+    /**
+     * Action triggered when a column is sorted. Receives the event object and sortDirection.
+     */
     onSort: PropTypes.func,
+    /**
+     * Specifies the sorting direction.
+     */
     sortDirection: PropTypes.string,
+    /**
+     * Specifies whether it can be sorted.
+     */
     sortable: PropTypes.bool,
     /**
      * The header of the column. It could be just a `String` with text or a component with a desired content.
