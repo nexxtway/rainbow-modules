@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyledSortArrowIcon } from './styled';
+import StyledSortArrowIcon from './styled';
 
-export default function SortArrowIcon({ direction, headerAlignment }) {
+function SortArrowIcon({ direction, headerAlignment }) {
     const arrowAscendent = direction === 'asc';
 
     return (
@@ -49,3 +49,5 @@ SortArrowIcon.defaultProps = {
     direction: 'asc',
     headerAlignment: undefined,
 };
+
+export default SortArrowIcon;

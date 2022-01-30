@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Filter } from '@rainbow-modules/icons';
 import { RenderIf } from 'react-rainbow-components';
+import SortArrowIcon from '../SortArrowIcon';
 import { StyledContainer, StyledButtonIcon, StyledContent, StyledHeaderContainer } from './styled';
-import SortArrowIcon from './sortArrowIcon';
-import { getNodeText } from './helpers';
+import { getNodeText } from '../helpers';
 
 function HeaderFilter(props) {
     const {
@@ -34,13 +34,15 @@ function HeaderFilter(props) {
                     <SortArrowIcon direction={sortDirection} headerAlignment={headerAlignment} />
                 </RenderIf>
             </StyledHeaderContainer>
-            <StyledButtonIcon
-                ref={buttonRef}
-                icon={<Icon />}
-                onClick={onOpen}
-                isOpen={isOpen}
-                hasFilter={hasFilter}
-            />
+            <div>
+                <StyledButtonIcon
+                    ref={buttonRef}
+                    icon={<Icon />}
+                    onClick={onOpen}
+                    isOpen={isOpen}
+                    hasFilter={hasFilter}
+                />
+            </div>
         </StyledContainer>
     );
 }

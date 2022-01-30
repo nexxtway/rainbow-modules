@@ -1,16 +1,9 @@
-/* eslint-disable react/jsx-curly-newline */
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { ButtonIcon, RenderIf } from 'react-rainbow-components';
-import { TrashFilled } from '@rainbow-modules/icons';
-import { useUniqueIdentifier } from '@rainbow-modules/hooks';
-import { Form, Field } from 'react-final-form';
-import arrayMutators from 'final-form-arrays';
-import { FieldArray } from 'react-final-form-arrays';
-import HeaderFilter from './headerFilter';
+import HeaderFilter from './HeaderFilter';
 import FilterOverlay from './FilterOverlay';
-import { StyledContentField, StyledOr, StyledIconPlus, StyledButton, StyledInput } from './styled';
-import { formatFilters, getNodeText, reverseFilters } from './helpers';
+import FilterText from './FilterText';
+import { getNodeText } from './helpers';
 
 function ColumnHeaderFilterText(props) {
     const {
@@ -24,18 +17,17 @@ function ColumnHeaderFilterText(props) {
     } = props;
 
     const triggerRef = useRef();
-    const formId = useUniqueIdentifier('headear-filter-form');
-    const [values, setValues] = useState(formatFilters(defaultFilters));
     const [isOpen, setIsOpen] = useState(false);
+    const [filters, setFilters] = useState(defaultFilters);
     const [hasFilter, setHasFilter] = useState(defaultFilters.length > 0);
     const headerText = getNodeText(header);
 
-    const handelSubmit = (newValue) => {
-        const newFilter = reverseFilters(newValue);
-        setValues(newValue);
-        onFilter(newFilter);
+    const handleFilter = (newFilters) => {
+        setFilters(newFilters);
+        const filtered = newFilters.filter((value) => !!value && value.trim() !== '');
+        setHasFilter(filtered.length > 0);
+        onFilter(filtered);
         setIsOpen(false);
-        setHasFilter(newFilter.length > 0);
     };
 
     return (
@@ -55,55 +47,13 @@ function ColumnHeaderFilterText(props) {
                 triggerElementRef={() => triggerRef.current.buttonRef}
                 isOpen={isOpen}
                 onRequestClose={() => setIsOpen(false)}
-                header={header}
-                formId={formId}
+                headerText={headerText}
             >
-                <Form
-                    onSubmit={handelSubmit}
-                    mutators={{ ...arrayMutators }}
-                    initialValues={values}
-                    render={({
-                        handleSubmit,
-                        form: {
-                            mutators: { push },
-                        },
-                    }) => {
-                        return (
-                            <form id={formId} onSubmit={handleSubmit}>
-                                <FieldArray name="texts">
-                                    {({ fields }) =>
-                                        fields.map((name, index) => (
-                                            <>
-                                                <RenderIf isTrue={index > 0}>
-                                                    <StyledOr>Or</StyledOr>
-                                                </RenderIf>
-                                                <StyledContentField key={name}>
-                                                    <Field
-                                                        name={`${name}.value`}
-                                                        component={StyledInput}
-                                                        placeholder={`Find ${headerText}`}
-                                                    />
-                                                    <RenderIf isTrue={fields.length > 1}>
-                                                        <ButtonIcon
-                                                            icon={<TrashFilled />}
-                                                            onClick={() => fields.remove(index)}
-                                                        />
-                                                    </RenderIf>
-                                                </StyledContentField>
-                                            </>
-                                        ))
-                                    }
-                                </FieldArray>
-                                <StyledButton
-                                    variant="base"
-                                    onClick={() => push('texts', undefined)}
-                                >
-                                    <StyledIconPlus />
-                                    Add Value
-                                </StyledButton>
-                            </form>
-                        );
-                    }}
+                <FilterText
+                    onFilter={handleFilter}
+                    defaultFilters={filters}
+                    headerText={headerText}
+                    onRequestClose={() => setIsOpen(false)}
                 />
             </FilterOverlay>
         </>

@@ -1,31 +1,13 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useOutsideClick } from '@rainbow-modules/hooks';
-import { Button } from 'react-rainbow-components';
 import InternalOverlay from 'react-rainbow-components/components/InternalOverlay';
 import manageTab from 'react-rainbow-components/libs/manageTab';
-import {
-    StyledContainer,
-    StyledHeader,
-    StyledTitle,
-    StyledTitleName,
-    StyledContent,
-    StyledFooter,
-} from './styled';
-import { getNodeText, positionResolver } from '../helpers';
+import { StyledContainer, StyledHeader, StyledTitle, StyledTitleName } from './styled';
+import { positionResolver } from '../helpers';
 
 function FilterOverlay(props) {
-    const {
-        formId,
-        triggerElementRef,
-        isOpen,
-        onOpened,
-        onRequestClose,
-        submitButtonLabel,
-        cancelButtonLabel,
-        header,
-        children,
-    } = props;
+    const { triggerElementRef, isOpen, onOpened, onRequestClose, headerText, children } = props;
     const containerRef = useRef();
     const hasFocus = useRef(false);
 
@@ -90,31 +72,11 @@ function FilterOverlay(props) {
                         <StyledHeader>
                             <StyledTitle>
                                 Filter by &quot;
-                                <StyledTitleName>{getNodeText(header)}</StyledTitleName>
+                                <StyledTitleName>{headerText}</StyledTitleName>
                                 <span>&quot;</span>
                             </StyledTitle>
                         </StyledHeader>
-                        <StyledContent>{children}</StyledContent>
-                        <StyledFooter>
-                            <Button
-                                className="rainbow-m-right_small"
-                                label="Cancel"
-                                size="small"
-                                variant="neutral"
-                                onClick={onRequestClose}
-                            >
-                                {cancelButtonLabel}
-                            </Button>
-                            <Button
-                                label="Save"
-                                size="small"
-                                variant="brand"
-                                type="submit"
-                                form={formId}
-                            >
-                                {submitButtonLabel}
-                            </Button>
-                        </StyledFooter>
+                        {children}
                     </StyledContainer>
                 );
             }}
@@ -123,7 +85,6 @@ function FilterOverlay(props) {
 }
 
 FilterOverlay.propTypes = {
-    formId: PropTypes.string.isRequired,
     triggerElementRef: PropTypes.oneOfType([
         PropTypes.func,
         PropTypes.shape({ current: PropTypes.instanceOf(HTMLElement).isRequired }),
@@ -131,9 +92,7 @@ FilterOverlay.propTypes = {
     isOpen: PropTypes.bool,
     onOpened: PropTypes.func,
     onRequestClose: PropTypes.func,
-    header: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
-    submitButtonLabel: PropTypes.string,
-    cancelButtonLabel: PropTypes.string,
+    headerText: PropTypes.string,
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
 };
 
@@ -142,9 +101,7 @@ FilterOverlay.defaultProps = {
     isOpen: false,
     onOpened: undefined,
     onRequestClose: undefined,
-    header: undefined,
-    submitButtonLabel: 'Save',
-    cancelButtonLabel: 'Cancel',
+    headerText: undefined,
     children: [],
 };
 
