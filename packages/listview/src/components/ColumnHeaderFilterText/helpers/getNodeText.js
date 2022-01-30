@@ -2,7 +2,7 @@ export default function getNodeText(node) {
     if (['string', 'number'].includes(typeof node)) {
         return node;
     }
-    if (node instanceof Array) {
+    if (Array.isArray(node)) {
         return node.map(getNodeText).join('');
     }
     if (typeof node === 'object' && node && node.props) {
