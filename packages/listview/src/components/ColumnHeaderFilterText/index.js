@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import HeaderFilter from './HeaderFilter';
 import FilterOverlay from './FilterOverlay';
 import FilterText from './FilterText';
-import { getNodeText } from './helpers';
+import { clearFilters, getNodeText } from './helpers';
 
 function ColumnHeaderFilterText(props) {
     const {
@@ -24,7 +24,7 @@ function ColumnHeaderFilterText(props) {
 
     const handleFilter = (newFilters) => {
         setFilters(newFilters);
-        const filtered = newFilters.filter((value) => !!value && value.trim() !== '');
+        const filtered = clearFilters(newFilters);
         setHasFilter(filtered.length > 0);
         onFilter(filtered);
         setIsOpen(false);

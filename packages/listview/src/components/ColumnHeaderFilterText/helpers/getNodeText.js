@@ -5,7 +5,7 @@ export default function getNodeText(node) {
     if (node instanceof Array) {
         return node.map(getNodeText).join('');
     }
-    if (typeof node === 'object' && node) {
+    if (typeof node === 'object' && node && node.props) {
         return getNodeText(node.props.children);
     }
 

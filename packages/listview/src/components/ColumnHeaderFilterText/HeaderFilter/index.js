@@ -9,7 +9,6 @@ import { getNodeText } from '../helpers';
 function HeaderFilter(props) {
     const {
         buttonRef,
-        isOpen,
         onOpen,
         hasFilter,
         header,
@@ -17,17 +16,23 @@ function HeaderFilter(props) {
         sortDirection,
         sortable,
         headerAlignment,
-        icon: Icon,
+        icon,
     } = props;
 
     const title = getNodeText(header);
+
+    const handleSort = (event) => {
+        if (sortable) {
+            onSort(event, sortDirection);
+        }
+    };
 
     return (
         <StyledContainer className="rainbow-table_header-container">
             <StyledHeaderContainer
                 role="presentation"
                 headerAlignment={headerAlignment}
-                onClick={onSort}
+                onClick={handleSort}
             >
                 <StyledContent title={title}>{header}</StyledContent>
                 <RenderIf isTrue={sortable}>
@@ -37,9 +42,8 @@ function HeaderFilter(props) {
             <div>
                 <StyledButtonIcon
                     ref={buttonRef}
-                    icon={<Icon />}
+                    icon={icon}
                     onClick={onOpen}
-                    isOpen={isOpen}
                     hasFilter={hasFilter}
                 />
             </div>
@@ -52,7 +56,6 @@ HeaderFilter.propTypes = {
         PropTypes.func,
         PropTypes.shape({ current: PropTypes.instanceOf(HTMLElement).isRequired }),
     ]),
-    isOpen: PropTypes.bool,
     onOpen: PropTypes.func,
     hasFilter: PropTypes.bool,
     onSort: PropTypes.func,
@@ -65,7 +68,6 @@ HeaderFilter.propTypes = {
 
 HeaderFilter.defaultProps = {
     buttonRef: undefined,
-    isOpen: false,
     onOpen: () => {},
     hasFilter: false,
     onSort: () => {},
@@ -73,7 +75,7 @@ HeaderFilter.defaultProps = {
     sortable: false,
     header: undefined,
     headerAlignment: undefined,
-    icon: Filter,
+    icon: <Filter />,
 };
 
 export default HeaderFilter;
