@@ -48,10 +48,11 @@ const ToolBar = () => {
 
     const handleDatePickerChange = (value: Date | Date[]) => {
         const dates = value as Date[];
-        const formatedDate = formatDates(dates);
         setDateValue(dates);
+        if (dates.length < 2) return;
+        const formatedDate = formatDates(dates);
         handleFilterChange('dateRange', { name: 'custom', label: formatedDate });
-        if (dates.length > 1) setIsDatePickerOpen(false);
+        setIsDatePickerOpen(false);
     };
 
     const shouldHideMark = Object.keys(filters.labels || {}).every((key) => key === '');
