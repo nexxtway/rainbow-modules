@@ -6,6 +6,7 @@ const context = React.createContext<ContextType>({
     filters: {
         labels: {},
     },
+    labels: [],
     updateFilters: () => {},
 });
 
