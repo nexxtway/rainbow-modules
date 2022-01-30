@@ -10,3 +10,4 @@ export { default as DraggableList } from './components/DraggableList';
 export { default as filterByFields } from './helpers/filterByFields';
 export { default as MarkdownColumn } from './components/MarkdownColumn';
 export { default as VirtualizedTable, useTableDataSource } from './components/VirtualizedTable';
+export { default as DownloadModal } from './components/DownloadModal';
