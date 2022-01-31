@@ -4,7 +4,7 @@ import { Filter } from '@rainbow-modules/icons';
 import { RenderIf } from 'react-rainbow-components';
 import SortArrowIcon from '../SortArrowIcon';
 import { StyledContainer, StyledButtonIcon, StyledContent, StyledHeaderContainer } from './styled';
-import { getNodeText } from '../helpers';
+import { getHeaderText } from '../helpers';
 
 function HeaderFilter(props) {
     const {
@@ -19,7 +19,7 @@ function HeaderFilter(props) {
         icon,
     } = props;
 
-    const title = getNodeText(header);
+    const title = getHeaderText(header);
 
     const handleSort = (event) => {
         if (sortable) {

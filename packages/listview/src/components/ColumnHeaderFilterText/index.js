@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import HeaderFilter from './HeaderFilter';
 import FilterOverlay from './FilterOverlay';
 import FilterText from './FilterText';
-import { clearFilters, getNodeText } from './helpers';
+import { clearFilters, getHeaderText } from './helpers';
 
 function ColumnHeaderFilterText(props) {
     const {
@@ -20,7 +20,7 @@ function ColumnHeaderFilterText(props) {
     const [isOpen, setIsOpen] = useState(false);
     const [filters, setFilters] = useState(defaultFilters);
     const [hasFilter, setHasFilter] = useState(defaultFilters.length > 0);
-    const headerText = getNodeText(header);
+    const headerText = getHeaderText(header);
 
     const handleFilter = (newFilters) => {
         setFilters(newFilters);
