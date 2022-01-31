@@ -1,4 +1,4 @@
-// eslint-disable-next-line import/prefer-default-export
+export { default as AuditLogs } from './components/AuditLogs';
 export { default as FirestoreTable } from './components/FirestoreTable';
 export { default as FirestoreTableWithCursors } from './components/FirestoreTableWithCursors';
 export { default as ColoredStatusColumn } from './components/ColoredStatusColumn';

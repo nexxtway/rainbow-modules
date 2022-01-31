@@ -1,0 +1,33 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import AuditLogs from '../../src/components/AuditLogs';
+import * as stories from '../stories/AuditLogs.story.js';
+
+<Meta title="Modules/Listview/Components/AuditLogs" component={AuditLogs} />
+
+# Overview
+
+`AuditLogs` is a component to show logs stored in a Firestore collection. It comes with several filter like
+severity and date filter. It offers the possibility to download the logs in CSV format.
+
+The stored logs should comply with the following schema:
+
+```json
+{
+    "severity": "debug" | "info" | "warning" | "error",
+    "date": Timestamp,
+    "textPayload": "Text description of the log",
+    "labels": {
+        "labelName": "Label value"
+    }
+}
+```
+
+### This is an example of the AuditLogs component
+
+<Preview>
+    <Story name="AuditLogs">{stories.BasicAuditLogs()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={AuditLogs} />
