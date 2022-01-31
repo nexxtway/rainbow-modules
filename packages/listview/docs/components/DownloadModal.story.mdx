@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import DownloadModal from '../../src/components/DownloadModal';
+import * as stories from '../stories/DownloadModal.story.js';
+
+<Meta title="Modules/Listview/Components/DownloadModal" component={DownloadModal} />
+
+# Overview
+
+`DownloadModal` is a component to help you with the implementation of the download a file functionality in format JSON or CSV.
+
+### This is a basic example where you can download mock data.
+
+<Preview>
+    <Story name="DownloadModal">{stories.DefaultDownloadModal()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={DownloadModal} />
