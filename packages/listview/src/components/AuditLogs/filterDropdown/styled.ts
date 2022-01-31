@@ -4,6 +4,7 @@ import styled from 'styled-components';
 export const StyledContainer = styled.div`
     background-color: ${(props) => props.theme.rainbow.palette.background.main};
     padding: 1rem;
+    border-radius: 0.875rem;
     box-shadow: ${(props) => props.theme.rainbow.shadows.shadow_4};
 `;
 
