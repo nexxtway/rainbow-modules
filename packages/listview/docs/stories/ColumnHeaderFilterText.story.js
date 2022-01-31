@@ -35,6 +35,27 @@ const CreatedAt = ({ value }) =>
 const Status = ({ value }) => <StyledStatus>{value}</StyledStatus>;
 
 export const BasicColumnHeaderFilterText = () => {
+    return (
+        <Application>
+            <Container>
+                <Table data={dataTable} keyField="id" variant="listview">
+                    <Column header="Id" field="id" />
+                    <Column
+                        header="Name"
+                        field="name"
+                        sortable
+                        headerComponent={ColumnHeaderFilterText}
+                    />
+                    <Column header="Company" field="company" sortable />
+                    <Column header="Status" field="status" component={Status} />
+                    <Column header="Created At" field="createdAt" component={CreatedAt} />
+                </Table>
+            </Container>
+        </Application>
+    );
+};
+
+export const HandleColumnHeaderFilterText = () => {
     const [filters, setFilters] = useState([]);
     const [sortedBy, setSortedBy] = useState();
     const [sortDirection, setSortDirection] = useState();
