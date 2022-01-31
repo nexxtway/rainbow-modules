@@ -24,7 +24,7 @@ const LabelFilter = ({
     const inputRef = useRef<HTMLInputElement>();
 
     const handleNameChange = ({ name }: PicklistValue) => {
-        if (!name || typeof name !== 'string') return;
+        if (!name || typeof name !== 'string' || name === nameInProps) return;
         const { labels: filterLabels = {} } = filters;
         const newLabels = { ...filterLabels };
         if (Object.keys(filterLabels).includes(name)) {
@@ -77,7 +77,7 @@ const LabelFilter = ({
     };
 
     const picklistValue = {
-        value: nameInProps,
+        name: nameInProps,
         label: nameInProps,
     };
 
