@@ -44,7 +44,6 @@ const AuditLogs = ({ collectionPath, defaultFilter, labels = [] }: AuditLogsProp
     const [data, isLoading] = useCollection({
         path: collectionPath,
         query,
-        flat: true,
         track: [filters],
     });
 
@@ -60,16 +59,18 @@ const AuditLogs = ({ collectionPath, defaultFilter, labels = [] }: AuditLogsProp
 
     const tableData = isLoading
         ? []
-        : (data as Array<any>).filter((item) => {
-              const { labels: itemLabels } = item;
-              const itemLabelKeys = Object.keys(itemLabels);
-              const { labels: filterLabels = {} } = filters;
-              return Object.keys(filterLabels).every((key) => {
-                  if (!key) return true;
-                  if (!itemLabelKeys.includes(key)) return false;
-                  return filterLabels[key].includes(itemLabels[key]);
-              });
-          });
+        : (data as Array<any>)
+              .filter(({ data: item }) => {
+                  const { labels: itemLabels } = item;
+                  const itemLabelKeys = Object.keys(itemLabels);
+                  const { labels: filterLabels = {} } = filters;
+                  return Object.keys(filterLabels).every((key) => {
+                      if (!key) return true;
+                      if (!itemLabelKeys.includes(key)) return false;
+                      return filterLabels[key].includes(itemLabels[key]);
+                  });
+              })
+              .map((item) => item.data);
 
     return (
         <StyledContainer>

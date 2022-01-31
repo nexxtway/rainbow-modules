@@ -7,6 +7,7 @@ import {
     StyledSummaryButton,
     StyledSummaryContainer,
 } from './styled';
+import { getFormattedCode } from './helpers';
 
 type LabelsProps = { labels: Record<string, string> };
 
@@ -35,7 +36,7 @@ const Summary = (props: any): JSX.Element => {
             <StyledCellText>{value}</StyledCellText>
             <RenderIf isTrue={isExpanded}>
                 <StyledCodeBlock
-                    value={JSON.stringify(row, undefined, 2)}
+                    value={getFormattedCode(row)}
                     language="json"
                     theme="dark"
                     hideHeader
