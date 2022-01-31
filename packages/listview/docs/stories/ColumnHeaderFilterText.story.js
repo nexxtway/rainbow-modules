@@ -40,12 +40,7 @@ export const BasicColumnHeaderFilterText = () => {
             <Container>
                 <Table data={dataTable} keyField="id" variant="listview">
                     <Column header="Id" field="id" />
-                    <Column
-                        header="Name"
-                        field="name"
-                        sortable
-                        headerComponent={ColumnHeaderFilterText}
-                    />
+                    <Column header="Name" field="name" headerComponent={ColumnHeaderFilterText} />
                     <Column header="Company" field="company" sortable />
                     <Column header="Status" field="status" component={Status} />
                     <Column header="Created At" field="createdAt" component={CreatedAt} />
@@ -105,9 +100,8 @@ export const HandleColumnHeaderFilterText = () => {
                         header="Name"
                         field="name"
                         sortable
-                        headerComponent={(props) => (
-                            <ColumnHeaderFilterText onFilter={setFilters} {...props} />
-                        )}
+                        headerComponent={ColumnHeaderFilterText}
+                        onFilter={setFilters}
                     />
                     <Column header="Company" field="company" sortable />
                     <Column header="Status" field="status" component={Status} />
