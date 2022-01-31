@@ -1,4 +1,4 @@
-// eslint-disable-next-line import/prefer-default-export
+export { default as AuditLogs } from './components/AuditLogs';
 export { default as FirestoreTable } from './components/FirestoreTable';
 export { default as FirestoreTableWithCursors } from './components/FirestoreTableWithCursors';
 export { default as ColoredStatusColumn } from './components/ColoredStatusColumn';
@@ -10,3 +10,4 @@ export { default as DraggableList } from './components/DraggableList';
 export { default as filterByFields } from './helpers/filterByFields';
 export { default as MarkdownColumn } from './components/MarkdownColumn';
 export { default as VirtualizedTable, useTableDataSource } from './components/VirtualizedTable';
+export { default as DownloadModal } from './components/DownloadModal';
