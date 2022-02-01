@@ -55,3 +55,9 @@ export interface PicklistValue {
     icon?: ReactNode;
     value?: any;
 }
+
+export interface ClientFilterTableProps {
+    filters: Filters;
+    collection: string;
+    query?: (ref: Record<string, unknown>) => void;
+}
