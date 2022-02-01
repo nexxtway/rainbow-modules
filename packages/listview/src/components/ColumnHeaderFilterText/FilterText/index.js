@@ -22,8 +22,7 @@ function FilterText(props) {
     };
 
     const remove = (index) => {
-        const verga = [...filters].filter((s, sidx) => index !== sidx);
-        setFilters(verga);
+        setFilters([...filters].filter((s, idx) => index !== idx));
     };
 
     const handleChange = (event, index) => {
