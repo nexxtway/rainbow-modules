@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import HeaderFilter from '../ColumnHeaderFilterText/HeaderFilter';
 import FilterOverlay from '../ColumnHeaderFilterText/FilterOverlay';
 import FilterMultiselect from './FilterMultiselect';
-import { clearFilters, getHeaderText } from '../ColumnHeaderFilterText/helpers';
+import { getHeaderText } from '../ColumnHeaderFilterText/helpers';
 import serializeFilters from './helpers/serializeFilters';
 
 function ColumnHeaderFilterMultiselect(props) {
@@ -63,11 +63,14 @@ function ColumnHeaderFilterMultiselect(props) {
 }
 
 ColumnHeaderFilterMultiselect.propTypes = {
+    /**
+     * The options to choose in the multiselect
+     */
     options: PropTypes.arrayOf(PropTypes.object),
     /**
      * A filter to initialize the component
      */
-    defaultFilters: PropTypes.arrayOf(PropTypes.string),
+    defaultFilters: PropTypes.arrayOf(PropTypes.objectOf()),
     /**
      * Action triggered when a column is filtered. Receive a string array with the words to filter.
      */

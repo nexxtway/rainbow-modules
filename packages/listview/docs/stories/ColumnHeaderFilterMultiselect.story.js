@@ -34,6 +34,13 @@ const CreatedAt = ({ value }) =>
 
 const Status = ({ value }) => <StyledStatus>{value}</StyledStatus>;
 
+const options = [
+    { name: 'Nexxtway', label: 'Nexxtway', value: 'Nexxtway' },
+    { name: 'Google', label: 'Google', value: 'Google' },
+    { name: 'Oracle', label: 'Oracle', value: 'Oracle' },
+    { name: 'nexxtway', label: 'nexxtway', value: 'nexxtway' },
+];
+
 export const BasicColumnHeaderFilterMultiselect = () => {
     return (
         <Application>
@@ -44,8 +51,8 @@ export const BasicColumnHeaderFilterMultiselect = () => {
                     <Column
                         header="Company"
                         field="company"
+                        options={options}
                         headerComponent={ColumnHeaderFilterMultiselect}
-                        sortable
                     />
                     <Column header="Status" field="status" component={Status} />
                     <Column header="Created At" field="createdAt" component={CreatedAt} />
@@ -85,13 +92,6 @@ export const HandleColumnHeaderFilterMultiselect = () => {
         setSortedBy(field);
         setSortDirection(nextSortDirection);
     };
-
-    const options = [
-        { name: 'Nexxtway', label: 'Nexxtway', value: 'Nexxtway' },
-        { name: 'Google', label: 'Google', value: 'Google' },
-        { name: 'Oracle', label: 'Oracle', value: 'Oracle' },
-        { name: 'nexxtway', label: 'nexxtway', value: 'nexxtway' },
-    ];
 
     return (
         <Application>

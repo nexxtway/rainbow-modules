@@ -13,12 +13,8 @@ function Footer(props) {
                 size="small"
                 variant="neutral"
                 onClick={onRequestClose}
-            >
-                Cancel
-            </Button>
-            <Button label="Save" size="small" variant="brand" type="submit">
-                Save
-            </Button>
+            />
+            <Button label="Save" size="small" variant="brand" type="submit" />
         </StyledFooter>
     );
 }

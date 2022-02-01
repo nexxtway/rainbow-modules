@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { RenderIf, ButtonIcon, Button } from 'react-rainbow-components';
+import { RenderIf, ButtonIcon } from 'react-rainbow-components';
 import { TrashFilled } from '@rainbow-modules/icons';
 import {
     StyledContentField,
     StyledOr,
     StyledInput,
     StyledButton,
-    StyledFooter,
     StyledIconPlus,
     StyledContent,
 } from './styled';
 import formatFilters from './helpers/formatFilters';
+import Footer from '../Footer';
 
 function FilterText(props) {
     const { onFilter, defaultFilters, headerText, onRequestClose } = props;
@@ -57,20 +57,7 @@ function FilterText(props) {
                     Add Value
                 </StyledButton>
             </StyledContent>
-            <StyledFooter>
-                <Button
-                    className="rainbow-m-right_small"
-                    label="Cancel"
-                    size="small"
-                    variant="neutral"
-                    onClick={onRequestClose}
-                >
-                    Cancel
-                </Button>
-                <Button label="Save" size="small" variant="brand" type="submit">
-                    Save
-                </Button>
-            </StyledFooter>
+            <Footer onRequestClose={onRequestClose} />
         </form>
     );
 }
