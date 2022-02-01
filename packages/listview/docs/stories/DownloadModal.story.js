@@ -8,25 +8,26 @@ import app from '../../../../firebase';
 export const DefaultDownloadModal = () => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const handleDownload = (max, format) => {
+    const handleDownload = ({ max, format }) => {
         return new Promise((resolve) => {
             const data = [
                 {
                     name: 'Item 1',
                     color: { R: 0, G: 255, B: 0 },
                     size: 'X-Large',
+                    max,
                     format,
                 },
-                { name: 'Item 2', color: 'Red', size: 'X-Medium', format },
-                { name: 'Item 3', color: 'Blue', size: 'X-Small', format },
-                { name: 'Item 4', color: 'Orange', size: 'S-Medium', format },
-                { name: 'Item 5', color: 'Yellow', size: 'S-Small', format },
-                { name: 'Item 6', color: 'Cyan', size: 'S-Large', format },
-                { name: 'Item 7', color: 'Magenta', size: 'M-Small', format },
-                { name: 'Item 8', color: 'Violet', size: 'M-Large', format },
-                { name: 'Item 9', color: 'Brown', size: 'M-Medium', format },
-                { name: 'Item 10', color: 'Green', size: 'XX-Large', format },
-            ].slice(0, max);
+                { name: 'Item 2', color: 'Red', size: 'X-Medium', max, format },
+                { name: 'Item 3', color: 'Blue', size: 'X-Small', max, format },
+                { name: 'Item 4', color: 'Orange', size: 'S-Medium', max, format },
+                { name: 'Item 5', color: 'Yellow', size: 'S-Small', max, format },
+                { name: 'Item 6', color: 'Cyan', size: 'S-Large', max, format },
+                { name: 'Item 7', color: 'Magenta', size: 'M-Small', max, format },
+                { name: 'Item 8', color: 'Violet', size: 'M-Large', max, format },
+                { name: 'Item 9', color: 'Brown', size: 'M-Medium', max, format },
+                { name: 'Item 10', color: 'Green', size: 'XX-Large', max, format },
+            ];
 
             setTimeout(() => {
                 resolve(data);
