@@ -1,10 +1,22 @@
 import { ReactNode, MouseEvent } from 'react';
 
+export interface FilterMultiSelectOption {
+    name?: string | number;
+    label?: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    value?: any;
+    icon?: ReactNode;
+}
+
 export interface ColumnHeaderFilterTextProps {
+    /**
+     * The options to choose in the multiselect
+     */
+    options?: FilterMultiSelectOption[];
     /**
      * A filter to initialize the component
      */
-    defaultFilters?: string[];
+    defaultFilters?: FilterMultiSelectOption[];
     /**
      * Action triggered when a column is filtered. Receive a string array with the words to filter.
      */

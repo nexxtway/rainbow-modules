@@ -28,7 +28,7 @@ function FilterOverlay(props) {
     };
 
     const handleKeyPress = (event) => {
-        if (isOpen && event.key === 'Escape' && onRequestClose) {
+        if (isOpen && event.key === 'Escape' && hasFocus.current && onRequestClose) {
             onRequestClose();
         }
         if (event.key === 'Tab' && containerRef.current !== undefined) {

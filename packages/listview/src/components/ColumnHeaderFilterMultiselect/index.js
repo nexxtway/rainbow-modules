@@ -70,7 +70,7 @@ ColumnHeaderFilterMultiselect.propTypes = {
     /**
      * A filter to initialize the component
      */
-    defaultFilters: PropTypes.arrayOf(PropTypes.objectOf()),
+    defaultFilters: PropTypes.arrayOf(PropTypes.object),
     /**
      * Action triggered when a column is filtered. Receive a string array with the words to filter.
      */
