@@ -3,10 +3,10 @@ import { Column } from 'react-rainbow-components';
 import FirestoreTableWithCursors, {
     FirestoreTableWithCursorsProps,
     FirestoreTableWithCursorsRef,
-} from '../../FirestoreTableWithCursors';
-import FirestoreDate from '../firestoreDate';
-import Severity from '../severity';
-import Summary from '../summary';
+} from '../FirestoreTableWithCursors';
+import FirestoreDate from './firestoreDate';
+import Severity from './severity';
+import Summary from './summary';
 
 type Props = Omit<FirestoreTableWithCursorsProps, 'isCollectionGroup'>;
 

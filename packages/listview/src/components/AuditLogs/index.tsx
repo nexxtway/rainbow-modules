@@ -5,8 +5,7 @@ import { StyledContainer } from './styled';
 import AuditLogsHeader from './header';
 import { Provider } from './context';
 import getDatesFromFilter from './helpers/getDatesFromFilter';
-import { isComplexQuery } from './helpers';
-import { FirestoreFilterTable, ClientFilterTable } from './tables';
+import FirestoreFilterTable from './firestoreFilterTable';
 import { FirestoreTableWithCursorsRef } from '../FirestoreTableWithCursors';
 
 const defaultFilters: Filters = {
@@ -23,8 +22,6 @@ const defaultFilters: Filters = {
 const AuditLogs = ({ collectionPath, defaultFilter, labels = [] }: AuditLogsProps): JSX.Element => {
     const [filters, setFilters] = useState<Filters>(defaultFilter || defaultFilters);
     const firestoreTableRef = useRef<FirestoreTableWithCursorsRef>(null);
-    const complexQuery = isComplexQuery(filters);
-    console.log(complexQuery);
 
     const query = (ref: any) => {
         const { severity, dateRange } = filters;
@@ -39,18 +36,13 @@ const AuditLogs = ({ collectionPath, defaultFilter, labels = [] }: AuditLogsProp
                 q = q.where('date', '>=', dates[0]).where('date', '<=', dates[1]);
             }
         }
-        if (!complexQuery) {
-            const { labels: filterLabels = {} } = filters;
-            Object.keys(filterLabels).forEach((key) => {
-                if (!key) return;
-                filterLabels[key].forEach((value) => {
-                    q = q.where(`labels.${key}`, '==', value);
-                });
+        const { labels: filterLabels = {} } = filters;
+        Object.keys(filterLabels).forEach((key) => {
+            if (!key) return;
+            filterLabels[key].forEach((value) => {
+                q = q.where(`labels.${key}`, '==', value);
             });
-        }
-        if (complexQuery) {
-            q = q.limit(50);
-        }
+        });
         return q.orderBy('date', 'desc');
     };
 
@@ -67,18 +59,16 @@ const AuditLogs = ({ collectionPath, defaultFilter, labels = [] }: AuditLogsProp
         updateFilters,
     };
 
-    const tableComponent = complexQuery ? (
-        <ClientFilterTable query={query} filters={filters} collection={collectionPath} />
-    ) : (
-        <FirestoreFilterTable collection={collectionPath} query={query} ref={firestoreTableRef} />
-    );
-
     return (
         <StyledContainer>
             <Provider value={contextValue}>
                 <AuditLogsHeader />
             </Provider>
-            {tableComponent}
+            <FirestoreFilterTable
+                collection={collectionPath}
+                query={query}
+                ref={firestoreTableRef}
+            />
         </StyledContainer>
     );
 };

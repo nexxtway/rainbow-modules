@@ -6,13 +6,21 @@ import { LabelFilter as LabelFilterType, PicklistValue } from '../types';
 import context from '../context';
 import getLabelFilters from './helpers/getLabelFilters';
 
-const FilterOptions = ({ labels = [] }: { labels: string[] }) => (
-    <>
-        {labels.map((label) => (
-            <Option name={label} label={label} />
-        ))}
-    </>
-);
+const FilterOptions = ({ labels = [] }: { labels: string[] }) => {
+    const {
+        filters: { labels: filterLabels = {} },
+    } = useContext(context);
+    const activeLabels = Object.keys(filterLabels);
+    return (
+        <>
+            {labels
+                .filter((label) => !activeLabels.includes(label))
+                .map((label) => (
+                    <Option name={label} label={label} />
+                ))}
+        </>
+    );
+};
 
 const LabelFilter = ({
     name: nameInProps,
