@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef, useImperativeHandle, forwardRef } from 'react';
 import { ArrowRight, ArrowLeft } from '@rainbow-modules/icons';
+import { RenderIf } from 'react-rainbow-components';
 import ButtonIcon from 'react-rainbow-components/components/ButtonIcon';
 import { useFirebaseApp } from '@rainbow-modules/firebase-hooks';
 import PropTypes from 'prop-types';
@@ -122,28 +123,33 @@ const FirestoreTableWithCursors = forwardRef((props, ref) => {
             );
         },
     }));
+
+    const isNotEmpty = data && data.length > 0;
+
     return (
         <Container style={style} className={className}>
             <StyledTable keyField="id" data={data} {...rest} isLoading={isLoading}>
                 {children}
             </StyledTable>
-            <Footer>
-                <ButtonIcon
-                    title="previous"
-                    icon={<ArrowLeft />}
-                    onClick={previous}
-                    disabled={isLoading || !page.current}
-                    variant="border-filled"
-                    className="rainbow-m-horizontal_small"
-                />
-                <ButtonIcon
-                    title="next"
-                    icon={<ArrowRight />}
-                    onClick={next}
-                    disabled={isLoading}
-                    variant="border-filled"
-                />
-            </Footer>
+            <RenderIf isTrue={isNotEmpty}>
+                <Footer>
+                    <ButtonIcon
+                        title="previous"
+                        icon={<ArrowLeft />}
+                        onClick={previous}
+                        disabled={isLoading || !page.current}
+                        variant="border-filled"
+                        className="rainbow-m-horizontal_small"
+                    />
+                    <ButtonIcon
+                        title="next"
+                        icon={<ArrowRight />}
+                        onClick={next}
+                        disabled={isLoading}
+                        variant="border-filled"
+                    />
+                </Footer>
+            </RenderIf>
         </Container>
     );
 });
