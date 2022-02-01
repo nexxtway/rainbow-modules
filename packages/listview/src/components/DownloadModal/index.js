@@ -1,31 +1,13 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Modal, Button, ButtonGroupPicker, ButtonOption } from 'react-rainbow-components';
-import downloadFile from './helpers/downloadFile';
+import { Modal, ButtonGroupPicker, ButtonOption } from 'react-rainbow-components';
+import Actions from './actions';
+import resolveValueBetweenRange from './helpers/resolveValueBetweenRange';
 import { Title, Description, Card, SubTitle, StyledInput } from './styled';
-
-// eslint-disable-next-line react/prop-types
-const Actions = ({ onRequestClose, onDownload, max, format, fileName }) => {
-    const handleDownloadClick = async () => {
-        const data = await onDownload(max, format);
-        downloadFile(data, format, fileName);
-    };
-
-    return (
-        <div className="rainbow-flex rainbow-justify_end">
-            <Button
-                className="rainbow-m-right_large"
-                label="Cancel"
-                variant="neutral"
-                onClick={onRequestClose}
-            />
-            <Button label="Download" variant="brand" onClick={handleDownloadClick} />
-        </div>
-    );
-};
 
 const DownloadModal = (props) => {
     const {
+        id,
         maxEntries,
         onDownload,
         isOpen,
@@ -40,11 +22,13 @@ const DownloadModal = (props) => {
     const [maximumEntries, setMaximumEntries] = useState(maxEntries);
 
     const handleMaximumEntriesChange = (event) => {
-        setMaximumEntries(event.target.value);
+        const finalValue = resolveValueBetweenRange(event.target.value, maxEntries);
+        setMaximumEntries(finalValue);
     };
 
     return (
         <Modal
+            id={id}
             className={className}
             style={style}
             isOpen={isOpen}
@@ -67,6 +51,8 @@ const DownloadModal = (props) => {
                     type="number"
                     value={maximumEntries}
                     onChange={handleMaximumEntriesChange}
+                    max={maxEntries}
+                    min={1}
                 />
             </Card>
             <Card>
@@ -81,6 +67,8 @@ const DownloadModal = (props) => {
 };
 
 DownloadModal.propTypes = {
+    /** An id for the outer element. */
+    id: PropTypes.string,
     /** The title at the top of the DownloadModal component. */
     title: PropTypes.string,
     /** The description in the DownloadModal component. */
@@ -105,13 +93,14 @@ DownloadModal.propTypes = {
 };
 
 DownloadModal.defaultProps = {
+    id: undefined,
     title: 'Download',
     description:
-        'The entries matching will be downloaded. If you need over 10,000 entries consider exporting.',
+        'Entries matching the number specified in “Maximum entries” will be downloaded. If you need more than 10,000 entries, consider exporting.',
     className: undefined,
     style: undefined,
     fileName: 'data',
-    maxEntries: '500',
+    maxEntries: 500,
     isOpen: false,
     onRequestClose: () => {},
     onDownload: async () => {},
