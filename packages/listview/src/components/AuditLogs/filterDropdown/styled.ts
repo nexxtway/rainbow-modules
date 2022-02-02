@@ -23,6 +23,7 @@ export const StyledLabel = styled.span`
 
 export const StyledPicklist = styled(Picklist)`
     margin: 0.4rem;
+    width: 200px;
 `;
 
 export const StyledInput = styled(Input)`
