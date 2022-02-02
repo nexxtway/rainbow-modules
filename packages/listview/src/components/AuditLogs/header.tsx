@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable react/jsx-one-expression-per-line */
 import React, { useContext, useRef, useState } from 'react';
 import { Download } from '@rainbow-modules/icons';
 import { DatePickerModal, Option } from 'react-rainbow-components';
@@ -28,7 +27,8 @@ const ToolBar = () => {
     const { severity, dateRange } = filters;
 
     const filterButtonRef = useRef<ButtonHandle>();
-    const dropdownRef = useRef<HTMLDivElement>(null);
+
+    const closeLabelFilters = () => setIsFilterOpen(false);
 
     const toggleLabelFilters = () => setIsFilterOpen(!isFilterOpen);
 
@@ -60,7 +60,12 @@ const ToolBar = () => {
     return (
         <>
             <SeveritySelect severity={severity} handleFilterChange={handleFilterChange} />
-            <StyledFilterPicklist name="dateRange" onChange={handleDateChange} value={dateRange}>
+            <StyledFilterPicklist
+                name="dateRange"
+                onChange={handleDateChange}
+                onClick={closeLabelFilters}
+                value={dateRange}
+            >
                 <Option name="all" label="All Dates" />
                 <Option name="today" label="Today" />
                 <Option name="this-week" label="This Week" />
@@ -78,7 +83,7 @@ const ToolBar = () => {
                 isVisible={isFilterOpen}
                 triggerElementRef={filterButtonRef.current?.htmlElementRef}
             >
-                <FilterDropdown ref={dropdownRef} />
+                <FilterDropdown close={closeLabelFilters} />
             </InternalOverlay>
             <DatePickerModal
                 isOpen={isDatePickerOpen}

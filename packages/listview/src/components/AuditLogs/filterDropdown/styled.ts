@@ -1,4 +1,4 @@
-import { Input, Picklist } from 'react-rainbow-components';
+import { Button, Input, Picklist } from 'react-rainbow-components';
 import styled from 'styled-components';
 
 export const StyledContainer = styled.div`
@@ -27,4 +27,20 @@ export const StyledPicklist = styled(Picklist)`
 
 export const StyledInput = styled(Input)`
     margin: 0.4rem;
+`;
+
+export const StyledButtonsContainer = styled.div`
+    display: flex;
+    flex-direction-row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 1rem;
+`;
+
+export const StyledAddButton = styled(Button)`
+    margin-right: auto;
+`;
+
+export const StyledButton = styled(Button)`
+    margin: 0 0 0 1rem;
 `;

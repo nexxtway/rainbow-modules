@@ -15,7 +15,7 @@ const defaultFilters: Filters = {
         label: 'All Dates',
     },
     labels: {
-        '': [''],
+        '': '',
     },
 };
 
@@ -39,9 +39,7 @@ const AuditLogs = ({ collectionPath, defaultFilter, labels = [] }: AuditLogsProp
         const { labels: filterLabels = {} } = filters;
         Object.keys(filterLabels).forEach((key) => {
             if (!key) return;
-            filterLabels[key].forEach((value) => {
-                q = q.where(`labels.${key}`, '==', value);
-            });
+            q = q.where(`labels.${key}`, '==', filterLabels[key]);
         });
         return q.orderBy('date', 'desc');
     };

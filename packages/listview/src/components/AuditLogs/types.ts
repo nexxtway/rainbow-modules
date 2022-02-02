@@ -3,10 +3,14 @@ import { ReactNode, RefObject } from 'react';
 
 export type Severity = 'debug' | 'info' | 'warning' | 'error';
 
+export type LabelFilter = {
+    [name: string]: string | undefined;
+};
+
 export interface Filters {
     severity?: Severity[];
     dateRange?: DateRange;
-    labels?: Record<string, string[]>;
+    labels?: LabelFilter;
 }
 
 export interface AuditLogsProps {
@@ -32,13 +36,6 @@ export type ContextType = {
     updateFilters: (newFilters: Filters) => void;
 };
 
-export type LabelFilter = {
-    name: string;
-    value: string;
-    index: number;
-    label?: string;
-};
-
 export interface SeveritySelectProps {
     severity?: Severity[];
     handleFilterChange?: (key: string, value: any) => void;
@@ -60,4 +57,8 @@ export interface ClientFilterTableProps {
     filters: Filters;
     collection: string;
     query?: (ref: Record<string, unknown>) => void;
+}
+
+export interface FilterDropdownProps {
+    close: () => void;
 }

@@ -1,16 +1,13 @@
+/* eslint-disable react/require-default-props */
 import React, { useContext, useRef } from 'react';
 import { Option, ButtonIcon } from 'react-rainbow-components';
 import { TrashFilled } from '@rainbow-modules/icons';
 import { StyledFilterContainer, StyledLabel, StyledPicklist, StyledInput } from './styled';
 import { LabelFilter as LabelFilterType, PicklistValue } from '../types';
 import context from '../context';
-import getLabelFilters from './helpers/getLabelFilters';
 
-const FilterOptions = ({ labels = [] }: { labels: string[] }) => {
-    const {
-        filters: { labels: filterLabels = {} },
-    } = useContext(context);
-    const activeLabels = Object.keys(filterLabels);
+const FilterOptions = ({ labels: activeLabels = [] }: { labels: string[] }) => {
+    const { labels } = useContext(context);
     return (
         <>
             {labels
@@ -23,66 +20,31 @@ const FilterOptions = ({ labels = [] }: { labels: string[] }) => {
 };
 
 const LabelFilter = ({
+    index,
     name: nameInProps,
     value: valueInProps,
-    index,
     label,
-}: LabelFilterType & { index: number }) => {
-    const { filters, updateFilters, labels } = useContext(context);
+    filteredLabels,
+    onChange,
+}: {
+    name: string;
+    value?: string;
+    index: number;
+    label: string;
+    filteredLabels: string[];
+    onChange: (oldName: string, newName?: string, value?: string) => void;
+}) => {
     const inputRef = useRef<HTMLInputElement>();
 
-    const handleNameChange = ({ name }: PicklistValue) => {
-        if (!name || typeof name !== 'string' || name === nameInProps) return;
-        const { labels: filterLabels = {} } = filters;
-        const newLabels = { ...filterLabels };
-        if (Object.keys(filterLabels).includes(name)) {
-            newLabels[name].push(valueInProps);
-        } else {
-            newLabels[name] = [valueInProps];
-        }
-        newLabels[nameInProps] = newLabels[nameInProps].filter((val) => val !== valueInProps);
-        if (newLabels[nameInProps].length === 0) {
-            delete newLabels[nameInProps];
-        }
-        const newFilters = {
-            ...filters,
-            labels: newLabels,
-        };
-        updateFilters(newFilters);
-        setTimeout(() => inputRef.current?.focus());
-    };
+    const handleNameChange = ({ name }: PicklistValue) =>
+        onChange(nameInProps, name as string, valueInProps);
 
     const handleValueChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newValue = event.target.value;
-        const newLabels: Record<string, string[]> = { ...filters.labels };
-        const newValues = [...newLabels[nameInProps]];
-        newValues[index] = newValue;
-        newLabels[nameInProps] = newValues;
-        updateFilters({
-            ...filters,
-            labels: newLabels,
-        });
+        onChange(nameInProps, nameInProps, newValue);
     };
 
-    const handleRemove = () => {
-        const newLabels = { ...(filters.labels || {}) };
-        if (newLabels[nameInProps]) {
-            const newValues = [...newLabels[nameInProps]];
-            newValues.splice(index, 1);
-            if (newValues.length === 0) {
-                delete newLabels[nameInProps];
-            } else {
-                newLabels[nameInProps] = newValues;
-            }
-        }
-        if (Object.keys(newLabels).length === 0) {
-            newLabels[''] = [''];
-        }
-        updateFilters({
-            ...filters,
-            labels: newLabels,
-        });
-    };
+    const handleRemove = () => onChange(nameInProps, undefined, undefined);
 
     const picklistValue = {
         name: nameInProps,
@@ -93,11 +55,12 @@ const LabelFilter = ({
         <StyledFilterContainer>
             <StyledLabel>{label}</StyledLabel>
             <StyledPicklist
+                name={`name[${index}]`}
                 placeholder="Filter Name"
                 value={picklistValue}
                 onChange={handleNameChange}
             >
-                <FilterOptions labels={labels} />
+                <FilterOptions labels={filteredLabels} />
             </StyledPicklist>
             <StyledInput
                 placeholder="Value"
@@ -110,25 +73,25 @@ const LabelFilter = ({
     );
 };
 
-const LabelFilters = (): JSX.Element | null => {
-    const { filters } = useContext(context);
-    const { labels = {} } = filters || {};
-
-    const labelFilters = getLabelFilters(labels);
-
-    if (!filters || labelFilters.length === 0) {
-        return <LabelFilter name="" value="" index={0} label="Where" />;
-    }
-
+const LabelFilters = ({
+    filter,
+    onChange,
+}: {
+    filter: LabelFilterType;
+    onChange: (oldName: string, newName?: string, value?: string) => void;
+}): JSX.Element | null => {
+    const filteredLabels = Object.keys(filter);
     return (
         <>
-            {labelFilters.map(({ name, value, index }, i) => (
+            {filteredLabels.map((name, i) => (
                 <LabelFilter
-                    key={`${index}-${name}`}
-                    name={name}
-                    value={value}
-                    index={index}
+                    key={name}
+                    index={i}
                     label={i === 0 ? 'Where' : 'And'}
+                    name={name}
+                    value={filter[name]}
+                    filteredLabels={filteredLabels}
+                    onChange={onChange}
                 />
             ))}
         </>
