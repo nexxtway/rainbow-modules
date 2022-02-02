@@ -46,6 +46,7 @@ function ColumnHeaderFilterText(props) {
                 triggerElementRef={() => triggerRef.current.buttonRef}
                 isOpen={isOpen}
                 onRequestClose={() => setIsOpen(false)}
+                onRequestClear={() => setFilters([''])}
                 headerText={headerText}
             >
                 <form onSubmit={handleSubmit}>

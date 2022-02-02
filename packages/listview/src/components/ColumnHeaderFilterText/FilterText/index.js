@@ -28,6 +28,14 @@ function FilterText(props) {
         onChange(newFilters);
     };
 
+    const handleRemove = (index) => {
+        if (filters.length === 1) {
+            onChange(['']);
+        } else {
+            remove(index);
+        }
+    };
+
     return (
         <StyledContent>
             {filters.map((value, index) => (
@@ -42,9 +50,12 @@ function FilterText(props) {
                             onChange={(event) => handleChange(event, index)}
                             value={value}
                         />
-                        <RenderIf isTrue={filters.length > 1}>
-                            <ButtonIcon icon={<TrashFilled />} onClick={() => remove(index)} />
-                        </RenderIf>
+                        <div>
+                            <ButtonIcon
+                                icon={<TrashFilled />}
+                                onClick={() => handleRemove(index)}
+                            />
+                        </div>
                     </StyledContentField>
                 </div>
             ))}

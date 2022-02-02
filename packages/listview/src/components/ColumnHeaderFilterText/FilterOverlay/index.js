@@ -3,11 +3,20 @@ import PropTypes from 'prop-types';
 import { useOutsideClick } from '@rainbow-modules/hooks';
 import InternalOverlay from 'react-rainbow-components/components/InternalOverlay';
 import manageTab from 'react-rainbow-components/libs/manageTab';
+import { Button } from 'react-rainbow-components';
 import { StyledContainer, StyledHeader, StyledTitle, StyledTitleName } from './styled';
 import { positionResolver } from '../helpers';
 
 function FilterOverlay(props) {
-    const { triggerElementRef, isOpen, onOpened, onRequestClose, headerText, children } = props;
+    const {
+        triggerElementRef,
+        isOpen,
+        onOpened,
+        onRequestClose,
+        onRequestClear,
+        headerText,
+        children,
+    } = props;
     const containerRef = useRef();
     const hasFocus = useRef(false);
 
@@ -74,6 +83,12 @@ function FilterOverlay(props) {
                         <StyledTitleName>{headerText}</StyledTitleName>
                         <span>&quot;</span>
                     </StyledTitle>
+                    <Button
+                        variant="border"
+                        size="small"
+                        label="Clear All"
+                        onClick={onRequestClear}
+                    />
                 </StyledHeader>
                 {children}
             </StyledContainer>
@@ -88,6 +103,7 @@ FilterOverlay.propTypes = {
     ]),
     isOpen: PropTypes.bool,
     onOpened: PropTypes.func,
+    onRequestClear: PropTypes.func,
     onRequestClose: PropTypes.func,
     headerText: PropTypes.string,
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
@@ -98,6 +114,7 @@ FilterOverlay.defaultProps = {
     isOpen: false,
     onOpened: undefined,
     onRequestClose: undefined,
+    onRequestClear: () => {},
     headerText: undefined,
     children: [],
 };

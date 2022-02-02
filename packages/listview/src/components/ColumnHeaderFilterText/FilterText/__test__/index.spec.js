@@ -6,14 +6,13 @@ import FilterText from '..';
 import { StyledIconPlus, StyledInput, StyledOr } from '../styled';
 
 describe('FilterText', () => {
-    it('should not render the "or" and remove button when filters is empty', () => {
+    it('should not render the "or" when filters is empty', () => {
         const component = mount(
             <Application>
                 <FilterText />
             </Application>,
         );
         expect(component.find(StyledOr).exists()).toBe(false);
-        expect(component.find(TrashFilled).exists()).toBe(false);
     });
     it('should render one "or" and two remove button when filters is an array with two elements', () => {
         const component = mount(
@@ -43,6 +42,16 @@ describe('FilterText', () => {
         );
         component.find(TrashFilled).first().simulate('click');
         expect(onChangeMock).toBeCalledWith(['foo']);
+    });
+    it('should call onChange with right value when click in remove and filter has only element', () => {
+        const onChangeMock = jest.fn();
+        const component = mount(
+            <Application>
+                <FilterText filters={['bar']} onChange={onChangeMock} />
+            </Application>,
+        );
+        component.find(TrashFilled).first().simulate('click');
+        expect(onChangeMock).toBeCalledWith(['']);
     });
     it('should call onChange with right value when change input value', () => {
         const onChangeMock = jest.fn();
