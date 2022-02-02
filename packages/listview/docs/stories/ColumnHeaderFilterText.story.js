@@ -35,12 +35,33 @@ const CreatedAt = ({ value }) =>
 const Status = ({ value }) => <StyledStatus>{value}</StyledStatus>;
 
 export const BasicColumnHeaderFilterText = () => {
+    const [data, setData] = useState(dataTable);
+
+    const handleFilter = (filters) => {
+        if (filters.length > 0) {
+            const filteredData = dataTable.filter((item) => {
+                return filters.some((word) => {
+                    const regex = new RegExp(word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+                    return regex.test(item.name);
+                });
+            });
+            setData(filteredData);
+        } else {
+            setData(dataTable);
+        }
+    };
+
     return (
         <Application>
             <Container>
-                <Table data={dataTable} keyField="id" variant="listview">
+                <Table data={data} keyField="id" variant="listview">
                     <Column header="Id" field="id" />
-                    <Column header="Name" field="name" headerComponent={ColumnHeaderFilterText} />
+                    <Column
+                        header="Name"
+                        field="name"
+                        onFilter={handleFilter}
+                        headerComponent={ColumnHeaderFilterText}
+                    />
                     <Column header="Company" field="company" sortable />
                     <Column header="Status" field="status" component={Status} />
                     <Column header="Created At" field="createdAt" component={CreatedAt} />
@@ -50,7 +71,7 @@ export const BasicColumnHeaderFilterText = () => {
     );
 };
 
-export const HandleColumnHeaderFilterText = () => {
+export const ColumnHeaderFilterTextSort = () => {
     const [filters, setFilters] = useState([]);
     const [sortedBy, setSortedBy] = useState();
     const [sortDirection, setSortDirection] = useState();

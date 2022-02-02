@@ -5,6 +5,7 @@ import FilterOverlay from '../ColumnHeaderFilterText/FilterOverlay';
 import FilterMultiselect from './FilterMultiselect';
 import { getHeaderText } from '../ColumnHeaderFilterText/helpers';
 import serializeFilters from './helpers/serializeFilters';
+import Footer from '../ColumnHeaderFilterText/Footer';
 
 function ColumnHeaderFilterMultiselect(props) {
     const {
@@ -20,13 +21,12 @@ function ColumnHeaderFilterMultiselect(props) {
     const triggerRef = useRef();
     const [isOpen, setIsOpen] = useState(false);
     const [filters, setFilters] = useState(defaultFilters);
-    const [hasFilter, setHasFilter] = useState(defaultFilters.length > 0);
+
+    const serializedFilters = serializeFilters(filters);
+    const hasFilter = serializedFilters.length > 0;
     const headerText = getHeaderText(header);
 
-    const handleFilter = (newFilters) => {
-        setFilters(newFilters);
-        const serializedFilters = serializeFilters(newFilters);
-        setHasFilter(serializedFilters.length > 0);
+    const handleSubmit = () => {
         onFilter(serializedFilters);
         setIsOpen(false);
     };
@@ -50,13 +50,15 @@ function ColumnHeaderFilterMultiselect(props) {
                 onRequestClose={() => setIsOpen(false)}
                 headerText={headerText}
             >
-                <FilterMultiselect
-                    options={options}
-                    onFilter={handleFilter}
-                    defaultFilters={filters}
-                    headerText={headerText}
-                    onRequestClose={() => setIsOpen(false)}
-                />
+                <form onSubmit={handleSubmit}>
+                    <FilterMultiselect
+                        options={options}
+                        filters={filters}
+                        onChange={setFilters}
+                        headerText={headerText}
+                    />
+                    <Footer onRequestClose={() => setIsOpen(false)} />
+                </form>
             </FilterOverlay>
         </>
     );

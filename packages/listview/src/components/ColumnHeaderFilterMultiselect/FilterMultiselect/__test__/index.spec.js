@@ -26,15 +26,4 @@ describe('FilterMultiselect', () => {
         );
         expect(wrapper.find(Option).length).toBe(3);
     });
-
-    it('should call onFilter when the form is submit', () => {
-        const onFilterMock = jest.fn();
-        const wrapper = mount(
-            <Application>
-                <FilterMultiselect onFilter={onFilterMock} />
-            </Application>,
-        );
-        wrapper.find('form').simulate('submit');
-        expect(onFilterMock).toBeCalledTimes(1);
-    });
 });

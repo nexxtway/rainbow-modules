@@ -60,27 +60,24 @@ function FilterOverlay(props) {
             onOpened={handleOpen}
             positionResolver={positionResolver}
             keepScrollEnabled
-            render={() => {
-                return (
-                    <StyledContainer
-                        ref={containerRef}
-                        onKeyDown={handleKeyPress}
-                        onFocus={handleFocus}
-                        onBlur={handleBlur}
-                        tabIndex="-1"
-                    >
-                        <StyledHeader>
-                            <StyledTitle>
-                                Filter by &quot;
-                                <StyledTitleName>{headerText}</StyledTitleName>
-                                <span>&quot;</span>
-                            </StyledTitle>
-                        </StyledHeader>
-                        {children}
-                    </StyledContainer>
-                );
-            }}
-        />
+        >
+            <StyledContainer
+                ref={containerRef}
+                onKeyDown={handleKeyPress}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                tabIndex="-1"
+            >
+                <StyledHeader>
+                    <StyledTitle>
+                        Filter by &quot;
+                        <StyledTitleName>{headerText}</StyledTitleName>
+                        <span>&quot;</span>
+                    </StyledTitle>
+                </StyledHeader>
+                {children}
+            </StyledContainer>
+        </InternalOverlay>
     );
 }
 

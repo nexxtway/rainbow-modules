@@ -42,16 +42,30 @@ const options = [
 ];
 
 export const BasicColumnHeaderFilterMultiselect = () => {
+    const [data, setData] = useState(dataTable);
+
+    const handleFilter = (filters) => {
+        if (filters.length > 0) {
+            const filteredData = dataTable.filter((item) => {
+                return filters.some((word) => item.company === word);
+            });
+            setData(filteredData);
+        } else {
+            setData(dataTable);
+        }
+    };
+
     return (
         <Application>
             <Container>
-                <Table data={dataTable} keyField="id" variant="listview">
+                <Table data={data} keyField="id" variant="listview">
                     <Column header="Id" field="id" />
                     <Column header="Name" field="name" />
                     <Column
                         header="Company"
                         field="company"
                         options={options}
+                        onFilter={handleFilter}
                         headerComponent={ColumnHeaderFilterMultiselect}
                     />
                     <Column header="Status" field="status" component={Status} />
@@ -62,7 +76,7 @@ export const BasicColumnHeaderFilterMultiselect = () => {
     );
 };
 
-export const HandleColumnHeaderFilterMultiselect = () => {
+export const ColumnHeaderFilterMultiselectSort = () => {
     const [filters, setFilters] = useState([]);
     const [sortedBy, setSortedBy] = useState();
     const [sortDirection, setSortDirection] = useState();

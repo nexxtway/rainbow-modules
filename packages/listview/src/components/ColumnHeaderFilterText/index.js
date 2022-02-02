@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import HeaderFilter from './HeaderFilter';
 import FilterOverlay from './FilterOverlay';
 import FilterText from './FilterText';
-import { clearFilters, getHeaderText } from './helpers';
+import { clearFilters, getHeaderText, formatFilters } from './helpers';
+import Footer from './Footer';
 
 function ColumnHeaderFilterText(props) {
     const {
@@ -18,15 +19,13 @@ function ColumnHeaderFilterText(props) {
 
     const triggerRef = useRef();
     const [isOpen, setIsOpen] = useState(false);
-    const [filters, setFilters] = useState(defaultFilters);
-    const [hasFilter, setHasFilter] = useState(defaultFilters.length > 0);
+    const [filters, setFilters] = useState(formatFilters(defaultFilters));
+    const serializedFilters = clearFilters(filters);
+    const hasFilter = serializedFilters.length > 0;
     const headerText = getHeaderText(header);
 
-    const handleFilter = (newFilters) => {
-        setFilters(newFilters);
-        const filtered = clearFilters(newFilters);
-        setHasFilter(filtered.length > 0);
-        onFilter(filtered);
+    const handleSubmit = () => {
+        onFilter(serializedFilters);
         setIsOpen(false);
     };
 
@@ -49,12 +48,10 @@ function ColumnHeaderFilterText(props) {
                 onRequestClose={() => setIsOpen(false)}
                 headerText={headerText}
             >
-                <FilterText
-                    onFilter={handleFilter}
-                    defaultFilters={filters}
-                    headerText={headerText}
-                    onRequestClose={() => setIsOpen(false)}
-                />
+                <form onSubmit={handleSubmit}>
+                    <FilterText onChange={setFilters} filters={filters} headerText={headerText} />
+                    <Footer onRequestClose={() => setIsOpen(false)} />
+                </form>
             </FilterOverlay>
         </>
     );
