@@ -21,7 +21,8 @@ const SummaryLabels = ({ labels }: LabelsProps) => {
     );
 };
 
-const Summary = (props: any): JSX.Element => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Summary = (props: Record<string, any>): JSX.Element => {
     const [isExpanded, setIsExpanded] = useState(false);
     const { value, row } = props;
 

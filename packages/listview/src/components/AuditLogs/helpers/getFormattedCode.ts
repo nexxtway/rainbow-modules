@@ -1,6 +1,7 @@
 import { DateTime } from 'luxon';
 
-const getFormattedCode = (row: any): string => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const getFormattedCode = (row: Record<string, any>): string => {
     const {
         date: { seconds },
     } = row;
