@@ -4,9 +4,7 @@ const convertToCSV = (data) => {
     const array = [Object.keys(data[0])].concat(data);
     return array
         .map((item) => {
-            return Object.values(item)
-                .map((value) => formatValue(value))
-                .toString();
+            return Object.values(item).map(formatValue).toString();
         })
         .join('\n');
 };

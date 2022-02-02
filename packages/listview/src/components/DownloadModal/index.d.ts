@@ -2,15 +2,13 @@ import { CSSProperties, ReactNode } from 'react';
 
 type Max = string | number;
 
-type ModalHeader = ReactNode | string;
-
 export interface DownloadModalProps {
     /** An id for the outer element. */
     id?: string;
     /** The title at the top of the DownloadModal component. */
-    title?: ModalHeader;
+    title?: ReactNode;
     /** The description in the DownloadModal component. */
-    description?: ModalHeader;
+    description?: ReactNode;
     /** A CSS class for the outer element, in addition to the component's base classes. */
     className?: string;
     /** An object with custom style applied to the outer element. */
