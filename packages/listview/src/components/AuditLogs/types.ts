@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ReactNode, RefObject } from 'react';
+import { ReactNode, RefObject, CSSProperties } from 'react';
 
 export type Severity = 'debug' | 'info' | 'warning' | 'error';
 
@@ -61,4 +61,13 @@ export interface ClientFilterTableProps {
 
 export interface FilterDropdownProps {
     close: () => void;
+}
+
+export interface BaseProps {
+    className?: string;
+    style?: CSSProperties;
+}
+
+export interface IconProps extends BaseProps {
+    title?: string;
 }
