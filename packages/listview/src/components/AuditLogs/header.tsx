@@ -66,7 +66,7 @@ const ToolBar = () => {
                 onClick={closeLabelFilters}
                 value={dateRange}
             >
-                <Option name="all" label="All Dates" />
+                <Option name="all" label="All Time" />
                 <Option name="today" label="Today" />
                 <Option name="this-week" label="This Week" />
                 <Option name="this-month" label="This Month" />
