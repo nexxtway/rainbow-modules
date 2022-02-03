@@ -3,11 +3,20 @@ import PropTypes from 'prop-types';
 import { useOutsideClick } from '@rainbow-modules/hooks';
 import InternalOverlay from 'react-rainbow-components/components/InternalOverlay';
 import manageTab from 'react-rainbow-components/libs/manageTab';
+import { Button } from 'react-rainbow-components';
 import { StyledContainer, StyledHeader, StyledTitle, StyledTitleName } from './styled';
 import { positionResolver } from '../helpers';
 
 function FilterOverlay(props) {
-    const { triggerElementRef, isOpen, onOpened, onRequestClose, headerText, children } = props;
+    const {
+        triggerElementRef,
+        isOpen,
+        onOpened,
+        onRequestClose,
+        onRequestClear,
+        headerText,
+        children,
+    } = props;
     const containerRef = useRef();
     const hasFocus = useRef(false);
 
@@ -28,7 +37,7 @@ function FilterOverlay(props) {
     };
 
     const handleKeyPress = (event) => {
-        if (isOpen && event.key === 'Escape' && onRequestClose) {
+        if (isOpen && event.key === 'Escape' && hasFocus.current && onRequestClose) {
             onRequestClose();
         }
         if (event.key === 'Tab' && containerRef.current !== undefined) {
@@ -60,27 +69,30 @@ function FilterOverlay(props) {
             onOpened={handleOpen}
             positionResolver={positionResolver}
             keepScrollEnabled
-            render={() => {
-                return (
-                    <StyledContainer
-                        ref={containerRef}
-                        onKeyDown={handleKeyPress}
-                        onFocus={handleFocus}
-                        onBlur={handleBlur}
-                        tabIndex="-1"
-                    >
-                        <StyledHeader>
-                            <StyledTitle>
-                                Filter by &quot;
-                                <StyledTitleName>{headerText}</StyledTitleName>
-                                <span>&quot;</span>
-                            </StyledTitle>
-                        </StyledHeader>
-                        {children}
-                    </StyledContainer>
-                );
-            }}
-        />
+        >
+            <StyledContainer
+                ref={containerRef}
+                onKeyDown={handleKeyPress}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                tabIndex="-1"
+            >
+                <StyledHeader>
+                    <StyledTitle>
+                        Filter by &quot;
+                        <StyledTitleName>{headerText}</StyledTitleName>
+                        <span>&quot;</span>
+                    </StyledTitle>
+                    <Button
+                        variant="border"
+                        size="small"
+                        label="Clear All"
+                        onClick={onRequestClear}
+                    />
+                </StyledHeader>
+                {children}
+            </StyledContainer>
+        </InternalOverlay>
     );
 }
 
@@ -91,6 +103,7 @@ FilterOverlay.propTypes = {
     ]),
     isOpen: PropTypes.bool,
     onOpened: PropTypes.func,
+    onRequestClear: PropTypes.func,
     onRequestClose: PropTypes.func,
     headerText: PropTypes.string,
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
@@ -101,6 +114,7 @@ FilterOverlay.defaultProps = {
     isOpen: false,
     onOpened: undefined,
     onRequestClose: undefined,
+    onRequestClear: () => {},
     headerText: undefined,
     children: [],
 };

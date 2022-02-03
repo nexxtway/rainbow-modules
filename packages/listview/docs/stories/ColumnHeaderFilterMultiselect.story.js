@@ -2,7 +2,7 @@
 import React, { useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { Table, Column, Application } from 'react-rainbow-components';
-import ColumnHeaderFilterText from '../../src/components/ColumnHeaderFilterText';
+import ColumnHeaderFilterMultiselect from '../../src/components/ColumnHeaderFilterMultiselect';
 import { dataTable } from './data/batchActionsBar';
 
 const Container = styled.div`
@@ -34,16 +34,20 @@ const CreatedAt = ({ value }) =>
 
 const Status = ({ value }) => <StyledStatus>{value}</StyledStatus>;
 
-export const BasicColumnHeaderFilterText = () => {
+const options = [
+    { name: 'Nexxtway', label: 'Nexxtway', value: 'Nexxtway' },
+    { name: 'Google', label: 'Google', value: 'Google' },
+    { name: 'Oracle', label: 'Oracle', value: 'Oracle' },
+    { name: 'nexxtway', label: 'nexxtway', value: 'nexxtway' },
+];
+
+export const BasicColumnHeaderFilterMultiselect = () => {
     const [data, setData] = useState(dataTable);
 
     const handleFilter = (filters) => {
         if (filters.length > 0) {
             const filteredData = dataTable.filter((item) => {
-                return filters.some((word) => {
-                    const regex = new RegExp(word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
-                    return regex.test(item.name);
-                });
+                return filters.some((word) => item.company === word);
             });
             setData(filteredData);
         } else {
@@ -56,13 +60,14 @@ export const BasicColumnHeaderFilterText = () => {
             <Container>
                 <Table data={data} keyField="id" variant="listview">
                     <Column header="Id" field="id" />
+                    <Column header="Name" field="name" />
                     <Column
-                        header="Name"
-                        field="name"
+                        header="Company"
+                        field="company"
+                        options={options}
                         onFilter={handleFilter}
-                        headerComponent={ColumnHeaderFilterText}
+                        headerComponent={ColumnHeaderFilterMultiselect}
                     />
-                    <Column header="Company" field="company" sortable />
                     <Column header="Status" field="status" component={Status} />
                     <Column header="Created At" field="createdAt" component={CreatedAt} />
                 </Table>
@@ -71,7 +76,7 @@ export const BasicColumnHeaderFilterText = () => {
     );
 };
 
-export const ColumnHeaderFilterTextSort = () => {
+export const ColumnHeaderFilterMultiselectSort = () => {
     const [filters, setFilters] = useState([]);
     const [sortedBy, setSortedBy] = useState();
     const [sortDirection, setSortDirection] = useState();
@@ -79,10 +84,7 @@ export const ColumnHeaderFilterTextSort = () => {
     const filteredData = useMemo(() => {
         if (filters.length > 0) {
             return dataTable.filter((item) => {
-                return filters.some((word) => {
-                    const regex = new RegExp(word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
-                    return regex.test(item.name);
-                });
+                return filters.some((word) => item.company === word);
             });
         }
         return dataTable;
@@ -117,14 +119,15 @@ export const ColumnHeaderFilterTextSort = () => {
                     variant="listview"
                 >
                     <Column header="Id" field="id" />
+                    <Column header="Name" field="name" sortable />
                     <Column
-                        header="Name"
-                        field="name"
-                        sortable
-                        headerComponent={ColumnHeaderFilterText}
+                        header="Company"
+                        field="company"
+                        options={options}
+                        headerComponent={ColumnHeaderFilterMultiselect}
                         onFilter={setFilters}
+                        sortable
                     />
-                    <Column header="Company" field="company" sortable />
                     <Column header="Status" field="status" component={Status} />
                     <Column header="Created At" field="createdAt" component={CreatedAt} />
                 </Table>
@@ -134,7 +137,7 @@ export const ColumnHeaderFilterTextSort = () => {
 };
 
 export default {
-    title: 'Modules/Listview/Stories/ColumnHeaderFilterText',
+    title: 'Modules/Listview/Stories/ColumnHeaderFilterMultiselect',
     parameters: {
         viewOnGithub: {
             fileName: __filename,

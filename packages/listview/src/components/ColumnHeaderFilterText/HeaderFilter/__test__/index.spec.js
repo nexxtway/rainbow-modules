@@ -9,7 +9,7 @@ describe('HeaderFilter', () => {
     it('should set the right title in the content container element when the content passed is a string', () => {
         const component = mount(
             <Application>
-                <HeaderFilter header="header content" />
+                <HeaderFilter buttonRef={() => {}} header="header content" />
             </Application>,
         );
 
@@ -18,7 +18,7 @@ describe('HeaderFilter', () => {
     it('should not set any title in the content container element when the content passed is not a string', () => {
         const component = mount(
             <Application>
-                <HeaderFilter header={<div />} />
+                <HeaderFilter buttonRef={() => {}} header={<div />} />
             </Application>,
         );
         expect(component.find(StyledContent).prop('title')).toBe('');
@@ -26,7 +26,7 @@ describe('HeaderFilter', () => {
     it('should render the sort icon when sortable is true', () => {
         const component = mount(
             <Application>
-                <HeaderFilter sortable />
+                <HeaderFilter buttonRef={() => {}} sortable />
             </Application>,
         );
         expect(component.find(SortArrowIcon).exists()).toBe(true);
@@ -34,7 +34,7 @@ describe('HeaderFilter', () => {
     it('should not render the sort icon when sortable is false', () => {
         const component = mount(
             <Application>
-                <HeaderFilter />
+                <HeaderFilter buttonRef={() => {}} />
             </Application>,
         );
         expect(component.find(SortArrowIcon).exists()).toBe(false);
@@ -43,7 +43,12 @@ describe('HeaderFilter', () => {
         const onSortMockFn = jest.fn();
         const component = mount(
             <Application>
-                <HeaderFilter sortable sortDirection="asc" onSort={onSortMockFn} />
+                <HeaderFilter
+                    buttonRef={() => {}}
+                    sortable
+                    sortDirection="asc"
+                    onSort={onSortMockFn}
+                />
             </Application>,
         );
         const header = component.find(StyledHeaderContainer);
@@ -54,7 +59,7 @@ describe('HeaderFilter', () => {
         const onSortMockFn = jest.fn();
         const component = mount(
             <Application>
-                <HeaderFilter sortDirection="asc" onSort={onSortMockFn} />
+                <HeaderFilter buttonRef={() => {}} sortDirection="asc" onSort={onSortMockFn} />
             </Application>,
         );
         const header = component.find(StyledHeaderContainer);

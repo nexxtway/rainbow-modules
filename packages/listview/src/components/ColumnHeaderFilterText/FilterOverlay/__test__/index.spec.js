@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { Application } from 'react-rainbow-components';
+import { Application, Button } from 'react-rainbow-components';
 import manageTab from 'react-rainbow-components/libs/manageTab';
 import FilterOverlay from '..';
 import { StyledTitle, StyledContainer } from '../styled';
@@ -57,6 +57,20 @@ describe('FilterOverlay', () => {
         );
         wrapper.find(StyledContainer).simulate('keydown', { key: 'Escape' });
         expect(onRequestCloseFn).toHaveBeenCalledTimes(1);
+    });
+    it('should call onRequestClear when click in clear all button', () => {
+        const onRequestClearFn = jest.fn();
+        const wrapper = mount(
+            <Application>
+                <FilterOverlay
+                    triggerElementRef={() => {}}
+                    isOpen
+                    onRequestClear={onRequestClearFn}
+                />
+            </Application>,
+        );
+        wrapper.find(Button).simulate('click');
+        expect(onRequestClearFn).toHaveBeenCalledTimes(1);
     });
     it('should call manageTab when Tap key is pressed', () => {
         const wrapper = mount(
