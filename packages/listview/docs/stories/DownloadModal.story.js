@@ -8,24 +8,31 @@ import app from '../../../../firebase';
 export const DefaultDownloadModal = () => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const handleDownload = async (max, format) => {
-        return [
-            {
-                name: 'Item 1',
-                color: { R: 0, G: 255, B: 0 },
-                size: 'X-Large',
-                max,
-                format,
-            },
-            { name: 'Item 2', color: 'Red', size: 'X-Medium', max, format },
-            { name: 'Item 3', color: 'Blue', size: 'X-Small', max, format },
-            { name: 'Item 4', color: 'Orange', size: 'S-Medium', max, format },
-            { name: 'Item 5', color: 'Yellow', size: 'S-Small', max, format },
-            { name: 'Item 6', color: 'Cyan', size: 'S-Large', max, format },
-            { name: 'Item 7', color: 'Magenta', size: 'M-Small', max, format },
-            { name: 'Item 8', color: 'Violet', size: 'M-Large', max, format },
-            { name: 'Item 9', color: 'Brown', size: 'M-Medium', max, format },
-        ];
+    const handleDownload = ({ max, format }) => {
+        return new Promise((resolve) => {
+            const data = [
+                {
+                    name: 'Item 1',
+                    color: { R: 0, G: 255, B: 0 },
+                    size: 'X-Large',
+                    max,
+                    format,
+                },
+                { name: 'Item 2', color: 'Red', size: 'X-Medium', max, format },
+                { name: 'Item 3', color: 'Blue', size: 'X-Small', max, format },
+                { name: 'Item 4', color: 'Orange', size: 'S-Medium', max, format },
+                { name: 'Item 5', color: 'Yellow', size: 'S-Small', max, format },
+                { name: 'Item 6', color: 'Cyan', size: 'S-Large', max, format },
+                { name: 'Item 7', color: 'Magenta', size: 'M-Small', max, format },
+                { name: 'Item 8', color: 'Violet', size: 'M-Large', max, format },
+                { name: 'Item 9', color: 'Brown', size: 'M-Medium', max, format },
+                { name: 'Item 10', color: 'Green', size: 'XX-Large', max, format },
+            ];
+
+            setTimeout(() => {
+                resolve(data);
+            }, 2000);
+        });
     };
 
     return (
@@ -38,9 +45,10 @@ export const DefaultDownloadModal = () => {
                 tooltip="Download"
             />
             <DownloadModal
+                id="default-download-modal"
                 isOpen={isOpen}
                 onRequestClose={() => setIsOpen(false)}
-                maxEntries="500"
+                maxEntries={10}
                 onDownload={handleDownload}
             />
         </RainbowFirebaseApp>
