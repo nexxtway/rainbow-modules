@@ -10,9 +10,11 @@ export const StyledContainer = styled.div.attrs((props) => props.theme.rainbow)`
 `;
 
 export const StyledHeader = styled.header`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
     padding: 1rem 1rem 0 1rem;
-    display: block;
     box-sizing: border-box;
 `;
 

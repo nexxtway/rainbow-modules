@@ -52,10 +52,7 @@ function HeaderFilter(props) {
 }
 
 HeaderFilter.propTypes = {
-    buttonRef: PropTypes.oneOfType([
-        PropTypes.func,
-        PropTypes.shape({ current: PropTypes.instanceOf(HTMLElement).isRequired }),
-    ]),
+    buttonRef: PropTypes.oneOfType([PropTypes.object, PropTypes.func]).isRequired,
     onOpen: PropTypes.func,
     hasFilter: PropTypes.bool,
     onSort: PropTypes.func,
@@ -67,7 +64,6 @@ HeaderFilter.propTypes = {
 };
 
 HeaderFilter.defaultProps = {
-    buttonRef: undefined,
     onOpen: () => {},
     hasFilter: false,
     onSort: () => {},

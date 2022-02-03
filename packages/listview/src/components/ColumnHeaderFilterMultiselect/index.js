@@ -1,13 +1,15 @@
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import HeaderFilter from './HeaderFilter';
-import FilterOverlay from './FilterOverlay';
-import FilterText from './FilterText';
-import { clearFilters, getHeaderText, formatFilters } from './helpers';
-import Footer from './Footer';
+import HeaderFilter from '../ColumnHeaderFilterText/HeaderFilter';
+import FilterOverlay from '../ColumnHeaderFilterText/FilterOverlay';
+import FilterMultiselect from './FilterMultiselect';
+import { getHeaderText } from '../ColumnHeaderFilterText/helpers';
+import serializeFilters from './helpers/serializeFilters';
+import Footer from '../ColumnHeaderFilterText/Footer';
 
-function ColumnHeaderFilterText(props) {
+function ColumnHeaderFilterMultiselect(props) {
     const {
+        options,
         defaultFilters,
         onFilter,
         header,
@@ -16,11 +18,11 @@ function ColumnHeaderFilterText(props) {
         sortable,
         headerAlignment,
     } = props;
-
     const triggerRef = useRef();
     const [isOpen, setIsOpen] = useState(false);
-    const [filters, setFilters] = useState(formatFilters(defaultFilters));
-    const serializedFilters = clearFilters(filters);
+    const [filters, setFilters] = useState(defaultFilters);
+
+    const serializedFilters = serializeFilters(filters);
     const hasFilter = serializedFilters.length > 0;
     const headerText = getHeaderText(header);
 
@@ -46,11 +48,16 @@ function ColumnHeaderFilterText(props) {
                 triggerElementRef={() => triggerRef.current.buttonRef}
                 isOpen={isOpen}
                 onRequestClose={() => setIsOpen(false)}
-                onRequestClear={() => setFilters([''])}
+                onRequestClear={() => setFilters([])}
                 headerText={headerText}
             >
                 <form onSubmit={handleSubmit}>
-                    <FilterText onChange={setFilters} filters={filters} headerText={headerText} />
+                    <FilterMultiselect
+                        options={options}
+                        filters={filters}
+                        onChange={setFilters}
+                        headerText={headerText}
+                    />
                     <Footer onRequestClose={() => setIsOpen(false)} />
                 </form>
             </FilterOverlay>
@@ -58,11 +65,15 @@ function ColumnHeaderFilterText(props) {
     );
 }
 
-ColumnHeaderFilterText.propTypes = {
+ColumnHeaderFilterMultiselect.propTypes = {
+    /**
+     * The options to choose in the multiselect
+     */
+    options: PropTypes.arrayOf(PropTypes.object),
     /**
      * A filter to initialize the component
      */
-    defaultFilters: PropTypes.arrayOf(PropTypes.string),
+    defaultFilters: PropTypes.arrayOf(PropTypes.object),
     /**
      * Action triggered when a column is filtered. Receive a string array with the words to filter.
      */
@@ -88,7 +99,9 @@ ColumnHeaderFilterText.propTypes = {
      */
     headerAlignment: PropTypes.oneOf(['left', 'center', 'right']),
 };
-ColumnHeaderFilterText.defaultProps = {
+
+ColumnHeaderFilterMultiselect.defaultProps = {
+    options: [],
     defaultFilters: [],
     onFilter: () => {},
     onSort: () => {},
@@ -98,4 +111,4 @@ ColumnHeaderFilterText.defaultProps = {
     headerAlignment: undefined,
 };
 
-export default ColumnHeaderFilterText;
+export default ColumnHeaderFilterMultiselect;

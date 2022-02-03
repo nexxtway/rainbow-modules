@@ -1,0 +1,24 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import ColumnHeaderFilterMultiselect from '../../src/components/ColumnHeaderFilterMultiselect';
+import * as stories from '../stories/ColumnHeaderFilterMultiselect.story.js';
+
+<Meta
+    title="Modules/Listview/Components/ColumnHeaderFilterMultiselect"
+    component={ColumnHeaderFilterMultiselect}
+/>
+
+# Overview
+
+`ColumnHeaderFilterMultiselect` is a component that allows you to add filtering functionality using a multiselect to the table column headers.
+
+### This is basic example that allows you to filter.
+
+<Preview>
+    <Story name="ColumnHeaderFilterMultiselect">
+        {stories.BasicColumnHeaderFilterMultiselect()}
+    </Story>
+</Preview>
+
+# Component props
+
+<Props of={ColumnHeaderFilterMultiselect} />
