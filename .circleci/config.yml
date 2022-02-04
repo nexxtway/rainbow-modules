@@ -4,6 +4,7 @@ defaults: &defaults
     working_directory: ~/repo
     docker:
         - image: cimg/node:14.17.3-browsers
+    resource_class: medium+
 
 restore_cache_dependencies: &restore_cache_dependencies
     restore_cache:
