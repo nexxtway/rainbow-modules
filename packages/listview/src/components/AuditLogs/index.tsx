@@ -32,8 +32,7 @@ const AuditLogs = ({ collectionPath, defaultFilter, labels = [] }: AuditLogsProp
         if (dateRange) {
             const dates = getDatesFromFilter(dateRange);
             if (dates) {
-                // TODO: find out date field name
-                q = q.where('date', '>=', dates[0]).where('date', '<=', dates[1]);
+                q = q.where('createdAt', '>=', dates[0]).where('createdAt', '<=', dates[1]);
             }
         }
         const { labels: filterLabels = {} } = filters;
@@ -41,7 +40,7 @@ const AuditLogs = ({ collectionPath, defaultFilter, labels = [] }: AuditLogsProp
             if (!key) return;
             q = q.where(`labels.${key}`, '==', filterLabels[key]);
         });
-        return q.orderBy('date', 'desc');
+        return q.orderBy('createdAt', 'desc');
     };
 
     const updateFilters = useCallback((newFilters: Filters) => {

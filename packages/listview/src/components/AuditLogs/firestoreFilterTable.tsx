@@ -30,7 +30,7 @@ const FirestoreFilterTable = React.forwardRef<FirestoreTableWithCursorsRef, Prop
                 />
                 <Column
                     header="Date"
-                    field="date"
+                    field="createdAt"
                     headerAlignment="left"
                     cellAlignment="left"
                     defaultWidth={250}
