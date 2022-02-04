@@ -9,6 +9,7 @@ import {
     StyledHeader,
 } from './styled';
 import { FilterDropdownProps, LabelFilter } from '../types';
+import { OnChangeFunction } from './types';
 
 const FilterDropdown = ({ close }: FilterDropdownProps): JSX.Element => {
     const { filters, updateFilters } = useContext(context);
@@ -25,7 +26,7 @@ const FilterDropdown = ({ close }: FilterDropdownProps): JSX.Element => {
         });
     };
 
-    const handleFilterChange = (oldName: string, newName?: string, value?: string) => {
+    const handleFilterChange: OnChangeFunction = ({ oldName, newName, value }) => {
         const newFilter = { ...labelFilter };
 
         if (!newName) {

@@ -5,6 +5,7 @@ import { TrashFilled } from '@rainbow-modules/icons';
 import { StyledFilterContainer, StyledLabel, StyledPicklist, StyledInput } from './styled';
 import { LabelFilter as LabelFilterType, PicklistValue } from '../types';
 import context from '../context';
+import { OnChangeFunction } from './types';
 
 const FilterOptions = ({ labels: activeLabels = [] }: { labels: string[] }) => {
     const { labels } = useContext(context);
@@ -32,20 +33,29 @@ const LabelFilter = ({
     index: number;
     label: string;
     filteredLabels: string[];
-    onChange: (oldName: string, newName?: string, value?: string) => void;
+    onChange: OnChangeFunction;
 }) => {
     const { labels } = useContext(context);
     const inputRef = useRef<HTMLInputElement>();
 
     const handleNameChange = ({ name }: PicklistValue) =>
-        onChange(nameInProps, name as string, valueInProps);
+        onChange({
+            oldName: nameInProps,
+            newName: name as string,
+            value: valueInProps,
+        });
 
     const handleValueChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newValue = event.target.value;
-        onChange(nameInProps, nameInProps, newValue);
+        onChange({
+            oldName: nameInProps,
+            newName: nameInProps,
+            value: newValue,
+        });
     };
 
-    const handleRemove = () => onChange(nameInProps, undefined, undefined);
+    const handleRemove = () =>
+        onChange({ oldName: nameInProps, newName: undefined, value: undefined });
 
     const picklistValue = {
         name: nameInProps,
@@ -83,7 +93,7 @@ const LabelFilters = ({
     onChange,
 }: {
     filter: LabelFilterType;
-    onChange: (oldName: string, newName?: string, value?: string) => void;
+    onChange: OnChangeFunction;
 }): JSX.Element | null => {
     const filteredLabels = Object.keys(filter);
     return (
