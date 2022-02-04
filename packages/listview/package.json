@@ -17,13 +17,13 @@
         "@rainbow-modules/hooks": "^0.48.0",
         "@rainbow-modules/icons": "^0.48.0",
         "@rainbow-modules/validation": "^0.48.0",
-        "firebase": "^8.2.0",
         "luxon": "^2.3.0",
         "react-beautiful-dnd": "^13.0.0",
         "react-virtualized": "^9.22.3",
         "styled-components": "^4.3.2"
     },
     "peerDependencies": {
+        "firebase": "^8.2.0",
         "prop-types": "^15.7.2",
         "react": ">=16.8.0",
         "react-intl": ">=4.0.0",

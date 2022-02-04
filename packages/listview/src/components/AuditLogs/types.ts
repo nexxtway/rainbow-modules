@@ -1,10 +1,22 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ReactNode, RefObject } from 'react';
+import { ReactNode, RefObject, CSSProperties } from 'react';
+
+export type Severity = 'debug' | 'info' | 'warning' | 'error';
+
+export type LabelFilter = {
+    [name: string]: string | undefined;
+};
+
+export interface Filters {
+    severity?: Severity[];
+    dateRange?: DateRange;
+    labels?: LabelFilter;
+}
 
 export interface AuditLogsProps {
     collectionPath: string;
     labels?: string[];
-    defaultFilter?: Record<string, any>;
+    defaultFilter?: Filters;
 }
 
 export interface SeverityProps {
@@ -24,15 +36,6 @@ export type ContextType = {
     updateFilters: (newFilters: Filters) => void;
 };
 
-export type Severity = 'debug' | 'info' | 'warning' | 'error';
-
-export type LabelFilter = {
-    name: string;
-    value: string;
-    index: number;
-    label?: string;
-};
-
 export interface SeveritySelectProps {
     severity?: Severity[];
     handleFilterChange?: (key: string, value: any) => void;
@@ -43,15 +46,28 @@ export interface DateRange {
     label?: string;
 }
 
-export interface Filters {
-    severity?: Severity[];
-    dateRange?: DateRange;
-    labels?: Record<string, string[]>;
-}
-
 export interface PicklistValue {
     label?: string;
     name?: string | number;
     icon?: ReactNode;
     value?: any;
+}
+
+export interface ClientFilterTableProps {
+    filters: Filters;
+    collection: string;
+    query?: (ref: Record<string, unknown>) => void;
+}
+
+export interface FilterDropdownProps {
+    close: () => void;
+}
+
+export interface BaseProps {
+    className?: string;
+    style?: CSSProperties;
+}
+
+export interface IconProps extends BaseProps {
+    title?: string;
 }

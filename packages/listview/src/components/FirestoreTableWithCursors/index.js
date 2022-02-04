@@ -100,6 +100,7 @@ const FirestoreTableWithCursors = forwardRef((props, ref) => {
         refresh: () => {
             unsubscribe.current();
             setData([]);
+            setLoading(true);
             pagesRefs.current = [];
             unsubscribe.current = collectionRef.limit(pageSize).onSnapshot(
                 (querySnapshot) => {

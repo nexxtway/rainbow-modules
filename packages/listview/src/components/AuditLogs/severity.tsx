@@ -1,14 +1,14 @@
 import React from 'react';
-import { ErrorCircleFilled, InfoCircleFilled, CloseCircleFilled } from '@rainbow-modules/icons';
 import { SeverityProps } from './types';
 import { StyledSeverityContainer } from './styled';
+import { Debug, Error, Info, Warning } from './icons';
 
 const iconStyle = { width: '24px', height: '24px' };
 const iconsMap: Record<string, JSX.Element> = {
-    debug: <InfoCircleFilled style={iconStyle} />,
-    info: <InfoCircleFilled style={iconStyle} />,
-    warning: <ErrorCircleFilled style={iconStyle} />,
-    error: <CloseCircleFilled style={iconStyle} />,
+    debug: <Debug style={iconStyle} />,
+    info: <Info style={iconStyle} />,
+    warning: <Warning style={iconStyle} />,
+    error: <Error style={iconStyle} />,
 };
 
 const Severity = ({ value = 'info' }: SeverityProps): JSX.Element => {
