@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { DateTime } from 'luxon';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const getFormattedCode = (row: Record<string, any>): string => {
+const getFormattedCode = ({ id, ...row }: Record<string, any>): string => {
     const {
         createdAt: { seconds },
     } = row;
