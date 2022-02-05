@@ -26,6 +26,7 @@ const LabelFilter = ({
     value: valueInProps,
     label,
     filteredLabels,
+    readOnly,
     onChange,
 }: {
     name: string;
@@ -33,9 +34,9 @@ const LabelFilter = ({
     index: number;
     label: string;
     filteredLabels: string[];
+    readOnly?: boolean;
     onChange: OnChangeFunction;
 }) => {
-    const { labels } = useContext(context);
     const inputRef = useRef<HTMLInputElement>();
 
     const handleNameChange = ({ name }: PicklistValue) =>
@@ -61,8 +62,6 @@ const LabelFilter = ({
         name: nameInProps,
         label: nameInProps,
     };
-    const isEntryDisabled =
-        !nameInProps && labels.filter((l) => !filteredLabels.includes(l)).length === 0;
 
     return (
         <StyledFilterContainer>
@@ -72,7 +71,7 @@ const LabelFilter = ({
                 placeholder="Filter Name"
                 value={picklistValue}
                 onChange={handleNameChange}
-                disabled={isEntryDisabled}
+                readOnly={readOnly}
             >
                 <FilterOptions labels={filteredLabels} />
             </StyledPicklist>
@@ -80,7 +79,6 @@ const LabelFilter = ({
                 placeholder="Value"
                 value={valueInProps}
                 onChange={handleValueChange}
-                disabled={isEntryDisabled}
                 ref={inputRef}
             />
             <ButtonIcon icon={<TrashFilled />} onClick={handleRemove} />
@@ -90,9 +88,11 @@ const LabelFilter = ({
 
 const LabelFilters = ({
     filter,
+    readOnly,
     onChange,
 }: {
     filter: LabelFilterType;
+    readOnly?: boolean;
     onChange: OnChangeFunction;
 }): JSX.Element | null => {
     const filteredLabels = Object.keys(filter);
@@ -107,6 +107,7 @@ const LabelFilters = ({
                     value={filter[name]}
                     filteredLabels={filteredLabels}
                     onChange={onChange}
+                    readOnly={readOnly}
                 />
             ))}
         </>

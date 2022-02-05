@@ -8,8 +8,14 @@ export const StyledContainer = styled.div`
     box-shadow: ${(props) => props.theme.rainbow.shadows.shadow_4};
 `;
 
+export const StyledHeaderContainer = styled.div`
+    display: flex;
+    margin-bottom: 1rem;
+`;
+
 export const StyledHeader = styled.h1`
     font-size: 1.6em;
+    flex: 1;
 `;
 
 export const StyledFilterContainer = styled.div`
