@@ -60,11 +60,11 @@ const AuditLogs = ({ collectionPath, defaultFilter, labels = [] }: AuditLogsProp
         try {
             const querySnapshot = await finalQuery.get();
             const data = querySnapshot.docs.map((doc: any) => ({
-                ...prepareForDownload({ data: doc.data(), format }),
+                ...doc.data(),
             }));
-            return data;
+            return prepareForDownload({ data, format });
         } catch {
-            return {};
+            return [{}];
         }
     };
 
