@@ -17,13 +17,15 @@ import context from './context';
 import SeveritySelect from './severitySelect';
 import formatDates from './helpers/formatDates';
 import FilterButtonLabel from './filterButtonLabel';
+import DownloadModal from '../DownloadModal';
 
 const ToolBar = () => {
     const [isFilterOpen, setIsFilterOpen] = useState<boolean>(false);
     const [isDatePickerOpen, setIsDatePickerOpen] = useState<boolean>(false);
+    const [isDownloadOpen, setIsDownloadOpen] = useState<boolean>(false);
     // TODO: fix this state types
     const [dateValue, setDateValue] = useState<any>();
-    const { filters, updateFilters } = useContext(context);
+    const { filters, updateFilters, getDownloadData } = useContext(context);
     const { severity, dateRange } = filters;
 
     const filterButtonRef = useRef<ButtonHandle>();
@@ -78,7 +80,11 @@ const ToolBar = () => {
                 onClick={toggleLabelFilters}
                 ref={filterButtonRef}
             />
-            <StyledFilterButtonIcon icon={<Download />} variant="neutral" />
+            <StyledFilterButtonIcon
+                icon={<Download />}
+                variant="neutral"
+                onClick={() => setIsDownloadOpen(true)}
+            />
             <InternalOverlay
                 isVisible={isFilterOpen}
                 triggerElementRef={filterButtonRef.current?.htmlElementRef}
@@ -92,6 +98,13 @@ const ToolBar = () => {
                 value={dateValue}
                 onChange={handleDatePickerChange}
                 onRequestClose={() => setIsDatePickerOpen(false)}
+            />
+            <DownloadModal
+                id="default-download-modal"
+                isOpen={isDownloadOpen}
+                onRequestClose={() => setIsDownloadOpen(false)}
+                maxEntries={10}
+                onDownload={getDownloadData}
             />
         </>
     );
