@@ -9,7 +9,7 @@ const Actions = ({ onRequestClose, onDownload, max, format, fileName }) => {
     const handleDownloadClick = async () => {
         setIsLoading(true);
         const data = await onDownload({ max, format });
-        const newData = data || [{}];
+        const newData = data && data.length ? data : [{}];
         const slicedData = newData.slice(0, max);
         downloadFile(slicedData, format, fileName);
         setIsLoading(false);
