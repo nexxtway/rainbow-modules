@@ -53,7 +53,7 @@ describe('prepareForDownload', () => {
         const expected = [
             {
                 severity: 'info',
-                createdAt: '2022-02-04T00:00:00.000-05:00',
+                createdAt: expect.any(String),
                 textPayload: 'This log has been generated',
                 'label.username': 'leo@nexxt',
                 'label.other': '',
@@ -61,7 +61,7 @@ describe('prepareForDownload', () => {
             },
             {
                 severity: 'warning',
-                createdAt: '2022-02-03T00:00:00.000-05:00',
+                createdAt: expect.any(String),
                 textPayload: 'This is a warning log.',
                 'label.username': 'leo@nexxt',
                 'label.other': 'foo',
@@ -69,7 +69,7 @@ describe('prepareForDownload', () => {
             },
             {
                 severity: 'error',
-                createdAt: '2022-02-02T00:00:00.000-05:00',
+                createdAt: expect.any(String),
                 textPayload: 'Deployment has failed',
                 'label.username': '',
                 'label.other': '',
@@ -77,7 +77,7 @@ describe('prepareForDownload', () => {
             },
             {
                 severity: 'debug',
-                createdAt: '2022-02-02T00:00:00.000-05:00',
+                createdAt: expect.any(String),
                 textPayload: 'Lorem ipsum dolor sit amet',
                 'label.username': 'david@nexxt',
                 'label.other': 'foo',
@@ -139,7 +139,7 @@ describe('prepareForDownload', () => {
         const expected = [
             {
                 severity: 'info',
-                createdAt: '2022-02-04T00:00:00.000-05:00',
+                createdAt: expect.any(String),
                 textPayload: 'This log has been generated',
                 labels: {
                     username: 'leo@nexxt',
@@ -147,7 +147,7 @@ describe('prepareForDownload', () => {
             },
             {
                 severity: 'warning',
-                createdAt: '2022-02-03T00:00:00.000-05:00',
+                createdAt: expect.any(String),
                 textPayload: 'This is a warning log.',
                 labels: {
                     other: 'foo',
@@ -156,7 +156,7 @@ describe('prepareForDownload', () => {
             },
             {
                 severity: 'error',
-                createdAt: '2022-02-02T00:00:00.000-05:00',
+                createdAt: expect.any(String),
                 textPayload: 'Deployment has failed',
                 labels: {
                     app: 'react-rainbow-components',
@@ -164,7 +164,7 @@ describe('prepareForDownload', () => {
             },
             {
                 severity: 'debug',
-                createdAt: '2022-02-02T00:00:00.000-05:00',
+                createdAt: expect.any(String),
                 textPayload: 'Lorem ipsum dolor sit amet',
                 labels: {
                     username: 'david@nexxt',
