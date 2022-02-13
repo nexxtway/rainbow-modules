@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useCallback, useRef, useState } from 'react';
+import { useFirebaseApp } from '@rainbow-modules/firebase-hooks';
 import { AuditLogsProps, ContextType, Filters } from './types';
 import { StyledContainer } from './styled';
 import AuditLogsHeader from './header';
@@ -7,6 +8,7 @@ import { Provider } from './context';
 import getDatesFromFilter from './helpers/getDatesFromFilter';
 import FirestoreFilterTable from './firestoreFilterTable';
 import { FirestoreTableWithCursorsRef } from '../FirestoreTableWithCursors';
+import { prepareForDownload } from './helpers';
 
 const defaultFilters: Filters = {
     severity: [],
@@ -20,6 +22,8 @@ const defaultFilters: Filters = {
 };
 
 const AuditLogs = ({ collectionPath, defaultFilter, labels = [] }: AuditLogsProps): JSX.Element => {
+    const app = useFirebaseApp();
+
     const [filters, setFilters] = useState<Filters>(defaultFilter || defaultFilters);
     const firestoreTableRef = useRef<FirestoreTableWithCursorsRef>(null);
 
@@ -32,8 +36,7 @@ const AuditLogs = ({ collectionPath, defaultFilter, labels = [] }: AuditLogsProp
         if (dateRange) {
             const dates = getDatesFromFilter(dateRange);
             if (dates) {
-                // TODO: find out date field name
-                q = q.where('date', '>=', dates[0]).where('date', '<=', dates[1]);
+                q = q.where('createdAt', '>=', dates[0]).where('createdAt', '<=', dates[1]);
             }
         }
         const { labels: filterLabels = {} } = filters;
@@ -41,7 +44,7 @@ const AuditLogs = ({ collectionPath, defaultFilter, labels = [] }: AuditLogsProp
             if (!key) return;
             q = q.where(`labels.${key}`, '==', filterLabels[key]);
         });
-        return q.orderBy('date', 'desc');
+        return q.orderBy('createdAt', 'desc');
     };
 
     const updateFilters = useCallback((newFilters: Filters) => {
@@ -51,10 +54,25 @@ const AuditLogs = ({ collectionPath, defaultFilter, labels = [] }: AuditLogsProp
         });
     }, []);
 
+    const getDownloadData = async ({ max, format }: any) => {
+        const ref = app.firestore().collection(collectionPath);
+        const finalQuery = max ? query(ref).limit(max) : query(ref);
+        try {
+            const querySnapshot = await finalQuery.get();
+            const data = querySnapshot.docs.map((doc: any) => ({
+                ...doc.data(),
+            }));
+            return prepareForDownload({ data, format });
+        } catch {
+            return [{}];
+        }
+    };
+
     const contextValue: ContextType = {
         filters,
         labels,
         updateFilters,
+        getDownloadData,
     };
 
     return (

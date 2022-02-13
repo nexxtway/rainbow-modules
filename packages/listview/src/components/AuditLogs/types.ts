@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ReactNode, RefObject, CSSProperties } from 'react';
+import { Max } from '../DownloadModal';
 
 export type Severity = 'debug' | 'info' | 'warning' | 'error';
 
@@ -34,6 +35,7 @@ export type ContextType = {
     filters: Filters;
     labels: string[];
     updateFilters: (newFilters: Filters) => void;
+    getDownloadData?: (max: Max, format: string) => Promise<Array<Record<string, unknown>>>;
 };
 
 export interface SeveritySelectProps {

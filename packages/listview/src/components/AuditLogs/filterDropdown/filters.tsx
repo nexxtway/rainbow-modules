@@ -5,6 +5,7 @@ import { TrashFilled } from '@rainbow-modules/icons';
 import { StyledFilterContainer, StyledLabel, StyledPicklist, StyledInput } from './styled';
 import { LabelFilter as LabelFilterType, PicklistValue } from '../types';
 import context from '../context';
+import { OnChangeFunction } from './types';
 
 const FilterOptions = ({ labels: activeLabels = [] }: { labels: string[] }) => {
     const { labels } = useContext(context);
@@ -25,6 +26,7 @@ const LabelFilter = ({
     value: valueInProps,
     label,
     filteredLabels,
+    readOnly,
     onChange,
 }: {
     name: string;
@@ -32,27 +34,34 @@ const LabelFilter = ({
     index: number;
     label: string;
     filteredLabels: string[];
-    onChange: (oldName: string, newName?: string, value?: string) => void;
+    readOnly?: boolean;
+    onChange: OnChangeFunction;
 }) => {
-    const { labels } = useContext(context);
     const inputRef = useRef<HTMLInputElement>();
 
     const handleNameChange = ({ name }: PicklistValue) =>
-        onChange(nameInProps, name as string, valueInProps);
+        onChange({
+            oldName: nameInProps,
+            newName: name as string,
+            value: valueInProps,
+        });
 
     const handleValueChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newValue = event.target.value;
-        onChange(nameInProps, nameInProps, newValue);
+        onChange({
+            oldName: nameInProps,
+            newName: nameInProps,
+            value: newValue,
+        });
     };
 
-    const handleRemove = () => onChange(nameInProps, undefined, undefined);
+    const handleRemove = () =>
+        onChange({ oldName: nameInProps, newName: undefined, value: undefined });
 
     const picklistValue = {
         name: nameInProps,
         label: nameInProps,
     };
-    const isEntryDisabled =
-        !nameInProps && labels.filter((l) => !filteredLabels.includes(l)).length === 0;
 
     return (
         <StyledFilterContainer>
@@ -62,7 +71,7 @@ const LabelFilter = ({
                 placeholder="Filter Name"
                 value={picklistValue}
                 onChange={handleNameChange}
-                disabled={isEntryDisabled}
+                readOnly={readOnly}
             >
                 <FilterOptions labels={filteredLabels} />
             </StyledPicklist>
@@ -70,7 +79,6 @@ const LabelFilter = ({
                 placeholder="Value"
                 value={valueInProps}
                 onChange={handleValueChange}
-                disabled={isEntryDisabled}
                 ref={inputRef}
             />
             <ButtonIcon icon={<TrashFilled />} onClick={handleRemove} />
@@ -80,10 +88,12 @@ const LabelFilter = ({
 
 const LabelFilters = ({
     filter,
+    readOnly,
     onChange,
 }: {
     filter: LabelFilterType;
-    onChange: (oldName: string, newName?: string, value?: string) => void;
+    readOnly?: boolean;
+    onChange: OnChangeFunction;
 }): JSX.Element | null => {
     const filteredLabels = Object.keys(filter);
     return (
@@ -97,6 +107,7 @@ const LabelFilters = ({
                     value={filter[name]}
                     filteredLabels={filteredLabels}
                     onChange={onChange}
+                    readOnly={readOnly}
                 />
             ))}
         </>
