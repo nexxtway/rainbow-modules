@@ -1,0 +1,43 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Modules/Hooks/usePrevious" />
+
+# Overview
+
+`usePrevious` A hook that give you the previous value of an state
+
+### API
+
+```ts
+    function usePrevious<T>(value: T): T;
+```
+
+### Params
+
+| Property       | Description                      | Type                                  | Default |
+| -------------- | -------------------------------- | ------------------------------------- | ------- |
+| value          | the value of the state           | any                                   |         |
+
+
+### Usage
+
+```js
+import { useState } from "react";
+import { usePrevious } from '@rainbow-modules/hooks';
+
+function App() {
+  // State value and setter for our example
+  const [count, setCount] = useState(0);
+  // Get the previous value (was passed into hook on last render)
+  const prevCount = usePrevious(count);
+  // Display both current and previous count value
+  return (
+    <div>
+      <h1>
+        Now: {count}, before: {prevCount}
+      </h1>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+```
