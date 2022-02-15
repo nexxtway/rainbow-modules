@@ -24,6 +24,8 @@ const defaults = {
         message: 'There was an error, Please try again.',
         variant: 'error',
     },
+    asyncFn: async () => {},
+    fn: () => {},
 };
 
 const resolveMessage = (message, results, mode) => {
@@ -80,37 +82,48 @@ const resolveFeedbackActionFn = (type) => {
 
 const useMutationFlow = (opts) => {
     const {
-        mutation = async () => {},
+        mutation = defaults.asyncFn,
         submitSpinnerMessage,
         successMessage = defaults.success.description,
         errorMessage = defaults.error.description,
-        onSuccess = () => {},
-        onError = () => {},
+        onSuccess = defaults.fn,
+        onError = defaults.fn,
         type = 'notification',
     } = opts;
     const { successAction, errorAction } = resolveFeedbackActionFn(type);
 
-    const mutate = useCallback(async (...args) => {
-        hideAppMessage();
-        showAppSpinner({ message: submitSpinnerMessage });
-        try {
-            const showAction = successMessage !== null;
-            const res = await mutation(...args);
-            hideAppSpinner();
-            onSuccess(res);
-            if (showAction) {
-                successAction(resolveMessage(successMessage, res, 'success'));
+    const mutate = useCallback(
+        async (...args) => {
+            hideAppMessage();
+            showAppSpinner({ message: submitSpinnerMessage });
+            try {
+                const showAction = successMessage !== null;
+                const res = await mutation(...args);
+                hideAppSpinner();
+                onSuccess(res);
+                if (showAction) {
+                    successAction(resolveMessage(successMessage, res, 'success'));
+                }
+            } catch (error) {
+                const showAction = errorMessage !== null;
+                hideAppSpinner();
+                onError(error);
+                if (showAction) {
+                    errorAction(resolveMessage(errorMessage, error, 'error'));
+                }
             }
-        } catch (error) {
-            const showAction = errorMessage !== null;
-            hideAppSpinner();
-            onError(error);
-            if (showAction) {
-                errorAction(resolveMessage(errorMessage, error, 'error'));
-            }
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+        },
+        [
+            errorAction,
+            errorMessage,
+            mutation,
+            onError,
+            onSuccess,
+            submitSpinnerMessage,
+            successAction,
+            successMessage,
+        ],
+    );
 
     return { mutate };
 };
