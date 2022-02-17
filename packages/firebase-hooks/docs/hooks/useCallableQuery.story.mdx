@@ -1,0 +1,24 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+<Meta title="Modules/firebase-hooks/Hooks/useCallableQuery" />
+
+# Overview
+
+`useCallableQuery` hook will use `react-query` behind the scene to perform a Firebase callable function invocation.
+
+### API
+
+```ts
+useCallableQuery(
+    fnName : string; // name of the Firebase callable function
+    params: unknown; // params passed in the request 
+    opts: Omit<UseQueryOptions, 'queryKey' | 'queryFn'> // useQuery opts
+);
+```
+
+### This is a basic example.
+
+```js
+    const { data, isLoading } = useCallableQuery('rainbow_getAirlines', { status: 'all' });
+```
+
