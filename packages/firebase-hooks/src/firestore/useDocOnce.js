@@ -7,7 +7,7 @@ export default function useDocOnce(props) {
     const { app } = useContext(Context);
 
     const [isLoading, setIsLoading] = useState(!disabled);
-    const [data, setData] = useState(null);
+    const [data, setData] = useState();
 
     useEffect(() => {
         if (app && !disabled) {
@@ -22,7 +22,7 @@ export default function useDocOnce(props) {
                     if (doc.exists) {
                         setData(getDocData(doc, flat));
                     } else {
-                        setData(null);
+                        setData(undefined);
                     }
                     setIsLoading(false);
                 })
