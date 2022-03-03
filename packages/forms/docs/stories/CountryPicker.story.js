@@ -18,9 +18,10 @@ export const Basic = () => {
     );
 };
 
+const countries = ['cu', 'mx', 'es', 'us'];
+
 export const FilteredCountries = () => {
     const [value, setValue] = useState({ isoCode: 'mx' });
-    const countries = ['cu', 'mx', 'es', 'us'];
 
     return (
         <Container>

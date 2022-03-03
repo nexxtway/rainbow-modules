@@ -4,6 +4,9 @@ import customWarning from '../helpers/customWarning';
 
 export default function useCountries(countries) {
     return useMemo(() => {
+        if (!countries) {
+            return allCountries;
+        }
         if (countries.length === 0) {
             return allCountries;
         }
