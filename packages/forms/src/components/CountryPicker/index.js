@@ -1,32 +1,11 @@
 /* eslint-disable react/no-unused-prop-types */
-import React, { useMemo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Picklist, Option } from 'react-rainbow-components';
+import { Picklist } from 'react-rainbow-components';
 import useReduxForm from 'react-rainbow-components/libs/hooks/useReduxForm';
-import countries from './countries';
-
-const Countries = () => {
-    return countries.map(({ isoCode, country, flagIcon }) => {
-        return <Option key={isoCode} name={isoCode} label={country} icon={flagIcon} />;
-    });
-};
-
-const useSelectedValue = (value) => {
-    return useMemo(() => {
-        if (value && value.isoCode) {
-            const country = countries.find(({ isoCode }) => isoCode === value.isoCode);
-            if (country) {
-                const { flagIcon, country: label, isoCode } = country;
-                return {
-                    icon: flagIcon,
-                    label,
-                    name: isoCode,
-                };
-            }
-        }
-        return null;
-    }, [value]);
-};
+import useCountries from './hooks/useCountries';
+import useSelectedValue from './hooks/useSelectedValue';
+import Options from './options';
 
 const CountryPicker = (props) => {
     const {
@@ -43,9 +22,12 @@ const CountryPicker = (props) => {
         readOnly,
         required,
         error,
+        countries: countriesProps,
     } = useReduxForm(props);
 
-    const selectedValue = useSelectedValue(value);
+    const countries = useCountries(countriesProps);
+
+    const selectedValue = useSelectedValue(value, countries);
 
     const handleChange = ({ name }) => {
         return onChange({
@@ -70,12 +52,14 @@ const CountryPicker = (props) => {
             required={required}
             error={error}
         >
-            <Countries />
+            <Options countries={countries} />
         </Picklist>
     );
 };
 
 CountryPicker.propTypes = {
+    /** Specifies the ISO codes of the countries available for selection. */
+    countries: PropTypes.array,
     /** A CSS class for the outer element, in addition to the component's base classes. */
     className: PropTypes.string,
     /** An object with custom style applied to the outer element. */
@@ -120,6 +104,250 @@ CountryPicker.defaultProps = {
     readOnly: false,
     required: false,
     error: undefined,
+    countries: [
+        'af',
+        'ax',
+        'al',
+        'dz',
+        'as',
+        'ad',
+        'ao',
+        'ai',
+        'ag',
+        'ar',
+        'am',
+        'aw',
+        'ac',
+        'au',
+        'at',
+        'az',
+        'bs',
+        'bh',
+        'bd',
+        'bb',
+        'by',
+        'be',
+        'bz',
+        'bj',
+        'bm',
+        'bt',
+        'bo',
+        'bq',
+        'ba',
+        'bw',
+        'br',
+        'vg',
+        'bn',
+        'bg',
+        'bf',
+        'bi',
+        'kh',
+        'cm',
+        'ca',
+        'cv',
+        'ky',
+        'cf',
+        'td',
+        'cl',
+        'cn',
+        'cx',
+        'cc',
+        'co',
+        'km',
+        'cg',
+        'cd',
+        'ck',
+        'cr',
+        'ci',
+        'hr',
+        'cu',
+        'cw',
+        'cy',
+        'cz',
+        'dk',
+        'dj',
+        'dm',
+        'do',
+        'ec',
+        'eg',
+        'sv',
+        'gq',
+        'er',
+        'ee',
+        'et',
+        'fk',
+        'fo',
+        'fj',
+        'fi',
+        'fr',
+        'gf',
+        'pf',
+        'ga',
+        'gm',
+        'ge',
+        'de',
+        'gh',
+        'gi',
+        'gr',
+        'gl',
+        'gd',
+        'gp',
+        'gu',
+        'gt',
+        'gg',
+        'gn',
+        'gw',
+        'gy',
+        'ht',
+        'hn',
+        'hk',
+        'hu',
+        'is',
+        'in',
+        'id',
+        'ir',
+        'iq',
+        'ie',
+        'im',
+        'il',
+        'it',
+        'jm',
+        'jp',
+        'je',
+        'jo',
+        'kz',
+        'ke',
+        'ki',
+        'kv',
+        'kw',
+        'kg',
+        'la',
+        'lv',
+        'lb',
+        'ls',
+        'lr',
+        'ly',
+        'li',
+        'lt',
+        'lu',
+        'mo',
+        'mk',
+        'mg',
+        'mw',
+        'my',
+        'mv',
+        'ml',
+        'mt',
+        'mh',
+        'mq',
+        'mr',
+        'mu',
+        'yt',
+        'mx',
+        'fm',
+        'md',
+        'mc',
+        'mn',
+        'me',
+        'ms',
+        'ma',
+        'mz',
+        'mm',
+        'na',
+        'nr',
+        'np',
+        'nl',
+        'nc',
+        'nz',
+        'ni',
+        'ne',
+        'ng',
+        'nu',
+        'nf',
+        'kp',
+        'mp',
+        'no',
+        'om',
+        'pk',
+        'pw',
+        'ps',
+        'pa',
+        'pg',
+        'py',
+        'pe',
+        'ph',
+        'pl',
+        'pt',
+        'pr',
+        'qa',
+        're',
+        'ro',
+        'ru',
+        'rw',
+        'bl',
+        'sh',
+        'kn',
+        'lc',
+        'mf',
+        'pm',
+        'vc',
+        'ws',
+        'sm',
+        'st',
+        'sa',
+        'sn',
+        'rs',
+        'sc',
+        'sl',
+        'sg',
+        'sx',
+        'sk',
+        'si',
+        'sb',
+        'so',
+        'za',
+        'kr',
+        'ss',
+        'es',
+        'lk',
+        'sd',
+        'sr',
+        'sj',
+        'sz',
+        'se',
+        'ch',
+        'sy',
+        'tw',
+        'tj',
+        'tz',
+        'th',
+        'tl',
+        'tg',
+        'tk',
+        'to',
+        'tt',
+        'tn',
+        'tr',
+        'tm',
+        'tc',
+        'tv',
+        'vi',
+        'ug',
+        'ua',
+        'ae',
+        'gb',
+        'us',
+        'uy',
+        'uz',
+        'vu',
+        'va',
+        've',
+        'vn',
+        'wf',
+        'ye',
+        'zm',
+        'zw',
+    ],
 };
 
 export default CountryPicker;
