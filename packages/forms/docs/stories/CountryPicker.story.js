@@ -18,6 +18,23 @@ export const Basic = () => {
     );
 };
 
+const countries = ['cu', 'mx', 'es', 'us'];
+
+export const FilteredCountries = () => {
+    const [value, setValue] = useState({ isoCode: 'mx' });
+
+    return (
+        <Container>
+            <CountryPicker
+                label="Select a country"
+                onChange={setValue}
+                value={value}
+                countries={countries}
+            />
+        </Container>
+    );
+};
+
 export default {
     title: 'Modules/Forms/Stories/CountryPicker',
     parameters: {
