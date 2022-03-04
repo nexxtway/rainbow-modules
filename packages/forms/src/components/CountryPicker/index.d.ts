@@ -32,6 +32,8 @@ export interface CountryPickerProps {
     name?: string;
     /** Specifies that the picker must be filled out before submitting the form. */
     error?: ReactNode;
+    /** Specifies the ISO codes of the countries available for selection. */
+    countries?: string[];
 }
 
 export default function (props: CountryPickerProps): JSX.Element | null;

@@ -1,32 +1,11 @@
 /* eslint-disable react/no-unused-prop-types */
-import React, { useMemo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Picklist, Option } from 'react-rainbow-components';
+import { Picklist } from 'react-rainbow-components';
 import useReduxForm from 'react-rainbow-components/libs/hooks/useReduxForm';
-import countries from './countries';
-
-const Countries = () => {
-    return countries.map(({ isoCode, country, flagIcon }) => {
-        return <Option key={isoCode} name={isoCode} label={country} icon={flagIcon} />;
-    });
-};
-
-const useSelectedValue = (value) => {
-    return useMemo(() => {
-        if (value && value.isoCode) {
-            const country = countries.find(({ isoCode }) => isoCode === value.isoCode);
-            if (country) {
-                const { flagIcon, country: label, isoCode } = country;
-                return {
-                    icon: flagIcon,
-                    label,
-                    name: isoCode,
-                };
-            }
-        }
-        return null;
-    }, [value]);
-};
+import useCountries from './hooks/useCountries';
+import useSelectedValue from './hooks/useSelectedValue';
+import Options from './options';
 
 const CountryPicker = (props) => {
     const {
@@ -43,9 +22,12 @@ const CountryPicker = (props) => {
         readOnly,
         required,
         error,
+        countries: countriesProps,
     } = useReduxForm(props);
 
-    const selectedValue = useSelectedValue(value);
+    const countries = useCountries(countriesProps);
+
+    const selectedValue = useSelectedValue(value, countries);
 
     const handleChange = ({ name }) => {
         return onChange({
@@ -70,12 +52,14 @@ const CountryPicker = (props) => {
             required={required}
             error={error}
         >
-            <Countries />
+            <Options countries={countries} />
         </Picklist>
     );
 };
 
 CountryPicker.propTypes = {
+    /** Specifies the ISO codes of the countries available for selection. */
+    countries: PropTypes.array,
     /** A CSS class for the outer element, in addition to the component's base classes. */
     className: PropTypes.string,
     /** An object with custom style applied to the outer element. */
@@ -120,6 +104,7 @@ CountryPicker.defaultProps = {
     readOnly: false,
     required: false,
     error: undefined,
+    countries: undefined,
 };
 
 export default CountryPicker;
