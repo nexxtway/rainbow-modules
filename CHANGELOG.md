@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.49.0](https://github.com/nexxtway/rainbow-modules/compare/v0.48.0...v0.49.0) (2022-03-06)
+
+### Bug Fixes
+
+-   auth example to use routes with no conflicts ([#534](https://github.com/nexxtway/rainbow-modules/issues/534)) ([c6e7b62](https://github.com/nexxtway/rainbow-modules/commit/c6e7b62abfdb72fea009c700351fe80ed91020bd))
+-   download modal comments ([#527](https://github.com/nexxtway/rainbow-modules/issues/527)) ([0dca94c](https://github.com/nexxtway/rainbow-modules/commit/0dca94c392f3c2872fd650bd58bef7836ce74df2))
+-   download modal undefined data bug ([#531](https://github.com/nexxtway/rainbow-modules/issues/531)) ([82cec29](https://github.com/nexxtway/rainbow-modules/commit/82cec295420b3aff4efa6c2e5306b00172d104d1))
+-   hide `FirestoreTableWithCursors` buttons when empty ([#524](https://github.com/nexxtway/rainbow-modules/issues/524)) ([b0043f4](https://github.com/nexxtway/rainbow-modules/commit/b0043f410e61bbe9bc7e4d5a1b9f965acf6177a6))
+-   improve AuditLogs component ([#529](https://github.com/nexxtway/rainbow-modules/issues/529)) ([0592d0a](https://github.com/nexxtway/rainbow-modules/commit/0592d0ae7de3be9619721c72b0dafa315ac0a72c))
+-   improved country picker ([#542](https://github.com/nexxtway/rainbow-modules/issues/542)) ([a326a89](https://github.com/nexxtway/rainbow-modules/commit/a326a895c47236dfa688eea054fe3a9d82debfac))
+-   mutationFlow deps ([#536](https://github.com/nexxtway/rainbow-modules/issues/536)) ([1758cd1](https://github.com/nexxtway/rainbow-modules/commit/1758cd1a7767607f205742d777549a81631c069b))
+-   resolve auditlogs comments ([#532](https://github.com/nexxtway/rainbow-modules/issues/532)) ([f64ec50](https://github.com/nexxtway/rainbow-modules/commit/f64ec50869c72cfa1ddd965ad873a5d7d76db79e))
+-   useDoc to return undefined when no doc exists ([#539](https://github.com/nexxtway/rainbow-modules/issues/539)) ([a7cc7d2](https://github.com/nexxtway/rainbow-modules/commit/a7cc7d2115c07926e6db701e38927c455a154a47))
+
+### Features
+
+-   add useCallableQuery new hook ([#537](https://github.com/nexxtway/rainbow-modules/issues/537)) ([b433639](https://github.com/nexxtway/rainbow-modules/commit/b4336395a40edcb35bf768027e981192b62e14f7))
+-   added new icons ([#520](https://github.com/nexxtway/rainbow-modules/issues/520)) ([2a45e61](https://github.com/nexxtway/rainbow-modules/commit/2a45e61222fd27747f1096d2af5ff99254bdac89))
+-   download modal component ([#523](https://github.com/nexxtway/rainbow-modules/issues/523)) ([e1936bf](https://github.com/nexxtway/rainbow-modules/commit/e1936bf22d3f20dd2dd8013e53c6058a01a1d2f6))
+-   implement AuditLogs component ([#521](https://github.com/nexxtway/rainbow-modules/issues/521)) ([15dc915](https://github.com/nexxtway/rainbow-modules/commit/15dc9158a0ec64dc5c212e5c5826d6c95f2cf658))
+-   implement column header filter multiselect component ([#528](https://github.com/nexxtway/rainbow-modules/issues/528)) ([090c522](https://github.com/nexxtway/rainbow-modules/commit/090c522677a51d15dfa7de09ea0e7352590f7c78))
+-   implement column header filter text component ([#526](https://github.com/nexxtway/rainbow-modules/issues/526)) ([7c17e9a](https://github.com/nexxtway/rainbow-modules/commit/7c17e9a31dea2e1c2581dbaf9b8d778b9cc62a19))
+-   usePrevious hook ([#533](https://github.com/nexxtway/rainbow-modules/issues/533)) ([6a9587f](https://github.com/nexxtway/rainbow-modules/commit/6a9587f7c74f3b3244447021d2eecd3648814c09))
+
 # [0.48.0](https://github.com/nexxtway/rainbow-modules/compare/v0.47.3...v0.48.0) (2022-01-22)
 
 ### Bug Fixes

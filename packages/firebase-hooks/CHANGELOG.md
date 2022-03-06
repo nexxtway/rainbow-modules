@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.49.0](https://github.com/nexxtway/rainbow-modules/compare/v0.48.0...v0.49.0) (2022-03-06)
+
+### Bug Fixes
+
+-   improve AuditLogs component ([#529](https://github.com/nexxtway/rainbow-modules/issues/529)) ([0592d0a](https://github.com/nexxtway/rainbow-modules/commit/0592d0ae7de3be9619721c72b0dafa315ac0a72c))
+-   useDoc to return undefined when no doc exists ([#539](https://github.com/nexxtway/rainbow-modules/issues/539)) ([a7cc7d2](https://github.com/nexxtway/rainbow-modules/commit/a7cc7d2115c07926e6db701e38927c455a154a47))
+
+### Features
+
+-   add useCallableQuery new hook ([#537](https://github.com/nexxtway/rainbow-modules/issues/537)) ([b433639](https://github.com/nexxtway/rainbow-modules/commit/b4336395a40edcb35bf768027e981192b62e14f7))
+
 # [0.48.0](https://github.com/nexxtway/rainbow-modules/compare/v0.47.3...v0.48.0) (2022-01-22)
 
 ### Bug Fixes

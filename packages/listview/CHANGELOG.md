@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.49.0](https://github.com/nexxtway/rainbow-modules/compare/v0.48.0...v0.49.0) (2022-03-06)
+
+### Bug Fixes
+
+-   download modal comments ([#527](https://github.com/nexxtway/rainbow-modules/issues/527)) ([0dca94c](https://github.com/nexxtway/rainbow-modules/commit/0dca94c392f3c2872fd650bd58bef7836ce74df2))
+-   download modal undefined data bug ([#531](https://github.com/nexxtway/rainbow-modules/issues/531)) ([82cec29](https://github.com/nexxtway/rainbow-modules/commit/82cec295420b3aff4efa6c2e5306b00172d104d1))
+-   hide `FirestoreTableWithCursors` buttons when empty ([#524](https://github.com/nexxtway/rainbow-modules/issues/524)) ([b0043f4](https://github.com/nexxtway/rainbow-modules/commit/b0043f410e61bbe9bc7e4d5a1b9f965acf6177a6))
+-   improve AuditLogs component ([#529](https://github.com/nexxtway/rainbow-modules/issues/529)) ([0592d0a](https://github.com/nexxtway/rainbow-modules/commit/0592d0ae7de3be9619721c72b0dafa315ac0a72c))
+-   resolve auditlogs comments ([#532](https://github.com/nexxtway/rainbow-modules/issues/532)) ([f64ec50](https://github.com/nexxtway/rainbow-modules/commit/f64ec50869c72cfa1ddd965ad873a5d7d76db79e))
+
+### Features
+
+-   download modal component ([#523](https://github.com/nexxtway/rainbow-modules/issues/523)) ([e1936bf](https://github.com/nexxtway/rainbow-modules/commit/e1936bf22d3f20dd2dd8013e53c6058a01a1d2f6))
+-   implement AuditLogs component ([#521](https://github.com/nexxtway/rainbow-modules/issues/521)) ([15dc915](https://github.com/nexxtway/rainbow-modules/commit/15dc9158a0ec64dc5c212e5c5826d6c95f2cf658))
+-   implement column header filter multiselect component ([#528](https://github.com/nexxtway/rainbow-modules/issues/528)) ([090c522](https://github.com/nexxtway/rainbow-modules/commit/090c522677a51d15dfa7de09ea0e7352590f7c78))
+-   implement column header filter text component ([#526](https://github.com/nexxtway/rainbow-modules/issues/526)) ([7c17e9a](https://github.com/nexxtway/rainbow-modules/commit/7c17e9a31dea2e1c2581dbaf9b8d778b9cc62a19))
+
 # [0.48.0](https://github.com/nexxtway/rainbow-modules/compare/v0.47.3...v0.48.0) (2022-01-22)
 
 ### Bug Fixes
