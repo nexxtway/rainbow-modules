@@ -23,6 +23,7 @@ const CountryPicker = (props) => {
         required,
         error,
         countries: countriesProps,
+        emptyComponent,
     } = useReduxForm(props);
 
     const countries = useCountries(countriesProps);
@@ -51,6 +52,7 @@ const CountryPicker = (props) => {
             readOnly={readOnly}
             required={required}
             error={error}
+            emptyComponent={emptyComponent}
         >
             <Options countries={countries} />
         </Picklist>
@@ -88,6 +90,8 @@ CountryPicker.propTypes = {
     required: PropTypes.bool,
     /** Specifies that the picker must be filled out before submitting the form. */
     error: PropTypes.node,
+    /** A component that is displayed when no search matches are found */
+    emptyComponent: PropTypes.node,
 };
 
 CountryPicker.defaultProps = {
@@ -105,6 +109,7 @@ CountryPicker.defaultProps = {
     required: false,
     error: undefined,
     countries: undefined,
+    emptyComponent: undefined,
 };
 
 export default CountryPicker;
