@@ -36,6 +36,8 @@ Iframe.propTypes = {
     title: PropTypes.string,
     /** Controls whether the Modal is opened or not. If true, the modal is open. */
     isOpen: PropTypes.bool,
+    /** The header can include text or a component, and is displayed at the top of the component. */
+    header: PropTypes.node,
     /** The variant of the iframe to show */
     variant: PropTypes.oneOf(['fullPage', 'popup']),
     /** The action triggered when the component request to close
@@ -49,6 +51,7 @@ Iframe.defaultProps = {
     style: undefined,
     src: undefined,
     title: undefined,
+    header: undefined,
     isOpen: false,
     variant: 'fullPage',
     // eslint-disable-next-line @typescript-eslint/no-empty-function
