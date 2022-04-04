@@ -27,18 +27,41 @@ export const FullPageContainer = styled(AnimatedContainer)`
     height: 100vh;
     background-color: ${(props) => props.theme.rainbow.palette.background.main};
     z-index: ${ZINDEX_IFRAME_MODAL};
+    display: flex;
+    flex-direction: column;
+`;
+
+export const Header = styled.div`
+    background-color: ${(props) => props.theme.rainbow.palette.background.main};
+    box-shadow: ${(props) => props.theme.rainbow.shadows.shadow_2};
+    box-sizing: border-box;
+    margin-bottom: 4px;
+    display: flex;
+    flex: 0;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+export const HeaderContainer = styled.div`
+    min-height: 40px;
+    display: flex;
+    align-items: center;
 `;
 
 export const FullPageInnerContainer = styled.div`
     width: 100vw;
-    height: 100vh;
-    position: relative;
+    flex: 1 1 auto;
 `;
 
 export const FullPageIframe = styled(StyledIframe)<{ isLoading?: boolean }>`
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     ${(props) => props.isLoading && 'visibility: hidden'}
+`;
+
+export const FullCloseButton = styled(ButtonIcon)`
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-right: 10px;
 `;
 
 export const PopupContainer = styled(AnimatedContainer)`

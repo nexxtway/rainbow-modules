@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { Application } from 'react-rainbow-components';
 import Iframe from '..';
-import { StyledSpinner } from '../styled';
+import { HeaderContainer, StyledSpinner } from '../styled';
 
 describe('<Iframe />', () => {
     it('should render an iframe with the passed `src`', () => {
@@ -53,5 +53,14 @@ describe('<Iframe />', () => {
         const iframe = component.find('iframe').first();
         iframe.simulate('load');
         expect(component.find(StyledSpinner).exists()).toBe(false);
+    });
+
+    it('should render a header when variant is fullPage and pass header', () => {
+        const component = mount(
+            <Application>
+                <Iframe src="test.html" isOpen header="foo" />
+            </Application>,
+        );
+        expect(component.find(HeaderContainer).text()).toBe('foo');
     });
 });

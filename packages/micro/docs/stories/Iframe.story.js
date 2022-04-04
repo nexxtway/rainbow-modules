@@ -115,6 +115,30 @@ export const PopupIframe = () => {
     );
 };
 
+const StyledTitle = styled.h2`
+    padding-left: 15px;
+    font-size: 14px;
+    color: ${(props) => props.theme.rainbow.palette.text.title};
+`;
+
+export const FullIframeWithHeader = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleClick = () => setIsOpen(true);
+
+    return (
+        <RainbowFirebaseApp>
+            <IframeCard onClick={handleClick} />
+            <Iframe
+                src="https://react-rainbow.io/"
+                isOpen={isOpen}
+                header={<StyledTitle>React Rainbow Components</StyledTitle>}
+                onRequestClose={() => setIsOpen(false)}
+            />
+        </RainbowFirebaseApp>
+    );
+};
+
 export default {
     title: 'Modules/Micro/Stories/Iframe',
     parameters: {
