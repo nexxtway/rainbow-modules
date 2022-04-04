@@ -7,7 +7,7 @@ export default function useDoc(props) {
     const { app } = useContext(Context);
 
     const [isLoading, setIsLoading] = useState(!disabled);
-    const [data, setData] = useState(null);
+    const [data, setData] = useState();
 
     // eslint-disable-next-line consistent-return
     useEffect(() => {
@@ -23,7 +23,7 @@ export default function useDoc(props) {
                     if (doc.exists) {
                         setData(getDocData(doc, flat));
                     } else {
-                        setData(null);
+                        setData(undefined);
                     }
                     setIsLoading(false);
                 },

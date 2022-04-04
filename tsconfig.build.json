@@ -16,7 +16,7 @@
     },
     "exclude": [
         "node_modules",
-        "lib",
+        "**/lib/**/*",
         "**/__tests__/**/*",
         "**/__test__/**/*",
         "**/__integration__/**/*",

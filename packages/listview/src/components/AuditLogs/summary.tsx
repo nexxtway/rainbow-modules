@@ -7,6 +7,7 @@ import {
     StyledSummaryButton,
     StyledSummaryContainer,
 } from './styled';
+import { getFormattedCode } from './helpers';
 
 type LabelsProps = { labels: Record<string, string> };
 
@@ -20,7 +21,8 @@ const SummaryLabels = ({ labels }: LabelsProps) => {
     );
 };
 
-const Summary = (props: any): JSX.Element => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Summary = (props: Record<string, any>): JSX.Element => {
     const [isExpanded, setIsExpanded] = useState(false);
     const { value, row } = props;
 
@@ -35,7 +37,7 @@ const Summary = (props: any): JSX.Element => {
             <StyledCellText>{value}</StyledCellText>
             <RenderIf isTrue={isExpanded}>
                 <StyledCodeBlock
-                    value={JSON.stringify(row, undefined, 2)}
+                    value={getFormattedCode(row)}
                     language="json"
                     theme="dark"
                     hideHeader

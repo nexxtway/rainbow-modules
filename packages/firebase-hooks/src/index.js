@@ -15,3 +15,4 @@ export { default as useBatch } from './firestore/useBatch/index';
 export { default as useAuthFetch } from './http/useAuthFetch';
 export { default as useHttpAuthQuery } from './http/useHttpAuthQuery';
 export { default as useHttpAuthMutation } from './http/useHttpAuthMutation';
+export { default as useCallableQuery } from './http/useCallableQuery';

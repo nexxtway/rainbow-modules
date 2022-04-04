@@ -14,6 +14,11 @@ and the application isn't authenticated the component will redirect the navigati
 This component subscribes to any authenticated state change. Hence the render of it's content reacts depending
 on the latest authentication state.
 
+**Note**
+
+When used with `WhenNoAuthenticated` you should use routes that don't conflict with each other, for instance, `/home/**` contains 
+all the public routes and `/app/**` contains all the authenticated routes.
+
 ## This example is a basic `email` and `password` authentication flow.
 
 <Preview>

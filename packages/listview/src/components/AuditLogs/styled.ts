@@ -78,3 +78,7 @@ export const StyledCodeBlock = styled(CodeBlock)`
     line-height: 1.2em;
     margin-bottom: 0.5rem;
 `;
+
+export const StyledSeverityLabel = styled.span`
+    line-height: 18px;
+`;

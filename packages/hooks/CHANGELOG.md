@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.49.0](https://github.com/nexxtway/rainbow-modules/compare/v0.48.0...v0.49.0) (2022-03-06)
+
+### Bug Fixes
+
+-   mutationFlow deps ([#536](https://github.com/nexxtway/rainbow-modules/issues/536)) ([1758cd1](https://github.com/nexxtway/rainbow-modules/commit/1758cd1a7767607f205742d777549a81631c069b))
+
+### Features
+
+-   usePrevious hook ([#533](https://github.com/nexxtway/rainbow-modules/issues/533)) ([6a9587f](https://github.com/nexxtway/rainbow-modules/commit/6a9587f7c74f3b3244447021d2eecd3648814c09))
+
 # [0.48.0](https://github.com/nexxtway/rainbow-modules/compare/v0.47.3...v0.48.0) (2022-01-22)
 
 ### Bug Fixes

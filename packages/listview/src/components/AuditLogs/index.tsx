@@ -1,15 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useCallback, useState } from 'react';
-import { Column } from 'react-rainbow-components';
-import { useCollection } from '@rainbow-modules/firebase-hooks';
+import React, { useCallback, useRef, useState } from 'react';
+import { useFirebaseApp } from '@rainbow-modules/firebase-hooks';
 import { AuditLogsProps, ContextType, Filters } from './types';
-import { StyledContainer, StyledTable } from './styled';
+import { StyledContainer } from './styled';
 import AuditLogsHeader from './header';
-import Severity from './severity';
 import { Provider } from './context';
 import getDatesFromFilter from './helpers/getDatesFromFilter';
-import FirestoreDate from './firestoreDate';
-import Summary from './summary';
+import FirestoreFilterTable from './firestoreFilterTable';
+import { FirestoreTableWithCursorsRef } from '../FirestoreTableWithCursors';
+import { prepareForDownload } from './helpers';
 
 const defaultFilters: Filters = {
     severity: [],
@@ -18,12 +17,15 @@ const defaultFilters: Filters = {
         label: 'All Dates',
     },
     labels: {
-        '': [''],
+        '': '',
     },
 };
 
 const AuditLogs = ({ collectionPath, defaultFilter, labels = [] }: AuditLogsProps): JSX.Element => {
+    const app = useFirebaseApp();
+
     const [filters, setFilters] = useState<Filters>(defaultFilter || defaultFilters);
+    const firestoreTableRef = useRef<FirestoreTableWithCursorsRef>(null);
 
     const query = (ref: any) => {
         const { severity, dateRange } = filters;
@@ -34,73 +36,55 @@ const AuditLogs = ({ collectionPath, defaultFilter, labels = [] }: AuditLogsProp
         if (dateRange) {
             const dates = getDatesFromFilter(dateRange);
             if (dates) {
-                // TODO: find out date field name
-                q = q.where('date', '>=', dates[0]).where('date', '<=', dates[1]);
+                q = q.where('createdAt', '>=', dates[0]).where('createdAt', '<=', dates[1]);
             }
         }
-        return q.orderBy('date', 'desc');
+        const { labels: filterLabels = {} } = filters;
+        Object.keys(filterLabels).forEach((key) => {
+            if (!key) return;
+            q = q.where(`labels.${key}`, '==', filterLabels[key]);
+        });
+        return q.orderBy('createdAt', 'desc');
     };
-
-    const [data, isLoading] = useCollection({
-        path: collectionPath,
-        query,
-        flat: true,
-        track: [filters],
-    });
 
     const updateFilters = useCallback((newFilters: Filters) => {
         setFilters(newFilters);
+        setTimeout(() => {
+            if (firestoreTableRef.current) firestoreTableRef.current.refresh();
+        });
     }, []);
+
+    const getDownloadData = async ({ max, format }: any) => {
+        const ref = app.firestore().collection(collectionPath);
+        const finalQuery = max ? query(ref).limit(max) : query(ref);
+        try {
+            const querySnapshot = await finalQuery.get();
+            const data = querySnapshot.docs.map((doc: any) => ({
+                ...doc.data(),
+            }));
+            return prepareForDownload({ data, format });
+        } catch {
+            return [{}];
+        }
+    };
 
     const contextValue: ContextType = {
         filters,
         labels,
         updateFilters,
+        getDownloadData,
     };
-
-    const tableData = isLoading
-        ? []
-        : (data as Array<any>).filter((item) => {
-              const { labels: itemLabels } = item;
-              const itemLabelKeys = Object.keys(itemLabels);
-              const { labels: filterLabels = {} } = filters;
-              return Object.keys(filterLabels).every((key) => {
-                  if (!key) return true;
-                  if (!itemLabelKeys.includes(key)) return false;
-                  return filterLabels[key].includes(itemLabels[key]);
-              });
-          });
 
     return (
         <StyledContainer>
             <Provider value={contextValue}>
                 <AuditLogsHeader />
             </Provider>
-            <StyledTable keyField="id" data={tableData} isLoading={!!isLoading} variant="listview">
-                <Column
-                    header="Severity"
-                    field="severity"
-                    headerAlignment="center"
-                    cellAlignment="center"
-                    width={80}
-                    component={Severity}
-                />
-                <Column
-                    header="Date"
-                    field="date"
-                    headerAlignment="left"
-                    cellAlignment="left"
-                    defaultWidth={250}
-                    component={FirestoreDate}
-                />
-                <Column
-                    header="Summary"
-                    field="textPayload"
-                    headerAlignment="left"
-                    cellAlignment="left"
-                    component={Summary}
-                />
-            </StyledTable>
+            <FirestoreFilterTable
+                collection={collectionPath}
+                query={query}
+                ref={firestoreTableRef}
+            />
         </StyledContainer>
     );
 };
