@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react';
+import { CSSProperties, ReactNode } from 'react';
 
 export type Variant = 'fullPage' | 'popup';
 
@@ -9,6 +9,7 @@ export interface IframeProps {
     src?: string;
     isOpen?: boolean;
     title?: string;
+    header?: ReactNode;
     variant?: Variant;
     onRequestClose?: () => void;
 }
