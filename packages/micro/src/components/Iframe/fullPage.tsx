@@ -2,8 +2,10 @@ import React from 'react';
 import { RenderIf } from 'react-rainbow-components';
 import { Close } from '@rainbow-modules/icons';
 import {
-    CloseButton,
+    FullCloseButton,
     FullPageContainer,
+    Header,
+    HeaderContainer,
     FullPageIframe as StyledFullPageIframe,
     FullPageInnerContainer,
     StyledSpinner,
@@ -16,6 +18,7 @@ const FullPageIframe: React.FC<InternalIframeProps> = ({
     style,
     src,
     title,
+    header,
     isOpen,
     isLoading,
     onRequestClose,
@@ -25,6 +28,15 @@ const FullPageIframe: React.FC<InternalIframeProps> = ({
 
     return (
         <FullPageContainer id={id}>
+            <Header>
+                <HeaderContainer>{header}</HeaderContainer>
+                <FullCloseButton
+                    id="modal-close-button"
+                    icon={<Close />}
+                    size="x-small"
+                    onClick={onRequestClose}
+                />
+            </Header>
             <FullPageInnerContainer>
                 <RenderIf isTrue={isLoading}>
                     <StyledSpinner type="arc" variant="brand" />
@@ -38,13 +50,6 @@ const FullPageIframe: React.FC<InternalIframeProps> = ({
                     onLoad={onLoad}
                 />
             </FullPageInnerContainer>
-
-            <CloseButton
-                id="modal-close-button"
-                icon={<Close />}
-                size="x-small"
-                onClick={onRequestClose}
-            />
         </FullPageContainer>
     );
 };
