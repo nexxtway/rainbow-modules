@@ -131,9 +131,15 @@ import {
     Campaign,
     CampaignFilled,
     Wireless,
+    Globe,
 } from '../../../src';
 
 export default [
+    {
+        name: 'globe',
+        category: 'standard',
+        icon: Globe,
+    },
     {
         name: 'wireless',
         category: 'standard',
