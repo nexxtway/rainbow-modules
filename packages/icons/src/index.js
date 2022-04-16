@@ -124,6 +124,7 @@ export { default as ArrowLink } from './components/arrowLink';
 export { default as Campaign } from './components/campaign';
 export { default as CampaignFilled } from './components/campaingFilled';
 export { default as Wireless } from './components/wireless';
+export { default as Globe } from './components/globe';
 
 // File icons
 export { default as JavascriptFile } from './components/javascriptFile';
