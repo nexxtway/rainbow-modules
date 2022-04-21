@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { ThemeContext } from 'styled-components';
 import { LightAsync as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -44,6 +44,11 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
               }
             : originalTheme;
 
+    const StyledPreCode = (props: any) => {
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        return <StyledPre {...props} selectedTheme={theme} />;
+    };
+
     return (
         <RainbowThemeContainer theme={containerTheme}>
             <StyledContainer className={className} style={style}>
@@ -59,8 +64,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
                         language={language}
                         style={highlighterTheme}
                         showLineNumbers={showLineNumbers}
-                        PreTag={StyledPre}
-                        wrapLongLines
+                        PreTag={StyledPreCode}
                     >
                         {value}
                     </SyntaxHighlighter>

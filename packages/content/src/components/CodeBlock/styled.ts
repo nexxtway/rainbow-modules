@@ -27,10 +27,24 @@ export const StyledContent = styled.div`
     background-color: ${(props) => props.theme.rainbow.palette.background.disabled};
 `;
 
-export const StyledPre = styled.pre`
+export const StyledPre = styled.pre<{ selectedTheme?: string }>`
     background: none !important;
     margin: 0;
     font-size: 0.875rem;
+
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: ${(props) => (props.selectedTheme === 'dark' ? '#474B53' : '#EFF1F5')};
+        border-radius: 2px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: ${(props) => (props.selectedTheme === 'dark' ? '#5C6270' : '#D0D6E2')};
+    }
 
     .linenumber {
         color: ${(props) => props.theme.rainbow.palette.text.disabled};
