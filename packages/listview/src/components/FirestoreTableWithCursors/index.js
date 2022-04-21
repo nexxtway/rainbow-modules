@@ -21,6 +21,7 @@ const FirestoreTableWithCursors = forwardRef((props, ref) => {
     const app = useFirebaseApp();
     const [data, setData] = useState([]);
     const [isLoading, setLoading] = useState(false);
+    const tableRef = useRef();
     const unsubscribe = useRef();
     const pagesRefs = useRef([]);
     const page = useRef();
@@ -69,6 +70,7 @@ const FirestoreTableWithCursors = forwardRef((props, ref) => {
                         });
                         page.current += 1;
                         setData(getData(querySnapshot.docs));
+                        tableRef.current.scrollTop();
                     }
                 },
                 (err) => {
@@ -88,6 +90,7 @@ const FirestoreTableWithCursors = forwardRef((props, ref) => {
                         pagesRefs.current.unshift();
                         page.current -= 1;
                         setData(getData(querySnapshot.docs));
+                        tableRef.current.scrollTop();
                     }
                 },
                 (err) => {
@@ -129,7 +132,7 @@ const FirestoreTableWithCursors = forwardRef((props, ref) => {
 
     return (
         <Container style={style} className={className}>
-            <StyledTable keyField="id" data={data} {...rest} isLoading={isLoading}>
+            <StyledTable keyField="id" data={data} {...rest} isLoading={isLoading} ref={tableRef}>
                 {children}
             </StyledTable>
             <RenderIf isTrue={isNotEmpty}>
