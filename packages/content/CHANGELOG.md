@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.50.0](https://github.com/nexxtway/rainbow-modules/compare/v0.49.0...v0.50.0) (2022-04-22)
+
+### Bug Fixes
+
+-   code block scroll bar ([#551](https://github.com/nexxtway/rainbow-modules/issues/551)) ([fe671ef](https://github.com/nexxtway/rainbow-modules/commit/fe671efdbc26f92c920ce66f55992637b559aa8e))
+
 # [0.49.0](https://github.com/nexxtway/rainbow-modules/compare/v0.48.0...v0.49.0) (2022-03-06)
 
 **Note:** Version bump only for package @rainbow-modules/content

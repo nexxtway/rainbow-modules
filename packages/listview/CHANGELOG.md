@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.50.0](https://github.com/nexxtway/rainbow-modules/compare/v0.49.0...v0.50.0) (2022-04-22)
+
+### Bug Fixes
+
+-   scroll up to the top when paginate in FirestoreTableWithCursors ([#552](https://github.com/nexxtway/rainbow-modules/issues/552)) ([e9f5013](https://github.com/nexxtway/rainbow-modules/commit/e9f501375fb3abbbc1b63ec34d1c497acc496558))
+
 # [0.49.0](https://github.com/nexxtway/rainbow-modules/compare/v0.48.0...v0.49.0) (2022-03-06)
 
 ### Bug Fixes
