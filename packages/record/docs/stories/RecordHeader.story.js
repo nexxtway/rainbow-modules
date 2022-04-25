@@ -94,6 +94,25 @@ export const BasicRecordHeader = () => {
     );
 };
 
+export const LargeDescriptionRecordHeader = () => {
+    const loading = useChangeLoading();
+
+    return (
+        <BrowserRouter>
+            <Application>
+                <Container>
+                    <RecordHeader
+                        label="CONTENT"
+                        description="Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries."
+                        actions={<Actions />}
+                        isLoading={loading}
+                    />
+                </Container>
+            </Application>
+        </BrowserRouter>
+    );
+};
+
 export default {
     title: 'Modules/Record/Stories/RecordHeader',
     parameters: {
