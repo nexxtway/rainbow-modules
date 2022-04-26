@@ -112,6 +112,36 @@ export const navigationButtonColumn = () => {
     );
 };
 
+const StyledNavigationButtonColumn = styled(NavigationButtonColumn)`
+    text-align: left;
+`;
+
+export const navigationButtonColumnWithStyled = () => {
+    return (
+        <Application>
+            <Container>
+                <Table data={initialData} keyField="id" variant="listview" showCheckboxColumn>
+                    <Column header="Created At" field="createdAt" />
+                    <Column
+                        header="id"
+                        field="id"
+                        component={StyledNavigationButtonColumn}
+                        onClick={handleIdOnClick}
+                    />
+                    <Column header="Name" field="name" />
+                    <Column header="Company" field="company" />
+                    <Column
+                        header="Status"
+                        field="status"
+                        colors={colors}
+                        component={ColoredStatusColumn}
+                    />
+                </Table>
+            </Container>
+        </Application>
+    );
+};
+
 export default {
     title: 'Modules/Listview/Stories/NavigationButtonColumn',
     parameters: {
