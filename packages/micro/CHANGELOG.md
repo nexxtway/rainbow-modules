@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.50.0](https://github.com/nexxtway/rainbow-modules/compare/v0.49.0...v0.50.0) (2022-04-22)
+
+### Features
+
+-   add header to iframe component ([#546](https://github.com/nexxtway/rainbow-modules/issues/546)) ([f482f6a](https://github.com/nexxtway/rainbow-modules/commit/f482f6ae97633f31b35c1ae33b6ea12bb82f4d5a))
+
 # [0.49.0](https://github.com/nexxtway/rainbow-modules/compare/v0.48.0...v0.49.0) (2022-03-06)
 
 **Note:** Version bump only for package @rainbow-modules/micro

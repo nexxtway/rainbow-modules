@@ -24,6 +24,9 @@ export const LeftContent = styled.div`
 export const Details = styled.div`
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 `;
 
 export const RowContainer = styled.div`
@@ -53,6 +56,9 @@ export const Description = styled.h1`
     font-size: 28px;
     color: ${(props) => props.theme.rainbow.palette.text.main};
     font-family: Lato Bold, Helvetica, sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 `;
 
 export const TagsContainer = styled.div`

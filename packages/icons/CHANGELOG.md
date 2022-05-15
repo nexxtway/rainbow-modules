@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.50.0](https://github.com/nexxtway/rainbow-modules/compare/v0.49.0...v0.50.0) (2022-04-22)
+
+### Bug Fixes
+
+-   added globe icon ([#550](https://github.com/nexxtway/rainbow-modules/issues/550)) ([5795ab0](https://github.com/nexxtway/rainbow-modules/commit/5795ab03aa5bf38d119a6f3d57226ea4ace64987))
+-   webhook icon color ([#547](https://github.com/nexxtway/rainbow-modules/issues/547)) ([65a3d7b](https://github.com/nexxtway/rainbow-modules/commit/65a3d7be43cc50bcc37e94f87030e4f947e9a726))
+
 # [0.49.0](https://github.com/nexxtway/rainbow-modules/compare/v0.48.0...v0.49.0) (2022-03-06)
 
 ### Features
