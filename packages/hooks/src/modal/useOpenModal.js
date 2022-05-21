@@ -6,13 +6,16 @@ const useOpenModal = (modalId) => {
         (props) => {
             if (store.has(modalId)) {
                 const [defaultProps, setProps] = store.get(modalId);
+                const { onRequestClose = () => {}, ...rest } = props || defaultProps;
                 setProps({
                     ...initialDefaultProps,
                     ...defaultProps,
-                    ...props,
+                    ...rest,
                     isOpen: true,
-                    onRequestClose: () =>
-                        setProps({ ...initialDefaultProps, ...defaultProps, isOpen: false }),
+                    onRequestClose: () => {
+                        setProps({ ...initialDefaultProps, ...defaultProps, isOpen: false });
+                        onRequestClose();
+                    },
                 });
             }
         },
