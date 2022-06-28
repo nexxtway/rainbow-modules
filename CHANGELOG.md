@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.51.0](https://github.com/nexxtway/rainbow-modules/compare/v0.50.0...v0.51.0) (2022-06-28)
+
+### Bug Fixes
+
+-   add style and classname properties to ColoredStatusColumn ([#553](https://github.com/nexxtway/rainbow-modules/issues/553)) ([5d9cb79](https://github.com/nexxtway/rainbow-modules/commit/5d9cb79786dc527f92ca6786a21511b8fca5235b))
+-   app and colored status column interfaces ([#562](https://github.com/nexxtway/rainbow-modules/issues/562)) ([f594df6](https://github.com/nexxtway/rainbow-modules/commit/f594df618b5237a75a3de16593a0fac1378162be))
+-   record header styles ([#554](https://github.com/nexxtway/rainbow-modules/issues/554)) ([3d5b536](https://github.com/nexxtway/rainbow-modules/commit/3d5b5366afabfa85743696d5d39022a24b51f7a3))
+
+### Features
+
+-   add waiting time icon ([#561](https://github.com/nexxtway/rainbow-modules/issues/561)) ([0021dcc](https://github.com/nexxtway/rainbow-modules/commit/0021dcc17c15fc1066e434a6325a0a48d42ccbae))
+
 # [0.50.0](https://github.com/nexxtway/rainbow-modules/compare/v0.49.0...v0.50.0) (2022-04-22)
 
 ### Bug Fixes

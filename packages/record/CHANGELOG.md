@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.51.0](https://github.com/nexxtway/rainbow-modules/compare/v0.50.0...v0.51.0) (2022-06-28)
+
+### Bug Fixes
+
+-   record header styles ([#554](https://github.com/nexxtway/rainbow-modules/issues/554)) ([3d5b536](https://github.com/nexxtway/rainbow-modules/commit/3d5b5366afabfa85743696d5d39022a24b51f7a3))
+
 # [0.50.0](https://github.com/nexxtway/rainbow-modules/compare/v0.49.0...v0.50.0) (2022-04-22)
 
 **Note:** Version bump only for package @rainbow-modules/record
