@@ -117,7 +117,7 @@ ColoredStatusColumn.propTypes = {
     isEditable: PropTypes.bool,
     /** The action triggered when a value attribute changes. */
     onChange: PropTypes.func,
-    /** Text or component to show ate the top of the dropdown */
+    /** Text or component to show at the top of the dropdown */
     dropdownHeader: PropTypes.node,
 };
 
