@@ -13,15 +13,8 @@ import { StyledContainer, StyledDropdown, StyledIndicator, StyledValue } from '.
 import Options from './options';
 import { dropdownHeaderLabel } from './labels';
 
-const ColoredStatusColumn = ({
-    row,
-    value,
-    colors,
-    textTransform,
-    isEditable,
-    onChange,
-    dropdownHeader,
-}) => {
+const ColoredStatusColumn = (props) => {
+    const { row, value, colors, textTransform, isEditable, onChange, dropdownHeader } = props;
     const [isOpen, setIsOpen] = useState(false);
     const containerRef = useRef();
     const dropdownRef = useRef();
