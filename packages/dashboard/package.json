@@ -11,11 +11,12 @@
         "@rainbow-modules/hooks": "^0.51.0",
         "@rainbow-modules/icons": "^0.51.0",
         "chartjs-plugin-datalabels": "^0.7.0",
-        "styled-components": "^4.3.2"
+        "styled-components": ">=4.3.2 <6"
     },
     "peerDependencies": {
         "react": ">=16.8.0",
-        "react-rainbow-components": ">=1.15.0"
+        "react-rainbow-components": ">=1.15.0",
+        "styled-components": ">=4.3.2 <6"
     },
     "publishConfig": {
         "access": "public"
