@@ -43,6 +43,7 @@ const RainbowFirebaseApp = (props) => {
         errorComponent,
         onError,
     } = props;
+
     const firebaseContext = useMemo(() => ({ app }), [app]);
     const [isLoading, setLoading] = useState(false);
     const [isMessageVisible, setIsMessageVisible] = useState(false);
