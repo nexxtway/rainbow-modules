@@ -12,12 +12,13 @@
         "@rainbow-modules/auth": "^0.51.0",
         "@rainbow-modules/firebase-hooks": "^0.51.0",
         "@rainbow-modules/icons": "^0.51.0",
-        "styled-components": "^4.3.2"
+        "styled-components": ">=4.3.2 <6"
     },
     "peerDependencies": {
         "firebase": ">=8.2.0",
         "react": ">=16.8.0",
-        "react-rainbow-components": ">=1.25.0"
+        "react-rainbow-components": ">=1.25.0",
+        "styled-components": ">=4.3.2 <6"
     },
     "publishConfig": {
         "access": "public"

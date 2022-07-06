@@ -20,14 +20,15 @@
         "luxon": "^2.3.0",
         "react-beautiful-dnd": "^13.0.0",
         "react-virtualized": "^9.22.3",
-        "styled-components": "^4.3.2"
+        "styled-components": ">=4.3.2 <6"
     },
     "peerDependencies": {
         "firebase": "^8.2.0",
         "prop-types": "^15.7.2",
         "react": ">=16.8.0",
         "react-intl": ">=4.0.0",
-        "react-rainbow-components": ">=1.15.0"
+        "react-rainbow-components": ">=1.15.0",
+        "styled-components": ">=4.3.2 <6"
     },
     "devDependencies": {
         "@types/luxon": "^2.0.9",

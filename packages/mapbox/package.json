@@ -10,7 +10,7 @@
     "dependencies": {
         "@rainbow-modules/hooks": "^0.51.0",
         "mapbox-gl": "^1.12.0",
-        "styled-components": "^4.3.2"
+        "styled-components": ">=4.3.2 <6"
     },
     "devDependencies": {
         "@rainbow-modules/app": "^0.51.0",
@@ -18,7 +18,8 @@
     },
     "peerDependencies": {
         "react": ">=16.8.0",
-        "react-rainbow-components": ">=1.15.0"
+        "react-rainbow-components": ">=1.15.0",
+        "styled-components": ">=4.3.2 <6"
     },
     "publishConfig": {
         "access": "public"

@@ -13,13 +13,14 @@
         "@rainbow-modules/icons": "^0.51.0",
         "@rainbow-modules/validation": "^0.51.0",
         "copy-to-clipboard": "^3.3.1",
-        "styled-components": "^4.3.2"
+        "styled-components": ">=4.3.2 <6"
     },
     "peerDependencies": {
         "react": ">=16.8.0",
         "react-intl": ">=4.0.0",
         "react-rainbow-components": ">=1.15.0",
-        "react-router-dom": ">=5.0.0"
+        "react-router-dom": ">=5.0.0",
+        "styled-components": ">=4.3.2 <6"
     },
     "publishConfig": {
         "access": "public"
