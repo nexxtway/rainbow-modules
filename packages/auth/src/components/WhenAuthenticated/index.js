@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Route, Redirect } from 'react-router-dom';
+import { Route, Redirect, useLocation, useNavigate } from 'react-router-dom';
 import { useAuthState } from '@rainbow-modules/firebase-hooks';
 import getRedirectTo from '../../helpers/getRedirectTo';
 
@@ -29,7 +29,32 @@ const Private = (props) => {
     return null;
 };
 
-const WhenAuthenticated = (props) => {
+const WhenAuthenticatedV6 = (props) => {
+    // eslint-disable-next-line react/prop-types
+    const { component, redirect, children, ...rest } = props;
+    const location = useLocation();
+    const navigate = useNavigate();
+    const isAuth = useAuthState();
+
+    useEffect(() => {
+        if (isAuth === false) {
+            navigate(redirect);
+        }
+    }, [isAuth, navigate, redirect]);
+
+    const Component = component;
+    if (isAuth) {
+        if (Component) {
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            return <Component location={location} {...rest} />;
+        }
+        return <div>{children}</div>;
+    }
+    return null;
+};
+
+const WhenAuthenticatedV5 = (props) => {
+    // eslint-disable-next-line react/prop-types
     const { path, redirect, component, children } = props;
 
     return (
@@ -44,6 +69,8 @@ const WhenAuthenticated = (props) => {
         />
     );
 };
+
+const WhenAuthenticated = !Redirect ? WhenAuthenticatedV6 : WhenAuthenticatedV5;
 
 WhenAuthenticated.propTypes = {
     /** The route path the component will used to match against the browser URL. */
