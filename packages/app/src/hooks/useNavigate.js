@@ -1,7 +1,7 @@
 import { useHistory as useHistoryRouter, useNavigate as useNavigateRouter } from 'react-router-dom';
+import { isRouterV6 } from '../helpers/getReactRouterVersion';
 
 const useNavigateFn = () => {
-    const isV6 = !!useNavigateRouter;
     const useHistory = useHistoryRouter || (() => {});
     const useNavigate = useNavigateRouter || (() => {});
 
@@ -10,7 +10,7 @@ const useNavigateFn = () => {
     const navigateFn = (path) => {
         history.push(path);
     };
-    return isV6 ? navigate : navigateFn;
+    return isRouterV6 ? navigate : navigateFn;
 };
 
 export default useNavigateFn;

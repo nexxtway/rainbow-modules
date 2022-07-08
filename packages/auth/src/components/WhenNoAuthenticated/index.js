@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Redirect, useLocation, useNavigate } from 'react-router-dom';
 import { useAuthState } from '@rainbow-modules/firebase-hooks';
+import { isRouterV6 } from '@rainbow-modules/app/src/helpers/getReactRouterVersion';
 import getRedirectTo from '../../helpers/getRedirectTo';
 
 const Private = (props) => {
@@ -70,7 +71,7 @@ const WhenNoAuthenticatedV5 = (props) => {
     );
 };
 
-const WhenNoAuthenticated = !Redirect ? WhenNoAuthenticatedV6 : WhenNoAuthenticatedV5;
+const WhenNoAuthenticated = isRouterV6 ? WhenNoAuthenticatedV6 : WhenNoAuthenticatedV5;
 
 WhenNoAuthenticated.propTypes = {
     path: PropTypes.string,

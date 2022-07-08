@@ -1,4 +1,5 @@
-import { useHistory, matchPath } from 'react-router-dom';
+import { matchPath } from 'react-router-dom';
+import { isRouterV5 } from '../helpers/getReactRouterVersion';
 
 /**
  * This hook allows to use the `matchPath` function from `react-router-dom` regardless
@@ -6,10 +7,8 @@ import { useHistory, matchPath } from 'react-router-dom';
  * NOTE: It is possible that not all features of `matchPath` are available.
  */
 const useMatchPath = () => {
-    const isV5 = !!useHistory;
-
     return (route, pathname) => {
-        if (isV5) {
+        if (isRouterV5) {
             return matchPath(pathname, {
                 ...route,
                 strict: route.caseSensitive,
