@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Redirect, useLocation, useNavigate } from 'react-router-dom';
 import { useAuthState } from '@rainbow-modules/firebase-hooks';
-import { isRouterV6 } from '@rainbow-modules/app/src/helpers/getReactRouterVersion';
+import { isRouterV6 } from '@rainbow-modules/app';
 import getRedirectTo from '../../helpers/getRedirectTo';
 
 const Private = (props) => {
