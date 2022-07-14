@@ -1,4 +1,4 @@
-import firebase from 'firebase';
+import { Timestamp } from 'firebase/firestore';
 import normalizeCreatedAt from '../normalizeCreatedAt';
 
 describe('normalizeCreatedAt', () => {
@@ -12,7 +12,7 @@ describe('normalizeCreatedAt', () => {
     });
 
     it('should return the timestamp of the date when it is a firebase Timestamp', () => {
-        const date = firebase.firestore.Timestamp.fromDate(new Date());
+        const date = Timestamp.fromDate(new Date());
         expect(normalizeCreatedAt(date)).toBe(date.toDate().getTime());
     });
 

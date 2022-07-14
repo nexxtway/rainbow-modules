@@ -1,18 +1,18 @@
-import { useState, useContext, useEffect } from 'react';
-import context from '../context';
+import { useState, useEffect } from 'react';
+import useAuth from './useAuth';
 
 export default function useAuthState() {
     const [isAuth, setIsAuth] = useState();
-    const { app } = useContext(context);
+    const auth = useAuth();
 
     useEffect(() => {
-        const unsubscribe = app.auth().onAuthStateChanged((user) => {
+        const unsubscribe = auth.onAuthStateChanged((user) => {
             if (user) {
                 return setIsAuth(true);
             }
             return setIsAuth(false);
         });
         return () => unsubscribe();
-    }, [app]);
+    }, [auth]);
     return isAuth;
 }

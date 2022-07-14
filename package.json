@@ -92,7 +92,7 @@
         "packages/*"
     ],
     "dependencies": {
-        "firebase": "^8.2.0",
+        "firebase": "^9.9.0",
         "react": "^17.0.0",
         "react-dom": "^17.0.0",
         "react-intl": "^4.4.0",

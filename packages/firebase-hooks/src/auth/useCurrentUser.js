@@ -1,10 +1,9 @@
-import { useContext } from 'react';
-import Context from '../context';
+import useAuth from './useAuth';
 
 export default function useCurrentUser() {
-    const { app } = useContext(Context);
-    if (app) {
-        return app.auth().currentUser;
+    const auth = useAuth();
+    if (auth) {
+        return auth.currentUser;
     }
     return null;
 }

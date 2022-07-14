@@ -8,7 +8,7 @@ const Book = () => {
     const [data, isLoading] = useDocOnce({
         path: '/books/RoguXc30cdJvA4J7jWDc',
     });
-    const tableData = isLoading ? [] : [data];
+    const tableData = isLoading || !data ? [] : [data];
     return (
         <Table keyField="id" data={tableData} isLoading={isLoading} variant="listview">
             <Column field="data.name" header="Name" />

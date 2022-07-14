@@ -1,6 +1,6 @@
 import { ReactElement, ReactNode, RefObject, CSSProperties } from 'react';
 import { BadgeProps } from 'react-rainbow-components/components/Badge';
-import firebase from 'firebase';
+import { Timestamp } from 'firebase/firestore';
 
 type Status = 'success' | 'error' | 'warning' | 'inProgress' | ReactNode;
 
@@ -20,7 +20,7 @@ export interface Notification {
     title?: string;
     description?: string;
     status?: Status;
-    createdAt?: number | Date | firebase.firestore.Timestamp;
+    createdAt?: number | Date | Timestamp;
     icon?: ReactNode | string;
     unread?: boolean;
 }

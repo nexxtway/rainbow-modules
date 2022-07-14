@@ -24,17 +24,17 @@ module.exports = {
         config.devtool = false;
         config.plugins = [
             ...config.plugins,
-            new DocBuilderPlugin({
-                packages: [
-                    {
-                        name: 'cypress',
-                        srcPath: 'src/pageObjects',
-                        outputPath: 'docs/pageObjects',
-                        templatePath: 'template.hbs',
-                        partials: 'handlebars/partials/*.hbs',
-                    },
-                ],
-            }),
+            // new DocBuilderPlugin({
+            //     packages: [
+            //         {
+            //             name: 'cypress',
+            //             srcPath: 'src/pageObjects',
+            //             outputPath: 'docs/pageObjects',
+            //             templatePath: 'template.hbs',
+            //             partials: 'handlebars/partials/*.hbs',
+            //         },
+            //     ],
+            // }),
         ];
         config.resolve.alias = {
             '@rainbow-modules/app': path.join(__dirname, '../packages/app/src/index.js'),

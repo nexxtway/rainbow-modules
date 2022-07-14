@@ -9,14 +9,9 @@ describe('EmailPasswordSignUpForm', () => {
     beforeEach(() => {
         cy.visit(FORM_URL);
 
-        cy.server({
-            delay: 1000,
-        });
-        cy.route(
-            'POST',
-            'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?*',
-            [],
-        ).as('firebaseSignUp');
+        cy.intercept('POST', 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?*').as(
+            'firebaseSignUp',
+        );
     });
 
     it('should request create user endpoint and show spinner while loading', () => {
