@@ -1,6 +1,6 @@
 {
     "name": "@rainbow-modules/micro",
-    "version": "0.51.0",
+    "version": "0.51.1",
     "main": "lib/index.js",
     "author": "Nexxtway Team",
     "license": "MIT",
