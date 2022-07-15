@@ -1,7 +1,8 @@
 import { ReactNode } from 'react';
+import firebase from 'firebase/app';
 
 export interface RainbowFirebaseAppProps {
-    app: Record<string, unknown>;
+    app: firebase.app.App;
     theme?: Record<string, unknown>;
     locale?: string;
     translations?: Record<string, unknown>;
