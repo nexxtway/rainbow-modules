@@ -10,3 +10,5 @@ export {
     confirmModal,
     showAppNotification,
 } from './actions';
+
+export { isRouterV5, isRouterV6 } from './helpers/getReactRouterVersion';

@@ -15,6 +15,8 @@ type ChangeValue = {
 };
 
 export interface ColoredStatusColumnProps {
+    /** An object containing the data of the row */
+    row?: Record<string, unknown>;
     /** A string that comes from the data and is displayed in the table cell  */
     value?: string;
     /** An object with the mapping that indicates the backgroundColor and color of the component */
@@ -25,8 +27,8 @@ export interface ColoredStatusColumnProps {
     isEditable?: boolean;
     /** The action triggered when a value attribute changes. */
     onChange?: (value: ChangeValue) => void;
-    /** Text or component to show ate the top of the dropdown */
-    dropdownHeader: ReactNode;
+    /** Text or component to show at the top of the dropdown */
+    dropdownHeader?: ReactNode;
 }
 
 export default function (props: ColoredStatusColumnProps): JSX.Element | null;

@@ -132,9 +132,15 @@ import {
     CampaignFilled,
     Wireless,
     Globe,
+    WaitingTime,
 } from '../../../src';
 
 export default [
+    {
+        name: 'waitingTime',
+        category: 'standard',
+        icon: WaitingTime,
+    },
     {
         name: 'globe',
         category: 'standard',

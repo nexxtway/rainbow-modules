@@ -1,20 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Sidebar from 'react-rainbow-components/components/Sidebar';
-import { useLocation, matchPath } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import useMatchPath from '../../hooks/useMatchPath';
 
 const SideBarNavigation = (props) => {
     const { className, style, children, hideSelectedItemIndicator } = props;
     const location = useLocation();
+    const matchPath = useMatchPath();
     const routes = React.Children.map(children, (element) => {
         return {
             path: element.props.path,
             name: element.props.name,
-            exact: element.props.exact,
+            end: element.props.exact,
         };
     });
     const currentRoute = routes.find((route) => {
-        const match = matchPath(location.pathname, route);
+        if (!route.path) return false;
+        const match = matchPath(route, location.pathname);
         return match;
     });
     const selectedItem = currentRoute ? currentRoute.name : '';

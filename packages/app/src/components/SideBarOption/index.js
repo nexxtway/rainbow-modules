@@ -1,18 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import SidebarItem from 'react-rainbow-components/components/SidebarItem';
-import { useHistory, useRouteMatch } from 'react-router-dom';
+import useNavigate from '../../hooks/useNavigate';
+import useExactMatch from '../../hooks/useExactMatch';
 
 const SideBarOption = (props) => {
     const { className, style, icon, selectedIcon, name, label, path, exact, tooltip } = props;
-    const history = useHistory();
-    const match = useRouteMatch(path);
-    const isSelected = match && (!exact || match.isExact);
+    const navigate = useNavigate();
+    const isExactMatch = useExactMatch(path);
+    const isSelected = !exact || isExactMatch;
     const actualIcon = isSelected && selectedIcon ? selectedIcon : icon;
 
     const handleClick = (event) => {
         event.preventDefault();
-        history.push(path);
+        navigate(path);
     };
 
     return (

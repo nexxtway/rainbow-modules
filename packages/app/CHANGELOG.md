@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.51.1](https://github.com/nexxtway/rainbow-modules/compare/v0.51.0...v0.51.1) (2022-07-06)
+
+**Note:** Version bump only for package @rainbow-modules/app
+
+# [0.51.0](https://github.com/nexxtway/rainbow-modules/compare/v0.50.0...v0.51.0) (2022-06-28)
+
+### Bug Fixes
+
+-   app and colored status column interfaces ([#562](https://github.com/nexxtway/rainbow-modules/issues/562)) ([f594df6](https://github.com/nexxtway/rainbow-modules/commit/f594df618b5237a75a3de16593a0fac1378162be))
+
 # [0.50.0](https://github.com/nexxtway/rainbow-modules/compare/v0.49.0...v0.50.0) (2022-04-22)
 
 **Note:** Version bump only for package @rainbow-modules/app
