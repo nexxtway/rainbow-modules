@@ -13,15 +13,8 @@ import { StyledContainer, StyledDropdown, StyledIndicator, StyledValue } from '.
 import Options from './options';
 import { dropdownHeaderLabel } from './labels';
 
-const ColoredStatusColumn = ({
-    row,
-    value,
-    colors,
-    textTransform,
-    isEditable,
-    onChange,
-    dropdownHeader,
-}) => {
+const ColoredStatusColumn = (props) => {
+    const { row, value, colors, textTransform, isEditable, onChange, dropdownHeader } = props;
     const [isOpen, setIsOpen] = useState(false);
     const containerRef = useRef();
     const dropdownRef = useRef();
@@ -117,7 +110,7 @@ ColoredStatusColumn.propTypes = {
     isEditable: PropTypes.bool,
     /** The action triggered when a value attribute changes. */
     onChange: PropTypes.func,
-    /** Text or component to show ate the top of the dropdown */
+    /** Text or component to show at the top of the dropdown */
     dropdownHeader: PropTypes.node,
 };
 
