@@ -9,9 +9,9 @@ describe('EmailPasswordSignUpForm', () => {
     beforeEach(() => {
         cy.visit(FORM_URL);
 
-        cy.intercept('POST', 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?*').as(
-            'firebaseSignUp',
-        );
+        cy.intercept('POST', 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?*', {
+            statusCode: 400,
+        }).as('firebaseSignUp');
     });
 
     it('should request create user endpoint and show spinner while loading', () => {
