@@ -11,9 +11,9 @@ describe('<SideBarNavigation />', () => {
             <Application>
                 <MemoryRouter>
                     <SideBarNavigation>
-                        <SideBarOption />
-                        <SideBarOption />
-                        <SideBarOption />
+                        <SideBarOption path="" />
+                        <SideBarOption path="" />
+                        <SideBarOption path="" />
                     </SideBarNavigation>
                 </MemoryRouter>
             </Application>,

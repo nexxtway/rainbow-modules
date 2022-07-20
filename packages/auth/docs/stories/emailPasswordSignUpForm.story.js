@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Button, Card } from 'react-rainbow-components';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
 import { RainbowLogo } from '@rainbow-modules/icons';
-import { Redirect } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import app from '../../../../firebase';
 import WhenAuthenticated from '../../src/components/WhenAuthenticated';
 import WhenNoAuthenticated from '../../src/components/WhenNoAuthenticated';
@@ -34,20 +34,32 @@ const StyledCard = styled(Card)`
 export const basicEmailPasswordSignUpForm = () => {
     return (
         <RainbowFirebaseApp app={app}>
-            <Redirect from="/" to="/home" exact />
-            <WhenNoAuthenticated path="/home" redirect="/app">
-                <Container>
-                    <RainbowLogo />
-                    <Title>rainbow-modules</Title>
-                    <StyledCard>
-                        <EmailPasswordSignUpForm />
-                    </StyledCard>
-                </Container>
-            </WhenNoAuthenticated>
-            <WhenAuthenticated path="/app" redirect="/home">
-                <span>Authenticated!</span>
-                <Button label="Log Out" onClick={() => app.auth().signOut()} />
-            </WhenAuthenticated>
+            <Routes>
+                <Route
+                    path="/home"
+                    element={
+                        <WhenNoAuthenticated redirect="/app">
+                            <Container>
+                                <RainbowLogo />
+                                <Title>rainbow-modules</Title>
+                                <StyledCard>
+                                    <EmailPasswordSignUpForm />
+                                </StyledCard>
+                            </Container>
+                        </WhenNoAuthenticated>
+                    }
+                />
+                <Route
+                    path="/app"
+                    element={
+                        <WhenAuthenticated redirect="/home">
+                            <span>Authenticated!</span>
+                            <Button label="Log Out" onClick={() => app.auth().signOut()} />
+                        </WhenAuthenticated>
+                    }
+                />
+                <Route path="*" element={<Navigate to="/home" replace />} />
+            </Routes>
         </RainbowFirebaseApp>
     );
 };

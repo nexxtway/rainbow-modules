@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Route, Routes } from 'react-router-dom';
 import { Button, Input, Card } from 'react-rainbow-components';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
 import app from '../../../../firebase';
@@ -78,13 +79,25 @@ const Login = () => {
 export const basicEmailPasswordAuthFlow = () => {
     return (
         <RainbowFirebaseApp app={app}>
-            <WhenNoAuthenticated path="/" redirect="/app">
-                <Login />
-            </WhenNoAuthenticated>
-            <WhenAuthenticated path="/app" redirect="/">
-                <span>Authenticated!</span>
-                <Button label="Log Out" onClick={() => app.auth().signOut()} />
-            </WhenAuthenticated>
+            <Routes>
+                <Route
+                    path="/"
+                    element={
+                        <WhenNoAuthenticated path="/" redirect="/app">
+                            <Login />
+                        </WhenNoAuthenticated>
+                    }
+                />
+                <Route
+                    path="/app"
+                    element={
+                        <WhenAuthenticated path="/app" redirect="/">
+                            <span>Authenticated!</span>
+                            <Button label="Log Out" onClick={() => app.auth().signOut()} />
+                        </WhenAuthenticated>
+                    }
+                />
+            </Routes>
         </RainbowFirebaseApp>
     );
 };

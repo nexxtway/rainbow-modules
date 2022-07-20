@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Switch, Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import {
     HomeBorder,
     HomeFilled,
@@ -76,17 +76,11 @@ export const sideBarNavigation = () => {
                         path="/billing"
                     />
                 </Bar>
-                <Switch>
-                    <Route exact path="/">
-                        <Content>Home page</Content>
-                    </Route>
-                    <Route path="/export">
-                        <Content>Export page </Content>
-                    </Route>
-                    <Route path="/billing" exact>
-                        <Content>Billing page</Content>
-                    </Route>
-                </Switch>
+                <Routes>
+                    <Route exact path="/" element={<Content>Home page</Content>} />
+                    <Route path="/export" element={<Content>Export page</Content>} />
+                    <Route path="/billing" element={<Content>Billing page</Content>} />
+                </Routes>
             </AppContainer>
         </RainbowFirebaseApp>
     );

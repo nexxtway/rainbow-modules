@@ -7,7 +7,7 @@ describe('<SideBarOption />', () => {
     it('should render a SidebarItem with the right props', () => {
         const component = mount(
             <MemoryRouter>
-                <SideBarOption icon="icon" name="name" label="label" />
+                <SideBarOption icon="icon" name="name" label="label" path="" />
             </MemoryRouter>,
         );
         const expectedProps = {
@@ -33,6 +33,7 @@ describe('<SideBarOption />', () => {
                     selectedIcon={<SelectedIcon />}
                     name="name"
                     label="label"
+                    path=""
                     isSelected
                 />
             </MemoryRouter>,
@@ -44,7 +45,7 @@ describe('<SideBarOption />', () => {
         const Icon = () => <span>Icon</span>;
         const component = mount(
             <MemoryRouter>
-                <SideBarOption icon={<Icon />} name="name" label="label" isSelected />
+                <SideBarOption icon={<Icon />} name="name" label="label" path="" isSelected />
             </MemoryRouter>,
         );
         expect(component.find(Icon).exists()).toBe(true);

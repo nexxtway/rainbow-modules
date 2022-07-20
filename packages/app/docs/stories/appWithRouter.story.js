@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Route, Link, Routes } from 'react-router-dom';
 import { RainbowLogo } from '@rainbow-modules/icons';
 import app from '../../../../firebase';
 import RainbowFirebaseApp from '../../src/components/App';
@@ -50,15 +50,11 @@ export const basicRouter = () => {
                 </ul>
             </Navigation>
 
-            <Switch>
-                <Container>
-                    <Route exact path="/">
-                        Home page
-                    </Route>
-                    <Route path="/about">About page</Route>
-                    <Route path="/dashboard">Contact us</Route>
-                </Container>
-            </Switch>
+            <Routes>
+                <Route exact path="/" element={<Container>Home page</Container>} />
+                <Route path="/about" element={<Container>About page</Container>} />
+                <Route path="/dashboard" element={<Container>Contact page</Container>} />
+            </Routes>
         </RainbowFirebaseApp>
     );
 };
