@@ -17,4 +17,4 @@ export interface MutationOptions {
     type?: feedbackType | Type;
 }
 
-export default function (opts: MutationOptions): { mutate: () => void };
+export default function (opts: MutationOptions): { mutate: (...args: any[]) => void };
