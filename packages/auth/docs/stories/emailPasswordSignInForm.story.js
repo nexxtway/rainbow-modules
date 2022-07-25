@@ -52,7 +52,7 @@ export const basicEmailPasswordSignInForm = () => {
                 <Route
                     path="/app"
                     element={
-                        <WhenAuthenticated path="/app" redirect="/home">
+                        <WhenAuthenticated redirect="/home">
                             <span>Authenticated!</span>
                             <Button label="Log Out" onClick={() => app.auth().signOut()} />
                         </WhenAuthenticated>

@@ -83,7 +83,7 @@ export const basicEmailPasswordAuthFlow = () => {
                 <Route
                     path="/"
                     element={
-                        <WhenNoAuthenticated path="/" redirect="/app">
+                        <WhenNoAuthenticated redirect="/app">
                             <Login />
                         </WhenNoAuthenticated>
                     }
@@ -91,7 +91,7 @@ export const basicEmailPasswordAuthFlow = () => {
                 <Route
                     path="/app"
                     element={
-                        <WhenAuthenticated path="/app" redirect="/">
+                        <WhenAuthenticated redirect="/">
                             <span>Authenticated!</span>
                             <Button label="Log Out" onClick={() => app.auth().signOut()} />
                         </WhenAuthenticated>
