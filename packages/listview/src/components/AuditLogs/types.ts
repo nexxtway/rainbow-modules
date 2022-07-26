@@ -18,6 +18,10 @@ export interface AuditLogsProps {
     collectionPath: string;
     labels?: string[];
     defaultFilter?: Filters;
+    title?: string | ReactNode;
+}
+export interface AuditLogsHeaderProps {
+    title?: string | ReactNode;
 }
 
 export interface SeverityProps {

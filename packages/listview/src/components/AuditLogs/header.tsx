@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useContext, useRef, useState } from 'react';
 import { Download } from '@rainbow-modules/icons';
-import { DatePickerModal, Option } from 'react-rainbow-components';
+import { DatePickerModal, Option, RenderIf } from 'react-rainbow-components';
 import InternalOverlay from 'react-rainbow-components/components/InternalOverlay';
 
 import {
@@ -12,7 +12,7 @@ import {
     StyledHeaderText,
 } from './styled';
 import FilterDropdown from './filterDropdown';
-import { ButtonHandle } from './types';
+import { AuditLogsHeaderProps, ButtonHandle } from './types';
 import context from './context';
 import SeveritySelect from './severitySelect';
 import formatDates from './helpers/formatDates';
@@ -110,11 +110,15 @@ const ToolBar = () => {
     );
 };
 
-const AuditLogsHeader = (): JSX.Element => {
+const AuditLogsHeader = ({ title }: AuditLogsHeaderProps): JSX.Element => {
+    const isTitleString = typeof title === 'string';
     return (
         <>
             <StyledHeaderContainer>
-                <StyledHeaderText>Audit Logs</StyledHeaderText>
+                <RenderIf isTrue={isTitleString}>
+                    <StyledHeaderText>{title}</StyledHeaderText>
+                </RenderIf>
+                <RenderIf isTrue={!isTitleString}>{title}</RenderIf>
                 <ToolBar />
             </StyledHeaderContainer>
         </>
