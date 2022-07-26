@@ -6,6 +6,7 @@ import FirestoreTableWithCursors, {
 } from '../FirestoreTableWithCursors';
 import FirestoreDate from './firestoreDate';
 import Severity from './severity';
+import { StyledListIcon } from './styled';
 import Summary from './summary';
 
 type Props = Omit<FirestoreTableWithCursorsProps, 'isCollectionGroup'>;
@@ -19,6 +20,9 @@ const FirestoreFilterTable = React.forwardRef<FirestoreTableWithCursorsRef, Prop
                 isCollectionGroup={false}
                 variant="listview"
                 ref={ref}
+                emptyIcon={<StyledListIcon />}
+                emptyTitle="No audit logs yet."
+                emptyDescription="There is no audit logs data to display."
             >
                 <Column
                     header="Severity"

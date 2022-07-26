@@ -21,7 +21,12 @@ const defaultFilters: Filters = {
     },
 };
 
-const AuditLogs = ({ collectionPath, defaultFilter, labels = [] }: AuditLogsProps): JSX.Element => {
+const AuditLogs = ({
+    collectionPath,
+    defaultFilter,
+    labels = [],
+    title,
+}: AuditLogsProps): JSX.Element => {
     const app = useFirebaseApp();
 
     const [filters, setFilters] = useState<Filters>(defaultFilter || defaultFilters);
@@ -78,7 +83,7 @@ const AuditLogs = ({ collectionPath, defaultFilter, labels = [] }: AuditLogsProp
     return (
         <StyledContainer>
             <Provider value={contextValue}>
-                <AuditLogsHeader />
+                <AuditLogsHeader title={title} />
             </Provider>
             <FirestoreFilterTable
                 collection={collectionPath}

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { List } from '@rainbow-modules/icons';
 import {
     BadgeOverlay,
     Button,
@@ -81,4 +82,9 @@ export const StyledCodeBlock = styled(CodeBlock)`
 
 export const StyledSeverityLabel = styled.span`
     line-height: 18px;
+`;
+
+export const StyledListIcon = styled(List)`
+    width: 50px;
+    height: 50px;
 `;
