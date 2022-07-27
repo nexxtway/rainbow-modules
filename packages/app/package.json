@@ -26,18 +26,18 @@
     "publishConfig": {
         "access": "public"
     },
-    "main": "./lib/cjs/index.js",
+    "main": "./lib/index.js",
     "module": "./lib/esm/index.js",
-    "types": "./lib/cjs/index.d.ts",
+    "types": "./lib/index.d.ts",
     "exports": {
         ".": {
             "module": "./lib/esm/index.js",
-            "require": "./lib/cjs/index.js",
+            "require": "./lib/index.js",
             "default": "./lib/esm/index.js"
         },
-        "./*": {
+        "./lib/*": {
             "module": "./lib/esm/*",
-            "require": "./lib/cjs/*",
+            "require": "./lib/*",
             "default": "./lib/esm/*"
         }
     },

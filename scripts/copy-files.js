@@ -6,7 +6,7 @@ const fs = require('fs');
 const glob = require('glob');
 
 const packagePath = process.cwd();
-const buildPath = path.join(packagePath, './lib/cjs');
+const buildPath = path.join(packagePath, './lib');
 const srcPath = path.join(packagePath, './src');
 
 function typescriptCopy({ from, to }) {
