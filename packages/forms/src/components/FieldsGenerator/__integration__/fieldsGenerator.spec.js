@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-expressions */
 import React from 'react';
 import { mount } from '@cypress/react';
-import { Input } from '@rainbow-modules/cypress';
+import { Input } from '@rainbow-modules/cypress/src/pageObjects';
 import { UniversalForm, FieldsGenerator } from '@rainbow-modules/forms';
 
 describe('<FieldsGenerator />', () => {
