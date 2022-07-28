@@ -6,26 +6,11 @@
     "files": [
         "lib"
     ],
+    "main": "lib/index.js",
     "publishConfig": {
         "access": "public"
     },
     "scripts": {
         "build": "babel src -d lib --ignore **/*.story.js,**/*.spec.js,**/*.d.ts --source-maps"
-    },
-    "main": "./lib/index.js",
-    "module": "./lib/esm/index.js",
-    "types": "./lib/index.d.ts",
-    "exports": {
-        ".": {
-            "module": "./lib/esm/index.js",
-            "require": "./lib/index.js",
-            "default": "./lib/esm/index.js"
-        },
-        "./lib/*": {
-            "module": "./lib/esm/*",
-            "require": "./lib/*",
-            "default": "./lib/esm/*"
-        }
-    },
-    "sideEffects": false
+    }
 }
