@@ -5,7 +5,7 @@ module.exports = function getBabelConfig(api) {
         [
             '@babel/preset-env',
             {
-                modules: useESModules ? false : 'commonjs',
+                modules: useESModules ? false : 'auto',
             },
         ],
         '@babel/preset-react',
