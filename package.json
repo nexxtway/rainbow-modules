@@ -3,7 +3,9 @@
     "private": true,
     "scripts": {
         "clean": "lerna exec -- rm -rf ./lib && lerna run clean",
-        "build": "lerna exec --parallel -- babel --root-mode upward src -d lib --extensions '.js,.jsx,.ts,.tsx' --ignore **/*.story.js,**/*.spec.js,**/*.d.ts --source-maps && yarn build:copy-ts-files && lerna run build",
+        "build": "yarn build:cjs && yarn build:esm && yarn build:copy-ts-files && lerna run --parallel build",
+        "build:cjs": "lerna exec --parallel -- babel --root-mode upward src -d lib --extensions '.js,.jsx,.ts,.tsx' --ignore **/*.story.js,**/*.spec.js,**/*.d.ts --source-maps",
+        "build:esm": "BABEL_ENV=esm lerna exec --parallel -- babel --root-mode upward src -d lib/esm --extensions '.js,.jsx,.ts,.tsx' --ignore **/*.story.js,**/*.spec.js,**/*.d.ts --source-maps",
         "build:copy-ts-files": "lerna exec -- node ../../scripts/copy-files.js",
         "bootstrap": "npx lerna bootstrap --use-workspaces",
         "build-storybook": "yarn build && build-storybook",
