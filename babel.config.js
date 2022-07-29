@@ -1,10 +1,26 @@
-module.exports = {
-    compact: true,
-    presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
-    plugins: [
+module.exports = function getBabelConfig(api) {
+    const useESModules = api.env(['esm']);
+
+    const presets = [
+        [
+            '@babel/preset-env',
+            {
+                modules: useESModules ? false : 'auto',
+            },
+        ],
+        '@babel/preset-react',
+        '@babel/preset-typescript',
+    ];
+    const plugins = [
         'babel-plugin-styled-components',
         '@babel/plugin-transform-runtime',
         '@babel/plugin-proposal-class-properties',
-    ],
-    sourceMaps: true,
+    ];
+
+    return {
+        presets,
+        plugins,
+        comments: false,
+        sourceMaps: true,
+    };
 };
