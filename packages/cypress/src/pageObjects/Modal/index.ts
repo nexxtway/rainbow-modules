@@ -106,7 +106,8 @@ class Modal implements IModal {
      * Execute an assertion on this page object
      */
     get expect(): Chainer {
-        return (chainer: string, ...params: any[]) => this.assertMap[chainer](chainer, ...params);
+        return (chainer: string, ...params: unknown[]) =>
+            this.assertMap[chainer](chainer, ...params);
     }
 }
 

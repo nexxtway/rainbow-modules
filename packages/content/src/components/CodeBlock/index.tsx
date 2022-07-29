@@ -44,7 +44,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
               }
             : originalTheme;
 
-    const StyledPreCode = (props: any) => {
+    const StyledPreCode = (props: Record<string, unknown>) => {
         // eslint-disable-next-line react/jsx-props-no-spreading
         return <StyledPre {...props} selectedTheme={theme} />;
     };
