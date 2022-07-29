@@ -13,7 +13,7 @@
         "jsx": "react",
         "skipLibCheck": true,
         "outDir": "./storybook-static",
-        "noEmit": true
+        "emitDeclarationOnly": true
     },
     "exclude": [
         "node_modules",

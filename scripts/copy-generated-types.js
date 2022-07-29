@@ -7,7 +7,7 @@ const glob = require('glob');
 
 const packagePath = process.cwd();
 const buildPath = path.join(packagePath, './lib');
-const srcPath = path.join(packagePath, process.env.SRC_PATH || './src');
+const srcPath = path.join(packagePath, './lib/types');
 
 function typescriptCopy({ from, to }) {
     const files = glob.sync('**/*.d.ts', { cwd: from });
@@ -16,6 +16,9 @@ function typescriptCopy({ from, to }) {
             fs.copyFileSync(path.resolve(from, file), path.resolve(to, file));
         }
     });
+    if (fs.existsSync(srcPath)) {
+        fs.rmSync(srcPath, { recursive: true, force: true });
+    }
 }
 
 function run() {
