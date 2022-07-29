@@ -112,10 +112,10 @@ const ToolBar = () => {
 
 const AuditLogsHeader = ({ title }: AuditLogsHeaderProps): JSX.Element => {
     const isTitleString = typeof title === 'string';
-    const notHaveTitle = !title;
+    const haveTitle = !!title;
     return (
         <>
-            <StyledHeaderContainer notHaveTitle={notHaveTitle}>
+            <StyledHeaderContainer haveTitle={haveTitle}>
                 <RenderIf isTrue={isTitleString}>
                     <StyledHeaderText>{title}</StyledHeaderText>
                 </RenderIf>

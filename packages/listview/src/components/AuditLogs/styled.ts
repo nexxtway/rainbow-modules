@@ -11,14 +11,14 @@ import {
 import { CodeBlock } from '@rainbow-modules/content';
 
 interface StyledHeaderContainerProps {
-    notHaveTitle: boolean;
+    haveTitle: boolean;
 }
 
 export const StyledHeaderContainer = styled.div<StyledHeaderContainerProps>`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: ${(props) => (props.notHaveTitle ? 'right' : '')};
+    justify-content: ${(props) => (props.haveTitle ? '' : 'right')};
 `;
 
 export const StyledHeaderText = styled.h1`
