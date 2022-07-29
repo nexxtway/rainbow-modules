@@ -2,7 +2,6 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { useFirebaseApp } from '@rainbow-modules/firebase-hooks';
 import { AuditLogsProps, ContextType, Filters } from './types';
-import { StyledContainer } from './styled';
 import AuditLogsHeader from './header';
 import { Provider } from './context';
 import getDatesFromFilter from './helpers/getDatesFromFilter';
@@ -81,7 +80,7 @@ const AuditLogs = ({
     };
 
     return (
-        <StyledContainer>
+        <div>
             <Provider value={contextValue}>
                 <AuditLogsHeader title={title} />
             </Provider>
@@ -90,7 +89,7 @@ const AuditLogs = ({
                 query={query}
                 ref={firestoreTableRef}
             />
-        </StyledContainer>
+        </div>
     );
 };
 
