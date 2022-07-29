@@ -60,7 +60,8 @@ class Textarea implements ITextarea {
      * @method
      */
     get expect(): Chainer {
-        return (chainer: string, ...params: any[]) => this.assertMap[chainer](chainer, ...params);
+        return (chainer: string, ...params: unknown[]) =>
+            this.assertMap[chainer](chainer, ...params);
     }
 }
 
