@@ -1,9 +1,12 @@
-import { useHistory as useHistoryRouter, useNavigate as useNavigateRouter } from 'react-router-dom';
+import * as router from 'react-router-dom';
 import { isRouterV6 } from '../helpers/getReactRouterVersion';
 
 const useNavigateFn = () => {
-    const useHistory = useHistoryRouter || (() => {});
-    const useNavigate = useNavigateRouter || (() => {});
+    let key = Object.prototype.hasOwnProperty.call(router, 'useHistory') ? 'useHistory' : undefined;
+    const useHistory = key ? router[key] : () => {};
+
+    key = Object.prototype.hasOwnProperty.call(router, 'useNavigate') ? 'useNavigate' : undefined;
+    const useNavigate = key ? router[key] : () => {};
 
     const history = useHistory();
     const navigate = useNavigate();

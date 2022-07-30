@@ -1,6 +1,7 @@
-import { Switch } from 'react-router-dom';
+import * as router from 'react-router-dom';
 
-const getReactRouterVersion = () => (Switch ? '5' : '6');
+const getReactRouterVersion = () =>
+    Object.prototype.hasOwnProperty.call(router, 'Switch') ? '5' : '6';
 
 const isRouterV6 = getReactRouterVersion() === '6';
 const isRouterV5 = getReactRouterVersion() === '5';
