@@ -21,6 +21,6 @@ module.exports = function getBabelConfig(api) {
         presets,
         plugins,
         comments: false,
-        sourceMaps: true,
+        sourceMaps: false,
     };
 };
