@@ -1,6 +1,6 @@
 {
     "name": "@rainbow-modules/forms",
-    "version": "0.52.0",
+    "version": "0.52.1",
     "author": "Nexxtway Team",
     "license": "MIT",
     "files": [
@@ -13,7 +13,7 @@
         "@rainbow-modules/app": "^0.52.0",
         "@rainbow-modules/hooks": "^0.52.0",
         "@rainbow-modules/icons": "^0.52.0",
-        "@rainbow-modules/listview": "^0.52.0",
+        "@rainbow-modules/listview": "^0.52.1",
         "@rainbow-modules/validation": "^0.52.0",
         "final-form": "^4.20.1",
         "jsoneditor": "^9.2.0",

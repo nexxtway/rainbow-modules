@@ -1,13 +1,13 @@
 {
     "name": "@rainbow-modules/record",
-    "version": "0.52.0",
+    "version": "0.52.1",
     "author": "Nexxtway Team",
     "license": "MIT",
     "files": [
         "lib"
     ],
     "dependencies": {
-        "@rainbow-modules/forms": "^0.52.0",
+        "@rainbow-modules/forms": "^0.52.1",
         "@rainbow-modules/hooks": "^0.52.0",
         "@rainbow-modules/icons": "^0.52.0",
         "@rainbow-modules/validation": "^0.52.0",

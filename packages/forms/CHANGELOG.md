@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.52.1](https://github.com/nexxtway/rainbow-modules/compare/v0.52.0...v0.52.1) (2022-08-02)
+
+### Bug Fixes
+
+-   remove type export from js file ([#591](https://github.com/nexxtway/rainbow-modules/issues/591)) ([feabbf6](https://github.com/nexxtway/rainbow-modules/commit/feabbf612b2e00bdc819235ab1b44d796e0e3a1e))
+
 # [0.52.0](https://github.com/nexxtway/rainbow-modules/compare/v0.51.1...v0.52.0) (2022-08-02)
 
 ### Reverts
