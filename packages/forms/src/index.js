@@ -20,4 +20,3 @@ export { default as minLength } from './validators/minLength';
 
 // final form exports
 export { Field } from 'react-final-form';
-export { FieldValidator } from 'final-form';
