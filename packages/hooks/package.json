@@ -1,6 +1,6 @@
 {
     "name": "@rainbow-modules/hooks",
-    "version": "0.51.1",
+    "version": "0.52.0",
     "author": "Nexxtway Team",
     "license": "MIT",
     "files": [
@@ -15,7 +15,7 @@
         "access": "public"
     },
     "dependencies": {
-        "@rainbow-modules/app": "^0.51.1",
+        "@rainbow-modules/app": "^0.52.0",
         "nanoid": "^3.1.22",
         "styled-components": ">=4.3.2 <6"
     },

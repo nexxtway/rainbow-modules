@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.52.0](https://github.com/nexxtway/rainbow-modules/compare/v0.51.1...v0.52.0) (2022-08-02)
+
+### Reverts
+
+-   Revert "chore: improve modules build (#579)" (#580) ([0a36d5a](https://github.com/nexxtway/rainbow-modules/commit/0a36d5a179eac94756c2803597afd610a9910763)), closes [#579](https://github.com/nexxtway/rainbow-modules/issues/579) [#580](https://github.com/nexxtway/rainbow-modules/issues/580)
+
 ## [0.51.1](https://github.com/nexxtway/rainbow-modules/compare/v0.51.0...v0.51.1) (2022-07-06)
 
 **Note:** Version bump only for package @rainbow-modules/demos
