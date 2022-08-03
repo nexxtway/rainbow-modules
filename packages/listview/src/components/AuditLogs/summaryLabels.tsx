@@ -8,8 +8,8 @@ const SummaryLabels = ({ labels }: LabelsProps): JSX.Element | null => {
     if (!labels) return null;
     return (
         <>
-            {Object.keys(labels).map((name, index) => (
-                <Badge key={`label-${name}-${index}`} label={labels[name]} size="small" />
+            {Object.keys(labels).map((name) => (
+                <Badge key={`label-${name}`} label={labels[name]} size="small" />
             ))}
         </>
     );
