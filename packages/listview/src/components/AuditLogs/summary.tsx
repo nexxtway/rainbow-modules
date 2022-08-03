@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Badge, RenderIf } from 'react-rainbow-components';
+import { RenderIf } from 'react-rainbow-components';
 import { ChevronRight, ChevronDown } from '@rainbow-modules/icons';
 import {
     StyledCodeBlock,
@@ -8,18 +8,7 @@ import {
     StyledSummaryContainer,
 } from './styled';
 import { getFormattedCode } from './helpers';
-
-type LabelsProps = { labels: Record<string, string> };
-
-const SummaryLabels = ({ labels }: LabelsProps) => {
-    return (
-        <>
-            {Object.keys(labels).map((name) => (
-                <Badge label={labels[name]} size="small" />
-            ))}
-        </>
-    );
-};
+import SummaryLabels from './summaryLabels';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Summary = (props: Record<string, any>): JSX.Element => {
@@ -34,7 +23,7 @@ const Summary = (props: Record<string, any>): JSX.Element => {
         <StyledSummaryContainer>
             <StyledSummaryButton size="small" icon={icon} onClick={toggle} />
             <SummaryLabels labels={row.labels} />
-            <StyledCellText>{value}</StyledCellText>
+            <StyledCellText title={value}>{value}</StyledCellText>
             <RenderIf isTrue={isExpanded}>
                 <StyledCodeBlock
                     value={getFormattedCode(row)}
