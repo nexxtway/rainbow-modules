@@ -67,6 +67,11 @@ export const StyledFilterIcon = styled(BadgeOverlay)`
 
 export const StyledSummaryContainer = styled.div`
     margin: 0 0.5rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    padding: 0 10px 0 0;
 `;
 
 export const StyledSummaryButton = styled(ButtonIcon)`
@@ -74,8 +79,11 @@ export const StyledSummaryButton = styled(ButtonIcon)`
 `;
 
 export const StyledCellText = styled.span`
-    display: inline-block;
     margin: 0 0.5rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
 `;
 
 export const StyledCodeBlock = styled(CodeBlock)`
