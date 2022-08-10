@@ -2,7 +2,6 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { useFirebaseApp } from '@rainbow-modules/firebase-hooks';
 import { AuditLogsProps, ContextType, Filters } from './types';
-import { StyledContainer } from './styled';
 import AuditLogsHeader from './header';
 import { Provider } from './context';
 import getDatesFromFilter from './helpers/getDatesFromFilter';
@@ -22,7 +21,12 @@ const defaultFilters: Filters = {
     },
 };
 
-const AuditLogs = ({ collectionPath, defaultFilter, labels = [] }: AuditLogsProps): JSX.Element => {
+const AuditLogs = ({
+    collectionPath,
+    defaultFilter,
+    labels = [],
+    title,
+}: AuditLogsProps): JSX.Element => {
     const app = useFirebaseApp();
 
     const [filters, setFilters] = useState<Filters>(defaultFilter || defaultFilters);
@@ -77,16 +81,16 @@ const AuditLogs = ({ collectionPath, defaultFilter, labels = [] }: AuditLogsProp
     };
 
     return (
-        <StyledContainer>
+        <div>
             <Provider value={contextValue}>
-                <AuditLogsHeader />
+                <AuditLogsHeader title={title} />
             </Provider>
             <FirestoreFilterTable
                 collection={collectionPath}
                 query={query}
                 ref={firestoreTableRef}
             />
-        </StyledContainer>
+        </div>
     );
 };
 

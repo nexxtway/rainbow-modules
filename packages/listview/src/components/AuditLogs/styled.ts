@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { List } from '@rainbow-modules/icons';
 import {
     BadgeOverlay,
     Button,
@@ -9,12 +10,15 @@ import {
 } from 'react-rainbow-components';
 import { CodeBlock } from '@rainbow-modules/content';
 
-export const StyledContainer = styled.div``;
+interface StyledHeaderContainerProps {
+    hasTitle: boolean;
+}
 
-export const StyledHeaderContainer = styled.div`
+export const StyledHeaderContainer = styled.div<StyledHeaderContainerProps>`
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: ${(props) => (props.hasTitle ? '' : 'right')};
 `;
 
 export const StyledHeaderText = styled.h1`
@@ -63,6 +67,11 @@ export const StyledFilterIcon = styled(BadgeOverlay)`
 
 export const StyledSummaryContainer = styled.div`
     margin: 0 0.5rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    padding: 0 10px 0 0;
 `;
 
 export const StyledSummaryButton = styled(ButtonIcon)`
@@ -70,8 +79,11 @@ export const StyledSummaryButton = styled(ButtonIcon)`
 `;
 
 export const StyledCellText = styled.span`
-    display: inline-block;
     margin: 0 0.5rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
 `;
 
 export const StyledCodeBlock = styled(CodeBlock)`
@@ -81,4 +93,9 @@ export const StyledCodeBlock = styled(CodeBlock)`
 
 export const StyledSeverityLabel = styled.span`
     line-height: 18px;
+`;
+
+export const StyledListIcon = styled(List)`
+    width: 50px;
+    height: 50px;
 `;

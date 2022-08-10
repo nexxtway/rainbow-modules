@@ -1,4 +1,4 @@
-import { useMatch as useMatchRouter, useRouteMatch as useRouteMatchRouter } from 'react-router-dom';
+import * as router from 'react-router-dom';
 import { isRouterV6 } from '../helpers/getReactRouterVersion';
 
 /**
@@ -7,7 +7,10 @@ import { isRouterV6 } from '../helpers/getReactRouterVersion';
  * @param {string} path
  */
 const useExactMatch = (path) => {
-    const useMatch = useMatchRouter || useRouteMatchRouter;
+    const key = Object.prototype.hasOwnProperty.call(router, 'useMatch')
+        ? 'useMatch'
+        : 'useRouteMatch';
+    const useMatch = router[key];
 
     const match = useMatch(path);
 

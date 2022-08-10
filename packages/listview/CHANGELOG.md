@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.52.1](https://github.com/nexxtway/rainbow-modules/compare/v0.52.0...v0.52.1) (2022-08-02)
+
+**Note:** Version bump only for package @rainbow-modules/listview
+
+# [0.52.0](https://github.com/nexxtway/rainbow-modules/compare/v0.51.1...v0.52.0) (2022-08-02)
+
+### Bug Fixes
+
+-   filters alignment ([#581](https://github.com/nexxtway/rainbow-modules/issues/581)) ([c1f2ad2](https://github.com/nexxtway/rainbow-modules/commit/c1f2ad25449198722487a043271ef1089d4bcd14))
+-   improved audit logs ([#578](https://github.com/nexxtway/rainbow-modules/issues/578)) ([31df21e](https://github.com/nexxtway/rainbow-modules/commit/31df21eb1478d4451884a094a6d83664bbedaf3e))
+
+### Reverts
+
+-   Revert "chore: improve modules build (#579)" (#580) ([0a36d5a](https://github.com/nexxtway/rainbow-modules/commit/0a36d5a179eac94756c2803597afd610a9910763)), closes [#579](https://github.com/nexxtway/rainbow-modules/issues/579) [#580](https://github.com/nexxtway/rainbow-modules/issues/580)
+
 ## [0.51.1](https://github.com/nexxtway/rainbow-modules/compare/v0.51.0...v0.51.1) (2022-07-06)
 
 ### Bug Fixes

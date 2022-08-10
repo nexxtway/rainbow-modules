@@ -1,10 +1,4 @@
-import {
-    useMutation,
-    useQueryClient,
-    UseMutationResult,
-    UseMutationOptions,
-    MutationFunction,
-} from 'react-query';
+import { useMutation, useQueryClient, UseMutationResult, UseMutationOptions } from 'react-query';
 import useAuthFetch from './useAuthFetch';
 
 interface Params {

@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.52.1](https://github.com/nexxtway/rainbow-modules/compare/v0.52.0...v0.52.1) (2022-08-02)
+
+### Bug Fixes
+
+-   remove type export from js file ([#591](https://github.com/nexxtway/rainbow-modules/issues/591)) ([feabbf6](https://github.com/nexxtway/rainbow-modules/commit/feabbf612b2e00bdc819235ab1b44d796e0e3a1e))
+
+# [0.52.0](https://github.com/nexxtway/rainbow-modules/compare/v0.51.1...v0.52.0) (2022-08-02)
+
+### Bug Fixes
+
+-   add parameters types to mutate on useMutationFlow ([#577](https://github.com/nexxtway/rainbow-modules/issues/577)) ([d198f12](https://github.com/nexxtway/rainbow-modules/commit/d198f129398d3c375797996ae3d90da0a76ca988))
+-   change router imports to avoid typescript error ([#588](https://github.com/nexxtway/rainbow-modules/issues/588)) ([c1d670c](https://github.com/nexxtway/rainbow-modules/commit/c1d670c6c68ee22c6100e783282a871a760fe84e))
+-   confirm modal types ([#574](https://github.com/nexxtway/rainbow-modules/issues/574)) ([5be3f38](https://github.com/nexxtway/rainbow-modules/commit/5be3f383fefc3be448da0b0c6ecd2699cbbd3772))
+-   export router helpers from app ([#570](https://github.com/nexxtway/rainbow-modules/issues/570)) ([e4e003f](https://github.com/nexxtway/rainbow-modules/commit/e4e003f0928aa416428ddb2bf77b9648a00eb25b))
+-   filters alignment ([#581](https://github.com/nexxtway/rainbow-modules/issues/581)) ([c1f2ad2](https://github.com/nexxtway/rainbow-modules/commit/c1f2ad25449198722487a043271ef1089d4bcd14))
+-   fix lint warnings ([#585](https://github.com/nexxtway/rainbow-modules/issues/585)) ([827945a](https://github.com/nexxtway/rainbow-modules/commit/827945a61da02b92a5f02ab0205857e09ed02aec))
+-   improved audit logs ([#578](https://github.com/nexxtway/rainbow-modules/issues/578)) ([31df21e](https://github.com/nexxtway/rainbow-modules/commit/31df21eb1478d4451884a094a6d83664bbedaf3e))
+-   increase timeout for useMutationFlow notification ([#584](https://github.com/nexxtway/rainbow-modules/issues/584)) ([ebde7b8](https://github.com/nexxtway/rainbow-modules/commit/ebde7b88553746b82e4b4672a18584b0dd219c99))
+
+### Features
+
+-   add support for react-router 6 ([#569](https://github.com/nexxtway/rainbow-modules/issues/569)) ([ef95a79](https://github.com/nexxtway/rainbow-modules/commit/ef95a793901e9d002d1a3d70ec6ecc47cb952b73))
+
+### Reverts
+
+-   Revert "chore: improve modules build (#579)" (#580) ([0a36d5a](https://github.com/nexxtway/rainbow-modules/commit/0a36d5a179eac94756c2803597afd610a9910763)), closes [#579](https://github.com/nexxtway/rainbow-modules/issues/579) [#580](https://github.com/nexxtway/rainbow-modules/issues/580)
+
 ## [0.51.1](https://github.com/nexxtway/rainbow-modules/compare/v0.51.0...v0.51.1) (2022-07-06)
 
 ### Bug Fixes

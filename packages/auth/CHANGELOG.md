@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.52.0](https://github.com/nexxtway/rainbow-modules/compare/v0.51.1...v0.52.0) (2022-08-02)
+
+### Bug Fixes
+
+-   export router helpers from app ([#570](https://github.com/nexxtway/rainbow-modules/issues/570)) ([e4e003f](https://github.com/nexxtway/rainbow-modules/commit/e4e003f0928aa416428ddb2bf77b9648a00eb25b))
+
+### Features
+
+-   add support for react-router 6 ([#569](https://github.com/nexxtway/rainbow-modules/issues/569)) ([ef95a79](https://github.com/nexxtway/rainbow-modules/commit/ef95a793901e9d002d1a3d70ec6ecc47cb952b73))
+
+### Reverts
+
+-   Revert "chore: improve modules build (#579)" (#580) ([0a36d5a](https://github.com/nexxtway/rainbow-modules/commit/0a36d5a179eac94756c2803597afd610a9910763)), closes [#579](https://github.com/nexxtway/rainbow-modules/issues/579) [#580](https://github.com/nexxtway/rainbow-modules/issues/580)
+
 ## [0.51.1](https://github.com/nexxtway/rainbow-modules/compare/v0.51.0...v0.51.1) (2022-07-06)
 
 **Note:** Version bump only for package @rainbow-modules/auth

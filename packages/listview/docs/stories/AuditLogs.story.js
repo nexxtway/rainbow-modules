@@ -8,7 +8,7 @@ const labels = ['username', 'other'];
 export const BasicAuditLogs = () => {
     return (
         <RainbowFirebaseApp app={app}>
-            <AuditLogs labels={labels} collectionPath="logs" />
+            <AuditLogs labels={labels} collectionPath="logs" title="Audit Logs" />
         </RainbowFirebaseApp>
     );
 };
