@@ -75,7 +75,7 @@ export const StyledSummaryContainer = styled.div`
 `;
 
 export const StyledSummaryButton = styled(ButtonIcon)`
-    margin: 0 0.5rem 0 0;
+    margin: 0 0.5rem 0 3px;
 `;
 
 export const StyledCellText = styled.span`
