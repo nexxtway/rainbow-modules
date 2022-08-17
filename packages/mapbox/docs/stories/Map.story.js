@@ -58,7 +58,6 @@ const getWaypoints = (origin, destination) => {
         }
         waypoints.push([destination.geometry.location.lng(), destination.geometry.location.lat()]);
     }
-
     return waypoints;
 };
 
