@@ -17404,10 +17404,10 @@ react-query@^3.34.0:
     broadcast-channel "^3.4.1"
     match-sorter "^6.0.2"
 
-react-rainbow-components@1.29.0-canary.c10cd9f:
-  version "1.29.0-canary.c10cd9f"
-  resolved "https://registry.yarnpkg.com/react-rainbow-components/-/react-rainbow-components-1.29.0-canary.c10cd9f.tgz#7802a1fd6dc0c2ea8b24b2c734221abc07dac9ae"
-  integrity sha512-VBVHtaFP745mW969t34WNchUwYXKb/mrke/WY2VVBQYsUmpBhEqKdHToiKcS2RZez/pZqups0gXkk1VKdsKDTQ==
+react-rainbow-components@1.31.0-canary.300d49e:
+  version "1.31.0-canary.300d49e"
+  resolved "https://registry.yarnpkg.com/react-rainbow-components/-/react-rainbow-components-1.31.0-canary.300d49e.tgz#c0dcb98cf69944748a79a094d19fe36944631dd4"
+  integrity sha512-66mdV02noS8rmPYxe5KGsenpuD7BxMqvNTXfMhitoN+VhVt3BBef4C5nGKmAmynogOlWiibM6L4COi8FDESSJg==
   dependencies:
     "@rainbow-modules/hooks" "^0.12.0"
     autosize "^4.0.2"
@@ -17421,7 +17421,7 @@ react-rainbow-components@1.29.0-canary.c10cd9f:
     rehype-react "^6.1.0"
     remark-parse "^8.0.2"
     remark-rehype "^7.0.0"
-    styled-components "^4.3.2"
+    styled-components ">=4.3.2 <6"
     unified "^9.0.0"
     xlsx "^0.14.4"
 
