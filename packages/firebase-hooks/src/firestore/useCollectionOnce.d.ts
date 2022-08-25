@@ -1,3 +1,5 @@
+import { UseCollectionFn } from './types';
 import { UseCollectionProps } from './useCollection';
 
-export default function useCollectionOnce(props: UseCollectionProps): [Array<unknown>, boolean];
+declare const useCollectionOnce: UseCollectionFn<UseCollectionProps>;
+export default useCollectionOnce;

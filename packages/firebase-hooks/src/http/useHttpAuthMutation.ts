@@ -9,20 +9,17 @@ interface Params {
     invalidateQueriesOnSuccess?: string | string[];
 }
 
-const useHttpAuthMutation = (
+const useHttpAuthMutation = <TData = unknown, TVariables = Record<string, unknown>>(
     params: Params,
-    config: Omit<
-        UseMutationOptions<unknown, unknown, Record<string, unknown> | undefined>,
-        'mutationFn'
-    > = {},
-): UseMutationResult<unknown, unknown, Record<string, unknown> | undefined> => {
+    config: Omit<UseMutationOptions<TData, unknown, TVariables | undefined>, 'mutationFn'> = {},
+): UseMutationResult<TData, unknown, TVariables | undefined> => {
     const { functionName, region, pathname, method = 'POST', invalidateQueriesOnSuccess } = params;
-    const { fetchAsync } = useAuthFetch({ functionName, region });
+    const { fetchAsync } = useAuthFetch<TData, TVariables>({ functionName, region });
     const queryClient = useQueryClient();
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { onSuccess, onError, onSettled, ...configRest } = config; // exclude callback so they can't be used with useHttpAuthMutation, instead use the callbacks in the returned mutation function
-    return useMutation<unknown, unknown, Record<string, unknown> | undefined>(
-        (body?: Record<string, unknown>) =>
+    return useMutation<TData, unknown, TVariables | undefined>(
+        (body?: TVariables) =>
             fetchAsync(pathname, {
                 method,
                 body,

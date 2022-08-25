@@ -1,3 +1,4 @@
 import { UseDocProps } from './useDoc';
 
-export default function (props: UseDocProps): [Data, boolean];
+declare const useDoc: UseDocFn<UseDocProps>;
+export default useDoc;
