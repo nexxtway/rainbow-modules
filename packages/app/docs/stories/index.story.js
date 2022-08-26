@@ -1,9 +1,9 @@
 export default { title: 'Modules/App/Stories' };
-export * from './appWithHooks.story';
-export * from './appWithI18n.story';
-export * from './appWithRedux.story';
-export * from './appWithReduxForm.story';
-export * from './appWithReduxMiddleware.story';
-export * from './appWithRouter.story';
-export * from './sideBarNavigation.story';
-export * from './appErrorBoundary.story';
+export { appFirebaseHooks } from './appWithHooks.story';
+export { Internationalizations } from './appWithI18n.story';
+export { increaseCounter } from './appWithRedux.story';
+export { simpleFormValidation } from './appWithReduxForm.story';
+export { appWithReduxMiddleware } from './appWithReduxMiddleware.story';
+export { basicRouter } from './appWithRouter.story';
+export { sideBarNavigation } from './sideBarNavigation.story';
+export { DefaultErrorBoundary } from './appErrorBoundary.story';

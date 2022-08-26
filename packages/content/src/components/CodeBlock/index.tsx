@@ -66,7 +66,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
                         showLineNumbers={showLineNumbers}
                         PreTag={StyledPreCode}
                     >
-                        {value}
+                        {value ?? ''}
                     </SyntaxHighlighter>
                     <RenderIf isTrue={isMessageVisible}>
                         <CopiedMessage />
