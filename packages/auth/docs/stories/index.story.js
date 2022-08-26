@@ -1,5 +1,5 @@
 export default { title: 'Modules/Auth/Stories' };
-export * from './authRoutes.story';
-export * from './emailPasswordSignInForm.story';
-export * from './emailPasswordSignUpForm.story';
-export * from './loginAnonymously.story';
+export { basicEmailPasswordAuthFlow } from './authRoutes.story';
+export { basicEmailPasswordSignInForm } from './emailPasswordSignInForm.story';
+export { basicEmailPasswordSignUpForm } from './emailPasswordSignUpForm.story';
+export { loginAnonymously } from './loginAnonymously.story';

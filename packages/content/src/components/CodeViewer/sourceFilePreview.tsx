@@ -18,7 +18,7 @@ const componentStyles = {
     textShadow: 'none',
 };
 
-const lineNumberStyle = {
+const lineNumberStyle: React.CSSProperties = {
     textAlign: 'left',
 };
 
@@ -50,7 +50,7 @@ const SourceFilePreview: React.FC<SourceFilePreviewProps> = ({
                 renderer={virtualizedRenderer()}
                 showInlineLineNumbers
             >
-                {content}
+                {content ?? ''}
             </SyntaxHighlighter>
         );
     }
