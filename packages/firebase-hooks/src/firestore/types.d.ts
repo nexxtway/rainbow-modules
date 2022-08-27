@@ -1,7 +1,7 @@
 export type Doc<DocType> = {
     [key in keyof DocType]: DocType[key];
 } & {
-    id: number;
+    id: string;
 };
 
 export interface UseDocFn<TProps> {
