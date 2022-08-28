@@ -18,20 +18,23 @@ interface Params {
     region?: string;
 }
 
-interface FetchConfig {
-    body?: Record<string, unknown>;
+interface FetchConfig<TBody> {
+    body?: TBody;
     method?: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
 }
 
-interface ReturnValue {
+interface ReturnValue<TData, TBody> {
     isLoading: boolean;
-    fetchAsync: (pathname: string, config: FetchConfig) => Promise<unknown>;
+    fetchAsync: (pathname: string, config?: FetchConfig<TBody>) => Promise<TData>;
     [key: string]: unknown;
 }
 
 const DEFAULT_REGION = 'us-central1';
 
-const useAuthFetch = ({ functionName, region = DEFAULT_REGION }: Params): ReturnValue => {
+const useAuthFetch = <TData = unknown, TBody = Record<string, unknown>>({
+    functionName,
+    region = DEFAULT_REGION,
+}: Params): ReturnValue<TData, TBody> => {
     const [isLoading, setLoading] = useState(false);
     const app = useFirebaseApp();
 
