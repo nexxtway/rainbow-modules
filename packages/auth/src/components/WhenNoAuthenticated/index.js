@@ -39,7 +39,7 @@ const WhenNoAuthenticatedV6 = (props) => {
     const Component = component;
 
     useEffect(() => {
-        if (isAuth === true) {
+        if (redirect && isAuth === true) {
             navigate(redirect);
         }
     }, [isAuth, navigate, redirect]);

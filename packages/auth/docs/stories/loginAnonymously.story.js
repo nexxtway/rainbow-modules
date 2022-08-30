@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
+import { Route, Routes } from 'react-router-dom';
 import app from '../../../../firebase';
 import WhenAuthenticated from '../../src/components/WhenAuthenticated';
 
@@ -28,16 +29,23 @@ const UserId = () => {
 export const loginAnonymously = () => {
     return (
         <RainbowFirebaseApp app={app} initialize={initialize}>
-            <WhenAuthenticated path="/">
-                <h1>You are authenticated anonymously!</h1>
-                <UserId />
-                <p>
-                    Firebase docs here:
-                    <a href="https://firebase.google.com/docs/auth/web/anonymous-auth">
-                        https://firebase.google.com/docs/auth/web/anonymous-auth
-                    </a>
-                </p>
-            </WhenAuthenticated>
+            <Routes>
+                <Route
+                    path="/"
+                    element={
+                        <WhenAuthenticated path="/">
+                            <h1>You are authenticated anonymously!</h1>
+                            <UserId />
+                            <p>
+                                Firebase docs here:
+                                <a href="https://firebase.google.com/docs/auth/web/anonymous-auth">
+                                    https://firebase.google.com/docs/auth/web/anonymous-auth
+                                </a>
+                            </p>
+                        </WhenAuthenticated>
+                    }
+                />
+            </Routes>
         </RainbowFirebaseApp>
     );
 };

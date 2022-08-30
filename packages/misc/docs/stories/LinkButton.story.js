@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes, Switch } from 'react-router-dom';
 import LinkButton from '../../src/components/LinkButton';
 import RainbowFirebaseApp from '../../../app/src/components/App';
 
@@ -68,18 +68,19 @@ export const LinkButtonVariants = () => {
                 </LinkButton>
             </div>
             <div className="rainbow-p-vertical_large rainbow-align-content_center rainbow-flex_wrap">
-                <Switch>
-                    <Route path="/base">Navigated to Base</Route>
-                    <Route path="/outline-brand">Navigated to Outline Brand</Route>
-                    <Route path="/border">Navigated to Border</Route>
-                    <Route path="/neutral">
-                        <span data-cy="neutral">Navigated to Neutral</span>
-                    </Route>
-                    <Route path="/border-filled">Navigated to Border Filled</Route>
-                    <Route path="/brand">Navigated to Brand</Route>
-                    <Route path="/success">Navigated to Success</Route>
-                    <Route path="/destructive">Navigated to Destructive</Route>
-                </Switch>
+                <Routes>
+                    <Route path="/base" element={<>Navigated to Base</>} />
+                    <Route path="/outline-brand" element={<>Navigated to Outline Brand</>} />
+                    <Route path="/border" element={<>Navigated to Border</>} />
+                    <Route
+                        path="/neutral"
+                        element={<span data-cy="neutral">Navigated to Neutral</span>}
+                    />
+                    <Route path="/border-filled" element={<>Navigated to Border Filled</>} />
+                    <Route path="/brand" element={<>Navigated to Brand</>} />
+                    <Route path="/success" element={<>Navigated to Success</>} />
+                    <Route path="/destructive" element={<>Navigated to Destructive</>} />
+                </Routes>
             </div>
         </RainbowFirebaseApp>
     );
@@ -89,13 +90,13 @@ export const LinkButtonSizes = () => {
     return (
         <RainbowFirebaseApp>
             <div className="rainbow-p-vertical_large rainbow-align-content_center rainbow-flex_wrap">
-                <LinkButton variant="brand" className="rainbow-m-around_medium" size="small">
+                <LinkButton variant="brand" className="rainbow-m-around_medium" size="small" to="">
                     Button Small
                 </LinkButton>
-                <LinkButton variant="brand" className="rainbow-m-around_medium" size="medium">
+                <LinkButton variant="brand" className="rainbow-m-around_medium" size="medium" to="">
                     Button Medium
                 </LinkButton>
-                <LinkButton variant="brand" className="rainbow-m-around_medium" size="large">
+                <LinkButton variant="brand" className="rainbow-m-around_medium" size="large" to="">
                     Button Large
                 </LinkButton>
             </div>

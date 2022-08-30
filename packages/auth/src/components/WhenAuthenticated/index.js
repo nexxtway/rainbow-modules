@@ -38,7 +38,7 @@ const WhenAuthenticatedV6 = (props) => {
     const isAuth = useAuthState();
 
     useEffect(() => {
-        if (isAuth === false) {
+        if (redirect && isAuth === false) {
             navigate(redirect);
         }
     }, [isAuth, navigate, redirect]);

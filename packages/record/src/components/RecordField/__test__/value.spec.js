@@ -9,7 +9,7 @@ describe('<Value />', () => {
         const wrapper = mount(
             <BrowserRouter>
                 <Application>
-                    <Value type="url" href="/" />
+                    <Value type="url" href="/" value="/" />
                 </Application>
             </BrowserRouter>,
         );

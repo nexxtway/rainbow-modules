@@ -8,7 +8,7 @@ describe('<LinkButton />', () => {
     it('should render a Link when target is not `_blank`', () => {
         const component = mount(
             <RainbowFirebaseApp>
-                <LinkButton>Test</LinkButton>
+                <LinkButton to="">Test</LinkButton>
             </RainbowFirebaseApp>,
         );
         expect(component.find(Link).exists()).toBe(true);
@@ -17,7 +17,9 @@ describe('<LinkButton />', () => {
     it('should render a regular anchor when target is `_blank`', () => {
         const component = mount(
             <RainbowFirebaseApp>
-                <LinkButton>Test</LinkButton>
+                <LinkButton to="" target="_blank">
+                    Test
+                </LinkButton>
             </RainbowFirebaseApp>,
         );
         expect(component.find('a').exists()).toBe(true);
