@@ -133,9 +133,15 @@ import {
     Wireless,
     Globe,
     WaitingTime,
+    CornerUpRight,
 } from '../../../src';
 
 export default [
+    {
+        name: 'cornerUpRight',
+        category: 'standard',
+        icon: CornerUpRight,
+    },
     {
         name: 'waitingTime',
         category: 'standard',

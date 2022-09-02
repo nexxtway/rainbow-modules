@@ -126,6 +126,7 @@ export { default as CampaignFilled } from './components/campaingFilled';
 export { default as Wireless } from './components/wireless';
 export { default as Globe } from './components/globe';
 export { default as WaitingTime } from './components/waitingTime';
+export { default as CornerUpRight } from './components/cornerUpRight';
 
 // File icons
 export { default as JavascriptFile } from './components/javascriptFile';
