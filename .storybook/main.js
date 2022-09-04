@@ -2,6 +2,9 @@ const path = require('path');
 const DocBuilderPlugin = require('../scripts/DocBuilderPlugin');
 
 module.exports = {
+    core: {
+        builder: 'webpack5',
+    },
     stories: ['../getting-started/*.story.@(js|mdx)', '../packages/**/docs/**/*.story.@(js|mdx)'],
     addons: [
         {
@@ -60,6 +63,10 @@ module.exports = {
             '@rainbow-modules/payment': path.join(__dirname, '../packages/payment/src/index.js'),
             '@rainbow-modules/search': path.join(__dirname, '../packages/search/src/index.js'),
             '@rainbow-modules/record': path.join(__dirname, '../packages/record/src/index.js'),
+            '@rainbow-modules/cypress': path.join(
+                __dirname,
+                '../packages/cypress/src/pageObjects/index.js',
+            ),
         };
         config.module.rules.push({
             test: /\.(ts|tsx)$/,
