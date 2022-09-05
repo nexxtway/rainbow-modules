@@ -1,8 +1,5 @@
-import { addDoc as fbAddDoc } from 'firebase/firestore';
+import firestoreIsomorphicCall from './firestoreIsomorphicCall';
 
 export default function addDoc(ref, data) {
-    if (ref.add) {
-        return ref.add(data);
-    }
-    return fbAddDoc(ref, data);
+    return firestoreIsomorphicCall(ref, 'add', 'addDoc', data);
 }

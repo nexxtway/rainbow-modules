@@ -1,9 +1,7 @@
-import { onSnapshot as fbOnSnapshot } from 'firebase/firestore';
+import firestoreIsomorphicCall from './firestoreIsomorphicCall';
 
 export default function onSnapshot(ref, callback, errorCallback) {
     if (!ref) return () => {};
-    if (ref.onSnapshot) {
-        return ref.onSnapshot(callback, errorCallback);
-    }
-    return fbOnSnapshot(ref, callback, errorCallback);
+
+    return firestoreIsomorphicCall(ref, 'onSnapshot', 'onSnapshot', callback, errorCallback);
 }

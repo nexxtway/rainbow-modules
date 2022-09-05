@@ -1,8 +1,5 @@
-import { getDocs as fbGetDocs } from 'firebase/firestore';
+import firestoreIsomorphicCall from './firestoreIsomorphicCall';
 
 export default function getDocs(query) {
-    if (query.get) {
-        return query.get();
-    }
-    return fbGetDocs(query);
+    return firestoreIsomorphicCall(query, 'get', 'getDocs');
 }

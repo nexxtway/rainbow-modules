@@ -1,4 +1,4 @@
-import { collection as fbCollection } from 'firebase/firestore';
+import firestoreIsomorphicCall from './firestoreIsomorphicCall';
 
 /**
  * Creates a collection reference, regarldess of the Firebase SDK version.
@@ -7,8 +7,5 @@ import { collection as fbCollection } from 'firebase/firestore';
  * @returns {CollectionReference} CollectionReference
  */
 export default function collection(ref, path) {
-    if (ref.collection) {
-        return ref.collection(path);
-    }
-    return fbCollection(ref, path);
+    return firestoreIsomorphicCall(ref, 'collection', 'collection', path);
 }

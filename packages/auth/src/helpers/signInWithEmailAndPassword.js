@@ -1,8 +1,21 @@
-import { signInWithEmailAndPassword as fbSignInWithEmailAndPassword } from 'firebase/auth';
+import * as firebaseAuth from 'firebase/auth';
 
 export default function useSignInWithEmailAndPassword(auth, email, password) {
-    if (auth.signInWithEmailAndPassword) {
-        return auth.signInWithEmailAndPassword(email, password);
+    // Firebase <= v8
+    let key = Object.prototype.hasOwnProperty.call(auth, 'signInWithEmailAndPassword')
+        ? 'signInWithEmailAndPassword'
+        : null;
+    if (key) {
+        return auth[key](email, password);
     }
-    return fbSignInWithEmailAndPassword(auth, email, password);
+
+    // Firebase v9
+    key = Object.prototype.hasOwnProperty.call(firebaseAuth, 'signInWithEmailAndPassword')
+        ? 'signInWithEmailAndPassword'
+        : null;
+    if (key) {
+        firebaseAuth[key](auth, email, password);
+    }
+
+    return null;
 }

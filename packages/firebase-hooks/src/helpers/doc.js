@@ -1,4 +1,4 @@
-import { doc as fbDoc } from 'firebase/firestore';
+import firestoreIsomorphicCall from './firestoreIsomorphicCall';
 
 /**
  * Creates a document reference, regarldess of the Firebase SDK version.
@@ -7,8 +7,5 @@ import { doc as fbDoc } from 'firebase/firestore';
  * @returns {DocumentReference} DocumentReference
  */
 export default function doc(ref, path) {
-    if (ref.doc) {
-        return ref.doc(path);
-    }
-    return fbDoc(ref, path);
+    return firestoreIsomorphicCall(ref, 'doc', 'doc', path);
 }

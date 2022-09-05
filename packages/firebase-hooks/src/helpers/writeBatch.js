@@ -1,8 +1,5 @@
-import { writeBatch as fbWriteBatch } from 'firebase/firestore';
+import firestoreIsomorphicCall from './firestoreIsomorphicCall';
 
 export default function writeBatch(db) {
-    if (db.batch) {
-        return db.batch();
-    }
-    return fbWriteBatch(db);
+    return firestoreIsomorphicCall(db, 'batch', 'writeBatch');
 }

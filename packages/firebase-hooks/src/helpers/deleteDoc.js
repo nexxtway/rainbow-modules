@@ -1,9 +1,5 @@
-import { deleteDoc as fbDeleteDoc } from 'firebase/firestore';
+import firestoreIsomorphicCall from './firestoreIsomorphicCall';
 
 export default function deleteDoc(ref) {
-    if (!ref) return Promise.reject(new Error('No reference provided'));
-    if (ref.delete) {
-        return ref.delete();
-    }
-    return fbDeleteDoc(ref);
+    return firestoreIsomorphicCall(ref, 'delete', 'deleteDoc');
 }

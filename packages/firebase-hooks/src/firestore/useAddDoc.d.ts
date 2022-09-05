@@ -1,4 +1,4 @@
-import firebase from 'firebase';
+import firebase from 'firebase/compat';
 import { UseMutationOptions, UseMutationResult } from 'react-query/types';
 
 export default function <

@@ -1,8 +1,16 @@
-import { query as fbQuery } from 'firebase/firestore';
+import * as firestore from 'firebase/firestore';
+import getCallableKey from './getCallableKey';
 
 export default function query(ref) {
-    if (ref.where) {
+    let key = getCallableKey(ref, 'where');
+    if (key) {
         return ref;
     }
-    return fbQuery(ref);
+
+    key = getCallableKey(firestore, 'query');
+    if (key) {
+        return firestore[key](ref);
+    }
+
+    return null;
 }

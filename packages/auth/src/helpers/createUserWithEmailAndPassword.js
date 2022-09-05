@@ -1,8 +1,21 @@
-import { createUserWithEmailAndPassword as fbCreateUserWithEmailAndPassword } from 'firebase/auth';
+import * as firebaseAuth from 'firebase/auth';
 
-export default function useCreateUserWithEmailAndPassword(auth, email, password) {
-    if (auth.createUserWithEmailAndPassword) {
-        return auth.createUserWithEmailAndPassword(email, password);
+export default function createUserWithEmailAndPassword(auth, email, password) {
+    // Firebase <= 8
+    let key = Object.prototype.hasOwnProperty.call(auth, 'createUserWithEmailAndPassword')
+        ? 'createUserWithEmailAndPassword'
+        : null;
+    if (key) {
+        return auth[key](email, password);
     }
-    return fbCreateUserWithEmailAndPassword(auth, email, password);
+
+    // Firebase 9
+    key = Object.prototype.hasOwnProperty.call(firebaseAuth, 'createUserWithEmailAndPassword')
+        ? 'createUserWithEmailAndPassword'
+        : null;
+    if (key) {
+        firebaseAuth[key](auth, email, password);
+    }
+
+    return null;
 }
