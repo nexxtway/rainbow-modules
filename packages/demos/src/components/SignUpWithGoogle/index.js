@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { getAuth, signInWithPopup } from 'firebase/auth';
 import { showAppMessage, hideAppMessage } from '@rainbow-modules/app';
 import { WhenNoAuthenticated, WhenAuthenticated } from '@rainbow-modules/auth';
-import { useFirebaseApp, useAuth } from '@rainbow-modules/firebase-hooks';
+import { useFirebaseApp } from '@rainbow-modules/firebase-hooks';
 import { RenderIf } from 'react-rainbow-components';
 import { Container, HeaderContainer, Title, StyledButton, GoogleIcon } from './styled';
 
@@ -17,14 +18,14 @@ const SignUpWithGoogle = (props) => {
     const { className, style, header, children } = props;
     const [isLoading, setLoading] = useState(false);
     const app = useFirebaseApp();
-    const auth = useAuth(app);
+    const auth = getAuth(app);
 
     const loginWithGoogle = async () => {
         hideAppMessage();
         setLoading(true);
         const provider = new auth.GoogleAuthProvider();
         try {
-            await app.auth().signInWithPopup(provider);
+            await signInWithPopup(auth, provider);
         } catch (error) {
             showAppMessage({
                 variant: 'error',

@@ -14,7 +14,7 @@ export default function createUserWithEmailAndPassword(auth, email, password) {
         ? 'createUserWithEmailAndPassword'
         : null;
     if (key) {
-        firebaseAuth[key](auth, email, password);
+        return firebaseAuth[key](auth, email, password);
     }
 
     return null;

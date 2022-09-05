@@ -14,7 +14,7 @@ export default function useSignInWithEmailAndPassword(auth, email, password) {
         ? 'signInWithEmailAndPassword'
         : null;
     if (key) {
-        firebaseAuth[key](auth, email, password);
+        return firebaseAuth[key](auth, email, password);
     }
 
     return null;

@@ -1,5 +1,6 @@
-import { getAuth } from 'firebase/auth';
+import * as auth from 'firebase/auth';
 import useFirebaseApp from '../useFirebaseApp';
+import getCallableKey from '../helpers/getCallableKey';
 
 /**
  * Resolves the Firebase Auth instance, regardless of the Firebase SDK version.
@@ -9,10 +10,20 @@ import useFirebaseApp from '../useFirebaseApp';
 const useAuth = () => {
     const app = useFirebaseApp();
     if (!app) return null;
-    if (app.auth) {
-        return app.auth();
+
+    // Firebase <= 8
+    let key = getCallableKey(auth, 'auth');
+    if (key) {
+        return app[key]();
     }
-    return getAuth(app);
+
+    // Firebase 9
+    key = getCallableKey(auth, 'getAuth');
+    if (key) {
+        return auth[key](app);
+    }
+
+    return null;
 };
 
 export default useAuth;

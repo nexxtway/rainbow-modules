@@ -12,7 +12,8 @@ describe('EmailPasswordSignInForm', () => {
             'POST',
             'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?*',
             {
-                statusCode: 400,
+                statusCode: 200,
+                delay: 1000,
             },
         ).as('firebaseSignIn');
     });

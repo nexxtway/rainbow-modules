@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { signOut } from 'firebase/auth';
 import { Button, Card } from 'react-rainbow-components';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
 import { RainbowLogo } from '@rainbow-modules/icons';
@@ -8,6 +9,7 @@ import app from '../../../../firebase';
 import WhenAuthenticated from '../../src/components/WhenAuthenticated';
 import WhenNoAuthenticated from '../../src/components/WhenNoAuthenticated';
 import EmailPasswordSignUpForm from '../../src/components/EmailPasswordSignUpForm';
+import getAuth from '../../src/helpers/getAuth';
 
 const Container = styled.div`
     display: flex;
@@ -32,6 +34,7 @@ const StyledCard = styled(Card)`
 `;
 
 export const basicEmailPasswordSignUpForm = () => {
+    const auth = getAuth(app);
     return (
         <RainbowFirebaseApp app={app}>
             <Redirect from="/" to="/home" exact />
@@ -46,7 +49,7 @@ export const basicEmailPasswordSignUpForm = () => {
             </WhenNoAuthenticated>
             <WhenAuthenticated path="/app" redirect="/home">
                 <span>Authenticated!</span>
-                <Button label="Log Out" onClick={() => app.auth().signOut()} />
+                <Button label="Log Out" onClick={() => signOut(auth)} />
             </WhenAuthenticated>
         </RainbowFirebaseApp>
     );

@@ -11,6 +11,7 @@ describe('EmailPasswordSignUpForm', () => {
 
         cy.intercept('POST', 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?*', {
             statusCode: 400,
+            delay: 1000,
         }).as('firebaseSignUp');
     });
 

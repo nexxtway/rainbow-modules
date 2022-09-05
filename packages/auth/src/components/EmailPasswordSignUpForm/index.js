@@ -28,8 +28,7 @@ const EmailPasswordSignUpForm = (props) => {
         try {
             showAppSpinner();
             await createUserWithEmailAndPassword(auth, email, password);
-            const user = app.auth().currentUser;
-            await user.updateProfile({
+            await auth.currentUser.updateProfile({
                 displayName: name,
             });
             hideAppSpinner();
