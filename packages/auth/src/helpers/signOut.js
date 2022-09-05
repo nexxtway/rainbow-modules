@@ -10,7 +10,7 @@ export default function signOut(auth) {
     // Firebase 9
     key = Object.prototype.hasOwnProperty.call(firebaseAuth, 'signOut') ? 'signOut' : null;
     if (key) {
-        return firebaseAuth[key];
+        return firebaseAuth[key](auth);
     }
 
     return null;
