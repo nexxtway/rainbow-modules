@@ -1,7 +1,10 @@
-const batchAdd = ({ db, collection, data }) => {
+import collection from '../../helpers/collection';
+import doc from '../../helpers/doc';
+
+const batchAdd = ({ db, collection: collectionPath, data }) => {
     const batch = db.batch();
     data.forEach((item) => {
-        const docRef = db.collection(collection).doc();
+        const docRef = doc(collection(db, collectionPath));
         batch.set(docRef, item);
     });
     return batch.commit();

@@ -6,6 +6,7 @@ import { useFirebaseApp } from '@rainbow-modules/firebase-hooks';
 import PropTypes from 'prop-types';
 import { Container, Footer, StyledTable } from './styled';
 import getData from './getData';
+import getCollection from './helpers/getCollection';
 
 const FirestoreTableWithCursors = forwardRef((props, ref) => {
     const {
@@ -25,9 +26,7 @@ const FirestoreTableWithCursors = forwardRef((props, ref) => {
     const unsubscribe = useRef();
     const pagesRefs = useRef([]);
     const page = useRef();
-    const collectionRef = query(
-        app.firestore()[isCollectionGroup ? 'collectionGroup' : 'collection'](collection),
-    );
+    const collectionRef = query(getCollection(app, collection, isCollectionGroup));
 
     useEffect(() => {
         (async () => {

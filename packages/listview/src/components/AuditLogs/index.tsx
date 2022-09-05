@@ -8,6 +8,7 @@ import getDatesFromFilter from './helpers/getDatesFromFilter';
 import FirestoreFilterTable from './firestoreFilterTable';
 import { FirestoreTableWithCursorsRef } from '../FirestoreTableWithCursors';
 import { prepareForDownload } from './helpers';
+import getFirestore from '../../helpers/getFirestore';
 
 const defaultFilters: Filters = {
     severity: [],
@@ -59,7 +60,7 @@ const AuditLogs = ({
     }, []);
 
     const getDownloadData = async ({ max, format }: any) => {
-        const ref = app.firestore().collection(collectionPath);
+        const ref = getFirestore(app).collection(collectionPath);
         const finalQuery = max ? query(ref).limit(max) : query(ref);
         try {
             const querySnapshot = await finalQuery.get();

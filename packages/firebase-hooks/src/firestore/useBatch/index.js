@@ -1,13 +1,12 @@
-import useFirebaseApp from '../../useFirebaseApp';
 import batchSplit from './batchSplit';
 import batchUpdate from './batchUpdate';
 import batchSet from './batchSet';
 import batchAdd from './batchAdd';
 import batchDelete from './batchDelete';
+import useFirestore from '../useFirestore';
 
 const useBatch = ({ collection }) => {
-    const app = useFirebaseApp();
-    const db = app.firestore();
+    const db = useFirestore();
     return {
         batchUpdate: (data) => batchSplit({ db, collection, data, action: batchUpdate }),
         batchSet: (data, options) =>

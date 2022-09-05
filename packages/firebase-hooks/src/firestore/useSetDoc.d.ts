@@ -1,9 +1,9 @@
-import firebase from 'firebase';
+import { DocumentData } from 'firebase/firestore';
 import { UseMutationOptions, UseMutationResult } from 'react-query/types';
 
 interface Opts {
     path: string;
-    data?: Partial<firebase.firestore.DocumentData>;
+    data?: Partial<DocumentData>;
     options?: firebase.firestore.SetOptions;
 }
 

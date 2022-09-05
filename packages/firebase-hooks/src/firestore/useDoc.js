@@ -1,26 +1,29 @@
-import { useContext, useEffect, useState } from 'react';
-import Context from '../context';
+import { useEffect, useState } from 'react';
+import doc from '../helpers/doc';
 import getDocData from '../helpers/getDocData';
+import useFirestore from './useFirestore';
+import onSnapshot from '../helpers/onSnapshot';
 
 export default function useDoc(props) {
     const { path, flat = false, disabled = false } = props;
-    const { app } = useContext(Context);
+    const firestore = useFirestore();
 
     const [isLoading, setIsLoading] = useState(!disabled);
     const [data, setData] = useState();
 
     // eslint-disable-next-line consistent-return
     useEffect(() => {
-        if (app && !disabled) {
-            const ref = app.firestore().doc(path);
+        if (firestore && !disabled) {
+            const ref = doc(firestore, path);
 
             if (!isLoading) {
                 setIsLoading(true);
             }
 
-            const unsubscribe = ref.onSnapshot(
+            const unsubscribe = onSnapshot(
+                ref,
                 (doc) => {
-                    if (doc.exists) {
+                    if (doc.exists || (typeof doc.exists === 'function' && doc.exists())) {
                         setData(getDocData(doc, flat));
                     } else {
                         setData(undefined);
@@ -38,6 +41,6 @@ export default function useDoc(props) {
             };
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [app, path, flat, disabled]);
+    }, [firestore, path, flat, disabled]);
     return [data, isLoading];
 }

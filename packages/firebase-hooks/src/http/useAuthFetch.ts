@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import useAuth from '../auth/useAuth';
 import useFirebaseApp from '../useFirebaseApp';
 
 const pathJoin = (...parts: string[]) => {
@@ -37,11 +38,12 @@ const useAuthFetch = <TData = unknown, TBody = Record<string, unknown>>({
 }: Params): ReturnValue<TData, TBody> => {
     const [isLoading, setLoading] = useState(false);
     const app = useFirebaseApp();
+    const auth = useAuth();
 
     const fetchFn = useCallback(
         async (pathname, config = {}) => {
             setLoading(true);
-            const token = await app.auth().currentUser?.getIdToken();
+            const token = await auth.currentUser?.getIdToken();
             const headers: Record<string, string> = {
                 'Content-Type': 'application/json',
             };

@@ -1,3 +1,3 @@
-import firebase from 'firebase';
+import { User } from 'firebase/auth';
 
-export default function (): firebase.User | null;
+export default function (): User | null;

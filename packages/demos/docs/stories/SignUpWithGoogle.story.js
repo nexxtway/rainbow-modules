@@ -1,12 +1,14 @@
 import React from 'react';
+import { getAuth, signOut } from 'firebase/auth';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
 import { Button } from 'react-rainbow-components';
 import SignUpWithGoogle from '../../src/components/SignUpWithGoogle';
 import firebase from '../../../../firebase';
 
 export const Basic = () => {
+    const auth = getAuth(firebase);
     const logout = () => {
-        return firebase.auth().signOut();
+        return signOut(auth);
     };
 
     return (

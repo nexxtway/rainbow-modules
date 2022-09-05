@@ -1,10 +1,14 @@
 import { useMutation } from 'react-query';
-import useFirebaseApp from '../useFirebaseApp';
+import deleteDoc from '../helpers/deleteDoc';
+import doc from '../helpers/doc';
+import useFirestore from './useFirestore';
 
 const useRemoveDoc = (opts = {}) => {
-    const app = useFirebaseApp();
+    const firestore = useFirestore();
+
     return useMutation((path) => {
-        return app.firestore().doc(path).delete();
+        const ref = doc(firestore, path);
+        return deleteDoc(ref);
     }, opts);
 };
 

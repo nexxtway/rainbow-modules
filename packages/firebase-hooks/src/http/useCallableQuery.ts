@@ -1,5 +1,6 @@
 import { useQuery, UseQueryOptions, UseQueryResult } from 'react-query';
-import useFirebaseApp from '../useFirebaseApp';
+import useFunctions from '../functions/useFunctions';
+import httpsCallable from '../helpers/httpsCallable';
 
 const useCallableQuery = <TData = unknown, TParams = unknown>(
     fnName: string,
@@ -9,11 +10,11 @@ const useCallableQuery = <TData = unknown, TParams = unknown>(
         'queryKey' | 'queryFn'
     >,
 ): UseQueryResult<TData | undefined> => {
-    const app = useFirebaseApp();
+    const functions = useFunctions();
     return useQuery<TData | undefined, unknown, TData | undefined>(
         fnName,
         async () => {
-            const res = await app.functions().httpsCallable(fnName)(params);
+            const res = await httpsCallable(functions, fnName)(params);
             if (res && res.data) {
                 return res.data as TData;
             }

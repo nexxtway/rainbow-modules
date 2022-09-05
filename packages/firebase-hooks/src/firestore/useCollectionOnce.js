@@ -1,27 +1,36 @@
-import { useContext, useEffect, useState } from 'react';
-import Context from '../context';
+import { useEffect, useState } from 'react';
+import collection from '../helpers/collection';
 import getData from '../helpers/getData';
+import useFirestore from './useFirestore';
+import query from '../helpers/query';
+import getDoc from '../helpers/getDoc';
 
 const defaultData = [];
 
 export default function useCollectionOnce(props) {
-    const { path, query, onlyIds = false, flat = false, track = [], disabled = false } = props;
-    const { app } = useContext(Context);
+    const {
+        path,
+        query: queryInProps,
+        onlyIds = false,
+        flat = false,
+        track = [],
+        disabled = false,
+    } = props;
+    const firestore = useFirestore();
 
     const [isLoading, setIsLoading] = useState(!disabled);
     const [data, setData] = useState(defaultData);
 
     useEffect(() => {
-        if (app && !disabled) {
-            const ref = app.firestore().collection(path);
-            const finalQuery = query ? query(ref) : ref;
+        if (firestore && !disabled) {
+            const ref = collection(firestore, path);
+            const finalQuery = queryInProps ? queryInProps(ref) : query(ref);
 
             if (!isLoading) {
                 setIsLoading(true);
             }
 
-            finalQuery
-                .get()
+            getDoc(finalQuery)
                 .then((querySnapshot) => {
                     setData(getData(querySnapshot.docs, onlyIds, flat));
                     setIsLoading(false);
@@ -33,7 +42,7 @@ export default function useCollectionOnce(props) {
                 });
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [app, path, onlyIds, flat, disabled].concat(track));
+    }, [firestore, path, onlyIds, flat, disabled].concat(track));
 
     return [data, isLoading];
 }

@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { Button, Input, Card } from 'react-rainbow-components';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
 import app from '../../../../firebase';
 import WhenAuthenticated from '../../src/components/WhenAuthenticated';
 import WhenNoAuthenticated from '../../src/components/WhenNoAuthenticated';
 import RainbowLogo from './icons/rainbowLogo';
+import getAuth from '../../src/helpers/getAuth';
 
 const Container = styled.div.attrs((props) => props.theme.rainbow)`
     display: flex;
@@ -36,10 +38,11 @@ const StyledButton = styled(Button)`
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const auth = getAuth(app);
 
     const onSubmit = (event) => {
         event.preventDefault();
-        return app.auth().signInWithEmailAndPassword(email, password);
+        return signInWithEmailAndPassword(auth, email, password);
     };
 
     return (
@@ -76,6 +79,8 @@ const Login = () => {
 };
 
 export const basicEmailPasswordAuthFlow = () => {
+    const auth = getAuth(app);
+
     return (
         <RainbowFirebaseApp app={app}>
             <WhenNoAuthenticated path="/" redirect="/app">
@@ -83,7 +88,7 @@ export const basicEmailPasswordAuthFlow = () => {
             </WhenNoAuthenticated>
             <WhenAuthenticated path="/app" redirect="/">
                 <span>Authenticated!</span>
-                <Button label="Log Out" onClick={() => app.auth().signOut()} />
+                <Button label="Log Out" onClick={() => signOut(auth)} />
             </WhenAuthenticated>
         </RainbowFirebaseApp>
     );

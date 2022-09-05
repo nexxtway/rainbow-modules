@@ -9,8 +9,12 @@ const Example = () => {
         pathname: '/helloWorld',
     });
 
-    return isLoading ? (
-        <span>Is Loading ...</span>
+    if (isLoading) {
+        return <span>Is Loading ...</span>;
+    }
+
+    return !data ? (
+        <span>No data :(</span>
     ) : (
         Object.keys(data).map((key) => {
             return (

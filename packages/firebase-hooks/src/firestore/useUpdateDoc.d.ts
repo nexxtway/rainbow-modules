@@ -1,9 +1,9 @@
-import firebase from 'firebase';
+import { UpdateData } from 'firebase/firestore';
 import { UseMutationOptions, UseMutationResult } from 'react-query/types';
 
 interface Opts {
     path: string;
-    data?: firebase.firestore.UpdateData;
+    data?: UpdateData;
 }
 
 export default function <TData = unknown, TError = unknown, TVariables = Opts, TContext = unknown>(

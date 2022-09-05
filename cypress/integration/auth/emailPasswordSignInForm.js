@@ -8,17 +8,16 @@ describe('EmailPasswordSignInForm', () => {
     beforeEach(() => {
         cy.visit(FORM_URL);
 
-        cy.server({
-            delay: 1000,
-        });
-
-        cy.route(
+        cy.intercept(
             'POST',
-            'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?*',
-            [],
+            'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?*',
+            {
+                statusCode: 200,
+                delay: 1000,
+            },
         ).as('firebaseSignIn');
     });
-    it('should request create user endpoint and show spinner while loading', () => {
+    it('should request sign in endpoint and show spinner while loading', () => {
         cy.get(EMAIL_INPUT).type('test@email.com');
         cy.get(PASSWORD_INPUT).type('TestPassword');
         cy.get(BUTTON).click();
