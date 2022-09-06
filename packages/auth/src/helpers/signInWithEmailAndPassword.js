@@ -1,6 +1,6 @@
 import * as firebaseAuth from 'firebase/auth';
 
-export default function useSignInWithEmailAndPassword(auth, email, password) {
+export default function signInWithEmailAndPassword(auth, email, password) {
     // Firebase <= v8
     let key = Object.prototype.hasOwnProperty.call(auth, 'signInWithEmailAndPassword')
         ? 'signInWithEmailAndPassword'
