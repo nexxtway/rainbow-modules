@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Route, Redirect, useLocation, useNavigate } from 'react-router-dom';
+import { Route, useLocation, useNavigate } from 'react-router-dom';
 import { useAuthState } from '@rainbow-modules/firebase-hooks';
 import { isRouterV6 } from '@rainbow-modules/app';
 import getRedirectTo from '../../helpers/getRedirectTo';
+import getRedirectComponent from '../../helpers/getRedirectComponent';
 
 const Private = (props) => {
     // eslint-disable-next-line react/prop-types
@@ -17,15 +18,17 @@ const Private = (props) => {
         }
         return <div>{children}</div>;
     }
+
     if (isAuth === false) {
-        return (
+        const Redirect = getRedirectComponent();
+        return Redirect ? (
             <Redirect
                 to={getRedirectTo({
                     redirect,
                     location,
                 })}
             />
-        );
+        ) : null;
     }
     return null;
 };
