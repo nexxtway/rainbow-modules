@@ -1,6 +1,6 @@
 {
     "name": "@rainbow-modules/content",
-    "version": "0.52.1",
+    "version": "0.53.0",
     "author": "Nexxtway Team",
     "license": "MIT",
     "files": [
@@ -10,10 +10,10 @@
         "build": "tsc -p tsconfig.build.json"
     },
     "dependencies": {
-        "@rainbow-modules/hooks": "^0.52.0",
-        "@rainbow-modules/icons": "^0.52.0",
-        "@rainbow-modules/layout": "^0.52.0",
-        "@rainbow-modules/record": "^0.52.1",
+        "@rainbow-modules/hooks": "^0.53.0",
+        "@rainbow-modules/icons": "^0.53.0",
+        "@rainbow-modules/layout": "^0.53.0",
+        "@rainbow-modules/record": "^0.53.0",
         "react-syntax-highlighter": "^15.4.3",
         "react-virtualized": "^9.22.3",
         "styled-components": ">=4.3.2 <6"

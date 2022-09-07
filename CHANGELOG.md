@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.53.0](https://github.com/nexxtway/rainbow-modules/compare/v0.52.1...v0.53.0) (2022-09-07)
+
+### Bug Fixes
+
+-   button icon margin ([#594](https://github.com/nexxtway/rainbow-modules/issues/594)) ([4bc3e71](https://github.com/nexxtway/rainbow-modules/commit/4bc3e71eea51a7b5a3f02b7d6045d583221cac8d))
+-   details in audit logs ([#592](https://github.com/nexxtway/rainbow-modules/issues/592)) ([982029c](https://github.com/nexxtway/rainbow-modules/commit/982029c876378e4375435117f11f700ea27c59b1))
+-   improve types of firebase hooks ([#596](https://github.com/nexxtway/rainbow-modules/issues/596)) ([f2335fb](https://github.com/nexxtway/rainbow-modules/commit/f2335fb46eda5b47563138817915dc97c33807cd))
+-   rename signInWithEmailAndPassword function ([#599](https://github.com/nexxtway/rainbow-modules/issues/599)) ([bae8cbd](https://github.com/nexxtway/rainbow-modules/commit/bae8cbd7418e9d50fa8ed3a58bf0cef86607cce2))
+-   update Redirect imports ([#601](https://github.com/nexxtway/rainbow-modules/issues/601)) ([9aef476](https://github.com/nexxtway/rainbow-modules/commit/9aef476f7a423ae2b36a9b8e5b8999923db841ed))
+
+### Features
+
+-   add corner-up-right-icon ([#597](https://github.com/nexxtway/rainbow-modules/issues/597)) ([7d0d6af](https://github.com/nexxtway/rainbow-modules/commit/7d0d6af3c190cb72b7d7098d44caf85a83545ea7))
+
 ## [0.52.1](https://github.com/nexxtway/rainbow-modules/compare/v0.52.0...v0.52.1) (2022-08-02)
 
 ### Bug Fixes

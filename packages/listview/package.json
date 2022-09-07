@@ -1,6 +1,6 @@
 {
     "name": "@rainbow-modules/listview",
-    "version": "0.52.1",
+    "version": "0.53.0",
     "author": "Nexxtway Team",
     "license": "MIT",
     "files": [
@@ -10,12 +10,12 @@
         "build": "tsc -p tsconfig.build.json"
     },
     "dependencies": {
-        "@rainbow-modules/app": "^0.52.0",
-        "@rainbow-modules/content": "^0.52.1",
-        "@rainbow-modules/firebase-hooks": "^0.52.0",
-        "@rainbow-modules/hooks": "^0.52.0",
-        "@rainbow-modules/icons": "^0.52.0",
-        "@rainbow-modules/validation": "^0.52.0",
+        "@rainbow-modules/app": "^0.53.0",
+        "@rainbow-modules/content": "^0.53.0",
+        "@rainbow-modules/firebase-hooks": "^0.53.0",
+        "@rainbow-modules/hooks": "^0.53.0",
+        "@rainbow-modules/icons": "^0.53.0",
+        "@rainbow-modules/validation": "^0.53.0",
         "luxon": "^2.3.0",
         "react-beautiful-dnd": "^13.0.0",
         "react-virtualized": "^9.22.3",

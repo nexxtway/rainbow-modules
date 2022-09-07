@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.53.0](https://github.com/nexxtway/rainbow-modules/compare/v0.52.1...v0.53.0) (2022-09-07)
+
+### Features
+
+-   add corner-up-right-icon ([#597](https://github.com/nexxtway/rainbow-modules/issues/597)) ([7d0d6af](https://github.com/nexxtway/rainbow-modules/commit/7d0d6af3c190cb72b7d7098d44caf85a83545ea7))
+
 # [0.52.0](https://github.com/nexxtway/rainbow-modules/compare/v0.51.1...v0.52.0) (2022-08-02)
 
 ### Reverts

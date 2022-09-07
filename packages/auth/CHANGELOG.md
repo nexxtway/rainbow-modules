@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.53.0](https://github.com/nexxtway/rainbow-modules/compare/v0.52.1...v0.53.0) (2022-09-07)
+
+### Bug Fixes
+
+-   rename signInWithEmailAndPassword function ([#599](https://github.com/nexxtway/rainbow-modules/issues/599)) ([bae8cbd](https://github.com/nexxtway/rainbow-modules/commit/bae8cbd7418e9d50fa8ed3a58bf0cef86607cce2))
+-   update Redirect imports ([#601](https://github.com/nexxtway/rainbow-modules/issues/601)) ([9aef476](https://github.com/nexxtway/rainbow-modules/commit/9aef476f7a423ae2b36a9b8e5b8999923db841ed))
+
 # [0.52.0](https://github.com/nexxtway/rainbow-modules/compare/v0.51.1...v0.52.0) (2022-08-02)
 
 ### Bug Fixes

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.53.0](https://github.com/nexxtway/rainbow-modules/compare/v0.52.1...v0.53.0) (2022-09-07)
+
+### Bug Fixes
+
+-   button icon margin ([#594](https://github.com/nexxtway/rainbow-modules/issues/594)) ([4bc3e71](https://github.com/nexxtway/rainbow-modules/commit/4bc3e71eea51a7b5a3f02b7d6045d583221cac8d))
+
 ## [0.52.1](https://github.com/nexxtway/rainbow-modules/compare/v0.52.0...v0.52.1) (2022-08-02)
 
 **Note:** Version bump only for package @rainbow-modules/mapbox
