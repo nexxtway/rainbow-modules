@@ -9,14 +9,9 @@ export { default as FormFieldColumn } from './components/FormFieldColumn';
 export { default as JsonInput } from './components/JsonInput';
 export { default as CountryPicker } from './components/CountryPicker';
 export { default as composeValidators } from './helpers/composeValidators';
-export { default as isRequired } from './validators/isRequired';
-export { default as isEmail } from './validators/isEmail';
-export { default as isInteger } from './validators/isInteger';
-export { default as isUrl } from './validators/isUrl';
-export { default as max } from './validators/max';
-export { default as maxLength } from './validators/maxLength';
-export { default as min } from './validators/min';
-export { default as minLength } from './validators/minLength';
+
+// Validators
+export * from './validators';
 
 // final form exports
 export { Field } from 'react-final-form';
