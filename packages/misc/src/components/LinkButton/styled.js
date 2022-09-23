@@ -24,7 +24,7 @@ export const StyledLink = attachThemeAttrs(
         );
     }),
 ).attrs((props) => {
-    if (props.palette.isDark) {
+    if (props.theme.rainbow.palette.isDark) {
         return {
             inverse: {
                 text: COLOR_DARK_1,
@@ -55,7 +55,7 @@ export const StyledLink = attachThemeAttrs(
     border-radius: 100px;
     line-height: 2.375rem;
     text-decoration: none;
-    color: ${(props) => props.palette.brand.main};
+    color: ${(props) => props.theme.rainbow.palette.brand.main};
     padding: 0 1rem;
     cursor: pointer;
     white-space: normal;
@@ -100,22 +100,22 @@ export const StyledLink = attachThemeAttrs(
 
     &:hover,
     &:focus {
-        color: ${(props) => props.palette.brand.dark};
+        color: ${(props) => props.theme.rainbow.palette.brand.dark};
     }
 
     &:focus {
         outline: 0;
-        box-shadow: ${(props) => props.shadows.brand};
+        box-shadow: ${(props) => props.theme.rainbow.shadows.brand};
     }
 
     &:active {
-        color: ${(props) => props.palette.brand.dark};
+        color: ${(props) => props.theme.rainbow.palette.brand.dark};
         transform: scale(0.95);
         transition: all 0.2s ease;
     }
 
     &[disabled] {
-        color: ${(props) => props.palette.text.disabled};
+        color: ${(props) => props.theme.rainbow.palette.text.disabled};
         cursor: default;
     }
 
@@ -127,31 +127,35 @@ export const StyledLink = attachThemeAttrs(
     ${(props) =>
         (props.variant === 'neutral' || (props.variant === 'border-filled' && props.isLoading)) &&
         `
-            background-color: ${props.palette.background.main};
-            border: 1px solid ${props.palette.border.divider};
-            color: ${props.palette.brand.main};
+            background-color: ${props.theme.rainbow.palette.background.main};
+            border: 1px solid ${props.theme.rainbow.palette.border.divider};
+            color: ${props.theme.rainbow.palette.brand.main};
 
             &:hover,
             &:focus,
             &:active {
-                background-color: ${props.palette.action.active};
+                background-color: ${props.theme.rainbow.palette.action.active};
             }
 
             &[disabled] {
                 background-color: ${
-                    props.isLoading ? props.palette.background.main : 'transparent'
+                    props.isLoading ? props.theme.rainbow.palette.background.main : 'transparent'
                 };
             }
         `};
     ${(props) => {
-        const brandMainContrastText = props.palette.getContrastText(props.palette.brand.main);
-        const brandDarkContrastText = props.palette.getContrastText(props.palette.brand.dark);
+        const brandMainContrastText = props.theme.rainbow.palette.getContrastText(
+            props.theme.rainbow.palette.brand.main,
+        );
+        const brandDarkContrastText = props.theme.rainbow.palette.getContrastText(
+            props.theme.rainbow.palette.brand.dark,
+        );
 
         return (
             props.variant === 'brand' &&
             `
-            background-color: ${props.palette.brand.main};
-            border: 1px solid ${props.palette.brand.main};
+            background-color: ${props.theme.rainbow.palette.brand.main};
+            border: 1px solid ${props.theme.rainbow.palette.brand.main};
             color: ${brandMainContrastText};
 
             &:link,
@@ -162,19 +166,23 @@ export const StyledLink = attachThemeAttrs(
             &:hover,
             &:focus,
             &:active {
-                background-color: ${props.palette.brand.dark};
-                border-color: ${props.palette.brand.dark};
+                background-color: ${props.theme.rainbow.palette.brand.dark};
+                border-color: ${props.theme.rainbow.palette.brand.dark};
                 color: ${brandDarkContrastText};
             }
 
             &[disabled] {
                 background-color: ${
-                    props.isLoading ? props.palette.brand.main : props.palette.background.disabled
+                    props.isLoading
+                        ? props.theme.rainbow.palette.brand.main
+                        : props.theme.rainbow.palette.background.disabled
                 };
                 border-color: ${
-                    props.isLoading ? props.palette.brand.main : props.palette.border.divider
+                    props.isLoading
+                        ? props.theme.rainbow.palette.brand.main
+                        : props.theme.rainbow.palette.border.divider
                 };
-                color: ${props.palette.text.disabled};
+                color: ${props.theme.rainbow.palette.text.disabled};
             }
         `
         );
@@ -183,31 +191,37 @@ export const StyledLink = attachThemeAttrs(
         props.variant === 'outline-brand' &&
         `
             background-color: transparent;
-            border: 1px solid ${props.palette.brand.main};
-            color: ${props.palette.brand.main};
+            border: 1px solid ${props.theme.rainbow.palette.brand.main};
+            color: ${props.theme.rainbow.palette.brand.main};
 
             &:hover,
             &:focus,
             &:active {
-                border-color: ${props.palette.brand.dark};
+                border-color: ${props.theme.rainbow.palette.brand.dark};
             }
         
             &[disabled] {
                 background-color: transparent;
                 border-color: ${
-                    props.isLoading ? props.palette.brand.main : props.palette.border.divider
+                    props.isLoading
+                        ? props.theme.rainbow.palette.brand.main
+                        : props.theme.rainbow.palette.border.divider
                 };
             }
         `};
     ${(props) => {
-        const errorMainContrastText = props.palette.getContrastText(props.palette.error.main);
-        const errorDarkContrastText = props.palette.getContrastText(props.palette.error.dark);
+        const errorMainContrastText = props.theme.rainbow.palette.getContrastText(
+            props.theme.rainbow.palette.error.main,
+        );
+        const errorDarkContrastText = props.theme.rainbow.palette.getContrastText(
+            props.theme.rainbow.palette.error.dark,
+        );
 
         return (
             props.variant === 'destructive' &&
             `
-            background-color: ${props.palette.error.main};
-            border: 1px solid ${props.palette.error.main};
+            background-color: ${props.theme.rainbow.palette.error.main};
+            border: 1px solid ${props.theme.rainbow.palette.error.main};
             color: ${errorMainContrastText};
 
             &:link,
@@ -217,42 +231,50 @@ export const StyledLink = attachThemeAttrs(
         
             &:hover,
             &:focus {
-                background-color: ${props.palette.error.dark};
-                border-color: ${props.palette.error.dark};
+                background-color: ${props.theme.rainbow.palette.error.dark};
+                border-color: ${props.theme.rainbow.palette.error.dark};
                 color: ${errorDarkContrastText};
             }
 
             &:focus {
-                box-shadow: ${props.shadows.error};
+                box-shadow: ${props.theme.rainbow.shadows.error};
             }
         
             &:active {
-                background-color: ${props.palette.error.dark};
-                border-color: ${props.palette.error.dark};
+                background-color: ${props.theme.rainbow.palette.error.dark};
+                border-color: ${props.theme.rainbow.palette.error.dark};
                 color: ${errorDarkContrastText};
             }
         
             &[disabled] {
                 background-color: ${
-                    props.isLoading ? props.palette.error.main : props.palette.background.disabled
+                    props.isLoading
+                        ? props.theme.rainbow.palette.error.main
+                        : props.theme.rainbow.palette.background.disabled
                 };
                 border-color: ${
-                    props.isLoading ? props.palette.error.main : props.palette.background.disabled
+                    props.isLoading
+                        ? props.theme.rainbow.palette.error.main
+                        : props.theme.rainbow.palette.background.disabled
                 };
-                color: ${props.palette.text.disabled};
+                color: ${props.theme.rainbow.palette.text.disabled};
             }
         `
         );
     }};
     ${(props) => {
-        const successMainContrastText = props.palette.getContrastText(props.palette.success.main);
-        const successDarkContrastText = props.palette.getContrastText(props.palette.success.dark);
+        const successMainContrastText = props.theme.rainbow.palette.getContrastText(
+            props.theme.rainbow.palette.success.main,
+        );
+        const successDarkContrastText = props.theme.rainbow.palette.getContrastText(
+            props.theme.rainbow.palette.success.dark,
+        );
 
         return (
             props.variant === 'success' &&
             `
-            background-color: ${props.palette.success.main};
-            border: 1px solid ${props.palette.success.main};
+            background-color: ${props.theme.rainbow.palette.success.main};
+            border: 1px solid ${props.theme.rainbow.palette.success.main};
             color: ${successMainContrastText};
 
             &:link,
@@ -263,23 +285,27 @@ export const StyledLink = attachThemeAttrs(
             &:hover,
             &:focus,
             &:active {
-                background-color: ${props.palette.success.dark};
-                border-color: ${props.palette.success.dark};
+                background-color: ${props.theme.rainbow.palette.success.dark};
+                border-color: ${props.theme.rainbow.palette.success.dark};
                 color: ${successDarkContrastText};
             }
 
             &:focus {
-                box-shadow: ${props.shadows.success};
+                box-shadow: ${props.theme.rainbow.shadows.success};
             }
         
             &[disabled] {
                 background-color: ${
-                    props.isLoading ? props.palette.success.main : props.palette.background.disabled
+                    props.isLoading
+                        ? props.theme.rainbow.palette.success.main
+                        : props.theme.rainbow.palette.background.disabled
                 };
                 border-color: ${
-                    props.isLoading ? props.palette.success.main : props.palette.background.disabled
+                    props.isLoading
+                        ? props.theme.rainbow.palette.success.main
+                        : props.theme.rainbow.palette.background.disabled
                 };
-                color: ${props.palette.text.disabled};
+                color: ${props.theme.rainbow.palette.text.disabled};
             }
         `
         );
@@ -288,37 +314,37 @@ export const StyledLink = attachThemeAttrs(
         props.variant === 'border' &&
         `
             background-color: transparent;
-            border: 1px solid ${props.palette.border.divider};
-            color: ${props.palette.text.label};
+            border: 1px solid ${props.theme.rainbow.palette.border.divider};
+            color: ${props.theme.rainbow.palette.text.label};
             transition: border 0.15s linear;
         
             &:hover,
             &:focus,
             &:active {
                 background-color: transparent;
-                border: 1px solid ${props.palette.brand.dark};
-                color: ${props.palette.brand.dark};
+                border: 1px solid ${props.theme.rainbow.palette.brand.dark};
+                color: ${props.theme.rainbow.palette.brand.dark};
             }
         
             &[disabled] {
                 background-color: transparent;
-                border: 1px solid ${props.palette.border.disabled};
-                color: ${props.palette.text.disabled};
+                border: 1px solid ${props.theme.rainbow.palette.border.disabled};
+                color: ${props.theme.rainbow.palette.text.disabled};
             }
         `};
     ${(props) =>
         props.variant === 'border-filled' &&
         !props.isLoading &&
         `
-            background-color: ${props.palette.background.main};
-            border: 1px solid ${props.palette.border.divider};
-            color: ${props.palette.text.label};
+            background-color: ${props.theme.rainbow.palette.background.main};
+            border: 1px solid ${props.theme.rainbow.palette.border.divider};
+            color: ${props.theme.rainbow.palette.text.label};
             transition: border 0.15s linear;
         
             &:hover,
             &:focus,
             &:active {
-                background-color: ${props.palette.action.active};
+                background-color: ${props.theme.rainbow.palette.action.active};
             }
         
             &[disabled] {
@@ -340,7 +366,7 @@ export const StyledLink = attachThemeAttrs(
         
             &:focus {
                 outline: none;
-                box-shadow: ${props.shadows.shadow_5};
+                box-shadow: ${props.theme.rainbow.shadows.shadow_5};
             }
         
             &[disabled] {
@@ -363,7 +389,7 @@ export const StyledLink = attachThemeAttrs(
         
             &:focus {
                 outline: none;
-                box-shadow: ${props.shadows.shadow_5};
+                box-shadow: ${props.theme.rainbow.shadows.shadow_5};
             }
         
             &[disabled] {
@@ -376,7 +402,7 @@ export const StyledLink = attachThemeAttrs(
     ${(props) =>
         props.shaded &&
         `
-        box-shadow: ${props.shadows.shadow_10};
+        box-shadow: ${props.theme.rainbow.shadows.shadow_10};
         border: 1px solid transparent;
     `};
 `;
