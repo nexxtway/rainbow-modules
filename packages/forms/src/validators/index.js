@@ -6,3 +6,4 @@ export { default as max } from './max';
 export { default as maxLength } from './maxLength';
 export { default as min } from './min';
 export { default as minLength } from './minLength';
+export { default as isNumber } from './isNumber';
