@@ -1,7 +1,6 @@
 {
     "name": "@rainbow-modules/hooks",
-    "version": "0.50.0",
-    "main": "lib/index.js",
+    "version": "0.53.0",
     "author": "Nexxtway Team",
     "license": "MIT",
     "files": [
@@ -9,14 +8,31 @@
     ],
     "peerDependencies": {
         "react": ">=16.8.0",
-        "react-rainbow-components": ">=1.18.1"
+        "react-rainbow-components": ">=1.18.1",
+        "styled-components": ">=4.3.2 <6"
     },
     "publishConfig": {
         "access": "public"
     },
     "dependencies": {
-        "@rainbow-modules/app": "^0.50.0",
+        "@rainbow-modules/app": "^0.53.0",
         "nanoid": "^3.1.22",
-        "styled-components": "^4.3.2"
-    }
+        "styled-components": ">=4.3.2 <6"
+    },
+    "main": "./lib/index.js",
+    "module": "./lib/esm/index.js",
+    "types": "./lib/index.d.ts",
+    "exports": {
+        ".": {
+            "module": "./lib/esm/index.js",
+            "require": "./lib/index.js",
+            "default": "./lib/esm/index.js"
+        },
+        "./lib/*": {
+            "module": "./lib/esm/*",
+            "require": "./lib/*",
+            "default": "./lib/esm/*"
+        }
+    },
+    "sideEffects": false
 }

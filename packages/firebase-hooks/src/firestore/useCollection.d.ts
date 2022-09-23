@@ -1,3 +1,5 @@
+import { UseCollectionFn } from './types';
+
 export interface UseCollectionProps {
     /** The firestore collection path to fetch. */
     path: string;
@@ -13,4 +15,5 @@ export interface UseCollectionProps {
     disabled?: boolean;
 }
 
-export default function useCollection(props: UseCollectionProps): [Array<unknown>, boolean];
+declare const useCollection: UseCollectionFn<UseCollectionProps>;
+export default useCollection;

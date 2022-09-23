@@ -7,6 +7,8 @@ import { emailIcon, passwordIcon } from './icons';
 import { emailLabel, passwordLabel, buttonLabel } from './labels';
 import messages from './messages';
 import { StyledInput, StyledButton } from './styled';
+import getAuth from '../../helpers/getAuth';
+import signInWithEmailAndPassword from '../../helpers/signInWithEmailAndPassword';
 
 export default function EmailPasswordSignInForm(props) {
     const { className, style } = props;
@@ -14,6 +16,7 @@ export default function EmailPasswordSignInForm(props) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const app = useFirebaseApp();
+    const auth = getAuth(app);
 
     const emailPlaceholder = intl.formatMessage(messages.emailPlaceholder);
     const passwordPlaceholder = intl.formatMessage(messages.passwordPlaceholder);
@@ -22,7 +25,7 @@ export default function EmailPasswordSignInForm(props) {
         event.preventDefault();
         try {
             showAppSpinner();
-            await app.auth().signInWithEmailAndPassword(email, password);
+            await signInWithEmailAndPassword(auth, email, password);
             hideAppSpinner();
         } catch (error) {
             hideAppSpinner();

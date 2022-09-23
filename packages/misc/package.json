@@ -1,7 +1,6 @@
 {
     "name": "@rainbow-modules/misc",
-    "version": "0.50.0",
-    "main": "lib/index.js",
+    "version": "0.53.0",
     "author": "Nexxtway Team",
     "license": "MIT",
     "files": [
@@ -11,18 +10,35 @@
         "build": "tsc -p tsconfig.build.json"
     },
     "dependencies": {
-        "styled-components": "^4.3.2"
+        "styled-components": ">=4.3.2 <6"
     },
     "peerDependencies": {
         "prop-types": "^15.7.2",
         "react": ">=16.8.0",
         "react-rainbow-components": ">=1.15.0",
-        "react-router-dom": ">=5.0.0"
+        "react-router-dom": ">=5.0.0",
+        "styled-components": ">=4.3.2 <6"
     },
     "devDependencies": {
         "@types/react-router-dom": ">=5.0.0"
     },
     "publishConfig": {
         "access": "public"
-    }
+    },
+    "main": "./lib/index.js",
+    "module": "./lib/esm/index.js",
+    "types": "./lib/index.d.ts",
+    "exports": {
+        ".": {
+            "module": "./lib/esm/index.js",
+            "require": "./lib/index.js",
+            "default": "./lib/esm/index.js"
+        },
+        "./lib/*": {
+            "module": "./lib/esm/*",
+            "require": "./lib/*",
+            "default": "./lib/esm/*"
+        }
+    },
+    "sideEffects": false
 }

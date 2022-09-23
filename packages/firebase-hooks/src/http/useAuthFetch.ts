@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import useAuth from '../auth/useAuth';
 import useFirebaseApp from '../useFirebaseApp';
 
 const pathJoin = (...parts: string[]) => {
@@ -18,27 +19,31 @@ interface Params {
     region?: string;
 }
 
-interface FetchConfig {
-    body?: Record<string, unknown>;
+interface FetchConfig<TBody> {
+    body?: TBody;
     method?: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
 }
 
-interface ReturnValue {
+interface ReturnValue<TData, TBody> {
     isLoading: boolean;
-    fetchAsync: (pathname: string, config: FetchConfig) => Promise<unknown>;
+    fetchAsync: (pathname: string, config?: FetchConfig<TBody>) => Promise<TData>;
     [key: string]: unknown;
 }
 
 const DEFAULT_REGION = 'us-central1';
 
-const useAuthFetch = ({ functionName, region = DEFAULT_REGION }: Params): ReturnValue => {
+const useAuthFetch = <TData = unknown, TBody = Record<string, unknown>>({
+    functionName,
+    region = DEFAULT_REGION,
+}: Params): ReturnValue<TData, TBody> => {
     const [isLoading, setLoading] = useState(false);
     const app = useFirebaseApp();
+    const auth = useAuth();
 
     const fetchFn = useCallback(
         async (pathname, config = {}) => {
             setLoading(true);
-            const token = await app.auth().currentUser?.getIdToken();
+            const token = await auth.currentUser?.getIdToken();
             const headers: Record<string, string> = {
                 'Content-Type': 'application/json',
             };

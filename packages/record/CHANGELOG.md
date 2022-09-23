@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.53.0](https://github.com/nexxtway/rainbow-modules/compare/v0.52.1...v0.53.0) (2022-09-07)
+
+**Note:** Version bump only for package @rainbow-modules/record
+
+## [0.52.1](https://github.com/nexxtway/rainbow-modules/compare/v0.52.0...v0.52.1) (2022-08-02)
+
+**Note:** Version bump only for package @rainbow-modules/record
+
+# [0.52.0](https://github.com/nexxtway/rainbow-modules/compare/v0.51.1...v0.52.0) (2022-08-02)
+
+### Reverts
+
+-   Revert "chore: improve modules build (#579)" (#580) ([0a36d5a](https://github.com/nexxtway/rainbow-modules/commit/0a36d5a179eac94756c2803597afd610a9910763)), closes [#579](https://github.com/nexxtway/rainbow-modules/issues/579) [#580](https://github.com/nexxtway/rainbow-modules/issues/580)
+
+## [0.51.1](https://github.com/nexxtway/rainbow-modules/compare/v0.51.0...v0.51.1) (2022-07-06)
+
+**Note:** Version bump only for package @rainbow-modules/record
+
+# [0.51.0](https://github.com/nexxtway/rainbow-modules/compare/v0.50.0...v0.51.0) (2022-06-28)
+
+### Bug Fixes
+
+-   record header styles ([#554](https://github.com/nexxtway/rainbow-modules/issues/554)) ([3d5b536](https://github.com/nexxtway/rainbow-modules/commit/3d5b5366afabfa85743696d5d39022a24b51f7a3))
+
 # [0.50.0](https://github.com/nexxtway/rainbow-modules/compare/v0.49.0...v0.50.0) (2022-04-22)
 
 **Note:** Version bump only for package @rainbow-modules/record

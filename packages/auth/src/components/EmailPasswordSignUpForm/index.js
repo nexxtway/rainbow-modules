@@ -7,6 +7,8 @@ import { nameIcon, emailIcon, passwordIcon } from './icons';
 import { StyledInput, StyledButton } from './styled';
 import { nameLabel, emailLabel, passwordLabel, buttonLabel } from './labels';
 import messages from './messages';
+import getAuth from '../../helpers/getAuth';
+import createUserWithEmailAndPassword from '../../helpers/createUserWithEmailAndPassword';
 
 const EmailPasswordSignUpForm = (props) => {
     const intl = useIntl();
@@ -15,6 +17,7 @@ const EmailPasswordSignUpForm = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const app = useFirebaseApp();
+    const auth = getAuth(app);
 
     const namePlaceholder = intl.formatMessage(messages.namePlaceholder);
     const emailPlaceholder = intl.formatMessage(messages.emailPlaceholder);
@@ -24,9 +27,8 @@ const EmailPasswordSignUpForm = (props) => {
         event.preventDefault();
         try {
             showAppSpinner();
-            await app.auth().createUserWithEmailAndPassword(email, password);
-            const user = app.auth().currentUser;
-            await user.updateProfile({
+            await createUserWithEmailAndPassword(auth, email, password);
+            await auth.currentUser.updateProfile({
                 displayName: name,
             });
             hideAppSpinner();

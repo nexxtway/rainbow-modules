@@ -1,12 +1,12 @@
-import firebase from 'firebase';
+import { Timestamp } from 'firebase/firestore';
 
 export default function normalizeCreatedAt(
-    date: number | Date | firebase.firestore.Timestamp | unknown,
+    date: number | Date | Timestamp | unknown,
 ): number | null {
     if (typeof date === 'number' && date > 0) {
         return date;
     }
-    if (date instanceof firebase.firestore.Timestamp) {
+    if (date instanceof Timestamp) {
         return date.toDate().getTime();
     }
     if (date instanceof Date) {

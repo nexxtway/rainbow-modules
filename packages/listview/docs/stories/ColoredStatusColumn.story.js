@@ -1,3 +1,6 @@
 export default { title: 'Modules/Listview/Stories/ColoredStatusColumn' };
-export * from './DefaultColoredStatusColumn.story';
-export * from './CustomColoredStatusColumn.story';
+export { defaultColoredStatusColumn } from './DefaultColoredStatusColumn.story';
+export {
+    customColoredStatusColumn,
+    EditableCustomColoredStatusColumn,
+} from './CustomColoredStatusColumn.story';

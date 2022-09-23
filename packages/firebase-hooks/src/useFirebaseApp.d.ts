@@ -1,3 +1,3 @@
-import firebase from 'firebase';
+import { FirebaseApp } from 'firebase/app';
 
-export default function (): firebase.app.App;
+export default function (): FirebaseApp;

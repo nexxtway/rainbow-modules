@@ -103,7 +103,8 @@ class StripeCardInput implements IStripeCardInput {
      * @method
      */
     get expect(): Chainer {
-        return (chainer: string, ...params: any[]) => this.assertMap[chainer](chainer, ...params);
+        return (chainer: string, ...params: unknown[]) =>
+            this.assertMap[chainer](chainer, ...params);
     }
 
     /**

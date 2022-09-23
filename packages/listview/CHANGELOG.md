@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.53.0](https://github.com/nexxtway/rainbow-modules/compare/v0.52.1...v0.53.0) (2022-09-07)
+
+### Bug Fixes
+
+-   button icon margin ([#594](https://github.com/nexxtway/rainbow-modules/issues/594)) ([4bc3e71](https://github.com/nexxtway/rainbow-modules/commit/4bc3e71eea51a7b5a3f02b7d6045d583221cac8d))
+-   details in audit logs ([#592](https://github.com/nexxtway/rainbow-modules/issues/592)) ([982029c](https://github.com/nexxtway/rainbow-modules/commit/982029c876378e4375435117f11f700ea27c59b1))
+
+## [0.52.1](https://github.com/nexxtway/rainbow-modules/compare/v0.52.0...v0.52.1) (2022-08-02)
+
+**Note:** Version bump only for package @rainbow-modules/listview
+
+# [0.52.0](https://github.com/nexxtway/rainbow-modules/compare/v0.51.1...v0.52.0) (2022-08-02)
+
+### Bug Fixes
+
+-   filters alignment ([#581](https://github.com/nexxtway/rainbow-modules/issues/581)) ([c1f2ad2](https://github.com/nexxtway/rainbow-modules/commit/c1f2ad25449198722487a043271ef1089d4bcd14))
+-   improved audit logs ([#578](https://github.com/nexxtway/rainbow-modules/issues/578)) ([31df21e](https://github.com/nexxtway/rainbow-modules/commit/31df21eb1478d4451884a094a6d83664bbedaf3e))
+
+### Reverts
+
+-   Revert "chore: improve modules build (#579)" (#580) ([0a36d5a](https://github.com/nexxtway/rainbow-modules/commit/0a36d5a179eac94756c2803597afd610a9910763)), closes [#579](https://github.com/nexxtway/rainbow-modules/issues/579) [#580](https://github.com/nexxtway/rainbow-modules/issues/580)
+
+## [0.51.1](https://github.com/nexxtway/rainbow-modules/compare/v0.51.0...v0.51.1) (2022-07-06)
+
+### Bug Fixes
+
+-   improved colored status column ([#564](https://github.com/nexxtway/rainbow-modules/issues/564)) ([1231d38](https://github.com/nexxtway/rainbow-modules/commit/1231d3840bba2602730367215e62c341b4c87172))
+
+# [0.51.0](https://github.com/nexxtway/rainbow-modules/compare/v0.50.0...v0.51.0) (2022-06-28)
+
+### Bug Fixes
+
+-   add style and classname properties to ColoredStatusColumn ([#553](https://github.com/nexxtway/rainbow-modules/issues/553)) ([5d9cb79](https://github.com/nexxtway/rainbow-modules/commit/5d9cb79786dc527f92ca6786a21511b8fca5235b))
+-   app and colored status column interfaces ([#562](https://github.com/nexxtway/rainbow-modules/issues/562)) ([f594df6](https://github.com/nexxtway/rainbow-modules/commit/f594df618b5237a75a3de16593a0fac1378162be))
+
 # [0.50.0](https://github.com/nexxtway/rainbow-modules/compare/v0.49.0...v0.50.0) (2022-04-22)
 
 ### Bug Fixes

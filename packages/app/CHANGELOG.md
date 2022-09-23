@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.53.0](https://github.com/nexxtway/rainbow-modules/compare/v0.52.1...v0.53.0) (2022-09-07)
+
+**Note:** Version bump only for package @rainbow-modules/app
+
+# [0.52.0](https://github.com/nexxtway/rainbow-modules/compare/v0.51.1...v0.52.0) (2022-08-02)
+
+### Bug Fixes
+
+-   change router imports to avoid typescript error ([#588](https://github.com/nexxtway/rainbow-modules/issues/588)) ([c1d670c](https://github.com/nexxtway/rainbow-modules/commit/c1d670c6c68ee22c6100e783282a871a760fe84e))
+-   confirm modal types ([#574](https://github.com/nexxtway/rainbow-modules/issues/574)) ([5be3f38](https://github.com/nexxtway/rainbow-modules/commit/5be3f383fefc3be448da0b0c6ecd2699cbbd3772))
+-   export router helpers from app ([#570](https://github.com/nexxtway/rainbow-modules/issues/570)) ([e4e003f](https://github.com/nexxtway/rainbow-modules/commit/e4e003f0928aa416428ddb2bf77b9648a00eb25b))
+
+### Features
+
+-   add support for react-router 6 ([#569](https://github.com/nexxtway/rainbow-modules/issues/569)) ([ef95a79](https://github.com/nexxtway/rainbow-modules/commit/ef95a793901e9d002d1a3d70ec6ecc47cb952b73))
+
+### Reverts
+
+-   Revert "chore: improve modules build (#579)" (#580) ([0a36d5a](https://github.com/nexxtway/rainbow-modules/commit/0a36d5a179eac94756c2803597afd610a9910763)), closes [#579](https://github.com/nexxtway/rainbow-modules/issues/579) [#580](https://github.com/nexxtway/rainbow-modules/issues/580)
+
+## [0.51.1](https://github.com/nexxtway/rainbow-modules/compare/v0.51.0...v0.51.1) (2022-07-06)
+
+**Note:** Version bump only for package @rainbow-modules/app
+
+# [0.51.0](https://github.com/nexxtway/rainbow-modules/compare/v0.50.0...v0.51.0) (2022-06-28)
+
+### Bug Fixes
+
+-   app and colored status column interfaces ([#562](https://github.com/nexxtway/rainbow-modules/issues/562)) ([f594df6](https://github.com/nexxtway/rainbow-modules/commit/f594df618b5237a75a3de16593a0fac1378162be))
+
 # [0.50.0](https://github.com/nexxtway/rainbow-modules/compare/v0.49.0...v0.50.0) (2022-04-22)
 
 **Note:** Version bump only for package @rainbow-modules/app

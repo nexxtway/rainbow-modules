@@ -4,7 +4,8 @@ import { IframeProps, Variant } from './types';
 import FullPageIframe from './fullPage';
 import PopupIframe from './popup';
 
-const componentMap: Record<Variant, any> = {
+type ComponentType = React.ComponentType<Record<string, unknown>>;
+const componentMap: Record<Variant, ComponentType> = {
     fullPage: FullPageIframe,
     popup: PopupIframe,
 };

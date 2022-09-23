@@ -132,9 +132,21 @@ import {
     CampaignFilled,
     Wireless,
     Globe,
+    WaitingTime,
+    CornerUpRight,
 } from '../../../src';
 
 export default [
+    {
+        name: 'cornerUpRight',
+        category: 'standard',
+        icon: CornerUpRight,
+    },
+    {
+        name: 'waitingTime',
+        category: 'standard',
+        icon: WaitingTime,
+    },
     {
         name: 'globe',
         category: 'standard',

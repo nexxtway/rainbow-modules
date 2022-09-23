@@ -13,7 +13,7 @@ describe('AppMessage', () => {
     });
 
     it('should show an app message', () => {
-        cy.get('button').click();
+        cy.get('button[data-id="button-element"]').click();
         const app = new RainbowFirebaseApp();
         app.message.expect('visible', true);
         app.message.expect('variant', 'error');
@@ -21,7 +21,7 @@ describe('AppMessage', () => {
     });
 
     it('should hide the message when the close button is clicked', () => {
-        cy.get('button').click();
+        cy.get('button[data-id="button-element"]').click();
         const app = new RainbowFirebaseApp();
         app.message.expect('visible', true);
         app.message.close();
@@ -35,7 +35,7 @@ describe('AppMessage with timeout', () => {
     });
 
     it('should be hidden after the timeout', () => {
-        cy.get('button').click();
+        cy.get('button[data-id="button-element"]').click();
         const app = new RainbowFirebaseApp();
         app.message.expect('visible', true);
         app.message.expect('variant', 'success');

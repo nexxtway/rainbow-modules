@@ -1,10 +1,14 @@
 import { useMutation } from 'react-query';
-import useFirebaseApp from '../useFirebaseApp';
+import addDoc from '../helpers/addDoc';
+import collection from '../helpers/collection';
+import useFirestore from './useFirestore';
 
 const useAddDoc = (path, opts = {}) => {
-    const app = useFirebaseApp();
+    const firestore = useFirestore();
+
     return useMutation((data) => {
-        return app.firestore().collection(path).add(data);
+        const ref = collection(firestore, path);
+        return addDoc(ref, data);
     }, opts);
 };
 

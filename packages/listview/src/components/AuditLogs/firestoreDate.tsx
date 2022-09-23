@@ -1,10 +1,10 @@
 import React from 'react';
-import firebase from 'firebase';
+import { Timestamp } from 'firebase/firestore';
 import { StyledCellText } from './styled';
 
 interface FirestoreDateProps {
     // eslint-disable-next-line react/require-default-props
-    value?: firebase.firestore.Timestamp;
+    value?: Timestamp;
 }
 
 const options: Intl.DateTimeFormatOptions = {

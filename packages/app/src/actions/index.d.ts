@@ -27,7 +27,7 @@ export function showAppNotification(notification: AppNotificationParams): void;
 export function updateAppActions(actions: Record<string, () => void>): void;
 
 type ConfirmModalParams = {
-    icon: ReactNode;
+    icon?: ReactNode;
     variant?:
         | 'base'
         | 'neutral'
@@ -37,9 +37,9 @@ type ConfirmModalParams = {
         | 'success'
         | 'inverse'
         | 'border-inverse';
-    header: ReactNode;
-    question: ReactNode;
-    okButtonLabel: ReactNode;
-    cancelButtonLabel: ReactNode;
+    header?: ReactNode;
+    question?: ReactNode;
+    okButtonLabel?: ReactNode;
+    cancelButtonLabel?: ReactNode;
 };
 export function confirmModal(params: ConfirmModalParams): Promise<boolean>;

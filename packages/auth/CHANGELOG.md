@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.53.0](https://github.com/nexxtway/rainbow-modules/compare/v0.52.1...v0.53.0) (2022-09-07)
+
+### Bug Fixes
+
+-   rename signInWithEmailAndPassword function ([#599](https://github.com/nexxtway/rainbow-modules/issues/599)) ([bae8cbd](https://github.com/nexxtway/rainbow-modules/commit/bae8cbd7418e9d50fa8ed3a58bf0cef86607cce2))
+-   update Redirect imports ([#601](https://github.com/nexxtway/rainbow-modules/issues/601)) ([9aef476](https://github.com/nexxtway/rainbow-modules/commit/9aef476f7a423ae2b36a9b8e5b8999923db841ed))
+
+# [0.52.0](https://github.com/nexxtway/rainbow-modules/compare/v0.51.1...v0.52.0) (2022-08-02)
+
+### Bug Fixes
+
+-   export router helpers from app ([#570](https://github.com/nexxtway/rainbow-modules/issues/570)) ([e4e003f](https://github.com/nexxtway/rainbow-modules/commit/e4e003f0928aa416428ddb2bf77b9648a00eb25b))
+
+### Features
+
+-   add support for react-router 6 ([#569](https://github.com/nexxtway/rainbow-modules/issues/569)) ([ef95a79](https://github.com/nexxtway/rainbow-modules/commit/ef95a793901e9d002d1a3d70ec6ecc47cb952b73))
+
+### Reverts
+
+-   Revert "chore: improve modules build (#579)" (#580) ([0a36d5a](https://github.com/nexxtway/rainbow-modules/commit/0a36d5a179eac94756c2803597afd610a9910763)), closes [#579](https://github.com/nexxtway/rainbow-modules/issues/579) [#580](https://github.com/nexxtway/rainbow-modules/issues/580)
+
+## [0.51.1](https://github.com/nexxtway/rainbow-modules/compare/v0.51.0...v0.51.1) (2022-07-06)
+
+**Note:** Version bump only for package @rainbow-modules/auth
+
+# [0.51.0](https://github.com/nexxtway/rainbow-modules/compare/v0.50.0...v0.51.0) (2022-06-28)
+
+**Note:** Version bump only for package @rainbow-modules/auth
+
 # [0.50.0](https://github.com/nexxtway/rainbow-modules/compare/v0.49.0...v0.50.0) (2022-04-22)
 
 **Note:** Version bump only for package @rainbow-modules/auth
