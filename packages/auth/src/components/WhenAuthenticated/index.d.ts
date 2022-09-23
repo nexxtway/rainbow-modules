@@ -1,6 +1,6 @@
 export interface WhenAuthenticatedProps {
     /** The route path the component will used to match against the browser URL. */
-    path: string;
+    path?: string;
     /** The component class or function that will be rendered if the application is
      * authenticated. */
     component?: React.ComponentType;
