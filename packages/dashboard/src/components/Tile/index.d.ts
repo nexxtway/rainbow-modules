@@ -21,6 +21,8 @@ export interface TileProps {
     style?: CSSProperties;
     /** The icon shown when the tile is selected. */
     selectedIcon?: ReactNode;
+    /** If is set to true, then is showed a loading symbol. */
+    isLoading?: boolean;
 }
 
 export default function (props: TileProps): JSX.Element | null;

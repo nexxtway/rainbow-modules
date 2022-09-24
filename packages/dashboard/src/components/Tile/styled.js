@@ -103,12 +103,16 @@ export const StyledContent = styled.div`
         props.isPicker &&
         `
         position: relative;
-    
+    `};
+    ${(props) =>
+        props.isPicker &&
+        !props.isLoading &&
+        `
         :hover {
             cursor: pointer;
             box-shadow: ${props.theme.rainbow.shadows.shadow_6};
         }
-    `};
+    `}
 
     ${(props) =>
         props.variant === 'badge' &&
@@ -122,7 +126,12 @@ export const StyledContent = styled.div`
         box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.05);
         border: solid 1px transparent;
         background: ${props.theme.rainbow.palette.background.main};
-
+    `}
+    ${(props) =>
+        props.variant === 'badge' &&
+        props.isPicker &&
+        !props.isLoading &&
+        `
         :hover {
             box-shadow: 0 8px 12px 0 #e3e5ed;
         }
@@ -140,6 +149,25 @@ export const StyledLabelText = styled.h2`
         margin-right: 10px;
         color: ${getContrastText(props.theme.rainbow.palette.background.main)};
         opacity: 1;
+    `};
+`;
+
+export const StyledLabelLoadingShape = styled.div`
+    overflow: hidden;
+    border-radius: 1rem;
+    height: 12px;
+    margin: 1px;
+    ${(props) =>
+        props.variant === 'badge' &&
+        `
+        margin-right: 10px;
+        width: 60px;
+        height: 10px;
+    `};
+    ${(props) =>
+        props.variant === 'flat' &&
+        `
+        width: 80px;
     `};
 `;
 
@@ -168,6 +196,14 @@ export const StyledValue = styled.h1`
         `
         border: 4px solid ${replaceAlpha(props.theme.rainbow.palette.background.main, 0.7)};
     `}
+`;
+
+export const StyledValueLoadingShape = styled.div`
+    overflow: hidden;
+    border-radius: 1rem;
+    margin: 4px;
+    width: 38px;
+    height: 32px;
 `;
 
 export const StyledCheckmarkContainer = styled.div`

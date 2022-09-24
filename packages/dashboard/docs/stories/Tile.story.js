@@ -167,6 +167,19 @@ export const variantFlat = () => {
     );
 };
 
+export const loadingTile = () => {
+    const tileStyle = { marginBottom: 10, marginRight: 5, marginLeft: 5 };
+    return (
+        <Application>
+            <StyledContainer>
+                <Tile name="completed" style={tileStyle} isLoading />
+                <Tile name="inProgress" variant="flat" style={tileStyle} isLoading />
+                <Tile name="assigned" variant="badge" style={tileStyle} isLoading />
+            </StyledContainer>
+        </Application>
+    );
+};
+
 export default {
     title: 'Modules/Dashboard/Stories/Tile',
     parameters: {
