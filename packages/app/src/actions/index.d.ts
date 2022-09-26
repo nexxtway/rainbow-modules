@@ -8,7 +8,7 @@ export function hideAppSpinner(): void;
 
 type AppMessagepParams = {
     message: string;
-    variant: string;
+    variant: 'success' | 'warning' | 'error';
     timeout: number;
     onHideMessage: () => void;
 };
