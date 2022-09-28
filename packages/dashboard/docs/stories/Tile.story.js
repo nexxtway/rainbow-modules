@@ -84,6 +84,7 @@ export const differentsColorsTite = () => {
                     color="#ffffff"
                     backgroundColor="#9dc35e"
                     style={tileStyle}
+                    isLoading
                 />
                 <Tile
                     name="inProgress"
@@ -92,6 +93,7 @@ export const differentsColorsTite = () => {
                     color="#ffffff"
                     backgroundColor="#98d38c"
                     style={tileStyle}
+                    isLoading
                 />
                 <Tile
                     name="assigned"
@@ -100,6 +102,7 @@ export const differentsColorsTite = () => {
                     color="#ffffff"
                     backgroundColor="#71d4d6"
                     style={tileStyle}
+                    isLoading
                 />
                 <Tile
                     name="unassigned"
@@ -108,6 +111,7 @@ export const differentsColorsTite = () => {
                     color="#ffffff"
                     backgroundColor="#f4d87a"
                     style={tileStyle}
+                    isLoading
                 />
                 <Tile
                     name="cancelled"
@@ -116,6 +120,7 @@ export const differentsColorsTite = () => {
                     color="#ffffff"
                     backgroundColor="#f2707a"
                     style={tileStyle}
+                    isLoading
                 />
             </StyledContainer>
         </Application>

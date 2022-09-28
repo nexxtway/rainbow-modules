@@ -204,6 +204,14 @@ export const StyledValueLoadingShape = styled.div`
     margin: 4px;
     width: 38px;
     height: 32px;
+
+    ${(props) =>
+        props.variant !== 'badge' &&
+        `
+        height: 20px;
+        margin-top: 12px;
+        margin-bottom: 8px;
+    `}
 `;
 
 export const StyledCheckmarkContainer = styled.div`
