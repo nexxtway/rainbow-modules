@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useUniqueIdentifier } from '@rainbow-modules/hooks';
 import RenderIf from 'react-rainbow-components/components/RenderIf';
+import { LoadingShape } from 'react-rainbow-components';
 import { TilePickerContext } from '../TilePicker/context';
 import isChecked from './helpers/isChecked';
 import {
@@ -12,6 +13,8 @@ import {
     StyledCheckmarkContainer,
     StyledContent,
     StyledCheck,
+    StyledLabelLoadingShape,
+    StyledValueLoadingShape,
 } from './styled';
 
 /**
@@ -29,6 +32,7 @@ export default function Tile(props) {
         className,
         style,
         selectedIcon,
+        isLoading,
     } = props;
     const context = useContext(TilePickerContext);
     const { groupName, onChange, value, multiple } = context || {};
@@ -38,6 +42,12 @@ export default function Tile(props) {
     const checked = isChecked({ multiple, value, name: nameProp });
     const isPicker = !!context;
     const tagsElement = isPicker ? 'label' : 'div';
+
+    const handleClick = (event) => {
+        if (!isLoading) {
+            onChange(nameProp, event.target.checked);
+        }
+    };
 
     return (
         <StyledContainer
@@ -54,7 +64,7 @@ export default function Tile(props) {
                     id={inputId}
                     name={name}
                     checked={checked}
-                    onChange={(event) => onChange(nameProp, event.target.checked)}
+                    onChange={handleClick}
                     value={valueProp}
                 />
             </RenderIf>
@@ -64,34 +74,49 @@ export default function Tile(props) {
                 htmlFor={inputId}
                 backgroundColor={backgroundColor}
                 as={tagsElement}
+                isLoading={isLoading}
             >
-                <RenderIf isTrue={checked}>
-                    <StyledCheckmarkContainer
+                <RenderIf isTrue={isLoading}>
+                    <StyledLabelLoadingShape variant={variant}>
+                        <LoadingShape shape="rect" />
+                    </StyledLabelLoadingShape>
+                    <StyledValueLoadingShape variant={variant}>
+                        <LoadingShape shape="rect" />
+                    </StyledValueLoadingShape>
+                </RenderIf>
+                <RenderIf isTrue={!isLoading}>
+                    <RenderIf isTrue={checked}>
+                        <StyledCheckmarkContainer
+                            variant={variant}
+                            backgroundColor={backgroundColor}
+                            color={color}
+                        >
+                            <RenderIf isTrue={!selectedIcon}>
+                                <StyledCheck
+                                    variant={variant}
+                                    backgroundColor={backgroundColor}
+                                    color={color}
+                                />
+                            </RenderIf>
+                            <RenderIf isTrue={selectedIcon}>{selectedIcon}</RenderIf>
+                        </StyledCheckmarkContainer>
+                    </RenderIf>
+                    <StyledLabelText
                         variant={variant}
                         backgroundColor={backgroundColor}
                         color={color}
                     >
-                        <RenderIf isTrue={!selectedIcon}>
-                            <StyledCheck
-                                variant={variant}
-                                backgroundColor={backgroundColor}
-                                color={color}
-                            />
-                        </RenderIf>
-                        <RenderIf isTrue={selectedIcon}>{selectedIcon}</RenderIf>
-                    </StyledCheckmarkContainer>
+                        {label}
+                    </StyledLabelText>
+                    <StyledValue
+                        variant={variant}
+                        backgroundColor={backgroundColor}
+                        color={color}
+                        checked={checked}
+                    >
+                        {valueProp}
+                    </StyledValue>
                 </RenderIf>
-                <StyledLabelText variant={variant} backgroundColor={backgroundColor} color={color}>
-                    {label}
-                </StyledLabelText>
-                <StyledValue
-                    variant={variant}
-                    backgroundColor={backgroundColor}
-                    color={color}
-                    checked={checked}
-                >
-                    {valueProp}
-                </StyledValue>
             </StyledContent>
         </StyledContainer>
     );
@@ -118,6 +143,8 @@ Tile.propTypes = {
     style: PropTypes.object,
     /** The icon shown when the tile is selected. */
     selectedIcon: PropTypes.node,
+    /** If is set to true, then is showed a loading symbol. */
+    isLoading: PropTypes.bool,
 };
 
 Tile.defaultProps = {
@@ -131,4 +158,5 @@ Tile.defaultProps = {
     className: undefined,
     style: undefined,
     selectedIcon: undefined,
+    isLoading: false,
 };
