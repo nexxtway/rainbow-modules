@@ -12,6 +12,7 @@ const LinkButton: React.FC<LinkButtonProps> = ({
     size,
     shaded,
     target,
+    disabled,
 }: LinkButtonProps) => (
     <StyledLink
         className={className}
@@ -21,6 +22,7 @@ const LinkButton: React.FC<LinkButtonProps> = ({
         shaded={shaded}
         to={to}
         target={target}
+        disabled={disabled}
     >
         {children}
     </StyledLink>
@@ -45,6 +47,7 @@ LinkButton.propTypes = {
     size: PropTypes.oneOf(['small', 'medium', 'large']),
     to: PropTypes.string,
     target: PropTypes.string,
+    disabled: PropTypes.bool,
     children: PropTypes.node,
 };
 
@@ -56,6 +59,7 @@ LinkButton.defaultProps = {
     size: 'medium',
     to: undefined,
     target: undefined,
+    disabled: false,
     children: null,
 };
 
