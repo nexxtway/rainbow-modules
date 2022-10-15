@@ -124,6 +124,74 @@ export const LinkButtonExample = () => {
     );
 };
 
+export const LinkButtonDisabled = () => {
+    return (
+        <RainbowFirebaseApp>
+            <div className="rainbow-p-vertical_large rainbow-align-content_center rainbow-flex_wrap">
+                <LinkButton variant="base" className="rainbow-m-around_medium" to="/base" disabled>
+                    Button Base
+                </LinkButton>
+                <LinkButton
+                    variant="outline-brand"
+                    className="rainbow-m-around_medium"
+                    to="/outline-brand"
+                    disabled
+                >
+                    Button Outline Brand
+                </LinkButton>
+                <LinkButton
+                    variant="border"
+                    className="rainbow-m-around_medium"
+                    to="/border"
+                    disabled
+                >
+                    Button Border
+                </LinkButton>
+                <LinkButton
+                    variant="neutral"
+                    className="rainbow-m-around_medium"
+                    to="/neutral"
+                    disabled
+                >
+                    Button Neutral
+                </LinkButton>
+                <LinkButton
+                    variant="border-filled"
+                    className="rainbow-m-around_medium"
+                    to="/border-filled"
+                    disabled
+                >
+                    Button Border Filled
+                </LinkButton>
+                <LinkButton
+                    variant="brand"
+                    className="rainbow-m-around_medium"
+                    to="/brand"
+                    disabled
+                >
+                    Button Brand
+                </LinkButton>
+                <LinkButton
+                    variant="success"
+                    className="rainbow-m-around_medium"
+                    to="/success"
+                    disabled
+                >
+                    Button Success
+                </LinkButton>
+                <LinkButton
+                    variant="destructive"
+                    className="rainbow-m-around_medium"
+                    to="/destructive"
+                    disabled
+                >
+                    Button Destructive
+                </LinkButton>
+            </div>
+        </RainbowFirebaseApp>
+    );
+};
+
 export default {
     title: 'Modules/Misc/Stories/LinkButton',
     parameters: {
