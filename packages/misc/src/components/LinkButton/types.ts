@@ -9,6 +9,7 @@ export interface ButtonProps {
     size?: 'small' | 'medium' | 'large';
     to?: string;
     target?: string;
+    disabled?: boolean;
 }
 
 export type LinkButtonProps = React.PropsWithChildren<ButtonProps>;

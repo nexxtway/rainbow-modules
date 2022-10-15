@@ -13,10 +13,18 @@ import { Link } from 'react-router-dom';
 
 // eslint-disable-next-line import/prefer-default-export
 export const StyledLink = attachThemeAttrs(
-    styled(({ className, style, children, to, target }) => {
+    styled(({ className, style, children, to, target, disabled }) => {
         const isTargetBlank = target === '_blank';
         const As = isTargetBlank ? 'a' : Link;
         const rel = isTargetBlank ? 'noopener noreferrer' : undefined;
+
+        if (disabled) {
+            return (
+                <button type="button" className={className} style={style} disabled={disabled}>
+                    {children}
+                </button>
+            );
+        }
         return (
             <As className={className} style={style} to={to} href={to} target={target} rel={rel}>
                 {children}
@@ -110,7 +118,10 @@ export const StyledLink = attachThemeAttrs(
 
     &:active {
         color: ${(props) => props.palette.brand.dark};
-        transform: scale(0.95);
+        ${(props) =>
+            !props.disabled &&
+            `transform: scale(0.95);
+            `}
         transition: all 0.2s ease;
     }
 
