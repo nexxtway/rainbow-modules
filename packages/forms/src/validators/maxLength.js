@@ -9,4 +9,4 @@ const maxLength = (maxLengthValue) => (value) => {
     return undefined;
 };
 
-export default (minValue, err) => withCustomError(maxLength(minValue))(err);
+export default (maxLengthValue, err) => withCustomError(maxLength(maxLengthValue))(err);
