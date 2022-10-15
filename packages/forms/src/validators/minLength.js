@@ -9,4 +9,4 @@ const minLength = (minLengthValue) => (value) => {
     return undefined;
 };
 
-export default (minValue, err) => withCustomError(minLength(minValue))(err);
+export default (minLengthValue, err) => withCustomError(minLength(minLengthValue))(err);
