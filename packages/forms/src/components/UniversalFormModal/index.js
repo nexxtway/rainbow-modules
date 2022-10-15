@@ -54,7 +54,7 @@ const UniversalFormModal = (props) => {
 
 UniversalFormModal.propTypes = {
     /** The title of the Modal */
-    title: PropTypes.string,
+    title: PropTypes.node,
     /** When `true` the Modal opens */
     isOpen: PropTypes.bool,
     /** Callback that will be invoke when close event. Click on Cancel or Close Button or press ESC. */

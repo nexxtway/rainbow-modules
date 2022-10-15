@@ -3,7 +3,7 @@ import { ComponentType, ReactNode } from 'react';
 
 export interface UniversalFormModalProps {
     /** The title of the Modal */
-    title?: string;
+    title?: ReactNode;
     /** When `true` the Modal opens */
     isOpen?: boolean;
     /** Callback that will be invoke when close event. Click on Cancel or Close Button or press ESC. */
