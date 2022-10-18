@@ -1,0 +1,12 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import * as stories from '../stories/useCurrentUserState.story';
+
+<Meta title="Modules/firebase-hooks/Hooks/useCurrentUserState" />
+
+# Overview
+
+`useCurrentUserState` hook will give you the same as `firebase.auth().currentUser` return and also a reload method to rerender new data when profile is updated. Also it is wrapped with react-query thus all instances of useCurrentUserState will rerender when calling reload method.
+
+<Preview>
+    <Story name="useCurrentUserState">{stories.gettingCurrentUserState()}</Story>
+</Preview>
