@@ -16,6 +16,7 @@ export {
 } from './useCollection.story';
 export { UseCollectionOnce } from './useCollectionOnce.story';
 export { gettingCurrentUser } from './useCurrentUser.story';
+export { gettingCurrentUserState } from './useCurrentUserState.story';
 export { SubscribeToDoc } from './useDoc.story';
 export { UseDocOnce } from './useDocOnce.story';
 export {
