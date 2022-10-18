@@ -2,6 +2,7 @@ export { default as FirebaseProvider } from './firebase-provider';
 export { default as useFirebaseApp } from './useFirebaseApp';
 export { default as useAuthState } from './auth/useAuthState';
 export { default as useCurrentUser } from './auth/useCurrentUser';
+export { default as useCurrentUserState } from './auth/useCurrentUserState';
 export { default as useUserClaims } from './auth/useUserClaims';
 export { default as useCollectionOnce } from './firestore/useCollectionOnce';
 export { default as useCollection } from './firestore/useCollection';
