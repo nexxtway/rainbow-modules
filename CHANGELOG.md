@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.54.0](https://github.com/nexxtway/rainbow-modules/compare/v0.53.0...v0.54.0) (2022-10-19)
+
+### Bug Fixes
+
+-   form validator args type ([#613](https://github.com/nexxtway/rainbow-modules/issues/613)) ([b35ed59](https://github.com/nexxtway/rainbow-modules/commit/b35ed591b17f34ab4707effe9848d69f1e29a325))
+-   loading shape styles ([aed2e82](https://github.com/nexxtway/rainbow-modules/commit/aed2e82dffbf4ea341dfe8afda8df23cd0853e48))
+-   make path optional on WhenAuthenticated ([#602](https://github.com/nexxtway/rainbow-modules/issues/602)) ([00a26ec](https://github.com/nexxtway/rainbow-modules/commit/00a26ec4f7eae8aaeed5d48bc407e702647dfa34))
+-   title type on universal form modal to support nodes ([#615](https://github.com/nexxtway/rainbow-modules/issues/615)) ([11104c1](https://github.com/nexxtway/rainbow-modules/commit/11104c1d01608c9f40f8714d29c6d25cf8f34608))
+-   variant type in showAppMessage ([#609](https://github.com/nexxtway/rainbow-modules/issues/609)) ([4fb7044](https://github.com/nexxtway/rainbow-modules/commit/4fb7044c9813e6b5f9deb1469f63b075a1b40b27))
+
+### Features
+
+-   add disabled prop to link button ([#611](https://github.com/nexxtway/rainbow-modules/issues/611)) ([bfe3c3d](https://github.com/nexxtway/rainbow-modules/commit/bfe3c3d847417ad2b1fe20ec750e5722365eabc0))
+-   add isNumber form validator ([#603](https://github.com/nexxtway/rainbow-modules/issues/603)) ([4959355](https://github.com/nexxtway/rainbow-modules/commit/4959355bb3728b78733e9af695046e35dde06129))
+-   add loading to tile component ([#607](https://github.com/nexxtway/rainbow-modules/issues/607)) ([ebdf312](https://github.com/nexxtway/rainbow-modules/commit/ebdf312136c1c7b0eec97e9437b9810384bf6a1d))
+-   implement useCurrentUserState hook ([#617](https://github.com/nexxtway/rainbow-modules/issues/617)) ([7a80244](https://github.com/nexxtway/rainbow-modules/commit/7a8024472883640e77767c553b57e9eba36378f4))
+
 # [0.53.0](https://github.com/nexxtway/rainbow-modules/compare/v0.52.1...v0.53.0) (2022-09-07)
 
 ### Bug Fixes

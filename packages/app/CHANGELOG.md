@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.54.0](https://github.com/nexxtway/rainbow-modules/compare/v0.53.0...v0.54.0) (2022-10-19)
+
+### Bug Fixes
+
+-   variant type in showAppMessage ([#609](https://github.com/nexxtway/rainbow-modules/issues/609)) ([4fb7044](https://github.com/nexxtway/rainbow-modules/commit/4fb7044c9813e6b5f9deb1469f63b075a1b40b27))
+
 # [0.53.0](https://github.com/nexxtway/rainbow-modules/compare/v0.52.1...v0.53.0) (2022-09-07)
 
 **Note:** Version bump only for package @rainbow-modules/app

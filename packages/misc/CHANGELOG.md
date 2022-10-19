@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.54.0](https://github.com/nexxtway/rainbow-modules/compare/v0.53.0...v0.54.0) (2022-10-19)
+
+### Features
+
+-   add disabled prop to link button ([#611](https://github.com/nexxtway/rainbow-modules/issues/611)) ([bfe3c3d](https://github.com/nexxtway/rainbow-modules/commit/bfe3c3d847417ad2b1fe20ec750e5722365eabc0))
+
 # [0.53.0](https://github.com/nexxtway/rainbow-modules/compare/v0.52.1...v0.53.0) (2022-09-07)
 
 **Note:** Version bump only for package @rainbow-modules/misc

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.54.0](https://github.com/nexxtway/rainbow-modules/compare/v0.53.0...v0.54.0) (2022-10-19)
+
+### Bug Fixes
+
+-   form validator args type ([#613](https://github.com/nexxtway/rainbow-modules/issues/613)) ([b35ed59](https://github.com/nexxtway/rainbow-modules/commit/b35ed591b17f34ab4707effe9848d69f1e29a325))
+-   title type on universal form modal to support nodes ([#615](https://github.com/nexxtway/rainbow-modules/issues/615)) ([11104c1](https://github.com/nexxtway/rainbow-modules/commit/11104c1d01608c9f40f8714d29c6d25cf8f34608))
+
+### Features
+
+-   add isNumber form validator ([#603](https://github.com/nexxtway/rainbow-modules/issues/603)) ([4959355](https://github.com/nexxtway/rainbow-modules/commit/4959355bb3728b78733e9af695046e35dde06129))
+
 # [0.53.0](https://github.com/nexxtway/rainbow-modules/compare/v0.52.1...v0.53.0) (2022-09-07)
 
 **Note:** Version bump only for package @rainbow-modules/forms

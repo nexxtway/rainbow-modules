@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.54.0](https://github.com/nexxtway/rainbow-modules/compare/v0.53.0...v0.54.0) (2022-10-19)
+
+### Bug Fixes
+
+-   loading shape styles ([aed2e82](https://github.com/nexxtway/rainbow-modules/commit/aed2e82dffbf4ea341dfe8afda8df23cd0853e48))
+
+### Features
+
+-   add loading to tile component ([#607](https://github.com/nexxtway/rainbow-modules/issues/607)) ([ebdf312](https://github.com/nexxtway/rainbow-modules/commit/ebdf312136c1c7b0eec97e9437b9810384bf6a1d))
+
 # [0.53.0](https://github.com/nexxtway/rainbow-modules/compare/v0.52.1...v0.53.0) (2022-09-07)
 
 **Note:** Version bump only for package @rainbow-modules/dashboard

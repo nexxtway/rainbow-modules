@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.54.0](https://github.com/nexxtway/rainbow-modules/compare/v0.53.0...v0.54.0) (2022-10-19)
+
+### Bug Fixes
+
+-   make path optional on WhenAuthenticated ([#602](https://github.com/nexxtway/rainbow-modules/issues/602)) ([00a26ec](https://github.com/nexxtway/rainbow-modules/commit/00a26ec4f7eae8aaeed5d48bc407e702647dfa34))
+
 # [0.53.0](https://github.com/nexxtway/rainbow-modules/compare/v0.52.1...v0.53.0) (2022-09-07)
 
 ### Bug Fixes
