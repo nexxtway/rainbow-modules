@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import PercentColumn from '../../src/components/PercentColumn';
+import * as stories from '../stories/PercentColumn.story.js';
+
+<Meta title="Modules/Listview/Components/PercentColumn" component={PercentColumn} />
+
+# Overview
+
+`PercentColumn` is a column that renders the percent number passed as value.
+
+### This is an example with the PercentColumn.
+
+<Preview>
+    <Story name="PercentColumn">{stories.percentColumn()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={PercentColumn} />
