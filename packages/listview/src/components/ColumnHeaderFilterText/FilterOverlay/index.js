@@ -1,8 +1,7 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useOutsideClick } from '@rainbow-modules/hooks';
-import InternalOverlay from 'react-rainbow-components/components/InternalOverlay';
-import { Button } from 'react-rainbow-components';
+import { InternalOverlay, Button } from 'react-rainbow-components';
 import manageTab from './manageTab';
 import { StyledContainer, StyledHeader, StyledTitle, StyledTitleName } from './styled';
 import { positionResolver } from '../helpers';

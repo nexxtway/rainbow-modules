@@ -1,7 +1,7 @@
 /* eslint-disable indent */
 import React from 'react';
 import styled from 'styled-components';
-import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
+import { attachThemeAttrs } from 'react-rainbow-components';
 import { lighten } from '@rainbow-modules/colors';
 import { Link } from 'react-router-dom';
 

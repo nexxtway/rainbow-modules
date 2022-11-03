@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
-import InternalOverlay from 'react-rainbow-components/components/InternalOverlay';
+import { InternalOverlay } from 'react-rainbow-components';
 import { useOutsideClick } from '@rainbow-modules/hooks';
 import Search from './search';
 

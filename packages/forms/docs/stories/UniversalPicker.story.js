@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Application, RenderIf } from 'react-rainbow-components';
+import { Application, RenderIf, attachThemeAttrs } from 'react-rainbow-components';
 import { Check, Plus, Visa } from '@rainbow-modules/icons';
-import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
 import Design from './icons/design';
 import Photographer from './icons/photographer';
 import Programmer from './icons/programmer';

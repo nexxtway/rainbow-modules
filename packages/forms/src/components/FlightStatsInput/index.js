@@ -2,7 +2,7 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { RenderIf } from 'react-rainbow-components';
-import useReduxForm from 'react-rainbow-components/libs/hooks/useReduxForm';
+import { useReduxForm } from '@rainbow-modules/hooks';
 import debounce from './debounce';
 import AirlinesLookup from './airlinesLookup';
 import FlightDetails from './flightDetails';
