@@ -1,3 +1,5 @@
+/* stylelint-disable at-rule-no-unknown, selector-descendant-combinator-no-non-space, indentation */
+/* stylelint-disable property-no-vendor-prefix, no-descending-specificity */
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -28,12 +30,7 @@ export const Container = styled.div`
 
     .mapboxgl-canvas-container.mapboxgl-interactive,
     .mapboxgl-ctrl-group button.mapboxgl-ctrl-compass {
-        cursor: -webkit-grab;
-        cursor: -moz-grab;
         cursor: grab;
-        -moz-user-select: none;
-        -webkit-user-select: none;
-        -ms-user-select: none;
         user-select: none;
     }
 
@@ -43,8 +40,6 @@ export const Container = styled.div`
 
     .mapboxgl-canvas-container.mapboxgl-interactive:active,
     .mapboxgl-ctrl-group button.mapboxgl-ctrl-compass:active {
-        cursor: -webkit-grabbing;
-        cursor: -moz-grabbing;
         cursor: grabbing;
     }
 
@@ -71,18 +66,22 @@ export const Container = styled.div`
         pointer-events: none;
         z-index: 2;
     }
+
     .mapboxgl-ctrl-top-left {
         top: 0;
         left: 0;
     }
+
     .mapboxgl-ctrl-top-right {
         top: 0;
         right: 0;
     }
+
     .mapboxgl-ctrl-bottom-left {
         bottom: 0;
         left: 0;
     }
+
     .mapboxgl-ctrl-bottom-right {
         right: 0;
         bottom: 0;
@@ -95,18 +94,22 @@ export const Container = styled.div`
         /* workaround for a Safari bug https://github.com/mapbox/mapbox-gl-js/issues/8185 */
         transform: translate(0, 0);
     }
+
     .mapboxgl-ctrl-top-left .mapboxgl-ctrl {
         margin: 10px 0 0 10px;
         float: left;
     }
+
     .mapboxgl-ctrl-top-right .mapboxgl-ctrl {
         margin: 10px 10px 0 0;
         float: right;
     }
+
     .mapboxgl-ctrl-bottom-left .mapboxgl-ctrl {
         margin: 0 0 10px 10px;
         float: left;
     }
+
     .mapboxgl-ctrl-bottom-right .mapboxgl-ctrl {
         margin: 0 10px 10px 0;
         float: right;
@@ -118,8 +121,6 @@ export const Container = styled.div`
     }
 
     .mapboxgl-ctrl-group:not(:empty) {
-        -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
-        -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
         box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
     }
 
@@ -270,6 +271,7 @@ export const Container = styled.div`
         .mapboxgl-ctrl button.mapboxgl-ctrl-compass .mapboxgl-ctrl-icon {
             @svg-load ctrl-compass-white url(svg/mapboxgl-ctrl-compass.svg) {
                 fill: #fff;
+
                 #south {
                     fill: #999;
                 }
@@ -287,6 +289,7 @@ export const Container = styled.div`
 
     @svg-load ctrl-geolocate url(svg/mapboxgl-ctrl-geolocate.svg) {
         fill: #333;
+
         #stroke {
             display: none;
         }
@@ -294,6 +297,7 @@ export const Container = styled.div`
 
     @svg-load ctrl-geolocate-white url(svg/mapboxgl-ctrl-geolocate.svg) {
         fill: #fff;
+
         #stroke {
             display: none;
         }
@@ -301,6 +305,7 @@ export const Container = styled.div`
 
     @svg-load ctrl-geolocate-black url(svg/mapboxgl-ctrl-geolocate.svg) {
         fill: #000;
+
         #stroke {
             display: none;
         }
@@ -308,6 +313,7 @@ export const Container = styled.div`
 
     @svg-load ctrl-geolocate-disabled url(svg/mapboxgl-ctrl-geolocate.svg) {
         fill: #aaa;
+
         #stroke {
             fill: #f00;
         }
@@ -315,6 +321,7 @@ export const Container = styled.div`
 
     @svg-load ctrl-geolocate-disabled-white url(svg/mapboxgl-ctrl-geolocate.svg) {
         fill: #999;
+
         #stroke {
             fill: #f00;
         }
@@ -322,6 +329,7 @@ export const Container = styled.div`
 
     @svg-load ctrl-geolocate-disabled-black url(svg/mapboxgl-ctrl-geolocate.svg) {
         fill: #666;
+
         #stroke {
             fill: #f00;
         }
@@ -329,6 +337,7 @@ export const Container = styled.div`
 
     @svg-load ctrl-geolocate-active url(svg/mapboxgl-ctrl-geolocate.svg) {
         fill: #33b5e5;
+
         #stroke {
             display: none;
         }
@@ -336,6 +345,7 @@ export const Container = styled.div`
 
     @svg-load ctrl-geolocate-active-error url(svg/mapboxgl-ctrl-geolocate.svg) {
         fill: #e58978;
+
         #stroke {
             display: none;
         }
@@ -343,9 +353,11 @@ export const Container = styled.div`
 
     @svg-load ctrl-geolocate-background url(svg/mapboxgl-ctrl-geolocate.svg) {
         fill: #33b5e5;
+
         #stroke {
             display: none;
         }
+
         #dot {
             display: none;
         }
@@ -353,9 +365,11 @@ export const Container = styled.div`
 
     @svg-load ctrl-geolocate-background-error url(svg/mapboxgl-ctrl-geolocate.svg) {
         fill: #e54e33;
+
         #stroke {
             display: none;
         }
+
         #dot {
             display: none;
         }
@@ -396,10 +410,10 @@ export const Container = styled.div`
     .mapboxgl-ctrl
         button.mapboxgl-ctrl-geolocate.mapboxgl-ctrl-geolocate-waiting
         .mapboxgl-ctrl-icon {
-        -webkit-animation: mapboxgl-spin 2s infinite linear;
+        /* -webkit-animation: mapboxgl-spin 2s infinite linear;
         -moz-animation: mapboxgl-spin 2s infinite linear;
         -o-animation: mapboxgl-spin 2s infinite linear;
-        -ms-animation: mapboxgl-spin 2s infinite linear;
+        -ms-animation: mapboxgl-spin 2s infinite linear; */
         animation: mapboxgl-spin 2s infinite linear;
     }
 
@@ -451,6 +465,7 @@ export const Container = styled.div`
         0% {
             -webkit-transform: rotate(0deg);
         }
+
         100% {
             -webkit-transform: rotate(360deg);
         }
@@ -460,6 +475,7 @@ export const Container = styled.div`
         0% {
             -moz-transform: rotate(0deg);
         }
+
         100% {
             -moz-transform: rotate(360deg);
         }
@@ -469,6 +485,7 @@ export const Container = styled.div`
         0% {
             -o-transform: rotate(0deg);
         }
+
         100% {
             -o-transform: rotate(360deg);
         }
@@ -478,6 +495,7 @@ export const Container = styled.div`
         0% {
             -ms-transform: rotate(0deg);
         }
+
         100% {
             -ms-transform: rotate(360deg);
         }
@@ -487,6 +505,7 @@ export const Container = styled.div`
         0% {
             transform: rotate(0deg);
         }
+
         100% {
             transform: rotate(360deg);
         }
@@ -513,6 +532,7 @@ export const Container = styled.div`
                 #outline {
                     opacity: 1;
                 }
+
                 #fill {
                     opacity: 1;
                 }
@@ -531,6 +551,7 @@ export const Container = styled.div`
                     fill: #fff;
                     stroke: #fff;
                 }
+
                 #fill {
                     opacity: 1;
                     fill: #000;
@@ -670,7 +691,6 @@ export const Container = styled.div`
         position: absolute;
         top: 0;
         left: 0;
-        display: -webkit-flex;
         display: flex;
         will-change: transform;
         pointer-events: none;
@@ -868,10 +888,12 @@ export const Container = styled.div`
             -webkit-transform: scale(1);
             opacity: 1;
         }
+
         70% {
             -webkit-transform: scale(3);
             opacity: 0;
         }
+
         100% {
             -webkit-transform: scale(1);
             opacity: 0;
@@ -883,10 +905,12 @@ export const Container = styled.div`
             -ms-transform: scale(1);
             opacity: 1;
         }
+
         70% {
             -ms-transform: scale(3);
             opacity: 0;
         }
+
         100% {
             -ms-transform: scale(1);
             opacity: 0;
@@ -898,10 +922,12 @@ export const Container = styled.div`
             transform: scale(1);
             opacity: 1;
         }
+
         70% {
             transform: scale(3);
             opacity: 0;
         }
+
         100% {
             transform: scale(1);
             opacity: 0;
