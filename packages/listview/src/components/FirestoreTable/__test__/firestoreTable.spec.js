@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Table from 'react-rainbow-components/components/Table';
+import { Table } from 'react-rainbow-components';
 import FirestoreTable from '../index';
 
 jest.mock('react-rainbow-components/components/Table', () => jest.fn());

@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { Spinner } from 'react-rainbow-components';
+import { Spinner, RenderIf } from 'react-rainbow-components';
 import { Trash } from '@rainbow-modules/icons';
 import { confirmModal } from '@rainbow-modules/app';
-import RenderIf from 'react-rainbow-components/components/RenderIf';
 import {
     StyledFileContainer,
     StyledContainerImage,

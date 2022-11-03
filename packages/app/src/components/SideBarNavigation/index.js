@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Sidebar from 'react-rainbow-components/components/Sidebar';
+import { Sidebar } from 'react-rainbow-components';
 import { useLocation } from 'react-router-dom';
 import useMatchPath from '../../hooks/useMatchPath';
 
