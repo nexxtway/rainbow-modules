@@ -1,10 +1,6 @@
 import styled, { css } from 'styled-components';
 import HiddenElement from 'react-rainbow-components/components/Structural/hiddenElement';
-import {
-    getContrastText,
-    isValidColor,
-    replaceAlpha,
-} from 'react-rainbow-components/styles/helpers/color';
+import { getContrastText, isValidColor, replaceAlpha } from '@rainbow-modules/colors';
 import { Check } from '@rainbow-modules/icons';
 
 const resolveBackgroundColor = (props) => {

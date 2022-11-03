@@ -1,28 +1,11 @@
 {
-    "name": "@rainbow-modules/misc",
+    "name": "@rainbow-modules/colors",
     "version": "0.54.0",
     "author": "Nexxtway Team",
     "license": "MIT",
     "files": [
         "lib"
     ],
-    "scripts": {
-        "build": "tsc -p tsconfig.build.json"
-    },
-    "dependencies": {
-        "@rainbow-modules/colors": "^0.54.0",
-        "styled-components": ">=4.3.2 <6"
-    },
-    "peerDependencies": {
-        "prop-types": "^15.7.2",
-        "react": ">=16.8.0",
-        "react-rainbow-components": ">=1.15.0",
-        "react-router-dom": ">=5.0.0",
-        "styled-components": ">=4.3.2 <6"
-    },
-    "devDependencies": {
-        "@types/react-router-dom": ">=5.0.0"
-    },
     "publishConfig": {
         "access": "public"
     },

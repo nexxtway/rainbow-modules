@@ -1,4 +1,4 @@
-import isValidColor from 'react-rainbow-components/styles/helpers/color/isValidColor.js';
+import { isValidColor } from '@rainbow-modules/colors';
 
 const defaultBackgroundColor = '#fff';
 const getBackgroundColor = (value) => {

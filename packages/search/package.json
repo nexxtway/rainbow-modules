@@ -10,6 +10,7 @@
         "build": "tsc -p tsconfig.build.json"
     },
     "dependencies": {
+        "@rainbow-modules/colors": "^0.54.0",
         "@rainbow-modules/forms": "^0.54.0",
         "@rainbow-modules/hooks": "^0.54.0",
         "@rainbow-modules/icons": "^0.54.0",

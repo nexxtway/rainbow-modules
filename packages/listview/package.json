@@ -11,6 +11,7 @@
     },
     "dependencies": {
         "@rainbow-modules/app": "^0.54.0",
+        "@rainbow-modules/colors": "^0.54.0",
         "@rainbow-modules/content": "^0.54.0",
         "@rainbow-modules/firebase-hooks": "^0.54.0",
         "@rainbow-modules/hooks": "^0.54.0",
