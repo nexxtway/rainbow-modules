@@ -1,15 +1,15 @@
 {
     "name": "@rainbow-modules/dashboard",
-    "version": "0.54.0",
+    "version": "0.55.0",
     "author": "Nexxtway Team",
     "license": "MIT",
     "files": [
         "lib"
     ],
     "dependencies": {
-        "@rainbow-modules/colors": "^0.54.0",
-        "@rainbow-modules/hooks": "^0.54.0",
-        "@rainbow-modules/icons": "^0.54.0",
+        "@rainbow-modules/colors": "^0.55.0",
+        "@rainbow-modules/hooks": "^0.55.0",
+        "@rainbow-modules/icons": "^0.55.0",
         "chartjs-plugin-datalabels": "^0.7.0",
         "styled-components": ">=4.3.2 <6"
     },
