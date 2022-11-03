@@ -7,7 +7,6 @@ import { useReduxForm, useUniqueIdentifier } from '@rainbow-modules/hooks';
 import { RenderIf } from 'react-rainbow-components';
 import JSONEditor from 'jsoneditor';
 import Label from './label';
-import 'jsoneditor/dist/jsoneditor.css';
 import { CodeEditor, CodeEditorContainer, JsonInputContainer, ErrorText } from './styled';
 import { JsonInputProps, Value } from './types';
 import debounce from './debounce';
