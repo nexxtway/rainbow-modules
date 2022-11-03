@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Option from 'react-rainbow-components/components/Option';
+import { Option } from 'react-rainbow-components';
 import { darken } from '@rainbow-modules/colors';
 import InternalDropdown from 'react-rainbow-components/components/InternalDropdown';
 import CheckmarkIcon from './checkmark';
