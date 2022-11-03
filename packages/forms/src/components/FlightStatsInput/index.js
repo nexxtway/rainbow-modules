@@ -3,7 +3,7 @@ import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { RenderIf } from 'react-rainbow-components';
 import useReduxForm from 'react-rainbow-components/libs/hooks/useReduxForm';
-import debounce from 'react-rainbow-components/libs/debounce';
+import debounce from './debounce';
 import AirlinesLookup from './airlinesLookup';
 import FlightDetails from './flightDetails';
 import { StyledContainer, Row, StyledInput, StyledButton, StyledUpdate, Error } from './styled';

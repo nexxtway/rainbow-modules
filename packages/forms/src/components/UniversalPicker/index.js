@@ -1,11 +1,10 @@
 import React, { createContext } from 'react';
 import PropTypes from 'prop-types';
 import { RenderIf } from 'react-rainbow-components';
-import RequiredAsterisk from 'react-rainbow-components/components/RequiredAsterisk';
-import StyledError from 'react-rainbow-components/components/Input/styled/errorText';
 import { useUniqueIdentifier } from '@rainbow-modules/hooks';
 import { useErrorMessageId } from 'react-rainbow-components/libs/hooks';
-import { StyledContainer, StyledLabel, StyledOptionsContainer } from './styled';
+import RequiredAsterisk from './RequiredAsterisk';
+import { StyledContainer, StyledLabel, StyledOptionsContainer, StyledError } from './styled';
 
 const UniversalPickerContext = createContext({});
 

@@ -4,11 +4,12 @@ import styled from 'styled-components';
 import { Application, RenderIf } from 'react-rainbow-components';
 import { Check, Plus, Visa } from '@rainbow-modules/icons';
 import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
-import { BORDER_RADIUS_2 } from 'react-rainbow-components/styles/borderRadius';
 import Design from './icons/design';
 import Photographer from './icons/photographer';
 import Programmer from './icons/programmer';
 import { UniversalPicker, UniversalPickerOption } from '../../src';
+
+const BORDER_RADIUS_2 = '12rem';
 
 const Container = styled.div`
     padding: 20px;
