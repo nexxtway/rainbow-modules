@@ -96,10 +96,12 @@ function FilterOverlay(props) {
     );
 }
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment, no-global-assign, func-names
+const HTMLElementType = typeof HTMLElement === 'undefined' ? function () {} : HTMLElement;
 FilterOverlay.propTypes = {
     triggerElementRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.shape({ current: PropTypes.instanceOf(HTMLElement).isRequired }),
+        PropTypes.shape({ current: PropTypes.instanceOf(HTMLElementType).isRequired }),
     ]),
     isOpen: PropTypes.bool,
     onOpened: PropTypes.func,
