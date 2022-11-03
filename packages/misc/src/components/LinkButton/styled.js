@@ -2,7 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
-import { lighten } from 'react-rainbow-components/styles/helpers/color';
+import { lighten } from '@rainbow-modules/colors';
 import { COLOR_DARK_1, COLOR_WHITE, COLOR_GRAY_3 } from 'react-rainbow-components/styles/colors';
 import {
     FONT_SIZE_HEADING_SMALL,

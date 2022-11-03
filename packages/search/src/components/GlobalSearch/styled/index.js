@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Input, ButtonIcon } from 'react-rainbow-components';
 import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
-import { replaceAlpha } from 'react-rainbow-components/styles/helpers/color';
+import { replaceAlpha } from '@rainbow-modules/colors';
 import { MagnifyingGlass, CubeFilled } from '@rainbow-modules/icons';
 import { ZINDEX_GLOBAL_SEARCH } from '../../../styles/zIndex';
 import UpDownKey from '../icons/upDownKey';
