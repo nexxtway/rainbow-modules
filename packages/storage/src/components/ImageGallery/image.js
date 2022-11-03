@@ -4,7 +4,6 @@ import { Spinner } from 'react-rainbow-components';
 import { Trash } from '@rainbow-modules/icons';
 import { confirmModal } from '@rainbow-modules/app';
 import RenderIf from 'react-rainbow-components/components/RenderIf';
-import TruncatedText from 'react-rainbow-components/components/Structural/truncatedText';
 import {
     StyledFileContainer,
     StyledContainerImage,
@@ -13,6 +12,7 @@ import {
     StyledDeleteButton,
     StyledCheckMark,
     TrashIcon,
+    TruncatedText,
 } from './styled';
 
 export default function Image(props) {

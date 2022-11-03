@@ -3,13 +3,14 @@ import React from 'react';
 import styled from 'styled-components';
 import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
 import { lighten } from '@rainbow-modules/colors';
-import { COLOR_DARK_1, COLOR_WHITE, COLOR_GRAY_3 } from 'react-rainbow-components/styles/colors';
-import {
-    FONT_SIZE_HEADING_SMALL,
-    FONT_SIZE_TEXT_MEDIUM,
-    FONT_SIZE_HEADING_MEDIUM,
-} from 'react-rainbow-components/styles/fontSizes';
 import { Link } from 'react-router-dom';
+
+const COLOR_DARK_1 = '#2A3039';
+const COLOR_WHITE = '#fff';
+const COLOR_GRAY_3 = '#a4a7b5';
+const FONT_SIZE_HEADING_SMALL = '1rem';
+const FONT_SIZE_TEXT_MEDIUM = '0.875rem';
+const FONT_SIZE_HEADING_MEDIUM = '1.25rem';
 
 // eslint-disable-next-line import/prefer-default-export
 export const StyledLink = attachThemeAttrs(
