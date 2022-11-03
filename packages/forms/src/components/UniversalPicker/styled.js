@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
+import { attachThemeAttrs } from 'react-rainbow-components';
 
 const labelAlignmentMap = {
     left: 'left',

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
+import { attachThemeAttrs } from 'react-rainbow-components';
 import { lighten, darken } from '@rainbow-modules/colors';
 
 const FONT_SIZE_TEXT_MEDIUM = '0.875rem';

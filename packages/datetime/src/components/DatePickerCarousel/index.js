@@ -1,8 +1,7 @@
 /* eslint-disable react/no-unused-prop-types */
 import React, { useRef, useImperativeHandle, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { DatePickerModal } from 'react-rainbow-components';
-import useLocale from 'react-rainbow-components/libs/hooks/useLocale';
+import { DatePickerModal, useLocale } from 'react-rainbow-components';
 import { useReduxForm, useDisclosure, useFormatDate } from './hooks';
 import { StyledContainer } from './styled';
 import DatePickerCarouselInput from './carouselInput';

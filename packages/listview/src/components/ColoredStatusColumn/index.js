@@ -1,7 +1,6 @@
 import React, { useCallback, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import InternalOverlay from 'react-rainbow-components/components/InternalOverlay';
-import { RenderIf } from 'react-rainbow-components';
+import { InternalOverlay, RenderIf } from 'react-rainbow-components';
 import { useOutsideClick, useWindowResize } from '@rainbow-modules/hooks';
 import { HeaderOption } from './option';
 import getBackgroundColor from './helpers/getBackgroundColor';

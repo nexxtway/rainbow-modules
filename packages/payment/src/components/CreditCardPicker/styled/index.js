@@ -1,4 +1,4 @@
-import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
+import { attachThemeAttrs } from 'react-rainbow-components';
 import styled from 'styled-components';
 import { Trash } from '@rainbow-modules/icons';
 

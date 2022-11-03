@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { Badge, ButtonIcon } from 'react-rainbow-components';
-import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
+import { Badge, ButtonIcon, attachThemeAttrs } from 'react-rainbow-components';
 
 export const FONT_SIZE_TEXT_LARGE = '1rem';
 

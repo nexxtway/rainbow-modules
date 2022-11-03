@@ -3,8 +3,7 @@
 /* eslint-disable no-global-assign */
 import React, { FocusEvent, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'react-rainbow-components';
-import InternalOverlay from 'react-rainbow-components/components/InternalOverlay';
+import { Button, InternalOverlay } from 'react-rainbow-components';
 import { useOutsideClick, useUniqueIdentifier } from '@rainbow-modules/hooks';
 import manageTab from './manageTab';
 import UniversalForm from '../UniversalForm';
