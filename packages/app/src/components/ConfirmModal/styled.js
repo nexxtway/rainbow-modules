@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import RainbowButton from 'react-rainbow-components/components/Button';
+import { Button as RainbowButton } from 'react-rainbow-components';
 
 export const Container = styled.div`
     display: flex;

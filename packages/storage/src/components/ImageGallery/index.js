@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
-import RenderIf from 'react-rainbow-components/components/RenderIf';
+import { RenderIf } from 'react-rainbow-components';
 import { Picture } from '@rainbow-modules/icons';
 import ImagesUpload from './imagesUpload';
 import Images from './images';

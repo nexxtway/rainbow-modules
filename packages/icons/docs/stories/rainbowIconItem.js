@@ -1,9 +1,9 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import InternalOverlay from 'react-rainbow-components/components/InternalOverlay';
-import RenderIf from 'react-rainbow-components/components/RenderIf';
+import { RenderIf } from 'react-rainbow-components';
 import useWindowResize from 'react-rainbow-components/libs/hooks/useWindowResize';
-import useUniqueIdentifier from 'react-rainbow-components/libs/hooks/useUniqueIdentifier';
+import { useUniqueIdentifier } from '@rainbow-modules/hooks';
 import { StyledTooltip, StyledTitle, StyledText, StyledButton, StyledSample } from './styled';
 import { ESCAPE_KEY } from './helpers/constants';
 

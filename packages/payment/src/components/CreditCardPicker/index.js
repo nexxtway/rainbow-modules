@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { UniversalPicker } from '@rainbow-modules/forms';
 import { NewCard } from '@rainbow-modules/icons';
-import RenderIf from 'react-rainbow-components/components/RenderIf';
+import { RenderIf } from 'react-rainbow-components';
 import { StyledLabelNewCard, AddNewCardButton } from './styled';
 import { newCreditCardLabel } from './labels';
 import Cards from './cards';
