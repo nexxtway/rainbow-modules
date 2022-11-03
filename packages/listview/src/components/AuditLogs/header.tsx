@@ -3,7 +3,6 @@ import React, { useContext, useRef, useState } from 'react';
 import { Download } from '@rainbow-modules/icons';
 import { DatePickerModal, Option, RenderIf } from 'react-rainbow-components';
 import InternalOverlay from 'react-rainbow-components/components/InternalOverlay';
-
 import {
     StyledFilterButton,
     StyledFilterButtonIcon,

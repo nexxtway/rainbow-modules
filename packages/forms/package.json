@@ -11,6 +11,7 @@
     },
     "dependencies": {
         "@rainbow-modules/app": "^0.54.0",
+        "@rainbow-modules/colors": "^0.54.0",
         "@rainbow-modules/hooks": "^0.54.0",
         "@rainbow-modules/icons": "^0.54.0",
         "@rainbow-modules/listview": "^0.54.0",
