@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef, useImperativeHandle, forwardRef } from 'react';
 import { ArrowRight, ArrowLeft } from '@rainbow-modules/icons';
-import { RenderIf } from 'react-rainbow-components';
-import ButtonIcon from 'react-rainbow-components/components/ButtonIcon';
+import { RenderIf, ButtonIcon } from 'react-rainbow-components';
 import { useFirebaseApp } from '@rainbow-modules/firebase-hooks';
 import PropTypes from 'prop-types';
 import { Container, Footer, StyledTable } from './styled';

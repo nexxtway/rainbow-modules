@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { createPortal } from 'react-dom';
 import styled from 'styled-components';
-import RenderIf from 'react-rainbow-components/components/RenderIf';
-import Spinner from 'react-rainbow-components/components/Spinner';
+import { RenderIf, Spinner } from 'react-rainbow-components';
 import SpinnerMessage from './message';
 import { ZINDEX_SPINNER } from '../../styles/zIndex';
 

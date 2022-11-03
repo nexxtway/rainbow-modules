@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useUniqueIdentifier } from '@rainbow-modules/hooks';
-import RenderIf from 'react-rainbow-components/components/RenderIf';
-import { LoadingShape } from 'react-rainbow-components';
+import { LoadingShape, RenderIf } from 'react-rainbow-components';
 import { TilePickerContext } from '../TilePicker/context';
 import isChecked from './helpers/isChecked';
 import {
