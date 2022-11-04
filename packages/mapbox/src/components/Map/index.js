@@ -3,7 +3,6 @@ import React, { useRef, useEffect, createContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import mapboxgl from 'mapbox-gl';
 import { RenderIf, Spinner } from 'react-rainbow-components';
-import 'mapbox-gl/dist/mapbox-gl.css';
 import { Container, MapContainer, ChildrenContainer } from './styled';
 
 const MapContext = createContext({});

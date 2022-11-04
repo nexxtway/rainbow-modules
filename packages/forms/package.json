@@ -1,6 +1,6 @@
 {
     "name": "@rainbow-modules/forms",
-    "version": "0.54.0",
+    "version": "0.55.0",
     "author": "Nexxtway Team",
     "license": "MIT",
     "files": [
@@ -10,11 +10,12 @@
         "build": "tsc -p tsconfig.build.json"
     },
     "dependencies": {
-        "@rainbow-modules/app": "^0.54.0",
-        "@rainbow-modules/hooks": "^0.54.0",
-        "@rainbow-modules/icons": "^0.54.0",
-        "@rainbow-modules/listview": "^0.54.0",
-        "@rainbow-modules/validation": "^0.54.0",
+        "@rainbow-modules/app": "^0.55.0",
+        "@rainbow-modules/colors": "^0.55.0",
+        "@rainbow-modules/hooks": "^0.55.0",
+        "@rainbow-modules/icons": "^0.55.0",
+        "@rainbow-modules/listview": "^0.55.0",
+        "@rainbow-modules/validation": "^0.55.0",
         "final-form": "^4.20.1",
         "jsoneditor": "^9.2.0",
         "lodash": "^4.17.21",

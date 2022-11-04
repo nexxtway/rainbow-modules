@@ -4325,6 +4325,11 @@
   resolved "https://registry.yarnpkg.com/@rainbow-modules/icons/-/icons-0.44.0.tgz#900ed90dcdf87e845a90eb3f9010d359b9d2a122"
   integrity sha512-JUhsEYi6x+Lqq0wO2Tn7Dnga+zXc4NmIRV4H/aeq96rWnIdeOeQh5LsFtznNR5a5qvSQ9BgDOkaatQvj7msm2A==
 
+"@rainbow-modules/validation@^0.53.0":
+  version "0.53.0"
+  resolved "https://registry.yarnpkg.com/@rainbow-modules/validation/-/validation-0.53.0.tgz#2c81b3e5bb61bc2daa4506a6d33ef239b6ae50e9"
+  integrity sha512-NfnQv6jDk8xIeLyS2lAFK/sZ7VPfLPpCJnxjkj+Ib0XVqsdcc01CYcSdJUax2gR2B6TAoarU+E6KeEpA7aSyow==
+
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@samverschueren/stream-to-observable/-/stream-to-observable-0.3.1.tgz#a21117b19ee9be70c379ec1877537ef2e1c63301"
@@ -18608,12 +18613,13 @@ react-query@^3.34.0:
     broadcast-channel "^3.4.1"
     match-sorter "^6.0.2"
 
-react-rainbow-components@1.31.0-canary.300d49e:
-  version "1.31.0-canary.300d49e"
-  resolved "https://registry.yarnpkg.com/react-rainbow-components/-/react-rainbow-components-1.31.0-canary.300d49e.tgz#c0dcb98cf69944748a79a094d19fe36944631dd4"
-  integrity sha512-66mdV02noS8rmPYxe5KGsenpuD7BxMqvNTXfMhitoN+VhVt3BBef4C5nGKmAmynogOlWiibM6L4COi8FDESSJg==
+react-rainbow-components@1.31.0-canary.082c6c0:
+  version "1.31.0-canary.082c6c0"
+  resolved "https://registry.yarnpkg.com/react-rainbow-components/-/react-rainbow-components-1.31.0-canary.082c6c0.tgz#cea930987fc567d9aa289264d63b722e34f861b9"
+  integrity sha512-2YGhvhjtalJZrBfVcYf+NkjJ9PT750Wo6eaZlNFjJ7d2/sQD2dD3cFvJlghHRAgSauI8wqjVZtDumodBGLHdYQ==
   dependencies:
     "@rainbow-modules/hooks" "^0.12.0"
+    "@rainbow-modules/validation" "^0.53.0"
     autosize "^4.0.2"
     chart.js "2.9.4"
     clipboard-copy "^2.0.0"

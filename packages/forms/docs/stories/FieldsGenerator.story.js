@@ -8,7 +8,7 @@ import {
     Picklist,
     Option,
 } from 'react-rainbow-components';
-import { useReduxForm } from 'react-rainbow-components/libs/hooks';
+import { useReduxForm } from '@rainbow-modules/hooks';
 import styled from 'styled-components';
 import FieldsGenerator from '../../src/components/FieldsGenerator';
 import UniversalForm from '../../src/components/UniversalForm';

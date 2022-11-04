@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
-import { ESCAPE_KEY } from 'react-rainbow-components/libs/constants';
 import { isEmpty } from '@rainbow-modules/validation';
+
+const ESCAPE_KEY = 27;
 
 export default function useKeyHandler(props) {
     const { value, onChange, onRequestClose } = props;

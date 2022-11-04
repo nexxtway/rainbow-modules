@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
+import { attachThemeAttrs } from 'react-rainbow-components';
 
 export const Container = styled.div`
     display: flex;

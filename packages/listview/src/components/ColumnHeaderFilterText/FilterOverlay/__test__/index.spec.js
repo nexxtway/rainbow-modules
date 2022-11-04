@@ -1,11 +1,11 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { Application, Button } from 'react-rainbow-components';
-import manageTab from 'react-rainbow-components/libs/manageTab';
+import manageTab from '../manageTab';
 import FilterOverlay from '..';
 import { StyledTitle, StyledContainer } from '../styled';
 
-jest.mock('react-rainbow-components/libs/manageTab', () => jest.fn());
+jest.mock('../manageTab', () => jest.fn());
 
 jest.useFakeTimers();
 

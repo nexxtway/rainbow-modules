@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
+import { attachThemeAttrs } from 'react-rainbow-components';
 
 const labelAlignmentMap = {
     left: 'left',
@@ -41,4 +41,15 @@ export const StyledOptionsContainer = styled.div`
         `
         flex-direction: column;
     `};
+`;
+
+function getAlignSelf(props) {
+    return props.alignSelf || 'center';
+}
+
+export const StyledError = attachThemeAttrs(styled.div)`
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    align-self: ${getAlignSelf};
+    color: ${(props) => props.palette.error.main};
 `;
