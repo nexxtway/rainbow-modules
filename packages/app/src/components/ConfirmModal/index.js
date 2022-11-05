@@ -1,8 +1,14 @@
 /* eslint-disable react/jsx-wrap-multilines */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Modal, RenderIf } from 'react-rainbow-components';
-import { Question, ButtonsContainer, Button, Container, IconContainer } from './styled';
+import { Modal, RenderIf, Button } from 'react-rainbow-components';
+import { Question, ButtonsContainer, Container, IconContainer } from './styled';
+
+const styles = {
+    paddingLeft: '1.5rem',
+    paddingRight: '1.5rem',
+    marginLeft: '0.7rem',
+};
 
 const ConfirmModal = (props) => {
     const {
@@ -25,8 +31,18 @@ const ConfirmModal = (props) => {
             title={header}
             footer={
                 <ButtonsContainer>
-                    <Button label={cancelButtonLabel} variant="border" onClick={onCancel} />
-                    <Button label={okButtonLabel} variant={variant} onClick={onConfirm} />
+                    <Button
+                        style={styles}
+                        label={cancelButtonLabel}
+                        variant="border"
+                        onClick={onCancel}
+                    />
+                    <Button
+                        style={styles}
+                        label={okButtonLabel}
+                        variant={variant}
+                        onClick={onConfirm}
+                    />
                 </ButtonsContainer>
             }
         >

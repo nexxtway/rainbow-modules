@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
+import { attachThemeAttrs } from 'react-rainbow-components';
 
 // eslint-disable-next-line import/prefer-default-export
 export const StyledButton = attachThemeAttrs(styled.button)`

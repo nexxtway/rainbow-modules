@@ -1,9 +1,8 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useOutsideClick } from '@rainbow-modules/hooks';
-import InternalOverlay from 'react-rainbow-components/components/InternalOverlay';
-import manageTab from 'react-rainbow-components/libs/manageTab';
-import { Button } from 'react-rainbow-components';
+import { InternalOverlay, Button } from 'react-rainbow-components';
+import manageTab from './manageTab';
 import { StyledContainer, StyledHeader, StyledTitle, StyledTitleName } from './styled';
 import { positionResolver } from '../helpers';
 
@@ -96,10 +95,12 @@ function FilterOverlay(props) {
     );
 }
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment, no-global-assign, func-names
+const HTMLElementType = typeof HTMLElement === 'undefined' ? function () {} : HTMLElement;
 FilterOverlay.propTypes = {
     triggerElementRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.shape({ current: PropTypes.instanceOf(HTMLElement).isRequired }),
+        PropTypes.shape({ current: PropTypes.instanceOf(HTMLElementType).isRequired }),
     ]),
     isOpen: PropTypes.bool,
     onOpened: PropTypes.func,

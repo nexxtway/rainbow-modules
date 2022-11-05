@@ -1,6 +1,6 @@
 import React, { useRef, useImperativeHandle } from 'react';
 import PropTypes from 'prop-types';
-import useLocale from 'react-rainbow-components/libs/hooks/useLocale';
+import { useLocale } from 'react-rainbow-components';
 import { ChevronDown } from '@rainbow-modules/icons';
 import { StyledContainer, StyledLabelContainer, StyledLabel } from './styled';
 import { useFormatDate } from '../hooks';

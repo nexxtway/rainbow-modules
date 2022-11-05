@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Picklist } from 'react-rainbow-components';
-import useReduxForm from 'react-rainbow-components/libs/hooks/useReduxForm';
+import { useReduxForm } from '@rainbow-modules/hooks';
 import useCountries from './hooks/useCountries';
 import useSelectedValue from './hooks/useSelectedValue';
 import Options from './options';

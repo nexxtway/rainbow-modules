@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.55.0](https://github.com/nexxtway/rainbow-modules/compare/v0.54.0...v0.55.0) (2022-11-03)
+
+### Features
+
+-   add useWindowResize hook ([#639](https://github.com/nexxtway/rainbow-modules/issues/639)) ([feee0e2](https://github.com/nexxtway/rainbow-modules/commit/feee0e21383b94a10f96f43766a009f032394285))
+-   implement useReduxForm hook ([#637](https://github.com/nexxtway/rainbow-modules/issues/637)) ([dd44eca](https://github.com/nexxtway/rainbow-modules/commit/dd44ecacce80b50046a6a95a45a71e97412cc573))
+
 # [0.54.0](https://github.com/nexxtway/rainbow-modules/compare/v0.53.0...v0.54.0) (2022-10-19)
 
 **Note:** Version bump only for package @rainbow-modules/hooks

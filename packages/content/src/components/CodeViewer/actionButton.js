@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
-import InternalTooltip from 'react-rainbow-components/components/InternalTooltip';
-import useDefaultTooltipConnector from 'react-rainbow-components/components/InternalTooltip/hooks/useDefaultTooltipConnector';
+import { InternalTooltip, useDefaultTooltipConnector } from 'react-rainbow-components';
 import { StyledActionButton } from './styled';
 
 const ActionButton = ({ tooltip, children, onClick }) => {
