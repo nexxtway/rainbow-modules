@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.55.0](https://github.com/nexxtway/rainbow-modules/compare/v0.54.0...v0.55.0) (2022-11-03)
+
+### Bug Fixes
+
+-   all react rainbow imports ([#640](https://github.com/nexxtway/rainbow-modules/issues/640)) ([bfff5ad](https://github.com/nexxtway/rainbow-modules/commit/bfff5ad439acf5be834e7d1c52f366028b36dc37))
+
+### Features
+
+-   implement colors package ([#634](https://github.com/nexxtway/rainbow-modules/issues/634)) ([2c94082](https://github.com/nexxtway/rainbow-modules/commit/2c940821b0e32bc21c43fe285b029c96c4021045))
+
 # [0.54.0](https://github.com/nexxtway/rainbow-modules/compare/v0.53.0...v0.54.0) (2022-10-19)
 
 **Note:** Version bump only for package @rainbow-modules/search

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Table from 'react-rainbow-components/components/Table';
+import { Table } from 'react-rainbow-components';
 
 export const Container = styled.div`
     height: 100%;

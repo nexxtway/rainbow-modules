@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unused-prop-types */
 import React, { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import useReduxForm from 'react-rainbow-components/libs/hooks/useReduxForm';
+import { useReduxForm } from '@rainbow-modules/hooks';
 import { UniversalFormOverlay } from '@rainbow-modules/forms';
 import { Container } from './styled';
 import Fields from './fields';

@@ -1,9 +1,11 @@
+/* eslint-disable func-names */
+/* eslint-disable @typescript-eslint/no-empty-function */
+/* eslint-disable no-global-assign */
 import React, { FocusEvent, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'react-rainbow-components';
-import InternalOverlay from 'react-rainbow-components/components/InternalOverlay';
-import manageTab from 'react-rainbow-components/libs/manageTab';
+import { Button, InternalOverlay } from 'react-rainbow-components';
 import { useOutsideClick, useUniqueIdentifier } from '@rainbow-modules/hooks';
+import manageTab from './manageTab';
 import UniversalForm from '../UniversalForm';
 import positionResolver from './helpers/positionResolver';
 import { StyledContainer, StyledContent, StyledFooter } from './styled';
@@ -114,6 +116,7 @@ const UniversalFormOverlay: React.FC<UniversalFormOverlayProps> = ({
     );
 };
 
+const HTMLElementType = typeof HTMLElement === 'undefined' ? function () {} : HTMLElement;
 UniversalFormOverlay.propTypes = {
     /**
      * Ref or function that returns a ref to a DOM element, the DOM element resolved by
@@ -123,7 +126,9 @@ UniversalFormOverlay.propTypes = {
         // Either a function
         PropTypes.func,
         // Or the instance of a DOM native element (see the note about SSR)
-        PropTypes.shape({ current: PropTypes.instanceOf(HTMLElement).isRequired }),
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        PropTypes.shape({ current: PropTypes.instanceOf(HTMLElementType).isRequired }),
     ]),
     /**
      * Component Class or Function with the fields of your form. Use Field component

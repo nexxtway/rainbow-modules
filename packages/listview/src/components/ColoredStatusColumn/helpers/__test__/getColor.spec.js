@@ -1,4 +1,4 @@
-import getContrastText from 'react-rainbow-components/styles/helpers/color/getContrastText.js';
+import { getContrastText } from '@rainbow-modules/colors';
 import getColor from '../getColor';
 
 describe('helper getColor', () => {
