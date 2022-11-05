@@ -1,5 +1,4 @@
-import getContrastText from 'react-rainbow-components/styles/helpers/color/getContrastText.js';
-import isValidColor from 'react-rainbow-components/styles/helpers/color/isValidColor.js';
+import { getContrastText, isValidColor } from '@rainbow-modules/colors';
 import getBackgroundColor from './getBackgroundColor';
 
 const getColor = (value) => {
