@@ -3,12 +3,10 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import Label from 'react-rainbow-components/components/Input/label';
-import useReduxForm from 'react-rainbow-components/libs/hooks/useReduxForm';
+import { useReduxForm, useUniqueIdentifier } from '@rainbow-modules/hooks';
 import { RenderIf } from 'react-rainbow-components';
-import { useUniqueIdentifier } from '@rainbow-modules/hooks';
 import JSONEditor from 'jsoneditor';
-import 'jsoneditor/dist/jsoneditor.css';
+import Label from './label';
 import { CodeEditor, CodeEditorContainer, JsonInputContainer, ErrorText } from './styled';
 import { JsonInputProps, Value } from './types';
 import debounce from './debounce';

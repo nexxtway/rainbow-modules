@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.55.0](https://github.com/nexxtway/rainbow-modules/compare/v0.54.0...v0.55.0) (2022-11-03)
+
+### Bug Fixes
+
+-   all react rainbow imports ([#640](https://github.com/nexxtway/rainbow-modules/issues/640)) ([bfff5ad](https://github.com/nexxtway/rainbow-modules/commit/bfff5ad439acf5be834e7d1c52f366028b36dc37))
+-   copy inline some imports from react rainbow ([#635](https://github.com/nexxtway/rainbow-modules/issues/635)) ([a1d25f0](https://github.com/nexxtway/rainbow-modules/commit/a1d25f06a477e3e837958a570af0cc4f536f1579))
+-   css imports to use a styled container instead ([#641](https://github.com/nexxtway/rainbow-modules/issues/641)) ([76ecaf5](https://github.com/nexxtway/rainbow-modules/commit/76ecaf5282646497543380366a822c92c398c6ec))
+-   ifx HTMLElement in prp types for SSR ([#638](https://github.com/nexxtway/rainbow-modules/issues/638)) ([d031fc4](https://github.com/nexxtway/rainbow-modules/commit/d031fc4c7ee708414e88b3ba2b17cf1a4b1e92f7))
+-   rainbow imports and resolvers ([#636](https://github.com/nexxtway/rainbow-modules/issues/636)) ([e4080d8](https://github.com/nexxtway/rainbow-modules/commit/e4080d8a8f79de8352e3ac944a8a7e1b274912e8))
+
+### Features
+
+-   add useWindowResize hook ([#639](https://github.com/nexxtway/rainbow-modules/issues/639)) ([feee0e2](https://github.com/nexxtway/rainbow-modules/commit/feee0e21383b94a10f96f43766a009f032394285))
+-   implement colors package ([#634](https://github.com/nexxtway/rainbow-modules/issues/634)) ([2c94082](https://github.com/nexxtway/rainbow-modules/commit/2c940821b0e32bc21c43fe285b029c96c4021045))
+-   implement useReduxForm hook ([#637](https://github.com/nexxtway/rainbow-modules/issues/637)) ([dd44eca](https://github.com/nexxtway/rainbow-modules/commit/dd44ecacce80b50046a6a95a45a71e97412cc573))
+
 # [0.54.0](https://github.com/nexxtway/rainbow-modules/compare/v0.53.0...v0.54.0) (2022-10-19)
 
 ### Bug Fixes

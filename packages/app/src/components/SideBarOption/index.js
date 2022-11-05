@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SidebarItem from 'react-rainbow-components/components/SidebarItem';
+import { SidebarItem } from 'react-rainbow-components';
 import useNavigate from '../../hooks/useNavigate';
 import useExactMatch from '../../hooks/useExactMatch';
 

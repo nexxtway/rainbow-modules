@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import Option from 'react-rainbow-components/components/Option';
-import darken from 'react-rainbow-components/styles/helpers/color/darken';
-import InternalDropdown from 'react-rainbow-components/components/InternalDropdown';
+import { Option, InternalDropdown } from 'react-rainbow-components';
+import { darken } from '@rainbow-modules/colors';
 import CheckmarkIcon from './checkmark';
 
 // eslint-disable-next-line import/prefer-default-export

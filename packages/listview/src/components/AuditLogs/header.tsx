@@ -1,9 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useContext, useRef, useState } from 'react';
 import { Download } from '@rainbow-modules/icons';
-import { DatePickerModal, Option, RenderIf } from 'react-rainbow-components';
-import InternalOverlay from 'react-rainbow-components/components/InternalOverlay';
-
+import { DatePickerModal, Option, RenderIf, InternalOverlay } from 'react-rainbow-components';
 import {
     StyledFilterButton,
     StyledFilterButtonIcon,

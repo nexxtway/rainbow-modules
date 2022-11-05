@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { Input } from 'react-rainbow-components';
-import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
+import { Input, attachThemeAttrs } from 'react-rainbow-components';
 
 export const StyledContainer = attachThemeAttrs(styled.div)`
     padding: 5px;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import InternalTooltip from 'react-rainbow-components/components/InternalTooltip';
+import { InternalTooltip } from 'react-rainbow-components';
 import copy from 'copy-to-clipboard';
 import CopyToClipboardButton from '../index';
 
