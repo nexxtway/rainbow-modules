@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import useLocale from 'react-rainbow-components/libs/hooks/useLocale';
+import { useLocale } from 'react-rainbow-components';
 import formatPercent from './helpers/formatPercent';
 import { StyledCellContainer } from './styled';
 import { PercentColumnProps } from './types';
