@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { RenderIf } from 'react-rainbow-components';
-import darken from 'react-rainbow-components/styles/helpers/color/darken';
+import { darken } from '@rainbow-modules/colors';
 import { StyledColoredOption, StyledHeader, StyledCheckmark } from './styled';
 
 const ColoredOption = ({ label, color, backgroundColor, textTransform, isActive, isSelected }) => {

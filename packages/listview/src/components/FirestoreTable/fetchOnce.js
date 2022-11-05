@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Table from 'react-rainbow-components/components/Table';
+import { Table } from 'react-rainbow-components';
 import { useCollectionOnce } from '@rainbow-modules/firebase-hooks';
 import getQuery from './getQuery';
 

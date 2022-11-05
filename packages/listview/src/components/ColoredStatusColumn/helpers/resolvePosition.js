@@ -1,4 +1,4 @@
-import InternalOverlay from 'react-rainbow-components/components/InternalOverlay';
+import { InternalOverlay } from 'react-rainbow-components';
 
 const DEFAULT_MARGIN = 5;
 

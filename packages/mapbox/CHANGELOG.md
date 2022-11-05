@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.55.0](https://github.com/nexxtway/rainbow-modules/compare/v0.54.0...v0.55.0) (2022-11-03)
+
+### Bug Fixes
+
+-   css imports to use a styled container instead ([#641](https://github.com/nexxtway/rainbow-modules/issues/641)) ([76ecaf5](https://github.com/nexxtway/rainbow-modules/commit/76ecaf5282646497543380366a822c92c398c6ec))
+
 # [0.54.0](https://github.com/nexxtway/rainbow-modules/compare/v0.53.0...v0.54.0) (2022-10-19)
 
 **Note:** Version bump only for package @rainbow-modules/mapbox

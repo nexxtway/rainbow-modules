@@ -125,3 +125,9 @@ export const TrashIcon = styled(Trash)`
     margin: 12px 12px 20px 0;
     color: ${(props) => props.theme.rainbow.palette.error.main};
 `;
+
+export const TruncatedText = styled.span`
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+`;

@@ -1,7 +1,6 @@
 import React, { useImperativeHandle, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import InternalOverlay from 'react-rainbow-components/components/InternalOverlay';
-import { BadgeOverlay, ButtonIcon, RenderIf } from 'react-rainbow-components';
+import { InternalOverlay, BadgeOverlay, ButtonIcon, RenderIf } from 'react-rainbow-components';
 import { Bell } from '@rainbow-modules/icons';
 import { useOutsideClick } from '@rainbow-modules/hooks';
 import {

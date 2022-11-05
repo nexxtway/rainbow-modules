@@ -1,4 +1,4 @@
-import useTheme from 'react-rainbow-components/libs/hooks/useTheme.js';
+import { useTheme } from 'react-rainbow-components';
 
 const useDefaultColors = () => {
     const theme = useTheme();

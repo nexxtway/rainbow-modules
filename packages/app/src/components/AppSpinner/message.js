@@ -1,12 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-const StyledMessage = styled.span`
-    color: ${(props) => props.theme.rainbow.palette.text.label};
-    font-size: 1rem;
-    margin-top: 0.5rem;
-`;
+import { StyledMessage } from './styled';
 
 export default function SpinnerMessage({ message }) {
     if (typeof message === 'string') {

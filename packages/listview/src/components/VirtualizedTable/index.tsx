@@ -1,7 +1,6 @@
 import React, { ReactElement } from 'react';
 import { LoadingShape } from 'react-rainbow-components';
 import {
-    AutoSizer,
     Column,
     Index,
     IndexRange,
@@ -11,12 +10,13 @@ import {
     TableHeaderProps,
     TableHeaderRowProps,
     TableRowProps,
+    Size,
 } from 'react-virtualized';
-import 'react-virtualized/styles.css';
 import EmptyIcon from './emptyIcon';
 import getRandomWidth from './helpers/getRandomWidth';
 import useDataHandler from './hooks/useDataHandler';
 import {
+    Container,
     StyledCell,
     StyledCellContent,
     StyledHeaderContainer,
@@ -179,8 +179,8 @@ const VirtualizedTable = ({
     });
 
     return (
-        <AutoSizer>
-            {({ width, height }) => (
+        <Container>
+            {({ width, height }: Size) => (
                 <Table
                     width={width || 100}
                     height={height || 100}
@@ -198,7 +198,7 @@ const VirtualizedTable = ({
                     {columns}
                 </Table>
             )}
-        </AutoSizer>
+        </Container>
     );
 };
 
