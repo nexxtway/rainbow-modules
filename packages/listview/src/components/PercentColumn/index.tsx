@@ -11,8 +11,8 @@ const PercentColumn: React.FC<PercentColumnProps> = (props: PercentColumnProps) 
     const content = formatPercent(value ?? 0, locale, rest);
 
     return (
-        <StyledCellContainer className={className} style={style}>
-            <span title={content}>{content}</span>
+        <StyledCellContainer className={className} style={style} title={content}>
+            {content}
         </StyledCellContainer>
     );
 };
