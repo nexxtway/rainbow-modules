@@ -32,7 +32,7 @@ AppMessage.defaultProps = {
     isVisible: false,
     message: undefined,
     variant: 'error',
-    timeout: 5000,
+    timeout: undefined,
     onHideMessage: () => {},
 };
 
