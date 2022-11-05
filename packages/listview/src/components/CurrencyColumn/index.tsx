@@ -11,8 +11,8 @@ const CurrencyColumn: React.FC<CurrencyColumnProps> = (props: CurrencyColumnProp
     const content = formatCurrency(value ?? 0, locale, rest);
 
     return (
-        <StyledCellContainer className={className} style={style}>
-            <span title={content}>{content}</span>
+        <StyledCellContainer className={className} style={style} title={content}>
+            {content}
         </StyledCellContainer>
     );
 };
