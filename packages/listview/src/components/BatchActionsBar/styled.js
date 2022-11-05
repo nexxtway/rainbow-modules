@@ -1,8 +1,9 @@
 import styled from 'styled-components';
-import { Badge, ButtonIcon } from 'react-rainbow-components';
-import attachThemeAttrs from 'react-rainbow-components/styles/helpers/attachThemeAttrs';
-import { BORDER_RADIUS_2 } from 'react-rainbow-components/styles/borderRadius';
-import { FONT_SIZE_TEXT_LARGE } from 'react-rainbow-components/styles/fontSizes';
+import { Badge, ButtonIcon, attachThemeAttrs } from 'react-rainbow-components';
+
+export const FONT_SIZE_TEXT_LARGE = '1rem';
+
+export const BORDER_RADIUS_2 = '12rem';
 
 export const StyledContainer = attachThemeAttrs(styled.div)`
     padding: 8px 8px 8px 12px;

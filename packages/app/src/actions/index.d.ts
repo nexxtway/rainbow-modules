@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 type AppSpinnerParams = {
     message?: ReactNode;
 };
-export function showAppSpinner(params: AppSpinnerParams): void;
+export function showAppSpinner(params?: AppSpinnerParams): void;
 export function hideAppSpinner(): void;
 
 type AppMessagepParams = {

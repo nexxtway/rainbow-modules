@@ -1,6 +1,6 @@
 import React, { useRef, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import useLocale from 'react-rainbow-components/libs/hooks/useLocale';
+import { useLocale } from 'react-rainbow-components';
 import { ChevronLeft, ChevronRight } from '@rainbow-modules/icons';
 import { isSameDay, isDateWithinRange } from '../helpers';
 import { StyledSection, StyledArrowButton, StyledCarouselContent } from './styled';

@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { RenderIf } from 'react-rainbow-components';
 import { Edit, Lock } from '@rainbow-modules/icons';
-import useReduxForm from 'react-rainbow-components/libs/hooks/useReduxForm';
+import { useReduxForm } from '@rainbow-modules/hooks';
 import get from 'lodash/get';
 import UniversalFormOverlay from '../UniversalFormOverlay';
 import OverlayField from './overlayField';
