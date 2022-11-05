@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import useLocale from 'react-rainbow-components/libs/hooks/useLocale';
+import { useLocale } from 'react-rainbow-components';
 import formatCurrency from './helpers/formatCurrency';
 import { StyledCellContainer } from './styled';
 import { CurrencyColumnProps } from './types';
