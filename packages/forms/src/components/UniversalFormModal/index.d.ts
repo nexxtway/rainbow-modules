@@ -19,7 +19,7 @@ export interface UniversalFormModalProps {
     /**
      * Component Class or Function with the fields of your form. Use Field component of react-final-form.
      */
-    fields?: ComponentType;
+    fields?: ComponentType<P>;
     /** The initial values of the form e.g. { name: 'Max', age: 30 } */
     initialValues?: Record<string, unknown>;
     /** The label of the submit button on the form */
@@ -28,6 +28,7 @@ export interface UniversalFormModalProps {
     cancelButtonLabel?: ReactNode;
     /** The id of the outer element. */
     id?: string;
+    [key: string]: unknown;
 }
 
 export default function (props: UniversalFormModalProps): JSX.Element | null;
