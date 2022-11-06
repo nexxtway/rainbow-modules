@@ -13,4 +13,5 @@ export interface CurrencyColumnProps {
     maximumSignificantDigits?: number;
     className?: string;
     style?: CSSProperties;
+    cellAlignment?: 'left' | 'right' | 'center';
 }
