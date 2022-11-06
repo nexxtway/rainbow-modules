@@ -6,12 +6,17 @@ import { StyledCellContainer } from './styled';
 import { PercentColumnProps } from './types';
 
 const PercentColumn: React.FC<PercentColumnProps> = (props: PercentColumnProps) => {
-    const { value, locale: localeProp, className, style, ...rest } = props;
+    const { value, locale: localeProp, className, style, cellAlignment, ...rest } = props;
     const locale = useLocale(localeProp);
     const content = formatPercent(value ?? 0, locale, rest);
 
     return (
-        <StyledCellContainer className={className} style={style} title={content}>
+        <StyledCellContainer
+            className={className}
+            style={style}
+            title={content}
+            cellAlignment={cellAlignment}
+        >
             {content}
         </StyledCellContainer>
     );
@@ -40,6 +45,8 @@ PercentColumn.propTypes = {
     className: PropTypes.string,
     /** An object with custom style applied to the outer element. */
     style: PropTypes.object,
+    /** Determines the alignment of the text in each column cell. */
+    cellAlignment: PropTypes.oneOf(['left', 'right', 'center']),
 };
 
 PercentColumn.defaultProps = {
@@ -52,6 +59,7 @@ PercentColumn.defaultProps = {
     maximumSignificantDigits: undefined,
     className: undefined,
     style: undefined,
+    cellAlignment: 'right',
 };
 
 export default PercentColumn;
