@@ -1,24 +1,20 @@
 import React from 'react';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
-import ImageGallery from '../../src/components/ImageGallery';
+import openUpdateUserPhotoModal from '../../src/actions/openUpdateUserPhotoModal';
 import app from '../../../../firebase';
 
 export const basicStorageImageGallery = () => {
     return (
         <RainbowFirebaseApp app={app}>
-            <ImageGallery
-                path="/users/u123/gallery"
-                allowUpload
-                allowDelete
-                // eslint-disable-next-line no-alert
-                onSelect={(imageRef) => alert(imageRef.name)}
-            />
+            <button type="button" onClick={() => openUpdateUserPhotoModal()}>
+                click me
+            </button>
         </RainbowFirebaseApp>
     );
 };
 
 export default {
-    title: 'Modules/Storage/Stories/ImageGallery',
+    title: 'Modules/Storage/Stories/openUpdateUserPhotoModal',
     parameters: {
         viewOnGithub: {
             fileName: __filename,
