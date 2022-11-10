@@ -13,3 +13,4 @@ export { default as VirtualizedTable, useTableDataSource } from './components/Vi
 export { default as ColumnHeaderFilterText } from './components/ColumnHeaderFilterText';
 export { default as ColumnHeaderFilterMultiselect } from './components/ColumnHeaderFilterMultiselect';
 export { default as DownloadModal } from './components/DownloadModal';
+export { default as PercentColumn } from './components/PercentColumn';
