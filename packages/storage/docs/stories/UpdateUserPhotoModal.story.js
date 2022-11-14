@@ -1,20 +1,18 @@
 import React from 'react';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
-import openUpdateUserPhotoModal from '../../src/actions/openUpdateUserPhotoModal';
+import UpdateUserPhotoModal from '../../src/components/UpdateUserPhotoModal';
 import app from '../../../../firebase';
 
-export const basicStorageImageGallery = () => {
+export const basicUpdateUserPhotoModal = () => {
     return (
         <RainbowFirebaseApp app={app}>
-            <button type="button" onClick={() => openUpdateUserPhotoModal()}>
-                click me
-            </button>
+            <UpdateUserPhotoModal />
         </RainbowFirebaseApp>
     );
 };
 
 export default {
-    title: 'Modules/Storage/Stories/openUpdateUserPhotoModal',
+    title: 'Modules/Storage/Stories/UpdateUserPhotoModal',
     parameters: {
         viewOnGithub: {
             fileName: __filename,
