@@ -26,6 +26,7 @@ export const StyledHeader = styled.h1`
 
     @media (min-width: 600px) {
         padding-right: 90px;
+    }
 `;
 
 export const StyledParagraph = styled.p`
