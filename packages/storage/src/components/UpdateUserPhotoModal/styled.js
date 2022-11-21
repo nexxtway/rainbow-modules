@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-expressions */
 import styled from 'styled-components';
 import { Modal, Button } from 'react-rainbow-components';
 
@@ -61,6 +60,7 @@ export const StyledModalFooter = styled.div`
 
 export const StyledButtonFocus = styled(Button)`
     color: #1894ab;
+
     &:focus {
         box-shadow: none;
     }
@@ -75,9 +75,11 @@ export const StyledModal = styled(Modal)`
 export const StyledModalExample = styled(Modal)`
     width: none;
     padding: 0;
+
     [data-id*='modal-content'] {
         padding: 0;
     }
+
     .byCVyc {
         padding: 0;
     }
@@ -114,10 +116,11 @@ export const StyledCropper = styled.div`
         height: 18px;
         width: 18px;
     }
-
+    
     .cropper-point.point-sw {
         box-shadow: -2px 2px 0 #fff, -2px 2px 0 #fff;
     }
+
     .cropper-point.point-nw {
         box-shadow: -2px -2px 0 #fff, -2px -2px 0 #fff;
     }
