@@ -4,9 +4,10 @@ import UpdateUserPhotoModal from '../../src/components/UpdateUserPhotoModal';
 import app from '../../../../firebase';
 
 export const basicUpdateUserPhotoModal = () => {
+    const defaultSrc = 'https://www.w3schools.com/howto/img_avatar.png';
     return (
         <RainbowFirebaseApp app={app}>
-            <UpdateUserPhotoModal />
+            <UpdateUserPhotoModal path={defaultSrc} />
         </RainbowFirebaseApp>
     );
 };
