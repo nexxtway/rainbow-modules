@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import styled from 'styled-components';
 import { Modal, Button } from 'react-rainbow-components';
 
