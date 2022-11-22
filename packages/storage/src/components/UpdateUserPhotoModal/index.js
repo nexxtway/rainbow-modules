@@ -2,6 +2,10 @@ import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Avatar, Button } from 'react-rainbow-components';
 import { Cropper } from 'react-cropper';
+import { useFirebaseApp, useCurrentUserState } from '@rainbow-modules/firebase-hooks';
+import { nanoid } from 'nanoid';
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { updateProfile } from 'firebase/auth';
 import 'cropperjs/dist/cropper.css';
 import EditRemoveDialog from './editRemoveDialog';
 import {
@@ -14,7 +18,10 @@ import {
 import RotateLeftIcon from './rotateLeftIcon';
 
 export default function UpdateUserPhotoModal(props) {
-    const { path } = props;
+    const { path: pathProp, bucket } = props;
+    const { user, reload } = useCurrentUserState() || {};
+    const path = pathProp || `users/${user ? user.uid : ''}/profilePhoto`;
+    const app = useFirebaseApp();
 
     const [isOpen, setIsOpen] = useState(false);
     const [isOpenEdit, setIsOpenEdit] = useState(false);
@@ -35,10 +42,23 @@ export default function UpdateUserPhotoModal(props) {
         setPhotoURL(imageDataUrl);
     };
 
-    const onCrop = () => {
+    const onCrop = async () => {
         const imageElement = cropperRef ? cropperRef.current : null;
         const cropper = imageElement ? imageElement.cropper : null;
-        setCroppedImg(cropper.getCroppedCanvas().toDataURL());
+        const storage = getStorage(app);
+        const photoRef = ref(storage, `${path}/${nanoid()}`);
+        const metadata = {
+            contentType: 'image/png',
+        };
+        await uploadBytes(photoRef, cropper.getCroppedCanvas().toDataURL(), metadata);
+
+        const photoURL = await getDownloadURL(photoRef);
+        await updateProfile(user, {
+            photoURL,
+        });
+        await reload();
+
+        // setCroppedImg(cropper.getCroppedCanvas().toDataURL());
         setIsOpenEdit(false);
     };
 
@@ -127,9 +147,12 @@ export default function UpdateUserPhotoModal(props) {
 
 UpdateUserPhotoModal.propTypes = {
     path: PropTypes.string,
+    bucket: PropTypes.string,
+    onPhotoUpdated: PropTypes.func,
 };
 
 UpdateUserPhotoModal.defaultProps = {
-    path:
-        'https://raw.githubusercontent.com/roadmanfong/react-cropper/master/example/img/child.jpg',
+    path: undefined,
+    bucket: undefined,
+    onPhotoUpdated: () => {},
 };

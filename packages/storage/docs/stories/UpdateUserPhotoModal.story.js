@@ -1,13 +1,22 @@
 import React from 'react';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
+import {
+    WhenAuthenticated,
+    WhenNoAuthenticated,
+    EmailPasswordSignInForm,
+} from '@rainbow-modules/auth';
 import UpdateUserPhotoModal from '../../src/components/UpdateUserPhotoModal';
 import app from '../../../../firebase';
 
 export const basicUpdateUserPhotoModal = () => {
-    const defaultSrc = 'https://www.w3schools.com/howto/img_avatar.png';
     return (
         <RainbowFirebaseApp app={app}>
-            <UpdateUserPhotoModal path={defaultSrc} />
+            <WhenNoAuthenticated path="/" redirect="/app">
+                <EmailPasswordSignInForm />
+            </WhenNoAuthenticated>
+            <WhenAuthenticated path="/app" redirect="/">
+                <UpdateUserPhotoModal />
+            </WhenAuthenticated>
         </RainbowFirebaseApp>
     );
 };

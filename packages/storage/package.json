@@ -9,6 +9,7 @@
     "dependencies": {
         "@rainbow-modules/firebase-hooks": "^0.55.0",
         "@rainbow-modules/icons": "^0.55.0",
+        "nanoid": "^4.0.0",
         "react-cropper": "^2.1.8",
         "react-rainbow-components": "1.31.0-canary.6ccebb7"
     },
