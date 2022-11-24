@@ -85,6 +85,26 @@ export const StyledModalExample = styled(Modal)`
     }
 `;
 
+export const StyledSpinnerContent = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+    border: 0;
+`;
+
+export const Loading = styled.h1`
+    font-weight: 700;
+    line-height: 20px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin-top: 3rem;
+`;
+
 export const StyledCropper = styled.div`
     padding: 0;
     display: flex;
