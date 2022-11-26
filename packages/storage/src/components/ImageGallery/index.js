@@ -6,6 +6,7 @@ import ImagesUpload from './imagesUpload';
 import Images from './images';
 import { useImageRefs } from './hooks';
 import { StyledContainer, StyledFileSeletor, StyledFileContainer } from './styled';
+import { storageIsomorphicCall } from './helpers';
 
 export default function ImageGallery(props) {
     const { path, allowUpload, allowDelete, onSelect, onError, filter, maxResults } = props;
@@ -31,7 +32,7 @@ export default function ImageGallery(props) {
 
     const handleDeleteClick = async (imageRef) => {
         try {
-            await imageRef.delete();
+            await storageIsomorphicCall(imageRef, 'delete', 'deleteObject');
             setImageRefs(imageRefs.filter((item) => item.fullPath !== imageRef.fullPath));
         } catch (error) {
             // eslint-disable-next-line no-console
