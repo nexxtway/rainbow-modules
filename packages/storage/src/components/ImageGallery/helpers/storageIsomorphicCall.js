@@ -12,17 +12,14 @@ import hasOwnProperty from './hasOwnProperty';
  */
 const storageIsomorphicCall = (ref, keyV8, keyV9, ...params) => {
     if (!ref) return Promise.reject(new Error('No reference provided'));
-
     // Firebase <= 8
     if (hasOwnProperty(ref, keyV8)) {
         return ref[keyV8](...params);
     }
-
     // Firebase 9
     if (hasOwnProperty(storage, keyV9)) {
         return storage[keyV9](ref, ...params);
     }
-
     return Promise.reject(new Error('Unable to call method'));
 };
 
