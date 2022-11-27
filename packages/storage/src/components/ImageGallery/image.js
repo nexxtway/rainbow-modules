@@ -14,7 +14,7 @@ import {
     TruncatedText,
     StyledRelative,
 } from './styled';
-import { storageIsomorphicCall } from './helpers';
+import { getDownloadURL } from './helpers';
 
 export default function Image(props) {
     const { imageRef, onSelect, onError, allowDelete, onDelete } = props;
@@ -24,11 +24,7 @@ export default function Image(props) {
     useEffect(() => {
         (async () => {
             try {
-                const url = await storageIsomorphicCall(
-                    imageRef,
-                    'getDownloadURL',
-                    'getDownloadURL',
-                );
+                const url = await getDownloadURL(imageRef);
                 setSrc(url);
             } catch (err) {
                 onError(err);

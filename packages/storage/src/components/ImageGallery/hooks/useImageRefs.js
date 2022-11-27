@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import useStorageRef from './useStorageRef';
-import { attachMetadata, sortByDate, storageIsomorphicCall } from '../helpers';
+import { attachMetadata, sortByDate, ref, getDownloadURL, listAll, list } from '../helpers';
 
 export default function useImageRefs(props) {
     const { path, filter, maxResults: maxResultsProp, onError } = props;
@@ -15,17 +15,8 @@ export default function useImageRefs(props) {
                 await Promise.all(
                     filter.map(async (name) => {
                         try {
-                            const imageRef = await storageIsomorphicCall(
-                                storageRef,
-                                'child',
-                                'ref',
-                                `${path}/${name}`,
-                            );
-                            await storageIsomorphicCall(
-                                imageRef,
-                                'getDownloadURL',
-                                'getDownloadURL',
-                            );
+                            const imageRef = await ref(storageRef, `${path}/${name}`);
+                            await getDownloadURL(imageRef);
                             imagesFiltered.push(imageRef);
                         } catch (error) {
                             onError(error);
@@ -35,8 +26,8 @@ export default function useImageRefs(props) {
                 setImageRefs(await attachMetadata(imagesFiltered.slice(0, maxResults)));
             } else if (typeof filter === 'function') {
                 try {
-                    const ref = await storageIsomorphicCall(storageRef, 'child', 'ref', path);
-                    const { items } = await storageIsomorphicCall(ref, 'listAll', 'listAll');
+                    const imagesRef = await ref(storageRef, path);
+                    const { items } = await listAll(imagesRef);
                     const filteredList = items.filter((ref) => filter(ref)).slice(0, maxResults);
                     setImageRefs(await sortByDate(await attachMetadata(filteredList)));
                 } catch (error) {
@@ -45,10 +36,8 @@ export default function useImageRefs(props) {
                 }
             } else {
                 try {
-                    const ref = await storageIsomorphicCall(storageRef, 'child', 'ref', path);
-                    const { items } = await storageIsomorphicCall(ref, 'list', 'list', {
-                        maxResults,
-                    });
+                    const imagesRef = await ref(storageRef, path);
+                    const { items } = await list(imagesRef, { maxResults });
                     setImageRefs(await sortByDate(await attachMetadata(items)));
                 } catch (error) {
                     onError(error);

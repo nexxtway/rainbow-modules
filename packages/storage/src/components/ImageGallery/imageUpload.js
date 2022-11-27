@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { ProgressCircular } from 'react-rainbow-components';
 import { useStorageRef } from './hooks';
 import { StyledContainerImageUpload, StyledFileContainer } from './styled';
-import { storageIsomorphicCall } from './helpers';
+import { ref, uploadBytesResumable } from './helpers';
 
 export default function ImageUpload(props) {
     const { path, image, onUploaded, onError } = props;
@@ -11,8 +11,8 @@ export default function ImageUpload(props) {
     const [progress, setProgress] = useState(0);
 
     useEffect(() => {
-        const ref = storageIsomorphicCall(storageRef, 'child', 'ref', `${path}/${image.name}`);
-        const uploadTask = storageIsomorphicCall(ref, 'put', 'uploadBytesResumable', image);
+        const imageRef = ref(storageRef, `${path}/${image.name}`);
+        const uploadTask = uploadBytesResumable(imageRef, image);
 
         const unsubscribe = uploadTask.on(
             'state_changed',
