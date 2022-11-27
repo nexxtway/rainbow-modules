@@ -61,6 +61,18 @@ export const StyledCheckMark = styled(Check)`
     display: none;
 `;
 
+export const StyledRelative = styled.div`
+    position: relative;
+
+    &:hover ${StyledDeleteButton} {
+        display: block;
+    }
+
+    &:hover ${StyledCheckMark} {
+        display: block;
+    }
+`;
+
 export const StyledContainerImage = styled.button`
     position: relative;
     width: 100%;
@@ -72,14 +84,6 @@ export const StyledContainerImage = styled.button`
     padding: 0;
     background-clip: padding-box;
     box-shadow: rgb(215, 217, 226) 0 1px 2px 0;
-
-    &:hover ${StyledDeleteButton} {
-        display: block;
-    }
-
-    &:hover ${StyledCheckMark} {
-        display: block;
-    }
 
     &:hover,
     &:focus {

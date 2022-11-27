@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Spinner, RenderIf } from 'react-rainbow-components';
 import { Trash } from '@rainbow-modules/icons';
@@ -12,34 +12,25 @@ import {
     StyledCheckMark,
     TrashIcon,
     TruncatedText,
+    StyledRelative,
 } from './styled';
+import { getDownloadURL } from './helpers';
 
 export default function Image(props) {
     const { imageRef, onSelect, onError, allowDelete, onDelete } = props;
     const [src, setSrc] = useState();
     const [loading, setLoading] = useState(true);
-    const deleteBtn = useRef(null);
 
     useEffect(() => {
         (async () => {
-            await imageRef
-                .getDownloadURL()
-                .then((url) => {
-                    setSrc(url);
-                })
-                .catch((error) => {
-                    onError(error);
-                });
+            try {
+                const url = await getDownloadURL(imageRef);
+                setSrc(url);
+            } catch (err) {
+                onError(err);
+            }
         })();
     }, [imageRef, onError]);
-
-    const handleClick = (e) => {
-        const isDeleteButtonClicked = deleteBtn.current.htmlElementRef.current.contains(e.target);
-        if (isDeleteButtonClicked) {
-            return null;
-        }
-        return onSelect(imageRef);
-    };
 
     const openModalDelete = async () => {
         const result = await confirmModal({
@@ -57,31 +48,34 @@ export default function Image(props) {
 
     return (
         <StyledFileContainer>
-            <StyledContainerImage type="button" onClick={handleClick}>
-                <RenderIf isTrue={!!src}>
-                    <StyledImage
-                        src={src}
-                        alt={imageRef.name}
-                        onLoad={() => setLoading(false)}
-                        $loading={loading}
-                    />
+            <StyledRelative>
+                <StyledContainerImage type="button" onClick={() => onSelect(imageRef)}>
+                    <RenderIf isTrue={!!src}>
+                        <StyledImage
+                            src={src}
+                            alt={imageRef.name}
+                            onLoad={() => setLoading(false)}
+                            $loading={loading}
+                        />
+                    </RenderIf>
+                    <RenderIf isTrue={loading}>
+                        <StyledContainerSpinner>
+                            <Spinner type="arc" variant="brand" />
+                        </StyledContainerSpinner>
+                    </RenderIf>
+                </StyledContainerImage>
+                <RenderIf isTrue={src}>
                     <RenderIf isTrue={allowDelete}>
                         <StyledDeleteButton
                             variant="inverse"
                             size="medium"
                             icon={<Trash />}
                             onClick={openModalDelete}
-                            ref={deleteBtn}
                         />
+                        <StyledCheckMark />
                     </RenderIf>
-                    <StyledCheckMark />
                 </RenderIf>
-                <RenderIf isTrue={loading}>
-                    <StyledContainerSpinner>
-                        <Spinner type="arc" variant="brand" />
-                    </StyledContainerSpinner>
-                </RenderIf>
-            </StyledContainerImage>
+            </StyledRelative>
             <TruncatedText>{imageRef.name}</TruncatedText>
         </StyledFileContainer>
     );
