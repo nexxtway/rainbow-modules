@@ -117,6 +117,7 @@ export const Loading = styled.h1`
     margin-top: 3rem;
 `;
 
+/* stylelint-disable property-no-vendor-prefix */
 export const StyledCropperContainer = styled.div`
     .cropper-container {
         direction: ltr;
@@ -170,9 +171,10 @@ export const StyledCropperContainer = styled.div`
     }
 
     .cropper-view-box {
+        box-shadow: 0 0 0 1px #0000;
+        outline: 0;
         display: block;
         height: 100%;
-        outline: 1px solid #39f;
         outline-color: rgba(51, 153, 255, 0.75);
         overflow: hidden;
         width: 100%;
@@ -246,13 +248,15 @@ export const StyledCropperContainer = styled.div`
     }
 
     .cropper-face {
-        background-color: #fff;
+        background-color: inherit;
         left: 0;
         top: 0;
     }
 
     .cropper-line {
         background-color: #39f;
+        background-color: #fff;
+        border-color: #fff;
     }
 
     .cropper-line.line-e {
@@ -284,7 +288,7 @@ export const StyledCropperContainer = styled.div`
     }
 
     .cropper-point {
-        background-color: #39f;
+        background-color: #fff;
         height: 5px;
         opacity: 0.75;
         width: 5px;
@@ -319,24 +323,28 @@ export const StyledCropperContainer = styled.div`
     }
 
     .cropper-point.point-ne {
+        box-shadow: 2px -2px 0 #fff, 2px -2px 0 #fff;
         cursor: nesw-resize;
         right: -3px;
         top: -3px;
     }
 
     .cropper-point.point-nw {
+        box-shadow: -2px -2px 0 #fff, -2px -2px 0 #fff;
         cursor: nwse-resize;
         left: -3px;
         top: -3px;
     }
 
     .cropper-point.point-sw {
+        box-shadow: -2px 2px 0 #fff, -2px 2px 0 #fff;
         bottom: -3px;
         cursor: nesw-resize;
         left: -3px;
     }
 
     .cropper-point.point-se {
+        box-shadow: 2px 2px 0 #fff, 2px 2px 0 #fff;
         bottom: -3px;
         cursor: nwse-resize;
         height: 20px;
@@ -426,15 +434,6 @@ export const StyledCropperContainer = styled.div`
         border-radius: 50%;
     }
 
-    .cropper-line {
-        background-color: #fff;
-        border-color: #fff;
-    }
-
-    .cropper-point {
-        background-color: #fff;
-    }
-
     .cropper-point.point-sw,
     .cropper-point.point-nw,
     .cropper-point.point-se,
@@ -442,22 +441,6 @@ export const StyledCropperContainer = styled.div`
         background: transparent;
         height: 18px;
         width: 18px;
-    }
-
-    .cropper-point.point-sw {
-        box-shadow: -2px 2px 0 #fff, -2px 2px 0 #fff;
-    }
-
-    .cropper-point.point-nw {
-        box-shadow: -2px -2px 0 #fff, -2px -2px 0 #fff;
-    }
-
-    .cropper-point.point-ne {
-        box-shadow: 2px -2px 0 #fff, 2px -2px 0 #fff;
-    }
-
-    .cropper-point.point-se {
-        box-shadow: 2px 2px 0 #fff, 2px 2px 0 #fff;
     }
 
     .cropper-point.point-n,
@@ -472,14 +455,5 @@ export const StyledCropperContainer = styled.div`
         border-right-color: #fff;
         width: 3px;
         height: 12px;
-    }
-
-    .cropper-face {
-        background-color: inherit;
-    }
-
-    .cropper-view-box {
-        box-shadow: 0 0 0 1px #0000;
-        outline: 0;
     }
 `;

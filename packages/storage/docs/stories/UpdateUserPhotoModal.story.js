@@ -21,7 +21,7 @@ const StyledButton = styled(Button)`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: -25px 0px 0px 40px;
+    margin: -25px 0 0 40px;
 `;
 
 const StyledAvatar = styled(Avatar)`
