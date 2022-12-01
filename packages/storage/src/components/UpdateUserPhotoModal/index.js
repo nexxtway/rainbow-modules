@@ -1,78 +1,79 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { Avatar, Button, Modal, RenderIf, Spinner } from 'react-rainbow-components';
-import { Cropper } from 'react-cropper';
+import { Button, RenderIf, Spinner } from 'react-rainbow-components';
 import { useFirebaseApp, useCurrentUserState } from '@rainbow-modules/firebase-hooks';
 import { nanoid } from 'nanoid';
-import { getStorage, ref, uploadBytes, uploadString , getDownloadURL, uploadBytesResumable } from 'firebase/storage';
+import {
+    getStorage,
+    ref,
+    getDownloadURL,
+    uploadBytesResumable,
+    deleteObject,
+} from 'firebase/storage';
 import { updateProfile } from 'firebase/auth';
-import 'cropperjs/dist/cropper.css';
 import EditRemoveDialog from './editRemoveDialog';
 import {
-    StyledModalExample,
+    StyledModalEdit,
     StyledModalFooter,
     StyledButtonFocus,
+    StyledCropperContainer,
     StyledCropper,
     StyledModal,
     Loading,
+    StyledIcon,
 } from './styled';
 import RotateLeftIcon from './rotateLeftIcon';
 
 export default function UpdateUserPhotoModal(props) {
-    const { path, onChangePhotoUrl ,bucket } = props;
+    const { path, photo, bucket, isOpen, onRequestClose, avatarInitials, handlePhotoUrl } = props;
 
     const app = useFirebaseApp();
     const { user, reload } = useCurrentUserState() || {};
-    const pathProp = path || `users/${user ? user.uid : ''}/profilePhoto`;
-    onChangePhotoUrl(pathProp);
 
-    const [isOpen, setIsOpen] = useState(false);
+    const pathProp = path || `users/${user ? user.uid : ''}/profilePhoto`;
+    const bucketProp = bucket || `${app.options.storageBucket}`;
+
+    const [photoURL, setPhotoURL] = useState(photo);
     const [isOpenEdit, setIsOpenEdit] = useState(false);
-    const [photoURL, setPhotoURL] = useState(pathProp);
     const cropperRef = useRef(null);
-    const [croppedImg, setCroppedImg] = useState(pathProp);
     const [loading, setLoading] = useState(false);
 
     const handleOnClickEdit = () => {
+        onRequestClose();
         setIsOpenEdit(true);
-        setIsOpen(false);
-    };
-
-    const handleOnClick = () => {
-        setIsOpen(true);
-    };
-
-    const handleImageSrc = (imageDataUrl) => {
-        setPhotoURL(imageDataUrl);
     };
 
     const onCrop = async () => {
         const imageElement = cropperRef ? cropperRef.current : null;
         const cropper = imageElement ? imageElement.cropper : null;
-        const storage = getStorage(app);
-        const photoRef = ref(storage, `${path}/${nanoid()}`);
-        const blob = await fetch(cropper.getCroppedCanvas().toDataURL()).then(r => r.blob());
+        const storage = getStorage(app, bucketProp);
+        const photoRef = ref(storage, `${pathProp}/${nanoid()}`);
+        const blob = await fetch(cropper.getCroppedCanvas().toDataURL()).then((r) => r.blob());
 
         const uploadTask = uploadBytesResumable(photoRef, blob);
-        uploadTask.on('state_changed', (snapshot) => {
-            const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-            if (progress !== 100) {
-                setLoading(true);
-            }
-        }, (error) => {
-            console.log(error);
-        }, async () => {
-            setIsOpenEdit(false);
-            setLoading(false);
-            const photoURL = await getDownloadURL(photoRef);
-            console.log(photoURL);
-            setCroppedImg(photoURL);
-            onChangePhotoUrl(photoURL);
-            await updateProfile(user, {
-                photoURL,
-            });
-            await reload();
-        });
+        uploadTask.on(
+            'state_changed',
+            (snapshot) => {
+                const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                if (progress !== 100) {
+                    setLoading(true);
+                }
+            },
+            (error) => {
+                console.log(error);
+            },
+            async () => {
+                setIsOpenEdit(false);
+                setLoading(false);
+                const photoURL = await getDownloadURL(photoRef);
+                setPhotoURL(photoURL);
+                await updateProfile(user, {
+                    photoURL,
+                });
+                await reload();
+                handlePhotoUrl(photoURL);
+            },
+        );
     };
 
     const onClickRotate = () => {
@@ -81,33 +82,40 @@ export default function UpdateUserPhotoModal(props) {
         cropper.rotate(90);
     };
 
+    const handleOnClickRemove = async () => {
+        const storage = getStorage(app);
+        const photoRef = ref(storage, photoURL);
+        await deleteObject(photoRef)
+            .then(() => {
+                updateProfile(user, {
+                    photoURL: '',
+                }).then(() => {
+                    setPhotoURL('');
+                    setIsOpenEdit(false);
+                    onRequestClose();
+                    reload().then(() => {
+                        handlePhotoUrl('');
+                    });
+                });
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
+
     return (
         <>
-            <div className="rainbow-p-vertical_large rainbow-p-left_medium rainbow-flex rainbow-align_center">
-                <div className="rainbow-m-horizontal_medium">
-                    <Avatar
-                        src={croppedImg}
-                        assistiveText="Jose Leandro"
-                        title="Jose Leandro"
-                        size="large"
-                    />
-                    <Button
-                        id="button-1"
-                        variant="neutral"
-                        label="Change Profile Picture"
-                        onClick={handleOnClick}
-                    />
-                </div>
-            </div>
-            <StyledModal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
+            <StyledModal isOpen={isOpen} onRequestClose={onRequestClose}>
                 <EditRemoveDialog
-                    imageSrc={croppedImg}
+                    imageSrc={photo}
+                    avatarInitials={avatarInitials}
                     handleOnClickEdit={handleOnClickEdit}
-                    handleImageSrc={handleImageSrc}
+                    handleImageSrc={setPhotoURL}
+                    handleOnClickRemove={handleOnClickRemove}
                 />
             </StyledModal>
             <RenderIf isTrue={loading}>
-                <StyledModalExample
+                <StyledModalEdit
                     isOpen={loading}
                     onRequestClose={() => setLoading(false)}
                     title="Crop & Rotate"
@@ -116,10 +124,10 @@ export default function UpdateUserPhotoModal(props) {
                         <Spinner size="large" type="arc" variant="brand" />
                         <Loading>Loading your photo</Loading>
                     </div>
-                </StyledModalExample>
+                </StyledModalEdit>
             </RenderIf>
             <RenderIf isTrue={!loading && isOpenEdit}>
-                <StyledModalExample
+                <StyledModalEdit
                     title="Crop & Rotate"
                     isOpen={isOpenEdit}
                     onRequestClose={() => setIsOpenEdit(false)}
@@ -130,13 +138,12 @@ export default function UpdateUserPhotoModal(props) {
                                 className="rainbow-m-around_medium"
                                 onClick={onClickRotate}
                             >
-                                <RotateLeftIcon style={{ marginRight: '10px' }} />
+                                <StyledIcon as={RotateLeftIcon} />
                                 Rotate
                             </StyledButtonFocus>
                             <Button
                                 label="Save as profile Picture"
                                 variant="brand"
-                                style={{ backgroundColor: '#1894AB', borderColor: '#1894AB' }}
                                 onClick={onCrop}
                             >
                                 Save as profile picture
@@ -144,15 +151,9 @@ export default function UpdateUserPhotoModal(props) {
                         </StyledModalFooter>
                     }
                 >
-                    <StyledCropper>
-                        <Cropper
+                    <StyledCropperContainer>
+                        <StyledCropper
                             src={photoURL}
-                            style={{
-                                MaxHeight: '400px',
-                                MaxWidth: '700px',
-                                height: '400px',
-                                width: '700px',
-                            }}
                             initialAspectRatio={1}
                             guides={false}
                             ref={cropperRef}
@@ -165,21 +166,29 @@ export default function UpdateUserPhotoModal(props) {
                             checkOrientation={false}
                             center={false}
                         />
-                    </StyledCropper>
-                </StyledModalExample>
+                    </StyledCropperContainer>
+                </StyledModalEdit>
             </RenderIf>
         </>
     );
 }
 
 UpdateUserPhotoModal.propTypes = {
-    pathProp: PropTypes.string,
+    path: PropTypes.string,
+    photo: PropTypes.string,
     bucket: PropTypes.string,
-    onPhotoUpdated: PropTypes.func,
+    isOpen: PropTypes.bool,
+    onRequestClose: PropTypes.func,
+    avatarInitials: PropTypes.string,
+    handlePhotoUrl: PropTypes.func,
 };
 
 UpdateUserPhotoModal.defaultProps = {
-    pathProp: undefined,
+    path: undefined,
+    photo: undefined,
     bucket: undefined,
-    onPhotoUpdated: () => {},
+    isOpen: false,
+    onRequestClose: () => {},
+    avatarInitials: undefined,
+    handlePhotoUrl: () => {},
 };
