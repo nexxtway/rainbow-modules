@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import { Modal, Button, Avatar } from 'react-rainbow-components';
+import { Modal, Button, Avatar, ButtonIcon } from 'react-rainbow-components';
 import { Cropper } from 'react-cropper';
+import { ArrowLeft } from '@rainbow-modules/icons';
 
 export const Container = styled.div`
     display: flex;
@@ -25,6 +26,36 @@ export const StyledIcon = styled.span`
 export const StyledAvatar = styled(Avatar)`
     width: 200px;
     height: 200px;
+    font-size: 60px;
+`;
+
+export const StyledInput = styled.input`
+    display: none;
+`;
+
+export const StyledUserIcon = styled.span`
+    width: 70px;
+    height: 70px;
+`;
+
+export const StyledPreviousButton = styled(ButtonIcon)`
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    color: ${(props) => props.theme.rainbow.palette.text.header};
+`;
+
+export const StyledPreviousIcon = styled(ArrowLeft)`
+    width: 40px !important;
+    height: 40px !important;
+`;
+
+export const StyledArrowLeftIcon = styled.span`
+    width: 40px !important;
+    height: 40px !important;
 `;
 
 export const StyledHeader = styled.h1`
@@ -44,7 +75,7 @@ export const StyledParagraph = styled.p`
     font-size: 14px;
     line-height: 150%;
     margin-bottom: 35px;
-    color: #4f5657e5;
+    color: ${(props) => props.theme.rainbow.palette.text.header};
 `;
 
 export const StyledButtons = styled.div`

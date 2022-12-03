@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Edit, Trash, Upload } from '@rainbow-modules/icons';
+import { Edit, Trash, Upload, User } from '@rainbow-modules/icons';
 import { RenderIf } from 'react-rainbow-components';
 import {
     Container,
@@ -9,38 +9,34 @@ import {
     StyledButtons,
     StyledHeader,
     StyledIcon,
+    StyledInput,
     StyledParagraph,
+    StyledUserIcon,
 } from './styled';
 
 const EditRemoveDialog = (props) => {
-    const {
-        imageSrc,
-        handleOnClickEdit,
-        handleOnClickRemove,
-        handleImageSrc,
-        avatarInitials,
-    } = props;
+    const { imageSrc, onClickEdit, onClickRemove, onChangeImageSrc, avatarInitials } = props;
     const hiddenFileInput = React.useRef(null);
 
     const handleEdit = () => {
         hiddenFileInput.current.click();
     };
 
-    function readFile(file) {
+    const readFile = (file) => {
         return new Promise((resolve) => {
             const reader = new FileReader();
             reader.addEventListener('load', () => resolve(reader.result), false);
             reader.readAsDataURL(file);
         });
-    }
+    };
 
     const onFileChange = async (e) => {
         const file = e.target.files[0];
         if (e.target.files && e.target.files.length > 0) {
             const imageDataUrl = await readFile(file);
-            handleImageSrc(imageDataUrl);
+            onChangeImageSrc(imageDataUrl);
         }
-        handleOnClickEdit();
+        onClickEdit();
     };
 
     return (
@@ -50,12 +46,15 @@ const EditRemoveDialog = (props) => {
                 A picture helps people recognize you and lets you know when you&apos;re sign in to
                 your account.
             </StyledParagraph>
-            <StyledAvatar src={imageSrc} initials={avatarInitials} />
-            <input
+            <StyledAvatar
+                src={imageSrc}
+                initials={avatarInitials}
+                icon={<StyledUserIcon as={User} />}
+            />
+            <StyledInput
                 type="file"
                 ref={hiddenFileInput}
                 onChange={onFileChange}
-                style={{ display: 'none' }}
                 accept="image/*"
             />
             <RenderIf isTrue={imageSrc}>
@@ -64,7 +63,7 @@ const EditRemoveDialog = (props) => {
                         <StyledIcon as={Edit} />
                         Edit
                     </StyledButton>
-                    <StyledButton variant="outline-brand" onClick={handleOnClickRemove}>
+                    <StyledButton variant="outline-brand" onClick={onClickRemove}>
                         <StyledIcon as={Trash} />
                         Remove
                     </StyledButton>
@@ -84,17 +83,17 @@ const EditRemoveDialog = (props) => {
 
 EditRemoveDialog.propTypes = {
     imageSrc: PropTypes.string,
-    handleOnClickEdit: PropTypes.func,
-    handleOnClickRemove: PropTypes.func,
-    handleImageSrc: PropTypes.func,
+    onClickEdit: PropTypes.func,
+    onClickRemove: PropTypes.func,
+    onChangeImageSrc: PropTypes.func,
     avatarInitials: PropTypes.string,
 };
 
 EditRemoveDialog.defaultProps = {
     imageSrc: undefined,
-    handleOnClickEdit: () => {},
-    handleOnClickRemove: () => {},
-    handleImageSrc: () => {},
+    onClickEdit: () => {},
+    onClickRemove: () => {},
+    onChangeImageSrc: () => {},
     avatarInitials: '',
 };
 

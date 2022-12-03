@@ -21,11 +21,14 @@ import {
     StyledModal,
     Loading,
     StyledIcon,
+    StyledPreviousButton,
+    StyledArrowLeftIcon,
 } from './styled';
 import RotateLeftIcon from './rotateLeftIcon';
+import { ArrowLeft } from '@rainbow-modules/icons';
 
 export default function UpdateUserPhotoModal(props) {
-    const { path, photo, bucket, isOpen, onRequestClose, avatarInitials, handlePhotoUrl } = props;
+    const { path, photo, bucket, isOpen, onRequestClose, avatarInitials, onPhotoUpdated } = props;
 
     const app = useFirebaseApp();
     const { user, reload } = useCurrentUserState() || {};
@@ -36,10 +39,9 @@ export default function UpdateUserPhotoModal(props) {
     const [photoURL, setPhotoURL] = useState(photo);
     const [isOpenEdit, setIsOpenEdit] = useState(false);
     const cropperRef = useRef(null);
-    const [loading, setLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleOnClickEdit = () => {
-        onRequestClose();
         setIsOpenEdit(true);
     };
 
@@ -48,7 +50,7 @@ export default function UpdateUserPhotoModal(props) {
         const cropper = imageElement ? imageElement.cropper : null;
         const storage = getStorage(app, bucketProp);
         const photoRef = ref(storage, `${pathProp}/${nanoid()}`);
-        const blob = await fetch(cropper.getCroppedCanvas().toDataURL()).then((r) => r.blob());
+        const blob = await (await fetch(cropper.getCroppedCanvas().toDataURL())).blob();
 
         const uploadTask = uploadBytesResumable(photoRef, blob);
         uploadTask.on(
@@ -56,22 +58,23 @@ export default function UpdateUserPhotoModal(props) {
             (snapshot) => {
                 const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
                 if (progress !== 100) {
-                    setLoading(true);
+                    setIsLoading(true);
                 }
             },
             (error) => {
                 console.log(error);
             },
             async () => {
+                onRequestClose();
                 setIsOpenEdit(false);
-                setLoading(false);
+                setIsLoading(false);
                 const photoURL = await getDownloadURL(photoRef);
                 setPhotoURL(photoURL);
                 await updateProfile(user, {
                     photoURL,
                 });
                 await reload();
-                handlePhotoUrl(photoURL);
+                onPhotoUpdated(photoURL);
             },
         );
     };
@@ -85,22 +88,19 @@ export default function UpdateUserPhotoModal(props) {
     const handleOnClickRemove = async () => {
         const storage = getStorage(app);
         const photoRef = ref(storage, photoURL);
-        await deleteObject(photoRef)
-            .then(() => {
-                updateProfile(user, {
-                    photoURL: '',
-                }).then(() => {
-                    setPhotoURL('');
-                    setIsOpenEdit(false);
-                    onRequestClose();
-                    reload().then(() => {
-                        handlePhotoUrl('');
-                    });
-                });
-            })
-            .catch((error) => {
-                console.log(error);
+        try {
+            await deleteObject(photoRef);
+            await updateProfile(user, {
+                photoURL: '',
             });
+            setPhotoURL('');
+            setIsOpenEdit(false);
+            onRequestClose();
+            await reload();
+            onPhotoUpdated('');
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     return (
@@ -109,15 +109,15 @@ export default function UpdateUserPhotoModal(props) {
                 <EditRemoveDialog
                     imageSrc={photo}
                     avatarInitials={avatarInitials}
-                    handleOnClickEdit={handleOnClickEdit}
-                    handleImageSrc={setPhotoURL}
-                    handleOnClickRemove={handleOnClickRemove}
+                    onClickEdit={handleOnClickEdit}
+                    onChangeImageSrc={setPhotoURL}
+                    onClickRemove={handleOnClickRemove}
                 />
             </StyledModal>
-            <RenderIf isTrue={loading}>
+            <RenderIf isTrue={isLoading}>
                 <StyledModalEdit
-                    isOpen={loading}
-                    onRequestClose={() => setLoading(false)}
+                    isOpen={isLoading}
+                    onRequestClose={() => setIsLoading(false)}
                     title="Crop & Rotate"
                 >
                     <div className="rainbow-p-vertical_xx-large">
@@ -126,11 +126,14 @@ export default function UpdateUserPhotoModal(props) {
                     </div>
                 </StyledModalEdit>
             </RenderIf>
-            <RenderIf isTrue={!loading && isOpenEdit}>
+            <RenderIf isTrue={!isLoading && isOpenEdit}>
                 <StyledModalEdit
                     title="Crop & Rotate"
                     isOpen={isOpenEdit}
-                    onRequestClose={() => setIsOpenEdit(false)}
+                    onRequestClose={() => {
+                        setIsOpenEdit(false);
+                        onRequestClose();
+                    }}
                     footer={
                         <StyledModalFooter className="rainbow-flex rainbow-justify_spread">
                             <StyledButtonFocus
@@ -151,6 +154,11 @@ export default function UpdateUserPhotoModal(props) {
                         </StyledModalFooter>
                     }
                 >
+                    <StyledPreviousButton
+                        onClick={() => setIsOpenEdit(false)}
+                        variant="base"
+                        icon={<StyledArrowLeftIcon as={ArrowLeft} />}
+                    />
                     <StyledCropperContainer>
                         <StyledCropper
                             src={photoURL}
@@ -180,7 +188,7 @@ UpdateUserPhotoModal.propTypes = {
     isOpen: PropTypes.bool,
     onRequestClose: PropTypes.func,
     avatarInitials: PropTypes.string,
-    handlePhotoUrl: PropTypes.func,
+    onPhotoUpdated: PropTypes.func,
 };
 
 UpdateUserPhotoModal.defaultProps = {
@@ -190,5 +198,5 @@ UpdateUserPhotoModal.defaultProps = {
     isOpen: false,
     onRequestClose: () => {},
     avatarInitials: undefined,
-    handlePhotoUrl: () => {},
+    onPhotoUpdated: () => {},
 };

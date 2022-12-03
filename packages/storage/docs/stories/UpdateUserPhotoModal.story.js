@@ -7,7 +7,7 @@ import {
 } from '@rainbow-modules/auth';
 import { Avatar, Button } from 'react-rainbow-components';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { Camera } from '@rainbow-modules/icons';
+import { Camera, User } from '@rainbow-modules/icons';
 import styled from 'styled-components';
 import app from '../../../../firebase';
 import UpdateUserPhotoModal from '../../src/components/UpdateUserPhotoModal';
@@ -29,26 +29,26 @@ const StyledAvatar = styled(Avatar)`
     height: 70px;
 `;
 
+const getInitials = (name) => {
+    if (name) {
+        const names = name.split(' ');
+        const initials =
+            names[0].substring(0, 1).toUpperCase() + names[1].substring(0, 1).toUpperCase();
+        return initials;
+    }
+    return '';
+};
+
 export const BasicUpdateUserPhotoModal = () => {
     const [photoURL, setPhotoURL] = useState();
     const [isOpen, setIsOpen] = useState(false);
     const [initials, setInitials] = useState();
 
-    const getInitials = (name) => {
-        if (name) {
-            const names = name.split(' ');
-            const initials =
-                names[0].substring(0, 1).toUpperCase() + names[1].substring(0, 1).toUpperCase();
-            return initials;
-        }
-        return '';
-    };
-
     onAuthStateChanged(getAuth(app), (user) => {
         if (user && user.photoURL) {
             setPhotoURL(user.photoURL);
         }
-        setInitials(user.displayName ? getInitials(user.displayName) : user.email);
+        setInitials(user.displayName ? getInitials(user.displayName) : null);
     });
 
     const handleOnClick = () => {
@@ -66,6 +66,7 @@ export const BasicUpdateUserPhotoModal = () => {
                         <StyledAvatar
                             src={photoURL}
                             initials={initials}
+                            icon={<User />}
                             assistiveText="Jose Leandro"
                             title="Jose Leandro"
                             size="large"
@@ -77,13 +78,11 @@ export const BasicUpdateUserPhotoModal = () => {
                 </div>
                 <UpdateUserPhotoModal
                     photo={photoURL}
-                    bucket="video-labeling"
-                    path="usertest"
                     avatarInitials={initials}
                     onChangePhotoUrl={setPhotoURL}
                     isOpen={isOpen}
                     onRequestClose={() => setIsOpen(false)}
-                    handlePhotoUrl={(photoURL) => setPhotoURL(photoURL)}
+                    onPhotoUpdated={(photoURL) => setPhotoURL(photoURL)}
                 />
             </WhenAuthenticated>
         </RainbowFirebaseApp>
