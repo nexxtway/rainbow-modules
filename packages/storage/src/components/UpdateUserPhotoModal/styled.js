@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Modal, Button, Avatar, ButtonIcon } from 'react-rainbow-components';
 import { Cropper } from 'react-cropper';
-import { ArrowLeft } from '@rainbow-modules/icons';
+import { Trash } from '@rainbow-modules/icons';
 
 export const Container = styled.div`
     display: flex;
@@ -10,6 +10,13 @@ export const Container = styled.div`
     flex-direction: column;
     padding: 2rem;
     border: 0;
+`;
+
+export const TrashIcon = styled(Trash)`
+    width: 60px;
+    height: 60px;
+    margin: 0 12px 0 0;
+    color: ${(props) => props.theme.rainbow.palette.error.main};
 `;
 
 export const StyledImg = styled.img`
@@ -46,16 +53,6 @@ export const StyledPreviousButton = styled(ButtonIcon)`
     width: 40px;
     height: 40px;
     color: ${(props) => props.theme.rainbow.palette.text.header};
-`;
-
-export const StyledPreviousIcon = styled(ArrowLeft)`
-    width: 40px !important;
-    height: 40px !important;
-`;
-
-export const StyledArrowLeftIcon = styled.span`
-    width: 40px !important;
-    height: 40px !important;
 `;
 
 export const StyledHeader = styled.h1`

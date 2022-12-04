@@ -11,6 +11,8 @@ import {
     deleteObject,
 } from 'firebase/storage';
 import { updateProfile } from 'firebase/auth';
+import { ArrowLeft } from '@rainbow-modules/icons';
+import { confirmModal } from '@rainbow-modules/app';
 import EditRemoveDialog from './editRemoveDialog';
 import {
     StyledModalEdit,
@@ -22,10 +24,9 @@ import {
     Loading,
     StyledIcon,
     StyledPreviousButton,
-    StyledArrowLeftIcon,
+    TrashIcon,
 } from './styled';
 import RotateLeftIcon from './rotateLeftIcon';
-import { ArrowLeft } from '@rainbow-modules/icons';
 
 export default function UpdateUserPhotoModal(props) {
     const { path, photo, bucket, isOpen, onRequestClose, avatarInitials, onPhotoUpdated } = props;
@@ -86,20 +87,28 @@ export default function UpdateUserPhotoModal(props) {
     };
 
     const handleOnClickRemove = async () => {
-        const storage = getStorage(app);
-        const photoRef = ref(storage, photoURL);
-        try {
-            await deleteObject(photoRef);
-            await updateProfile(user, {
-                photoURL: '',
-            });
-            setPhotoURL('');
-            setIsOpenEdit(false);
-            onRequestClose();
-            await reload();
-            onPhotoUpdated('');
-        } catch (error) {
-            console.log(error);
+        const result = await confirmModal({
+            icon: <TrashIcon />,
+            variant: 'destructive',
+            header: 'Delete Content',
+            question: "This item will be deleted immediately. You can't undo this action.",
+            okButtonLabel: 'Delete',
+        });
+        if (result) {
+            const storage = getStorage(app);
+            const photoRef = ref(storage, photoURL);
+            try {
+                await deleteObject(photoRef);
+                await updateProfile(user, {
+                    photoURL: '',
+                });
+                setPhotoURL('');
+                setIsOpenEdit(false);
+                await reload();
+                onPhotoUpdated('');
+            } catch (error) {
+                console.log(error);
+            }
         }
     };
 
@@ -157,7 +166,7 @@ export default function UpdateUserPhotoModal(props) {
                     <StyledPreviousButton
                         onClick={() => setIsOpenEdit(false)}
                         variant="base"
-                        icon={<StyledArrowLeftIcon as={ArrowLeft} />}
+                        icon={<ArrowLeft />}
                     />
                     <StyledCropperContainer>
                         <StyledCropper
