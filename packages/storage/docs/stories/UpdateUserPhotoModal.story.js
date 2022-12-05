@@ -40,15 +40,11 @@ const getInitials = (name) => {
 };
 
 export const BasicUpdateUserPhotoModal = () => {
-    const [photoURL, setPhotoURL] = useState();
+    const [user, setUser] = useState();
     const [isOpen, setIsOpen] = useState(false);
-    const [initials, setInitials] = useState();
 
     onAuthStateChanged(getAuth(app), (user) => {
-        if (user && user.photoURL) {
-            setPhotoURL(user.photoURL);
-        }
-        setInitials(user.displayName ? getInitials(user.displayName) : null);
+        setUser(user);
     });
 
     const handleOnClick = () => {
@@ -64,26 +60,16 @@ export const BasicUpdateUserPhotoModal = () => {
                 <div className="rainbow-p-vertical_large rainbow-p-left_medium rainbow-flex rainbow-align_center">
                     <div className="rainbow-m-horizontal_medium">
                         <StyledAvatar
-                            src={photoURL}
-                            initials={initials}
+                            src={user ? user.photoURL : null}
+                            initials={user ? getInitials(user.displayName) : null}
                             icon={<User />}
-                            assistiveText="Jose Leandro"
-                            title="Jose Leandro"
-                            size="large"
                         />
                         <StyledButton id="button-1" variant="neutral" onClick={handleOnClick}>
                             <Camera />
                         </StyledButton>
                     </div>
                 </div>
-                <UpdateUserPhotoModal
-                    photo={photoURL}
-                    avatarInitials={initials}
-                    onChangePhotoUrl={setPhotoURL}
-                    isOpen={isOpen}
-                    onRequestClose={() => setIsOpen(false)}
-                    onPhotoUpdated={(photoURL) => setPhotoURL(photoURL)}
-                />
+                <UpdateUserPhotoModal isOpen={isOpen} onRequestClose={() => setIsOpen(false)} />
             </WhenAuthenticated>
         </RainbowFirebaseApp>
     );

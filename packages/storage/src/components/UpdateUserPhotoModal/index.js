@@ -12,7 +12,7 @@ import {
 } from 'firebase/storage';
 import { updateProfile } from 'firebase/auth';
 import { ArrowLeft } from '@rainbow-modules/icons';
-import { confirmModal } from '@rainbow-modules/app';
+import { confirmModal, showAppMessage } from '@rainbow-modules/app';
 import EditRemoveDialog from './editRemoveDialog';
 import {
     StyledModalEdit,
@@ -25,22 +25,38 @@ import {
     StyledIcon,
     StyledPreviousButton,
     TrashIcon,
+    StyledErrorContainer,
+    StyledIconError,
 } from './styled';
 import RotateLeftIcon from './rotateLeftIcon';
 
+const getInitials = (name) => {
+    if (name) {
+        const names = name.split(' ');
+        const initials =
+            names[0].substring(0, 1).toUpperCase() + names[1].substring(0, 1).toUpperCase();
+        return initials;
+    }
+    return '';
+};
+
 export default function UpdateUserPhotoModal(props) {
-    const { path, photo, bucket, isOpen, onRequestClose, avatarInitials, onPhotoUpdated } = props;
+    const { path, bucket, isOpen, onRequestClose, onPhotoUpdated } = props;
 
     const app = useFirebaseApp();
     const { user, reload } = useCurrentUserState() || {};
 
+    const photoURL = user && user.photoURL ? user.photoURL : null;
+    const initials = user && user.displayName ? getInitials(user.displayName) : null;
+
     const pathProp = path || `users/${user ? user.uid : ''}/profilePhoto`;
     const bucketProp = bucket || `${app.options.storageBucket}`;
 
-    const [photoURL, setPhotoURL] = useState(photo);
-    const [isOpenEdit, setIsOpenEdit] = useState(false);
     const cropperRef = useRef(null);
+    const [uploadedImage, setUploadedImage] = useState();
+    const [isOpenEdit, setIsOpenEdit] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState();
 
     const handleOnClickEdit = () => {
         setIsOpenEdit(true);
@@ -63,19 +79,20 @@ export default function UpdateUserPhotoModal(props) {
                 }
             },
             (error) => {
-                console.log(error);
+                setIsLoading(false);
+                setError(error.message);
             },
             async () => {
-                onRequestClose();
-                setIsOpenEdit(false);
-                setIsLoading(false);
                 const photoURL = await getDownloadURL(photoRef);
-                setPhotoURL(photoURL);
                 await updateProfile(user, {
                     photoURL,
                 });
                 await reload();
+                setError(null);
+                setIsOpenEdit(false);
+                setIsLoading(false);
                 onPhotoUpdated(photoURL);
+                onRequestClose();
             },
         );
     };
@@ -102,12 +119,14 @@ export default function UpdateUserPhotoModal(props) {
                 await updateProfile(user, {
                     photoURL: '',
                 });
-                setPhotoURL('');
                 setIsOpenEdit(false);
                 await reload();
-                onPhotoUpdated('');
+                onPhotoUpdated(null);
             } catch (error) {
-                console.log(error);
+                showAppMessage({
+                    message: error.message,
+                    variant: 'error',
+                });
             }
         }
     };
@@ -116,10 +135,10 @@ export default function UpdateUserPhotoModal(props) {
         <>
             <StyledModal isOpen={isOpen} onRequestClose={onRequestClose}>
                 <EditRemoveDialog
-                    imageSrc={photo}
-                    avatarInitials={avatarInitials}
+                    imageSrc={photoURL}
+                    avatarInitials={initials}
                     onClickEdit={handleOnClickEdit}
-                    onChangeImageSrc={setPhotoURL}
+                    onChangeImageSrc={setUploadedImage}
                     onClickRemove={handleOnClickRemove}
                 />
             </StyledModal>
@@ -140,6 +159,7 @@ export default function UpdateUserPhotoModal(props) {
                     title="Crop & Rotate"
                     isOpen={isOpenEdit}
                     onRequestClose={() => {
+                        setError(null);
                         setIsOpenEdit(false);
                         onRequestClose();
                     }}
@@ -168,9 +188,15 @@ export default function UpdateUserPhotoModal(props) {
                         variant="base"
                         icon={<ArrowLeft />}
                     />
+                    <RenderIf isTrue={error}>
+                        <StyledErrorContainer>
+                            <StyledIconError />
+                            {error}
+                        </StyledErrorContainer>
+                    </RenderIf>
                     <StyledCropperContainer>
                         <StyledCropper
-                            src={photoURL}
+                            src={uploadedImage}
                             initialAspectRatio={1}
                             guides={false}
                             ref={cropperRef}
@@ -192,20 +218,16 @@ export default function UpdateUserPhotoModal(props) {
 
 UpdateUserPhotoModal.propTypes = {
     path: PropTypes.string,
-    photo: PropTypes.string,
     bucket: PropTypes.string,
     isOpen: PropTypes.bool,
     onRequestClose: PropTypes.func,
-    avatarInitials: PropTypes.string,
     onPhotoUpdated: PropTypes.func,
 };
 
 UpdateUserPhotoModal.defaultProps = {
     path: undefined,
-    photo: undefined,
     bucket: undefined,
     isOpen: false,
     onRequestClose: () => {},
-    avatarInitials: undefined,
     onPhotoUpdated: () => {},
 };

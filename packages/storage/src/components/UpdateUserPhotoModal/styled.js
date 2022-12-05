@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { Modal, Button, Avatar, ButtonIcon } from 'react-rainbow-components';
+import { Modal, Button, Avatar, ButtonIcon, Card } from 'react-rainbow-components';
 import { Cropper } from 'react-cropper';
-import { Trash } from '@rainbow-modules/icons';
+import { Error, Trash } from '@rainbow-modules/icons';
 
 export const Container = styled.div`
     display: flex;
@@ -53,6 +53,25 @@ export const StyledPreviousButton = styled(ButtonIcon)`
     width: 40px;
     height: 40px;
     color: ${(props) => props.theme.rainbow.palette.text.header};
+`;
+
+export const StyledErrorContainer = styled(Card)`
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 8px 16px;
+    margin: 0 0 16px 0;
+    background-color: ${(props) => props.theme.rainbow.palette.error.main};
+    color: ${(props) =>
+        props.theme.rainbow.palette.getContrastText(props.theme.rainbow.palette.error.main)};
+`;
+
+export const StyledIconError = styled(Error)`
+    width: 20px;
+    height: 20px;
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+    z-index: 1;
 `;
 
 export const StyledHeader = styled.h1`
