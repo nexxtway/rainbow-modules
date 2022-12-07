@@ -12,7 +12,7 @@ import {
 } from 'firebase/storage';
 import { updateProfile } from 'firebase/auth';
 import { ArrowLeft } from '@rainbow-modules/icons';
-import { confirmModal, showAppMessage } from '@rainbow-modules/app';
+import { confirmModal } from '@rainbow-modules/app';
 import EditRemoveDialog from './editRemoveDialog';
 import {
     StyledModalEdit,
@@ -27,6 +27,7 @@ import {
     TrashIcon,
     StyledErrorContainer,
     StyledIconError,
+    StyledErrorParagraph,
 } from './styled';
 import RotateLeftIcon from './rotateLeftIcon';
 
@@ -123,23 +124,28 @@ export default function UpdateUserPhotoModal(props) {
                 await reload();
                 onPhotoUpdated(null);
             } catch (error) {
-                showAppMessage({
-                    message: error.message,
-                    variant: 'error',
-                });
+                setError(error.message);
             }
         }
     };
 
     return (
         <>
-            <StyledModal isOpen={isOpen} onRequestClose={onRequestClose}>
+            <StyledModal
+                isOpen={isOpen}
+                onRequestClose={() => {
+                    setError(null);
+                    onRequestClose();
+                }}
+            >
                 <EditRemoveDialog
                     imageSrc={photoURL}
                     avatarInitials={initials}
+                    error={error}
                     onClickEdit={handleOnClickEdit}
                     onChangeImageSrc={setUploadedImage}
                     onClickRemove={handleOnClickRemove}
+                    onHideError={() => setError(null)}
                 />
             </StyledModal>
             <RenderIf isTrue={isLoading}>
@@ -184,14 +190,17 @@ export default function UpdateUserPhotoModal(props) {
                     }
                 >
                     <StyledPreviousButton
-                        onClick={() => setIsOpenEdit(false)}
+                        onClick={() => {
+                            setError(null);
+                            setIsOpenEdit(false);
+                        }}
                         variant="base"
                         icon={<ArrowLeft />}
                     />
                     <RenderIf isTrue={error}>
                         <StyledErrorContainer>
                             <StyledIconError />
-                            {error}
+                            <StyledErrorParagraph>{error}</StyledErrorParagraph>
                         </StyledErrorContainer>
                     </RenderIf>
                     <StyledCropperContainer>
