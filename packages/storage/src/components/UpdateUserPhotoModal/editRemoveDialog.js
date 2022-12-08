@@ -7,18 +7,30 @@ import {
     StyledAvatar,
     StyledButton,
     StyledButtons,
+    StyledErrorContainer,
+    StyledErrorParagraph,
     StyledHeader,
     StyledIcon,
+    StyledIconError,
     StyledInput,
     StyledParagraph,
     StyledUserIcon,
 } from './styled';
 
 const EditRemoveDialog = (props) => {
-    const { imageSrc, onClickEdit, onClickRemove, onChangeImageSrc, avatarInitials } = props;
+    const {
+        imageSrc,
+        onClickEdit,
+        onClickRemove,
+        onChangeImageSrc,
+        avatarInitials,
+        error,
+        onHideError,
+    } = props;
     const hiddenFileInput = React.useRef(null);
 
     const handleEdit = () => {
+        onHideError();
         hiddenFileInput.current.click();
     };
 
@@ -46,6 +58,12 @@ const EditRemoveDialog = (props) => {
                 A picture helps people recognize you and lets you know when you&apos;re sign in to
                 your account.
             </StyledParagraph>
+            <RenderIf isTrue={error}>
+                <StyledErrorContainer>
+                    <StyledIconError />
+                    <StyledErrorParagraph>{error}</StyledErrorParagraph>
+                </StyledErrorContainer>
+            </RenderIf>
             <StyledAvatar
                 src={imageSrc}
                 initials={avatarInitials}
@@ -87,6 +105,8 @@ EditRemoveDialog.propTypes = {
     onClickRemove: PropTypes.func,
     onChangeImageSrc: PropTypes.func,
     avatarInitials: PropTypes.string,
+    error: PropTypes.string,
+    onHideError: PropTypes.func,
 };
 
 EditRemoveDialog.defaultProps = {
@@ -95,6 +115,8 @@ EditRemoveDialog.defaultProps = {
     onClickRemove: () => {},
     onChangeImageSrc: () => {},
     avatarInitials: '',
+    error: null,
+    onHideError: () => {},
 };
 
 export default EditRemoveDialog;

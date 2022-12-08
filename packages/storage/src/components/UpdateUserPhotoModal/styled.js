@@ -59,7 +59,7 @@ export const StyledErrorContainer = styled(Card)`
     width: 100%;
     display: flex;
     flex-direction: row;
-    padding: 8px 16px;
+    padding: 8px 10px;
     margin: 0 0 16px 0;
     background-color: ${(props) => props.theme.rainbow.palette.error.main};
     color: ${(props) =>
@@ -70,8 +70,12 @@ export const StyledIconError = styled(Error)`
     width: 20px;
     height: 20px;
     margin-top: 0.5rem;
-    margin-right: 1rem;
+    margin-right: 0.8rem;
     z-index: 1;
+`;
+
+export const StyledErrorParagraph = styled.p`
+    width: 89%;
 `;
 
 export const StyledHeader = styled.h1`
