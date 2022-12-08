@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import UpdateUserPhotoModal from '../../src/components/UpdateUserPhotoModal';
+import * as stories from '../stories/UpdateUserPhotoModal.story.js';
+
+<Meta title="Modules/Storage/Components" component={UpdateUserPhotoModal} />
+
+# Overview
+
+`UpdateUserPhotoModal` is a component for managing the user profile photo. It is built using Firebase, and all images will be stored on Firebase Storage.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="UpdateUserPhotoModal">{stories.BasicUpdateUserPhotoModal()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={UpdateUserPhotoModal} />
