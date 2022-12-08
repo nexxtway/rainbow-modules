@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import useStorageRef from './useStorageRef';
-import { attachMetadata, sortByDate } from '../helpers';
+import { attachMetadata, sortByDate, ref, getDownloadURL, listAll, list } from '../helpers';
 
 export default function useImageRefs(props) {
     const { path, filter, maxResults: maxResultsProp, onError } = props;
@@ -14,19 +14,20 @@ export default function useImageRefs(props) {
                 const imagesFiltered = [];
                 await Promise.all(
                     filter.map(async (name) => {
-                        const imageRef = storageRef.child(`${path}/${name}`);
                         try {
-                            await imageRef.getDownloadURL();
+                            const imageRef = await ref(storageRef, `${path}/${name}`);
+                            await getDownloadURL(imageRef);
                             imagesFiltered.push(imageRef);
                         } catch (error) {
                             onError(error);
                         }
                     }),
                 );
-                setImageRefs(imagesFiltered.slice(0, maxResults));
+                setImageRefs(await attachMetadata(imagesFiltered.slice(0, maxResults)));
             } else if (typeof filter === 'function') {
                 try {
-                    const { items } = await storageRef.child(path).listAll();
+                    const imagesRef = await ref(storageRef, path);
+                    const { items } = await listAll(imagesRef);
                     const filteredList = items.filter((ref) => filter(ref)).slice(0, maxResults);
                     setImageRefs(await sortByDate(await attachMetadata(filteredList)));
                 } catch (error) {
@@ -35,7 +36,8 @@ export default function useImageRefs(props) {
                 }
             } else {
                 try {
-                    const { items } = await storageRef.child(path).list({ maxResults });
+                    const imagesRef = await ref(storageRef, path);
+                    const { items } = await list(imagesRef, { maxResults });
                     setImageRefs(await sortByDate(await attachMetadata(items)));
                 } catch (error) {
                     onError(error);
