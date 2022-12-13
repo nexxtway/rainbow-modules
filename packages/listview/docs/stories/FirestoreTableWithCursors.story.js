@@ -8,7 +8,7 @@ import FirestoreTableWithCursors from '../../src/components/FirestoreTableWithCu
 export const BasicFirestoreTableWithPageSize = () => {
     return (
         <RainbowFirebaseApp app={app}>
-            <FirestoreTableWithCursors collection="books" pageSize={1}>
+            <FirestoreTableWithCursors collection="/books" pageSize={1}>
                 <Column field="id" header="Id" />
                 <Column field="name" header="Name" />
             </FirestoreTableWithCursors>

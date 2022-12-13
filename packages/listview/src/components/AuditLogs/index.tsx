@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useCallback, useRef, useState } from 'react';
-import { useFirebaseApp } from '@rainbow-modules/firebase-hooks';
+import useFirestore from '../../hooks/useFirestore';
 import { AuditLogsProps, ContextType, Filters } from './types';
 import AuditLogsHeader from './header';
 import { Provider } from './context';
@@ -8,7 +8,7 @@ import getDatesFromFilter from './helpers/getDatesFromFilter';
 import FirestoreFilterTable from './firestoreFilterTable';
 import { FirestoreTableWithCursorsRef } from '../FirestoreTableWithCursors';
 import { prepareForDownload } from './helpers';
-import getFirestore from '../../helpers/getFirestore';
+import { where, orderBy, collection, limit, getDocs } from '../../helpers';
 
 const defaultFilters: Filters = {
     severity: [],
@@ -27,7 +27,7 @@ const AuditLogs = ({
     labels = [],
     title,
 }: AuditLogsProps): JSX.Element => {
-    const app = useFirebaseApp();
+    const firestore = useFirestore();
 
     const [filters, setFilters] = useState<Filters>(defaultFilter || defaultFilters);
     const firestoreTableRef = useRef<FirestoreTableWithCursorsRef>(null);
@@ -36,20 +36,21 @@ const AuditLogs = ({
         const { severity, dateRange } = filters;
         let q = ref;
         if (Array.isArray(severity) && severity.length > 0) {
-            q = q.where('severity', 'in', severity);
+            q = where(q, 'severity', 'in', severity);
         }
         if (dateRange) {
             const dates = getDatesFromFilter(dateRange);
             if (dates) {
-                q = q.where('createdAt', '>=', dates[0]).where('createdAt', '<=', dates[1]);
+                q = where(q, 'createdAt', '>=', dates[0]);
+                q = where(q, 'createdAt', '<=', dates[1]);
             }
         }
         const { labels: filterLabels = {} } = filters;
         Object.keys(filterLabels).forEach((key) => {
             if (!key) return;
-            q = q.where(`labels.${key}`, '==', filterLabels[key]);
+            q = where(q, `labels.${key}`, '==', filterLabels[key]);
         });
-        return q.orderBy('createdAt', 'desc');
+        return orderBy(q, 'createdAt', 'desc');
     };
 
     const updateFilters = useCallback((newFilters: Filters) => {
@@ -60,10 +61,10 @@ const AuditLogs = ({
     }, []);
 
     const getDownloadData = async ({ max, format }: any) => {
-        const ref = getFirestore(app).collection(collectionPath);
-        const finalQuery = max ? query(ref).limit(max) : query(ref);
+        const ref = collection(firestore, collectionPath);
+        const finalQuery = max ? query(limit(ref, max)) : query(ref);
         try {
-            const querySnapshot = await finalQuery.get();
+            const querySnapshot = await getDocs(finalQuery);
             const data = querySnapshot.docs.map((doc: any) => ({
                 ...doc.data(),
             }));
