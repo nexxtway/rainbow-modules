@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Column, Select } from 'react-rainbow-components';
+import { query, where } from 'firebase/firestore';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
 import app from '../../../../firebase';
 import FirestoreTableWithCursors from '../../src/components/FirestoreTableWithCursors';
@@ -8,7 +9,7 @@ import FirestoreTableWithCursors from '../../src/components/FirestoreTableWithCu
 export const BasicFirestoreTableWithPageSize = () => {
     return (
         <RainbowFirebaseApp app={app}>
-            <FirestoreTableWithCursors collection="/books" pageSize={1}>
+            <FirestoreTableWithCursors collection="books" pageSize={1}>
                 <Column field="id" header="Id" />
                 <Column field="name" header="Name" />
             </FirestoreTableWithCursors>
@@ -21,7 +22,7 @@ export const BasicFirestoreTableWithQuery = () => {
         <RainbowFirebaseApp app={app}>
             <FirestoreTableWithCursors
                 collection="books"
-                query={(ref) => ref.where('name', '==', `You don't know JS`)}
+                query={(ref) => query(ref, where('name', '==', `You don't know JS`))}
             >
                 <Column field="id" header="Id" />
                 <Column field="name" header="Name" />
@@ -76,7 +77,7 @@ export const FirestoreTableUsingRefresh = () => {
                     ref={table}
                     collection="books"
                     showRowNumberColumn
-                    query={(ref) => ref.where('author', '==', author)}
+                    query={(ref) => query(ref, where('author', '==', author))}
                 >
                     <Column field="id" header="Id" />
                     <Column field="name" header="Name" />
