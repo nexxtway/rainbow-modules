@@ -28,7 +28,7 @@ export interface RecordFieldProps {
     /**
      * The component class or function to customize how the value will be rendered.
      */
-    component?: ComponentType;
+    component?: ComponentType<P>;
     /** The name of the field. */
     name?: string;
     /** A boolean that specifies whether a RecordField is editable or not. Its default value is false.  */
