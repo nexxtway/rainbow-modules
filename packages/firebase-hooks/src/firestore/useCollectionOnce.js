@@ -3,7 +3,7 @@ import collection from '../helpers/collection';
 import getData from '../helpers/getData';
 import useFirestore from './useFirestore';
 import query from '../helpers/query';
-import getDoc from '../helpers/getDoc';
+import getDocs from '../helpers/getDocs';
 
 const defaultData = [];
 
@@ -30,7 +30,7 @@ export default function useCollectionOnce(props) {
                 setIsLoading(true);
             }
 
-            getDoc(finalQuery)
+            getDocs(finalQuery)
                 .then((querySnapshot) => {
                     setData(getData(querySnapshot.docs, onlyIds, flat));
                     setIsLoading(false);

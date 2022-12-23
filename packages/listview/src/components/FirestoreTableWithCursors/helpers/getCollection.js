@@ -1,11 +1,5 @@
-import { collection as fbCollection, collectionGroup } from 'firebase/firestore';
-import getFirestore from '../../../helpers/getFirestore';
+import { collection, collectionGroup } from '../../../helpers';
 
-export default function getCollection(app, collection, isCollectionGroup) {
-    const firestore = getFirestore(app);
-    const key = isCollectionGroup ? 'collectionGroup' : 'collection';
-    if (firestore[key]) {
-        return firestore[key](collection);
-    }
-    return isCollectionGroup ? collectionGroup(collection) : fbCollection(collection);
+export default function getCollection(firestore, path, isCollectionGroup) {
+    return isCollectionGroup ? collectionGroup(firestore, path) : collection(firestore, path);
 }

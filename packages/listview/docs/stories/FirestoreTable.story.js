@@ -1,6 +1,7 @@
 import React from 'react';
 import { Column } from 'react-rainbow-components';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
+import { query, where, limit } from 'firebase/firestore';
 import FirestoreTable from '../../src/components/FirestoreTable';
 import app from '../../../../firebase';
 
@@ -31,7 +32,7 @@ export const firestoreTablePassingDownProps = () => {
         <RainbowFirebaseApp app={app}>
             <FirestoreTable
                 collection="books"
-                query={(ref) => ref.where('name', '==', 'Speaking Javascript')}
+                query={(ref) => query(ref, where('name', '==', 'foo'))}
                 fetchOnce
                 showRowNumberColumn
             >
@@ -48,7 +49,7 @@ export const firestoreTableWithSortAndQuery = () => {
             <FirestoreTable
                 collection="books"
                 fetchOnce
-                query={(ref) => ref.limit(2)}
+                query={(ref) => query(ref, limit(2))}
                 sortedBy="name"
             >
                 <Column field="id" header="Id" />
