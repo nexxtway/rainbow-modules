@@ -13,6 +13,7 @@ export interface FirestoreTableProps {
     /** The column fieldName that controls the sorting order. */
     sortedBy?: string;
     children?: ReactNode;
+    variant?: 'default' | 'listview';
 }
 
 export default function (props: FirestoreTableProps): JSX.Element | null;
