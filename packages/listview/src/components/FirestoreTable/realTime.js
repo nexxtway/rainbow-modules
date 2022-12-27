@@ -38,7 +38,7 @@ FirestoreTableRealTime.propTypes = {
     defaultSortDirection: PropTypes.oneOf(['asc', 'desc']),
     sortedBy: PropTypes.string,
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
-    variant: 'default' | 'listview',
+    variant: PropTypes.oneOf(['default', 'listview']),
 };
 
 FirestoreTableRealTime.defaultProps = {

@@ -27,7 +27,7 @@ FirestoreTable.propTypes = {
     sortedBy: PropTypes.string,
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
     /** The variant of the table. */
-    variant: 'default' | 'listview',
+    variant: PropTypes.oneOf(['default', 'listview']),
 };
 
 FirestoreTable.defaultProps = {
