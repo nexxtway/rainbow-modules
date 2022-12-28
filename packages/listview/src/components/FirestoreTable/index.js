@@ -26,6 +26,8 @@ FirestoreTable.propTypes = {
     /** The column fieldName that controls the sorting order. */
     sortedBy: PropTypes.string,
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
+    /** The variant of the table. */
+    variant: PropTypes.oneOf(['default', 'listview']),
 };
 
 FirestoreTable.defaultProps = {
@@ -34,6 +36,7 @@ FirestoreTable.defaultProps = {
     defaultSortDirection: 'asc',
     sortedBy: undefined,
     children: [],
+    variant: 'default',
 };
 
 export default FirestoreTable;

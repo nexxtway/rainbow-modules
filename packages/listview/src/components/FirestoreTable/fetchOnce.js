@@ -38,6 +38,7 @@ FirestoreTableFetchOnce.propTypes = {
     defaultSortDirection: PropTypes.oneOf(['asc', 'desc']),
     sortedBy: PropTypes.string,
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
+    variant: PropTypes.oneOf(['default', 'listview']),
 };
 
 FirestoreTableFetchOnce.defaultProps = {
@@ -45,6 +46,7 @@ FirestoreTableFetchOnce.defaultProps = {
     defaultSortDirection: 'asc',
     sortedBy: undefined,
     children: [],
+    variant: 'default',
 };
 
 export default FirestoreTableFetchOnce;
