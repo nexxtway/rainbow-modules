@@ -101,7 +101,7 @@
         "react-dom": "^17.0.0",
         "react-intl": "^4.4.0",
         "react-query": "^3.34.0",
-        "react-rainbow-components": "1.31.0-canary.6ccebb7",
+        "react-rainbow-components": "1.31.0-canary.59cdcd0",
         "react-redux": "^7.2.0",
         "react-router-dom": "^5.0.0",
         "redux": "^4.0.5",

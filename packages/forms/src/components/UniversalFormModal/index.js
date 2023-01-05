@@ -17,12 +17,18 @@ const UniversalFormModal = (props) => {
         cancelButtonLabel,
         onOpened,
         disableSubmit,
+        borderRadius,
         ...rest
     } = props;
     const uniqueId = useUniqueIdentifier();
     const footer = (
         <div className="rainbow-flex rainbow-justify_end">
-            <Button className="rainbow-m-right_large" variant="neutral" onClick={onRequestClose}>
+            <Button
+                className="rainbow-m-right_large"
+                variant="neutral"
+                onClick={onRequestClose}
+                borderRadius={borderRadius}
+            >
                 {cancelButtonLabel}
             </Button>
             <Button
@@ -31,6 +37,7 @@ const UniversalFormModal = (props) => {
                 variant="brand"
                 type="submit"
                 form={uniqueId}
+                borderRadius={borderRadius}
             >
                 {submitButtonLabel}
             </Button>
@@ -44,6 +51,7 @@ const UniversalFormModal = (props) => {
             footer={footer}
             onRequestClose={onRequestClose}
             onOpened={onOpened}
+            borderRadius={borderRadius}
         >
             <UniversalForm onSubmit={onSubmit} id={uniqueId} initialValues={initialValues}>
                 <Fields {...rest} />
@@ -79,6 +87,8 @@ UniversalFormModal.propTypes = {
     disableSubmit: PropTypes.bool,
     /** The id of the outer element. */
     id: PropTypes.string,
+    /** The border radius of the button and dropdown. Valid values are square, 'semi-square', semi-rounded and rounded. This value defaults to rounded. */
+    borderRadius: PropTypes.oneOf(['square', 'semi-square', 'semi-rounded', 'rounded']),
 };
 
 UniversalFormModal.defaultProps = {
@@ -93,6 +103,7 @@ UniversalFormModal.defaultProps = {
     cancelButtonLabel: 'Cancel',
     disableSubmit: false,
     id: undefined,
+    borderRadius: 'rounded',
 };
 
 export default UniversalFormModal;

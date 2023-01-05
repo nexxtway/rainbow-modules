@@ -211,7 +211,7 @@ const App = () => {
                 />
             </TitleContainer>
             <Books />
-            <UniversalFormModal fields={Fields} {...connectedModalProps} />
+            <UniversalFormModal fields={Fields} {...connectedModalProps} borderRadius="square" />
         </div>
     );
 };
@@ -219,6 +219,62 @@ const App = () => {
 export const Basic = () => (
     <RainbowFirebaseApp app={app}>
         <App />
+    </RainbowFirebaseApp>
+);
+
+const Container = styled.div`
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+`;
+
+const UniversalFormModalWithBorderRadius = ({ borderRadius }) => {
+    const connectedModalProps = useConnectModal(`add-edit-book-${borderRadius}`);
+    const [openModal] = useOpenModal(`add-edit-book-${borderRadius}`);
+
+    const openCreateBook = () =>
+        openModal({
+            title: 'Add Book',
+            submitButtonLabel: 'Add',
+        });
+
+    return (
+        <>
+            <ButtonIcon
+                icon={<Plus />}
+                variant="brand"
+                shaded
+                onClick={openCreateBook}
+                borderRadius={borderRadius}
+            />
+            <UniversalFormModal
+                fields={() => (
+                    <Field
+                        name="name"
+                        component={Input}
+                        label="Name"
+                        validate={isRequired()}
+                        required
+                        placeholder="Enter the book name"
+                        className="rainbow-m-bottom_large"
+                        borderRadius={borderRadius}
+                    />
+                )}
+                {...connectedModalProps}
+                borderRadius={borderRadius}
+            />
+        </>
+    );
+};
+
+export const WithBorderRadius = () => (
+    <RainbowFirebaseApp app={app}>
+        <Container>
+            <UniversalFormModalWithBorderRadius borderRadius="square" />
+            <UniversalFormModalWithBorderRadius borderRadius="semi-square" />
+            <UniversalFormModalWithBorderRadius borderRadius="semi-rounded" />
+            <UniversalFormModalWithBorderRadius borderRadius="rounded" />
+        </Container>
     </RainbowFirebaseApp>
 );
 
