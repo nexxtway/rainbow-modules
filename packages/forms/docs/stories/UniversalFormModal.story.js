@@ -228,7 +228,7 @@ const Container = styled.div`
     gap: 20px;
 `;
 
-const UniversalFormModalWithBorderRadius = ({ borderRadius }) => {
+const ExampleBorderRadius = ({ borderRadius }) => {
     const connectedModalProps = useConnectModal(`add-edit-book-${borderRadius}`);
     const [openModal] = useOpenModal(`add-edit-book-${borderRadius}`);
 
@@ -270,10 +270,10 @@ const UniversalFormModalWithBorderRadius = ({ borderRadius }) => {
 export const WithBorderRadius = () => (
     <RainbowFirebaseApp app={app}>
         <Container>
-            <UniversalFormModalWithBorderRadius borderRadius="square" />
-            <UniversalFormModalWithBorderRadius borderRadius="semi-square" />
-            <UniversalFormModalWithBorderRadius borderRadius="semi-rounded" />
-            <UniversalFormModalWithBorderRadius borderRadius="rounded" />
+            <ExampleBorderRadius borderRadius="square" />
+            <ExampleBorderRadius borderRadius="semi-square" />
+            <ExampleBorderRadius borderRadius="semi-rounded" />
+            <ExampleBorderRadius borderRadius="rounded" />
         </Container>
     </RainbowFirebaseApp>
 );
