@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.56.0](https://github.com/nexxtway/rainbow-modules/compare/v0.55.0...v0.56.0) (2023-01-09)
+
+### Bug Fixes
+
+-   bunch of examples are crashing ([#665](https://github.com/nexxtway/rainbow-modules/issues/665)) ([6e92141](https://github.com/nexxtway/rainbow-modules/commit/6e921418b1f9a319a191ab2bf345f5491e583f0a))
+-   form validators type ([#619](https://github.com/nexxtway/rainbow-modules/issues/619)) ([5ddbafe](https://github.com/nexxtway/rainbow-modules/commit/5ddbafe3b94ca4cf75c3012641c3302b5de7960e))
+-   image gallery component is crashing ([#656](https://github.com/nexxtway/rainbow-modules/issues/656)) ([87a0c42](https://github.com/nexxtway/rainbow-modules/commit/87a0c4277af9604404aba42a0c4e2ea75efe621f))
+-   open update user photo modal ([#663](https://github.com/nexxtway/rainbow-modules/issues/663)) ([e9b5e6e](https://github.com/nexxtway/rainbow-modules/commit/e9b5e6e2cfd0ce9b5873a1107d0621dc777de11d))
+-   recordField does not allow to pass a component with props ([#667](https://github.com/nexxtway/rainbow-modules/issues/667)) ([e8e6a67](https://github.com/nexxtway/rainbow-modules/commit/e8e6a6768f0ca523dbac4e31b431e99e4dc29126))
+-   show app message type ([#629](https://github.com/nexxtway/rainbow-modules/issues/629)) ([1bdec4f](https://github.com/nexxtway/rainbow-modules/commit/1bdec4f9af002edfbe1f6f8c7e651285e4f00d20))
+-   showAppSpinner params is required and should be optional ([#628](https://github.com/nexxtway/rainbow-modules/issues/628)) ([a47233c](https://github.com/nexxtway/rainbow-modules/commit/a47233cc1f23dfdec61d7d7ab1c746deae819e92))
+-   types for fields prop in universal form modal ([#627](https://github.com/nexxtway/rainbow-modules/issues/627)) ([8ac72c1](https://github.com/nexxtway/rainbow-modules/commit/8ac72c1cdf7e541ddc2e197efa07c54b6f7ec442))
+
+### Features
+
+-   add percent column component using intl formatter ([#622](https://github.com/nexxtway/rainbow-modules/issues/622)) ([e5bfe3a](https://github.com/nexxtway/rainbow-modules/commit/e5bfe3ac9afd6b3c44d4b7cea6ea898081bd73b5))
+-   add variant prop to firestore table ([#669](https://github.com/nexxtway/rainbow-modules/issues/669)) ([53d343e](https://github.com/nexxtway/rainbow-modules/commit/53d343e2b2fb11533904f74570f096774b7c5afb))
+-   implement openUpdateUserPhotoModal ([#643](https://github.com/nexxtway/rainbow-modules/issues/643)) ([2ee41c5](https://github.com/nexxtway/rainbow-modules/commit/2ee41c5bcb37addb182c05bb52dcaf7e13963c17))
+
 # [0.55.0](https://github.com/nexxtway/rainbow-modules/compare/v0.54.0...v0.55.0) (2022-11-03)
 
 ### Bug Fixes
