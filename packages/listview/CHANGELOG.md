@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.56.0](https://github.com/nexxtway/rainbow-modules/compare/v0.55.0...v0.56.0) (2023-01-09)
+
+### Bug Fixes
+
+-   bunch of examples are crashing ([#665](https://github.com/nexxtway/rainbow-modules/issues/665)) ([6e92141](https://github.com/nexxtway/rainbow-modules/commit/6e921418b1f9a319a191ab2bf345f5491e583f0a))
+
+### Features
+
+-   add percent column component using intl formatter ([#622](https://github.com/nexxtway/rainbow-modules/issues/622)) ([e5bfe3a](https://github.com/nexxtway/rainbow-modules/commit/e5bfe3ac9afd6b3c44d4b7cea6ea898081bd73b5))
+-   add variant prop to firestore table ([#669](https://github.com/nexxtway/rainbow-modules/issues/669)) ([53d343e](https://github.com/nexxtway/rainbow-modules/commit/53d343e2b2fb11533904f74570f096774b7c5afb))
+
 # [0.55.0](https://github.com/nexxtway/rainbow-modules/compare/v0.54.0...v0.55.0) (2022-11-03)
 
 ### Bug Fixes

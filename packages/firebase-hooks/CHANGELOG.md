@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.56.0](https://github.com/nexxtway/rainbow-modules/compare/v0.55.0...v0.56.0) (2023-01-09)
+
+### Bug Fixes
+
+-   bunch of examples are crashing ([#665](https://github.com/nexxtway/rainbow-modules/issues/665)) ([6e92141](https://github.com/nexxtway/rainbow-modules/commit/6e921418b1f9a319a191ab2bf345f5491e583f0a))
+
 # [0.55.0](https://github.com/nexxtway/rainbow-modules/compare/v0.54.0...v0.55.0) (2022-11-03)
 
 **Note:** Version bump only for package @rainbow-modules/firebase-hooks

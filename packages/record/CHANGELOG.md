@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.56.0](https://github.com/nexxtway/rainbow-modules/compare/v0.55.0...v0.56.0) (2023-01-09)
+
+### Bug Fixes
+
+-   recordField does not allow to pass a component with props ([#667](https://github.com/nexxtway/rainbow-modules/issues/667)) ([e8e6a67](https://github.com/nexxtway/rainbow-modules/commit/e8e6a6768f0ca523dbac4e31b431e99e4dc29126))
+
 # [0.55.0](https://github.com/nexxtway/rainbow-modules/compare/v0.54.0...v0.55.0) (2022-11-03)
 
 ### Bug Fixes

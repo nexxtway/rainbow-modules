@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.56.0](https://github.com/nexxtway/rainbow-modules/compare/v0.55.0...v0.56.0) (2023-01-09)
+
+### Bug Fixes
+
+-   show app message type ([#629](https://github.com/nexxtway/rainbow-modules/issues/629)) ([1bdec4f](https://github.com/nexxtway/rainbow-modules/commit/1bdec4f9af002edfbe1f6f8c7e651285e4f00d20))
+-   showAppSpinner params is required and should be optional ([#628](https://github.com/nexxtway/rainbow-modules/issues/628)) ([a47233c](https://github.com/nexxtway/rainbow-modules/commit/a47233cc1f23dfdec61d7d7ab1c746deae819e92))
+
 # [0.55.0](https://github.com/nexxtway/rainbow-modules/compare/v0.54.0...v0.55.0) (2022-11-03)
 
 ### Bug Fixes

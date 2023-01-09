@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.56.0](https://github.com/nexxtway/rainbow-modules/compare/v0.55.0...v0.56.0) (2023-01-09)
+
+### Bug Fixes
+
+-   image gallery component is crashing ([#656](https://github.com/nexxtway/rainbow-modules/issues/656)) ([87a0c42](https://github.com/nexxtway/rainbow-modules/commit/87a0c4277af9604404aba42a0c4e2ea75efe621f))
+-   open update user photo modal ([#663](https://github.com/nexxtway/rainbow-modules/issues/663)) ([e9b5e6e](https://github.com/nexxtway/rainbow-modules/commit/e9b5e6e2cfd0ce9b5873a1107d0621dc777de11d))
+
+### Features
+
+-   implement openUpdateUserPhotoModal ([#643](https://github.com/nexxtway/rainbow-modules/issues/643)) ([2ee41c5](https://github.com/nexxtway/rainbow-modules/commit/2ee41c5bcb37addb182c05bb52dcaf7e13963c17))
+
 # [0.55.0](https://github.com/nexxtway/rainbow-modules/compare/v0.54.0...v0.55.0) (2022-11-03)
 
 ### Bug Fixes

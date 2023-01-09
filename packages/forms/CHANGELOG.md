@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.56.0](https://github.com/nexxtway/rainbow-modules/compare/v0.55.0...v0.56.0) (2023-01-09)
+
+### Bug Fixes
+
+-   form validators type ([#619](https://github.com/nexxtway/rainbow-modules/issues/619)) ([5ddbafe](https://github.com/nexxtway/rainbow-modules/commit/5ddbafe3b94ca4cf75c3012641c3302b5de7960e))
+-   types for fields prop in universal form modal ([#627](https://github.com/nexxtway/rainbow-modules/issues/627)) ([8ac72c1](https://github.com/nexxtway/rainbow-modules/commit/8ac72c1cdf7e541ddc2e197efa07c54b6f7ec442))
+
 # [0.55.0](https://github.com/nexxtway/rainbow-modules/compare/v0.54.0...v0.55.0) (2022-11-03)
 
 ### Bug Fixes
