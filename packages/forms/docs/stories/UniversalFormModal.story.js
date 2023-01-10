@@ -211,7 +211,7 @@ const App = () => {
                 />
             </TitleContainer>
             <Books />
-            <UniversalFormModal fields={Fields} {...connectedModalProps} borderRadius="square" />
+            <UniversalFormModal fields={Fields} {...connectedModalProps} />
         </div>
     );
 };

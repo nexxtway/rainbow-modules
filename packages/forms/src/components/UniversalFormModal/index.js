@@ -87,7 +87,7 @@ UniversalFormModal.propTypes = {
     disableSubmit: PropTypes.bool,
     /** The id of the outer element. */
     id: PropTypes.string,
-    /** The border radius of the button and dropdown. Valid values are square, 'semi-square', semi-rounded and rounded. This value defaults to rounded. */
+    /** The border radius of the button and modal. Valid values are square, 'semi-square', semi-rounded and rounded. This value defaults to rounded. */
     borderRadius: PropTypes.oneOf(['square', 'semi-square', 'semi-rounded', 'rounded']),
 };
 
