@@ -28,6 +28,8 @@ export interface UniversalFormModalProps {
     cancelButtonLabel?: ReactNode;
     /** The id of the outer element. */
     id?: string;
+    /** The border radius of the button and dropdown. Valid values are square, 'semi-square', semi-rounded and rounded. This value defaults to rounded. */
+    borderRadius?: 'square' | 'semi-square' | 'semi-rounded' | 'rounded';
     [key: string]: unknown;
 }
 

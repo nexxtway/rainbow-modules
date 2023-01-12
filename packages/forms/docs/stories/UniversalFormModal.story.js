@@ -222,6 +222,62 @@ export const Basic = () => (
     </RainbowFirebaseApp>
 );
 
+const Container = styled.div`
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+`;
+
+const ExampleBorderRadius = ({ borderRadius }) => {
+    const connectedModalProps = useConnectModal(`add-edit-book-${borderRadius}`);
+    const [openModal] = useOpenModal(`add-edit-book-${borderRadius}`);
+
+    const openCreateBook = () =>
+        openModal({
+            title: 'Add Book',
+            submitButtonLabel: 'Add',
+        });
+
+    return (
+        <>
+            <ButtonIcon
+                icon={<Plus />}
+                variant="brand"
+                shaded
+                onClick={openCreateBook}
+                borderRadius={borderRadius}
+            />
+            <UniversalFormModal
+                fields={() => (
+                    <Field
+                        name="name"
+                        component={Input}
+                        label="Name"
+                        validate={isRequired()}
+                        required
+                        placeholder="Enter the book name"
+                        className="rainbow-m-bottom_large"
+                        borderRadius={borderRadius}
+                    />
+                )}
+                {...connectedModalProps}
+                borderRadius={borderRadius}
+            />
+        </>
+    );
+};
+
+export const WithBorderRadius = () => (
+    <RainbowFirebaseApp app={app}>
+        <Container>
+            <ExampleBorderRadius borderRadius="square" />
+            <ExampleBorderRadius borderRadius="semi-square" />
+            <ExampleBorderRadius borderRadius="semi-rounded" />
+            <ExampleBorderRadius borderRadius="rounded" />
+        </Container>
+    </RainbowFirebaseApp>
+);
+
 export default {
     title: 'Modules/Forms/Stories/UniversalFromModal',
     parameters: {

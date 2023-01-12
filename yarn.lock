@@ -18636,10 +18636,10 @@ react-query@^3.34.0:
     broadcast-channel "^3.4.1"
     match-sorter "^6.0.2"
 
-react-rainbow-components@1.31.0-canary.6ccebb7:
-  version "1.31.0-canary.6ccebb7"
-  resolved "https://registry.yarnpkg.com/react-rainbow-components/-/react-rainbow-components-1.31.0-canary.6ccebb7.tgz#ad85a9264f5d86864bb71e730496e8181d6dafca"
-  integrity sha512-L82R9j0G35p3oa1Ji66UZ55xfcHAaFTLOaghja7gIaQz6jeximwcY9AebI/s0CM+OuhdrZV2mc9mpBV4lWFGzw==
+react-rainbow-components@1.31.0-canary.59cdcd0:
+  version "1.31.0-canary.59cdcd0"
+  resolved "https://registry.yarnpkg.com/react-rainbow-components/-/react-rainbow-components-1.31.0-canary.59cdcd0.tgz#dc71895bc7585a7c880a83e60dac18609cca5619"
+  integrity sha512-XOux2PkphzDuLHtGCFB1HC65z0mTTPqPAe3N4r10+3dZbq7u3xy432IoQI+9dpsVlXzQanBLDb6s/WAefF4wUA==
   dependencies:
     "@rainbow-modules/hooks" "^0.12.0"
     "@rainbow-modules/validation" "^0.53.0"
