@@ -23,7 +23,10 @@ export default function useDoc(props) {
             const unsubscribe = onSnapshot(
                 ref,
                 (doc) => {
-                    if (doc.exists || (typeof doc.exists === 'function' && doc.exists())) {
+                    if (
+                        (typeof doc.exists === 'boolean' && doc.exists) ||
+                        (typeof doc.exists === 'function' && doc.exists())
+                    ) {
                         setData(getDocData(doc, flat));
                     } else {
                         setData(undefined);
