@@ -12,7 +12,12 @@ const Trailing = React.forwardRef<HTMLDivElement, TrailingProps>(
         return (
             <StyledTrailing ref={ref}>
                 <RenderIf isTrue={value}>
-                    <StyledButtonIcon icon={<Close />} size="x-small" onClick={onClear} />
+                    <StyledButtonIcon
+                        icon={<Close />}
+                        size="x-small"
+                        onClick={onClear}
+                        tabIndex={-1}
+                    />
                 </RenderIf>
                 <RenderIf isTrue={shouldRenderDivider}>
                     <Divider />
