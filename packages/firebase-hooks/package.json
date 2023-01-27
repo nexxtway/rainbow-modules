@@ -10,7 +10,7 @@
         "build": "tsc -p tsconfig.build.json"
     },
     "peerDependencies": {
-        "firebase": ">=8.2.0",
+        "firebase": ">=9.0.0",
         "react": ">=16.8.0",
         "react-query": ">=3.24.5"
     },

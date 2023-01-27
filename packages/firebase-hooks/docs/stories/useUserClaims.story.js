@@ -2,12 +2,13 @@ import React from 'react';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
 import { WhenAuthenticated } from '@rainbow-modules/auth';
 import { Spinner } from 'react-rainbow-components';
+import { getAuth, signInAnonymously } from 'firebase/auth';
 import app from '../../../../firebase';
 import useUserClaims from '../../src/auth/useUserClaims';
 
 const initialize = async () => {
     try {
-        await app.auth().signInAnonymously();
+        await signInAnonymously(getAuth(app));
     } catch (err) {
         // eslint-disable-next-line no-alert
         alert(err.toString());

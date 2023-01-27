@@ -2,8 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { Button, RenderIf } from 'react-rainbow-components';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
+import { signInAnonymously, signOut } from 'firebase/auth';
 import app from '../../../../firebase';
 import useAuthState from '../../src/auth/useAuthState';
+import useAuth from '../../src/auth/useAuth';
 
 const StyledContainer = styled.div`
     display: flex;
@@ -13,25 +15,26 @@ const StyledContainer = styled.div`
 `;
 
 const AuthApp = () => {
+    const auth = useAuth();
     const isAuth = useAuthState();
 
-    const signIn = async () => {
-        await app.auth().signInAnonymously();
+    const handleSignIn = async () => {
+        await signInAnonymously(auth);
     };
 
-    const signOut = async () => {
-        await app.auth().signOut();
+    const handleSignOut = async () => {
+        await signOut(auth);
     };
 
     return (
         <StyledContainer>
             <RenderIf isTrue={isAuth}>
                 <h3>Welcome</h3>
-                <Button onClick={signOut}>Sign out</Button>
+                <Button onClick={handleSignOut}>Sign out</Button>
             </RenderIf>
             <RenderIf isTrue={!isAuth}>
                 <h3>You are not logged in</h3>
-                <Button onClick={signIn}>Sign in</Button>
+                <Button onClick={handleSignIn}>Sign in</Button>
             </RenderIf>
         </StyledContainer>
     );

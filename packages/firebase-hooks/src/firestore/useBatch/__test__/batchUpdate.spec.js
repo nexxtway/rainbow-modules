@@ -1,18 +1,24 @@
+import { collection, doc, WriteBatch } from 'firebase/firestore';
 import batchUpdate from '../batchUpdate';
 
-const update = jest.fn();
-const commit = jest.fn();
-const doc = jest.fn(() => 'doc ref');
-const collection = jest.fn(() => ({
-    doc,
-}));
-const db = {
-    batch: () => ({
-        update,
-        commit,
-    }),
-    collection,
-};
+jest.mock('firebase/firestore', () => {
+    const originalModule = jest.requireActual('firebase/firestore');
+    originalModule.WriteBatch.update = jest.fn();
+    originalModule.WriteBatch.commit = jest.fn();
+
+    return {
+        __esModule: true,
+        ...originalModule,
+        collection: jest.fn(),
+        doc: jest.fn(() => 'doc ref'),
+        writeBatch: () => ({
+            update: originalModule.WriteBatch.update,
+            commit: originalModule.WriteBatch.commit,
+        }),
+    };
+});
+const db = {};
+
 const collectionPath = 'books/1234/authors';
 const data = [
     { data: { name: 'Speaking Javascript' }, id: 'qwerty' },
@@ -22,43 +28,43 @@ const data = [
 
 describe('batchUpdate', () => {
     beforeEach(() => {
-        update.mockReset();
-        commit.mockReset();
+        WriteBatch.update.mockReset();
+        WriteBatch.commit.mockReset();
         collection.mockReset();
         collection.mockReturnValue({ doc });
         doc.mockReset();
         doc.mockReturnValue('doc ref');
     });
-    it('should call db.batch().update with the right data each time', () => {
+    it('should call WriteBatch.update with the right data each time', () => {
         batchUpdate({ db, collection: collectionPath, data });
-        expect(db.batch().update).toHaveBeenCalledTimes(3);
-        expect(db.batch().update.mock.calls[0][0]).toBe('doc ref');
-        expect(db.batch().update.mock.calls[0][1]).toEqual({
+        expect(WriteBatch.update).toHaveBeenCalledTimes(3);
+        expect(WriteBatch.update.mock.calls[0][0]).toBe('doc ref');
+        expect(WriteBatch.update.mock.calls[0][1]).toEqual({
             name: 'Speaking Javascript',
         });
-        expect(db.batch().update.mock.calls[1][0]).toBe('doc ref');
-        expect(db.batch().update.mock.calls[1][1]).toEqual({
+        expect(WriteBatch.update.mock.calls[1][0]).toBe('doc ref');
+        expect(WriteBatch.update.mock.calls[1][1]).toEqual({
             name: "You don't know JS",
         });
-        expect(db.batch().update.mock.calls[2][0]).toBe('doc ref');
-        expect(db.batch().update.mock.calls[2][1]).toEqual({
+        expect(WriteBatch.update.mock.calls[2][0]).toBe('doc ref');
+        expect(WriteBatch.update.mock.calls[2][1]).toEqual({
             name: 'Programming JavaScript Applications',
         });
     });
     it('should call db.collection with the right collection path each time', () => {
         batchUpdate({ db, collection: collectionPath, data });
-        expect(db.collection.mock.calls[0][0]).toBe('books/1234/authors');
-        expect(db.collection.mock.calls[1][0]).toBe('books/1234/authors');
-        expect(db.collection.mock.calls[2][0]).toBe('books/1234/authors');
+        expect(collection.mock.calls[0][1]).toBe('books/1234/authors');
+        expect(collection.mock.calls[1][1]).toBe('books/1234/authors');
+        expect(collection.mock.calls[2][1]).toBe('books/1234/authors');
     });
     it('should call db.collection().doc with the right id each time', () => {
         batchUpdate({ db, collection: collectionPath, data });
-        expect(db.collection().doc.mock.calls[0][0]).toBe('qwerty');
-        expect(db.collection().doc.mock.calls[1][0]).toBe('1234');
-        expect(db.collection().doc.mock.calls[2][0]).toBe('5678');
+        expect(collection().doc.mock.calls[0][1]).toBe('qwerty');
+        expect(collection().doc.mock.calls[1][1]).toBe('1234');
+        expect(collection().doc.mock.calls[2][1]).toBe('5678');
     });
-    it('should call db.batch().commit', () => {
+    it('should call WriteBatch.commit', () => {
         batchUpdate({ db, collection: collectionPath, data });
-        expect(db.batch().commit).toHaveBeenCalledTimes(1);
+        expect(WriteBatch.commit).toHaveBeenCalledTimes(1);
     });
 });

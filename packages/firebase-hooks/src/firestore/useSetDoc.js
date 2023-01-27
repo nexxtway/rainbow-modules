@@ -1,6 +1,5 @@
 import { useMutation } from 'react-query';
-import doc from '../helpers/doc';
-import setDoc from '../helpers/setDoc';
+import { doc, setDoc } from 'firebase/firestore';
 import useFirestore from './useFirestore';
 
 const useSetDoc = (opts = {}) => {

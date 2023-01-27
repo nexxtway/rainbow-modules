@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
-import doc from '../helpers/doc';
+import { doc, onSnapshot } from 'firebase/firestore';
 import getDocData from '../helpers/getDocData';
 import useFirestore from './useFirestore';
-import onSnapshot from '../helpers/onSnapshot';
 
 export default function useDoc(props) {
     const { path, flat = false, disabled = false } = props;

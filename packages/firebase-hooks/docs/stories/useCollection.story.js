@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
 import { Table, Column, Select } from 'react-rainbow-components';
+import { query, where, orderBy } from 'firebase/firestore';
 import app from '../../../../firebase';
 import useCollection from '../../src/firestore/useCollection';
 
@@ -20,7 +21,7 @@ const Books = () => {
 const AxeBooks = () => {
     const [data, isLoading] = useCollection({
         path: '/books',
-        query: (query) => query.where('author', '==', 'Axel Rauschmayer'),
+        query: (ref) => query(ref, where('author', '==', 'Axel Rauschmayer')),
     });
     return (
         <Table keyField="id" data={data} isLoading={isLoading} variant="listview">
@@ -47,20 +48,20 @@ const FilterBooks = () => {
     const [sortedBy, setSortedBy] = useState();
     const [sortDirection, setSortDirection] = useState();
 
-    const query = (ref) => {
+    const queryFn = (ref) => {
         let q = ref;
         if (filterAutor) {
-            q = q.where('author', '==', filterAutor);
+            q = query(q, where('author', '==', filterAutor));
         }
         if (sortedBy) {
-            q = q.orderBy(sortedBy, sortDirection);
+            q = query(q, orderBy(sortedBy, sortDirection));
         }
         return q;
     };
 
     const [data, isLoading] = useCollection({
         path: '/books',
-        query,
+        query: queryFn,
         track: [filterAutor, sortedBy, sortDirection],
     });
 

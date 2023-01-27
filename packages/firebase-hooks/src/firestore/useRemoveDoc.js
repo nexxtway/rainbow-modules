@@ -1,6 +1,5 @@
 import { useMutation } from 'react-query';
-import deleteDoc from '../helpers/deleteDoc';
-import doc from '../helpers/doc';
+import { doc, deleteDoc } from 'firebase/firestore';
 import useFirestore from './useFirestore';
 
 const useRemoveDoc = (opts = {}) => {

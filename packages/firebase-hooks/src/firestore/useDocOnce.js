@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
-import getDoc from '../helpers/getDoc';
+import { getDoc, doc } from 'firebase/firestore';
 import getDocData from '../helpers/getDocData';
-import doc from '../helpers/doc';
 import useFirestore from './useFirestore';
 
 export default function useDocOnce(props) {
