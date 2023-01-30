@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Button, RenderIf } from 'react-rainbow-components';
 import { RainbowFirebaseApp } from '@rainbow-modules/app';
+import { getAuth, signInAnonymously } from 'firebase/auth';
 import useFirebaseApp from '../../src/useFirebaseApp';
 import app from '../../../../firebase';
 import useAuthState from '../../src/auth/useAuthState';
@@ -17,7 +18,7 @@ const App = () => {
     const app = useFirebaseApp();
     const isAuth = useAuthState();
     const signIn = async () => {
-        await app.auth().signInAnonymously();
+        await signInAnonymously(getAuth(app));
     };
 
     return (

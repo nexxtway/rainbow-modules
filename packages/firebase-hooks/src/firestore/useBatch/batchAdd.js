@@ -1,8 +1,7 @@
-import collection from '../../helpers/collection';
-import doc from '../../helpers/doc';
+import { collection, doc, writeBatch } from 'firebase/firestore';
 
 const batchAdd = ({ db, collection: collectionPath, data }) => {
-    const batch = db.batch();
+    const batch = writeBatch(db);
     data.forEach((item) => {
         const docRef = doc(collection(db, collectionPath));
         batch.set(docRef, item);

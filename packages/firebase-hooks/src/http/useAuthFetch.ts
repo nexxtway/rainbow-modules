@@ -42,36 +42,39 @@ const useAuthFetch = <TData = unknown, TBody = Record<string, unknown>>({
 
     const fetchFn = useCallback(
         async (pathname, config = {}) => {
-            setLoading(true);
-            const token = await auth.currentUser?.getIdToken();
-            const headers: Record<string, string> = {
-                'Content-Type': 'application/json',
-            };
-            if (token) {
-                headers.Authorization = `Bearer ${token}`;
-            }
-            const { projectId } = app.options as { projectId: string };
-            const baseUrl = `https://${region}-${projectId}.cloudfunctions.net`;
-            const url = pathJoin(baseUrl, functionName, pathname);
-
-            const { body, method = 'GET', ...rest } = config;
-            try {
-                const response = await fetch(url, {
-                    headers,
-                    body: body ? JSON.stringify(body) : undefined,
-                    method,
-                    ...rest,
-                });
-                const result = await response.json();
-                setLoading(false);
-                if (response.ok) {
-                    return result;
+            if (auth) {
+                setLoading(true);
+                const token = await auth.currentUser?.getIdToken();
+                const headers: Record<string, string> = {
+                    'Content-Type': 'application/json',
+                };
+                if (token) {
+                    headers.Authorization = `Bearer ${token}`;
                 }
-                throw result;
-            } catch (error) {
-                setLoading(false);
-                throw error;
+                const { projectId } = app.options as { projectId: string };
+                const baseUrl = `https://${region}-${projectId}.cloudfunctions.net`;
+                const url = pathJoin(baseUrl, functionName, pathname);
+
+                const { body, method = 'GET', ...rest } = config;
+                try {
+                    const response = await fetch(url, {
+                        headers,
+                        body: body ? JSON.stringify(body) : undefined,
+                        method,
+                        ...rest,
+                    });
+                    const result = await response.json();
+                    setLoading(false);
+                    if (response.ok) {
+                        return result;
+                    }
+                    throw result;
+                } catch (error) {
+                    setLoading(false);
+                    throw error;
+                }
             }
+            return null;
         },
         // eslint-disable-next-line react-hooks/exhaustive-deps
         [functionName, region],

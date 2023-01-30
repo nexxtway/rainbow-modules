@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
-import collection from '../helpers/collection';
+import { collection, query, getDocs } from 'firebase/firestore';
 import getData from '../helpers/getData';
 import useFirestore from './useFirestore';
-import query from '../helpers/query';
-import getDocs from '../helpers/getDocs';
 
 const defaultData = [];
 

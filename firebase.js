@@ -1,4 +1,4 @@
-import firebase from 'firebase/compat/app';
+import { initializeApp } from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 import 'firebase/functions';
@@ -14,6 +14,6 @@ const firebaseConfig = {
     appId: process.env.STORYBOOK_APP_ID,
 };
 
-const instance = firebase.initializeApp(firebaseConfig);
+const instance = initializeApp(firebaseConfig);
 
 export default instance;

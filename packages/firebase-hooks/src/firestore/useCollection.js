@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
-import collection from '../helpers/collection';
+import { collection, onSnapshot, query } from 'firebase/firestore';
 import getData from '../helpers/getData';
-import onSnapshot from '../helpers/onSnapshot';
-import query from '../helpers/query';
 import useFirestore from './useFirestore';
 
 const defaultData = [];
