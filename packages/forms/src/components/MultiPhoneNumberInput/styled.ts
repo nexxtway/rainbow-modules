@@ -25,3 +25,10 @@ export const StyledInput = styled(Input)`
 export const StyledOtherNoteInput = styled(Input)`
     width: calc(30% - 55px);
 `;
+
+export const ErrorText = styled.div`
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    align-self: start;
+    color: ${(props) => props.theme.rainbow.palette.error.main};
+`;

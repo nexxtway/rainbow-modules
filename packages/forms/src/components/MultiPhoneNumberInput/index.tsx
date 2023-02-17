@@ -1,10 +1,12 @@
+/* eslint-disable react/no-unused-prop-types */
 /* eslint-disable @typescript-eslint/no-empty-function */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, ButtonIcon, RenderIf } from 'react-rainbow-components';
 import { Trash } from '@rainbow-modules/icons';
-import { Container, Fieldset, Label, StyledInput, StyledPhoneInput } from './styled';
-import { InputConfig, PhoneNumber } from './types';
+import { useReduxForm } from '@rainbow-modules/hooks';
+import { Container, ErrorText, Fieldset, Label, StyledInput, StyledPhoneInput } from './styled';
+import { InputConfig, PhoneNumber, RowError } from './types';
 
 interface MultiPhoneNumberInputProps {
     label: string;
@@ -12,7 +14,7 @@ interface MultiPhoneNumberInputProps {
     onChange?: (value: Array<[PhoneNumber, string]>) => void;
     onFocus?: () => void;
     onBlur?: () => void;
-    error?: string;
+    error?: string | Record<number, RowError>;
     maxPhoneNumbers?: number;
     onAddPhoneNumber?: (index: number) => [InputConfig, InputConfig];
 }
@@ -20,11 +22,15 @@ interface MultiPhoneNumberInputProps {
 const MultiPhoneNumberInput: React.FC<MultiPhoneNumberInputProps> = (props) => {
     const {
         label,
-        value = [[{ isoCode: 'us', phone: '', countryCode: '+1' }, '']],
+        value: valueInProps,
+        error,
         onAddPhoneNumber,
         maxPhoneNumbers = 5,
         onChange = () => {},
-    } = props;
+    } = useReduxForm(props);
+    const value: Array<[PhoneNumber, string]> = Array.isArray(valueInProps)
+        ? valueInProps
+        : [[{ isoCode: 'us', phone: '', countryCode: '+1' }, '']];
 
     const updatePhone = (index: number, phoneValue: PhoneNumber) => {
         value[index][0] = phoneValue;
@@ -49,17 +55,23 @@ const MultiPhoneNumberInput: React.FC<MultiPhoneNumberInputProps> = (props) => {
         const inputConfig = onAddPhoneNumber
             ? onAddPhoneNumber(index)
             : [{ label: isFirst ? 'Primary' : 'Secondary' }, { label: 'Note' }];
+
+        const rowError = !error || typeof error === 'string' ? null : (error[index] as RowError);
+        const phoneError = rowError && rowError.phone;
+        const noteError = rowError && rowError.note;
         return (
             <Fieldset>
                 <StyledPhoneInput
                     label={inputConfig[0].label}
                     onChange={(phoneValue) => updatePhone(index, phoneValue)}
                     value={phone}
+                    error={phoneError}
                 />
                 <StyledInput
                     label={inputConfig[1].label}
                     onChange={(event) => updateNote(index, event.target.value)}
                     value={note}
+                    error={noteError}
                 />
                 <RenderIf isTrue={!isFirst}>
                     <ButtonIcon icon={<Trash />} onClick={() => removePhoneNumber(index)} />
@@ -72,6 +84,9 @@ const MultiPhoneNumberInput: React.FC<MultiPhoneNumberInputProps> = (props) => {
         <Container>
             <Label>{label}</Label>
             {phoneNumbers}
+            <RenderIf isTrue={typeof error === 'string'}>
+                <ErrorText>{error}</ErrorText>
+            </RenderIf>
             <RenderIf isTrue={value.length < maxPhoneNumbers}>
                 <Button label="Add" onClick={addPhoneNumber} />
             </RenderIf>

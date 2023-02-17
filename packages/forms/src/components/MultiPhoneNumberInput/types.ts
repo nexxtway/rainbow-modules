@@ -11,3 +11,8 @@ export interface InputConfig {
     disabled?: boolean;
     readOnly?: boolean;
 }
+
+export interface RowError {
+    phone?: string;
+    note?: string;
+}
