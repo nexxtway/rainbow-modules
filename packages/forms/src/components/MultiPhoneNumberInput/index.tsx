@@ -2,10 +2,18 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, ButtonIcon, RenderIf } from 'react-rainbow-components';
+import { Button, RenderIf } from 'react-rainbow-components';
 import { Trash, Plus } from '@rainbow-modules/icons';
 import { useReduxForm } from '@rainbow-modules/hooks';
-import { Container, ErrorText, Fieldset, Label, StyledInput, StyledPhoneInput } from './styled';
+import {
+    Container,
+    ErrorText,
+    Fieldset,
+    Label,
+    StyledInput,
+    StyledPhoneInput,
+    StyledButtonIcon,
+} from './styled';
 import { InputConfig, PhoneNumber, RowError } from './types';
 
 interface MultiPhoneNumberInputProps {
@@ -75,7 +83,11 @@ const MultiPhoneNumberInput: React.FC<MultiPhoneNumberInputProps> = (props) => {
                     error={noteError}
                 />
                 <RenderIf isTrue={!isFirst}>
-                    <ButtonIcon icon={<Trash />} onClick={() => removePhoneNumber(index)} />
+                    <StyledButtonIcon
+                        icon={<Trash />}
+                        onClick={() => removePhoneNumber(index)}
+                        variant="border-filled"
+                    />
                 </RenderIf>
             </Fieldset>
         );

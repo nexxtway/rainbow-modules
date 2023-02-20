@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { PhoneInput, Input } from 'react-rainbow-components';
+import { PhoneInput, Input, ButtonIcon } from 'react-rainbow-components';
 import styled from 'styled-components';
 
 export const Container = styled.div``;
@@ -21,7 +21,7 @@ export const Fieldset = styled.fieldset`
 `;
 
 export const StyledPhoneInput = styled(PhoneInput)`
-    min-width: 75%;
+    min-width: 65%;
 `;
 
 export const StyledInput = styled(Input)`
@@ -33,4 +33,8 @@ export const ErrorText = styled.div`
     margin-top: 0.5rem;
     align-self: start;
     color: ${(props) => props.theme.rainbow.palette.error.main};
+`;
+
+export const StyledButtonIcon = styled(ButtonIcon)`
+    flex-shrink: 0;
 `;
