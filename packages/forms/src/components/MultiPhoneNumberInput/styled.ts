@@ -4,26 +4,28 @@ import styled from 'styled-components';
 
 export const Container = styled.div``;
 
-export const Label = styled.label``;
+export const Label = styled.label`
+    font-size: 18px;
+    color: ${(props) => props.theme.rainbow.palette.text.main};
+    margin-bottom: 4px;
+`;
 
 export const Fieldset = styled.fieldset`
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
+    gap: 12px;
+    margin-bottom: 16px;
 `;
 
 export const StyledPhoneInput = styled(PhoneInput)`
-    width: calc(70% - 7.5px);
+    min-width: 75%;
 `;
 
 export const StyledInput = styled(Input)`
-    width: calc(30% - 7.5px);
-`;
-
-export const StyledOtherNoteInput = styled(Input)`
-    width: calc(30% - 55px);
+    flex-grow: 1;
 `;
 
 export const ErrorText = styled.div`

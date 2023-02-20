@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import MultiPhoneNumberInput from '../../src/components/MultiPhoneNumberInput';
+import * as stories from '../stories/MultiPhoneNumberInput.story.js';
+
+<Meta title="Modules/Forms/Components/MultiPhoneNumberInput" component={MultiPhoneNumberInput} />
+
+# Overview
+
+`MultiPhoneNumberInput` is an component that allows you to enter many phone numbers to a customer.
+
+### This is a basic example.
+
+<Preview>
+    <Story name="MultiPhoneNumberInput">{stories.BasicMultiPhoneNumberInput()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={MultiPhoneNumberInput} />
