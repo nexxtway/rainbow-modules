@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, ButtonIcon, RenderIf } from 'react-rainbow-components';
-import { Trash } from '@rainbow-modules/icons';
+import { Trash, Plus } from '@rainbow-modules/icons';
 import { useReduxForm } from '@rainbow-modules/hooks';
 import { Container, ErrorText, Fieldset, Label, StyledInput, StyledPhoneInput } from './styled';
 import { InputConfig, PhoneNumber, RowError } from './types';
@@ -59,6 +59,7 @@ const MultiPhoneNumberInput: React.FC<MultiPhoneNumberInputProps> = (props) => {
         const rowError = !error || typeof error === 'string' ? null : (error[index] as RowError);
         const phoneError = rowError && rowError.phone;
         const noteError = rowError && rowError.note;
+
         return (
             <Fieldset>
                 <StyledPhoneInput
@@ -88,7 +89,10 @@ const MultiPhoneNumberInput: React.FC<MultiPhoneNumberInputProps> = (props) => {
                 <ErrorText>{error}</ErrorText>
             </RenderIf>
             <RenderIf isTrue={value.length < maxPhoneNumbers}>
-                <Button label="Add" onClick={addPhoneNumber} />
+                <Button variant="base" onClick={addPhoneNumber}>
+                    <Plus className="rainbow-m-right_small" />
+                    Add Another Phone Number
+                </Button>
             </RenderIf>
         </Container>
     );
