@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, RenderIf } from 'react-rainbow-components';
-import { Trash, Plus } from '@rainbow-modules/icons';
+import { Close, Plus } from '@rainbow-modules/icons';
 import { useReduxForm } from '@rainbow-modules/hooks';
 import {
     Container,
@@ -84,7 +84,7 @@ const MultiPhoneNumberInput: React.FC<MultiPhoneNumberInputProps> = (props) => {
                 />
                 <RenderIf isTrue={!isFirst}>
                     <StyledButtonIcon
-                        icon={<Trash />}
+                        icon={<Close />}
                         onClick={() => removePhoneNumber(index)}
                         variant="border-filled"
                     />
