@@ -21,6 +21,7 @@ export default function CopyToClipboardButton(props) {
         disabled,
         tabIndex,
         assistiveText,
+        borderRadius,
     } = props;
     const triggerRef = useRef();
     const tooltipRef = useRef();
@@ -81,6 +82,7 @@ export default function CopyToClipboardButton(props) {
                 disabled={disabled}
                 tabIndex={tabIndex}
                 assistiveText={assistiveText}
+                borderRadius={borderRadius}
             />
             <InternalTooltip
                 triggerElementRef={() => triggerRef.current.htmlElementRef}
@@ -130,6 +132,8 @@ CopyToClipboardButton.propTypes = {
     style: PropTypes.object,
     /** The id of the outer element. */
     id: PropTypes.string,
+    /** The border radius of the buttonIcon. Valid values are square, semi-square, semi-rounded and rounded. This value defaults to rounded.*/
+    borderRadius: PropTypes.oneOf(['rounded', 'semi-rounded', 'semi-square', 'square']),
 };
 
 CopyToClipboardButton.defaultProps = {
@@ -143,4 +147,5 @@ CopyToClipboardButton.defaultProps = {
     className: undefined,
     style: undefined,
     id: undefined,
+    borderRadius: 'rounded',
 };

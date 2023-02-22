@@ -30,6 +30,7 @@ const ConfirmModal = (props) => {
             isOpen={isOpen}
             onRequestClose={onCancel}
             title={header}
+            borderRadius={borderRadius}
             footer={
                 <ButtonsContainer>
                     <Button
@@ -37,16 +38,17 @@ const ConfirmModal = (props) => {
                         label={cancelButtonLabel}
                         variant="border"
                         onClick={onCancel}
+                        borderRadius={borderRadius}
                     />
                     <Button
                         style={styles}
                         label={okButtonLabel}
                         variant={variant}
                         onClick={onConfirm}
+                        borderRadius={borderRadius}
                     />
                 </ButtonsContainer>
             }
-            borderRadius={borderRadius}
         >
             <RenderIf isTrue={!children}>
                 <Container>
@@ -78,6 +80,8 @@ ConfirmModal.propTypes = {
     onCancel: PropTypes.func,
     /** @ignore */
     onConfirm: PropTypes.func,
+    /** The border radius of the the modal and the footer buttons. Valid values are square, semi-square, semi-rounded and rounded. This value defaults to rounded.*/
+    borderRadius: PropTypes.oneOf(['rounded', 'semi-rounded', 'semi-square', 'square']),
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
 };
 
@@ -92,6 +96,7 @@ ConfirmModal.defaultProps = {
     onCancel: undefined,
     onConfirm: undefined,
     children: null,
+    borderRadius: 'rounded',
 };
 
 export default ConfirmModal;
