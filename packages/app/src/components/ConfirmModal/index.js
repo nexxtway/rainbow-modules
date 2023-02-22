@@ -21,6 +21,7 @@ const ConfirmModal = (props) => {
         cancelButtonLabel,
         okButtonLabel,
         icon,
+        borderRadius,
         children,
     } = props;
 
@@ -45,6 +46,7 @@ const ConfirmModal = (props) => {
                     />
                 </ButtonsContainer>
             }
+            borderRadius={borderRadius}
         >
             <RenderIf isTrue={!children}>
                 <Container>

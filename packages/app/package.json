@@ -9,6 +9,7 @@
     "dependencies": {
         "@rainbow-modules/firebase-hooks": "^0.56.0",
         "@rainbow-modules/icons": "^0.56.0",
+        "react-rainbow-components": "1.31.0-canary.59cdcd0",
         "redux-thunk": "^2.3.0",
         "styled-components": ">=4.3.2 <6"
     },

@@ -15,6 +15,8 @@ export interface ConfirmModalProps {
     cancelButtonLabel?: string;
     /** The modal variant. */
     variant?: 'brand' | 'success' | 'warning' | 'destructive';
+    /** The border radius of the modal. */
+    borderRadius?: 'rounded' | 'semi-rounded' | 'semi-square' | 'square';
     /** @ignore */
     onCancel?: () => void;
     /** @ignore */

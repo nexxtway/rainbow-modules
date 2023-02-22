@@ -41,5 +41,6 @@ type ConfirmModalParams = {
     question?: ReactNode;
     okButtonLabel?: ReactNode;
     cancelButtonLabel?: ReactNode;
+    borderRadius?: 'rounded' | 'semi-rounded' | 'semi-square' | 'square';
 };
 export function confirmModal(params: ConfirmModalParams): Promise<boolean>;
