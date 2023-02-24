@@ -80,7 +80,7 @@ ConfirmModal.propTypes = {
     onCancel: PropTypes.func,
     /** @ignore */
     onConfirm: PropTypes.func,
-    /** The border radius of the the modal and the footer buttons. Valid values are square, semi-square, semi-rounded and rounded. This value defaults to rounded.*/
+    /** The border radius of the the modal and the footer buttons. Valid values are square, semi-square, semi-rounded and rounded. This value defaults to rounded. */
     borderRadius: PropTypes.oneOf(['rounded', 'semi-rounded', 'semi-square', 'square']),
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.object]),
 };

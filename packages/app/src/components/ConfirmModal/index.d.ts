@@ -15,7 +15,7 @@ export interface ConfirmModalProps {
     cancelButtonLabel?: string;
     /** The modal variant. */
     variant?: 'brand' | 'success' | 'warning' | 'destructive';
-    /** The border radius of the modal and the footer buttons. Valid values are square, semi-square, semi-rounded and rounded. This value defaults to rounded.*/
+    /** The border radius of the modal and the footer buttons. Valid values are square, semi-square, semi-rounded and rounded. This value defaults to rounded. */
     borderRadius?: 'rounded' | 'semi-rounded' | 'semi-square' | 'square';
     /** @ignore */
     onCancel?: () => void;
