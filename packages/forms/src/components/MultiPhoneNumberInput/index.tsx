@@ -69,7 +69,8 @@ const MultiPhoneNumberInput: React.FC<MultiPhoneNumberInputProps> = (props) => {
         const noteError = rowError && rowError.note;
 
         return (
-            <Fieldset>
+            // eslint-disable-next-line react/no-array-index-key
+            <Fieldset key={`phone-${index}`} data-key={`phone-${index}`}>
                 <StyledPhoneInput
                     label={inputConfig[0].label}
                     onChange={(phoneValue) => updatePhone(index, phoneValue)}

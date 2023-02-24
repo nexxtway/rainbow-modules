@@ -8,6 +8,7 @@ export { default as FlightStatsInput } from './components/FlightStatsInput';
 export { default as FormFieldColumn } from './components/FormFieldColumn';
 export { default as JsonInput } from './components/JsonInput';
 export { default as CountryPicker } from './components/CountryPicker';
+export { default as MultiPhoneNumberInput } from './components/MultiPhoneNumberInput';
 export { default as composeValidators } from './helpers/composeValidators';
 
 // Validators

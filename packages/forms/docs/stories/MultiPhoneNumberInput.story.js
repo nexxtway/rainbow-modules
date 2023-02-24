@@ -74,7 +74,12 @@ export const FormMultiPhoneNumberInput = () => {
     return (
         <Application>
             <UniversalForm id="phones" onSubmit={onSubmit}>
-                <Field name="phones" component={MultiPhoneNumber} validate={validate} />
+                <Field
+                    name="phones"
+                    label="Phone numbers"
+                    component={MultiPhoneNumber}
+                    validate={validate}
+                />
                 <Button type="submit" label="Submit" />
             </UniversalForm>
         </Application>
