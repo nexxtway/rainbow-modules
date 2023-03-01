@@ -36,6 +36,8 @@ export interface CopyToClipboardButtonProps {
     style?: CSSProperties;
     /** The id of the outer element. */
     id?: string;
+    /** The border radius of the buttonIcon. Valid values are square, semi-square, semi-rounded and rounded. This value defaults to rounded. */
+    borderRadius?: 'rounded' | 'semi-rounded' | 'semi-square' | 'square';
 }
 
 export default function (props: CopyToClipboardButtonProps): JSX.Element | null;
