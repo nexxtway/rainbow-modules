@@ -15,7 +15,7 @@ export const Fieldset = styled.fieldset`
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: flex-start;
     gap: 12px;
     margin-bottom: 16px;
 `;
@@ -37,4 +37,5 @@ export const ErrorText = styled.div`
 
 export const StyledButtonIcon = styled(ButtonIcon)`
     flex-shrink: 0;
+    margin-top: 24px;
 `;
