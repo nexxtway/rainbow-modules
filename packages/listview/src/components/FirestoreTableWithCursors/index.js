@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { ArrowRight, ArrowLeft } from '@rainbow-modules/icons';
 import { RenderIf, ButtonIcon } from 'react-rainbow-components';
 import { limit, onSnapshot, startAt, startAfter, query } from 'firebase/firestore';
-import useFirestore from '@rainbow-modules/firebase-hooks';
+import { useFirestore } from '@rainbow-modules/firebase-hooks';
 import { Container, Footer, StyledTable } from './styled';
 import getData from './getData';
 import getCollection from './helpers/getCollection';
