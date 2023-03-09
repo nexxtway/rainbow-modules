@@ -2,18 +2,18 @@ import React, { useEffect, useState, useRef, useImperativeHandle, forwardRef } f
 import PropTypes from 'prop-types';
 import { ArrowRight, ArrowLeft } from '@rainbow-modules/icons';
 import { RenderIf, ButtonIcon } from 'react-rainbow-components';
-import useFirestore from '../../hooks/useFirestore';
+import { limit, onSnapshot, startAt, startAfter, query } from 'firebase/firestore';
+import useFirestore from '@rainbow-modules/firebase-hooks';
 import { Container, Footer, StyledTable } from './styled';
 import getData from './getData';
 import getCollection from './helpers/getCollection';
-import { limit, onSnapshot, startAt, startAfter } from '../../helpers';
 
 const FirestoreTableWithCursors = forwardRef((props, ref) => {
     const {
         children,
         collection,
         pageSize,
-        query,
+        query: queryProp,
         style,
         className,
         isCollectionGroup,
@@ -26,13 +26,13 @@ const FirestoreTableWithCursors = forwardRef((props, ref) => {
     const unsubscribe = useRef();
     const pagesRefs = useRef([]);
     const page = useRef();
-    const collectionRef = query(getCollection(firestore, collection, isCollectionGroup));
+    const collectionRef = queryProp(getCollection(firestore, collection, isCollectionGroup));
 
     useEffect(() => {
         (async () => {
             setLoading(true);
             unsubscribe.current = onSnapshot(
-                limit(collectionRef, pageSize),
+                query(collectionRef, limit(pageSize)),
                 (querySnapshot) => {
                     if (querySnapshot.docs.length > 0) {
                         pagesRefs.current.push({
@@ -58,9 +58,9 @@ const FirestoreTableWithCursors = forwardRef((props, ref) => {
     }, []);
     const next = async () => {
         unsubscribe.current();
-        const ref = limit(
-            startAfter(collectionRef, pagesRefs.current[page.current].last),
-            pageSize,
+        const ref = query(
+            query(collectionRef, startAfter(pagesRefs.current[page.current].last)),
+            limit(pageSize),
         );
         unsubscribe.current = onSnapshot(
             ref,
@@ -83,9 +83,9 @@ const FirestoreTableWithCursors = forwardRef((props, ref) => {
     };
     const previous = async () => {
         unsubscribe.current();
-        const ref = limit(
-            startAt(collectionRef, pagesRefs.current[page.current - 1].first),
-            pageSize,
+        const ref = query(
+            query(collectionRef, startAt(pagesRefs.current[page.current - 1].first)),
+            limit(pageSize),
         );
         unsubscribe.current = onSnapshot(
             ref,
@@ -110,7 +110,7 @@ const FirestoreTableWithCursors = forwardRef((props, ref) => {
             setLoading(true);
             pagesRefs.current = [];
             unsubscribe.current = onSnapshot(
-                limit(collectionRef, pageSize),
+                query(collectionRef, limit(pageSize)),
                 (querySnapshot) => {
                     if (querySnapshot.docs.length > 0) {
                         pagesRefs.current = [
