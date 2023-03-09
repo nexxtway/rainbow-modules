@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Spinner, RenderIf } from 'react-rainbow-components';
 import { Trash } from '@rainbow-modules/icons';
 import { confirmModal } from '@rainbow-modules/app';
+import { getDownloadURL } from 'firebase/storage';
 import {
     StyledFileContainer,
     StyledContainerImage,
@@ -14,7 +15,6 @@ import {
     TruncatedText,
     StyledRelative,
 } from './styled';
-import { getDownloadURL } from './helpers';
 
 export default function Image(props) {
     const { imageRef, onSelect, onError, allowDelete, onDelete } = props;
