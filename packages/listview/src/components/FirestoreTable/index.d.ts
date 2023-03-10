@@ -1,10 +1,11 @@
 import { ReactNode } from 'react';
+import { Query, DocumentData } from 'firebase/firestore';
 
 export interface FirestoreTableProps {
     /** The path of the Firestore collection e.g. `/books` */
     collection: string;
-    /** Query function for firestore. */
-    query?: () => void;
+    /** It is a function that receive a collection reference where you can do queries. e.g (ref) => query(ref, where('name', '==', 'John Doe')) */
+    query?: (ref: Query<DocumentData>) => Query<DocumentData>;
     /** It fetch the collection data once. */
     fetchOnce?: boolean;
     /** Specifies the default sorting direction on an unsorted column. Valid options include 'asc' and 'desc'.
