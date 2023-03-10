@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { ProgressCircular } from 'react-rainbow-components';
+import { ref, uploadBytesResumable } from 'firebase/storage';
 import { useStorageRef } from './hooks';
 import { StyledContainerImageUpload, StyledFileContainer } from './styled';
-import { ref, uploadBytesResumable } from './helpers';
 
 export default function ImageUpload(props) {
     const { path, image, onUploaded, onError } = props;

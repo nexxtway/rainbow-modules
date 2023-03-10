@@ -6,10 +6,5 @@ export default function useStorageRef(props) {
     const { bucket } = props || {};
     const app = useFirebaseApp();
 
-    return useMemo(() => {
-        if (app.storage) {
-            return app.storage(bucket).ref();
-        }
-        return ref(getStorage(app, bucket));
-    }, [app, bucket]);
+    return useMemo(() => ref(getStorage(app, bucket)), [app, bucket]);
 }

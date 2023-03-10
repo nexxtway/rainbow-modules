@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
+import { ref, getDownloadURL, listAll, list } from 'firebase/storage';
+import { sortByDate, attachMetadata } from '../helpers';
 import useStorageRef from './useStorageRef';
-import { attachMetadata, sortByDate, ref, getDownloadURL, listAll, list } from '../helpers';
 
 export default function useImageRefs(props) {
     const { path, filter, maxResults: maxResultsProp, onError } = props;

@@ -2,11 +2,11 @@ import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import { RenderIf } from 'react-rainbow-components';
 import { Picture } from '@rainbow-modules/icons';
+import { deleteObject } from 'firebase/storage';
 import ImagesUpload from './imagesUpload';
 import Images from './images';
 import { useImageRefs } from './hooks';
 import { StyledContainer, StyledFileSeletor, StyledFileContainer } from './styled';
-import { deleteObject } from './helpers';
 
 export default function ImageGallery(props) {
     const { path, allowUpload, allowDelete, onSelect, onError, filter, maxResults } = props;
