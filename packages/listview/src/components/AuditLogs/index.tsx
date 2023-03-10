@@ -16,8 +16,8 @@ import AuditLogsHeader from './header';
 import { Provider } from './context';
 import getDatesFromFilter from './helpers/getDatesFromFilter';
 import FirestoreFilterTable from './firestoreFilterTable';
-import { FirestoreTableWithCursorsRef } from '../FirestoreTableWithCursors';
 import { prepareForDownload } from './helpers';
+import { FirestoreTableWithCursorsRef } from '../FirestoreTableWithCursors';
 
 const defaultFilters: Filters = {
     severity: [],
