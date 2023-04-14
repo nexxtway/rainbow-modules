@@ -127,6 +127,8 @@ export { default as Wireless } from './components/wireless';
 export { default as Globe } from './components/globe';
 export { default as WaitingTime } from './components/waitingTime';
 export { default as CornerUpRight } from './components/cornerUpRight';
+export { default as Folder } from './components/folder';
+export { default as FileText } from './components/fileText';
 
 // File icons
 export { default as JavascriptFile } from './components/javascriptFile';
