@@ -134,6 +134,8 @@ import {
     Globe,
     WaitingTime,
     CornerUpRight,
+    Folder,
+    FileText,
 } from '../../../src';
 
 export default [
@@ -812,5 +814,15 @@ export default [
         name: 'webhook',
         category: 'custom',
         icon: Webhook,
+    },
+    {
+        name: 'folder',
+        category: 'standard',
+        icon: Folder,
+    },
+    {
+        name: 'fileText',
+        category: 'standard',
+        icon: FileText,
     },
 ];
