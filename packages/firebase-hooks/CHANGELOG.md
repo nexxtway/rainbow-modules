@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.57.0](https://github.com/nexxtway/rainbow-modules/compare/v0.56.0...v0.57.0) (2023-07-25)
+
+### Bug Fixes
+
+-   fixed use doc ([#673](https://github.com/nexxtway/rainbow-modules/issues/673)) ([462241c](https://github.com/nexxtway/rainbow-modules/commit/462241c957a4bf1afe8db042d42c3fdd140c1878))
+
 # [0.56.0](https://github.com/nexxtway/rainbow-modules/compare/v0.55.0...v0.56.0) (2023-01-09)
 
 ### Bug Fixes

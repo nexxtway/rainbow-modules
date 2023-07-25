@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.57.0](https://github.com/nexxtway/rainbow-modules/compare/v0.56.0...v0.57.0) (2023-07-25)
+
+### Bug Fixes
+
+-   add tabindex={-1} to the close button in inputSearch component in the search module ([#675](https://github.com/nexxtway/rainbow-modules/issues/675)) ([a3fd7a9](https://github.com/nexxtway/rainbow-modules/commit/a3fd7a9bca4c0a4619b6609b784fb1a8cb81d78a))
+
 # [0.56.0](https://github.com/nexxtway/rainbow-modules/compare/v0.55.0...v0.56.0) (2023-01-09)
 
 **Note:** Version bump only for package @rainbow-modules/search

@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.57.0](https://github.com/nexxtway/rainbow-modules/compare/v0.56.0...v0.57.0) (2023-07-25)
+
+### Bug Fixes
+
+-   add tabindex={-1} to the close button in inputSearch component in the search module ([#675](https://github.com/nexxtway/rainbow-modules/issues/675)) ([a3fd7a9](https://github.com/nexxtway/rainbow-modules/commit/a3fd7a9bca4c0a4619b6609b784fb1a8cb81d78a))
+-   button styles ([#682](https://github.com/nexxtway/rainbow-modules/issues/682)) ([a2d296a](https://github.com/nexxtway/rainbow-modules/commit/a2d296a075e9d99284181f3c2a90d6e600b9b28b))
+-   fixed use doc ([#673](https://github.com/nexxtway/rainbow-modules/issues/673)) ([462241c](https://github.com/nexxtway/rainbow-modules/commit/462241c957a4bf1afe8db042d42c3fdd140c1878))
+-   icon ([#683](https://github.com/nexxtway/rainbow-modules/issues/683)) ([7b612de](https://github.com/nexxtway/rainbow-modules/commit/7b612dea6e35d1af4478cc77d634db720adf8889))
+-   improve MultiPhoneNumberInput ([#687](https://github.com/nexxtway/rainbow-modules/issues/687)) ([523d5e8](https://github.com/nexxtway/rainbow-modules/commit/523d5e8a4d3005d4da2dfb3ba75203c27044d3bd))
+-   multi phone input styles ([#681](https://github.com/nexxtway/rainbow-modules/issues/681)) ([1217f06](https://github.com/nexxtway/rainbow-modules/commit/1217f0620380f48a6341b8544ecda9faf08c139d))
+-   styles on MultiPhoneInput component ([#688](https://github.com/nexxtway/rainbow-modules/issues/688)) ([099e1ef](https://github.com/nexxtway/rainbow-modules/commit/099e1ef502079103e58ec735d4188fe210e14b93))
+
+### Features
+
+-   add border radius confirm modal and copy to clipboard ([#686](https://github.com/nexxtway/rainbow-modules/issues/686)) ([634bb93](https://github.com/nexxtway/rainbow-modules/commit/634bb93593529c764598e04bbcb39d42bb4e7125))
+-   add file and folder icons ([#694](https://github.com/nexxtway/rainbow-modules/issues/694)) ([8afcbba](https://github.com/nexxtway/rainbow-modules/commit/8afcbbaf7e011629c71603cf4afc806dc0017f94))
+-   add size prop to UniversalFormModal ([#701](https://github.com/nexxtway/rainbow-modules/issues/701)) ([e830c57](https://github.com/nexxtway/rainbow-modules/commit/e830c57c2dae4e8910b2be06f17fa9d95ad01bb1))
+-   implement borderRadius on UniversalFormModal component ([#671](https://github.com/nexxtway/rainbow-modules/issues/671)) ([6ea183d](https://github.com/nexxtway/rainbow-modules/commit/6ea183d9dd14a004e7d383df628af94b9301dd52))
+-   multi phone number component first commit ([#680](https://github.com/nexxtway/rainbow-modules/issues/680)) ([9866216](https://github.com/nexxtway/rainbow-modules/commit/9866216c8960009e02119f25068c2e5162fcd49d))
+
 # [0.56.0](https://github.com/nexxtway/rainbow-modules/compare/v0.55.0...v0.56.0) (2023-01-09)
 
 ### Bug Fixes

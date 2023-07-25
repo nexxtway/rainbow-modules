@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.57.0](https://github.com/nexxtway/rainbow-modules/compare/v0.56.0...v0.57.0) (2023-07-25)
+
+### Features
+
+-   add border radius confirm modal and copy to clipboard ([#686](https://github.com/nexxtway/rainbow-modules/issues/686)) ([634bb93](https://github.com/nexxtway/rainbow-modules/commit/634bb93593529c764598e04bbcb39d42bb4e7125))
+
 # [0.56.0](https://github.com/nexxtway/rainbow-modules/compare/v0.55.0...v0.56.0) (2023-01-09)
 
 ### Bug Fixes
