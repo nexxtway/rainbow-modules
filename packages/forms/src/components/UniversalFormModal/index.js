@@ -18,6 +18,7 @@ const UniversalFormModal = (props) => {
         onOpened,
         disableSubmit,
         borderRadius,
+        size,
         ...rest
     } = props;
     const uniqueId = useUniqueIdentifier();
@@ -52,6 +53,7 @@ const UniversalFormModal = (props) => {
             onRequestClose={onRequestClose}
             onOpened={onOpened}
             borderRadius={borderRadius}
+            size={size}
         >
             <UniversalForm onSubmit={onSubmit} id={uniqueId} initialValues={initialValues}>
                 <Fields {...rest} />
@@ -89,6 +91,9 @@ UniversalFormModal.propTypes = {
     id: PropTypes.string,
     /** The border radius of the button and modal. Valid values are square, 'semi-square', semi-rounded and rounded. This value defaults to rounded. */
     borderRadius: PropTypes.oneOf(['square', 'semi-square', 'semi-rounded', 'rounded']),
+    /** The size of the Modal. Valid values are small, medium, and large.
+     * This value defaults to small. */
+    size: PropTypes.oneOf(['small', 'medium', 'large']),
 };
 
 UniversalFormModal.defaultProps = {
@@ -104,6 +109,7 @@ UniversalFormModal.defaultProps = {
     disableSubmit: false,
     id: undefined,
     borderRadius: 'rounded',
+    size: 'small',
 };
 
 export default UniversalFormModal;

@@ -30,6 +30,9 @@ export interface UniversalFormModalProps {
     id?: string;
     /** The border radius of the button and dropdown. Valid values are square, 'semi-square', semi-rounded and rounded. This value defaults to rounded. */
     borderRadius?: 'square' | 'semi-square' | 'semi-rounded' | 'rounded';
+    /** The size of the Modal. Valid values are small, medium, and large.
+     * This value defaults to small. */
+    size?: 'small' | 'medium' | 'large';
     [key: string]: unknown;
 }
 

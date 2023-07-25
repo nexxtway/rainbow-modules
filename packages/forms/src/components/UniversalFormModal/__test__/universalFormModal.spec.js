@@ -15,4 +15,8 @@ describe('<UniversalFormModal />', () => {
         wrapper.find('button').first().simulate('click');
         expect(onRequestClose).toBeCalled();
     });
+    it('should pass the size prop to the underliying modal', () => {
+        const wrapper = mount(<UniversalFormModal size="large" isOpen />);
+        expect(wrapper.find('Modal').prop('size')).toBe('large');
+    });
 });
