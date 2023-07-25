@@ -7,6 +7,8 @@ import UniversalForm from '../UniversalForm';
 const UniversalFormModal = (props) => {
     const {
         id,
+        className,
+        style,
         isOpen,
         onRequestClose,
         fields: Fields,
@@ -18,6 +20,7 @@ const UniversalFormModal = (props) => {
         onOpened,
         disableSubmit,
         borderRadius,
+        size,
         ...rest
     } = props;
     const uniqueId = useUniqueIdentifier();
@@ -46,12 +49,15 @@ const UniversalFormModal = (props) => {
     return (
         <Modal
             id={id}
+            className={className}
+            style={style}
             title={title}
             isOpen={isOpen}
             footer={footer}
             onRequestClose={onRequestClose}
             onOpened={onOpened}
             borderRadius={borderRadius}
+            size={size}
         >
             <UniversalForm onSubmit={onSubmit} id={uniqueId} initialValues={initialValues}>
                 <Fields {...rest} />
@@ -61,6 +67,10 @@ const UniversalFormModal = (props) => {
 };
 
 UniversalFormModal.propTypes = {
+    /** The class name of the modal element. */
+    className: PropTypes.string,
+    /** It is an object with custom style applied to the modal element. */
+    style: PropTypes.object,
     /** The title of the Modal */
     title: PropTypes.node,
     /** When `true` the Modal opens */
@@ -89,9 +99,14 @@ UniversalFormModal.propTypes = {
     id: PropTypes.string,
     /** The border radius of the button and modal. Valid values are square, 'semi-square', semi-rounded and rounded. This value defaults to rounded. */
     borderRadius: PropTypes.oneOf(['square', 'semi-square', 'semi-rounded', 'rounded']),
+    /** The size of the Modal. Valid values are small, medium, and large.
+     * This value defaults to small. */
+    size: PropTypes.oneOf(['small', 'medium', 'large']),
 };
 
 UniversalFormModal.defaultProps = {
+    className: undefined,
+    style: undefined,
     title: '',
     isOpen: false,
     onRequestClose: () => {},
@@ -104,6 +119,7 @@ UniversalFormModal.defaultProps = {
     disableSubmit: false,
     id: undefined,
     borderRadius: 'rounded',
+    size: 'small',
 };
 
 export default UniversalFormModal;

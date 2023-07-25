@@ -1,7 +1,11 @@
 import { FormApi, SubmissionErrors } from 'final-form';
-import { ComponentType, ReactNode } from 'react';
+import { ComponentType, ReactNode, CSSProperties } from 'react';
 
 export interface UniversalFormModalProps {
+    /** The class name of the modal element. */
+    className?: string;
+    /** It is an object with custom style applied to the modal element. */
+    style?: CSSProperties;
     /** The title of the Modal */
     title?: ReactNode;
     /** When `true` the Modal opens */
@@ -30,6 +34,9 @@ export interface UniversalFormModalProps {
     id?: string;
     /** The border radius of the button and dropdown. Valid values are square, 'semi-square', semi-rounded and rounded. This value defaults to rounded. */
     borderRadius?: 'square' | 'semi-square' | 'semi-rounded' | 'rounded';
+    /** The size of the Modal. Valid values are small, medium, and large.
+     * This value defaults to small. */
+    size?: 'small' | 'medium' | 'large';
     [key: string]: unknown;
 }
 

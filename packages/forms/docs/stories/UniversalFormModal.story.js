@@ -228,9 +228,9 @@ const Container = styled.div`
     gap: 20px;
 `;
 
-const ExampleBorderRadius = ({ borderRadius }) => {
-    const connectedModalProps = useConnectModal(`add-edit-book-${borderRadius}`);
-    const [openModal] = useOpenModal(`add-edit-book-${borderRadius}`);
+const ExampleUniversalFormModal = ({ borderRadius, size }) => {
+    const connectedModalProps = useConnectModal(`add-edit-book-${borderRadius}-${size}`);
+    const [openModal] = useOpenModal(`add-edit-book-${borderRadius}-${size}`);
 
     const openCreateBook = () =>
         openModal({
@@ -246,6 +246,7 @@ const ExampleBorderRadius = ({ borderRadius }) => {
                 shaded
                 onClick={openCreateBook}
                 borderRadius={borderRadius}
+                size={size}
             />
             <UniversalFormModal
                 fields={() => (
@@ -262,6 +263,7 @@ const ExampleBorderRadius = ({ borderRadius }) => {
                 )}
                 {...connectedModalProps}
                 borderRadius={borderRadius}
+                size={size}
             />
         </>
     );
@@ -270,10 +272,20 @@ const ExampleBorderRadius = ({ borderRadius }) => {
 export const WithBorderRadius = () => (
     <RainbowFirebaseApp app={app}>
         <Container>
-            <ExampleBorderRadius borderRadius="square" />
-            <ExampleBorderRadius borderRadius="semi-square" />
-            <ExampleBorderRadius borderRadius="semi-rounded" />
-            <ExampleBorderRadius borderRadius="rounded" />
+            <ExampleUniversalFormModal borderRadius="square" />
+            <ExampleUniversalFormModal borderRadius="semi-square" />
+            <ExampleUniversalFormModal borderRadius="semi-rounded" />
+            <ExampleUniversalFormModal borderRadius="rounded" />
+        </Container>
+    </RainbowFirebaseApp>
+);
+
+export const WithSize = () => (
+    <RainbowFirebaseApp app={app}>
+        <Container>
+            <ExampleUniversalFormModal size="small" />
+            <ExampleUniversalFormModal size="medium" />
+            <ExampleUniversalFormModal size="large" />
         </Container>
     </RainbowFirebaseApp>
 );
