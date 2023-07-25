@@ -19,4 +19,11 @@ describe('<UniversalFormModal />', () => {
         const wrapper = mount(<UniversalFormModal size="large" isOpen />);
         expect(wrapper.find('Modal').prop('size')).toBe('large');
     });
+    it('should pass the className and style prop to the underliying modal', () => {
+        const wrapper = mount(
+            <UniversalFormModal className="test" style={{ color: 'red' }} isOpen />,
+        );
+        expect(wrapper.find('Modal').prop('className')).toBe('test');
+        expect(wrapper.find('Modal').prop('style')).toEqual({ color: 'red' });
+    });
 });

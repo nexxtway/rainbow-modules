@@ -7,6 +7,8 @@ import UniversalForm from '../UniversalForm';
 const UniversalFormModal = (props) => {
     const {
         id,
+        className,
+        style,
         isOpen,
         onRequestClose,
         fields: Fields,
@@ -47,6 +49,8 @@ const UniversalFormModal = (props) => {
     return (
         <Modal
             id={id}
+            className={className}
+            style={style}
             title={title}
             isOpen={isOpen}
             footer={footer}
@@ -63,6 +67,10 @@ const UniversalFormModal = (props) => {
 };
 
 UniversalFormModal.propTypes = {
+    /** The class name of the modal element. */
+    className: PropTypes.string,
+    /** It is an object with custom style applied to the modal element. */
+    style: PropTypes.object,
     /** The title of the Modal */
     title: PropTypes.node,
     /** When `true` the Modal opens */
@@ -97,6 +105,8 @@ UniversalFormModal.propTypes = {
 };
 
 UniversalFormModal.defaultProps = {
+    className: undefined,
+    style: undefined,
     title: '',
     isOpen: false,
     onRequestClose: () => {},

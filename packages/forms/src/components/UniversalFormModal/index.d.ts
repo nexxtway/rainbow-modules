@@ -1,7 +1,11 @@
 import { FormApi, SubmissionErrors } from 'final-form';
-import { ComponentType, ReactNode } from 'react';
+import { ComponentType, ReactNode, CSSProperties } from 'react';
 
 export interface UniversalFormModalProps {
+    /** The class name of the modal element. */
+    className?: string;
+    /** It is an object with custom style applied to the modal element. */
+    style?: CSSProperties;
     /** The title of the Modal */
     title?: ReactNode;
     /** When `true` the Modal opens */
