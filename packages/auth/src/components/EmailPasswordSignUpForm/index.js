@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
 import { showAppMessage, showAppSpinner, hideAppSpinner } from '@rainbow-modules/app';
+import { updateProfile } from 'firebase/auth';
 import { useFirebaseApp } from '@rainbow-modules/firebase-hooks';
 import { nameIcon, emailIcon, passwordIcon } from './icons';
 import { StyledInput, StyledButton } from './styled';
@@ -28,7 +29,7 @@ const EmailPasswordSignUpForm = (props) => {
         try {
             showAppSpinner();
             await createUserWithEmailAndPassword(auth, email, password);
-            await auth.currentUser.updateProfile({
+            await updateProfile(auth.currentUser, {
                 displayName: name,
             });
             hideAppSpinner();
