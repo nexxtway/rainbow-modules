@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import CurrencyColumn from '../../src/components/CurrencyColumn';
+import * as stories from '../stories/CurrencyColumn.story.js';
+
+<Meta title="Modules/Listview/Components/CurrencyColumn" component={CurrencyColumn} />
+
+# Overview
+
+`CurrencyColumn` is a column that renders the number passed as value.
+
+### This is an example with the CurrencyColumn.
+
+<Preview>
+    <Story name="CurrencyColumn">{stories.currencyColumn()}</Story>
+</Preview>
+
+# Component props
+
+<Props of={CurrencyColumn} />
